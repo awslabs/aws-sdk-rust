@@ -14,10 +14,11 @@ targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
+client-hyper = ["aws-smithy-client/client-hyper"]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]
 rt-tokio = ["aws-smithy-async/rt-tokio"]
-default = ["rustls", "rt-tokio"]
+default = ["client-hyper", "rustls", "rt-tokio"]
 
 [dependencies]
 ring = "0.16"
@@ -43,6 +44,7 @@ version = "0.45.0"
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
 version = "0.45.0"
+default-features = false
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

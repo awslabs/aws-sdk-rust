@@ -239,6 +239,7 @@ impl ProviderConfig {
     ///
     /// # Stability
     /// This method may change to support HTTP configuration.
+    #[cfg(feature = "client-hyper")]
     pub fn with_tcp_connector<C>(self, connector: C) -> Self
     where
         C: Clone + Send + Sync + 'static,
