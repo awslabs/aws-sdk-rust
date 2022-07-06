@@ -66,9 +66,6 @@ body:
       render: text
       description: |
         List the versions & crates of the aws-rust-sdk you are using.
-        `cargo install cargo-tree`
-        (see install here: https://github.com/sfackler/cargo-tree)
-        Then:
         `cargo tree | grep aws-`
     validations:
       required: true
