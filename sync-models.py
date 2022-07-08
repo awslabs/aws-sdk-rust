@@ -6,10 +6,10 @@ import sys
 import os
 import os.path as path
 from pathlib import Path
-import subprocess
 
 # Ensure working directory is the script path
 script_path = path.dirname(path.realpath(__file__))
+
 
 # Looks for aws-models in the parent directory of aws-sdk-rust
 def discover_aws_models():
@@ -21,6 +21,7 @@ def discover_aws_models():
     else:
         return None
 
+
 def discover_new_models(aws_models_repo, known_models):
     new_models = []
     for model in os.listdir(aws_models_repo):
@@ -28,7 +29,8 @@ def discover_new_models(aws_models_repo, known_models):
             new_models.append(model)
     return new_models
 
-def copy_model(source_path, model_path, model_name):
+
+def copy_model(source_path, model_path):
     dest_path = Path("aws-models") / model_path
     source = source_path.read_text()
     # Add a newline at the end when copying the model over
@@ -36,6 +38,7 @@ def copy_model(source_path, model_path, model_name):
         file.write(source)
         if not source.endswith("\n"):
             file.write("\n")
+
 
 def copy_known_models(aws_models_repo):
     known_models = set()
@@ -48,13 +51,14 @@ def copy_known_models(aws_models_repo):
         if not source_path.exists():
             print(f"  Warning: cannot find model for '{model_name}' in aws-models, but it exists in aws-sdk-rust")
             continue
-        copy_model(source_path, model, model_name)
+        copy_model(source_path, model)
     return known_models
+
 
 def main():
     # Acquire model location
     aws_models_repo = discover_aws_models()
-    if aws_models_repo == None:
+    if aws_models_repo is None:
         if len(sys.argv) != 2:
             print("Please provide the location of the aws-models repository as the first argument")
             sys.exit(1)
@@ -68,12 +72,18 @@ def main():
     new_models = discover_new_models(aws_models_repo, known_models)
     if len(new_models) > 0:
         print(f"  Warning: found models for {new_models} in aws-models that aren't in aws-sdk-rust")
-        print(f"  Run the following commands to bring these in:\n")
+        print("  Run the following commands to bring these in:\n")
         for model in new_models:
             print(f"  touch aws-models/{model}.json")
-        print(f"  ./sync-models.py\n")
+        print("  ./sync-models.py\n")
+
+    print("Copying endpoints.json...")
+    copy_model(Path(aws_models_repo) / "endpoints.json", "sdk-endpoints.json")
+    print("Copying default-configuration.json...")
+    copy_model(Path(aws_models_repo) / "default-configuration.json", "sdk-default-configuration.json")
 
     print("Models synced.")
+
 
 if __name__ == "__main__":
     main()
