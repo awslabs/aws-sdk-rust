@@ -2686,7 +2686,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Cancels the statement..</p>"
+                "smithy.api#documentation": "<p>Cancels the statement.</p>"
             }
         },
         "com.amazonaws.glue#CancelStatementRequest": {
@@ -4147,7 +4147,7 @@
                 "ConnectionProperties": {
                     "target": "com.amazonaws.glue#ConnectionProperties",
                     "traits": {
-                        "smithy.api#documentation": "<p>These key-value pairs define parameters for the connection:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>HOST</code> - The host URI: either the\n        fully qualified domain name (FQDN) or the IPv4 address of\n        the database host.</p>\n            </li>\n            <li>\n               <p>\n                  <code>PORT</code> - The port number, between\n        1024 and 65535, of the port on which the database host is\n        listening for database connections.</p>\n            </li>\n            <li>\n               <p>\n                  <code>USER_NAME</code> -  The name under which\n        to log in to the database. The value string for <code>USER_NAME</code> is \"<code>USERNAME</code>\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>PASSWORD</code> - A password,\n        if one is used, for the user name.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the\n          JAR file that contains the JDBC driver to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONFIG_FILES</code> - (Reserved for future use.)</p>\n            </li>\n            <li>\n               <p>\n                  <code>INSTANCE_ID</code> - The instance ID to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure\n          Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the\n          client. The default is false.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is \"true\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is \"false\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>These key-value pairs define parameters for the connection:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>HOST</code> - The host URI: either the\n        fully qualified domain name (FQDN) or the IPv4 address of\n        the database host.</p>\n            </li>\n            <li>\n               <p>\n                  <code>PORT</code> - The port number, between\n        1024 and 65535, of the port on which the database host is\n        listening for database connections.</p>\n            </li>\n            <li>\n               <p>\n                  <code>USER_NAME</code> -  The name under which\n        to log in to the database. The value string for <code>USER_NAME</code> is \"<code>USERNAME</code>\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>PASSWORD</code> - A password,\n        if one is used, for the user name.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the\n          JAR file that contains the JDBC driver to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONFIG_FILES</code> - (Reserved for future use.)</p>\n            </li>\n            <li>\n               <p>\n                  <code>INSTANCE_ID</code> - The instance ID to use.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>\n            </li>\n            <li>\n               <p>\n                  <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure\n          Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the\n          client. The default is false.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is \"true\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is \"false\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_MECHANISM</code> - <code>\"SCRAM-SHA-512\"</code> or <code>\"GSSAPI\"</code>. These are the two supported <a href=\"https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml\">SASL Mechanisms</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_SCRAM_USERNAME</code> - A plaintext username used to authenticate with the \"SCRAM-SHA-512\" mechanism.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password used to authenticate with the \"SCRAM-SHA-512\" mechanism.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting selected).</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3 location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys for one or more principals. For more information, see <a href=\"https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html\">MIT Kerberos Documentation: Keytab</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration information, such as the location of the KDC server. For more information, see <a href=\"https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html\">MIT Kerberos Documentation: krb5.conf</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with <code>sasl.kerberos.service.name</code> in your <a href=\"https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name\">Kafka Configuration</a>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> - The name of the Kerberos princial used by Glue. For more information, see <a href=\"https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig\">Kafka Documentation: Configuring Kafka Brokers</a>.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "PhysicalConnectionRequirements": {
@@ -5509,6 +5509,12 @@
                         "smithy.api#documentation": "<p>The metadata for the database.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.glue#TagsMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The tags you assign to the database.</p>"
+                    }
                 }
             }
         },
@@ -5885,7 +5891,7 @@
                 "DefaultArguments": {
                     "target": "com.amazonaws.glue#GenericMap",
                     "traits": {
-                        "smithy.api#documentation": "<p>The default arguments for this job.</p>\n         <p>You can specify arguments here that your own job-execution script\n      consumes, as well as arguments that Glue itself consumes.</p>\n         <p>For information about how to specify and consume your own Job arguments, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling Glue APIs in Python</a> topic in the developer guide.</p>\n         <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\">Special Parameters Used by Glue</a> topic in the developer guide.</p>"
+                        "smithy.api#documentation": "<p>The default arguments for this job.</p>\n         <p>You can specify arguments here that your own job-execution script\n      consumes, as well as arguments that Glue itself consumes.</p>\n         <p>Job arguments may be logged. Do not pass plaintext secrets as arguments.\n    Retrieve secrets from a Glue Connection, Secrets Manager or\n    other secret management mechanism if you intend to keep them within the Job.\n    </p>\n         <p>For information about how to specify and consume your own Job arguments, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling Glue APIs in Python</a> topic in the developer guide.</p>\n\t  \n         <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\">Special Parameters Used by Glue</a> topic in the developer guide.</p>"
                     }
                 },
                 "NonOverridableArguments": {
@@ -5912,7 +5918,7 @@
                         "smithy.api#deprecated": {
                             "message": "This property is deprecated, use MaxCapacity instead."
                         },
-                        "smithy.api#documentation": "<p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>\n\t\n         <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can\n      allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing\n      power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,\n      see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue pricing\n      page</a>.</p>"
+                        "smithy.api#documentation": "<p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>\n\t\n         <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can\n      allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing\n      power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,\n      see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue pricing\n      page</a>.</p>"
                     }
                 },
                 "Timeout": {
@@ -5924,7 +5930,7 @@
                 "MaxCapacity": {
                     "target": "com.amazonaws.glue#NullableDouble",
                     "traits": {
-                        "smithy.api#documentation": "<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n       of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n       For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n         pricing page</a>.</p>\n\t\t \n\t        <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n     \n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job or an Apache Spark ETL job:</p>\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n          allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache \n         Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate from 2 to 100 DPUs. \n         The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>\n         <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>"
+                        "smithy.api#documentation": "<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n       of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n       For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n         pricing page</a>.</p>\n\t\t \n\t        <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n     \n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job or an Apache Spark ETL job:</p>\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n          allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache \n         Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate a minimum of 2 DPUs. \n         The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>\n         <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>"
                     }
                 },
                 "SecurityConfiguration": {
@@ -5954,13 +5960,13 @@
                 "NumberOfWorkers": {
                     "target": "com.amazonaws.glue#NullableInteger",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>\n\t\n\t        <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>"
+                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>"
                     }
                 },
                 "WorkerType": {
                     "target": "com.amazonaws.glue#WorkerType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>\n\t        <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>\n\t        <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "CodeGenConfigurationNodes": {
@@ -6760,19 +6766,19 @@
                 "MaxCapacity": {
                     "target": "com.amazonaws.glue#NullableDouble",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. \n      A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>"
+                        "smithy.api#documentation": "<p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. \n      A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>"
                     }
                 },
                 "NumberOfWorkers": {
                     "target": "com.amazonaws.glue#NullableInteger",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of workers to use for the session. </p>"
+                        "smithy.api#documentation": "<p>The number of workers of a defined <code>WorkerType</code> to use for the session. </p>"
                     }
                 },
                 "WorkerType": {
                     "target": "com.amazonaws.glue#WorkerType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>"
+                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated to use for the session. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>\n\t        <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "SecurityConfiguration": {
@@ -6784,7 +6790,7 @@
                 "GlueVersion": {
                     "target": "com.amazonaws.glue#GlueVersionString",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. \n      The GlueVersion must be greater than 2.0. </p>"
+                        "smithy.api#documentation": "<p>The Glue version determines the versions of Apache Spark and Python that Glue supports. \n      The GlueVersion must be greater than 2.0. </p>"
                     }
                 },
                 "Tags": {
@@ -9614,7 +9620,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>An edge represents a directed connection between two components\n      on a workflow graph.</p>"
+                "smithy.api#documentation": "<p>An edge represents a directed connection between two Glue components that are part of the workflow the\n      edge belongs to.</p>"
             }
         },
         "com.amazonaws.glue#EdgeList": {
@@ -10848,7 +10854,7 @@
                 "HidePassword": {
                     "target": "com.amazonaws.glue#Boolean",
                     "traits": {
-                        "smithy.api#documentation": "<p>Allows you to retrieve the connection metadata without returning the password. For\n      instance, the AWS Glue console uses this flag to retrieve the connection, and does not display\n      the password. Set this parameter when the caller might not have permission to use the KMS\n      key to decrypt the password, but it does have permission to access the rest of the connection\n      properties.</p>"
+                        "smithy.api#documentation": "<p>Allows you to retrieve the connection metadata without returning the password. For\n      instance, the Glue console uses this flag to retrieve the connection, and does not display\n      the password. Set this parameter when the caller might not have permission to use the KMS\n      key to decrypt the password, but it does have permission to access the rest of the connection\n      properties.</p>"
                     }
                 }
             }
@@ -10933,7 +10939,7 @@
                 "HidePassword": {
                     "target": "com.amazonaws.glue#Boolean",
                     "traits": {
-                        "smithy.api#documentation": "<p>Allows you to retrieve the connection metadata without returning the password. For\n      instance, the AWS Glue console uses this flag to retrieve the connection, and does not display\n      the password. Set this parameter when the caller might not have permission to use the KMS\n      key to decrypt the password, but it does have permission to access the rest of the connection\n      properties.</p>"
+                        "smithy.api#documentation": "<p>Allows you to retrieve the connection metadata without returning the password. For\n      instance, the Glue console uses this flag to retrieve the connection, and does not display\n      the password. Set this parameter when the caller might not have permission to use the KMS\n      key to decrypt the password, but it does have permission to access the rest of the connection\n      properties.</p>"
                     }
                 },
                 "NextToken": {
@@ -15101,10 +15107,14 @@
             "type": "structure",
             "members": {
                 "Message": {
-                    "target": "com.amazonaws.glue#MessageString"
+                    "target": "com.amazonaws.glue#MessageString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A message describing the problem.</p>"
+                    }
                 }
             },
             "traits": {
+                "smithy.api#documentation": "<p>The blueprint is in an invalid state to perform a requested operation.</p>",
                 "smithy.api#error": "client"
             }
         },
@@ -15719,7 +15729,7 @@
                         "smithy.api#deprecated": {
                             "message": "This property is deprecated, use MaxCapacity instead."
                         },
-                        "smithy.api#documentation": "<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>\n\t  \n         <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can\n      allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing\n      power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,\n      see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue pricing\n      page</a>.</p>\n\t        <p></p>"
+                        "smithy.api#documentation": "<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>\n\t  \n         <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can\n      allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing\n      power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,\n      see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue pricing\n      page</a>.</p>\n\t        <p></p>"
                     }
                 },
                 "Timeout": {
@@ -15731,19 +15741,19 @@
                 "MaxCapacity": {
                     "target": "com.amazonaws.glue#NullableDouble",
                     "traits": {
-                        "smithy.api#documentation": "<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n      pricing page</a>.</p>\n\t  \n\t        <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n\t\n\t        <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL\n      job:</p>\n        <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n          allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache \n            Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate from 2 to 100 DPUs. \n            The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>\n         <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>"
+                        "smithy.api#documentation": "<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n      pricing page</a>.</p>\n\t  \n\t        <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n\t\n\t        <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL\n      job:</p>\n        <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n          allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache \n            Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate a minimum of 2 DPUs. \n            The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>\n         <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>"
                     }
                 },
                 "WorkerType": {
                     "target": "com.amazonaws.glue#WorkerType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>\n\t        <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>\n\t        <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "NumberOfWorkers": {
                     "target": "com.amazonaws.glue#NullableInteger",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>\n\t\n\t\t       <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>"
+                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>"
                     }
                 },
                 "SecurityConfiguration": {
@@ -16008,25 +16018,25 @@
                 "Timeout": {
                     "target": "com.amazonaws.glue#Timeout",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can\n      consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default\n      is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>"
+                        "smithy.api#documentation": "<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can\n      consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>\n \n         <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>"
                     }
                 },
                 "MaxCapacity": {
                     "target": "com.amazonaws.glue#NullableDouble",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n        pricing page</a>.</p>\n\n         <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n\n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job or an Apache Spark ETL job:</p>\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n        allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n        pricing page</a>.</p>\n\n         <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n\n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job or an Apache Spark ETL job:</p>\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n        allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "WorkerType": {
                     "target": "com.amazonaws.glue#WorkerType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>\n         <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>\n         <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "NumberOfWorkers": {
                     "target": "com.amazonaws.glue#NullableInteger",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>\n\n         <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>"
+                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>"
                     }
                 },
                 "SecurityConfiguration": {
@@ -16056,7 +16066,7 @@
                 "DPUSeconds": {
                     "target": "com.amazonaws.glue#NullableDouble",
                     "traits": {
-                        "smithy.api#documentation": "<p>This field populates only when an Auto Scaling job run completes, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for <code>G.2X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>"
+                        "smithy.api#documentation": "<p>This field populates only for Auto Scaling job runs, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>"
                     }
                 }
             },
@@ -16168,7 +16178,7 @@
                         "smithy.api#deprecated": {
                             "message": "This property is deprecated, use MaxCapacity instead."
                         },
-                        "smithy.api#documentation": "<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>\n  \n         <p>The number of Glue data processing units (DPUs) to allocate to this job. You can\n      allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing\n      power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,\n      see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue pricing\n      page</a>.</p>"
+                        "smithy.api#documentation": "<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>\n  \n         <p>The number of Glue data processing units (DPUs) to allocate to this job. You can\n      allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing\n      power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,\n      see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue pricing\n      page</a>.</p>"
                     }
                 },
                 "Timeout": {
@@ -16180,19 +16190,19 @@
                 "MaxCapacity": {
                     "target": "com.amazonaws.glue#NullableDouble",
                     "traits": {
-                        "smithy.api#documentation": "<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n     of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue pricing page</a>.</p>\n      \n\t        <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\t     \n\t   \n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job or an Apache Spark ETL job:</p>\n\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n          allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache \n           Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate from 2 to 100 DPUs. \n           The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>\t\t\n\t        <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>"
+                        "smithy.api#documentation": "<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n     of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue pricing page</a>.</p>\n      \n\t        <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\t     \n\t   \n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job or an Apache Spark ETL job:</p>\n\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n          allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache \n           Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate a minimum of 2 DPUs. \n           The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>\t\t\n\t        <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>"
                     }
                 },
                 "WorkerType": {
                     "target": "com.amazonaws.glue#WorkerType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>\n\t        <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>\n\t        <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>\n            </li>\n            <li>\n               <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "NumberOfWorkers": {
                     "target": "com.amazonaws.glue#NullableInteger",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>\n\t\n         <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>"
+                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>"
                     }
                 },
                 "SecurityConfiguration": {
@@ -17546,7 +17556,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Retrieve a session..</p>",
+                "smithy.api#documentation": "<p>Retrieve a list of sessions.</p>",
                 "smithy.api#paginated": {
                     "inputToken": "NextToken",
                     "outputToken": "NextToken",
@@ -17589,7 +17599,7 @@
                 "Ids": {
                     "target": "com.amazonaws.glue#SessionIdList",
                     "traits": {
-                        "smithy.api#documentation": "<p>Returns the Id of the session. </p>"
+                        "smithy.api#documentation": "<p>Returns the ID of the session. </p>"
                     }
                 },
                 "Sessions": {
@@ -17655,7 +17665,10 @@
                     }
                 },
                 "NextToken": {
-                    "target": "com.amazonaws.glue#OrchestrationToken"
+                    "target": "com.amazonaws.glue#OrchestrationToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A continuation token, if this is a continuation call.</p>"
+                    }
                 }
             }
         },
@@ -17669,7 +17682,10 @@
                     }
                 },
                 "NextToken": {
-                    "target": "com.amazonaws.glue#OrchestrationToken"
+                    "target": "com.amazonaws.glue#OrchestrationToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A continuation token, if not all statements have yet been returned.</p>"
+                    }
                 }
             }
         },
@@ -22458,7 +22474,7 @@
                 "MaxCapacity": {
                     "target": "com.amazonaws.glue#NullableDouble",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. \n      A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>"
+                        "smithy.api#documentation": "<p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. \n      A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>"
                     }
                 },
                 "SecurityConfiguration": {
@@ -22470,7 +22486,7 @@
                 "GlueVersion": {
                     "target": "com.amazonaws.glue#GlueVersionString",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. \n      The GlueVersion must be greater than 2.0.</p>"
+                        "smithy.api#documentation": "<p>The Glue version determines the versions of Apache Spark and Python that Glue supports. \n      The GlueVersion must be greater than 2.0.</p>"
                     }
                 }
             },
@@ -22484,7 +22500,7 @@
                 "Name": {
                     "target": "com.amazonaws.glue#NameString",
                     "traits": {
-                        "smithy.api#documentation": "<p>Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.</p>"
+                        "smithy.api#documentation": "<p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>"
                     }
                 },
                 "PythonVersion": {
@@ -23202,7 +23218,7 @@
                 "Arguments": {
                     "target": "com.amazonaws.glue#GenericMap",
                     "traits": {
-                        "smithy.api#documentation": "<p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>\n         <p>You can specify arguments here that your own job-execution script\n      consumes, as well as arguments that Glue itself consumes.</p>\n         <p>For information about how to specify and consume your own Job arguments, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling Glue APIs in Python</a> topic in the developer guide.</p>\n         <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\">Special Parameters Used by Glue</a> topic in the developer guide.</p>"
+                        "smithy.api#documentation": "<p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>\n         <p>You can specify arguments here that your own job-execution script\n      consumes, as well as arguments that Glue itself consumes.</p>\n         <p>Job arguments may be logged. Do not pass plaintext secrets as arguments.\n    Retrieve secrets from a Glue Connection, Secrets Manager or\n    other secret management mechanism if you intend to keep them within the Job.\n    </p>\n         <p>For information about how to specify and consume your own Job arguments, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling Glue APIs in Python</a> topic in the developer guide.</p>\n         <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\">Special Parameters Used by Glue</a> topic in the developer guide.</p>"
                     }
                 },
                 "AllocatedCapacity": {
@@ -23211,19 +23227,19 @@
                         "smithy.api#deprecated": {
                             "message": "This property is deprecated, use MaxCapacity instead."
                         },
-                        "smithy.api#documentation": "<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>\n\n         <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.\n      From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n        pricing page</a>.</p>"
+                        "smithy.api#documentation": "<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>\n\n         <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.\n      You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n        pricing page</a>.</p>"
                     }
                 },
                 "Timeout": {
                     "target": "com.amazonaws.glue#Timeout",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can\n      consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default\n      is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>"
+                        "smithy.api#documentation": "<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can\n      consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>\n   \n         <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>"
                     }
                 },
                 "MaxCapacity": {
                     "target": "com.amazonaws.glue#NullableDouble",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n        pricing page</a>.</p>\n\n         <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n\n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job, or an Apache Spark ETL job:</p>\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n        allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure\n      of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.\n      For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">Glue\n        pricing page</a>.</p>\n\n         <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>\n\n         <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are\n      running a Python shell job, or an Apache Spark ETL job:</p>\n         <ul>\n            <li>\n               <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can\n        allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>\n            </li>\n            <li>\n               <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "SecurityConfiguration": {
@@ -23241,13 +23257,13 @@
                 "WorkerType": {
                     "target": "com.amazonaws.glue#WorkerType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>\n         <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>\n         <ul>\n            <li>\n               <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>\n            </li>\n            <li>\n               <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "NumberOfWorkers": {
                     "target": "com.amazonaws.glue#NullableInteger",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>\n\n         <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>"
+                        "smithy.api#documentation": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>"
                     }
                 }
             }
@@ -23942,7 +23958,10 @@
                     }
                 },
                 "AdditionalLocations": {
-                    "target": "com.amazonaws.glue#LocationStringList"
+                    "target": "com.amazonaws.glue#LocationStringList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of locations that point to the path where a Delta table is located.</p>"
+                    }
                 },
                 "InputFormat": {
                     "target": "com.amazonaws.glue#FormatString",
@@ -24196,7 +24215,10 @@
                     }
                 },
                 "VersionId": {
-                    "target": "com.amazonaws.glue#VersionString"
+                    "target": "com.amazonaws.glue#VersionString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the table version.</p>"
+                    }
                 }
             },
             "traits": {
@@ -26194,7 +26216,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Updates an existing job definition.</p>"
+                "smithy.api#documentation": "<p>Updates an existing job definition. The previous job definition is completely overwritten by this information.</p>"
             }
         },
         "com.amazonaws.glue#UpdateJobRequest": {
@@ -26210,7 +26232,7 @@
                 "JobUpdate": {
                     "target": "com.amazonaws.glue#JobUpdate",
                     "traits": {
-                        "smithy.api#documentation": "<p>Specifies the values with which to update the job definition.</p>",
+                        "smithy.api#documentation": "<p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>",
                         "smithy.api#required": {}
                     }
                 }
@@ -26653,7 +26675,10 @@
                     }
                 },
                 "VersionId": {
-                    "target": "com.amazonaws.glue#VersionString"
+                    "target": "com.amazonaws.glue#VersionString",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version ID at which to update the table contents. </p>"
+                    }
                 }
             }
         },
@@ -27115,6 +27140,10 @@
                     {
                         "value": "G.2X",
                         "name": "G_2X"
+                    },
+                    {
+                        "value": "G.025X",
+                        "name": "G_025X"
                     }
                 ]
             }
