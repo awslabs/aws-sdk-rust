@@ -2811,10 +2811,16 @@
                     }
                 },
                 "PreTrainingReport": {
-                    "target": "com.amazonaws.sagemaker#MetricsSource"
+                    "target": "com.amazonaws.sagemaker#MetricsSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The pre-training bias report for a model.</p>"
+                    }
                 },
                 "PostTrainingReport": {
-                    "target": "com.amazonaws.sagemaker#MetricsSource"
+                    "target": "com.amazonaws.sagemaker#MetricsSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The post-training bias report for a model.</p>"
+                    }
                 }
             },
             "traits": {
@@ -3314,7 +3320,7 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 0,
-                    "max": 20
+                    "max": 30
                 }
             }
         },
@@ -4412,7 +4418,7 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 0,
-                    "max": 20
+                    "max": 30
                 }
             }
         },
@@ -5350,6 +5356,109 @@
                     "target": "com.amazonaws.sagemaker#String1024",
                     "traits": {
                         "smithy.api#documentation": "<p>The URL to the created domain.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#CreateEdgeDeploymentPlan": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#CreateEdgeDeploymentPlanRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#CreateEdgeDeploymentPlanResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceLimitExceeded"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Creates an edge deployment plan, consisting of multiple stages. Each stage may have a different deployment configuration and devices.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#CreateEdgeDeploymentPlanRequest": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ModelConfigs": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentModelConfigs",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of models associated with the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeviceFleetName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The device fleet used for this edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Stages": {
+                    "target": "com.amazonaws.sagemaker#DeploymentStages",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>"
+                    }
+                },
+                "Tags": {
+                    "target": "com.amazonaws.sagemaker#TagList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of tags with which to tag the edge deployment plan.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#CreateEdgeDeploymentPlanResponse": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanArn": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentPlanArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#CreateEdgeDeploymentStage": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#CreateEdgeDeploymentStageRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceLimitExceeded"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Creates a new stage in an existing edge deployment plan.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#CreateEdgeDeploymentStageRequest": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Stages": {
+                    "target": "com.amazonaws.sagemaker#DeploymentStages",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of stages to be added to the edge deployment plan.</p>",
+                        "smithy.api#required": {}
                     }
                 }
             }
@@ -9136,6 +9245,71 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#DeleteEdgeDeploymentPlan": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#DeleteEdgeDeploymentPlanRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceInUse"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Deletes an edge deployment plan if (and only if) all the stages in the plan are inactive or there are no stages in the plan.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DeleteEdgeDeploymentPlanRequest": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan to delete.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#DeleteEdgeDeploymentStage": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#DeleteEdgeDeploymentStageRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceInUse"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Delete a stage in an edge deployment plan if (and only if) the stage is inactive.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DeleteEdgeDeploymentStageRequest": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan from which the stage will be deleted.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "StageName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            }
+        },
         "com.amazonaws.sagemaker#DeleteEndpoint": {
             "type": "operation",
             "input": {
@@ -10054,6 +10228,90 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>The deployment configuration for an endpoint, which contains the desired deployment\n            strategy and rollback configurations.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DeploymentStage": {
+            "type": "structure",
+            "members": {
+                "StageName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeviceSelectionConfig": {
+                    "target": "com.amazonaws.sagemaker#DeviceSelectionConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Configuration of the devices in the stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeploymentConfig": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Configuration of the deployment details.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information about a stage in an edge deployment plan.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DeploymentStageMaxResults": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "max": 10
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#DeploymentStageStatusSummaries": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#DeploymentStageStatusSummary"
+            }
+        },
+        "com.amazonaws.sagemaker#DeploymentStageStatusSummary": {
+            "type": "structure",
+            "members": {
+                "StageName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeviceSelectionConfig": {
+                    "target": "com.amazonaws.sagemaker#DeviceSelectionConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Configuration of the devices in the stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeploymentConfig": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Configuration of the deployment details.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeploymentStatus": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>General status of the current state.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information summarizing the deployment stage results.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DeploymentStages": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#DeploymentStage"
             }
         },
         "com.amazonaws.sagemaker#DeregisterDevices": {
@@ -11503,6 +11761,123 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#DescribeEdgeDeploymentPlan": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#DescribeEdgeDeploymentPlanRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#DescribeEdgeDeploymentPlanResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Describes an edge deployment plan with deployment status per stage.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeEdgeDeploymentPlanRequest": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the deployment plan to describe.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.</p>"
+                    }
+                },
+                "MaxResults": {
+                    "target": "com.amazonaws.sagemaker#DeploymentStageMaxResults",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of results to select (50 by default).</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeEdgeDeploymentPlanResponse": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanArn": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentPlanArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ModelConfigs": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentModelConfigs",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of models associated with the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeviceFleetName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The device fleet used for this edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentSuccess": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of edge devices with the successful deployment.</p>"
+                    }
+                },
+                "EdgeDeploymentPending": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of edge devices yet to pick up deployment, or in progress.</p>"
+                    }
+                },
+                "EdgeDeploymentFailed": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of edge devices that failed the deployment.</p>"
+                    }
+                },
+                "Stages": {
+                    "target": "com.amazonaws.sagemaker#DeploymentStageStatusSummaries",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of stages in the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Token to use when calling the next set of stages in the edge deployment plan.</p>"
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the edge deployment plan was created.</p>"
+                    }
+                },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the edge deployment plan was last updated.</p>"
+                    }
+                }
+            }
+        },
         "com.amazonaws.sagemaker#DescribeEdgePackagingJob": {
             "type": "operation",
             "input": {
@@ -12031,6 +12406,12 @@
                         "smithy.api#required": {}
                     }
                 },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.sagemaker#LastModifiedTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp indicating when the feature group was last updated.</p>"
+                    }
+                },
                 "OnlineStoreConfig": {
                     "target": "com.amazonaws.sagemaker#OnlineStoreConfig",
                     "traits": {
@@ -12061,6 +12442,12 @@
                         "smithy.api#documentation": "<p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the\n            <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or\n            <code>Blocked</code>\n         </p>"
                     }
                 },
+                "LastUpdateStatus": {
+                    "target": "com.amazonaws.sagemaker#LastUpdateStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value indicating whether the update made to the feature group was successful.</p>"
+                    }
+                },
                 "FailureReason": {
                     "target": "com.amazonaws.sagemaker#FailureReason",
                     "traits": {
@@ -12078,6 +12465,107 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A token to resume pagination of the list of <code>Features</code>\n            (<code>FeatureDefinitions</code>).</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "OnlineStoreTotalSizeBytes": {
+                    "target": "com.amazonaws.sagemaker#OnlineStoreTotalSizeBytes",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The size of the <code>OnlineStore</code> in bytes.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeFeatureMetadata": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#DescribeFeatureMetadataRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#DescribeFeatureMetadataResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Shows the metadata for a feature within a feature group.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeFeatureMetadataRequest": {
+            "type": "structure",
+            "members": {
+                "FeatureGroupName": {
+                    "target": "com.amazonaws.sagemaker#FeatureGroupName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the feature group containing the feature.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "FeatureName": {
+                    "target": "com.amazonaws.sagemaker#FeatureName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the feature.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#DescribeFeatureMetadataResponse": {
+            "type": "structure",
+            "members": {
+                "FeatureGroupArn": {
+                    "target": "com.amazonaws.sagemaker#FeatureGroupArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "FeatureGroupName": {
+                    "target": "com.amazonaws.sagemaker#FeatureGroupName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the feature group that you've specified.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "FeatureName": {
+                    "target": "com.amazonaws.sagemaker#FeatureName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the feature that you've specified.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "FeatureType": {
+                    "target": "com.amazonaws.sagemaker#FeatureType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The data type of the feature.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.sagemaker#CreationTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp indicating when the feature was created.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.sagemaker#LastModifiedTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Description": {
+                    "target": "com.amazonaws.sagemaker#FeatureDescription",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The description you added to describe the feature.</p>"
+                    }
+                },
+                "Parameters": {
+                    "target": "com.amazonaws.sagemaker#FeatureParameters",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The key-value pairs that you added to describe the feature.</p>"
                     }
                 }
             }
@@ -15831,6 +16319,122 @@
                 "smithy.api#pattern": "^arn:aws[a-z\\-]*:[a-z\\-]*:[a-z\\-]*:\\d{12}:[a-z\\-]*/?[a-zA-Z_0-9+=,.@\\-_/]+$"
             }
         },
+        "com.amazonaws.sagemaker#DeviceDeploymentStatus": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "value": "READYTODEPLOY",
+                        "name": "ReadyToDeploy"
+                    },
+                    {
+                        "value": "INPROGRESS",
+                        "name": "InProgress"
+                    },
+                    {
+                        "value": "DEPLOYED",
+                        "name": "Deployed"
+                    },
+                    {
+                        "value": "FAILED",
+                        "name": "Failed"
+                    },
+                    {
+                        "value": "STOPPING",
+                        "name": "Stopping"
+                    },
+                    {
+                        "value": "STOPPED",
+                        "name": "Stopped"
+                    }
+                ]
+            }
+        },
+        "com.amazonaws.sagemaker#DeviceDeploymentSummaries": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#DeviceDeploymentSummary"
+            }
+        },
+        "com.amazonaws.sagemaker#DeviceDeploymentSummary": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanArn": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentPlanArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "StageName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the stage in the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeployedStageName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the deployed stage.</p>"
+                    }
+                },
+                "DeviceFleetName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the fleet to which the device belongs to.</p>"
+                    }
+                },
+                "DeviceName": {
+                    "target": "com.amazonaws.sagemaker#DeviceName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the device.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeviceArn": {
+                    "target": "com.amazonaws.sagemaker#DeviceArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the device.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeviceDeploymentStatus": {
+                    "target": "com.amazonaws.sagemaker#DeviceDeploymentStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The deployment status of the device.</p>"
+                    }
+                },
+                "DeviceDeploymentStatusMessage": {
+                    "target": "com.amazonaws.sagemaker#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The detailed error message for the deployoment status result.</p>"
+                    }
+                },
+                "Description": {
+                    "target": "com.amazonaws.sagemaker#DeviceDescription",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The description of the device.</p>"
+                    }
+                },
+                "DeploymentStartTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the deployment on the device started.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information summarizing device details and deployment status.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#DeviceDescription": {
             "type": "string",
             "traits": {
@@ -15913,6 +16517,39 @@
                 "target": "com.amazonaws.sagemaker#DeviceName"
             }
         },
+        "com.amazonaws.sagemaker#DeviceSelectionConfig": {
+            "type": "structure",
+            "members": {
+                "DeviceSubsetType": {
+                    "target": "com.amazonaws.sagemaker#DeviceSubsetType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Type of device subsets to deploy to the current stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Percentage": {
+                    "target": "com.amazonaws.sagemaker#Percentage",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Percentage of devices in the fleet to deploy to the current stage.</p>"
+                    }
+                },
+                "DeviceNames": {
+                    "target": "com.amazonaws.sagemaker#DeviceNames",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of devices chosen to deploy.</p>"
+                    }
+                },
+                "DeviceNameContains": {
+                    "target": "com.amazonaws.sagemaker#DeviceName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A filter to select devices with names containing this name.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information about the configurations of selected devices.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#DeviceStats": {
             "type": "structure",
             "members": {
@@ -15933,6 +16570,25 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Status of devices.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DeviceSubsetType": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "value": "PERCENTAGE",
+                        "name": "Percentage"
+                    },
+                    {
+                        "value": "SELECTION",
+                        "name": "Selection"
+                    },
+                    {
+                        "value": "NAMECONTAINS",
+                        "name": "NameContains"
+                    }
+                ]
             }
         },
         "com.amazonaws.sagemaker#DeviceSummaries": {
@@ -16366,10 +17022,16 @@
                     }
                 },
                 "PreTrainingConstraints": {
-                    "target": "com.amazonaws.sagemaker#MetricsSource"
+                    "target": "com.amazonaws.sagemaker#MetricsSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The pre-training constraints.</p>"
+                    }
                 },
                 "PostTrainingConstraints": {
-                    "target": "com.amazonaws.sagemaker#MetricsSource"
+                    "target": "com.amazonaws.sagemaker#MetricsSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The post-training constraints.</p>"
+                    }
                 }
             },
             "traits": {
@@ -16380,7 +17042,10 @@
             "type": "structure",
             "members": {
                 "Constraints": {
-                    "target": "com.amazonaws.sagemaker#MetricsSource"
+                    "target": "com.amazonaws.sagemaker#MetricsSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The drift check explainability constraints.</p>"
+                    }
                 },
                 "ConfigFile": {
                     "target": "com.amazonaws.sagemaker#FileSource",
@@ -16397,10 +17062,16 @@
             "type": "structure",
             "members": {
                 "Statistics": {
-                    "target": "com.amazonaws.sagemaker#MetricsSource"
+                    "target": "com.amazonaws.sagemaker#MetricsSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The drift check model data quality statistics.</p>"
+                    }
                 },
                 "Constraints": {
-                    "target": "com.amazonaws.sagemaker#MetricsSource"
+                    "target": "com.amazonaws.sagemaker#MetricsSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The drift check model data quality constraints.</p>"
+                    }
                 }
             },
             "traits": {
@@ -16411,10 +17082,16 @@
             "type": "structure",
             "members": {
                 "Statistics": {
-                    "target": "com.amazonaws.sagemaker#MetricsSource"
+                    "target": "com.amazonaws.sagemaker#MetricsSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The drift check model quality statistics.</p>"
+                    }
                 },
                 "Constraints": {
-                    "target": "com.amazonaws.sagemaker#MetricsSource"
+                    "target": "com.amazonaws.sagemaker#MetricsSource",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The drift check model quality constraints.</p>"
+                    }
                 }
             },
             "traits": {
@@ -16477,6 +17154,175 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>A directed edge connecting two lineage entities.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#EdgeDeploymentConfig": {
+            "type": "structure",
+            "members": {
+                "FailureHandlingPolicy": {
+                    "target": "com.amazonaws.sagemaker#FailureHandlingPolicy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Toggle that determines whether to rollback to previous configuration if the current deployment fails.\n      By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information about the configuration of a deployment.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#EdgeDeploymentModelConfig": {
+            "type": "structure",
+            "members": {
+                "ModelHandle": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name the device application uses to reference this model.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgePackagingJobName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The edge packaging job associated with this deployment.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information about the configuration of a model in a deployment.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#EdgeDeploymentModelConfigs": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#EdgeDeploymentModelConfig"
+            }
+        },
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanArn": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 20,
+                    "max": 2048
+                },
+                "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z\\-]*:\\d{12}:edge-deployment/?[a-zA-Z_0-9+=,.@\\-_/]+$"
+            }
+        },
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummaries": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary"
+            }
+        },
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanArn": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentPlanArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "DeviceFleetName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the device fleet used for the deployment. </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentSuccess": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of edge devices with the successful deployment.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentPending": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of edge devices yet to pick up the deployment, or in progress.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentFailed": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of edge devices that failed the deployment.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the edge deployment plan was created.</p>"
+                    }
+                },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the edge deployment plan was last updated.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information summarizing an edge deployment plan.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#EdgeDeploymentStatus": {
+            "type": "structure",
+            "members": {
+                "StageStatus": {
+                    "target": "com.amazonaws.sagemaker#StageStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The general status of the current stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentSuccessInStage": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of edge devices with the successful deployment in the current stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentPendingInStage": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentFailedInStage": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of edge devices that failed the deployment in current stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "EdgeDeploymentStatusMessage": {
+                    "target": "com.amazonaws.sagemaker#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A detailed message about deployment status in current stage.</p>"
+                    }
+                },
+                "EdgeDeploymentStageStartTime": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The time when the deployment API started.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information summarizing the deployment stage results.</p>"
             }
         },
         "com.amazonaws.sagemaker#EdgeModel": {
@@ -17711,12 +18557,39 @@
                 "smithy.api#documentation": "<p>The container for the metadata for Fail step.</p>"
             }
         },
+        "com.amazonaws.sagemaker#FailureHandlingPolicy": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "value": "ROLLBACK_ON_FAILURE",
+                        "name": "RollbackOnFailure"
+                    },
+                    {
+                        "value": "DO_NOTHING",
+                        "name": "DoNothing"
+                    }
+                ]
+            }
+        },
         "com.amazonaws.sagemaker#FailureReason": {
             "type": "string",
             "traits": {
                 "smithy.api#length": {
                     "min": 0,
                     "max": 1024
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#FeatureAdditions": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#FeatureDefinition"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 100
                 }
             }
         },
@@ -17750,6 +18623,16 @@
                     "min": 1,
                     "max": 2500
                 }
+            }
+        },
+        "com.amazonaws.sagemaker#FeatureDescription": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 255
+                },
+                "smithy.api#pattern": ".*"
             }
         },
         "com.amazonaws.sagemaker#FeatureGroup": {
@@ -17791,6 +18674,12 @@
                         "smithy.api#documentation": "<p>The time a <code>FeatureGroup</code> was created.</p>"
                     }
                 },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.sagemaker#LastModifiedTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp indicating the last time you updated the feature group.</p>"
+                    }
+                },
                 "OnlineStoreConfig": {
                     "target": "com.amazonaws.sagemaker#OnlineStoreConfig"
                 },
@@ -17811,6 +18700,12 @@
                 },
                 "OfflineStoreStatus": {
                     "target": "com.amazonaws.sagemaker#OfflineStoreStatus"
+                },
+                "LastUpdateStatus": {
+                    "target": "com.amazonaws.sagemaker#LastUpdateStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether the feature group was updated successfully.</p>"
+                    }
                 },
                 "FailureReason": {
                     "target": "com.amazonaws.sagemaker#FailureReason",
@@ -17986,6 +18881,62 @@
                 "smithy.api#documentation": "<p>The name, Arn, <code>CreationTime</code>, <code>FeatureGroup</code> values,\n            <code>LastUpdatedTime</code> and <code>EnableOnlineStorage</code> status of a\n            <code>FeatureGroup</code>.</p>"
             }
         },
+        "com.amazonaws.sagemaker#FeatureMetadata": {
+            "type": "structure",
+            "members": {
+                "FeatureGroupArn": {
+                    "target": "com.amazonaws.sagemaker#FeatureGroupArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Number (ARN) of the feature group.</p>"
+                    }
+                },
+                "FeatureGroupName": {
+                    "target": "com.amazonaws.sagemaker#FeatureGroupName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the feature group containing the feature.</p>"
+                    }
+                },
+                "FeatureName": {
+                    "target": "com.amazonaws.sagemaker#FeatureName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of feature.</p>"
+                    }
+                },
+                "FeatureType": {
+                    "target": "com.amazonaws.sagemaker#FeatureType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The data type of the feature.</p>"
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.sagemaker#CreationTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp indicating when the feature was created.</p>"
+                    }
+                },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.sagemaker#LastModifiedTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp indicating when the feature was last modified.</p>"
+                    }
+                },
+                "Description": {
+                    "target": "com.amazonaws.sagemaker#FeatureDescription",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An optional description that you specify to better describe the feature.</p>"
+                    }
+                },
+                "Parameters": {
+                    "target": "com.amazonaws.sagemaker#FeatureParameters",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Optional key-value pairs that you specify to better describe the feature.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The metadata for a feature. It can either be metadata that you specify, or metadata that is updated automatically.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#FeatureName": {
             "type": "string",
             "traits": {
@@ -17994,6 +18945,82 @@
                     "max": 64
                 },
                 "smithy.api#pattern": "^[a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63}$"
+            }
+        },
+        "com.amazonaws.sagemaker#FeatureParameter": {
+            "type": "structure",
+            "members": {
+                "Key": {
+                    "target": "com.amazonaws.sagemaker#FeatureParameterKey",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A key that must contain a value to describe the feature.</p>"
+                    }
+                },
+                "Value": {
+                    "target": "com.amazonaws.sagemaker#FeatureParameterValue",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The value that belongs to a key.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A key-value pair that you specify to describe the feature.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#FeatureParameterAdditions": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#FeatureParameter"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 25
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#FeatureParameterKey": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 255
+                },
+                "smithy.api#pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$"
+            }
+        },
+        "com.amazonaws.sagemaker#FeatureParameterRemovals": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#FeatureParameterKey"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 25
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#FeatureParameterValue": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 255
+                },
+                "smithy.api#pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$"
+            }
+        },
+        "com.amazonaws.sagemaker#FeatureParameters": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#FeatureParameter"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 25
+                }
             }
         },
         "com.amazonaws.sagemaker#FeatureType": {
@@ -20464,6 +21491,69 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#InstanceGroup": {
+            "type": "structure",
+            "members": {
+                "InstanceType": {
+                    "target": "com.amazonaws.sagemaker#TrainingInstanceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the instance type of the instance group.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "InstanceCount": {
+                    "target": "com.amazonaws.sagemaker#TrainingInstanceCount",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the number of instances of the instance group.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "InstanceGroupName": {
+                    "target": "com.amazonaws.sagemaker#InstanceGroupName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the name of the instance group.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Defines an instance group for heterogeneous cluster training. \n            When requesting a training job using the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html\">CreateTrainingJob</a> API, \n            you can configure multiple instance groups .</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#InstanceGroupName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 64
+                },
+                "smithy.api#pattern": "^.+$"
+            }
+        },
+        "com.amazonaws.sagemaker#InstanceGroupNames": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#InstanceGroupName"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 5
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#InstanceGroups": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#InstanceGroup"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 5
+                }
+            }
+        },
         "com.amazonaws.sagemaker#InstanceMetadataServiceConfiguration": {
             "type": "structure",
             "members": {
@@ -20830,7 +21920,7 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 0,
-                    "max": 20
+                    "max": 30
                 }
             }
         },
@@ -21594,6 +22684,46 @@
         },
         "com.amazonaws.sagemaker#LastModifiedTime": {
             "type": "timestamp"
+        },
+        "com.amazonaws.sagemaker#LastUpdateStatus": {
+            "type": "structure",
+            "members": {
+                "Status": {
+                    "target": "com.amazonaws.sagemaker#LastUpdateStatusValue",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether the update was made successful.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "FailureReason": {
+                    "target": "com.amazonaws.sagemaker#FailureReason",
+                    "traits": {
+                        "smithy.api#documentation": "<p>If the update wasn't successful, indicates the reason why it failed.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A value that indicates whether the update was successful.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#LastUpdateStatusValue": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "value": "Successful",
+                        "name": "SUCCESSFUL"
+                    },
+                    {
+                        "value": "Failed",
+                        "name": "FAILED"
+                    },
+                    {
+                        "value": "InProgress",
+                        "name": "IN_PROGRESS"
+                    }
+                ]
+            }
         },
         "com.amazonaws.sagemaker#LifecycleConfigArns": {
             "type": "list",
@@ -23080,6 +24210,131 @@
                         "smithy.api#documentation": "<p>If the previous response was truncated, you will receive this token.\n        Use it in your next request to receive the next set of results.</p>"
                     }
                 }
+            }
+        },
+        "com.amazonaws.sagemaker#ListEdgeDeploymentPlans": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#ListEdgeDeploymentPlansRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#ListEdgeDeploymentPlansResponse"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Lists all edge deployment plans.</p>",
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "EdgeDeploymentPlanSummaries",
+                    "pageSize": "MaxResults"
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#ListEdgeDeploymentPlansRequest": {
+            "type": "structure",
+            "members": {
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The response from the last list when returning a list large enough to need tokening.</p>"
+                    }
+                },
+                "MaxResults": {
+                    "target": "com.amazonaws.sagemaker#ListMaxResults",
+                    "traits": {
+                        "smithy.api#box": {},
+                        "smithy.api#documentation": "<p>The maximum number of results to select (50 by default).</p>"
+                    }
+                },
+                "CreationTimeAfter": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Selects edge deployment plans created after this time.</p>"
+                    }
+                },
+                "CreationTimeBefore": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Selects edge deployment plans created before this time.</p>"
+                    }
+                },
+                "LastModifiedTimeAfter": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Selects edge deployment plans that were last updated after this time.</p>"
+                    }
+                },
+                "LastModifiedTimeBefore": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Selects edge deployment plans that were last updated before this time.</p>"
+                    }
+                },
+                "NameContains": {
+                    "target": "com.amazonaws.sagemaker#NameContains",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Selects edge deployment plans with names containing this name.</p>"
+                    }
+                },
+                "DeviceFleetNameContains": {
+                    "target": "com.amazonaws.sagemaker#NameContains",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Selects edge deployment plans with a device fleet name containing this name.</p>"
+                    }
+                },
+                "SortBy": {
+                    "target": "com.amazonaws.sagemaker#ListEdgeDeploymentPlansSortBy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>"
+                    }
+                },
+                "SortOrder": {
+                    "target": "com.amazonaws.sagemaker#SortOrder",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The direction of the sorting (ascending or descending).</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#ListEdgeDeploymentPlansResponse": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanSummaries": {
+                    "target": "com.amazonaws.sagemaker#EdgeDeploymentPlanSummaries",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of summaries of edge deployment plans.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The token to use when calling the next page of results.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#ListEdgeDeploymentPlansSortBy": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "value": "NAME",
+                        "name": "Name"
+                    },
+                    {
+                        "value": "DEVICE_FLEET_NAME",
+                        "name": "DeviceFleetName"
+                    },
+                    {
+                        "value": "CREATION_TIME",
+                        "name": "CreationTime"
+                    },
+                    {
+                        "value": "LAST_MODIFIED_TIME",
+                        "name": "LastModifiedTime"
+                    }
+                ]
             }
         },
         "com.amazonaws.sagemaker#ListEdgePackagingJobs": {
@@ -25965,6 +27220,80 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#ListStageDevices": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#ListStageDevicesRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#ListStageDevicesResponse"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Lists devices allocated to the stage, containing detailed device information and deployment status.</p>",
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "DeviceDeploymentSummaries",
+                    "pageSize": "MaxResults"
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#ListStageDevicesRequest": {
+            "type": "structure",
+            "members": {
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The response from the last list when returning a list large enough to neeed tokening.</p>"
+                    }
+                },
+                "MaxResults": {
+                    "target": "com.amazonaws.sagemaker#ListMaxResults",
+                    "traits": {
+                        "smithy.api#box": {},
+                        "smithy.api#documentation": "<p>The maximum number of requests to select.</p>"
+                    }
+                },
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ExcludeDevicesDeployedInOtherStage": {
+                    "target": "com.amazonaws.sagemaker#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Toggle for excluding devices deployed in other stages.</p>"
+                    }
+                },
+                "StageName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the stage in the deployment.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#ListStageDevicesResponse": {
+            "type": "structure",
+            "members": {
+                "DeviceDeploymentSummaries": {
+                    "target": "com.amazonaws.sagemaker#DeviceDeploymentSummaries",
+                    "traits": {
+                        "smithy.api#documentation": "<p>List of summaries of devices allocated to the stage.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sagemaker#NextToken",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The token to use when calling the next page of results.</p>"
+                    }
+                }
+            }
+        },
         "com.amazonaws.sagemaker#ListStudioLifecycleConfigs": {
             "type": "operation",
             "input": {
@@ -27344,26 +28673,26 @@
                 "ContentType": {
                     "target": "com.amazonaws.sagemaker#ContentType",
                     "traits": {
-                        "smithy.api#documentation": "<p></p>",
+                        "smithy.api#documentation": "<p>The metric source content type.</p>",
                         "smithy.api#required": {}
                     }
                 },
                 "ContentDigest": {
                     "target": "com.amazonaws.sagemaker#ContentDigest",
                     "traits": {
-                        "smithy.api#documentation": "<p></p>"
+                        "smithy.api#documentation": "<p>The hash key used for the metrics source.</p>"
                     }
                 },
                 "S3Uri": {
                     "target": "com.amazonaws.sagemaker#S3Uri",
                     "traits": {
-                        "smithy.api#documentation": "<p></p>",
+                        "smithy.api#documentation": "<p>The S3 URI for the metrics source.</p>",
                         "smithy.api#required": {}
                     }
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p></p>"
+                "smithy.api#documentation": "<p>Details about the metrics source.</p>"
             }
         },
         "com.amazonaws.sagemaker#MinimumInstanceMetadataServiceVersion": {
@@ -27935,13 +29264,22 @@
                     }
                 },
                 "InferenceSpecification": {
-                    "target": "com.amazonaws.sagemaker#InferenceSpecification"
+                    "target": "com.amazonaws.sagemaker#InferenceSpecification",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Defines how to perform inference generation after a training job is run.</p>"
+                    }
                 },
                 "SourceAlgorithmSpecification": {
-                    "target": "com.amazonaws.sagemaker#SourceAlgorithmSpecification"
+                    "target": "com.amazonaws.sagemaker#SourceAlgorithmSpecification",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of algorithms that were used to create a model package.</p>"
+                    }
                 },
                 "ValidationSpecification": {
-                    "target": "com.amazonaws.sagemaker#ModelPackageValidationSpecification"
+                    "target": "com.amazonaws.sagemaker#ModelPackageValidationSpecification",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies batch transform jobs that SageMaker runs to validate your model package.</p>"
+                    }
                 },
                 "ModelPackageStatus": {
                     "target": "com.amazonaws.sagemaker#ModelPackageStatus",
@@ -27950,7 +29288,10 @@
                     }
                 },
                 "ModelPackageStatusDetails": {
-                    "target": "com.amazonaws.sagemaker#ModelPackageStatusDetails"
+                    "target": "com.amazonaws.sagemaker#ModelPackageStatusDetails",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the validation and image scan statuses of the model package.</p>"
+                    }
                 },
                 "CertifyForMarketplace": {
                     "target": "com.amazonaws.sagemaker#CertifyForMarketplace",
@@ -27965,10 +29306,16 @@
                     }
                 },
                 "CreatedBy": {
-                    "target": "com.amazonaws.sagemaker#UserContext"
+                    "target": "com.amazonaws.sagemaker#UserContext",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>"
+                    }
                 },
                 "MetadataProperties": {
-                    "target": "com.amazonaws.sagemaker#MetadataProperties"
+                    "target": "com.amazonaws.sagemaker#MetadataProperties",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Metadata properties of the tracking entity, trial, or trial component.</p>"
+                    }
                 },
                 "ModelMetrics": {
                     "target": "com.amazonaws.sagemaker#ModelMetrics",
@@ -27983,7 +29330,10 @@
                     }
                 },
                 "LastModifiedBy": {
-                    "target": "com.amazonaws.sagemaker#UserContext"
+                    "target": "com.amazonaws.sagemaker#UserContext",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>"
+                    }
                 },
                 "ApprovalDescription": {
                     "target": "com.amazonaws.sagemaker#ApprovalDescription",
@@ -30442,6 +31792,12 @@
                 "smithy.api#documentation": "<p>The security configuration for <code>OnlineStore</code>.</p>"
             }
         },
+        "com.amazonaws.sagemaker#OnlineStoreTotalSizeBytes": {
+            "type": "long",
+            "traits": {
+                "smithy.api#box": {}
+            }
+        },
         "com.amazonaws.sagemaker#Operator": {
             "type": "string",
             "traits": {
@@ -30746,7 +32102,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Specifies ranges of integer, continuous, and categorical hyperparameters that a\n            hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs\n            with hyperparameter values within these ranges to find the combination of values that\n            result in the training job with the best performance as measured by the objective metric\n            of the hyperparameter tuning job.</p>\n        <note>\n            <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job\n                can search over. Every possible value of a categorical parameter range counts\n                against this limit.</p>\n        </note>"
+                "smithy.api#documentation": "<p>Specifies ranges of integer, continuous, and categorical hyperparameters that a\n            hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs\n            with hyperparameter values within these ranges to find the combination of values that\n            result in the training job with the best performance as measured by the objective metric\n            of the hyperparameter tuning job.</p>\n        <note>\n            <p>The maximum number of items specified for <code>Array Members</code> refers to\n                the maximum number of hyperparameters for each range and also the maximum for the\n                hyperparameter tuning job itself. That is, the sum of the number of hyperparameters\n                for all the ranges can't exceed the maximum number specified.</p>\n        </note>"
             }
         },
         "com.amazonaws.sagemaker#ParameterType": {
@@ -30790,7 +32146,7 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 1,
-                    "max": 20
+                    "max": 30
                 }
             }
         },
@@ -30956,6 +32312,14 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 1
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#Percentage": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "max": 100
                 }
             }
         },
@@ -32907,6 +34271,78 @@
                     {
                         "value": "ml.inf1.24xlarge",
                         "name": "ML_INF1_24XLARGE"
+                    },
+                    {
+                        "value": "ml.c6i.large",
+                        "name": "ML_C6I_LARGE"
+                    },
+                    {
+                        "value": "ml.c6i.xlarge",
+                        "name": "ML_C6I_XLARGE"
+                    },
+                    {
+                        "value": "ml.c6i.2xlarge",
+                        "name": "ML_C6I_2XLARGE"
+                    },
+                    {
+                        "value": "ml.c6i.4xlarge",
+                        "name": "ML_C6I_4XLARGE"
+                    },
+                    {
+                        "value": "ml.c6i.8xlarge",
+                        "name": "ML_C6I_8XLARGE"
+                    },
+                    {
+                        "value": "ml.c6i.12xlarge",
+                        "name": "ML_C6I_12XLARGE"
+                    },
+                    {
+                        "value": "ml.c6i.16xlarge",
+                        "name": "ML_C6I_16XLARGE"
+                    },
+                    {
+                        "value": "ml.c6i.24xlarge",
+                        "name": "ML_C6I_24XLARGE"
+                    },
+                    {
+                        "value": "ml.c6i.32xlarge",
+                        "name": "ML_C6I_32XLARGE"
+                    },
+                    {
+                        "value": "ml.g5.xlarge",
+                        "name": "ML_G5_XLARGE"
+                    },
+                    {
+                        "value": "ml.g5.2xlarge",
+                        "name": "ML_G5_2XLARGE"
+                    },
+                    {
+                        "value": "ml.g5.4xlarge",
+                        "name": "ML_G5_4XLARGE"
+                    },
+                    {
+                        "value": "ml.g5.8xlarge",
+                        "name": "ML_G5_8XLARGE"
+                    },
+                    {
+                        "value": "ml.g5.12xlarge",
+                        "name": "ML_G5_12XLARGE"
+                    },
+                    {
+                        "value": "ml.g5.16xlarge",
+                        "name": "ML_G5_16XLARGE"
+                    },
+                    {
+                        "value": "ml.g5.24xlarge",
+                        "name": "ML_G5_24XLARGE"
+                    },
+                    {
+                        "value": "ml.g5.48xlarge",
+                        "name": "ML_G5_48XLARGE"
+                    },
+                    {
+                        "value": "ml.p4d.24xlarge",
+                        "name": "ML_P4D_24XLARGE"
                     }
                 ]
             }
@@ -33818,8 +35254,7 @@
                 "StartArns": {
                     "target": "com.amazonaws.sagemaker#QueryLineageStartArns",
                     "traits": {
-                        "smithy.api#documentation": "<p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>"
                     }
                 },
                 "Direction": {
@@ -33890,7 +35325,7 @@
             },
             "traits": {
                 "smithy.api#length": {
-                    "min": 1,
+                    "min": 0,
                     "max": 1
                 }
             }
@@ -34691,15 +36126,13 @@
                 "InstanceType": {
                     "target": "com.amazonaws.sagemaker#TrainingInstanceType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The ML compute instance type. </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The ML compute instance type. </p>"
                     }
                 },
                 "InstanceCount": {
                     "target": "com.amazonaws.sagemaker#TrainingInstanceCount",
                     "traits": {
-                        "smithy.api#documentation": "<p>The number of ML compute instances to use. For distributed training, provide a\n            value greater than 1. </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The number of ML compute instances to use. For distributed training, provide a\n            value greater than 1. </p>"
                     }
                 },
                 "VolumeSizeInGB": {
@@ -34713,6 +36146,12 @@
                     "target": "com.amazonaws.sagemaker#KmsKeyId",
                     "traits": {
                         "smithy.api#documentation": "<p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML\n            compute instance(s) that run the training job.</p>\n        <note>\n            <p>Certain Nitro-based instances include local storage, dependent on the instance\n                type. Local storage volumes are encrypted using a hardware module on the instance.\n                You can't request a <code>VolumeKmsKeyId</code> when using an instance type with\n                local storage.</p>\n            <p>For a list of instance types that support local instance storage, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes\">Instance Store Volumes</a>.</p>\n            <p>For more information about local instance storage encryption, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html\">SSD\n                    Instance Store Volumes</a>.</p>\n        </note>\n        <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>\n        <ul>\n            <li>\n                <p>// KMS Key ID</p>\n                <p>\n                    <code>\"1234abcd-12ab-34cd-56ef-1234567890ab\"</code>\n                </p>\n            </li>\n            <li>\n                <p>// Amazon Resource Name (ARN) of a KMS Key</p>\n                <p>\n                    <code>\"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab\"</code>\n                </p>\n            </li>\n         </ul>"
+                    }
+                },
+                "InstanceGroups": {
+                    "target": "com.amazonaws.sagemaker#InstanceGroups",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration of a heterogeneous cluster in JSON format.</p>"
                     }
                 }
             },
@@ -34886,6 +36325,10 @@
                     {
                         "value": "Project",
                         "name": "PROJECT"
+                    },
+                    {
+                        "value": "FeatureMetadata",
+                        "name": "FEATURE_METADATA"
                     }
                 ]
             }
@@ -35134,6 +36577,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A list of one or more attribute names to use that are found in a specified augmented\n            manifest file.</p>"
                     }
+                },
+                "InstanceGroupNames": {
+                    "target": "com.amazonaws.sagemaker#InstanceGroupNames",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of names of instance groups that get data \n            from the S3 data source.</p>"
+                    }
                 }
             },
             "traits": {
@@ -35265,6 +36714,12 @@
                 },
                 {
                     "target": "com.amazonaws.sagemaker#CreateDomain"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#CreateEdgeDeploymentPlan"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#CreateEdgeDeploymentStage"
                 },
                 {
                     "target": "com.amazonaws.sagemaker#CreateEdgePackagingJob"
@@ -35402,6 +36857,12 @@
                     "target": "com.amazonaws.sagemaker#DeleteDomain"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#DeleteEdgeDeploymentPlan"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#DeleteEdgeDeploymentStage"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#DeleteEndpoint"
                 },
                 {
@@ -35525,6 +36986,9 @@
                     "target": "com.amazonaws.sagemaker#DescribeDomain"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#DescribeEdgeDeploymentPlan"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#DescribeEdgePackagingJob"
                 },
                 {
@@ -35538,6 +37002,9 @@
                 },
                 {
                     "target": "com.amazonaws.sagemaker#DescribeFeatureGroup"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#DescribeFeatureMetadata"
                 },
                 {
                     "target": "com.amazonaws.sagemaker#DescribeFlowDefinition"
@@ -35702,6 +37169,9 @@
                     "target": "com.amazonaws.sagemaker#ListDomains"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#ListEdgeDeploymentPlans"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#ListEdgePackagingJobs"
                 },
                 {
@@ -35795,6 +37265,9 @@
                     "target": "com.amazonaws.sagemaker#ListProjects"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#ListStageDevices"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#ListStudioLifecycleConfigs"
                 },
                 {
@@ -35852,6 +37325,9 @@
                     "target": "com.amazonaws.sagemaker#SendPipelineExecutionStepSuccess"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#StartEdgeDeploymentStage"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#StartMonitoringSchedule"
                 },
                 {
@@ -35865,6 +37341,9 @@
                 },
                 {
                     "target": "com.amazonaws.sagemaker#StopCompilationJob"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#StopEdgeDeploymentStage"
                 },
                 {
                     "target": "com.amazonaws.sagemaker#StopEdgePackagingJob"
@@ -35928,6 +37407,12 @@
                 },
                 {
                     "target": "com.amazonaws.sagemaker#UpdateExperiment"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#UpdateFeatureGroup"
+                },
+                {
+                    "target": "com.amazonaws.sagemaker#UpdateFeatureMetadata"
                 },
                 {
                     "target": "com.amazonaws.sagemaker#UpdateImage"
@@ -36156,6 +37641,12 @@
                     "target": "com.amazonaws.sagemaker#Project",
                     "traits": {
                         "smithy.api#documentation": "<p>The properties of a project.</p>"
+                    }
+                },
+                "FeatureMetadata": {
+                    "target": "com.amazonaws.sagemaker#FeatureMetadata",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The feature metadata used to search through the features.</p>"
                     }
                 }
             },
@@ -36978,6 +38469,76 @@
                 ]
             }
         },
+        "com.amazonaws.sagemaker#StageStatus": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "value": "CREATING",
+                        "name": "Creating"
+                    },
+                    {
+                        "value": "READYTODEPLOY",
+                        "name": "ReadyToDeploy"
+                    },
+                    {
+                        "value": "STARTING",
+                        "name": "Starting"
+                    },
+                    {
+                        "value": "INPROGRESS",
+                        "name": "InProgress"
+                    },
+                    {
+                        "value": "DEPLOYED",
+                        "name": "Deployed"
+                    },
+                    {
+                        "value": "FAILED",
+                        "name": "Failed"
+                    },
+                    {
+                        "value": "STOPPING",
+                        "name": "Stopping"
+                    },
+                    {
+                        "value": "STOPPED",
+                        "name": "Stopped"
+                    }
+                ]
+            }
+        },
+        "com.amazonaws.sagemaker#StartEdgeDeploymentStage": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#StartEdgeDeploymentStageRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Starts a stage in an edge deployment plan.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#StartEdgeDeploymentStageRequest": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan to start.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "StageName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the stage to start.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            }
+        },
         "com.amazonaws.sagemaker#StartMonitoringSchedule": {
             "type": "operation",
             "input": {
@@ -37238,6 +38799,37 @@
                     "target": "com.amazonaws.sagemaker#EntityName",
                     "traits": {
                         "smithy.api#documentation": "<p>The name of the model compilation job to stop.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#StopEdgeDeploymentStage": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#StopEdgeDeploymentStageRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Stops a stage in an edge deployment plan.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#StopEdgeDeploymentStageRequest": {
+            "type": "structure",
+            "members": {
+                "EdgeDeploymentPlanName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the edge deployment plan to stop.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "StageName": {
+                    "target": "com.amazonaws.sagemaker#EntityName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the stage to stop.</p>",
                         "smithy.api#required": {}
                     }
                 }
@@ -38503,7 +40095,7 @@
             "type": "integer",
             "traits": {
                 "smithy.api#range": {
-                    "min": 1
+                    "min": 0
                 }
             }
         },
@@ -41245,6 +42837,107 @@
                     "target": "com.amazonaws.sagemaker#ExperimentArn",
                     "traits": {
                         "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the experiment.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#UpdateFeatureGroup": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#UpdateFeatureGroupRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#UpdateFeatureGroupResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Updates the feature group.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#UpdateFeatureGroupRequest": {
+            "type": "structure",
+            "members": {
+                "FeatureGroupName": {
+                    "target": "com.amazonaws.sagemaker#FeatureGroupName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the feature group that you're updating.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "FeatureAdditions": {
+                    "target": "com.amazonaws.sagemaker#FeatureAdditions",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of the features that you're adding to the feature group.</p>"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#UpdateFeatureGroupResponse": {
+            "type": "structure",
+            "members": {
+                "FeatureGroupArn": {
+                    "target": "com.amazonaws.sagemaker#FeatureGroupArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#UpdateFeatureMetadata": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#UpdateFeatureMetadataRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Updates the description and parameters of the feature group.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#UpdateFeatureMetadataRequest": {
+            "type": "structure",
+            "members": {
+                "FeatureGroupName": {
+                    "target": "com.amazonaws.sagemaker#FeatureGroupName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the feature group containing the feature that you're updating.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "FeatureName": {
+                    "target": "com.amazonaws.sagemaker#FeatureName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the feature that you're updating.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Description": {
+                    "target": "com.amazonaws.sagemaker#FeatureDescription",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A description that you can write to better describe the feature.</p>"
+                    }
+                },
+                "ParameterAdditions": {
+                    "target": "com.amazonaws.sagemaker#FeatureParameterAdditions",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of key-value pairs that you can add to better describe the feature.</p>"
+                    }
+                },
+                "ParameterRemovals": {
+                    "target": "com.amazonaws.sagemaker#FeatureParameterRemovals",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>"
                     }
                 }
             }

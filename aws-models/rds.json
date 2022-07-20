@@ -9073,6 +9073,134 @@
                     "outputToken": "Marker",
                     "items": "DBClusters",
                     "pageSize": "MaxRecords"
+                },
+                "smithy.waiters#waitable": {
+                    "DBClusterAvailable": {
+                        "acceptors": [
+                            {
+                                "state": "success",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "available",
+                                        "comparator": "allStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "deleted",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "deleting",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "failed",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "incompatible-restore",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "incompatible-parameters",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
+                            }
+                        ],
+                        "minDelay": 30
+                    },
+                    "DBClusterDeleted": {
+                        "acceptors": [
+                            {
+                                "state": "success",
+                                "matcher": {
+                                    "output": {
+                                        "path": "length(DBClusters) == `0`",
+                                        "expected": "true",
+                                        "comparator": "booleanEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "success",
+                                "matcher": {
+                                    "errorType": "DBClusterNotFoundFault"
+                                }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "creating",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "modifying",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "rebooting",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "failure",
+                                "matcher": {
+                                    "output": {
+                                        "path": "DBClusters[].Status",
+                                        "expected": "resetting-master-credentials",
+                                        "comparator": "anyStringEquals"
+                                    }
+                                }
+                            }
+                        ],
+                        "minDelay": 30
+                    }
                 }
             }
         },
