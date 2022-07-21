@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::test_operation::TestPolicy;
+use crate::test_operation::{TestOperationParser, TestPolicy};
 use aws_smithy_async::rt::sleep::TokioSleep;
 
 use aws_smithy_client::test_connection::TestConnection;
@@ -14,7 +14,6 @@ use aws_smithy_http::operation::Operation;
 use aws_smithy_http::result::SdkError;
 use std::sync::Arc;
 use std::time::Duration;
-use tokio::time::Instant;
 use tower::layer::util::Identity;
 
 mod test_operation {
@@ -89,14 +88,14 @@ mod test_operation {
     }
 }
 
-fn test_operation() -> Operation<test_operation::TestOperationParser, test_operation::TestPolicy> {
+fn test_operation() -> Operation<TestOperationParser, TestPolicy> {
     let req = operation::Request::new(
         http::Request::builder()
             .uri("https://test-service.test-region.amazonaws.com/")
             .body(SdkBody::from("request body"))
             .unwrap(),
     );
-    Operation::new(req, test_operation::TestOperationParser).with_retry_policy(TestPolicy)
+    Operation::new(req, TestOperationParser).with_retry_policy(TestPolicy)
 }
 
 #[tokio::test]
@@ -138,6 +137,8 @@ async fn end_to_end_retry_test() {
     let conn = TestConnection::new(events);
     let retry_config = aws_smithy_client::retry::Config::default()
         .with_max_attempts(4)
+        // This is the default, just setting it to be explicit
+        .with_initial_backoff(Duration::from_secs(1))
         .with_base(|| 1_f64);
     let client = Client::<TestConnection<_>, Identity>::new(conn.clone())
         .with_retry_config(retry_config)
@@ -174,7 +175,7 @@ async fn end_to_end_retry_test() {
 /// Validate that time has passed with a 5ms tolerance
 ///
 /// This is to account for some non-determinism in the Tokio timer
-fn assert_time_passed(initial: Instant, passed: Duration) {
+fn assert_time_passed(initial: tokio::time::Instant, passed: Duration) {
     let now = tokio::time::Instant::now();
     let delta = now - initial;
     if (delta.as_millis() as i128 - passed.as_millis() as i128).abs() > 5 {
