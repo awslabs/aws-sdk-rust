@@ -100,6 +100,46 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     credential_scope: aws_endpoint::CredentialScope::builder().build(),
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+                .endpoint(
+                    "us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "meetings-chime.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-east-1-fips",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "meetings-chime-fips.us-gov-east-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "meetings-chime.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-west-1-fips",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "meetings-chime-fips.us-gov-west-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
                 .build()
                 .expect("invalid partition"),
         ],

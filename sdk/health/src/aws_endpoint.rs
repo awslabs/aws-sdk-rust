@@ -10,7 +10,19 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                 credential_scope: aws_endpoint::CredentialScope::builder().build(),
             })
-            .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+            .partition_endpoint("aws-global")
+            .regionalized(aws_endpoint::partition::Regionalized::NotRegionalized)
+            .endpoint(
+                "aws-global",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "global.health.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
             .endpoint(
                 "fips-us-east-2",
                 aws_endpoint::partition::endpoint::Metadata {
@@ -45,7 +57,19 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder().build(),
                 })
-                .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+                .partition_endpoint("aws-cn-global")
+                .regionalized(aws_endpoint::partition::Regionalized::NotRegionalized)
+                .endpoint(
+                    "aws-cn-global",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "global.health.amazonaws.com.cn",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("cn-northwest-1")
+                            .build(),
+                    },
+                )
                 .build()
                 .expect("invalid partition"),
             aws_endpoint::Partition::builder()

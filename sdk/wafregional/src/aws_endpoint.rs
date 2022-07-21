@@ -100,6 +100,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "ap-southeast-3",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "waf-regional.ap-southeast-3.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-southeast-3")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "ca-central-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "waf-regional.ca-central-1.amazonaws.com",
@@ -261,6 +272,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("ap-southeast-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-ap-southeast-3",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "waf-regional-fips.ap-southeast-3.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-southeast-3")
                         .build(),
                 },
             )

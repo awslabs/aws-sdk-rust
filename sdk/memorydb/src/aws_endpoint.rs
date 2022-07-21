@@ -11,6 +11,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 credential_scope: aws_endpoint::CredentialScope::builder().build(),
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+            .endpoint(
+                "fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "memory-db-fips.us-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
             .build()
             .expect("invalid partition"),
         vec![
