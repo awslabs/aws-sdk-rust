@@ -10,11 +10,11 @@ version = "0.16.0"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.45.0"
+version = "0.46.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.45.0"
+version = "0.46.0"
 
 [dependencies.tokio]
 version = "1"
