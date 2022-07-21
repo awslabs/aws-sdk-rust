@@ -10,11 +10,11 @@ http = "0.2.5"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.15.0"
+version = "0.45.0"
 
 [dependencies.aws-sdk-apigatewaymanagement]
 path = "../../sdk/apigatewaymanagement"
-version = "0.15.0"
+version = "0.16.0"
 
 [dependencies.tokio]
 version = "1"

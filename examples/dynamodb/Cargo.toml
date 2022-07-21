@@ -13,15 +13,15 @@ tokio-stream = "0.1.8"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.15.0"
+version = "0.45.0"
 
 [dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
-version = "0.15.0"
+version = "0.16.0"
 
 [dependencies.aws-http]
 path = "../../sdk/aws-http"
-version = "0.15.0"
+version = "0.45.0"
 
 [dependencies.aws-smithy-client]
 features = ["client-hyper", "rustls", "rt-tokio"]
