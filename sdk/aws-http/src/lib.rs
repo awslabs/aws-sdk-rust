@@ -24,3 +24,6 @@ pub mod retry;
 
 /// User agent middleware
 pub mod user_agent;
+
+/// AWS-specific content-encoding tools
+pub mod content_encoding;

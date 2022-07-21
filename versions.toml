@@ -1,4 +1,4 @@
-smithy_rs_revision = '5312ff1132af2cf3d1637f4df4f442b5f5511c41'
+smithy_rs_revision = 'b77c66cbf72e8a6083af87cf125fd7d84eaa69a4'
 aws_doc_sdk_examples_revision = 'b35477c71a0bd461834f0712e93ff1803eb11a2b'
 [crates.aws-config]
 category = 'AwsRuntime'
@@ -13,7 +13,7 @@ source_hash = 'c3ddf104fbbd4505cf274283de928c8cd37e3b6dae1d851781dc15c6e231e91a'
 [crates.aws-http]
 category = 'AwsRuntime'
 version = '0.15.0'
-source_hash = 'da3b2d123608c1be8cf32a9d780cc979d2767fe4bf952f98cdf25704b40f53aa'
+source_hash = 'e3aa5e6df9084092c62b7ffc6c5eb8b3b95c720b929543eaf99c5a6e3a0ce122'
 
 [crates.aws-hyper]
 category = 'AwsRuntime'
@@ -1877,6 +1877,11 @@ category = 'SmithyRuntime'
 version = '0.45.0'
 source_hash = '9b1f98ac0b4e07288ea8dd8a2e77d30b1846cf4a9ff75ae1dce7fd6eeedb0132'
 
+[crates.aws-smithy-checksums]
+category = 'SmithyRuntime'
+version = '0.45.0'
+source_hash = '24977971779aa2c7ba3fea6596681ddf85b277e71cd02a5a52255fa7134b433a'
+
 [crates.aws-smithy-client]
 category = 'SmithyRuntime'
 version = '0.45.0'
@@ -1933,3 +1938,4 @@ version = '0.15.0'
 source_hash = 'e43c680d8f41f4faab268f26ce392c06e6906ec4bd4189f0b49b44da1a7d3ec5'
 [release.crates]
 aws-sdk-rolesanywhere = '0.15.0'
+aws-smithy-checksums = '0.45.0'
