@@ -330,6 +330,7 @@ mod loader {
         ///
         /// # Examples
         /// ```no_run
+        /// # #[cfg(feature = "hyper-client")]
         /// # async fn docs() {
         /// use aws_config::provider_config::ProviderConfig;
         /// let custom_https_connector = hyper_rustls::HttpsConnectorBuilder::new().

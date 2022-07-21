@@ -13,14 +13,10 @@ use aws_types::{
     region::Region,
 };
 
-use std::error::Error;
 use std::fmt::{Debug, Formatter};
 use std::sync::Arc;
 
 use crate::connector::default_connector;
-use http::Uri;
-use hyper::client::connect::Connection;
-use tokio::io::{AsyncRead, AsyncWrite};
 
 /// Configuration options for Credential Providers
 ///
@@ -239,13 +235,19 @@ impl ProviderConfig {
     ///
     /// # Stability
     /// This method may change to support HTTP configuration.
+    #[cfg(feature = "client-hyper")]
     pub fn with_tcp_connector<C>(self, connector: C) -> Self
     where
         C: Clone + Send + Sync + 'static,
-        C: tower::Service<Uri>,
-        C::Response: Connection + AsyncRead + AsyncWrite + Send + Unpin + 'static,
+        C: tower::Service<http::Uri>,
+        C::Response: hyper::client::connect::Connection
+            + tokio::io::AsyncRead
+            + tokio::io::AsyncWrite
+            + Send
+            + Unpin
+            + 'static,
         C::Future: Unpin + Send + 'static,
-        C::Error: Into<Box<dyn Error + Send + Sync + 'static>>,
+        C::Error: Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
     {
         let connector_fn = move |settings: &HttpSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
             let mut builder = aws_smithy_client::hyper_ext::Adapter::builder()
