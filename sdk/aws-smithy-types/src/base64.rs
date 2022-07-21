@@ -151,9 +151,17 @@ fn decode_inner(inp: &str) -> Result<Vec<u8>, DecodeError> {
     Ok(ret)
 }
 
+/// Given the length of some data in bytes, return how many bytes it would take to base64 encode
+/// that data.
+pub fn encoded_length(length: u64) -> u64 {
+    (length + 2) / 3 * 4
+}
+
 #[cfg(test)]
 mod test {
-    use crate::base64::{decode, encode, DecodeError, BASE64_DECODE_TABLE, BASE64_ENCODE_TABLE};
+    use crate::base64::{
+        decode, encode, encoded_length, DecodeError, BASE64_DECODE_TABLE, BASE64_ENCODE_TABLE,
+    };
     use proptest::prelude::*;
 
     proptest! {
@@ -182,6 +190,13 @@ mod test {
         fn vs_oracle(v in any::<Vec<u8>>()) {
             let correct = ::base64::encode(v.as_slice());
             let ours = encode(v.as_slice());
+            assert_eq!(ours, correct);
+        }
+
+        #[test]
+        fn encoded_length_is_correct(v in any::<Vec<u8>>()) {
+            let correct = encode(v.as_slice()).len() as u64;
+            let ours = encoded_length(v.len() as u64);
             assert_eq!(ours, correct);
         }
     }

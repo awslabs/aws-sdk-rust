@@ -3,199 +3,227 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//! Checksum calculation and verification callbacks
+//! Checksum calculation and verification callbacks.
 
-use aws_smithy_http::callback::BodyCallback;
-use aws_smithy_types::base64;
+use bytes::Bytes;
 
-use http::header::{HeaderMap, HeaderName, HeaderValue};
-use sha1::Digest;
-use std::io::Write;
+pub mod body;
+pub mod http;
 
-const CRC_32_NAME: &str = "x-amz-checksum-crc32";
-const CRC_32_C_NAME: &str = "x-amz-checksum-crc32c";
-const SHA_1_NAME: &str = "x-amz-checksum-sha1";
-const SHA_256_NAME: &str = "x-amz-checksum-sha256";
-
-type BoxError = Box<dyn std::error::Error + Send + Sync>;
+/// Types implementing this trait can calculate checksums.
+///
+/// Checksum algorithms are used to validate the integrity of data. Structs that implement this trait
+/// can be used as checksum calculators. This trait requires Send + Sync because these checksums are
+/// often used in a threaded context.
+pub trait Checksum: Send + Sync {
+    /// Given a slice of bytes, update this checksum's internal state.
+    fn update(&mut self, bytes: &[u8]);
+    /// "Finalize" this checksum, returning the calculated value as `Bytes` or an error that
+    /// occurred during checksum calculation.
+    ///
+    /// _HINT: To print this value in a human-readable hexadecimal format, you can use Rust's
+    /// builtin [formatter]._
+    ///
+    /// [formatter]: https://doc.rust-lang.org/std/fmt/trait.UpperHex.html
+    fn finalize(self: Box<Self>) -> Bytes;
+    /// Return the size of this checksum algorithms resulting checksum, in bytes.
+    ///
+    /// For example, the CRC32 checksum algorithm calculates a 32 bit checksum, so a CRC32 checksum
+    /// struct implementing this trait method would return `4`.
+    fn size(&self) -> u64;
+}
 
 #[derive(Debug, Default)]
-struct Crc32callback {
+struct Crc32 {
     hasher: crc32fast::Hasher,
 }
 
-impl Crc32callback {
-    fn update(&mut self, bytes: &[u8]) -> Result<(), BoxError> {
+impl Crc32 {
+    fn update(&mut self, bytes: &[u8]) {
         self.hasher.update(bytes);
-
-        Ok(())
     }
 
-    fn trailers(&self) -> Result<Option<HeaderMap<HeaderValue>>, BoxError> {
-        let mut header_map = HeaderMap::new();
-        let key = HeaderName::from_static(CRC_32_NAME);
-        // We clone the hasher because `Hasher::finalize` consumes `self`
-        let hash = self.hasher.clone().finalize();
-        let value = HeaderValue::from_str(&base64::encode(u32::to_be_bytes(hash)))
-            .expect("base64 will always produce valid header values from checksums");
+    fn finalize(self) -> Bytes {
+        Bytes::copy_from_slice(self.hasher.finalize().to_be_bytes().as_slice())
+    }
 
-        header_map.insert(key, value);
-
-        Ok(Some(header_map))
+    // Size of the checksum in bytes
+    fn size() -> u64 {
+        4
     }
 }
 
-impl BodyCallback for Crc32callback {
-    fn update(&mut self, bytes: &[u8]) -> Result<(), BoxError> {
-        self.update(bytes)
+impl Checksum for Crc32 {
+    fn update(&mut self, bytes: &[u8]) {
+        Self::update(self, bytes)
     }
-
-    fn trailers(&self) -> Result<Option<HeaderMap<HeaderValue>>, BoxError> {
-        self.trailers()
+    fn finalize(self: Box<Self>) -> Bytes {
+        Self::finalize(*self)
     }
-
-    fn make_new(&self) -> Box<dyn BodyCallback> {
-        Box::new(Crc32callback::default())
+    fn size(&self) -> u64 {
+        Self::size()
     }
 }
 
 #[derive(Debug, Default)]
-struct Crc32cCallback {
+struct Crc32c {
     state: Option<u32>,
 }
 
-impl Crc32cCallback {
-    fn update(&mut self, bytes: &[u8]) -> Result<(), BoxError> {
+impl Crc32c {
+    fn update(&mut self, bytes: &[u8]) {
         self.state = match self.state {
             Some(crc) => Some(crc32c::crc32c_append(crc, bytes)),
             None => Some(crc32c::crc32c(bytes)),
         };
-
-        Ok(())
     }
 
-    fn trailers(&self) -> Result<Option<HeaderMap<HeaderValue>>, BoxError> {
-        let mut header_map = HeaderMap::new();
-        let key = HeaderName::from_static(CRC_32_C_NAME);
-        // If no data was provided to this callback and no CRC was ever calculated, return zero as the checksum.
-        let hash = self.state.unwrap_or_default();
-        let value = HeaderValue::from_str(&base64::encode(u32::to_be_bytes(hash)))
-            .expect("base64 will always produce valid header values from checksums");
+    fn finalize(self) -> Bytes {
+        Bytes::copy_from_slice(self.state.unwrap_or_default().to_be_bytes().as_slice())
+    }
 
-        header_map.insert(key, value);
-
-        Ok(Some(header_map))
+    // Size of the checksum in bytes
+    fn size() -> u64 {
+        4
     }
 }
 
-impl BodyCallback for Crc32cCallback {
-    fn update(&mut self, bytes: &[u8]) -> Result<(), BoxError> {
-        self.update(bytes)
+impl Checksum for Crc32c {
+    fn update(&mut self, bytes: &[u8]) {
+        Self::update(self, bytes)
     }
-
-    fn trailers(&self) -> Result<Option<HeaderMap<HeaderValue>>, BoxError> {
-        self.trailers()
+    fn finalize(self: Box<Self>) -> Bytes {
+        Self::finalize(*self)
     }
-
-    fn make_new(&self) -> Box<dyn BodyCallback> {
-        Box::new(Crc32cCallback::default())
+    fn size(&self) -> u64 {
+        Self::size()
     }
 }
 
 #[derive(Debug, Default)]
-struct Sha1Callback {
+struct Sha1 {
     hasher: sha1::Sha1,
 }
 
-impl Sha1Callback {
-    fn update(&mut self, bytes: &[u8]) -> Result<(), BoxError> {
-        self.hasher.write_all(bytes)?;
-
-        Ok(())
+impl Sha1 {
+    fn update(&mut self, bytes: &[u8]) {
+        use sha1::Digest;
+        self.hasher.update(bytes);
     }
 
-    fn trailers(&self) -> Result<Option<HeaderMap<HeaderValue>>, BoxError> {
-        let mut header_map = HeaderMap::new();
-        let key = HeaderName::from_static(SHA_1_NAME);
-        // We clone the hasher because `Hasher::finalize` consumes `self`
-        let hash = self.hasher.clone().finalize();
-        let value = HeaderValue::from_str(&base64::encode(&hash[..]))
-            .expect("base64 will always produce valid header values from checksums");
+    fn finalize(self) -> Bytes {
+        use sha1::Digest;
+        Bytes::copy_from_slice(self.hasher.finalize().as_slice())
+    }
 
-        header_map.insert(key, value);
-
-        Ok(Some(header_map))
+    // Size of the checksum in bytes
+    fn size() -> u64 {
+        use sha1::Digest;
+        sha1::Sha1::output_size() as u64
     }
 }
 
-impl BodyCallback for Sha1Callback {
-    fn update(&mut self, bytes: &[u8]) -> Result<(), BoxError> {
-        self.update(bytes)
+impl Checksum for Sha1 {
+    fn update(&mut self, bytes: &[u8]) {
+        Self::update(self, bytes)
     }
 
-    fn trailers(&self) -> Result<Option<HeaderMap<HeaderValue>>, BoxError> {
-        self.trailers()
+    fn finalize(self: Box<Self>) -> Bytes {
+        Self::finalize(*self)
     }
-
-    fn make_new(&self) -> Box<dyn BodyCallback> {
-        Box::new(Sha1Callback::default())
+    fn size(&self) -> u64 {
+        Self::size()
     }
 }
 
 #[derive(Debug, Default)]
-struct Sha256Callback {
+struct Sha256 {
     hasher: sha2::Sha256,
 }
 
-impl Sha256Callback {
-    fn update(&mut self, bytes: &[u8]) -> Result<(), BoxError> {
-        self.hasher.write_all(bytes)?;
-
-        Ok(())
+impl Sha256 {
+    fn update(&mut self, bytes: &[u8]) {
+        use sha2::Digest;
+        self.hasher.update(bytes);
     }
 
-    fn trailers(&self) -> Result<Option<HeaderMap<HeaderValue>>, BoxError> {
-        let mut header_map = HeaderMap::new();
-        let key = HeaderName::from_static(SHA_256_NAME);
-        // We clone the hasher because `Hasher::finalize` consumes `self`
-        let hash = self.hasher.clone().finalize();
-        let value = HeaderValue::from_str(&base64::encode(&hash[..]))
-            .expect("base64 will always produce valid header values from checksums");
+    fn finalize(self) -> Bytes {
+        use sha2::Digest;
+        Bytes::copy_from_slice(self.hasher.finalize().as_slice())
+    }
 
-        header_map.insert(key, value);
-
-        Ok(Some(header_map))
+    // Size of the checksum in bytes
+    fn size() -> u64 {
+        use sha2::Digest;
+        sha2::Sha256::output_size() as u64
     }
 }
 
-impl BodyCallback for Sha256Callback {
-    fn update(&mut self, bytes: &[u8]) -> Result<(), BoxError> {
-        self.update(bytes)
+impl Checksum for Sha256 {
+    fn update(&mut self, bytes: &[u8]) {
+        Self::update(self, bytes);
+    }
+    fn finalize(self: Box<Self>) -> Bytes {
+        Self::finalize(*self)
+    }
+    fn size(&self) -> u64 {
+        Self::size()
+    }
+}
+
+#[derive(Debug, Default)]
+struct Md5 {
+    hasher: md5::Md5,
+}
+
+impl Md5 {
+    fn update(&mut self, bytes: &[u8]) {
+        use md5::Digest;
+        self.hasher.update(bytes);
     }
 
-    fn trailers(&self) -> Result<Option<HeaderMap<HeaderValue>>, BoxError> {
-        self.trailers()
+    fn finalize(self) -> Bytes {
+        use md5::Digest;
+        Bytes::copy_from_slice(self.hasher.finalize().as_slice())
     }
 
-    fn make_new(&self) -> Box<dyn BodyCallback> {
-        Box::new(Sha256Callback::default())
+    // Size of the checksum in bytes
+    fn size() -> u64 {
+        use md5::Digest;
+        md5::Md5::output_size() as u64
+    }
+}
+
+impl Checksum for Md5 {
+    fn update(&mut self, bytes: &[u8]) {
+        Self::update(self, bytes)
+    }
+    fn finalize(self: Box<Self>) -> Bytes {
+        Self::finalize(*self)
+    }
+    fn size(&self) -> u64 {
+        Self::size()
     }
 }
 
 #[cfg(test)]
 mod tests {
     use super::{
-        Crc32cCallback, Crc32callback, Sha1Callback, Sha256Callback, CRC_32_C_NAME, CRC_32_NAME,
-        SHA_1_NAME, SHA_256_NAME,
+        http::{
+            CRC_32_C_HEADER_NAME, CRC_32_HEADER_NAME, MD5_HEADER_NAME, SHA_1_HEADER_NAME,
+            SHA_256_HEADER_NAME,
+        },
+        Crc32, Crc32c, Md5, Sha1, Sha256,
     };
 
+    use crate::http::HttpChecksum;
     use aws_smithy_types::base64;
     use http::HeaderValue;
     use pretty_assertions::assert_eq;
 
     const TEST_DATA: &str = r#"test data"#;
 
-    fn header_value_as_checksum_string(header_value: &HeaderValue) -> String {
+    fn base64_encoded_checksum_to_hex_string(header_value: &HeaderValue) -> String {
         let decoded_checksum = base64::decode(header_value.to_str().unwrap()).unwrap();
         let decoded_checksum = decoded_checksum
             .into_iter()
@@ -207,11 +235,11 @@ mod tests {
 
     #[test]
     fn test_crc32_checksum() {
-        let mut checksum_callback = Crc32callback::default();
-        checksum_callback.update(TEST_DATA.as_bytes()).unwrap();
-        let checksum_callback_result = checksum_callback.trailers().unwrap().unwrap();
-        let encoded_checksum = checksum_callback_result.get(CRC_32_NAME).unwrap();
-        let decoded_checksum = header_value_as_checksum_string(encoded_checksum);
+        let mut checksum = Crc32::default();
+        checksum.update(TEST_DATA.as_bytes());
+        let checksum_result = Box::new(checksum).headers();
+        let encoded_checksum = checksum_result.get(&CRC_32_HEADER_NAME).unwrap();
+        let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
 
         let expected_checksum = "0xD308AEB2";
 
@@ -220,11 +248,11 @@ mod tests {
 
     #[test]
     fn test_crc32c_checksum() {
-        let mut checksum_callback = Crc32cCallback::default();
-        checksum_callback.update(TEST_DATA.as_bytes()).unwrap();
-        let checksum_callback_result = checksum_callback.trailers().unwrap().unwrap();
-        let encoded_checksum = checksum_callback_result.get(CRC_32_C_NAME).unwrap();
-        let decoded_checksum = header_value_as_checksum_string(encoded_checksum);
+        let mut checksum = Crc32c::default();
+        checksum.update(TEST_DATA.as_bytes());
+        let checksum_result = Box::new(checksum).headers();
+        let encoded_checksum = checksum_result.get(&CRC_32_C_HEADER_NAME).unwrap();
+        let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
 
         let expected_checksum = "0x3379B4CA";
 
@@ -233,11 +261,11 @@ mod tests {
 
     #[test]
     fn test_sha1_checksum() {
-        let mut checksum_callback = Sha1Callback::default();
-        checksum_callback.update(TEST_DATA.as_bytes()).unwrap();
-        let checksum_callback_result = checksum_callback.trailers().unwrap().unwrap();
-        let encoded_checksum = checksum_callback_result.get(SHA_1_NAME).unwrap();
-        let decoded_checksum = header_value_as_checksum_string(encoded_checksum);
+        let mut checksum = Sha1::default();
+        checksum.update(TEST_DATA.as_bytes());
+        let checksum_result = Box::new(checksum).headers();
+        let encoded_checksum = checksum_result.get(&SHA_1_HEADER_NAME).unwrap();
+        let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
 
         let expected_checksum = "0xF48DD853820860816C75D54D0F584DC863327A7C";
 
@@ -246,14 +274,27 @@ mod tests {
 
     #[test]
     fn test_sha256_checksum() {
-        let mut checksum_callback = Sha256Callback::default();
-        checksum_callback.update(TEST_DATA.as_bytes()).unwrap();
-        let checksum_callback_result = checksum_callback.trailers().unwrap().unwrap();
-        let encoded_checksum = checksum_callback_result.get(SHA_256_NAME).unwrap();
-        let decoded_checksum = header_value_as_checksum_string(encoded_checksum);
+        let mut checksum = Sha256::default();
+        checksum.update(TEST_DATA.as_bytes());
+        let checksum_result = Box::new(checksum).headers();
+        let encoded_checksum = checksum_result.get(&SHA_256_HEADER_NAME).unwrap();
+        let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
 
         let expected_checksum =
             "0x916F0027A575074CE72A331777C3478D6513F786A591BD892DA1A577BF2335F9";
+
+        assert_eq!(decoded_checksum, expected_checksum);
+    }
+
+    #[test]
+    fn test_md5_checksum() {
+        let mut checksum = Md5::default();
+        checksum.update(TEST_DATA.as_bytes());
+        let checksum_result = Box::new(checksum).headers();
+        let encoded_checksum = checksum_result.get(&MD5_HEADER_NAME).unwrap();
+        let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
+
+        let expected_checksum = "0xEB733A00C0C9D336E65691A37AB54293";
 
         assert_eq!(decoded_checksum, expected_checksum);
     }
