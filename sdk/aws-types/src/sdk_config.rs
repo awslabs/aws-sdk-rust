@@ -208,7 +208,6 @@ impl Builder {
         self
     }
 
-    #[doc(hidden)]
     /// Set the sleep implementation for the builder. The sleep implementation is used to create
     /// timeout futures.
     ///
@@ -236,7 +235,6 @@ impl Builder {
         self
     }
 
-    #[doc(hidden)]
     /// Set the sleep implementation for the builder. The sleep implementation is used to create
     /// timeout futures.
     ///
