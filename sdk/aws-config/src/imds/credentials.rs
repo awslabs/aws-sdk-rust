@@ -63,9 +63,6 @@ impl Builder {
     ///
     /// For more information about IMDS client configuration loading see [`imds::Client`]
     pub fn imds_client(mut self, client: imds::Client) -> Self {
-        if self.provider_config.is_some() {
-            tracing::warn!("provider config override by a full client override");
-        }
         self.imds_override = Some(client);
         self
     }
