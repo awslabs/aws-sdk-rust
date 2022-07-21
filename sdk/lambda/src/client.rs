@@ -707,7 +707,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::InvokeAsync::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::InvokeAsync::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    ///   - [`invoke_args(byte_stream::ByteStream)`](crate::client::fluent_builders::InvokeAsync::invoke_args) / [`set_invoke_args(byte_stream::ByteStream)`](crate::client::fluent_builders::InvokeAsync::set_invoke_args): <p>The JSON that you want to provide to your Lambda function as input.</p>
+    ///   - [`invoke_args(ByteStream)`](crate::client::fluent_builders::InvokeAsync::invoke_args) / [`set_invoke_args(ByteStream)`](crate::client::fluent_builders::InvokeAsync::set_invoke_args): <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// - On success, responds with [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput) with field(s):
     ///   - [`status(i32)`](crate::output::InvokeAsyncOutput::status): <p>The status code.</p>
     /// - On failure, responds with [`SdkError<InvokeAsyncError>`](crate::error::InvokeAsyncError)

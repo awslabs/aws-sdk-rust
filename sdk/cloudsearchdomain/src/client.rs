@@ -133,7 +133,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UploadDocuments`](crate::client::fluent_builders::UploadDocuments) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`documents(byte_stream::ByteStream)`](crate::client::fluent_builders::UploadDocuments::documents) / [`set_documents(byte_stream::ByteStream)`](crate::client::fluent_builders::UploadDocuments::set_documents): <p>A batch of documents formatted in JSON or HTML.</p>
+    ///   - [`documents(ByteStream)`](crate::client::fluent_builders::UploadDocuments::documents) / [`set_documents(ByteStream)`](crate::client::fluent_builders::UploadDocuments::set_documents): <p>A batch of documents formatted in JSON or HTML.</p>
     ///   - [`content_type(ContentType)`](crate::client::fluent_builders::UploadDocuments::content_type) / [`set_content_type(Option<ContentType>)`](crate::client::fluent_builders::UploadDocuments::set_content_type): <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>  <ul>   <li>application/json</li>   <li>application/xml</li>  </ul>
     /// - On success, responds with [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::output::UploadDocumentsOutput::status): <p>The status of an <code>UploadDocumentsRequest</code>.</p>

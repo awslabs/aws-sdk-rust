@@ -347,7 +347,7 @@ impl Client {
     ///   - [`asset(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::asset) / [`set_asset(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_asset): <p> The name of the requested asset. </p>
     ///   - [`package_version_revision(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::package_version_revision) / [`set_package_version_revision(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_package_version_revision): <p> The name of the package version revision that contains the requested asset. </p>
     /// - On success, responds with [`GetPackageVersionAssetOutput`](crate::output::GetPackageVersionAssetOutput) with field(s):
-    ///   - [`asset(byte_stream::ByteStream)`](crate::output::GetPackageVersionAssetOutput::asset): <p> The binary file, or asset, that is downloaded.</p>
+    ///   - [`asset(ByteStream)`](crate::output::GetPackageVersionAssetOutput::asset): <p> The binary file, or asset, that is downloaded.</p>
     ///   - [`asset_name(Option<String>)`](crate::output::GetPackageVersionAssetOutput::asset_name): <p> The name of the asset that is downloaded. </p>
     ///   - [`package_version(Option<String>)`](crate::output::GetPackageVersionAssetOutput::package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     ///   - [`package_version_revision(Option<String>)`](crate::output::GetPackageVersionAssetOutput::package_version_revision): <p> The name of the package version revision that contains the downloaded asset. </p>

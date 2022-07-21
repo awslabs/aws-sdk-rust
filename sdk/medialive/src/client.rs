@@ -485,7 +485,7 @@ impl Client {
     ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInputDeviceThumbnail::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::DescribeInputDeviceThumbnail::set_input_device_id): The unique ID of this input device. For example, hd-123456789abcdef.
     ///   - [`accept(AcceptHeader)`](crate::client::fluent_builders::DescribeInputDeviceThumbnail::accept) / [`set_accept(Option<AcceptHeader>)`](crate::client::fluent_builders::DescribeInputDeviceThumbnail::set_accept): The HTTP Accept header. Indicates the requested type for the thumbnail.
     /// - On success, responds with [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput) with field(s):
-    ///   - [`body(byte_stream::ByteStream)`](crate::output::DescribeInputDeviceThumbnailOutput::body): The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
+    ///   - [`body(ByteStream)`](crate::output::DescribeInputDeviceThumbnailOutput::body): The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
     ///   - [`content_type(Option<ContentType>)`](crate::output::DescribeInputDeviceThumbnailOutput::content_type): Specifies the media type of the thumbnail.
     ///   - [`content_length(i64)`](crate::output::DescribeInputDeviceThumbnailOutput::content_length): The length of the content.
     ///   - [`e_tag(Option<String>)`](crate::output::DescribeInputDeviceThumbnailOutput::e_tag): The unique, cacheable version of this thumbnail.
