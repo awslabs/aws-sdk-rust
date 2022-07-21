@@ -122,7 +122,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_meeting_id): <p>The unique ID of the meeting.</p>
     ///   - [`external_user_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::external_user_id) / [`set_external_user_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_external_user_id): <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    ///   - [`capabilities(AttendeeCapabilities)`](crate::client::fluent_builders::CreateAttendee::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::client::fluent_builders::CreateAttendee::set_capabilities): <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
+    ///   - [`capabilities(AttendeeCapabilities)`](crate::client::fluent_builders::CreateAttendee::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::client::fluent_builders::CreateAttendee::set_capabilities): <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>   <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>  </note>  <p>When using capabilities, be aware of these corner cases:</p>  <ul>   <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>   <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>   <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>  </ul>
     /// - On success, responds with [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput) with field(s):
     ///   - [`attendee(Option<Attendee>)`](crate::output::CreateAttendeeOutput::attendee): <p>The attendee information, including attendee ID and join token.</p>
     /// - On failure, responds with [`SdkError<CreateAttendeeError>`](crate::error::CreateAttendeeError)
@@ -139,6 +139,7 @@ impl Client {
     ///   - [`notifications_configuration(NotificationsConfiguration)`](crate::client::fluent_builders::CreateMeeting::notifications_configuration) / [`set_notifications_configuration(Option<NotificationsConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     ///   - [`meeting_features(MeetingFeaturesConfiguration)`](crate::client::fluent_builders::CreateMeeting::meeting_features) / [`set_meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
     ///   - [`primary_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::primary_meeting_id) / [`set_primary_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_primary_meeting_id): <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    ///   - [`tenant_ids(Vec<String>)`](crate::client::fluent_builders::CreateMeeting::tenant_ids) / [`set_tenant_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateMeeting::set_tenant_ids): <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
     /// - On success, responds with [`CreateMeetingOutput`](crate::output::CreateMeetingOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     /// - On failure, responds with [`SdkError<CreateMeetingError>`](crate::error::CreateMeetingError)
@@ -156,6 +157,7 @@ impl Client {
     ///   - [`notifications_configuration(NotificationsConfiguration)`](crate::client::fluent_builders::CreateMeetingWithAttendees::notifications_configuration) / [`set_notifications_configuration(Option<NotificationsConfiguration>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
     ///   - [`primary_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::primary_meeting_id) / [`set_primary_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_primary_meeting_id): <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    ///   - [`tenant_ids(Vec<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::tenant_ids) / [`set_tenant_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_tenant_ids): <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
     /// - On success, responds with [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingWithAttendeesOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::CreateMeetingWithAttendeesOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
@@ -248,7 +250,7 @@ impl Client {
     ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::set_attendee_id): <p>The ID of the attendee associated with the update request.</p>
     ///   - [`capabilities(AttendeeCapabilities)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::set_capabilities): <p>The capabilties that you want to update.</p>
     /// - On success, responds with [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput) with field(s):
-    ///   - [`attendee(Option<Attendee>)`](crate::output::UpdateAttendeeCapabilitiesOutput::attendee): <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>  <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+    ///   - [`attendee(Option<Attendee>)`](crate::output::UpdateAttendeeCapabilitiesOutput::attendee): <p>The updated attendee data.</p>
     /// - On failure, responds with [`SdkError<UpdateAttendeeCapabilitiesError>`](crate::error::UpdateAttendeeCapabilitiesError)
     pub fn update_attendee_capabilities(&self) -> fluent_builders::UpdateAttendeeCapabilities {
         fluent_builders::UpdateAttendeeCapabilities::new(self.handle.clone())
@@ -333,7 +335,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchUpdateAttendeeCapabilitiesExcept`.
     ///
-    /// <p>Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code> table.</p>
+    /// <p>Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code> table.</p> <note>
+    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+    /// </note>
+    /// <p>When using capabilities, be aware of these corner cases:</p>
+    /// <ul>
+    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateAttendeeCapabilitiesExcept {
         handle: std::sync::Arc<super::Handle>,
@@ -481,12 +491,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_external_user_id(input);
             self
         }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
+        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+        /// </note>
+        /// <p>When using capabilities, be aware of these corner cases:</p>
+        /// <ul>
+        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+        /// </ul>
         pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
             self.inner = self.inner.capabilities(input);
             self
         }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
+        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+        /// </note>
+        /// <p>When using capabilities, be aware of these corner cases:</p>
+        /// <ul>
+        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+        /// </ul>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<crate::model::AttendeeCapabilities>,
@@ -633,6 +659,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_primary_meeting_id(input);
+            self
+        }
+        /// Appends an item to `TenantIds`.
+        ///
+        /// To override the contents of this collection use [`set_tenant_ids`](Self::set_tenant_ids).
+        ///
+        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+        pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tenant_ids(input.into());
+            self
+        }
+        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+        pub fn set_tenant_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tenant_ids(input);
             self
         }
     }
@@ -791,6 +834,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_primary_meeting_id(input);
+            self
+        }
+        /// Appends an item to `TenantIds`.
+        ///
+        /// To override the contents of this collection use [`set_tenant_ids`](Self::set_tenant_ids).
+        ///
+        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+        pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tenant_ids(input.into());
+            self
+        }
+        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+        pub fn set_tenant_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tenant_ids(input);
             self
         }
     }
@@ -1229,7 +1289,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAttendeeCapabilities`.
     ///
-    /// <p>The capabilties that you want to update.</p>
+    /// <p>The capabilties that you want to update.</p> <note>
+    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+    /// </note>
+    /// <p>When using capabilities, be aware of these corner cases:</p>
+    /// <ul>
+    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAttendeeCapabilities {
         handle: std::sync::Arc<super::Handle>,

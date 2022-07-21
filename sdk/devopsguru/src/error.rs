@@ -1628,6 +1628,8 @@ pub enum DescribeServiceIntegrationErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure in an Amazon service occurred.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>A requested resource could not be found</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
@@ -1640,6 +1642,7 @@ impl std::fmt::Display for DescribeServiceIntegrationError {
         match &self.kind {
             DescribeServiceIntegrationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DescribeServiceIntegrationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeServiceIntegrationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeServiceIntegrationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeServiceIntegrationErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DescribeServiceIntegrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1710,6 +1713,13 @@ impl DescribeServiceIntegrationError {
             DescribeServiceIntegrationErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeServiceIntegrationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeServiceIntegrationErrorKind::ResourceNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeServiceIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
@@ -1730,6 +1740,7 @@ impl std::error::Error for DescribeServiceIntegrationError {
         match &self.kind {
             DescribeServiceIntegrationErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DescribeServiceIntegrationErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeServiceIntegrationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeServiceIntegrationErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeServiceIntegrationErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeServiceIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2148,6 +2159,143 @@ impl std::error::Error for ListAnomaliesForInsightError {
     }
 }
 
+/// Error type for the `ListAnomalousLogGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAnomalousLogGroupsError {
+    /// Kind of error that occurred.
+    pub kind: ListAnomalousLogGroupsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListAnomalousLogGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAnomalousLogGroupsErrorKind {
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>A requested resource could not be found</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAnomalousLogGroupsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAnomalousLogGroupsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListAnomalousLogGroupsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListAnomalousLogGroupsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListAnomalousLogGroupsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListAnomalousLogGroupsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListAnomalousLogGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListAnomalousLogGroupsError {
+    fn code(&self) -> Option<&str> {
+        ListAnomalousLogGroupsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAnomalousLogGroupsError {
+    /// Creates a new `ListAnomalousLogGroupsError`.
+    pub fn new(kind: ListAnomalousLogGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAnomalousLogGroupsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAnomalousLogGroupsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAnomalousLogGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAnomalousLogGroupsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAnomalousLogGroupsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAnomalousLogGroupsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAnomalousLogGroupsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAnomalousLogGroupsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAnomalousLogGroupsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAnomalousLogGroupsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAnomalousLogGroupsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAnomalousLogGroupsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAnomalousLogGroupsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAnomalousLogGroupsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListAnomalousLogGroupsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAnomalousLogGroupsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListAnomalousLogGroupsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListAnomalousLogGroupsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListAnomalousLogGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListAnomalousLogGroupsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListAnomalousLogGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListEvents` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2386,6 +2534,132 @@ impl std::error::Error for ListInsightsError {
             ListInsightsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListInsightsErrorKind::ValidationException(_inner) => Some(_inner),
             ListInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListMonitoredResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMonitoredResourcesError {
+    /// Kind of error that occurred.
+    pub kind: ListMonitoredResourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListMonitoredResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMonitoredResourcesErrorKind {
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>A requested resource could not be found</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMonitoredResourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMonitoredResourcesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListMonitoredResourcesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListMonitoredResourcesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListMonitoredResourcesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListMonitoredResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMonitoredResourcesError {
+    fn code(&self) -> Option<&str> {
+        ListMonitoredResourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMonitoredResourcesError {
+    /// Creates a new `ListMonitoredResourcesError`.
+    pub fn new(kind: ListMonitoredResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMonitoredResourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMonitoredResourcesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMonitoredResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMonitoredResourcesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMonitoredResourcesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitoredResourcesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMonitoredResourcesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitoredResourcesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMonitoredResourcesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitoredResourcesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMonitoredResourcesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMonitoredResourcesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListMonitoredResourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMonitoredResourcesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListMonitoredResourcesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListMonitoredResourcesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListMonitoredResourcesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListMonitoredResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

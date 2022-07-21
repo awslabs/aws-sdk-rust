@@ -441,6 +441,7 @@ impl Client {
     ///   - [`shared_with_prefix(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_shared_with_prefix): <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_next_token): <p>The token to use to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLensShares::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLensShares::set_max_results): <p>The maximum number of results to return for this request.</p>
+    ///   - [`status(ShareStatus)`](crate::client::fluent_builders::ListLensShares::status) / [`set_status(Option<ShareStatus>)`](crate::client::fluent_builders::ListLensShares::set_status): <p>The status of a workload share.</p>
     /// - On success, responds with [`ListLensSharesOutput`](crate::output::ListLensSharesOutput) with field(s):
     ///   - [`lens_share_summaries(Option<Vec<LensShareSummary>>)`](crate::output::ListLensSharesOutput::lens_share_summaries): <p>A list of lens share summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLensSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
@@ -525,6 +526,7 @@ impl Client {
     ///   - [`shared_with_prefix(impl Into<String>)`](crate::client::fluent_builders::ListWorkloadShares::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::client::fluent_builders::ListWorkloadShares::set_shared_with_prefix): <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkloadShares::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkloadShares::set_next_token): <p>The token to use to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkloadShares::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListWorkloadShares::set_max_results): <p>The maximum number of results to return for this request.</p>
+    ///   - [`status(ShareStatus)`](crate::client::fluent_builders::ListWorkloadShares::status) / [`set_status(Option<ShareStatus>)`](crate::client::fluent_builders::ListWorkloadShares::set_status): <p>The status of a workload share.</p>
     /// - On success, responds with [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::output::ListWorkloadSharesOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`workload_share_summaries(Option<Vec<WorkloadShareSummary>>)`](crate::output::ListWorkloadSharesOutput::workload_share_summaries): <p>A list of workload share summaries.</p>
@@ -574,6 +576,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateAnswerError>`](crate::error::UpdateAnswerError)
     pub fn update_answer(&self) -> fluent_builders::UpdateAnswer {
         fluent_builders::UpdateAnswer::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateGlobalSettings`](crate::client::fluent_builders::UpdateGlobalSettings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_sharing_status(OrganizationSharingStatus)`](crate::client::fluent_builders::UpdateGlobalSettings::organization_sharing_status) / [`set_organization_sharing_status(Option<OrganizationSharingStatus>)`](crate::client::fluent_builders::UpdateGlobalSettings::set_organization_sharing_status): <p>The status of organization sharing settings.</p>
+    /// - On success, responds with [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateGlobalSettingsError>`](crate::error::UpdateGlobalSettingsError)
+    pub fn update_global_settings(&self) -> fluent_builders::UpdateGlobalSettings {
+        fluent_builders::UpdateGlobalSettings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateLensReview`](crate::client::fluent_builders::UpdateLensReview) operation.
     ///
@@ -3095,6 +3107,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// <p>The status of a workload share.</p>
+        pub fn status(mut self, input: crate::model::ShareStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>The status of a workload share.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListMilestones`.
     ///
@@ -3590,6 +3612,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// <p>The status of a workload share.</p>
+        pub fn status(mut self, input: crate::model::ShareStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>The status of a workload share.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
@@ -3894,6 +3926,65 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::AnswerReason>,
         ) -> Self {
             self.inner = self.inner.set_reason(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateGlobalSettings`.
+    ///
+    /// <p>Updates whether the Amazon Web Services account is opted into organization sharing features.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateGlobalSettings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_global_settings_input::Builder,
+    }
+    impl UpdateGlobalSettings {
+        /// Creates a new `UpdateGlobalSettings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateGlobalSettingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateGlobalSettingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The status of organization sharing settings.</p>
+        pub fn organization_sharing_status(
+            mut self,
+            input: crate::model::OrganizationSharingStatus,
+        ) -> Self {
+            self.inner = self.inner.organization_sharing_status(input);
+            self
+        }
+        /// <p>The status of organization sharing settings.</p>
+        pub fn set_organization_sharing_status(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationSharingStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_sharing_status(input);
             self
         }
     }

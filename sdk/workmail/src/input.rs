@@ -678,6 +678,209 @@ impl CreateAliasInput {
     }
 }
 
+/// See [`CreateAvailabilityConfigurationInput`](crate::input::CreateAvailabilityConfigurationInput).
+pub mod create_availability_configuration_input {
+
+    /// A builder for [`CreateAvailabilityConfigurationInput`](crate::input::CreateAvailabilityConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) ews_provider: std::option::Option<crate::model::EwsAvailabilityProvider>,
+        pub(crate) lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+    }
+    impl Builder {
+        /// <p>An idempotent token that ensures that an API request is executed only once.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>An idempotent token that ensures that an API request is executed only once.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The domain to which the provider applies.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The domain to which the provider applies.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+        pub fn ews_provider(mut self, input: crate::model::EwsAvailabilityProvider) -> Self {
+            self.ews_provider = Some(input);
+            self
+        }
+        /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+        pub fn set_ews_provider(
+            mut self,
+            input: std::option::Option<crate::model::EwsAvailabilityProvider>,
+        ) -> Self {
+            self.ews_provider = input;
+            self
+        }
+        /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+        pub fn lambda_provider(mut self, input: crate::model::LambdaAvailabilityProvider) -> Self {
+            self.lambda_provider = Some(input);
+            self
+        }
+        /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+        pub fn set_lambda_provider(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+        ) -> Self {
+            self.lambda_provider = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAvailabilityConfigurationInput`](crate::input::CreateAvailabilityConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateAvailabilityConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateAvailabilityConfigurationInput {
+                client_token: self.client_token,
+                organization_id: self.organization_id,
+                domain_name: self.domain_name,
+                ews_provider: self.ews_provider,
+                lambda_provider: self.lambda_provider,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateAvailabilityConfigurationInputOperationOutputAlias =
+    crate::operation::CreateAvailabilityConfiguration;
+#[doc(hidden)]
+pub type CreateAvailabilityConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl CreateAvailabilityConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`CreateAvailabilityConfiguration`](crate::operation::CreateAvailabilityConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateAvailabilityConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateAvailabilityConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateAvailabilityConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.CreateAvailabilityConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_availability_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAvailabilityConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAvailabilityConfiguration",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateAvailabilityConfigurationInput`](crate::input::CreateAvailabilityConfigurationInput).
+    pub fn builder() -> crate::input::create_availability_configuration_input::Builder {
+        crate::input::create_availability_configuration_input::Builder::default()
+    }
+}
+
 /// See [`CreateGroupInput`](crate::input::CreateGroupInput).
 pub mod create_group_input {
 
@@ -2087,6 +2290,164 @@ impl DeleteAliasInput {
     /// Creates a new builder-style object to manufacture [`DeleteAliasInput`](crate::input::DeleteAliasInput).
     pub fn builder() -> crate::input::delete_alias_input::Builder {
         crate::input::delete_alias_input::Builder::default()
+    }
+}
+
+/// See [`DeleteAvailabilityConfigurationInput`](crate::input::DeleteAvailabilityConfigurationInput).
+pub mod delete_availability_configuration_input {
+
+    /// A builder for [`DeleteAvailabilityConfigurationInput`](crate::input::DeleteAvailabilityConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteAvailabilityConfigurationInput`](crate::input::DeleteAvailabilityConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteAvailabilityConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteAvailabilityConfigurationInput {
+                organization_id: self.organization_id,
+                domain_name: self.domain_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteAvailabilityConfigurationInputOperationOutputAlias =
+    crate::operation::DeleteAvailabilityConfiguration;
+#[doc(hidden)]
+pub type DeleteAvailabilityConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteAvailabilityConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteAvailabilityConfiguration`](crate::operation::DeleteAvailabilityConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteAvailabilityConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteAvailabilityConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteAvailabilityConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.DeleteAvailabilityConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_availability_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAvailabilityConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAvailabilityConfiguration",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteAvailabilityConfigurationInput`](crate::input::DeleteAvailabilityConfigurationInput).
+    pub fn builder() -> crate::input::delete_availability_configuration_input::Builder {
+        crate::input::delete_availability_configuration_input::Builder::default()
     }
 }
 
@@ -6598,6 +6959,176 @@ impl ListAliasesInput {
     }
 }
 
+/// See [`ListAvailabilityConfigurationsInput`](crate::input::ListAvailabilityConfigurationsInput).
+pub mod list_availability_configurations_input {
+
+    /// A builder for [`ListAvailabilityConfigurationsInput`](crate::input::ListAvailabilityConfigurationsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAvailabilityConfigurationsInput`](crate::input::ListAvailabilityConfigurationsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListAvailabilityConfigurationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAvailabilityConfigurationsInput {
+                organization_id: self.organization_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAvailabilityConfigurationsInputOperationOutputAlias =
+    crate::operation::ListAvailabilityConfigurations;
+#[doc(hidden)]
+pub type ListAvailabilityConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListAvailabilityConfigurationsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAvailabilityConfigurations`](crate::operation::ListAvailabilityConfigurations)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAvailabilityConfigurations,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAvailabilityConfigurationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAvailabilityConfigurationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.ListAvailabilityConfigurations",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_availability_configurations(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAvailabilityConfigurations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAvailabilityConfigurations",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAvailabilityConfigurationsInput`](crate::input::ListAvailabilityConfigurationsInput).
+    pub fn builder() -> crate::input::list_availability_configurations_input::Builder {
+        crate::input::list_availability_configurations_input::Builder::default()
+    }
+}
+
 /// See [`ListGroupMembersInput`](crate::input::ListGroupMembersInput).
 pub mod list_group_members_input {
 
@@ -10757,6 +11288,194 @@ impl TagResourceInput {
     }
 }
 
+/// See [`TestAvailabilityConfigurationInput`](crate::input::TestAvailabilityConfigurationInput).
+pub mod test_availability_configuration_input {
+
+    /// A builder for [`TestAvailabilityConfigurationInput`](crate::input::TestAvailabilityConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) ews_provider: std::option::Option<crate::model::EwsAvailabilityProvider>,
+        pub(crate) lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+    }
+    impl Builder {
+        /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+        pub fn ews_provider(mut self, input: crate::model::EwsAvailabilityProvider) -> Self {
+            self.ews_provider = Some(input);
+            self
+        }
+        /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+        pub fn set_ews_provider(
+            mut self,
+            input: std::option::Option<crate::model::EwsAvailabilityProvider>,
+        ) -> Self {
+            self.ews_provider = input;
+            self
+        }
+        /// <p>Describes a Lambda based availability provider.</p>
+        pub fn lambda_provider(mut self, input: crate::model::LambdaAvailabilityProvider) -> Self {
+            self.lambda_provider = Some(input);
+            self
+        }
+        /// <p>Describes a Lambda based availability provider.</p>
+        pub fn set_lambda_provider(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+        ) -> Self {
+            self.lambda_provider = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TestAvailabilityConfigurationInput`](crate::input::TestAvailabilityConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::TestAvailabilityConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::TestAvailabilityConfigurationInput {
+                organization_id: self.organization_id,
+                domain_name: self.domain_name,
+                ews_provider: self.ews_provider,
+                lambda_provider: self.lambda_provider,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type TestAvailabilityConfigurationInputOperationOutputAlias =
+    crate::operation::TestAvailabilityConfiguration;
+#[doc(hidden)]
+pub type TestAvailabilityConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl TestAvailabilityConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`TestAvailabilityConfiguration`](crate::operation::TestAvailabilityConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TestAvailabilityConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::TestAvailabilityConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TestAvailabilityConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.TestAvailabilityConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_test_availability_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TestAvailabilityConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TestAvailabilityConfiguration",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`TestAvailabilityConfigurationInput`](crate::input::TestAvailabilityConfigurationInput).
+    pub fn builder() -> crate::input::test_availability_configuration_input::Builder {
+        crate::input::test_availability_configuration_input::Builder::default()
+    }
+}
+
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
 
@@ -10915,6 +11634,194 @@ impl UntagResourceInput {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UpdateAvailabilityConfigurationInput`](crate::input::UpdateAvailabilityConfigurationInput).
+pub mod update_availability_configuration_input {
+
+    /// A builder for [`UpdateAvailabilityConfigurationInput`](crate::input::UpdateAvailabilityConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) ews_provider: std::option::Option<crate::model::EwsAvailabilityProvider>,
+        pub(crate) lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+    }
+    impl Builder {
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The domain to which the provider applies the availability configuration.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The domain to which the provider applies the availability configuration.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+        pub fn ews_provider(mut self, input: crate::model::EwsAvailabilityProvider) -> Self {
+            self.ews_provider = Some(input);
+            self
+        }
+        /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+        pub fn set_ews_provider(
+            mut self,
+            input: std::option::Option<crate::model::EwsAvailabilityProvider>,
+        ) -> Self {
+            self.ews_provider = input;
+            self
+        }
+        /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+        pub fn lambda_provider(mut self, input: crate::model::LambdaAvailabilityProvider) -> Self {
+            self.lambda_provider = Some(input);
+            self
+        }
+        /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+        pub fn set_lambda_provider(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+        ) -> Self {
+            self.lambda_provider = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAvailabilityConfigurationInput`](crate::input::UpdateAvailabilityConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateAvailabilityConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateAvailabilityConfigurationInput {
+                organization_id: self.organization_id,
+                domain_name: self.domain_name,
+                ews_provider: self.ews_provider,
+                lambda_provider: self.lambda_provider,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateAvailabilityConfigurationInputOperationOutputAlias =
+    crate::operation::UpdateAvailabilityConfiguration;
+#[doc(hidden)]
+pub type UpdateAvailabilityConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateAvailabilityConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAvailabilityConfiguration`](crate::operation::UpdateAvailabilityConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateAvailabilityConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateAvailabilityConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateAvailabilityConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.UpdateAvailabilityConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_availability_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAvailabilityConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAvailabilityConfiguration",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateAvailabilityConfigurationInput`](crate::input::UpdateAvailabilityConfigurationInput).
+    pub fn builder() -> crate::input::update_availability_configuration_input::Builder {
+        crate::input::update_availability_configuration_input::Builder::default()
     }
 }
 
@@ -12229,6 +13136,50 @@ impl std::fmt::Debug for UpdateDefaultMailDomainInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAvailabilityConfigurationInput {
+    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The domain to which the provider applies the availability configuration.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    pub ews_provider: std::option::Option<crate::model::EwsAvailabilityProvider>,
+    /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+}
+impl UpdateAvailabilityConfigurationInput {
+    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The domain to which the provider applies the availability configuration.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    pub fn ews_provider(&self) -> std::option::Option<&crate::model::EwsAvailabilityProvider> {
+        self.ews_provider.as_ref()
+    }
+    /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    pub fn lambda_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaAvailabilityProvider> {
+        self.lambda_provider.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateAvailabilityConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAvailabilityConfigurationInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("ews_provider", &self.ews_provider);
+        formatter.field("lambda_provider", &self.lambda_provider);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -12250,6 +13201,50 @@ impl std::fmt::Debug for UntagResourceInput {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TestAvailabilityConfigurationInput {
+    /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+    pub ews_provider: std::option::Option<crate::model::EwsAvailabilityProvider>,
+    /// <p>Describes a Lambda based availability provider.</p>
+    pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+}
+impl TestAvailabilityConfigurationInput {
+    /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+    pub fn ews_provider(&self) -> std::option::Option<&crate::model::EwsAvailabilityProvider> {
+        self.ews_provider.as_ref()
+    }
+    /// <p>Describes a Lambda based availability provider.</p>
+    pub fn lambda_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaAvailabilityProvider> {
+        self.lambda_provider.as_ref()
+    }
+}
+impl std::fmt::Debug for TestAvailabilityConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TestAvailabilityConfigurationInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("ews_provider", &self.ews_provider);
+        formatter.field("lambda_provider", &self.lambda_provider);
         formatter.finish()
     }
 }
@@ -13190,6 +14185,41 @@ impl std::fmt::Debug for ListGroupMembersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAvailabilityConfigurationsInput {
+    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAvailabilityConfigurationsInput {
+    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAvailabilityConfigurationsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAvailabilityConfigurationsInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAliasesInput {
     /// <p>The identifier for the organization under which the entity exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
@@ -14046,6 +15076,34 @@ impl std::fmt::Debug for DeleteEmailMonitoringConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAvailabilityConfigurationInput {
+    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+}
+impl DeleteAvailabilityConfigurationInput {
+    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteAvailabilityConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAvailabilityConfigurationInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("domain_name", &self.domain_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAliasInput {
     /// <p>The identifier for the organization under which the user exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
@@ -14371,6 +15429,57 @@ impl std::fmt::Debug for CreateGroupInput {
         let mut formatter = f.debug_struct("CreateGroupInput");
         formatter.field("organization_id", &self.organization_id);
         formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAvailabilityConfigurationInput {
+    /// <p>An idempotent token that ensures that an API request is executed only once.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The domain to which the provider applies.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    pub ews_provider: std::option::Option<crate::model::EwsAvailabilityProvider>,
+    /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+}
+impl CreateAvailabilityConfigurationInput {
+    /// <p>An idempotent token that ensures that an API request is executed only once.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The domain to which the provider applies.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    pub fn ews_provider(&self) -> std::option::Option<&crate::model::EwsAvailabilityProvider> {
+        self.ews_provider.as_ref()
+    }
+    /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    pub fn lambda_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaAvailabilityProvider> {
+        self.lambda_provider.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateAvailabilityConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAvailabilityConfigurationInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("ews_provider", &self.ews_provider);
+        formatter.field("lambda_provider", &self.lambda_provider);
         formatter.finish()
     }
 }

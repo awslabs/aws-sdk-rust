@@ -548,6 +548,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnomaliesForInsight 
     }
 }
 
+/// Operation shape for `ListAnomalousLogGroups`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_anomalous_log_groups`](crate::client::Client::list_anomalous_log_groups).
+///
+/// See [`crate::client::fluent_builders::ListAnomalousLogGroups`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAnomalousLogGroups {
+    _private: (),
+}
+impl ListAnomalousLogGroups {
+    /// Creates a new builder-style object to manufacture [`ListAnomalousLogGroupsInput`](crate::input::ListAnomalousLogGroupsInput).
+    pub fn builder() -> crate::input::list_anomalous_log_groups_input::Builder {
+        crate::input::list_anomalous_log_groups_input::Builder::default()
+    }
+    /// Creates a new `ListAnomalousLogGroups` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAnomalousLogGroups {
+    type Output = std::result::Result<
+        crate::output::ListAnomalousLogGroupsOutput,
+        crate::error::ListAnomalousLogGroupsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_anomalous_log_groups_error(response)
+        } else {
+            crate::operation_deser::parse_list_anomalous_log_groups_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListEvents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -608,6 +642,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInsights {
             crate::operation_deser::parse_list_insights_error(response)
         } else {
             crate::operation_deser::parse_list_insights_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMonitoredResources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_monitored_resources`](crate::client::Client::list_monitored_resources).
+///
+/// See [`crate::client::fluent_builders::ListMonitoredResources`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMonitoredResources {
+    _private: (),
+}
+impl ListMonitoredResources {
+    /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesInput`](crate::input::ListMonitoredResourcesInput).
+    pub fn builder() -> crate::input::list_monitored_resources_input::Builder {
+        crate::input::list_monitored_resources_input::Builder::default()
+    }
+    /// Creates a new `ListMonitoredResources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMonitoredResources {
+    type Output = std::result::Result<
+        crate::output::ListMonitoredResourcesOutput,
+        crate::error::ListMonitoredResourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_monitored_resources_error(response)
+        } else {
+            crate::operation_deser::parse_list_monitored_resources_response(response)
         }
     }
 }

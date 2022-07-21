@@ -28,6 +28,8 @@ pub struct Reservation {
     pub offering_type: std::option::Option<crate::model::OfferingType>,
     /// AWS region, e.g. 'us-west-2'
     pub region: std::option::Option<std::string::String>,
+    /// Renewal settings for the reservation
+    pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: std::option::Option<std::string::String>,
     /// Resource configuration details
@@ -91,6 +93,10 @@ impl Reservation {
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
+    /// Renewal settings for the reservation
+    pub fn renewal_settings(&self) -> std::option::Option<&crate::model::RenewalSettings> {
+        self.renewal_settings.as_ref()
+    }
     /// Unique reservation ID, e.g. '1234567'
     pub fn reservation_id(&self) -> std::option::Option<&str> {
         self.reservation_id.as_deref()
@@ -136,6 +142,7 @@ impl std::fmt::Debug for Reservation {
         formatter.field("offering_id", &self.offering_id);
         formatter.field("offering_type", &self.offering_type);
         formatter.field("region", &self.region);
+        formatter.field("renewal_settings", &self.renewal_settings);
         formatter.field("reservation_id", &self.reservation_id);
         formatter.field("resource_specification", &self.resource_specification);
         formatter.field("start", &self.start);
@@ -163,6 +170,7 @@ pub mod reservation {
         pub(crate) offering_id: std::option::Option<std::string::String>,
         pub(crate) offering_type: std::option::Option<crate::model::OfferingType>,
         pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) renewal_settings: std::option::Option<crate::model::RenewalSettings>,
         pub(crate) reservation_id: std::option::Option<std::string::String>,
         pub(crate) resource_specification:
             std::option::Option<crate::model::ReservationResourceSpecification>,
@@ -306,6 +314,19 @@ pub mod reservation {
             self.region = input;
             self
         }
+        /// Renewal settings for the reservation
+        pub fn renewal_settings(mut self, input: crate::model::RenewalSettings) -> Self {
+            self.renewal_settings = Some(input);
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn set_renewal_settings(
+            mut self,
+            input: std::option::Option<crate::model::RenewalSettings>,
+        ) -> Self {
+            self.renewal_settings = input;
+            self
+        }
         /// Unique reservation ID, e.g. '1234567'
         pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reservation_id = Some(input.into());
@@ -408,6 +429,7 @@ pub mod reservation {
                 offering_id: self.offering_id,
                 offering_type: self.offering_type,
                 region: self.region,
+                renewal_settings: self.renewal_settings,
                 reservation_id: self.reservation_id,
                 resource_specification: self.resource_specification,
                 start: self.start,
@@ -1184,6 +1206,147 @@ impl ChannelClass {
     }
 }
 impl AsRef<str> for ChannelClass {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// The Renewal settings for Reservations
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RenewalSettings {
+    /// Automatic renewal status for the reservation
+    pub automatic_renewal: std::option::Option<crate::model::ReservationAutomaticRenewal>,
+    /// Count for the reservation renewal
+    pub renewal_count: i32,
+}
+impl RenewalSettings {
+    /// Automatic renewal status for the reservation
+    pub fn automatic_renewal(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationAutomaticRenewal> {
+        self.automatic_renewal.as_ref()
+    }
+    /// Count for the reservation renewal
+    pub fn renewal_count(&self) -> i32 {
+        self.renewal_count
+    }
+}
+impl std::fmt::Debug for RenewalSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RenewalSettings");
+        formatter.field("automatic_renewal", &self.automatic_renewal);
+        formatter.field("renewal_count", &self.renewal_count);
+        formatter.finish()
+    }
+}
+/// See [`RenewalSettings`](crate::model::RenewalSettings).
+pub mod renewal_settings {
+
+    /// A builder for [`RenewalSettings`](crate::model::RenewalSettings).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) automatic_renewal:
+            std::option::Option<crate::model::ReservationAutomaticRenewal>,
+        pub(crate) renewal_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Automatic renewal status for the reservation
+        pub fn automatic_renewal(
+            mut self,
+            input: crate::model::ReservationAutomaticRenewal,
+        ) -> Self {
+            self.automatic_renewal = Some(input);
+            self
+        }
+        /// Automatic renewal status for the reservation
+        pub fn set_automatic_renewal(
+            mut self,
+            input: std::option::Option<crate::model::ReservationAutomaticRenewal>,
+        ) -> Self {
+            self.automatic_renewal = input;
+            self
+        }
+        /// Count for the reservation renewal
+        pub fn renewal_count(mut self, input: i32) -> Self {
+            self.renewal_count = Some(input);
+            self
+        }
+        /// Count for the reservation renewal
+        pub fn set_renewal_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.renewal_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RenewalSettings`](crate::model::RenewalSettings).
+        pub fn build(self) -> crate::model::RenewalSettings {
+            crate::model::RenewalSettings {
+                automatic_renewal: self.automatic_renewal,
+                renewal_count: self.renewal_count.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl RenewalSettings {
+    /// Creates a new builder-style object to manufacture [`RenewalSettings`](crate::model::RenewalSettings).
+    pub fn builder() -> crate::model::renewal_settings::Builder {
+        crate::model::renewal_settings::Builder::default()
+    }
+}
+
+/// Automatic Renewal Status for Reservation
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReservationAutomaticRenewal {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Unavailable,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReservationAutomaticRenewal {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => ReservationAutomaticRenewal::Disabled,
+            "ENABLED" => ReservationAutomaticRenewal::Enabled,
+            "UNAVAILABLE" => ReservationAutomaticRenewal::Unavailable,
+            other => ReservationAutomaticRenewal::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReservationAutomaticRenewal {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReservationAutomaticRenewal::from(s))
+    }
+}
+impl ReservationAutomaticRenewal {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReservationAutomaticRenewal::Disabled => "DISABLED",
+            ReservationAutomaticRenewal::Enabled => "ENABLED",
+            ReservationAutomaticRenewal::Unavailable => "UNAVAILABLE",
+            ReservationAutomaticRenewal::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED", "UNAVAILABLE"]
+    }
+}
+impl AsRef<str> for ReservationAutomaticRenewal {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -4227,6 +4390,8 @@ pub enum DeviceUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     NotUpToDate,
     #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    #[allow(missing_docs)] // documentation missing in model
     UpToDate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4235,6 +4400,7 @@ impl std::convert::From<&str> for DeviceUpdateStatus {
     fn from(s: &str) -> Self {
         match s {
             "NOT_UP_TO_DATE" => DeviceUpdateStatus::NotUpToDate,
+            "UPDATING" => DeviceUpdateStatus::Updating,
             "UP_TO_DATE" => DeviceUpdateStatus::UpToDate,
             other => DeviceUpdateStatus::Unknown(other.to_owned()),
         }
@@ -4252,13 +4418,14 @@ impl DeviceUpdateStatus {
     pub fn as_str(&self) -> &str {
         match self {
             DeviceUpdateStatus::NotUpToDate => "NOT_UP_TO_DATE",
+            DeviceUpdateStatus::Updating => "UPDATING",
             DeviceUpdateStatus::UpToDate => "UP_TO_DATE",
             DeviceUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["NOT_UP_TO_DATE", "UP_TO_DATE"]
+        &["NOT_UP_TO_DATE", "UPDATING", "UP_TO_DATE"]
     }
 }
 impl AsRef<str> for DeviceUpdateStatus {
@@ -30486,6 +30653,8 @@ impl AsRef<str> for FeatureActivationsInputPrepareScheduleActions {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionDescription {
+    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+    pub accessibility: std::option::Option<crate::model::AccessibilityType>,
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
     pub caption_selector_name: std::option::Option<std::string::String>,
     /// Additional settings for captions destination that depend on the destination type.
@@ -30498,6 +30667,10 @@ pub struct CaptionDescription {
     pub name: std::option::Option<std::string::String>,
 }
 impl CaptionDescription {
+    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+    pub fn accessibility(&self) -> std::option::Option<&crate::model::AccessibilityType> {
+        self.accessibility.as_ref()
+    }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
     pub fn caption_selector_name(&self) -> std::option::Option<&str> {
         self.caption_selector_name.as_deref()
@@ -30524,6 +30697,7 @@ impl CaptionDescription {
 impl std::fmt::Debug for CaptionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CaptionDescription");
+        formatter.field("accessibility", &self.accessibility);
         formatter.field("caption_selector_name", &self.caption_selector_name);
         formatter.field("destination_settings", &self.destination_settings);
         formatter.field("language_code", &self.language_code);
@@ -30538,6 +30712,7 @@ pub mod caption_description {
     /// A builder for [`CaptionDescription`](crate::model::CaptionDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) accessibility: std::option::Option<crate::model::AccessibilityType>,
         pub(crate) caption_selector_name: std::option::Option<std::string::String>,
         pub(crate) destination_settings:
             std::option::Option<crate::model::CaptionDestinationSettings>,
@@ -30546,6 +30721,19 @@ pub mod caption_description {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+        pub fn accessibility(mut self, input: crate::model::AccessibilityType) -> Self {
+            self.accessibility = Some(input);
+            self
+        }
+        /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+        pub fn set_accessibility(
+            mut self,
+            input: std::option::Option<crate::model::AccessibilityType>,
+        ) -> Self {
+            self.accessibility = input;
+            self
+        }
         /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
         pub fn caption_selector_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.caption_selector_name = Some(input.into());
@@ -30614,6 +30802,7 @@ pub mod caption_description {
         /// Consumes the builder and constructs a [`CaptionDescription`](crate::model::CaptionDescription).
         pub fn build(self) -> crate::model::CaptionDescription {
             crate::model::CaptionDescription {
+                accessibility: self.accessibility,
                 caption_selector_name: self.caption_selector_name,
                 destination_settings: self.destination_settings,
                 language_code: self.language_code,
@@ -33286,6 +33475,72 @@ impl AribDestinationSettings {
     /// Creates a new builder-style object to manufacture [`AribDestinationSettings`](crate::model::AribDestinationSettings).
     pub fn builder() -> crate::model::arib_destination_settings::Builder {
         crate::model::arib_destination_settings::Builder::default()
+    }
+}
+
+/// Accessibility Type
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AccessibilityType {
+    #[allow(missing_docs)] // documentation missing in model
+    DoesNotImplementAccessibilityFeatures,
+    #[allow(missing_docs)] // documentation missing in model
+    ImplementsAccessibilityFeatures,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AccessibilityType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES" => {
+                AccessibilityType::DoesNotImplementAccessibilityFeatures
+            }
+            "IMPLEMENTS_ACCESSIBILITY_FEATURES" => {
+                AccessibilityType::ImplementsAccessibilityFeatures
+            }
+            other => AccessibilityType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AccessibilityType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AccessibilityType::from(s))
+    }
+}
+impl AccessibilityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AccessibilityType::DoesNotImplementAccessibilityFeatures => {
+                "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES"
+            }
+            AccessibilityType::ImplementsAccessibilityFeatures => {
+                "IMPLEMENTS_ACCESSIBILITY_FEATURES"
+            }
+            AccessibilityType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES",
+            "IMPLEMENTS_ACCESSIBILITY_FEATURES",
+        ]
+    }
+}
+impl AsRef<str> for AccessibilityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

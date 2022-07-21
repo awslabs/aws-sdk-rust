@@ -776,8 +776,8 @@ pub mod get_terminology_input {
             self
         }
         /// <p>The data format of the custom terminology being retrieved.</p>
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
         pub fn terminology_data_format(
             mut self,
             input: crate::model::TerminologyDataFormat,
@@ -786,8 +786,8 @@ pub mod get_terminology_input {
             self
         }
         /// <p>The data format of the custom terminology being retrieved.</p>
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
         pub fn set_terminology_data_format(
             mut self,
             input: std::option::Option<crate::model::TerminologyDataFormat>,
@@ -1111,6 +1111,173 @@ impl ImportTerminologyInput {
     /// Creates a new builder-style object to manufacture [`ImportTerminologyInput`](crate::input::ImportTerminologyInput).
     pub fn builder() -> crate::input::import_terminology_input::Builder {
         crate::input::import_terminology_input::Builder::default()
+    }
+}
+
+/// See [`ListLanguagesInput`](crate::input::ListLanguagesInput).
+pub mod list_languages_input {
+
+    /// A builder for [`ListLanguagesInput`](crate::input::ListLanguagesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) display_language_code: std::option::Option<crate::model::DisplayLanguageCode>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+        pub fn display_language_code(mut self, input: crate::model::DisplayLanguageCode) -> Self {
+            self.display_language_code = Some(input);
+            self
+        }
+        /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+        pub fn set_display_language_code(
+            mut self,
+            input: std::option::Option<crate::model::DisplayLanguageCode>,
+        ) -> Self {
+            self.display_language_code = input;
+            self
+        }
+        /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return in each response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return in each response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLanguagesInput`](crate::input::ListLanguagesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListLanguagesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListLanguagesInput {
+                display_language_code: self.display_language_code,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListLanguagesInputOperationOutputAlias = crate::operation::ListLanguages;
+#[doc(hidden)]
+pub type ListLanguagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListLanguagesInput {
+    /// Consumes the builder and constructs an Operation<[`ListLanguages`](crate::operation::ListLanguages)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListLanguages,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListLanguagesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListLanguagesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSShineFrontendService_20170701.ListLanguages",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_languages(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLanguages::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLanguages",
+            "translate",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListLanguagesInput`](crate::input::ListLanguagesInput).
+    pub fn builder() -> crate::input::list_languages_input::Builder {
+        crate::input::list_languages_input::Builder::default()
     }
 }
 
@@ -1618,12 +1785,12 @@ pub mod start_text_translation_job_input {
             self.job_name = input;
             self
         }
-        /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
+        /// <p>Specifies the format and location of the input documents for the translation job.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
+        /// <p>Specifies the format and location of the input documents for the translation job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1745,22 +1912,22 @@ pub mod start_text_translation_job_input {
             self.parallel_data_names = input;
             self
         }
-        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
+        /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
+        /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
             self.settings = Some(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::TranslationSettings>,
@@ -2091,13 +2258,17 @@ pub mod translate_text_input {
             self
         }
         /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
+        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+        /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+        /// </note>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_language_code = Some(input.into());
             self
         }
         /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
+        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+        /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+        /// </note>
         pub fn set_source_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2118,12 +2289,12 @@ pub mod translate_text_input {
             self.target_language_code = input;
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
             self.settings = Some(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::TranslationSettings>,
@@ -2489,11 +2660,13 @@ pub struct TranslateTextInput {
     /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
     pub terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+    /// </note>
     pub source_language_code: std::option::Option<std::string::String>,
     /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
     pub target_language_code: std::option::Option<std::string::String>,
-    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl TranslateTextInput {
@@ -2506,7 +2679,9 @@ impl TranslateTextInput {
         self.terminology_names.as_deref()
     }
     /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+    /// </note>
     pub fn source_language_code(&self) -> std::option::Option<&str> {
         self.source_language_code.as_deref()
     }
@@ -2514,7 +2689,7 @@ impl TranslateTextInput {
     pub fn target_language_code(&self) -> std::option::Option<&str> {
         self.target_language_code.as_deref()
     }
-    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
         self.settings.as_ref()
     }
@@ -2558,7 +2733,7 @@ impl std::fmt::Debug for StopTextTranslationJobInput {
 pub struct StartTextTranslationJobInput {
     /// <p>The name of the batch translation job to be performed.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
+    /// <p>Specifies the format and location of the input documents for the translation job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies the S3 folder to which your job output will be saved. </p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -2581,9 +2756,9 @@ pub struct StartTextTranslationJobInput {
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
     /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
     pub parallel_data_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
+    /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
     pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl StartTextTranslationJobInput {
@@ -2591,7 +2766,7 @@ impl StartTextTranslationJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
+    /// <p>Specifies the format and location of the input documents for the translation job.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
@@ -2628,11 +2803,11 @@ impl StartTextTranslationJobInput {
     pub fn parallel_data_names(&self) -> std::option::Option<&[std::string::String]> {
         self.parallel_data_names.as_deref()
     }
-    /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
+    /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
         self.settings.as_ref()
     }
@@ -2748,6 +2923,41 @@ impl std::fmt::Debug for ListParallelDataInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLanguagesInput {
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    pub display_language_code: std::option::Option<crate::model::DisplayLanguageCode>,
+    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in each response.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListLanguagesInput {
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    pub fn display_language_code(&self) -> std::option::Option<&crate::model::DisplayLanguageCode> {
+        self.display_language_code.as_ref()
+    }
+    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListLanguagesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLanguagesInput");
+        formatter.field("display_language_code", &self.display_language_code);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportTerminologyInput {
     /// <p>The name of the custom terminology being imported.</p>
     pub name: std::option::Option<std::string::String>,
@@ -2801,8 +3011,8 @@ pub struct GetTerminologyInput {
     /// <p>The name of the custom terminology being retrieved.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The data format of the custom terminology being retrieved.</p>
-    /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
-    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     pub terminology_data_format: std::option::Option<crate::model::TerminologyDataFormat>,
 }
 impl GetTerminologyInput {
@@ -2811,8 +3021,8 @@ impl GetTerminologyInput {
         self.name.as_deref()
     }
     /// <p>The data format of the custom terminology being retrieved.</p>
-    /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
-    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     pub fn terminology_data_format(
         &self,
     ) -> std::option::Option<&crate::model::TerminologyDataFormat> {

@@ -152,6 +152,36 @@ impl UpdateDefaultMailDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAvailabilityConfigurationOutput {}
+impl std::fmt::Debug for UpdateAvailabilityConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAvailabilityConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateAvailabilityConfigurationOutput`](crate::output::UpdateAvailabilityConfigurationOutput).
+pub mod update_availability_configuration_output {
+
+    /// A builder for [`UpdateAvailabilityConfigurationOutput`](crate::output::UpdateAvailabilityConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateAvailabilityConfigurationOutput`](crate::output::UpdateAvailabilityConfigurationOutput).
+        pub fn build(self) -> crate::output::UpdateAvailabilityConfigurationOutput {
+            crate::output::UpdateAvailabilityConfigurationOutput {}
+        }
+    }
+}
+impl UpdateAvailabilityConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAvailabilityConfigurationOutput`](crate::output::UpdateAvailabilityConfigurationOutput).
+    pub fn builder() -> crate::output::update_availability_configuration_output::Builder {
+        crate::output::update_availability_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -176,6 +206,82 @@ impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TestAvailabilityConfigurationOutput {
+    /// <p>Boolean indicating whether the test passed or failed.</p>
+    pub test_passed: bool,
+    /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl TestAvailabilityConfigurationOutput {
+    /// <p>Boolean indicating whether the test passed or failed.</p>
+    pub fn test_passed(&self) -> bool {
+        self.test_passed
+    }
+    /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
+impl std::fmt::Debug for TestAvailabilityConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TestAvailabilityConfigurationOutput");
+        formatter.field("test_passed", &self.test_passed);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.finish()
+    }
+}
+/// See [`TestAvailabilityConfigurationOutput`](crate::output::TestAvailabilityConfigurationOutput).
+pub mod test_availability_configuration_output {
+
+    /// A builder for [`TestAvailabilityConfigurationOutput`](crate::output::TestAvailabilityConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) test_passed: std::option::Option<bool>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Boolean indicating whether the test passed or failed.</p>
+        pub fn test_passed(mut self, input: bool) -> Self {
+            self.test_passed = Some(input);
+            self
+        }
+        /// <p>Boolean indicating whether the test passed or failed.</p>
+        pub fn set_test_passed(mut self, input: std::option::Option<bool>) -> Self {
+            self.test_passed = input;
+            self
+        }
+        /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TestAvailabilityConfigurationOutput`](crate::output::TestAvailabilityConfigurationOutput).
+        pub fn build(self) -> crate::output::TestAvailabilityConfigurationOutput {
+            crate::output::TestAvailabilityConfigurationOutput {
+                test_passed: self.test_passed.unwrap_or_default(),
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl TestAvailabilityConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`TestAvailabilityConfigurationOutput`](crate::output::TestAvailabilityConfigurationOutput).
+    pub fn builder() -> crate::output::test_availability_configuration_output::Builder {
+        crate::output::test_availability_configuration_output::Builder::default()
     }
 }
 
@@ -1478,6 +1584,98 @@ impl ListGroupMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupMembersOutput`](crate::output::ListGroupMembersOutput).
     pub fn builder() -> crate::output::list_group_members_output::Builder {
         crate::output::list_group_members_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAvailabilityConfigurationsOutput {
+    /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+    pub availability_configurations:
+        std::option::Option<std::vec::Vec<crate::model::AvailabilityConfiguration>>,
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAvailabilityConfigurationsOutput {
+    /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+    pub fn availability_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AvailabilityConfiguration]> {
+        self.availability_configurations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAvailabilityConfigurationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAvailabilityConfigurationsOutput");
+        formatter.field(
+            "availability_configurations",
+            &self.availability_configurations,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAvailabilityConfigurationsOutput`](crate::output::ListAvailabilityConfigurationsOutput).
+pub mod list_availability_configurations_output {
+
+    /// A builder for [`ListAvailabilityConfigurationsOutput`](crate::output::ListAvailabilityConfigurationsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) availability_configurations:
+            std::option::Option<std::vec::Vec<crate::model::AvailabilityConfiguration>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `availability_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_availability_configurations`](Self::set_availability_configurations).
+        ///
+        /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+        pub fn availability_configurations(
+            mut self,
+            input: crate::model::AvailabilityConfiguration,
+        ) -> Self {
+            let mut v = self.availability_configurations.unwrap_or_default();
+            v.push(input);
+            self.availability_configurations = Some(v);
+            self
+        }
+        /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+        pub fn set_availability_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AvailabilityConfiguration>>,
+        ) -> Self {
+            self.availability_configurations = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAvailabilityConfigurationsOutput`](crate::output::ListAvailabilityConfigurationsOutput).
+        pub fn build(self) -> crate::output::ListAvailabilityConfigurationsOutput {
+            crate::output::ListAvailabilityConfigurationsOutput {
+                availability_configurations: self.availability_configurations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAvailabilityConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAvailabilityConfigurationsOutput`](crate::output::ListAvailabilityConfigurationsOutput).
+    pub fn builder() -> crate::output::list_availability_configurations_output::Builder {
+        crate::output::list_availability_configurations_output::Builder::default()
     }
 }
 
@@ -3923,6 +4121,36 @@ impl DeleteEmailMonitoringConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAvailabilityConfigurationOutput {}
+impl std::fmt::Debug for DeleteAvailabilityConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAvailabilityConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteAvailabilityConfigurationOutput`](crate::output::DeleteAvailabilityConfigurationOutput).
+pub mod delete_availability_configuration_output {
+
+    /// A builder for [`DeleteAvailabilityConfigurationOutput`](crate::output::DeleteAvailabilityConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteAvailabilityConfigurationOutput`](crate::output::DeleteAvailabilityConfigurationOutput).
+        pub fn build(self) -> crate::output::DeleteAvailabilityConfigurationOutput {
+            crate::output::DeleteAvailabilityConfigurationOutput {}
+        }
+    }
+}
+impl DeleteAvailabilityConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAvailabilityConfigurationOutput`](crate::output::DeleteAvailabilityConfigurationOutput).
+    pub fn builder() -> crate::output::delete_availability_configuration_output::Builder {
+        crate::output::delete_availability_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAliasOutput {}
 impl std::fmt::Debug for DeleteAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4259,6 +4487,36 @@ impl CreateGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupOutput`](crate::output::CreateGroupOutput).
     pub fn builder() -> crate::output::create_group_output::Builder {
         crate::output::create_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAvailabilityConfigurationOutput {}
+impl std::fmt::Debug for CreateAvailabilityConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAvailabilityConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`CreateAvailabilityConfigurationOutput`](crate::output::CreateAvailabilityConfigurationOutput).
+pub mod create_availability_configuration_output {
+
+    /// A builder for [`CreateAvailabilityConfigurationOutput`](crate::output::CreateAvailabilityConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CreateAvailabilityConfigurationOutput`](crate::output::CreateAvailabilityConfigurationOutput).
+        pub fn build(self) -> crate::output::CreateAvailabilityConfigurationOutput {
+            crate::output::CreateAvailabilityConfigurationOutput {}
+        }
+    }
+}
+impl CreateAvailabilityConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAvailabilityConfigurationOutput`](crate::output::CreateAvailabilityConfigurationOutput).
+    pub fn builder() -> crate::output::create_availability_configuration_output::Builder {
+        crate::output::create_availability_configuration_output::Builder::default()
     }
 }
 

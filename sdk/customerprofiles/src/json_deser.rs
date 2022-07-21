@@ -2768,6 +2768,14 @@ where
                                     crate::json_deser::deser_structure_crate_model_conflict_resolution(tokens)?
                                 );
                             }
+                            "MinAllowedConfidenceScoreForMerging" => {
+                                builder = builder.set_min_allowed_confidence_score_for_merging(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

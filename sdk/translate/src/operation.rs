@@ -235,6 +235,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportTerminology {
     }
 }
 
+/// Operation shape for `ListLanguages`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_languages`](crate::client::Client::list_languages).
+///
+/// See [`crate::client::fluent_builders::ListLanguages`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListLanguages {
+    _private: (),
+}
+impl ListLanguages {
+    /// Creates a new builder-style object to manufacture [`ListLanguagesInput`](crate::input::ListLanguagesInput).
+    pub fn builder() -> crate::input::list_languages_input::Builder {
+        crate::input::list_languages_input::Builder::default()
+    }
+    /// Creates a new `ListLanguages` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListLanguages {
+    type Output =
+        std::result::Result<crate::output::ListLanguagesOutput, crate::error::ListLanguagesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_languages_error(response)
+        } else {
+            crate::operation_deser::parse_list_languages_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListParallelData`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

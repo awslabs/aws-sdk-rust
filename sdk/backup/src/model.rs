@@ -218,7 +218,7 @@ impl ReportDeliveryChannel {
 /// <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p>
 /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>
 /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-/// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+/// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculatedLifecycle {
@@ -299,7 +299,7 @@ impl CalculatedLifecycle {
 
 /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
 /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-/// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+/// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Lifecycle {
@@ -959,7 +959,7 @@ pub struct BackupRuleInput {
     pub completion_window_minutes: std::option::Option<i64>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
     pub recovery_point_tags:
@@ -992,7 +992,7 @@ impl BackupRuleInput {
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
     }
@@ -1104,14 +1104,14 @@ pub mod backup_rule_input {
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
         /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+        /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
         /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+        /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -1202,7 +1202,7 @@ impl BackupRuleInput {
 pub struct CopyAction {
     /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub destination_backup_vault_arn: std::option::Option<std::string::String>,
@@ -1210,7 +1210,7 @@ pub struct CopyAction {
 impl CopyAction {
     /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
     }
@@ -1242,14 +1242,14 @@ pub mod copy_action {
     impl Builder {
         /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
         /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+        /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
         /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
         /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+        /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -2650,7 +2650,7 @@ pub struct RecoveryPointByBackupVault {
     pub calculated_lifecycle: std::option::Option<crate::model::CalculatedLifecycle>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
@@ -2718,7 +2718,7 @@ impl RecoveryPointByBackupVault {
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
     }
@@ -2960,14 +2960,14 @@ pub mod recovery_point_by_backup_vault {
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
         /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+        /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
         /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+        /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -5177,6 +5177,7 @@ impl AsRef<str> for BackupJobState {
 }
 
 /// <p>Used to specify a set of resources to a backup plan.</p>
+/// <p>Specifying your desired <code>Conditions</code>, <code>ListOfTags</code>, <code>NotResources</code>, and/or <code>Resources</code> is recommended. If none of these are specified, Backup will attempt to select all supported and opted-in storage resources, which could have unintended cost implications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupSelection {
@@ -5187,7 +5188,7 @@ pub struct BackupSelection {
     /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
@@ -5197,7 +5198,7 @@ pub struct BackupSelection {
     /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to exclude many resources from a backup plan, consider a different resource selection strategy, such as assigning only one or a few resource types or refining your resource selection using tags.</p>
     pub not_resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
@@ -5219,7 +5220,7 @@ impl BackupSelection {
     pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
     }
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
@@ -5233,7 +5234,7 @@ impl BackupSelection {
     pub fn not_resources(&self) -> std::option::Option<&[std::string::String]> {
         self.not_resources.as_deref()
     }
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
@@ -5317,7 +5318,7 @@ pub mod backup_selection {
         ///
         /// To override the contents of this collection use [`set_list_of_tags`](Self::set_list_of_tags).
         ///
-        /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition operators are case sensitive.</p>
+        /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
         /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
         /// <ul>
         /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
@@ -5329,7 +5330,7 @@ pub mod backup_selection {
             self.list_of_tags = Some(v);
             self
         }
-        /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition operators are case sensitive.</p>
+        /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
         /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
         /// <ul>
         /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
@@ -5363,7 +5364,7 @@ pub mod backup_selection {
             self.not_resources = input;
             self
         }
-        /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition operators are case sensitive.</p>
+        /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
         /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
         /// <ul>
         /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
@@ -5373,7 +5374,7 @@ pub mod backup_selection {
             self.conditions = Some(input);
             self
         }
-        /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition operators are case sensitive.</p>
+        /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
         /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
         /// <ul>
         /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
@@ -5924,7 +5925,7 @@ pub struct BackupRule {
     pub completion_window_minutes: std::option::Option<i64>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
     /// <p>An array of key-value pair strings that are assigned to resources that are associated with this rule when restored from backup.</p>
     pub recovery_point_tags:
@@ -5959,7 +5960,7 @@ impl BackupRule {
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
     }
@@ -6077,14 +6078,14 @@ pub mod backup_rule {
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
         /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+        /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
         /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+        /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,

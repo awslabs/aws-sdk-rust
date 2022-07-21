@@ -5455,3 +5455,80 @@ pub fn parse_test_connection_response(
         output.build()
     })
 }
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_subscriptions_to_event_bridge_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateSubscriptionsToEventBridgeOutput,
+    crate::error::UpdateSubscriptionsToEventBridgeError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateSubscriptionsToEventBridgeError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateSubscriptionsToEventBridgeError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedFault" => crate::error::UpdateSubscriptionsToEventBridgeError {
+            meta: generic,
+            kind: crate::error::UpdateSubscriptionsToEventBridgeErrorKind::AccessDeniedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionsToEventBridgeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidResourceStateFault" => crate::error::UpdateSubscriptionsToEventBridgeError {
+            meta: generic,
+            kind:
+                crate::error::UpdateSubscriptionsToEventBridgeErrorKind::InvalidResourceStateFault(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_resource_state_fault::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionsToEventBridgeError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        _ => crate::error::UpdateSubscriptionsToEventBridgeError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_subscriptions_to_event_bridge_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateSubscriptionsToEventBridgeOutput,
+    crate::error::UpdateSubscriptionsToEventBridgeError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_subscriptions_to_event_bridge_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_subscriptions_to_event_bridge(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionsToEventBridgeError::unhandled)?;
+        output.build()
+    })
+}

@@ -141,6 +141,7 @@ impl Client {
     ///   - [`filter_criteria(FilterCriteria)`](crate::client::fluent_builders::CreateFilter::filter_criteria) / [`set_filter_criteria(Option<FilterCriteria>)`](crate::client::fluent_builders::CreateFilter::set_filter_criteria): <p>Defines the criteria to be used in the filter for querying findings.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_name): <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFilter::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFilter::set_tags): <p>A list of tags for the filter.</p>
+    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_reason): <p>The reason for creating the filter.</p>
     /// - On success, responds with [`CreateFilterOutput`](crate::output::CreateFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateFilterOutput::arn): <p>The Amazon Resource Number (ARN) of the successfully created filter.</p>
     /// - On failure, responds with [`SdkError<CreateFilterError>`](crate::error::CreateFilterError)
@@ -237,6 +238,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<EnableDelegatedAdminAccountError>`](crate::error::EnableDelegatedAdminAccountError)
     pub fn enable_delegated_admin_account(&self) -> fluent_builders::EnableDelegatedAdminAccount {
         fluent_builders::EnableDelegatedAdminAccount::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetConfiguration`](crate::client::fluent_builders::GetConfiguration) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetConfiguration::send) it.
+
+    /// - On success, responds with [`GetConfigurationOutput`](crate::output::GetConfigurationOutput) with field(s):
+    ///   - [`ecr_configuration(Option<EcrConfigurationState>)`](crate::output::GetConfigurationOutput::ecr_configuration): <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
+    /// - On failure, responds with [`SdkError<GetConfigurationError>`](crate::error::GetConfigurationError)
+    pub fn get_configuration(&self) -> fluent_builders::GetConfiguration {
+        fluent_builders::GetConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetDelegatedAdminAccount`](crate::client::fluent_builders::GetDelegatedAdminAccount) operation.
     ///
@@ -436,6 +447,16 @@ impl Client {
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateConfiguration`](crate::client::fluent_builders::UpdateConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`ecr_configuration(EcrConfiguration)`](crate::client::fluent_builders::UpdateConfiguration::ecr_configuration) / [`set_ecr_configuration(Option<EcrConfiguration>)`](crate::client::fluent_builders::UpdateConfiguration::set_ecr_configuration): <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+    /// - On success, responds with [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateConfigurationError>`](crate::error::UpdateConfigurationError)
+    pub fn update_configuration(&self) -> fluent_builders::UpdateConfiguration {
+        fluent_builders::UpdateConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateFilter`](crate::client::fluent_builders::UpdateFilter) operation.
     ///
     /// - The fluent builder is configurable:
@@ -444,6 +465,7 @@ impl Client {
     ///   - [`filter_criteria(FilterCriteria)`](crate::client::fluent_builders::UpdateFilter::filter_criteria) / [`set_filter_criteria(Option<FilterCriteria>)`](crate::client::fluent_builders::UpdateFilter::set_filter_criteria): <p>Defines the criteria to be update in the filter.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_name): <p>The name of the filter.</p>
     ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_filter_arn): <p>The Amazon Resource Number (ARN) of the filter to update.</p>
+    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_reason): <p>The reason the filter was updated.</p>
     /// - On success, responds with [`UpdateFilterOutput`](crate::output::UpdateFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateFilterOutput::arn): <p>The Amazon Resource Number (ARN) of the successfully updated filter.</p>
     /// - On failure, responds with [`SdkError<UpdateFilterError>`](crate::error::UpdateFilterError)
@@ -801,6 +823,16 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The reason for creating the filter.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
+            self
+        }
+        /// <p>The reason for creating the filter.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_reason(input);
             self
         }
     }
@@ -1311,6 +1343,49 @@ pub mod fluent_builders {
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
+        }
+    }
+    /// Fluent builder constructing a request to `GetConfiguration`.
+    ///
+    /// <p>Retrieves setting configurations for Inspector scans.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_configuration_input::Builder,
+    }
+    impl GetConfiguration {
+        /// Creates a new `GetConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `GetDelegatedAdminAccount`.
@@ -2444,6 +2519,62 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateConfiguration`.
+    ///
+    /// <p>Updates setting configurations for your Amazon Inspector account. When you use this API as an Amazon Inspector delegated administrator this updates the setting for all accounts you manage. Member accounts in an organization cannot update this setting.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_configuration_input::Builder,
+    }
+    impl UpdateConfiguration {
+        /// Creates a new `UpdateConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+        pub fn ecr_configuration(mut self, input: crate::model::EcrConfiguration) -> Self {
+            self.inner = self.inner.ecr_configuration(input);
+            self
+        }
+        /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+        pub fn set_ecr_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EcrConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_ecr_configuration(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateFilter`.
     ///
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -2540,6 +2671,16 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter_arn(input);
+            self
+        }
+        /// <p>The reason the filter was updated.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
+            self
+        }
+        /// <p>The reason the filter was updated.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_reason(input);
             self
         }
     }

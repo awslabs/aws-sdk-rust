@@ -92,6 +92,36 @@ impl UpdateResourceEventConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePositionOutput {}
+impl std::fmt::Debug for UpdatePositionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdatePositionOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
+pub mod update_position_output {
+
+    /// A builder for [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
+        pub fn build(self) -> crate::output::UpdatePositionOutput {
+            crate::output::UpdatePositionOutput {}
+        }
+    }
+}
+impl UpdatePositionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
+    pub fn builder() -> crate::output::update_position_output::Builder {
+        crate::output::update_position_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePartnerAccountOutput {}
 impl std::fmt::Debug for UpdatePartnerAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -745,6 +775,36 @@ impl PutResourceLogLevelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutPositionConfigurationOutput {}
+impl std::fmt::Debug for PutPositionConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutPositionConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
+pub mod put_position_configuration_output {
+
+    /// A builder for [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
+        pub fn build(self) -> crate::output::PutPositionConfigurationOutput {
+            crate::output::PutPositionConfigurationOutput {}
+        }
+    }
+}
+impl PutPositionConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
+    pub fn builder() -> crate::output::put_position_configuration_output::Builder {
+        crate::output::put_position_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWirelessGatewayTaskDefinitionsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -1242,6 +1302,98 @@ impl ListQueuedMessagesOutput {
     /// Creates a new builder-style object to manufacture [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
     pub fn builder() -> crate::output::list_queued_messages_output::Builder {
         crate::output::list_queued_messages_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPositionConfigurationsOutput {
+    /// <p>A list of position configurations.</p>
+    pub position_configuration_list:
+        std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPositionConfigurationsOutput {
+    /// <p>A list of position configurations.</p>
+    pub fn position_configuration_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PositionConfigurationItem]> {
+        self.position_configuration_list.as_deref()
+    }
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListPositionConfigurationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPositionConfigurationsOutput");
+        formatter.field(
+            "position_configuration_list",
+            &self.position_configuration_list,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
+pub mod list_position_configurations_output {
+
+    /// A builder for [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) position_configuration_list:
+            std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `position_configuration_list`.
+        ///
+        /// To override the contents of this collection use [`set_position_configuration_list`](Self::set_position_configuration_list).
+        ///
+        /// <p>A list of position configurations.</p>
+        pub fn position_configuration_list(
+            mut self,
+            input: crate::model::PositionConfigurationItem,
+        ) -> Self {
+            let mut v = self.position_configuration_list.unwrap_or_default();
+            v.push(input);
+            self.position_configuration_list = Some(v);
+            self
+        }
+        /// <p>A list of position configurations.</p>
+        pub fn set_position_configuration_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
+        ) -> Self {
+            self.position_configuration_list = input;
+            self
+        }
+        /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
+        pub fn build(self) -> crate::output::ListPositionConfigurationsOutput {
+            crate::output::ListPositionConfigurationsOutput {
+                position_configuration_list: self.position_configuration_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListPositionConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
+    pub fn builder() -> crate::output::list_position_configurations_output::Builder {
+        crate::output::list_position_configurations_output::Builder::default()
     }
 }
 
@@ -3244,10 +3396,10 @@ impl GetResourceLogLevelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceEventConfigurationOutput {
-    /// <p>Event configuration for the device registration state event</p>
+    /// <p>Event configuration for the device registration state event.</p>
     pub device_registration_state:
         std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
-    /// <p>Event configuration for the Proximity event</p>
+    /// <p>Event configuration for the proximity event.</p>
     pub proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
     /// <p>Event configuration for the join event.</p>
     pub join: std::option::Option<crate::model::JoinEventConfiguration>,
@@ -3255,13 +3407,13 @@ pub struct GetResourceEventConfigurationOutput {
     pub connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
 }
 impl GetResourceEventConfigurationOutput {
-    /// <p>Event configuration for the device registration state event</p>
+    /// <p>Event configuration for the device registration state event.</p>
     pub fn device_registration_state(
         &self,
     ) -> std::option::Option<&crate::model::DeviceRegistrationStateEventConfiguration> {
         self.device_registration_state.as_ref()
     }
-    /// <p>Event configuration for the Proximity event</p>
+    /// <p>Event configuration for the proximity event.</p>
     pub fn proximity(&self) -> std::option::Option<&crate::model::ProximityEventConfiguration> {
         self.proximity.as_ref()
     }
@@ -3300,7 +3452,7 @@ pub mod get_resource_event_configuration_output {
             std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
     }
     impl Builder {
-        /// <p>Event configuration for the device registration state event</p>
+        /// <p>Event configuration for the device registration state event.</p>
         pub fn device_registration_state(
             mut self,
             input: crate::model::DeviceRegistrationStateEventConfiguration,
@@ -3308,7 +3460,7 @@ pub mod get_resource_event_configuration_output {
             self.device_registration_state = Some(input);
             self
         }
-        /// <p>Event configuration for the device registration state event</p>
+        /// <p>Event configuration for the device registration state event.</p>
         pub fn set_device_registration_state(
             mut self,
             input: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
@@ -3316,12 +3468,12 @@ pub mod get_resource_event_configuration_output {
             self.device_registration_state = input;
             self
         }
-        /// <p>Event configuration for the Proximity event</p>
+        /// <p>Event configuration for the proximity event.</p>
         pub fn proximity(mut self, input: crate::model::ProximityEventConfiguration) -> Self {
             self.proximity = Some(input);
             self
         }
-        /// <p>Event configuration for the Proximity event</p>
+        /// <p>Event configuration for the proximity event.</p>
         pub fn set_proximity(
             mut self,
             input: std::option::Option<crate::model::ProximityEventConfiguration>,
@@ -3373,6 +3525,246 @@ impl GetResourceEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
     pub fn builder() -> crate::output::get_resource_event_configuration_output::Builder {
         crate::output::get_resource_event_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPositionConfigurationOutput {
+    /// <p>The wrapper for the solver configuration details object.</p>
+    pub solvers: std::option::Option<crate::model::PositionSolverDetails>,
+    /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    pub destination: std::option::Option<std::string::String>,
+}
+impl GetPositionConfigurationOutput {
+    /// <p>The wrapper for the solver configuration details object.</p>
+    pub fn solvers(&self) -> std::option::Option<&crate::model::PositionSolverDetails> {
+        self.solvers.as_ref()
+    }
+    /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+}
+impl std::fmt::Debug for GetPositionConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetPositionConfigurationOutput");
+        formatter.field("solvers", &self.solvers);
+        formatter.field("destination", &self.destination);
+        formatter.finish()
+    }
+}
+/// See [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
+pub mod get_position_configuration_output {
+
+    /// A builder for [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) solvers: std::option::Option<crate::model::PositionSolverDetails>,
+        pub(crate) destination: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The wrapper for the solver configuration details object.</p>
+        pub fn solvers(mut self, input: crate::model::PositionSolverDetails) -> Self {
+            self.solvers = Some(input);
+            self
+        }
+        /// <p>The wrapper for the solver configuration details object.</p>
+        pub fn set_solvers(
+            mut self,
+            input: std::option::Option<crate::model::PositionSolverDetails>,
+        ) -> Self {
+            self.solvers = input;
+            self
+        }
+        /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination = Some(input.into());
+            self
+        }
+        /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
+        pub fn build(self) -> crate::output::GetPositionConfigurationOutput {
+            crate::output::GetPositionConfigurationOutput {
+                solvers: self.solvers,
+                destination: self.destination,
+            }
+        }
+    }
+}
+impl GetPositionConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
+    pub fn builder() -> crate::output::get_position_configuration_output::Builder {
+        crate::output::get_position_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPositionOutput {
+    /// <p>The position information of the resource.</p>
+    pub position: std::option::Option<std::vec::Vec<f32>>,
+    /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
+    pub accuracy: std::option::Option<crate::model::Accuracy>,
+    /// <p>The type of solver used to identify the position of the resource.</p>
+    pub solver_type: std::option::Option<crate::model::PositionSolverType>,
+    /// <p>The vendor of the positioning solver.</p>
+    pub solver_provider: std::option::Option<crate::model::PositionSolverProvider>,
+    /// <p>The version of the positioning solver.</p>
+    pub solver_version: std::option::Option<std::string::String>,
+    /// <p>The timestamp at which the device's position was determined.</p>
+    pub timestamp: std::option::Option<std::string::String>,
+}
+impl GetPositionOutput {
+    /// <p>The position information of the resource.</p>
+    pub fn position(&self) -> std::option::Option<&[f32]> {
+        self.position.as_deref()
+    }
+    /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
+    pub fn accuracy(&self) -> std::option::Option<&crate::model::Accuracy> {
+        self.accuracy.as_ref()
+    }
+    /// <p>The type of solver used to identify the position of the resource.</p>
+    pub fn solver_type(&self) -> std::option::Option<&crate::model::PositionSolverType> {
+        self.solver_type.as_ref()
+    }
+    /// <p>The vendor of the positioning solver.</p>
+    pub fn solver_provider(&self) -> std::option::Option<&crate::model::PositionSolverProvider> {
+        self.solver_provider.as_ref()
+    }
+    /// <p>The version of the positioning solver.</p>
+    pub fn solver_version(&self) -> std::option::Option<&str> {
+        self.solver_version.as_deref()
+    }
+    /// <p>The timestamp at which the device's position was determined.</p>
+    pub fn timestamp(&self) -> std::option::Option<&str> {
+        self.timestamp.as_deref()
+    }
+}
+impl std::fmt::Debug for GetPositionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetPositionOutput");
+        formatter.field("position", &self.position);
+        formatter.field("accuracy", &self.accuracy);
+        formatter.field("solver_type", &self.solver_type);
+        formatter.field("solver_provider", &self.solver_provider);
+        formatter.field("solver_version", &self.solver_version);
+        formatter.field("timestamp", &self.timestamp);
+        formatter.finish()
+    }
+}
+/// See [`GetPositionOutput`](crate::output::GetPositionOutput).
+pub mod get_position_output {
+
+    /// A builder for [`GetPositionOutput`](crate::output::GetPositionOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) position: std::option::Option<std::vec::Vec<f32>>,
+        pub(crate) accuracy: std::option::Option<crate::model::Accuracy>,
+        pub(crate) solver_type: std::option::Option<crate::model::PositionSolverType>,
+        pub(crate) solver_provider: std::option::Option<crate::model::PositionSolverProvider>,
+        pub(crate) solver_version: std::option::Option<std::string::String>,
+        pub(crate) timestamp: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `position`.
+        ///
+        /// To override the contents of this collection use [`set_position`](Self::set_position).
+        ///
+        /// <p>The position information of the resource.</p>
+        pub fn position(mut self, input: f32) -> Self {
+            let mut v = self.position.unwrap_or_default();
+            v.push(input);
+            self.position = Some(v);
+            self
+        }
+        /// <p>The position information of the resource.</p>
+        pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f32>>) -> Self {
+            self.position = input;
+            self
+        }
+        /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
+        pub fn accuracy(mut self, input: crate::model::Accuracy) -> Self {
+            self.accuracy = Some(input);
+            self
+        }
+        /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
+        pub fn set_accuracy(mut self, input: std::option::Option<crate::model::Accuracy>) -> Self {
+            self.accuracy = input;
+            self
+        }
+        /// <p>The type of solver used to identify the position of the resource.</p>
+        pub fn solver_type(mut self, input: crate::model::PositionSolverType) -> Self {
+            self.solver_type = Some(input);
+            self
+        }
+        /// <p>The type of solver used to identify the position of the resource.</p>
+        pub fn set_solver_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionSolverType>,
+        ) -> Self {
+            self.solver_type = input;
+            self
+        }
+        /// <p>The vendor of the positioning solver.</p>
+        pub fn solver_provider(mut self, input: crate::model::PositionSolverProvider) -> Self {
+            self.solver_provider = Some(input);
+            self
+        }
+        /// <p>The vendor of the positioning solver.</p>
+        pub fn set_solver_provider(
+            mut self,
+            input: std::option::Option<crate::model::PositionSolverProvider>,
+        ) -> Self {
+            self.solver_provider = input;
+            self
+        }
+        /// <p>The version of the positioning solver.</p>
+        pub fn solver_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.solver_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the positioning solver.</p>
+        pub fn set_solver_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.solver_version = input;
+            self
+        }
+        /// <p>The timestamp at which the device's position was determined.</p>
+        pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timestamp = Some(input.into());
+            self
+        }
+        /// <p>The timestamp at which the device's position was determined.</p>
+        pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPositionOutput`](crate::output::GetPositionOutput).
+        pub fn build(self) -> crate::output::GetPositionOutput {
+            crate::output::GetPositionOutput {
+                position: self.position,
+                accuracy: self.accuracy,
+                solver_type: self.solver_type,
+                solver_provider: self.solver_provider,
+                solver_version: self.solver_version,
+                timestamp: self.timestamp,
+            }
+        }
+    }
+}
+impl GetPositionOutput {
+    /// Creates a new builder-style object to manufacture [`GetPositionOutput`](crate::output::GetPositionOutput).
+    pub fn builder() -> crate::output::get_position_output::Builder {
+        crate::output::get_position_output::Builder::default()
     }
 }
 
@@ -4213,36 +4605,36 @@ impl GetFuotaTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventConfigurationByResourceTypesOutput {
-    /// <p>Resource type event configuration for the device registration state event</p>
+    /// <p>Resource type event configuration for the device registration state event.</p>
     pub device_registration_state:
         std::option::Option<crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>,
-    /// <p>Resource type event configuration for the proximity event</p>
+    /// <p>Resource type event configuration for the proximity event.</p>
     pub proximity: std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>,
-    /// <p>Resource type event configuration for the join event</p>
+    /// <p>Resource type event configuration for the join event.</p>
     pub join: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
-    /// <p>Resource type event configuration for the connection status event</p>
+    /// <p>Resource type event configuration for the connection status event.</p>
     pub connection_status:
         std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
 }
 impl GetEventConfigurationByResourceTypesOutput {
-    /// <p>Resource type event configuration for the device registration state event</p>
+    /// <p>Resource type event configuration for the device registration state event.</p>
     pub fn device_registration_state(
         &self,
     ) -> std::option::Option<&crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>
     {
         self.device_registration_state.as_ref()
     }
-    /// <p>Resource type event configuration for the proximity event</p>
+    /// <p>Resource type event configuration for the proximity event.</p>
     pub fn proximity(
         &self,
     ) -> std::option::Option<&crate::model::ProximityResourceTypeEventConfiguration> {
         self.proximity.as_ref()
     }
-    /// <p>Resource type event configuration for the join event</p>
+    /// <p>Resource type event configuration for the join event.</p>
     pub fn join(&self) -> std::option::Option<&crate::model::JoinResourceTypeEventConfiguration> {
         self.join.as_ref()
     }
-    /// <p>Resource type event configuration for the connection status event</p>
+    /// <p>Resource type event configuration for the connection status event.</p>
     pub fn connection_status(
         &self,
     ) -> std::option::Option<&crate::model::ConnectionStatusResourceTypeEventConfiguration> {
@@ -4275,7 +4667,7 @@ pub mod get_event_configuration_by_resource_types_output {
             std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
     }
     impl Builder {
-        /// <p>Resource type event configuration for the device registration state event</p>
+        /// <p>Resource type event configuration for the device registration state event.</p>
         pub fn device_registration_state(
             mut self,
             input: crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
@@ -4283,7 +4675,7 @@ pub mod get_event_configuration_by_resource_types_output {
             self.device_registration_state = Some(input);
             self
         }
-        /// <p>Resource type event configuration for the device registration state event</p>
+        /// <p>Resource type event configuration for the device registration state event.</p>
         pub fn set_device_registration_state(
             mut self,
             input: std::option::Option<
@@ -4293,7 +4685,7 @@ pub mod get_event_configuration_by_resource_types_output {
             self.device_registration_state = input;
             self
         }
-        /// <p>Resource type event configuration for the proximity event</p>
+        /// <p>Resource type event configuration for the proximity event.</p>
         pub fn proximity(
             mut self,
             input: crate::model::ProximityResourceTypeEventConfiguration,
@@ -4301,7 +4693,7 @@ pub mod get_event_configuration_by_resource_types_output {
             self.proximity = Some(input);
             self
         }
-        /// <p>Resource type event configuration for the proximity event</p>
+        /// <p>Resource type event configuration for the proximity event.</p>
         pub fn set_proximity(
             mut self,
             input: std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>,
@@ -4309,12 +4701,12 @@ pub mod get_event_configuration_by_resource_types_output {
             self.proximity = input;
             self
         }
-        /// <p>Resource type event configuration for the join event</p>
+        /// <p>Resource type event configuration for the join event.</p>
         pub fn join(mut self, input: crate::model::JoinResourceTypeEventConfiguration) -> Self {
             self.join = Some(input);
             self
         }
-        /// <p>Resource type event configuration for the join event</p>
+        /// <p>Resource type event configuration for the join event.</p>
         pub fn set_join(
             mut self,
             input: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
@@ -4322,7 +4714,7 @@ pub mod get_event_configuration_by_resource_types_output {
             self.join = input;
             self
         }
-        /// <p>Resource type event configuration for the connection status event</p>
+        /// <p>Resource type event configuration for the connection status event.</p>
         pub fn connection_status(
             mut self,
             input: crate::model::ConnectionStatusResourceTypeEventConfiguration,
@@ -4330,7 +4722,7 @@ pub mod get_event_configuration_by_resource_types_output {
             self.connection_status = Some(input);
             self
         }
-        /// <p>Resource type event configuration for the connection status event</p>
+        /// <p>Resource type event configuration for the connection status event.</p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<

@@ -186,6 +186,11 @@ pub fn serialize_structure_crate_model_deployment_targets(
         }
         list_54.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_56 = writer.prefix("AccountFilterType");
+    if let Some(var_57) = &input.account_filter_type {
+        scope_56.string(var_57.as_str());
+    }
     Ok(())
 }
 
@@ -195,51 +200,51 @@ pub fn serialize_structure_crate_model_stack_set_operation_preferences(
     input: &crate::model::StackSetOperationPreferences,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_56 = writer.prefix("RegionConcurrencyType");
-    if let Some(var_57) = &input.region_concurrency_type {
-        scope_56.string(var_57.as_str());
+    let mut scope_58 = writer.prefix("RegionConcurrencyType");
+    if let Some(var_59) = &input.region_concurrency_type {
+        scope_58.string(var_59.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_58 = writer.prefix("RegionOrder");
-    if let Some(var_59) = &input.region_order {
-        let mut list_61 = scope_58.start_list(false, None);
-        for item_60 in var_59 {
+    let mut scope_60 = writer.prefix("RegionOrder");
+    if let Some(var_61) = &input.region_order {
+        let mut list_63 = scope_60.start_list(false, None);
+        for item_62 in var_61 {
             #[allow(unused_mut)]
-            let mut entry_62 = list_61.entry();
-            entry_62.string(item_60);
+            let mut entry_64 = list_63.entry();
+            entry_64.string(item_62);
         }
-        list_61.finish();
+        list_63.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_63 = writer.prefix("FailureToleranceCount");
-    if let Some(var_64) = &input.failure_tolerance_count {
-        scope_63.number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_64).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_65 = writer.prefix("FailureTolerancePercentage");
-    if let Some(var_66) = &input.failure_tolerance_percentage {
+    let mut scope_65 = writer.prefix("FailureToleranceCount");
+    if let Some(var_66) = &input.failure_tolerance_count {
         scope_65.number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_66).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_67 = writer.prefix("MaxConcurrentCount");
-    if let Some(var_68) = &input.max_concurrent_count {
+    let mut scope_67 = writer.prefix("FailureTolerancePercentage");
+    if let Some(var_68) = &input.failure_tolerance_percentage {
         scope_67.number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_68).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_69 = writer.prefix("MaxConcurrentPercentage");
-    if let Some(var_70) = &input.max_concurrent_percentage {
+    let mut scope_69 = writer.prefix("MaxConcurrentCount");
+    if let Some(var_70) = &input.max_concurrent_count {
         scope_69.number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_70).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_71 = writer.prefix("MaxConcurrentPercentage");
+    if let Some(var_72) = &input.max_concurrent_percentage {
+        scope_71.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_72).into()),
         );
     }
     Ok(())
@@ -251,14 +256,14 @@ pub fn serialize_structure_crate_model_auto_deployment(
     input: &crate::model::AutoDeployment,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_71 = writer.prefix("Enabled");
-    if let Some(var_72) = &input.enabled {
-        scope_71.boolean(*var_72);
+    let mut scope_73 = writer.prefix("Enabled");
+    if let Some(var_74) = &input.enabled {
+        scope_73.boolean(*var_74);
     }
     #[allow(unused_mut)]
-    let mut scope_73 = writer.prefix("RetainStacksOnAccountRemoval");
-    if let Some(var_74) = &input.retain_stacks_on_account_removal {
-        scope_73.boolean(*var_74);
+    let mut scope_75 = writer.prefix("RetainStacksOnAccountRemoval");
+    if let Some(var_76) = &input.retain_stacks_on_account_removal {
+        scope_75.boolean(*var_76);
     }
     Ok(())
 }
@@ -269,9 +274,9 @@ pub fn serialize_structure_crate_model_managed_execution(
     input: &crate::model::ManagedExecution,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_75 = writer.prefix("Active");
-    if let Some(var_76) = &input.active {
-        scope_75.boolean(*var_76);
+    let mut scope_77 = writer.prefix("Active");
+    if let Some(var_78) = &input.active {
+        scope_77.boolean(*var_78);
     }
     Ok(())
 }
@@ -282,14 +287,14 @@ pub fn serialize_structure_crate_model_stack_instance_filter(
     input: &crate::model::StackInstanceFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_77 = writer.prefix("Name");
-    if let Some(var_78) = &input.name {
-        scope_77.string(var_78.as_str());
+    let mut scope_79 = writer.prefix("Name");
+    if let Some(var_80) = &input.name {
+        scope_79.string(var_80.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_79 = writer.prefix("Values");
-    if let Some(var_80) = &input.values {
-        scope_79.string(var_80);
+    let mut scope_81 = writer.prefix("Values");
+    if let Some(var_82) = &input.values {
+        scope_81.string(var_82);
     }
     Ok(())
 }
@@ -300,19 +305,19 @@ pub fn serialize_structure_crate_model_type_filters(
     input: &crate::model::TypeFilters,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_81 = writer.prefix("Category");
-    if let Some(var_82) = &input.category {
-        scope_81.string(var_82.as_str());
+    let mut scope_83 = writer.prefix("Category");
+    if let Some(var_84) = &input.category {
+        scope_83.string(var_84.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_83 = writer.prefix("PublisherId");
-    if let Some(var_84) = &input.publisher_id {
-        scope_83.string(var_84);
-    }
-    #[allow(unused_mut)]
-    let mut scope_85 = writer.prefix("TypeNamePrefix");
-    if let Some(var_86) = &input.type_name_prefix {
+    let mut scope_85 = writer.prefix("PublisherId");
+    if let Some(var_86) = &input.publisher_id {
         scope_85.string(var_86);
+    }
+    #[allow(unused_mut)]
+    let mut scope_87 = writer.prefix("TypeNamePrefix");
+    if let Some(var_88) = &input.type_name_prefix {
+        scope_87.string(var_88);
     }
     Ok(())
 }
@@ -323,14 +328,14 @@ pub fn serialize_structure_crate_model_rollback_trigger(
     input: &crate::model::RollbackTrigger,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("Arn");
-    if let Some(var_88) = &input.arn {
-        scope_87.string(var_88);
+    let mut scope_89 = writer.prefix("Arn");
+    if let Some(var_90) = &input.arn {
+        scope_89.string(var_90);
     }
     #[allow(unused_mut)]
-    let mut scope_89 = writer.prefix("Type");
-    if let Some(var_90) = &input.r#type {
-        scope_89.string(var_90);
+    let mut scope_91 = writer.prefix("Type");
+    if let Some(var_92) = &input.r#type {
+        scope_91.string(var_92);
     }
     Ok(())
 }

@@ -1650,4 +1650,26 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateSubscriptionsToEventBridgeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateSubscriptionsToEventBridgeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateSubscriptionsToEventBridgeErrorKind::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+                crate::error::UpdateSubscriptionsToEventBridgeErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
+                crate::error::UpdateSubscriptionsToEventBridgeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl std::error::Error for Error {}

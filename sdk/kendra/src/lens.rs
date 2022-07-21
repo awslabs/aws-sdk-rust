@@ -9,6 +9,16 @@ pub(crate) fn reflens_structure_crate_output_get_snapshots_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_access_control_configurations_output_next_token(
+    input: &crate::output::ListAccessControlConfigurationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_data_sources_output_next_token(
     input: &crate::output::ListDataSourcesOutput,
 ) -> std::option::Option<&std::string::String> {

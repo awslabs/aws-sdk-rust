@@ -2931,6 +2931,392 @@ impl CreateSiteToSiteVpnAttachmentInput {
     }
 }
 
+/// See [`CreateTransitGatewayPeeringInput`](crate::input::CreateTransitGatewayPeeringInput).
+pub mod create_transit_gateway_peering_input {
+
+    /// A builder for [`CreateTransitGatewayPeeringInput`](crate::input::CreateTransitGatewayPeeringInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_id: std::option::Option<std::string::String>,
+        pub(crate) transit_gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.core_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.core_network_id = input;
+            self
+        }
+        /// <p>The ARN of the transit gateway for the peering request.</p>
+        pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transit_gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway for the peering request.</p>
+        pub fn set_transit_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_arn = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateTransitGatewayPeeringInput`](crate::input::CreateTransitGatewayPeeringInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateTransitGatewayPeeringInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateTransitGatewayPeeringInput {
+                core_network_id: self.core_network_id,
+                transit_gateway_arn: self.transit_gateway_arn,
+                tags: self.tags,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateTransitGatewayPeeringInputOperationOutputAlias =
+    crate::operation::CreateTransitGatewayPeering;
+#[doc(hidden)]
+pub type CreateTransitGatewayPeeringInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateTransitGatewayPeeringInput {
+    /// Consumes the builder and constructs an Operation<[`CreateTransitGatewayPeering`](crate::operation::CreateTransitGatewayPeering)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateTransitGatewayPeering,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateTransitGatewayPeeringInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/transit-gateway-peerings").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateTransitGatewayPeeringInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_transit_gateway_peering(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateTransitGatewayPeering::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateTransitGatewayPeering",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPeeringInput`](crate::input::CreateTransitGatewayPeeringInput).
+    pub fn builder() -> crate::input::create_transit_gateway_peering_input::Builder {
+        crate::input::create_transit_gateway_peering_input::Builder::default()
+    }
+}
+
+/// See [`CreateTransitGatewayRouteTableAttachmentInput`](crate::input::CreateTransitGatewayRouteTableAttachmentInput).
+pub mod create_transit_gateway_route_table_attachment_input {
+
+    /// A builder for [`CreateTransitGatewayRouteTableAttachmentInput`](crate::input::CreateTransitGatewayRouteTableAttachmentInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) peering_id: std::option::Option<std::string::String>,
+        pub(crate) transit_gateway_route_table_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the peer for the </p>
+        pub fn peering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.peering_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the peer for the </p>
+        pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.peering_id = input;
+            self
+        }
+        /// <p>The ARN of the transit gateway route table for the attachment request.</p>
+        pub fn transit_gateway_route_table_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_route_table_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway route table for the attachment request.</p>
+        pub fn set_transit_gateway_route_table_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_route_table_arn = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableAttachmentInput`](crate::input::CreateTransitGatewayRouteTableAttachmentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateTransitGatewayRouteTableAttachmentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::input::CreateTransitGatewayRouteTableAttachmentInput {
+                    peering_id: self.peering_id,
+                    transit_gateway_route_table_arn: self.transit_gateway_route_table_arn,
+                    tags: self.tags,
+                    client_token: self.client_token,
+                },
+            )
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateTransitGatewayRouteTableAttachmentInputOperationOutputAlias =
+    crate::operation::CreateTransitGatewayRouteTableAttachment;
+#[doc(hidden)]
+pub type CreateTransitGatewayRouteTableAttachmentInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl CreateTransitGatewayRouteTableAttachmentInput {
+    /// Consumes the builder and constructs an Operation<[`CreateTransitGatewayRouteTableAttachment`](crate::operation::CreateTransitGatewayRouteTableAttachment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateTransitGatewayRouteTableAttachment,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateTransitGatewayRouteTableAttachmentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/transit-gateway-route-table-attachments")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateTransitGatewayRouteTableAttachmentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_transit_gateway_route_table_attachment(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateTransitGatewayRouteTableAttachment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateTransitGatewayRouteTableAttachment",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAttachmentInput`](crate::input::CreateTransitGatewayRouteTableAttachmentInput).
+    pub fn builder() -> crate::input::create_transit_gateway_route_table_attachment_input::Builder {
+        crate::input::create_transit_gateway_route_table_attachment_input::Builder::default()
+    }
+}
+
 /// See [`CreateVpcAttachmentInput`](crate::input::CreateVpcAttachmentInput).
 pub mod create_vpc_attachment_input {
 
@@ -4410,6 +4796,142 @@ impl DeleteLinkInput {
     }
 }
 
+/// See [`DeletePeeringInput`](crate::input::DeletePeeringInput).
+pub mod delete_peering_input {
+
+    /// A builder for [`DeletePeeringInput`](crate::input::DeletePeeringInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) peering_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the peering connection to delete.</p>
+        pub fn peering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.peering_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the peering connection to delete.</p>
+        pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.peering_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeletePeeringInput`](crate::input::DeletePeeringInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeletePeeringInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeletePeeringInput {
+                peering_id: self.peering_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeletePeeringInputOperationOutputAlias = crate::operation::DeletePeering;
+#[doc(hidden)]
+pub type DeletePeeringInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeletePeeringInput {
+    /// Consumes the builder and constructs an Operation<[`DeletePeering`](crate::operation::DeletePeering)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeletePeering,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeletePeeringInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_22 = &_input.peering_id;
+                let input_22 = input_22.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "peering_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let peering_id = aws_smithy_http::label::fmt_string(input_22, false);
+                if peering_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "peering_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/peerings/{PeeringId}", PeeringId = peering_id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeletePeeringInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePeering::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeletePeering",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeletePeeringInput`](crate::input::DeletePeeringInput).
+    pub fn builder() -> crate::input::delete_peering_input::Builder {
+        crate::input::delete_peering_input::Builder::default()
+    }
+}
+
 /// See [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
 pub mod delete_resource_policy_input {
 
@@ -4464,14 +4986,14 @@ impl DeleteResourcePolicyInput {
                 _input: &crate::input::DeleteResourcePolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.resource_arn;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_23 = &_input.resource_arn;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_22, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_23, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4618,28 +5140,28 @@ impl DeleteSiteInput {
                 _input: &crate::input::DeleteSiteInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.global_network_id;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_24 = &_input.global_network_id;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_24, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_24 = &_input.site_id;
-                let input_24 = input_24.as_ref().ok_or(
+                let input_25 = &_input.site_id;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let site_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_25, false);
                 if site_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
@@ -4794,28 +5316,28 @@ impl DeregisterTransitGatewayInput {
                 _input: &crate::input::DeregisterTransitGatewayInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_25 = &_input.global_network_id;
-                let input_25 = input_25.as_ref().ok_or(
+                let input_26 = &_input.global_network_id;
+                let input_26 = input_26.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_26, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_26 = &_input.transit_gateway_arn;
-                let input_26 = input_26.as_ref().ok_or(
+                let input_27 = &_input.transit_gateway_arn;
+                let input_27 = input_27.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "transit_gateway_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let transit_gateway_arn = aws_smithy_http::label::fmt_string(input_26, false);
+                let transit_gateway_arn = aws_smithy_http::label::fmt_string(input_27, false);
                 if transit_gateway_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "transit_gateway_arn",
@@ -4984,22 +5506,22 @@ impl DescribeGlobalNetworksInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.global_network_ids {
-                    for inner_28 in inner_27 {
+                if let Some(inner_28) = &_input.global_network_ids {
+                    for inner_29 in inner_28 {
                         query.push_kv(
                             "globalNetworkIds",
-                            &aws_smithy_http::query::fmt_string(&inner_28),
+                            &aws_smithy_http::query::fmt_string(&inner_29),
                         );
                     }
                 }
-                if let Some(inner_29) = &_input.max_results {
+                if let Some(inner_30) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_29).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
                     );
                 }
-                if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                if let Some(inner_31) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
                 Ok(())
             }
@@ -5143,28 +5665,28 @@ impl DisassociateConnectPeerInput {
                 _input: &crate::input::DisassociateConnectPeerInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.global_network_id;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_32 = &_input.global_network_id;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_32, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_32 = &_input.connect_peer_id;
-                let input_32 = input_32.as_ref().ok_or(
+                let input_33 = &_input.connect_peer_id;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "connect_peer_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let connect_peer_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let connect_peer_id = aws_smithy_http::label::fmt_string(input_33, false);
                 if connect_peer_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "connect_peer_id",
@@ -5319,28 +5841,28 @@ impl DisassociateCustomerGatewayInput {
                 _input: &crate::input::DisassociateCustomerGatewayInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_33 = &_input.global_network_id;
-                let input_33 = input_33.as_ref().ok_or(
+                let input_34 = &_input.global_network_id;
+                let input_34 = input_34.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_34, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_34 = &_input.customer_gateway_arn;
-                let input_34 = input_34.as_ref().ok_or(
+                let input_35 = &_input.customer_gateway_arn;
+                let input_35 = input_35.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "customer_gateway_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let customer_gateway_arn = aws_smithy_http::label::fmt_string(input_34, false);
+                let customer_gateway_arn = aws_smithy_http::label::fmt_string(input_35, false);
                 if customer_gateway_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "customer_gateway_arn",
@@ -5495,14 +6017,14 @@ impl DisassociateLinkInput {
                 _input: &crate::input::DisassociateLinkInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_35 = &_input.global_network_id;
-                let input_35 = input_35.as_ref().ok_or(
+                let input_36 = &_input.global_network_id;
+                let input_36 = input_36.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_36, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -5522,11 +6044,11 @@ impl DisassociateLinkInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.device_id {
-                    query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_36));
+                if let Some(inner_37) = &_input.device_id {
+                    query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
-                if let Some(inner_37) = &_input.link_id {
-                    query.push_kv("linkId", &aws_smithy_http::query::fmt_string(&inner_37));
+                if let Some(inner_38) = &_input.link_id {
+                    query.push_kv("linkId", &aws_smithy_http::query::fmt_string(&inner_38));
                 }
                 Ok(())
             }
@@ -5674,29 +6196,29 @@ impl DisassociateTransitGatewayConnectPeerInput {
                 _input: &crate::input::DisassociateTransitGatewayConnectPeerInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.global_network_id;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_39 = &_input.global_network_id;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_39, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_39 = &_input.transit_gateway_connect_peer_arn;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_40 = &_input.transit_gateway_connect_peer_arn;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "transit_gateway_connect_peer_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let transit_gateway_connect_peer_arn =
-                    aws_smithy_http::label::fmt_string(input_39, false);
+                    aws_smithy_http::label::fmt_string(input_40, false);
                 if transit_gateway_connect_peer_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "transit_gateway_connect_peer_arn",
@@ -5842,29 +6364,29 @@ impl ExecuteCoreNetworkChangeSetInput {
                 _input: &crate::input::ExecuteCoreNetworkChangeSetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.core_network_id;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_41 = &_input.core_network_id;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_41, false);
                 if core_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_41 = &_input.policy_version_id;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_42 = &_input.policy_version_id;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_version_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let mut policy_version_id_encoder =
-                    aws_smithy_types::primitive::Encoder::from(*input_41);
+                    aws_smithy_types::primitive::Encoder::from(*input_42);
                 let policy_version_id = policy_version_id_encoder.encode();
                 if policy_version_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -5996,14 +6518,14 @@ impl GetConnectAttachmentInput {
                 _input: &crate::input::GetConnectAttachmentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.attachment_id;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_43 = &_input.attachment_id;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_42, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_43, false);
                 if attachment_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
@@ -6196,14 +6718,14 @@ impl GetConnectionsInput {
                 _input: &crate::input::GetConnectionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_43 = &_input.global_network_id;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_44 = &_input.global_network_id;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_44, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -6223,25 +6745,25 @@ impl GetConnectionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_44) = &_input.connection_ids {
-                    for inner_45 in inner_44 {
+                if let Some(inner_45) = &_input.connection_ids {
+                    for inner_46 in inner_45 {
                         query.push_kv(
                             "connectionIds",
-                            &aws_smithy_http::query::fmt_string(&inner_45),
+                            &aws_smithy_http::query::fmt_string(&inner_46),
                         );
                     }
                 }
-                if let Some(inner_46) = &_input.device_id {
-                    query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_46));
+                if let Some(inner_47) = &_input.device_id {
+                    query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_47));
                 }
-                if let Some(inner_47) = &_input.max_results {
+                if let Some(inner_48) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
                     );
                 }
-                if let Some(inner_48) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                if let Some(inner_49) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_49));
                 }
                 Ok(())
             }
@@ -6367,14 +6889,14 @@ impl GetConnectPeerInput {
                 _input: &crate::input::GetConnectPeerInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_49 = &_input.connect_peer_id;
-                let input_49 = input_49.as_ref().ok_or(
+                let input_50 = &_input.connect_peer_id;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "connect_peer_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let connect_peer_id = aws_smithy_http::label::fmt_string(input_49, false);
+                let connect_peer_id = aws_smithy_http::label::fmt_string(input_50, false);
                 if connect_peer_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "connect_peer_id",
@@ -6558,14 +7080,14 @@ impl GetConnectPeerAssociationsInput {
                 _input: &crate::input::GetConnectPeerAssociationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_50 = &_input.global_network_id;
-                let input_50 = input_50.as_ref().ok_or(
+                let input_51 = &_input.global_network_id;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_51, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -6585,22 +7107,22 @@ impl GetConnectPeerAssociationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_51) = &_input.connect_peer_ids {
-                    for inner_52 in inner_51 {
+                if let Some(inner_52) = &_input.connect_peer_ids {
+                    for inner_53 in inner_52 {
                         query.push_kv(
                             "connectPeerIds",
-                            &aws_smithy_http::query::fmt_string(&inner_52),
+                            &aws_smithy_http::query::fmt_string(&inner_53),
                         );
                     }
                 }
-                if let Some(inner_53) = &_input.max_results {
+                if let Some(inner_54) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_53).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
                     );
                 }
-                if let Some(inner_54) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                if let Some(inner_55) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_55));
                 }
                 Ok(())
             }
@@ -6726,14 +7248,14 @@ impl GetCoreNetworkInput {
                 _input: &crate::input::GetCoreNetworkInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_55 = &_input.core_network_id;
-                let input_55 = input_55.as_ref().ok_or(
+                let input_56 = &_input.core_network_id;
+                let input_56 = input_56.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_55, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_56, false);
                 if core_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
@@ -6809,6 +7331,222 @@ impl GetCoreNetworkInput {
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkInput`](crate::input::GetCoreNetworkInput).
     pub fn builder() -> crate::input::get_core_network_input::Builder {
         crate::input::get_core_network_input::Builder::default()
+    }
+}
+
+/// See [`GetCoreNetworkChangeEventsInput`](crate::input::GetCoreNetworkChangeEventsInput).
+pub mod get_core_network_change_events_input {
+
+    /// A builder for [`GetCoreNetworkChangeEventsInput`](crate::input::GetCoreNetworkChangeEventsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_id: std::option::Option<std::string::String>,
+        pub(crate) policy_version_id: std::option::Option<i32>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.core_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.core_network_id = input;
+            self
+        }
+        /// <p>The ID of the policy version.</p>
+        pub fn policy_version_id(mut self, input: i32) -> Self {
+            self.policy_version_id = Some(input);
+            self
+        }
+        /// <p>The ID of the policy version.</p>
+        pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.policy_version_id = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCoreNetworkChangeEventsInput`](crate::input::GetCoreNetworkChangeEventsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetCoreNetworkChangeEventsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetCoreNetworkChangeEventsInput {
+                core_network_id: self.core_network_id,
+                policy_version_id: self.policy_version_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetCoreNetworkChangeEventsInputOperationOutputAlias =
+    crate::operation::GetCoreNetworkChangeEvents;
+#[doc(hidden)]
+pub type GetCoreNetworkChangeEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetCoreNetworkChangeEventsInput {
+    /// Consumes the builder and constructs an Operation<[`GetCoreNetworkChangeEvents`](crate::operation::GetCoreNetworkChangeEvents)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetCoreNetworkChangeEvents,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetCoreNetworkChangeEventsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_57 = &_input.core_network_id;
+                let input_57 = input_57.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "core_network_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let core_network_id = aws_smithy_http::label::fmt_string(input_57, false);
+                if core_network_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "core_network_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_58 = &_input.policy_version_id;
+                let input_58 = input_58.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "policy_version_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let mut policy_version_id_encoder =
+                    aws_smithy_types::primitive::Encoder::from(*input_58);
+                let policy_version_id = policy_version_id_encoder.encode();
+                if policy_version_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "policy_version_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/core-networks/{CoreNetworkId}/core-network-change-events/{PolicyVersionId}",
+                    CoreNetworkId = core_network_id,
+                    PolicyVersionId = policy_version_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::GetCoreNetworkChangeEventsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_59) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
+                    );
+                }
+                if let Some(inner_60) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetCoreNetworkChangeEventsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetCoreNetworkChangeEvents::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCoreNetworkChangeEvents",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeEventsInput`](crate::input::GetCoreNetworkChangeEventsInput).
+    pub fn builder() -> crate::input::get_core_network_change_events_input::Builder {
+        crate::input::get_core_network_change_events_input::Builder::default()
     }
 }
 
@@ -6908,29 +7646,29 @@ impl GetCoreNetworkChangeSetInput {
                 _input: &crate::input::GetCoreNetworkChangeSetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_56 = &_input.core_network_id;
-                let input_56 = input_56.as_ref().ok_or(
+                let input_61 = &_input.core_network_id;
+                let input_61 = input_61.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_56, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_61, false);
                 if core_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_57 = &_input.policy_version_id;
-                let input_57 = input_57.as_ref().ok_or(
+                let input_62 = &_input.policy_version_id;
+                let input_62 = input_62.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_version_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let mut policy_version_id_encoder =
-                    aws_smithy_types::primitive::Encoder::from(*input_57);
+                    aws_smithy_types::primitive::Encoder::from(*input_62);
                 let policy_version_id = policy_version_id_encoder.encode();
                 if policy_version_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -6952,14 +7690,14 @@ impl GetCoreNetworkChangeSetInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_58) = &_input.max_results {
+                if let Some(inner_63) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
                     );
                 }
-                if let Some(inner_59) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_59));
+                if let Some(inner_64) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_64));
                 }
                 Ok(())
             }
@@ -7112,14 +7850,14 @@ impl GetCoreNetworkPolicyInput {
                 _input: &crate::input::GetCoreNetworkPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_60 = &_input.core_network_id;
-                let input_60 = input_60.as_ref().ok_or(
+                let input_65 = &_input.core_network_id;
+                let input_65 = input_65.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_60, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_65, false);
                 if core_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
@@ -7139,14 +7877,14 @@ impl GetCoreNetworkPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_61) = &_input.policy_version_id {
+                if let Some(inner_66) = &_input.policy_version_id {
                     query.push_kv(
                         "policyVersionId",
-                        aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
                     );
                 }
-                if let Some(inner_62) = &_input.alias {
-                    query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_62));
+                if let Some(inner_67) = &_input.alias {
+                    query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_67));
                 }
                 Ok(())
             }
@@ -7321,14 +8059,14 @@ impl GetCustomerGatewayAssociationsInput {
                 _input: &crate::input::GetCustomerGatewayAssociationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_63 = &_input.global_network_id;
-                let input_63 = input_63.as_ref().ok_or(
+                let input_68 = &_input.global_network_id;
+                let input_68 = input_68.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_63, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_68, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -7348,22 +8086,22 @@ impl GetCustomerGatewayAssociationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_64) = &_input.customer_gateway_arns {
-                    for inner_65 in inner_64 {
+                if let Some(inner_69) = &_input.customer_gateway_arns {
+                    for inner_70 in inner_69 {
                         query.push_kv(
                             "customerGatewayArns",
-                            &aws_smithy_http::query::fmt_string(&inner_65),
+                            &aws_smithy_http::query::fmt_string(&inner_70),
                         );
                     }
                 }
-                if let Some(inner_66) = &_input.max_results {
+                if let Some(inner_71) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_71).encode(),
                     );
                 }
-                if let Some(inner_67) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
+                if let Some(inner_72) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_72));
                 }
                 Ok(())
             }
@@ -7545,14 +8283,14 @@ impl GetDevicesInput {
                 _input: &crate::input::GetDevicesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_68 = &_input.global_network_id;
-                let input_68 = input_68.as_ref().ok_or(
+                let input_73 = &_input.global_network_id;
+                let input_73 = input_73.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_68, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_73, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -7572,22 +8310,22 @@ impl GetDevicesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_69) = &_input.device_ids {
-                    for inner_70 in inner_69 {
-                        query.push_kv("deviceIds", &aws_smithy_http::query::fmt_string(&inner_70));
+                if let Some(inner_74) = &_input.device_ids {
+                    for inner_75 in inner_74 {
+                        query.push_kv("deviceIds", &aws_smithy_http::query::fmt_string(&inner_75));
                     }
                 }
-                if let Some(inner_71) = &_input.site_id {
-                    query.push_kv("siteId", &aws_smithy_http::query::fmt_string(&inner_71));
+                if let Some(inner_76) = &_input.site_id {
+                    query.push_kv("siteId", &aws_smithy_http::query::fmt_string(&inner_76));
                 }
-                if let Some(inner_72) = &_input.max_results {
+                if let Some(inner_77) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_77).encode(),
                     );
                 }
-                if let Some(inner_73) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
+                if let Some(inner_78) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
                 }
                 Ok(())
             }
@@ -7761,14 +8499,14 @@ impl GetLinkAssociationsInput {
                 _input: &crate::input::GetLinkAssociationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_74 = &_input.global_network_id;
-                let input_74 = input_74.as_ref().ok_or(
+                let input_79 = &_input.global_network_id;
+                let input_79 = input_79.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_74, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_79, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -7788,20 +8526,20 @@ impl GetLinkAssociationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_75) = &_input.device_id {
-                    query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_75));
+                if let Some(inner_80) = &_input.device_id {
+                    query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_80));
                 }
-                if let Some(inner_76) = &_input.link_id {
-                    query.push_kv("linkId", &aws_smithy_http::query::fmt_string(&inner_76));
+                if let Some(inner_81) = &_input.link_id {
+                    query.push_kv("linkId", &aws_smithy_http::query::fmt_string(&inner_81));
                 }
-                if let Some(inner_77) = &_input.max_results {
+                if let Some(inner_82) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_77).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_82).encode(),
                     );
                 }
-                if let Some(inner_78) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
+                if let Some(inner_83) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_83));
                 }
                 Ok(())
             }
@@ -8007,14 +8745,14 @@ impl GetLinksInput {
                 _input: &crate::input::GetLinksInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_79 = &_input.global_network_id;
-                let input_79 = input_79.as_ref().ok_or(
+                let input_84 = &_input.global_network_id;
+                let input_84 = input_84.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_79, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_84, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -8034,28 +8772,28 @@ impl GetLinksInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_80) = &_input.link_ids {
-                    for inner_81 in inner_80 {
-                        query.push_kv("linkIds", &aws_smithy_http::query::fmt_string(&inner_81));
+                if let Some(inner_85) = &_input.link_ids {
+                    for inner_86 in inner_85 {
+                        query.push_kv("linkIds", &aws_smithy_http::query::fmt_string(&inner_86));
                     }
                 }
-                if let Some(inner_82) = &_input.site_id {
-                    query.push_kv("siteId", &aws_smithy_http::query::fmt_string(&inner_82));
+                if let Some(inner_87) = &_input.site_id {
+                    query.push_kv("siteId", &aws_smithy_http::query::fmt_string(&inner_87));
                 }
-                if let Some(inner_83) = &_input.r#type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_83));
+                if let Some(inner_88) = &_input.r#type {
+                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_88));
                 }
-                if let Some(inner_84) = &_input.provider {
-                    query.push_kv("provider", &aws_smithy_http::query::fmt_string(&inner_84));
+                if let Some(inner_89) = &_input.provider {
+                    query.push_kv("provider", &aws_smithy_http::query::fmt_string(&inner_89));
                 }
-                if let Some(inner_85) = &_input.max_results {
+                if let Some(inner_90) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_90).encode(),
                     );
                 }
-                if let Some(inner_86) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                if let Some(inner_91) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_91));
                 }
                 Ok(())
             }
@@ -8265,14 +9003,14 @@ impl GetNetworkResourceCountsInput {
                 _input: &crate::input::GetNetworkResourceCountsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_87 = &_input.global_network_id;
-                let input_87 = input_87.as_ref().ok_or(
+                let input_92 = &_input.global_network_id;
+                let input_92 = input_92.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_87, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_92, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -8292,20 +9030,20 @@ impl GetNetworkResourceCountsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_88) = &_input.resource_type {
+                if let Some(inner_93) = &_input.resource_type {
                     query.push_kv(
                         "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_88),
+                        &aws_smithy_http::query::fmt_string(&inner_93),
                     );
                 }
-                if let Some(inner_89) = &_input.max_results {
+                if let Some(inner_94) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_94).encode(),
                     );
                 }
-                if let Some(inner_90) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_90));
+                if let Some(inner_95) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_95));
                 }
                 Ok(())
             }
@@ -8584,14 +9322,14 @@ impl GetNetworkResourceRelationshipsInput {
                 _input: &crate::input::GetNetworkResourceRelationshipsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_91 = &_input.global_network_id;
-                let input_91 = input_91.as_ref().ok_or(
+                let input_96 = &_input.global_network_id;
+                let input_96 = input_96.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_91, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_96, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -8611,44 +9349,44 @@ impl GetNetworkResourceRelationshipsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_92) = &_input.core_network_id {
+                if let Some(inner_97) = &_input.core_network_id {
                     query.push_kv(
                         "coreNetworkId",
-                        &aws_smithy_http::query::fmt_string(&inner_92),
-                    );
-                }
-                if let Some(inner_93) = &_input.registered_gateway_arn {
-                    query.push_kv(
-                        "registeredGatewayArn",
-                        &aws_smithy_http::query::fmt_string(&inner_93),
-                    );
-                }
-                if let Some(inner_94) = &_input.aws_region {
-                    query.push_kv("awsRegion", &aws_smithy_http::query::fmt_string(&inner_94));
-                }
-                if let Some(inner_95) = &_input.account_id {
-                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_95));
-                }
-                if let Some(inner_96) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_96),
-                    );
-                }
-                if let Some(inner_97) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
                         &aws_smithy_http::query::fmt_string(&inner_97),
                     );
                 }
-                if let Some(inner_98) = &_input.max_results {
+                if let Some(inner_98) = &_input.registered_gateway_arn {
                     query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
+                        "registeredGatewayArn",
+                        &aws_smithy_http::query::fmt_string(&inner_98),
                     );
                 }
-                if let Some(inner_99) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_99));
+                if let Some(inner_99) = &_input.aws_region {
+                    query.push_kv("awsRegion", &aws_smithy_http::query::fmt_string(&inner_99));
+                }
+                if let Some(inner_100) = &_input.account_id {
+                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_100));
+                }
+                if let Some(inner_101) = &_input.resource_type {
+                    query.push_kv(
+                        "resourceType",
+                        &aws_smithy_http::query::fmt_string(&inner_101),
+                    );
+                }
+                if let Some(inner_102) = &_input.resource_arn {
+                    query.push_kv(
+                        "resourceArn",
+                        &aws_smithy_http::query::fmt_string(&inner_102),
+                    );
+                }
+                if let Some(inner_103) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_103).encode(),
+                    );
+                }
+                if let Some(inner_104) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_104));
                 }
                 Ok(())
             }
@@ -8923,14 +9661,14 @@ impl GetNetworkResourcesInput {
                 _input: &crate::input::GetNetworkResourcesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_100 = &_input.global_network_id;
-                let input_100 = input_100.as_ref().ok_or(
+                let input_105 = &_input.global_network_id;
+                let input_105 = input_105.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_100, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_105, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -8950,44 +9688,44 @@ impl GetNetworkResourcesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_101) = &_input.core_network_id {
+                if let Some(inner_106) = &_input.core_network_id {
                     query.push_kv(
                         "coreNetworkId",
-                        &aws_smithy_http::query::fmt_string(&inner_101),
-                    );
-                }
-                if let Some(inner_102) = &_input.registered_gateway_arn {
-                    query.push_kv(
-                        "registeredGatewayArn",
-                        &aws_smithy_http::query::fmt_string(&inner_102),
-                    );
-                }
-                if let Some(inner_103) = &_input.aws_region {
-                    query.push_kv("awsRegion", &aws_smithy_http::query::fmt_string(&inner_103));
-                }
-                if let Some(inner_104) = &_input.account_id {
-                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_104));
-                }
-                if let Some(inner_105) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_105),
-                    );
-                }
-                if let Some(inner_106) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
                         &aws_smithy_http::query::fmt_string(&inner_106),
                     );
                 }
-                if let Some(inner_107) = &_input.max_results {
+                if let Some(inner_107) = &_input.registered_gateway_arn {
                     query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_107).encode(),
+                        "registeredGatewayArn",
+                        &aws_smithy_http::query::fmt_string(&inner_107),
                     );
                 }
-                if let Some(inner_108) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_108));
+                if let Some(inner_108) = &_input.aws_region {
+                    query.push_kv("awsRegion", &aws_smithy_http::query::fmt_string(&inner_108));
+                }
+                if let Some(inner_109) = &_input.account_id {
+                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_109));
+                }
+                if let Some(inner_110) = &_input.resource_type {
+                    query.push_kv(
+                        "resourceType",
+                        &aws_smithy_http::query::fmt_string(&inner_110),
+                    );
+                }
+                if let Some(inner_111) = &_input.resource_arn {
+                    query.push_kv(
+                        "resourceArn",
+                        &aws_smithy_http::query::fmt_string(&inner_111),
+                    );
+                }
+                if let Some(inner_112) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_112).encode(),
+                    );
+                }
+                if let Some(inner_113) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_113));
                 }
                 Ok(())
             }
@@ -9304,14 +10042,14 @@ impl GetNetworkRoutesInput {
                 _input: &crate::input::GetNetworkRoutesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_109 = &_input.global_network_id;
-                let input_109 = input_109.as_ref().ok_or(
+                let input_114 = &_input.global_network_id;
+                let input_114 = input_114.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_109, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_114, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -9610,14 +10348,14 @@ impl GetNetworkTelemetryInput {
                 _input: &crate::input::GetNetworkTelemetryInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_110 = &_input.global_network_id;
-                let input_110 = input_110.as_ref().ok_or(
+                let input_115 = &_input.global_network_id;
+                let input_115 = input_115.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_110, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_115, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -9637,44 +10375,44 @@ impl GetNetworkTelemetryInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_111) = &_input.core_network_id {
+                if let Some(inner_116) = &_input.core_network_id {
                     query.push_kv(
                         "coreNetworkId",
-                        &aws_smithy_http::query::fmt_string(&inner_111),
-                    );
-                }
-                if let Some(inner_112) = &_input.registered_gateway_arn {
-                    query.push_kv(
-                        "registeredGatewayArn",
-                        &aws_smithy_http::query::fmt_string(&inner_112),
-                    );
-                }
-                if let Some(inner_113) = &_input.aws_region {
-                    query.push_kv("awsRegion", &aws_smithy_http::query::fmt_string(&inner_113));
-                }
-                if let Some(inner_114) = &_input.account_id {
-                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_114));
-                }
-                if let Some(inner_115) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_115),
-                    );
-                }
-                if let Some(inner_116) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
                         &aws_smithy_http::query::fmt_string(&inner_116),
                     );
                 }
-                if let Some(inner_117) = &_input.max_results {
+                if let Some(inner_117) = &_input.registered_gateway_arn {
                     query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_117).encode(),
+                        "registeredGatewayArn",
+                        &aws_smithy_http::query::fmt_string(&inner_117),
                     );
                 }
-                if let Some(inner_118) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_118));
+                if let Some(inner_118) = &_input.aws_region {
+                    query.push_kv("awsRegion", &aws_smithy_http::query::fmt_string(&inner_118));
+                }
+                if let Some(inner_119) = &_input.account_id {
+                    query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_119));
+                }
+                if let Some(inner_120) = &_input.resource_type {
+                    query.push_kv(
+                        "resourceType",
+                        &aws_smithy_http::query::fmt_string(&inner_120),
+                    );
+                }
+                if let Some(inner_121) = &_input.resource_arn {
+                    query.push_kv(
+                        "resourceArn",
+                        &aws_smithy_http::query::fmt_string(&inner_121),
+                    );
+                }
+                if let Some(inner_122) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_122).encode(),
+                    );
+                }
+                if let Some(inner_123) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_123));
                 }
                 Ok(())
             }
@@ -9797,14 +10535,14 @@ impl GetResourcePolicyInput {
                 _input: &crate::input::GetResourcePolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_119 = &_input.resource_arn;
-                let input_119 = input_119.as_ref().ok_or(
+                let input_124 = &_input.resource_arn;
+                let input_124 = input_124.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_119, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_124, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -9955,28 +10693,28 @@ impl GetRouteAnalysisInput {
                 _input: &crate::input::GetRouteAnalysisInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_120 = &_input.global_network_id;
-                let input_120 = input_120.as_ref().ok_or(
+                let input_125 = &_input.global_network_id;
+                let input_125 = input_125.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_120, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_125, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_121 = &_input.route_analysis_id;
-                let input_121 = input_121.as_ref().ok_or(
+                let input_126 = &_input.route_analysis_id;
+                let input_126 = input_126.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_analysis_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let route_analysis_id = aws_smithy_http::label::fmt_string(input_121, false);
+                let route_analysis_id = aws_smithy_http::label::fmt_string(input_126, false);
                 if route_analysis_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_analysis_id",
@@ -10157,14 +10895,14 @@ impl GetSitesInput {
                 _input: &crate::input::GetSitesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_122 = &_input.global_network_id;
-                let input_122 = input_122.as_ref().ok_or(
+                let input_127 = &_input.global_network_id;
+                let input_127 = input_127.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_122, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_127, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -10184,19 +10922,19 @@ impl GetSitesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_123) = &_input.site_ids {
-                    for inner_124 in inner_123 {
-                        query.push_kv("siteIds", &aws_smithy_http::query::fmt_string(&inner_124));
+                if let Some(inner_128) = &_input.site_ids {
+                    for inner_129 in inner_128 {
+                        query.push_kv("siteIds", &aws_smithy_http::query::fmt_string(&inner_129));
                     }
                 }
-                if let Some(inner_125) = &_input.max_results {
+                if let Some(inner_130) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_125).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_130).encode(),
                     );
                 }
-                if let Some(inner_126) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_126));
+                if let Some(inner_131) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_131));
                 }
                 Ok(())
             }
@@ -10323,14 +11061,14 @@ impl GetSiteToSiteVpnAttachmentInput {
                 _input: &crate::input::GetSiteToSiteVpnAttachmentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_127 = &_input.attachment_id;
-                let input_127 = input_127.as_ref().ok_or(
+                let input_132 = &_input.attachment_id;
+                let input_132 = input_132.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_127, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_132, false);
                 if attachment_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
@@ -10521,14 +11259,14 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
                 _input: &crate::input::GetTransitGatewayConnectPeerAssociationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_128 = &_input.global_network_id;
-                let input_128 = input_128.as_ref().ok_or(
+                let input_133 = &_input.global_network_id;
+                let input_133 = input_133.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_128, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_133, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -10548,22 +11286,22 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_129) = &_input.transit_gateway_connect_peer_arns {
-                    for inner_130 in inner_129 {
+                if let Some(inner_134) = &_input.transit_gateway_connect_peer_arns {
+                    for inner_135 in inner_134 {
                         query.push_kv(
                             "transitGatewayConnectPeerArns",
-                            &aws_smithy_http::query::fmt_string(&inner_130),
+                            &aws_smithy_http::query::fmt_string(&inner_135),
                         );
                     }
                 }
-                if let Some(inner_131) = &_input.max_results {
+                if let Some(inner_136) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_131).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_136).encode(),
                     );
                 }
-                if let Some(inner_132) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_132));
+                if let Some(inner_137) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_137));
                 }
                 Ok(())
             }
@@ -10629,6 +11367,149 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayConnectPeerAssociationsInput`](crate::input::GetTransitGatewayConnectPeerAssociationsInput).
     pub fn builder() -> crate::input::get_transit_gateway_connect_peer_associations_input::Builder {
         crate::input::get_transit_gateway_connect_peer_associations_input::Builder::default()
+    }
+}
+
+/// See [`GetTransitGatewayPeeringInput`](crate::input::GetTransitGatewayPeeringInput).
+pub mod get_transit_gateway_peering_input {
+
+    /// A builder for [`GetTransitGatewayPeeringInput`](crate::input::GetTransitGatewayPeeringInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) peering_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the peering request.</p>
+        pub fn peering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.peering_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the peering request.</p>
+        pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.peering_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTransitGatewayPeeringInput`](crate::input::GetTransitGatewayPeeringInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetTransitGatewayPeeringInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetTransitGatewayPeeringInput {
+                peering_id: self.peering_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetTransitGatewayPeeringInputOperationOutputAlias =
+    crate::operation::GetTransitGatewayPeering;
+#[doc(hidden)]
+pub type GetTransitGatewayPeeringInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetTransitGatewayPeeringInput {
+    /// Consumes the builder and constructs an Operation<[`GetTransitGatewayPeering`](crate::operation::GetTransitGatewayPeering)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetTransitGatewayPeering,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetTransitGatewayPeeringInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_138 = &_input.peering_id;
+                let input_138 = input_138.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "peering_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let peering_id = aws_smithy_http::label::fmt_string(input_138, false);
+                if peering_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "peering_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/transit-gateway-peerings/{PeeringId}",
+                    PeeringId = peering_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetTransitGatewayPeeringInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTransitGatewayPeering::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTransitGatewayPeering",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayPeeringInput`](crate::input::GetTransitGatewayPeeringInput).
+    pub fn builder() -> crate::input::get_transit_gateway_peering_input::Builder {
+        crate::input::get_transit_gateway_peering_input::Builder::default()
     }
 }
 
@@ -10738,14 +11619,14 @@ impl GetTransitGatewayRegistrationsInput {
                 _input: &crate::input::GetTransitGatewayRegistrationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_133 = &_input.global_network_id;
-                let input_133 = input_133.as_ref().ok_or(
+                let input_139 = &_input.global_network_id;
+                let input_139 = input_139.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_133, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_139, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -10765,22 +11646,22 @@ impl GetTransitGatewayRegistrationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_134) = &_input.transit_gateway_arns {
-                    for inner_135 in inner_134 {
+                if let Some(inner_140) = &_input.transit_gateway_arns {
+                    for inner_141 in inner_140 {
                         query.push_kv(
                             "transitGatewayArns",
-                            &aws_smithy_http::query::fmt_string(&inner_135),
+                            &aws_smithy_http::query::fmt_string(&inner_141),
                         );
                     }
                 }
-                if let Some(inner_136) = &_input.max_results {
+                if let Some(inner_142) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_136).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_142).encode(),
                     );
                 }
-                if let Some(inner_137) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_137));
+                if let Some(inner_143) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_143));
                 }
                 Ok(())
             }
@@ -10849,6 +11730,153 @@ impl GetTransitGatewayRegistrationsInput {
     }
 }
 
+/// See [`GetTransitGatewayRouteTableAttachmentInput`](crate::input::GetTransitGatewayRouteTableAttachmentInput).
+pub mod get_transit_gateway_route_table_attachment_input {
+
+    /// A builder for [`GetTransitGatewayRouteTableAttachmentInput`](crate::input::GetTransitGatewayRouteTableAttachmentInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attachment_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the transit gateway route table attachment.</p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attachment_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the transit gateway route table attachment.</p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attachment_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTransitGatewayRouteTableAttachmentInput`](crate::input::GetTransitGatewayRouteTableAttachmentInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetTransitGatewayRouteTableAttachmentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetTransitGatewayRouteTableAttachmentInput {
+                attachment_id: self.attachment_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetTransitGatewayRouteTableAttachmentInputOperationOutputAlias =
+    crate::operation::GetTransitGatewayRouteTableAttachment;
+#[doc(hidden)]
+pub type GetTransitGatewayRouteTableAttachmentInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl GetTransitGatewayRouteTableAttachmentInput {
+    /// Consumes the builder and constructs an Operation<[`GetTransitGatewayRouteTableAttachment`](crate::operation::GetTransitGatewayRouteTableAttachment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetTransitGatewayRouteTableAttachment,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetTransitGatewayRouteTableAttachmentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_144 = &_input.attachment_id;
+                let input_144 = input_144.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "attachment_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let attachment_id = aws_smithy_http::label::fmt_string(input_144, false);
+                if attachment_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "attachment_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/transit-gateway-route-table-attachments/{AttachmentId}",
+                    AttachmentId = attachment_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetTransitGatewayRouteTableAttachmentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTransitGatewayRouteTableAttachment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTransitGatewayRouteTableAttachment",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayRouteTableAttachmentInput`](crate::input::GetTransitGatewayRouteTableAttachmentInput).
+    pub fn builder() -> crate::input::get_transit_gateway_route_table_attachment_input::Builder {
+        crate::input::get_transit_gateway_route_table_attachment_input::Builder::default()
+    }
+}
+
 /// See [`GetVpcAttachmentInput`](crate::input::GetVpcAttachmentInput).
 pub mod get_vpc_attachment_input {
 
@@ -10906,14 +11934,14 @@ impl GetVpcAttachmentInput {
                 _input: &crate::input::GetVpcAttachmentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_138 = &_input.attachment_id;
-                let input_138 = input_138.as_ref().ok_or(
+                let input_145 = &_input.attachment_id;
+                let input_145 = input_145.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_138, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_145, false);
                 if attachment_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
@@ -11126,35 +12154,35 @@ impl ListAttachmentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_139) = &_input.core_network_id {
+                if let Some(inner_146) = &_input.core_network_id {
                     query.push_kv(
                         "coreNetworkId",
-                        &aws_smithy_http::query::fmt_string(&inner_139),
+                        &aws_smithy_http::query::fmt_string(&inner_146),
                     );
                 }
-                if let Some(inner_140) = &_input.attachment_type {
+                if let Some(inner_147) = &_input.attachment_type {
                     query.push_kv(
                         "attachmentType",
-                        &aws_smithy_http::query::fmt_string(&inner_140),
+                        &aws_smithy_http::query::fmt_string(&inner_147),
                     );
                 }
-                if let Some(inner_141) = &_input.edge_location {
+                if let Some(inner_148) = &_input.edge_location {
                     query.push_kv(
                         "edgeLocation",
-                        &aws_smithy_http::query::fmt_string(&inner_141),
+                        &aws_smithy_http::query::fmt_string(&inner_148),
                     );
                 }
-                if let Some(inner_142) = &_input.state {
-                    query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_142));
+                if let Some(inner_149) = &_input.state {
+                    query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_149));
                 }
-                if let Some(inner_143) = &_input.max_results {
+                if let Some(inner_150) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_143).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_150).encode(),
                     );
                 }
-                if let Some(inner_144) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_144));
+                if let Some(inner_151) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_151));
                 }
                 Ok(())
             }
@@ -11327,26 +12355,26 @@ impl ListConnectPeersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_145) = &_input.core_network_id {
+                if let Some(inner_152) = &_input.core_network_id {
                     query.push_kv(
                         "coreNetworkId",
-                        &aws_smithy_http::query::fmt_string(&inner_145),
+                        &aws_smithy_http::query::fmt_string(&inner_152),
                     );
                 }
-                if let Some(inner_146) = &_input.connect_attachment_id {
+                if let Some(inner_153) = &_input.connect_attachment_id {
                     query.push_kv(
                         "connectAttachmentId",
-                        &aws_smithy_http::query::fmt_string(&inner_146),
+                        &aws_smithy_http::query::fmt_string(&inner_153),
                     );
                 }
-                if let Some(inner_147) = &_input.max_results {
+                if let Some(inner_154) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_147).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_154).encode(),
                     );
                 }
-                if let Some(inner_148) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_148));
+                if let Some(inner_155) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_155));
                 }
                 Ok(())
             }
@@ -11500,14 +12528,14 @@ impl ListCoreNetworkPolicyVersionsInput {
                 _input: &crate::input::ListCoreNetworkPolicyVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_149 = &_input.core_network_id;
-                let input_149 = input_149.as_ref().ok_or(
+                let input_156 = &_input.core_network_id;
+                let input_156 = input_156.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_149, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_156, false);
                 if core_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
@@ -11527,14 +12555,14 @@ impl ListCoreNetworkPolicyVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_150) = &_input.max_results {
+                if let Some(inner_157) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_150).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_157).encode(),
                     );
                 }
-                if let Some(inner_151) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_151));
+                if let Some(inner_158) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_158));
                 }
                 Ok(())
             }
@@ -11677,14 +12705,14 @@ impl ListCoreNetworksInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_152) = &_input.max_results {
+                if let Some(inner_159) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_152).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_159).encode(),
                     );
                 }
-                if let Some(inner_153) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_153));
+                if let Some(inner_160) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_160));
                 }
                 Ok(())
             }
@@ -11763,22 +12791,22 @@ pub mod list_organization_service_access_status_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The maximum number of results to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The maximum number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11831,14 +12859,14 @@ impl ListOrganizationServiceAccessStatusInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_154) = &_input.max_results {
+                if let Some(inner_161) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_154).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_161).encode(),
                     );
                 }
-                if let Some(inner_155) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_155));
+                if let Some(inner_162) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_162));
                 }
                 Ok(())
             }
@@ -11907,6 +12935,234 @@ impl ListOrganizationServiceAccessStatusInput {
     }
 }
 
+/// See [`ListPeeringsInput`](crate::input::ListPeeringsInput).
+pub mod list_peerings_input {
+
+    /// A builder for [`ListPeeringsInput`](crate::input::ListPeeringsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_id: std::option::Option<std::string::String>,
+        pub(crate) peering_type: std::option::Option<crate::model::PeeringType>,
+        pub(crate) edge_location: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::PeeringState>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.core_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.core_network_id = input;
+            self
+        }
+        /// <p>Returns a list of a peering requests.</p>
+        pub fn peering_type(mut self, input: crate::model::PeeringType) -> Self {
+            self.peering_type = Some(input);
+            self
+        }
+        /// <p>Returns a list of a peering requests.</p>
+        pub fn set_peering_type(
+            mut self,
+            input: std::option::Option<crate::model::PeeringType>,
+        ) -> Self {
+            self.peering_type = input;
+            self
+        }
+        /// <p>Returns a list edge locations for the </p>
+        pub fn edge_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_location = Some(input.into());
+            self
+        }
+        /// <p>Returns a list edge locations for the </p>
+        pub fn set_edge_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_location = input;
+            self
+        }
+        /// <p>Returns a list of the peering request states.</p>
+        pub fn state(mut self, input: crate::model::PeeringState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>Returns a list of the peering request states.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::PeeringState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPeeringsInput`](crate::input::ListPeeringsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListPeeringsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListPeeringsInput {
+                core_network_id: self.core_network_id,
+                peering_type: self.peering_type,
+                edge_location: self.edge_location,
+                state: self.state,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListPeeringsInputOperationOutputAlias = crate::operation::ListPeerings;
+#[doc(hidden)]
+pub type ListPeeringsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListPeeringsInput {
+    /// Consumes the builder and constructs an Operation<[`ListPeerings`](crate::operation::ListPeerings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListPeerings,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListPeeringsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/peerings").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListPeeringsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_163) = &_input.core_network_id {
+                    query.push_kv(
+                        "coreNetworkId",
+                        &aws_smithy_http::query::fmt_string(&inner_163),
+                    );
+                }
+                if let Some(inner_164) = &_input.peering_type {
+                    query.push_kv(
+                        "peeringType",
+                        &aws_smithy_http::query::fmt_string(&inner_164),
+                    );
+                }
+                if let Some(inner_165) = &_input.edge_location {
+                    query.push_kv(
+                        "edgeLocation",
+                        &aws_smithy_http::query::fmt_string(&inner_165),
+                    );
+                }
+                if let Some(inner_166) = &_input.state {
+                    query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_166));
+                }
+                if let Some(inner_167) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_167).encode(),
+                    );
+                }
+                if let Some(inner_168) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_168));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPeeringsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPeerings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPeerings",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListPeeringsInput`](crate::input::ListPeeringsInput).
+    pub fn builder() -> crate::input::list_peerings_input::Builder {
+        crate::input::list_peerings_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
 
@@ -11961,14 +13217,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_156 = &_input.resource_arn;
-                let input_156 = input_156.as_ref().ok_or(
+                let input_169 = &_input.resource_arn;
+                let input_169 = input_169.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_156, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_169, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -12154,14 +13410,14 @@ impl PutCoreNetworkPolicyInput {
                 _input: &crate::input::PutCoreNetworkPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_157 = &_input.core_network_id;
-                let input_157 = input_157.as_ref().ok_or(
+                let input_170 = &_input.core_network_id;
+                let input_170 = input_170.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_157, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_170, false);
                 if core_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
@@ -12325,14 +13581,14 @@ impl PutResourcePolicyInput {
                 _input: &crate::input::PutResourcePolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_158 = &_input.resource_arn;
-                let input_158 = input_158.as_ref().ok_or(
+                let input_171 = &_input.resource_arn;
+                let input_171 = input_171.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_158, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_171, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -12497,14 +13753,14 @@ impl RegisterTransitGatewayInput {
                 _input: &crate::input::RegisterTransitGatewayInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_159 = &_input.global_network_id;
-                let input_159 = input_159.as_ref().ok_or(
+                let input_172 = &_input.global_network_id;
+                let input_172 = input_172.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_159, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_172, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -12656,14 +13912,14 @@ impl RejectAttachmentInput {
                 _input: &crate::input::RejectAttachmentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_160 = &_input.attachment_id;
-                let input_160 = input_160.as_ref().ok_or(
+                let input_173 = &_input.attachment_id;
+                let input_173 = input_173.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_160, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_173, false);
                 if attachment_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
@@ -12815,29 +14071,29 @@ impl RestoreCoreNetworkPolicyVersionInput {
                 _input: &crate::input::RestoreCoreNetworkPolicyVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_161 = &_input.core_network_id;
-                let input_161 = input_161.as_ref().ok_or(
+                let input_174 = &_input.core_network_id;
+                let input_174 = input_174.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_161, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_174, false);
                 if core_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_162 = &_input.policy_version_id;
-                let input_162 = input_162.as_ref().ok_or(
+                let input_175 = &_input.policy_version_id;
+                let input_175 = input_175.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_version_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let mut policy_version_id_encoder =
-                    aws_smithy_types::primitive::Encoder::from(*input_162);
+                    aws_smithy_types::primitive::Encoder::from(*input_175);
                 let policy_version_id = policy_version_id_encoder.encode();
                 if policy_version_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -12921,12 +14177,12 @@ pub mod start_organization_service_access_update_input {
         pub(crate) action: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.action = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
@@ -13169,14 +14425,14 @@ impl StartRouteAnalysisInput {
                 _input: &crate::input::StartRouteAnalysisInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_163 = &_input.global_network_id;
-                let input_163 = input_163.as_ref().ok_or(
+                let input_176 = &_input.global_network_id;
+                let input_176 = input_176.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_163, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_176, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -13344,14 +14600,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_164 = &_input.resource_arn;
-                let input_164 = input_164.as_ref().ok_or(
+                let input_177 = &_input.resource_arn;
+                let input_177 = input_177.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_164, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_177, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -13515,14 +14771,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_165 = &_input.resource_arn;
-                let input_165 = input_165.as_ref().ok_or(
+                let input_178 = &_input.resource_arn;
+                let input_178 = input_178.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_165, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_178, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -13538,9 +14794,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_166) = &_input.tag_keys {
-                    for inner_167 in inner_166 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_167));
+                if let Some(inner_179) = &_input.tag_keys {
+                    for inner_180 in inner_179 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_180));
                     }
                 }
                 Ok(())
@@ -13723,28 +14979,28 @@ impl UpdateConnectionInput {
                 _input: &crate::input::UpdateConnectionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_168 = &_input.global_network_id;
-                let input_168 = input_168.as_ref().ok_or(
+                let input_181 = &_input.global_network_id;
+                let input_181 = input_181.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_168, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_181, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_169 = &_input.connection_id;
-                let input_169 = input_169.as_ref().ok_or(
+                let input_182 = &_input.connection_id;
+                let input_182 = input_182.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "connection_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let connection_id = aws_smithy_http::label::fmt_string(input_169, false);
+                let connection_id = aws_smithy_http::label::fmt_string(input_182, false);
                 if connection_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "connection_id",
@@ -13907,14 +15163,14 @@ impl UpdateCoreNetworkInput {
                 _input: &crate::input::UpdateCoreNetworkInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_170 = &_input.core_network_id;
-                let input_170 = input_170.as_ref().ok_or(
+                let input_183 = &_input.core_network_id;
+                let input_183 = input_183.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_170, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_183, false);
                 if core_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "core_network_id",
@@ -14186,28 +15442,28 @@ impl UpdateDeviceInput {
                 _input: &crate::input::UpdateDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_171 = &_input.global_network_id;
-                let input_171 = input_171.as_ref().ok_or(
+                let input_184 = &_input.global_network_id;
+                let input_184 = input_184.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_171, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_184, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_172 = &_input.device_id;
-                let input_172 = input_172.as_ref().ok_or(
+                let input_185 = &_input.device_id;
+                let input_185 = input_185.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let device_id = aws_smithy_http::label::fmt_string(input_172, false);
+                let device_id = aws_smithy_http::label::fmt_string(input_185, false);
                 if device_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
@@ -14372,14 +15628,14 @@ impl UpdateGlobalNetworkInput {
                 _input: &crate::input::UpdateGlobalNetworkInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_173 = &_input.global_network_id;
-                let input_173 = input_173.as_ref().ok_or(
+                let input_186 = &_input.global_network_id;
+                let input_186 = input_186.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_173, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_186, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
@@ -14597,28 +15853,28 @@ impl UpdateLinkInput {
                 _input: &crate::input::UpdateLinkInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_174 = &_input.global_network_id;
-                let input_174 = input_174.as_ref().ok_or(
+                let input_187 = &_input.global_network_id;
+                let input_187 = input_187.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_174, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_187, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_175 = &_input.link_id;
-                let input_175 = input_175.as_ref().ok_or(
+                let input_188 = &_input.link_id;
+                let input_188 = input_188.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "link_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let link_id = aws_smithy_http::label::fmt_string(input_175, false);
+                let link_id = aws_smithy_http::label::fmt_string(input_188, false);
                 if link_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "link_id",
@@ -14814,28 +16070,28 @@ impl UpdateNetworkResourceMetadataInput {
                 _input: &crate::input::UpdateNetworkResourceMetadataInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_176 = &_input.global_network_id;
-                let input_176 = input_176.as_ref().ok_or(
+                let input_189 = &_input.global_network_id;
+                let input_189 = input_189.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_176, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_189, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_177 = &_input.resource_arn;
-                let input_177 = input_177.as_ref().ok_or(
+                let input_190 = &_input.resource_arn;
+                let input_190 = input_190.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_177, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_190, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -15032,28 +16288,28 @@ impl UpdateSiteInput {
                 _input: &crate::input::UpdateSiteInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_178 = &_input.global_network_id;
-                let input_178 = input_178.as_ref().ok_or(
+                let input_191 = &_input.global_network_id;
+                let input_191 = input_191.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_178, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_191, false);
                 if global_network_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_179 = &_input.site_id;
-                let input_179 = input_179.as_ref().ok_or(
+                let input_192 = &_input.site_id;
+                let input_192 = input_192.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let site_id = aws_smithy_http::label::fmt_string(input_179, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_192, false);
                 if site_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
@@ -15258,14 +16514,14 @@ impl UpdateVpcAttachmentInput {
                 _input: &crate::input::UpdateVpcAttachmentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_180 = &_input.attachment_id;
-                let input_180 = input_180.as_ref().ok_or(
+                let input_193 = &_input.attachment_id;
+                let input_193 = input_193.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_180, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_193, false);
                 if attachment_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attachment_id",
@@ -15869,11 +17125,11 @@ impl std::fmt::Debug for StartRouteAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOrganizationServiceAccessUpdateInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
     pub action: std::option::Option<std::string::String>,
 }
 impl StartOrganizationServiceAccessUpdateInput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
@@ -16064,18 +17320,74 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListOrganizationServiceAccessStatusInput {
-    #[allow(missing_docs)] // documentation missing in model
+pub struct ListPeeringsInput {
+    /// <p>The ID of a core network.</p>
+    pub core_network_id: std::option::Option<std::string::String>,
+    /// <p>Returns a list of a peering requests.</p>
+    pub peering_type: std::option::Option<crate::model::PeeringType>,
+    /// <p>Returns a list edge locations for the </p>
+    pub edge_location: std::option::Option<std::string::String>,
+    /// <p>Returns a list of the peering request states.</p>
+    pub state: std::option::Option<crate::model::PeeringState>,
+    /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
-impl ListOrganizationServiceAccessStatusInput {
-    #[allow(missing_docs)] // documentation missing in model
+impl ListPeeringsInput {
+    /// <p>The ID of a core network.</p>
+    pub fn core_network_id(&self) -> std::option::Option<&str> {
+        self.core_network_id.as_deref()
+    }
+    /// <p>Returns a list of a peering requests.</p>
+    pub fn peering_type(&self) -> std::option::Option<&crate::model::PeeringType> {
+        self.peering_type.as_ref()
+    }
+    /// <p>Returns a list edge locations for the </p>
+    pub fn edge_location(&self) -> std::option::Option<&str> {
+        self.edge_location.as_deref()
+    }
+    /// <p>Returns a list of the peering request states.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::PeeringState> {
+        self.state.as_ref()
+    }
+    /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListPeeringsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPeeringsInput");
+        formatter.field("core_network_id", &self.core_network_id);
+        formatter.field("peering_type", &self.peering_type);
+        formatter.field("edge_location", &self.edge_location);
+        formatter.field("state", &self.state);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListOrganizationServiceAccessStatusInput {
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationServiceAccessStatusInput {
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16274,6 +17586,27 @@ impl std::fmt::Debug for GetVpcAttachmentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTransitGatewayRouteTableAttachmentInput {
+    /// <p>The ID of the transit gateway route table attachment.</p>
+    pub attachment_id: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayRouteTableAttachmentInput {
+    /// <p>The ID of the transit gateway route table attachment.</p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetTransitGatewayRouteTableAttachmentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTransitGatewayRouteTableAttachmentInput");
+        formatter.field("attachment_id", &self.attachment_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayRegistrationsInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
@@ -16309,6 +17642,27 @@ impl std::fmt::Debug for GetTransitGatewayRegistrationsInput {
         formatter.field("transit_gateway_arns", &self.transit_gateway_arns);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTransitGatewayPeeringInput {
+    /// <p>The ID of the peering request.</p>
+    pub peering_id: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayPeeringInput {
+    /// <p>The ID of the peering request.</p>
+    pub fn peering_id(&self) -> std::option::Option<&str> {
+        self.peering_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetTransitGatewayPeeringInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTransitGatewayPeeringInput");
+        formatter.field("peering_id", &self.peering_id);
         formatter.finish()
     }
 }
@@ -17294,6 +18648,48 @@ impl std::fmt::Debug for GetCoreNetworkChangeSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCoreNetworkChangeEventsInput {
+    /// <p>The ID of a core network.</p>
+    pub core_network_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the policy version.</p>
+    pub policy_version_id: std::option::Option<i32>,
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCoreNetworkChangeEventsInput {
+    /// <p>The ID of a core network.</p>
+    pub fn core_network_id(&self) -> std::option::Option<&str> {
+        self.core_network_id.as_deref()
+    }
+    /// <p>The ID of the policy version.</p>
+    pub fn policy_version_id(&self) -> std::option::Option<i32> {
+        self.policy_version_id
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetCoreNetworkChangeEventsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCoreNetworkChangeEventsInput");
+        formatter.field("core_network_id", &self.core_network_id);
+        formatter.field("policy_version_id", &self.policy_version_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkInput {
     /// <p>The ID of a core network.</p>
     pub core_network_id: std::option::Option<std::string::String>,
@@ -17710,6 +19106,27 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePeeringInput {
+    /// <p>The ID of the peering connection to delete.</p>
+    pub peering_id: std::option::Option<std::string::String>,
+}
+impl DeletePeeringInput {
+    /// <p>The ID of the peering connection to delete.</p>
+    pub fn peering_id(&self) -> std::option::Option<&str> {
+        self.peering_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeletePeeringInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePeeringInput");
+        formatter.field("peering_id", &self.peering_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLinkInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
@@ -17953,6 +19370,93 @@ impl std::fmt::Debug for CreateVpcAttachmentInput {
         formatter.field("vpc_arn", &self.vpc_arn);
         formatter.field("subnet_arns", &self.subnet_arns);
         formatter.field("options", &self.options);
+        formatter.field("tags", &self.tags);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateTransitGatewayRouteTableAttachmentInput {
+    /// <p>The ID of the peer for the </p>
+    pub peering_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the transit gateway route table for the attachment request.</p>
+    pub transit_gateway_route_table_arn: std::option::Option<std::string::String>,
+    /// <p>The list of key-value tags associated with the request.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The client token associated with the request.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateTransitGatewayRouteTableAttachmentInput {
+    /// <p>The ID of the peer for the </p>
+    pub fn peering_id(&self) -> std::option::Option<&str> {
+        self.peering_id.as_deref()
+    }
+    /// <p>The ARN of the transit gateway route table for the attachment request.</p>
+    pub fn transit_gateway_route_table_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_route_table_arn.as_deref()
+    }
+    /// <p>The list of key-value tags associated with the request.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateTransitGatewayRouteTableAttachmentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateTransitGatewayRouteTableAttachmentInput");
+        formatter.field("peering_id", &self.peering_id);
+        formatter.field(
+            "transit_gateway_route_table_arn",
+            &self.transit_gateway_route_table_arn,
+        );
+        formatter.field("tags", &self.tags);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateTransitGatewayPeeringInput {
+    /// <p>The ID of a core network.</p>
+    pub core_network_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the transit gateway for the peering request.</p>
+    pub transit_gateway_arn: std::option::Option<std::string::String>,
+    /// <p>The list of key-value tags associated with the request.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The client token associated with the request.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateTransitGatewayPeeringInput {
+    /// <p>The ID of a core network.</p>
+    pub fn core_network_id(&self) -> std::option::Option<&str> {
+        self.core_network_id.as_deref()
+    }
+    /// <p>The ARN of the transit gateway for the peering request.</p>
+    pub fn transit_gateway_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_arn.as_deref()
+    }
+    /// <p>The list of key-value tags associated with the request.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateTransitGatewayPeeringInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateTransitGatewayPeeringInput");
+        formatter.field("core_network_id", &self.core_network_id);
+        formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
         formatter.field("tags", &self.tags);
         formatter.field("client_token", &self.client_token);
         formatter.finish()

@@ -374,6 +374,7 @@ impl Client {
     ///   - [`offering_id(Option<String>)`](crate::output::DeleteReservationOutput::offering_id): Unique offering ID, e.g. '87654321'
     ///   - [`offering_type(Option<OfferingType>)`](crate::output::DeleteReservationOutput::offering_type): Offering type, e.g. 'NO_UPFRONT'
     ///   - [`region(Option<String>)`](crate::output::DeleteReservationOutput::region): AWS region, e.g. 'us-west-2'
+    ///   - [`renewal_settings(Option<RenewalSettings>)`](crate::output::DeleteReservationOutput::renewal_settings): Renewal settings for the reservation
     ///   - [`reservation_id(Option<String>)`](crate::output::DeleteReservationOutput::reservation_id): Unique reservation ID, e.g. '1234567'
     ///   - [`resource_specification(Option<ReservationResourceSpecification>)`](crate::output::DeleteReservationOutput::resource_specification): Resource configuration details
     ///   - [`start(Option<String>)`](crate::output::DeleteReservationOutput::start): Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
@@ -579,6 +580,7 @@ impl Client {
     ///   - [`offering_id(Option<String>)`](crate::output::DescribeReservationOutput::offering_id): Unique offering ID, e.g. '87654321'
     ///   - [`offering_type(Option<OfferingType>)`](crate::output::DescribeReservationOutput::offering_type): Offering type, e.g. 'NO_UPFRONT'
     ///   - [`region(Option<String>)`](crate::output::DescribeReservationOutput::region): AWS region, e.g. 'us-west-2'
+    ///   - [`renewal_settings(Option<RenewalSettings>)`](crate::output::DescribeReservationOutput::renewal_settings): Renewal settings for the reservation
     ///   - [`reservation_id(Option<String>)`](crate::output::DescribeReservationOutput::reservation_id): Unique reservation ID, e.g. '1234567'
     ///   - [`resource_specification(Option<ReservationResourceSpecification>)`](crate::output::DescribeReservationOutput::resource_specification): Resource configuration details
     ///   - [`start(Option<String>)`](crate::output::DescribeReservationOutput::start): Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
@@ -756,6 +758,7 @@ impl Client {
     ///   - [`count(i32)`](crate::client::fluent_builders::PurchaseOffering::count) / [`set_count(i32)`](crate::client::fluent_builders::PurchaseOffering::set_count): Number of resources
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_name): Name for the new reservation
     ///   - [`offering_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::offering_id) / [`set_offering_id(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_offering_id): Offering to purchase, e.g. '87654321'
+    ///   - [`renewal_settings(RenewalSettings)`](crate::client::fluent_builders::PurchaseOffering::renewal_settings) / [`set_renewal_settings(Option<RenewalSettings>)`](crate::client::fluent_builders::PurchaseOffering::set_renewal_settings): Renewal settings for the reservation
     ///   - [`request_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::request_id) / [`set_request_id(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_request_id): Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     ///   - [`start(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::start) / [`set_start(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_start): Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PurchaseOffering::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PurchaseOffering::set_tags): A collection of key-value pairs
@@ -992,6 +995,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateReservation::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateReservation::set_name): Name of the reservation
+    ///   - [`renewal_settings(RenewalSettings)`](crate::client::fluent_builders::UpdateReservation::renewal_settings) / [`set_renewal_settings(Option<RenewalSettings>)`](crate::client::fluent_builders::UpdateReservation::set_renewal_settings): Renewal settings for the reservation
     ///   - [`reservation_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReservation::reservation_id) / [`set_reservation_id(Option<String>)`](crate::client::fluent_builders::UpdateReservation::set_reservation_id): Unique reservation ID, e.g. '1234567'
     /// - On success, responds with [`UpdateReservationOutput`](crate::output::UpdateReservationOutput) with field(s):
     ///   - [`reservation(Option<Reservation>)`](crate::output::UpdateReservationOutput::reservation): Reserved resources available to use
@@ -4437,6 +4441,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_offering_id(input);
             self
         }
+        /// Renewal settings for the reservation
+        pub fn renewal_settings(mut self, input: crate::model::RenewalSettings) -> Self {
+            self.inner = self.inner.renewal_settings(input);
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn set_renewal_settings(
+            mut self,
+            input: std::option::Option<crate::model::RenewalSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_renewal_settings(input);
+            self
+        }
         /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_id(input.into());
@@ -5656,6 +5673,19 @@ pub mod fluent_builders {
         /// Name of the reservation
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn renewal_settings(mut self, input: crate::model::RenewalSettings) -> Self {
+            self.inner = self.inner.renewal_settings(input);
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn set_renewal_settings(
+            mut self,
+            input: std::option::Option<crate::model::RenewalSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_renewal_settings(input);
             self
         }
         /// Unique reservation ID, e.g. '1234567'

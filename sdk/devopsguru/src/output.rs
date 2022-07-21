@@ -709,6 +709,98 @@ impl ListNotificationChannelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMonitoredResourcesOutput {
+    /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
+    pub monitored_resource_identifiers:
+        std::option::Option<std::vec::Vec<crate::model::MonitoredResourceIdentifier>>,
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMonitoredResourcesOutput {
+    /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
+    pub fn monitored_resource_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::MonitoredResourceIdentifier]> {
+        self.monitored_resource_identifiers.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMonitoredResourcesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMonitoredResourcesOutput");
+        formatter.field(
+            "monitored_resource_identifiers",
+            &self.monitored_resource_identifiers,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListMonitoredResourcesOutput`](crate::output::ListMonitoredResourcesOutput).
+pub mod list_monitored_resources_output {
+
+    /// A builder for [`ListMonitoredResourcesOutput`](crate::output::ListMonitoredResourcesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitored_resource_identifiers:
+            std::option::Option<std::vec::Vec<crate::model::MonitoredResourceIdentifier>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `monitored_resource_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_monitored_resource_identifiers`](Self::set_monitored_resource_identifiers).
+        ///
+        /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
+        pub fn monitored_resource_identifiers(
+            mut self,
+            input: crate::model::MonitoredResourceIdentifier,
+        ) -> Self {
+            let mut v = self.monitored_resource_identifiers.unwrap_or_default();
+            v.push(input);
+            self.monitored_resource_identifiers = Some(v);
+            self
+        }
+        /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
+        pub fn set_monitored_resource_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MonitoredResourceIdentifier>>,
+        ) -> Self {
+            self.monitored_resource_identifiers = input;
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMonitoredResourcesOutput`](crate::output::ListMonitoredResourcesOutput).
+        pub fn build(self) -> crate::output::ListMonitoredResourcesOutput {
+            crate::output::ListMonitoredResourcesOutput {
+                monitored_resource_identifiers: self.monitored_resource_identifiers,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMonitoredResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesOutput`](crate::output::ListMonitoredResourcesOutput).
+    pub fn builder() -> crate::output::list_monitored_resources_output::Builder {
+        crate::output::list_monitored_resources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsOutput {
     /// <p> The returned list of proactive insights. </p>
     pub proactive_insights:
@@ -902,6 +994,108 @@ impl ListEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventsOutput`](crate::output::ListEventsOutput).
     pub fn builder() -> crate::output::list_events_output::Builder {
         crate::output::list_events_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAnomalousLogGroupsOutput {
+    /// <p> The ID of the insight containing the log groups. </p>
+    pub insight_id: std::option::Option<std::string::String>,
+    /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    pub anomalous_log_groups: std::option::Option<std::vec::Vec<crate::model::AnomalousLogGroup>>,
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAnomalousLogGroupsOutput {
+    /// <p> The ID of the insight containing the log groups. </p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    pub fn anomalous_log_groups(&self) -> std::option::Option<&[crate::model::AnomalousLogGroup]> {
+        self.anomalous_log_groups.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAnomalousLogGroupsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAnomalousLogGroupsOutput");
+        formatter.field("insight_id", &self.insight_id);
+        formatter.field("anomalous_log_groups", &self.anomalous_log_groups);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAnomalousLogGroupsOutput`](crate::output::ListAnomalousLogGroupsOutput).
+pub mod list_anomalous_log_groups_output {
+
+    /// A builder for [`ListAnomalousLogGroupsOutput`](crate::output::ListAnomalousLogGroupsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) insight_id: std::option::Option<std::string::String>,
+        pub(crate) anomalous_log_groups:
+            std::option::Option<std::vec::Vec<crate::model::AnomalousLogGroup>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The ID of the insight containing the log groups. </p>
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.insight_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the insight containing the log groups. </p>
+        pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.insight_id = input;
+            self
+        }
+        /// Appends an item to `anomalous_log_groups`.
+        ///
+        /// To override the contents of this collection use [`set_anomalous_log_groups`](Self::set_anomalous_log_groups).
+        ///
+        /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+        pub fn anomalous_log_groups(mut self, input: crate::model::AnomalousLogGroup) -> Self {
+            let mut v = self.anomalous_log_groups.unwrap_or_default();
+            v.push(input);
+            self.anomalous_log_groups = Some(v);
+            self
+        }
+        /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+        pub fn set_anomalous_log_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AnomalousLogGroup>>,
+        ) -> Self {
+            self.anomalous_log_groups = input;
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAnomalousLogGroupsOutput`](crate::output::ListAnomalousLogGroupsOutput).
+        pub fn build(self) -> crate::output::ListAnomalousLogGroupsOutput {
+            crate::output::ListAnomalousLogGroupsOutput {
+                insight_id: self.insight_id,
+                anomalous_log_groups: self.anomalous_log_groups,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAnomalousLogGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAnomalousLogGroupsOutput`](crate::output::ListAnomalousLogGroupsOutput).
+    pub fn builder() -> crate::output::list_anomalous_log_groups_output::Builder {
+        crate::output::list_anomalous_log_groups_output::Builder::default()
     }
 }
 

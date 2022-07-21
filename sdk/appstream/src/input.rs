@@ -3062,6 +3062,8 @@ pub mod create_stack_input {
         pub(crate) access_endpoints:
             std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
         pub(crate) embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) streaming_experience_settings:
+            std::option::Option<crate::model::StreamingExperienceSettings>,
     }
     impl Builder {
         /// <p>The name of the stack.</p>
@@ -3236,6 +3238,22 @@ pub mod create_stack_input {
             self.embed_host_domains = input;
             self
         }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn streaming_experience_settings(
+            mut self,
+            input: crate::model::StreamingExperienceSettings,
+        ) -> Self {
+            self.streaming_experience_settings = Some(input);
+            self
+        }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn set_streaming_experience_settings(
+            mut self,
+            input: std::option::Option<crate::model::StreamingExperienceSettings>,
+        ) -> Self {
+            self.streaming_experience_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateStackInput`](crate::input::CreateStackInput).
         pub fn build(
             self,
@@ -3253,6 +3271,7 @@ pub mod create_stack_input {
                 tags: self.tags,
                 access_endpoints: self.access_endpoints,
                 embed_host_domains: self.embed_host_domains,
+                streaming_experience_settings: self.streaming_experience_settings,
             })
         }
     }
@@ -12039,6 +12058,8 @@ pub mod update_stack_input {
         pub(crate) access_endpoints:
             std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
         pub(crate) embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) streaming_experience_settings:
+            std::option::Option<crate::model::StreamingExperienceSettings>,
     }
     impl Builder {
         /// <p>The stack name to display.</p>
@@ -12209,6 +12230,22 @@ pub mod update_stack_input {
             self.embed_host_domains = input;
             self
         }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn streaming_experience_settings(
+            mut self,
+            input: crate::model::StreamingExperienceSettings,
+        ) -> Self {
+            self.streaming_experience_settings = Some(input);
+            self
+        }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn set_streaming_experience_settings(
+            mut self,
+            input: std::option::Option<crate::model::StreamingExperienceSettings>,
+        ) -> Self {
+            self.streaming_experience_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateStackInput`](crate::input::UpdateStackInput).
         pub fn build(
             self,
@@ -12227,6 +12264,7 @@ pub mod update_stack_input {
                 application_settings: self.application_settings,
                 access_endpoints: self.access_endpoints,
                 embed_host_domains: self.embed_host_domains,
+                streaming_experience_settings: self.streaming_experience_settings,
             })
         }
     }
@@ -12369,6 +12407,9 @@ pub struct UpdateStackInput {
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    pub streaming_experience_settings:
+        std::option::Option<crate::model::StreamingExperienceSettings>,
 }
 impl UpdateStackInput {
     /// <p>The stack name to display.</p>
@@ -12419,6 +12460,12 @@ impl UpdateStackInput {
     pub fn embed_host_domains(&self) -> std::option::Option<&[std::string::String]> {
         self.embed_host_domains.as_deref()
     }
+    /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    pub fn streaming_experience_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingExperienceSettings> {
+        self.streaming_experience_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12435,6 +12482,10 @@ impl std::fmt::Debug for UpdateStackInput {
         formatter.field("application_settings", &self.application_settings);
         formatter.field("access_endpoints", &self.access_endpoints);
         formatter.field("embed_host_domains", &self.embed_host_domains);
+        formatter.field(
+            "streaming_experience_settings",
+            &self.streaming_experience_settings,
+        );
         formatter.finish()
     }
 }
@@ -14383,6 +14434,9 @@ pub struct CreateStackInput {
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    pub streaming_experience_settings:
+        std::option::Option<crate::model::StreamingExperienceSettings>,
 }
 impl CreateStackInput {
     /// <p>The name of the stack.</p>
@@ -14436,6 +14490,12 @@ impl CreateStackInput {
     pub fn embed_host_domains(&self) -> std::option::Option<&[std::string::String]> {
         self.embed_host_domains.as_deref()
     }
+    /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    pub fn streaming_experience_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingExperienceSettings> {
+        self.streaming_experience_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14451,6 +14511,10 @@ impl std::fmt::Debug for CreateStackInput {
         formatter.field("tags", &self.tags);
         formatter.field("access_endpoints", &self.access_endpoints);
         formatter.field("embed_host_domains", &self.embed_host_domains);
+        formatter.field(
+            "streaming_experience_settings",
+            &self.streaming_experience_settings,
+        );
         formatter.finish()
     }
 }

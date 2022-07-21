@@ -20,11 +20,11 @@ pub enum BatchCreateAttendeeErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -378,11 +378,11 @@ pub enum CreateAttendeeErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -545,11 +545,11 @@ pub enum CreateMeetingErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>The request exceeds the resource limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -692,11 +692,11 @@ pub enum CreateMeetingWithAttendeesErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>The request exceeds the resource limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -855,11 +855,11 @@ pub enum DeleteAttendeeErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1002,11 +1002,11 @@ pub enum DeleteMeetingErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1146,11 +1146,11 @@ pub enum GetAttendeeErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1287,11 +1287,11 @@ pub enum GetMeetingErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1428,11 +1428,11 @@ pub enum ListAttendeesErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1574,11 +1574,11 @@ pub enum StartMeetingTranscriptionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1759,11 +1759,11 @@ pub enum StopMeetingTranscriptionErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is currently unavailable.</p>
+    /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of requests exceeds the limit.</p>
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2814,7 +2814,7 @@ impl UnprocessableEntityException {
     }
 }
 
-/// <p>The number of requests exceeds the limit.</p>
+/// <p>The number of customer requests exceeds the request rate limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -2918,7 +2918,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>The service is currently unavailable.</p>
+/// <p>The service encountered an unexpected error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceFailureException {

@@ -716,7 +716,7 @@ impl UpstreamRepository {
     }
 }
 
-/// <p> An error associated with package. </p>
+/// <p>l An error associated with package. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageVersionError {
@@ -1224,6 +1224,252 @@ impl ResourcePolicy {
     }
 }
 
+/// <p>Details about the package origin configuration of a package.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PackageOriginConfiguration {
+    /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
+    pub restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
+}
+impl PackageOriginConfiguration {
+    /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
+    pub fn restrictions(&self) -> std::option::Option<&crate::model::PackageOriginRestrictions> {
+        self.restrictions.as_ref()
+    }
+}
+impl std::fmt::Debug for PackageOriginConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PackageOriginConfiguration");
+        formatter.field("restrictions", &self.restrictions);
+        formatter.finish()
+    }
+}
+/// See [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
+pub mod package_origin_configuration {
+
+    /// A builder for [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
+    }
+    impl Builder {
+        /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
+        pub fn restrictions(mut self, input: crate::model::PackageOriginRestrictions) -> Self {
+            self.restrictions = Some(input);
+            self
+        }
+        /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
+        pub fn set_restrictions(
+            mut self,
+            input: std::option::Option<crate::model::PackageOriginRestrictions>,
+        ) -> Self {
+            self.restrictions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
+        pub fn build(self) -> crate::model::PackageOriginConfiguration {
+            crate::model::PackageOriginConfiguration {
+                restrictions: self.restrictions,
+            }
+        }
+    }
+}
+impl PackageOriginConfiguration {
+    /// Creates a new builder-style object to manufacture [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
+    pub fn builder() -> crate::model::package_origin_configuration::Builder {
+        crate::model::package_origin_configuration::Builder::default()
+    }
+}
+
+/// <p>Details about the origin restrictions set on the package. The package origin restrictions determine how new versions of a package can be added to a specific repository.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PackageOriginRestrictions {
+    /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
+    pub publish: std::option::Option<crate::model::AllowPublish>,
+    /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
+    pub upstream: std::option::Option<crate::model::AllowUpstream>,
+}
+impl PackageOriginRestrictions {
+    /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
+    pub fn publish(&self) -> std::option::Option<&crate::model::AllowPublish> {
+        self.publish.as_ref()
+    }
+    /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
+    pub fn upstream(&self) -> std::option::Option<&crate::model::AllowUpstream> {
+        self.upstream.as_ref()
+    }
+}
+impl std::fmt::Debug for PackageOriginRestrictions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PackageOriginRestrictions");
+        formatter.field("publish", &self.publish);
+        formatter.field("upstream", &self.upstream);
+        formatter.finish()
+    }
+}
+/// See [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
+pub mod package_origin_restrictions {
+
+    /// A builder for [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) publish: std::option::Option<crate::model::AllowPublish>,
+        pub(crate) upstream: std::option::Option<crate::model::AllowUpstream>,
+    }
+    impl Builder {
+        /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
+        pub fn publish(mut self, input: crate::model::AllowPublish) -> Self {
+            self.publish = Some(input);
+            self
+        }
+        /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
+        pub fn set_publish(
+            mut self,
+            input: std::option::Option<crate::model::AllowPublish>,
+        ) -> Self {
+            self.publish = input;
+            self
+        }
+        /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
+        pub fn upstream(mut self, input: crate::model::AllowUpstream) -> Self {
+            self.upstream = Some(input);
+            self
+        }
+        /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
+        pub fn set_upstream(
+            mut self,
+            input: std::option::Option<crate::model::AllowUpstream>,
+        ) -> Self {
+            self.upstream = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
+        pub fn build(self) -> crate::model::PackageOriginRestrictions {
+            crate::model::PackageOriginRestrictions {
+                publish: self.publish,
+                upstream: self.upstream,
+            }
+        }
+    }
+}
+impl PackageOriginRestrictions {
+    /// Creates a new builder-style object to manufacture [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
+    pub fn builder() -> crate::model::package_origin_restrictions::Builder {
+        crate::model::package_origin_restrictions::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AllowUpstream {
+    #[allow(missing_docs)] // documentation missing in model
+    Allow,
+    #[allow(missing_docs)] // documentation missing in model
+    Block,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AllowUpstream {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALLOW" => AllowUpstream::Allow,
+            "BLOCK" => AllowUpstream::Block,
+            other => AllowUpstream::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AllowUpstream {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AllowUpstream::from(s))
+    }
+}
+impl AllowUpstream {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AllowUpstream::Allow => "ALLOW",
+            AllowUpstream::Block => "BLOCK",
+            AllowUpstream::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALLOW", "BLOCK"]
+    }
+}
+impl AsRef<str> for AllowUpstream {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AllowPublish {
+    #[allow(missing_docs)] // documentation missing in model
+    Allow,
+    #[allow(missing_docs)] // documentation missing in model
+    Block,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AllowPublish {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALLOW" => AllowPublish::Allow,
+            "BLOCK" => AllowPublish::Block,
+            other => AllowPublish::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AllowPublish {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AllowPublish::from(s))
+    }
+}
+impl AllowPublish {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AllowPublish::Allow => "ALLOW",
+            AllowPublish::Block => "BLOCK",
+            AllowPublish::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALLOW", "BLOCK"]
+    }
+}
+impl AsRef<str> for AllowPublish {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p> Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html">ListRepositories</a> operation returns a list of <code>RepositorySummary</code> objects. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1386,6 +1632,8 @@ pub struct PackageVersionSummary {
     pub revision: std::option::Option<std::string::String>,
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+    pub origin: std::option::Option<crate::model::PackageVersionOrigin>,
 }
 impl PackageVersionSummary {
     /// <p> Information about a package version. </p>
@@ -1400,6 +1648,10 @@ impl PackageVersionSummary {
     pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.status.as_ref()
     }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+    pub fn origin(&self) -> std::option::Option<&crate::model::PackageVersionOrigin> {
+        self.origin.as_ref()
+    }
 }
 impl std::fmt::Debug for PackageVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1407,6 +1659,7 @@ impl std::fmt::Debug for PackageVersionSummary {
         formatter.field("version", &self.version);
         formatter.field("revision", &self.revision);
         formatter.field("status", &self.status);
+        formatter.field("origin", &self.origin);
         formatter.finish()
     }
 }
@@ -1419,6 +1672,7 @@ pub mod package_version_summary {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::PackageVersionStatus>,
+        pub(crate) origin: std::option::Option<crate::model::PackageVersionOrigin>,
     }
     impl Builder {
         /// <p> Information about a package version. </p>
@@ -1454,12 +1708,26 @@ pub mod package_version_summary {
             self.status = input;
             self
         }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+        pub fn origin(mut self, input: crate::model::PackageVersionOrigin) -> Self {
+            self.origin = Some(input);
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+        pub fn set_origin(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionOrigin>,
+        ) -> Self {
+            self.origin = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PackageVersionSummary`](crate::model::PackageVersionSummary).
         pub fn build(self) -> crate::model::PackageVersionSummary {
             crate::model::PackageVersionSummary {
                 version: self.version,
                 revision: self.revision,
                 status: self.status,
+                origin: self.origin,
             }
         }
     }
@@ -1468,6 +1736,223 @@ impl PackageVersionSummary {
     /// Creates a new builder-style object to manufacture [`PackageVersionSummary`](crate::model::PackageVersionSummary).
     pub fn builder() -> crate::model::package_version_summary::Builder {
         crate::model::package_version_summary::Builder::default()
+    }
+}
+
+/// <p>Information about how a package version was added to a repository.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PackageVersionOrigin {
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
+    pub domain_entry_point: std::option::Option<crate::model::DomainEntryPoint>,
+    /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
+    pub origin_type: std::option::Option<crate::model::PackageVersionOriginType>,
+}
+impl PackageVersionOrigin {
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
+    pub fn domain_entry_point(&self) -> std::option::Option<&crate::model::DomainEntryPoint> {
+        self.domain_entry_point.as_ref()
+    }
+    /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
+    pub fn origin_type(&self) -> std::option::Option<&crate::model::PackageVersionOriginType> {
+        self.origin_type.as_ref()
+    }
+}
+impl std::fmt::Debug for PackageVersionOrigin {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PackageVersionOrigin");
+        formatter.field("domain_entry_point", &self.domain_entry_point);
+        formatter.field("origin_type", &self.origin_type);
+        formatter.finish()
+    }
+}
+/// See [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
+pub mod package_version_origin {
+
+    /// A builder for [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_entry_point: std::option::Option<crate::model::DomainEntryPoint>,
+        pub(crate) origin_type: std::option::Option<crate::model::PackageVersionOriginType>,
+    }
+    impl Builder {
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
+        pub fn domain_entry_point(mut self, input: crate::model::DomainEntryPoint) -> Self {
+            self.domain_entry_point = Some(input);
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
+        pub fn set_domain_entry_point(
+            mut self,
+            input: std::option::Option<crate::model::DomainEntryPoint>,
+        ) -> Self {
+            self.domain_entry_point = input;
+            self
+        }
+        /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
+        pub fn origin_type(mut self, input: crate::model::PackageVersionOriginType) -> Self {
+            self.origin_type = Some(input);
+            self
+        }
+        /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
+        pub fn set_origin_type(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionOriginType>,
+        ) -> Self {
+            self.origin_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
+        pub fn build(self) -> crate::model::PackageVersionOrigin {
+            crate::model::PackageVersionOrigin {
+                domain_entry_point: self.domain_entry_point,
+                origin_type: self.origin_type,
+            }
+        }
+    }
+}
+impl PackageVersionOrigin {
+    /// Creates a new builder-style object to manufacture [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
+    pub fn builder() -> crate::model::package_version_origin::Builder {
+        crate::model::package_version_origin::Builder::default()
+    }
+}
+
+/// _Note: `PackageVersionOriginType::Unknown` has been renamed to `::UnknownValue`._
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PackageVersionOriginType {
+    #[allow(missing_docs)] // documentation missing in model
+    External,
+    #[allow(missing_docs)] // documentation missing in model
+    Internal,
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PackageVersionOriginType {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXTERNAL" => PackageVersionOriginType::External,
+            "INTERNAL" => PackageVersionOriginType::Internal,
+            "UNKNOWN" => PackageVersionOriginType::UnknownValue,
+            other => PackageVersionOriginType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PackageVersionOriginType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PackageVersionOriginType::from(s))
+    }
+}
+impl PackageVersionOriginType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PackageVersionOriginType::External => "EXTERNAL",
+            PackageVersionOriginType::Internal => "INTERNAL",
+            PackageVersionOriginType::UnknownValue => "UNKNOWN",
+            PackageVersionOriginType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EXTERNAL", "INTERNAL", "UNKNOWN"]
+    }
+}
+impl AsRef<str> for PackageVersionOriginType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about how a package originally entered the CodeArtifact domain. For packages published directly to CodeArtifact, the entry point is the repository it was published to. For packages ingested from an external repository, the entry point is the external connection that it was ingested from. An external connection is a CodeArtifact repository that is connected to an external repository such as the npm registry or NuGet gallery.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DomainEntryPoint {
+    /// <p>The name of the repository that a package was originally published to.</p>
+    pub repository_name: std::option::Option<std::string::String>,
+    /// <p>The name of the external connection that a package was ingested from.</p>
+    pub external_connection_name: std::option::Option<std::string::String>,
+}
+impl DomainEntryPoint {
+    /// <p>The name of the repository that a package was originally published to.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The name of the external connection that a package was ingested from.</p>
+    pub fn external_connection_name(&self) -> std::option::Option<&str> {
+        self.external_connection_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DomainEntryPoint {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DomainEntryPoint");
+        formatter.field("repository_name", &self.repository_name);
+        formatter.field("external_connection_name", &self.external_connection_name);
+        formatter.finish()
+    }
+}
+/// See [`DomainEntryPoint`](crate::model::DomainEntryPoint).
+pub mod domain_entry_point {
+
+    /// A builder for [`DomainEntryPoint`](crate::model::DomainEntryPoint).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) repository_name: std::option::Option<std::string::String>,
+        pub(crate) external_connection_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the repository that a package was originally published to.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the repository that a package was originally published to.</p>
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_name = input;
+            self
+        }
+        /// <p>The name of the external connection that a package was ingested from.</p>
+        pub fn external_connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.external_connection_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the external connection that a package was ingested from.</p>
+        pub fn set_external_connection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.external_connection_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DomainEntryPoint`](crate::model::DomainEntryPoint).
+        pub fn build(self) -> crate::model::DomainEntryPoint {
+            crate::model::DomainEntryPoint {
+                repository_name: self.repository_name,
+                external_connection_name: self.external_connection_name,
+            }
+        }
+    }
+}
+impl DomainEntryPoint {
+    /// Creates a new builder-style object to manufacture [`DomainEntryPoint`](crate::model::DomainEntryPoint).
+    pub fn builder() -> crate::model::domain_entry_point::Builder {
+        crate::model::domain_entry_point::Builder::default()
     }
 }
 
@@ -1526,11 +2011,11 @@ impl AsRef<str> for PackageVersionSortType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageDependency {
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that this package depends on. </p>
@@ -1541,11 +2026,11 @@ pub struct PackageDependency {
     pub version_requirement: std::option::Option<std::string::String>,
 }
 impl PackageDependency {
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -1585,21 +2070,21 @@ pub mod package_dependency {
         pub(crate) version_requirement: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -1843,26 +2328,28 @@ impl AsRef<str> for HashAlgorithm {
 pub struct PackageSummary {
     /// <p> The format of the package. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package. </p>
     pub package: std::option::Option<std::string::String>,
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
+    pub origin_configuration: std::option::Option<crate::model::PackageOriginConfiguration>,
 }
 impl PackageSummary {
     /// <p> The format of the package. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -1871,6 +2358,12 @@ impl PackageSummary {
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
+    pub fn origin_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PackageOriginConfiguration> {
+        self.origin_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for PackageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1878,6 +2371,7 @@ impl std::fmt::Debug for PackageSummary {
         formatter.field("format", &self.format);
         formatter.field("namespace", &self.namespace);
         formatter.field("package", &self.package);
+        formatter.field("origin_configuration", &self.origin_configuration);
         formatter.finish()
     }
 }
@@ -1890,6 +2384,8 @@ pub mod package_summary {
         pub(crate) format: std::option::Option<crate::model::PackageFormat>,
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) package: std::option::Option<std::string::String>,
+        pub(crate) origin_configuration:
+            std::option::Option<crate::model::PackageOriginConfiguration>,
     }
     impl Builder {
         /// <p> The format of the package. </p>
@@ -1905,21 +2401,21 @@ pub mod package_summary {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -1935,12 +2431,29 @@ pub mod package_summary {
             self.package = input;
             self
         }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
+        pub fn origin_configuration(
+            mut self,
+            input: crate::model::PackageOriginConfiguration,
+        ) -> Self {
+            self.origin_configuration = Some(input);
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
+        pub fn set_origin_configuration(
+            mut self,
+            input: std::option::Option<crate::model::PackageOriginConfiguration>,
+        ) -> Self {
+            self.origin_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PackageSummary`](crate::model::PackageSummary).
         pub fn build(self) -> crate::model::PackageSummary {
             crate::model::PackageSummary {
                 format: self.format,
                 namespace: self.namespace,
                 package: self.package,
+                origin_configuration: self.origin_configuration,
             }
         }
     }
@@ -2171,11 +2684,11 @@ impl AsRef<str> for DomainStatus {
 pub struct PackageVersionDescription {
     /// <p> The format of the package version. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the requested package. </p>
@@ -2198,17 +2711,19 @@ pub struct PackageVersionDescription {
     pub revision: std::option::Option<std::string::String>,
     /// <p> A string that contains the status of the package version. </p>
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+    pub origin: std::option::Option<crate::model::PackageVersionOrigin>,
 }
 impl PackageVersionDescription {
     /// <p> The format of the package version. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -2253,6 +2768,10 @@ impl PackageVersionDescription {
     pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.status.as_ref()
     }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+    pub fn origin(&self) -> std::option::Option<&crate::model::PackageVersionOrigin> {
+        self.origin.as_ref()
+    }
 }
 impl std::fmt::Debug for PackageVersionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2269,6 +2788,7 @@ impl std::fmt::Debug for PackageVersionDescription {
         formatter.field("licenses", &self.licenses);
         formatter.field("revision", &self.revision);
         formatter.field("status", &self.status);
+        formatter.field("origin", &self.origin);
         formatter.finish()
     }
 }
@@ -2290,6 +2810,7 @@ pub mod package_version_description {
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::LicenseInfo>>,
         pub(crate) revision: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::PackageVersionStatus>,
+        pub(crate) origin: std::option::Option<crate::model::PackageVersionOrigin>,
     }
     impl Builder {
         /// <p> The format of the package version. </p>
@@ -2305,21 +2826,21 @@ pub mod package_version_description {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -2443,6 +2964,19 @@ pub mod package_version_description {
             self.status = input;
             self
         }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+        pub fn origin(mut self, input: crate::model::PackageVersionOrigin) -> Self {
+            self.origin = Some(input);
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
+        pub fn set_origin(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionOrigin>,
+        ) -> Self {
+            self.origin = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PackageVersionDescription`](crate::model::PackageVersionDescription).
         pub fn build(self) -> crate::model::PackageVersionDescription {
             crate::model::PackageVersionDescription {
@@ -2458,6 +2992,7 @@ pub mod package_version_description {
                 licenses: self.licenses,
                 revision: self.revision,
                 status: self.status,
+                origin: self.origin,
             }
         }
     }
@@ -2539,6 +3074,149 @@ impl LicenseInfo {
     /// Creates a new builder-style object to manufacture [`LicenseInfo`](crate::model::LicenseInfo).
     pub fn builder() -> crate::model::license_info::Builder {
         crate::model::license_info::Builder::default()
+    }
+}
+
+/// <p>Details about a package.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PackageDescription {
+    /// <p>A format that specifies the type of the package.</p>
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// </ul>
+    pub namespace: std::option::Option<std::string::String>,
+    /// <p>The name of the package.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The package origin configuration for the package.</p>
+    pub origin_configuration: std::option::Option<crate::model::PackageOriginConfiguration>,
+}
+impl PackageDescription {
+    /// <p>A format that specifies the type of the package.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The name of the package.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The package origin configuration for the package.</p>
+    pub fn origin_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PackageOriginConfiguration> {
+        self.origin_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for PackageDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PackageDescription");
+        formatter.field("format", &self.format);
+        formatter.field("namespace", &self.namespace);
+        formatter.field("name", &self.name);
+        formatter.field("origin_configuration", &self.origin_configuration);
+        formatter.finish()
+    }
+}
+/// See [`PackageDescription`](crate::model::PackageDescription).
+pub mod package_description {
+
+    /// A builder for [`PackageDescription`](crate::model::PackageDescription).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) format: std::option::Option<crate::model::PackageFormat>,
+        pub(crate) namespace: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) origin_configuration:
+            std::option::Option<crate::model::PackageOriginConfiguration>,
+    }
+    impl Builder {
+        /// <p>A format that specifies the type of the package.</p>
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>A format that specifies the type of the package.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
+        }
+        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// <p>The name of the package.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the package.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The package origin configuration for the package.</p>
+        pub fn origin_configuration(
+            mut self,
+            input: crate::model::PackageOriginConfiguration,
+        ) -> Self {
+            self.origin_configuration = Some(input);
+            self
+        }
+        /// <p>The package origin configuration for the package.</p>
+        pub fn set_origin_configuration(
+            mut self,
+            input: std::option::Option<crate::model::PackageOriginConfiguration>,
+        ) -> Self {
+            self.origin_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PackageDescription`](crate::model::PackageDescription).
+        pub fn build(self) -> crate::model::PackageDescription {
+            crate::model::PackageDescription {
+                format: self.format,
+                namespace: self.namespace,
+                name: self.name,
+                origin_configuration: self.origin_configuration,
+            }
+        }
+    }
+}
+impl PackageDescription {
+    /// Creates a new builder-style object to manufacture [`PackageDescription`](crate::model::PackageDescription).
+    pub fn builder() -> crate::model::package_description::Builder {
+        crate::model::package_description::Builder::default()
     }
 }
 

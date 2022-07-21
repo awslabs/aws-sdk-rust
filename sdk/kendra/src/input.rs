@@ -1049,6 +1049,234 @@ impl ClearQuerySuggestionsInput {
     }
 }
 
+/// See [`CreateAccessControlConfigurationInput`](crate::input::CreateAccessControlConfigurationInput).
+pub mod create_access_control_configuration_input {
+
+    /// A builder for [`CreateAccessControlConfigurationInput`](crate::input::CreateAccessControlConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        pub(crate) hierarchical_access_control_list:
+            std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the index to create an access control configuration for your documents.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the index to create an access control configuration for your documents.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_id = input;
+            self
+        }
+        /// <p>A name for the access control configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name for the access control configuration.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description for the access control configuration.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description for the access control configuration.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `access_control_list`.
+        ///
+        /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
+        ///
+        /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn access_control_list(mut self, input: crate::model::Principal) -> Self {
+            let mut v = self.access_control_list.unwrap_or_default();
+            v.push(input);
+            self.access_control_list = Some(v);
+            self
+        }
+        /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn set_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        ) -> Self {
+            self.access_control_list = input;
+            self
+        }
+        /// Appends an item to `hierarchical_access_control_list`.
+        ///
+        /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).
+        ///
+        /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn hierarchical_access_control_list(
+            mut self,
+            input: crate::model::HierarchicalPrincipal,
+        ) -> Self {
+            let mut v = self.hierarchical_access_control_list.unwrap_or_default();
+            v.push(input);
+            self.hierarchical_access_control_list = Some(v);
+            self
+        }
+        /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn set_hierarchical_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+        ) -> Self {
+            self.hierarchical_access_control_list = input;
+            self
+        }
+        /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAccessControlConfigurationInput`](crate::input::CreateAccessControlConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateAccessControlConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateAccessControlConfigurationInput {
+                index_id: self.index_id,
+                name: self.name,
+                description: self.description,
+                access_control_list: self.access_control_list,
+                hierarchical_access_control_list: self.hierarchical_access_control_list,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateAccessControlConfigurationInputOperationOutputAlias =
+    crate::operation::CreateAccessControlConfiguration;
+#[doc(hidden)]
+pub type CreateAccessControlConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl CreateAccessControlConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`CreateAccessControlConfiguration`](crate::operation::CreateAccessControlConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateAccessControlConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateAccessControlConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateAccessControlConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSKendraFrontendService.CreateAccessControlConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_access_control_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAccessControlConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAccessControlConfiguration",
+            "kendra",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateAccessControlConfigurationInput`](crate::input::CreateAccessControlConfigurationInput).
+    pub fn builder() -> crate::input::create_access_control_configuration_input::Builder {
+        crate::input::create_access_control_configuration_input::Builder::default()
+    }
+}
+
 /// See [`CreateDataSourceInput`](crate::input::CreateDataSourceInput).
 pub mod create_data_source_input {
 
@@ -1069,32 +1297,32 @@ pub mod create_data_source_input {
             std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
     }
     impl Builder {
-        /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
+        /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
+        /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The identifier of the index that should be associated with this data source.</p>
+        /// <p>The identifier of the index you want to use with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that should be associated with this data source.</p>
+        /// <p>The identifier of the index you want to use with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The type of repository that contains the data source.</p>
+        /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of repository that contains the data source.</p>
+        /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataSourceType>,
@@ -1102,14 +1330,14 @@ pub mod create_data_source_input {
             self.r#type = input;
             self
         }
-        /// <p>Configuration information that is required to access the data source repository.</p>
+        /// <p>Configuration information to connect to your data source repository.</p>
         /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Configuration information that is required to access the data source repository.</p>
+        /// <p>Configuration information to connect to your data source repository.</p>
         /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn set_configuration(
@@ -1119,36 +1347,36 @@ pub mod create_data_source_input {
             self.configuration = input;
             self
         }
-        /// <p>A description for the data source.</p>
+        /// <p>A description for the data source connector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description for the data source.</p>
+        /// <p>A description for the data source connector.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
+        /// <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
         /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
+        /// <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
         /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1159,14 +1387,14 @@ pub mod create_data_source_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
+        /// <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
+        /// <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1174,22 +1402,22 @@ pub mod create_data_source_input {
             self.tags = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_code = Some(input.into());
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1197,7 +1425,7 @@ pub mod create_data_source_input {
             self.language_code = input;
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+        /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
@@ -1206,7 +1434,7 @@ pub mod create_data_source_input {
             self.custom_document_enrichment_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+        /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn set_custom_document_enrichment_configuration(
             mut self,
@@ -1573,42 +1801,42 @@ pub mod create_faq_input {
         pub(crate) language_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The name that should be associated with the FAQ.</p>
+        /// <p>A name for the FAQ.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name that should be associated with the FAQ.</p>
+        /// <p>A name for the FAQ.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A description of the FAQ.</p>
+        /// <p>A description for the FAQ.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the FAQ.</p>
+        /// <p>A description for the FAQ.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The S3 location of the FAQ input data.</p>
+        /// <p>The path to the FAQ file in S3.</p>
         pub fn s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.s3_path = Some(input);
             self
         }
-        /// <p>The S3 location of the FAQ input data.</p>
+        /// <p>The path to the FAQ file in S3.</p>
         pub fn set_s3_path(mut self, input: std::option::Option<crate::model::S3Path>) -> Self {
             self.s3_path = input;
             self
@@ -1642,14 +1870,14 @@ pub mod create_faq_input {
             self.tags = input;
             self
         }
-        /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+        /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
         /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
         pub fn file_format(mut self, input: crate::model::FaqFileFormat) -> Self {
             self.file_format = Some(input);
             self
         }
-        /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+        /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
         /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
         pub fn set_file_format(
@@ -1832,12 +2060,12 @@ pub mod create_index_input {
             std::option::Option<crate::model::UserGroupResolutionConfiguration>,
     }
     impl Builder {
-        /// <p>The name for the new index.</p>
+        /// <p>A name for the index.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name for the new index.</p>
+        /// <p>A name for the index.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2391,32 +2619,32 @@ pub mod create_thesaurus_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the index for the new thesaurus. </p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the index for the new thesaurus. </p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The name for the new thesaurus.</p>
+        /// <p>A name for the thesaurus.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name for the new thesaurus.</p>
+        /// <p>A name for the thesaurus.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description for the new thesaurus.</p>
+        /// <p>A description for the thesaurus.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description for the new thesaurus.</p>
+        /// <p>A description for the thesaurus.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2450,12 +2678,12 @@ pub mod create_thesaurus_input {
             self.tags = input;
             self
         }
-        /// <p>The thesaurus file Amazon S3 source path. </p>
+        /// <p>The path to the thesaurus file in S3.</p>
         pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.source_s3_path = Some(input);
             self
         }
-        /// <p>The thesaurus file Amazon S3 source path. </p>
+        /// <p>The path to the thesaurus file in S3.</p>
         pub fn set_source_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -2603,6 +2831,161 @@ impl CreateThesaurusInput {
     }
 }
 
+/// See [`DeleteAccessControlConfigurationInput`](crate::input::DeleteAccessControlConfigurationInput).
+pub mod delete_access_control_configuration_input {
+
+    /// A builder for [`DeleteAccessControlConfigurationInput`](crate::input::DeleteAccessControlConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_id: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_id = input;
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to delete.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to delete.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteAccessControlConfigurationInput`](crate::input::DeleteAccessControlConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteAccessControlConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteAccessControlConfigurationInput {
+                index_id: self.index_id,
+                id: self.id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteAccessControlConfigurationInputOperationOutputAlias =
+    crate::operation::DeleteAccessControlConfiguration;
+#[doc(hidden)]
+pub type DeleteAccessControlConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteAccessControlConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteAccessControlConfiguration`](crate::operation::DeleteAccessControlConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteAccessControlConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteAccessControlConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteAccessControlConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSKendraFrontendService.DeleteAccessControlConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_access_control_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAccessControlConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAccessControlConfiguration",
+            "kendra",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteAccessControlConfigurationInput`](crate::input::DeleteAccessControlConfigurationInput).
+    pub fn builder() -> crate::input::delete_access_control_configuration_input::Builder {
+        crate::input::delete_access_control_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
 pub mod delete_data_source_input {
 
@@ -2613,22 +2996,22 @@ pub mod delete_data_source_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the data source to delete.</p>
+        /// <p>The identifier of the data source you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the data source to delete.</p>
+        /// <p>The identifier of the data source you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The unique identifier of the index associated with the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the index associated with the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -2775,12 +3158,12 @@ pub mod delete_experience_input {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -2917,22 +3300,22 @@ pub mod delete_faq_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the FAQ to remove.</p>
+        /// <p>The identifier of the FAQ you want to remove.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the FAQ to remove.</p>
+        /// <p>The identifier of the FAQ you want to remove.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The index to remove the FAQ from.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The index to remove the FAQ from.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -3065,12 +3448,12 @@ pub mod delete_index_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the index to delete.</p>
+        /// <p>The identifier of the index you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index to delete.</p>
+        /// <p>The identifier of the index you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3217,13 +3600,13 @@ pub mod delete_principal_mapping_input {
             self
         }
         /// <p>The identifier of the data source you want to delete a group from.</p>
-        /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+        /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
         }
         /// <p>The identifier of the data source you want to delete a group from.</p>
-        /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+        /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3391,22 +3774,22 @@ pub mod delete_query_suggestions_block_list_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the you want to delete a block list from.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the you want to delete a block list from.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The unique identifier of the block list that needs to be deleted.</p>
+        /// <p>The identifier of the block list you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the block list that needs to be deleted.</p>
+        /// <p>The identifier of the block list you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3546,22 +3929,22 @@ pub mod delete_thesaurus_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the thesaurus to delete.</p>
+        /// <p>The identifier of the thesaurus you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the thesaurus to delete.</p>
+        /// <p>The identifier of the thesaurus you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to delete.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to delete.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -3688,6 +4071,161 @@ impl DeleteThesaurusInput {
     }
 }
 
+/// See [`DescribeAccessControlConfigurationInput`](crate::input::DescribeAccessControlConfigurationInput).
+pub mod describe_access_control_configuration_input {
+
+    /// A builder for [`DescribeAccessControlConfigurationInput`](crate::input::DescribeAccessControlConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_id: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_id = input;
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to get information on.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to get information on.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAccessControlConfigurationInput`](crate::input::DescribeAccessControlConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeAccessControlConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeAccessControlConfigurationInput {
+                index_id: self.index_id,
+                id: self.id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeAccessControlConfigurationInputOperationOutputAlias =
+    crate::operation::DescribeAccessControlConfiguration;
+#[doc(hidden)]
+pub type DescribeAccessControlConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeAccessControlConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeAccessControlConfiguration`](crate::operation::DescribeAccessControlConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeAccessControlConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeAccessControlConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeAccessControlConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSKendraFrontendService.DescribeAccessControlConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_access_control_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAccessControlConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAccessControlConfiguration",
+            "kendra",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeAccessControlConfigurationInput`](crate::input::DescribeAccessControlConfigurationInput).
+    pub fn builder() -> crate::input::describe_access_control_configuration_input::Builder {
+        crate::input::describe_access_control_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DescribeDataSourceInput`](crate::input::DescribeDataSourceInput).
 pub mod describe_data_source_input {
 
@@ -3698,22 +4236,22 @@ pub mod describe_data_source_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the data source to describe.</p>
+        /// <p>The identifier of the data source.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the data source to describe.</p>
+        /// <p>The identifier of the data source.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -3860,12 +4398,12 @@ pub mod describe_experience_input {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -4002,22 +4540,22 @@ pub mod describe_faq_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the FAQ.</p>
+        /// <p>The identifier of the FAQ you want to get information on.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the FAQ.</p>
+        /// <p>The identifier of the FAQ you want to get information on.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -4153,12 +4691,12 @@ pub mod describe_index_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the index to describe.</p>
+        /// <p>The identifier of the index you want to get information on.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index to describe.</p>
+        /// <p>The identifier of the index you want to get information on.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4474,12 +5012,12 @@ pub mod describe_query_suggestions_block_list_input {
             self.index_id = input;
             self
         }
-        /// <p>The unique identifier of the block list.</p>
+        /// <p>The identifier of the block list you want to get information on.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the block list.</p>
+        /// <p>The identifier of the block list you want to get information on.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4618,12 +5156,12 @@ pub mod describe_query_suggestions_config_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
+        /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
+        /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -4762,22 +5300,22 @@ pub mod describe_thesaurus_input {
         pub(crate) index_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the thesaurus to describe.</p>
+        /// <p>The identifier of the thesaurus you want to get information on.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the thesaurus to describe.</p>
+        /// <p>The identifier of the thesaurus you want to get information on.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -5634,6 +6172,173 @@ impl GetSnapshotsInput {
     }
 }
 
+/// See [`ListAccessControlConfigurationsInput`](crate::input::ListAccessControlConfigurationsInput).
+pub mod list_access_control_configurations_input {
+
+    /// A builder for [`ListAccessControlConfigurationsInput`](crate::input::ListAccessControlConfigurationsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The identifier of the index for the access control configuration.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the index for the access control configuration.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_id = input;
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of access control configurations to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of access control configurations to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAccessControlConfigurationsInput`](crate::input::ListAccessControlConfigurationsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListAccessControlConfigurationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAccessControlConfigurationsInput {
+                index_id: self.index_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAccessControlConfigurationsInputOperationOutputAlias =
+    crate::operation::ListAccessControlConfigurations;
+#[doc(hidden)]
+pub type ListAccessControlConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListAccessControlConfigurationsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAccessControlConfigurations`](crate::operation::ListAccessControlConfigurations)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAccessControlConfigurations,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAccessControlConfigurationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAccessControlConfigurationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSKendraFrontendService.ListAccessControlConfigurations",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_access_control_configurations(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAccessControlConfigurations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAccessControlConfigurations",
+            "kendra",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAccessControlConfigurationsInput`](crate::input::ListAccessControlConfigurationsInput).
+    pub fn builder() -> crate::input::list_access_control_configurations_input::Builder {
+        crate::input::list_access_control_configurations_input::Builder::default()
+    }
+}
+
 /// See [`ListDataSourcesInput`](crate::input::ListDataSourcesInput).
 pub mod list_data_sources_input {
 
@@ -5645,12 +6350,12 @@ pub mod list_data_sources_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with one or more data sources.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with one or more data sources.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -5822,12 +6527,12 @@ pub mod list_data_source_sync_jobs_input {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -7340,12 +8045,12 @@ pub mod list_thesauri_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier of the index associated with the thesaurus to list.</p>
+        /// <p>The identifier of the index with one or more thesauri.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to list.</p>
+        /// <p>The identifier of the index with one or more thesauri.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -8882,6 +9587,231 @@ impl UntagResourceInput {
     }
 }
 
+/// See [`UpdateAccessControlConfigurationInput`](crate::input::UpdateAccessControlConfigurationInput).
+pub mod update_access_control_configuration_input {
+
+    /// A builder for [`UpdateAccessControlConfigurationInput`](crate::input::UpdateAccessControlConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_id: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        pub(crate) hierarchical_access_control_list:
+            std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+    }
+    impl Builder {
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_id = input;
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to update.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to update.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>A new name for the access control configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A new name for the access control configuration.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A new description for the access control configuration.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A new description for the access control configuration.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `access_control_list`.
+        ///
+        /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
+        ///
+        /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn access_control_list(mut self, input: crate::model::Principal) -> Self {
+            let mut v = self.access_control_list.unwrap_or_default();
+            v.push(input);
+            self.access_control_list = Some(v);
+            self
+        }
+        /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn set_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        ) -> Self {
+            self.access_control_list = input;
+            self
+        }
+        /// Appends an item to `hierarchical_access_control_list`.
+        ///
+        /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).
+        ///
+        /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn hierarchical_access_control_list(
+            mut self,
+            input: crate::model::HierarchicalPrincipal,
+        ) -> Self {
+            let mut v = self.hierarchical_access_control_list.unwrap_or_default();
+            v.push(input);
+            self.hierarchical_access_control_list = Some(v);
+            self
+        }
+        /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn set_hierarchical_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+        ) -> Self {
+            self.hierarchical_access_control_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAccessControlConfigurationInput`](crate::input::UpdateAccessControlConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateAccessControlConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateAccessControlConfigurationInput {
+                index_id: self.index_id,
+                id: self.id,
+                name: self.name,
+                description: self.description,
+                access_control_list: self.access_control_list,
+                hierarchical_access_control_list: self.hierarchical_access_control_list,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateAccessControlConfigurationInputOperationOutputAlias =
+    crate::operation::UpdateAccessControlConfiguration;
+#[doc(hidden)]
+pub type UpdateAccessControlConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateAccessControlConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAccessControlConfiguration`](crate::operation::UpdateAccessControlConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateAccessControlConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateAccessControlConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateAccessControlConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSKendraFrontendService.UpdateAccessControlConfiguration",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_access_control_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAccessControlConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAccessControlConfiguration",
+            "kendra",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateAccessControlConfigurationInput`](crate::input::UpdateAccessControlConfigurationInput).
+    pub fn builder() -> crate::input::update_access_control_configuration_input::Builder {
+        crate::input::update_access_control_configuration_input::Builder::default()
+    }
+}
+
 /// See [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
 pub mod update_data_source_input {
 
@@ -8900,42 +9830,42 @@ pub mod update_data_source_input {
             std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
     }
     impl Builder {
-        /// <p>The unique identifier of the data source to update.</p>
+        /// <p>The identifier of the data source you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the data source to update.</p>
+        /// <p>The identifier of the data source you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
+        /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
+        /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The identifier of the index that contains the data source to update.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source to update.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
+        /// <p>Configuration information you want to update for the data source connector.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
+        /// <p>Configuration information you want to update for the data source connector.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -8943,42 +9873,42 @@ pub mod update_data_source_input {
             self.configuration = input;
             self
         }
-        /// <p>The new description for the data source.</p>
+        /// <p>A new description for the data source connector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The new description for the data source.</p>
+        /// <p>A new description for the data source connector.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The new update schedule for the data source.</p>
+        /// <p>The sync schedule you want to update for the data source connector.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>The new update schedule for the data source.</p>
+        /// <p>The sync schedule you want to update for the data source connector.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+        /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_code = Some(input.into());
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+        /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8986,7 +9916,7 @@ pub mod update_data_source_input {
             self.language_code = input;
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+        /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
@@ -8995,7 +9925,7 @@ pub mod update_data_source_input {
             self.custom_document_enrichment_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+        /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn set_custom_document_enrichment_configuration(
             mut self,
@@ -9158,22 +10088,22 @@ pub mod update_experience_input {
             self.id = input;
             self
         }
-        /// <p>The name of your Amazon Kendra experience you want to update.</p>
+        /// <p>A new name for your Amazon Kendra experience.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of your Amazon Kendra experience you want to update.</p>
+        /// <p>A new name for your Amazon Kendra experience.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -9188,12 +10118,12 @@ pub mod update_experience_input {
             self.role_arn = input;
             self
         }
-        /// <p>Configuration information for your Amazon Kendra you want to update.</p>
+        /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
         pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Configuration information for your Amazon Kendra you want to update.</p>
+        /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ExperienceConfiguration>,
@@ -9201,12 +10131,12 @@ pub mod update_experience_input {
             self.configuration = input;
             self
         }
-        /// <p>The description of your Amazon Kendra experience you want to update.</p>
+        /// <p>A new description for your Amazon Kendra experience.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of your Amazon Kendra experience you want to update.</p>
+        /// <p>A new description for your Amazon Kendra experience.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9357,32 +10287,32 @@ pub mod update_index_input {
             std::option::Option<crate::model::UserGroupResolutionConfiguration>,
     }
     impl Builder {
-        /// <p>The identifier of the index to update.</p>
+        /// <p>The identifier of the index you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index to update.</p>
+        /// <p>The identifier of the index you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The name of the index to update.</p>
+        /// <p>The name of the index you want to update.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the index to update.</p>
+        /// <p>The name of the index you want to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
+        /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
+        /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -9401,7 +10331,7 @@ pub mod update_index_input {
         ///
         /// To override the contents of this collection use [`set_document_metadata_configuration_updates`](Self::set_document_metadata_configuration_updates).
         ///
-        /// <p>The document metadata you want to update.</p>
+        /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
         pub fn document_metadata_configuration_updates(
             mut self,
             input: crate::model::DocumentMetadataConfiguration,
@@ -9413,7 +10343,7 @@ pub mod update_index_input {
             self.document_metadata_configuration_updates = Some(v);
             self
         }
-        /// <p>The document metadata you want to update.</p>
+        /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
         pub fn set_document_metadata_configuration_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
@@ -9631,42 +10561,42 @@ pub mod update_query_suggestions_block_list_input {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the index for a block list.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index for a block list.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The unique identifier of a block list.</p>
+        /// <p>The identifier of the block list you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of a block list.</p>
+        /// <p>The identifier of the block list you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The name of a block list.</p>
+        /// <p>A new name for the block list.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of a block list.</p>
+        /// <p>A new name for the block list.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description for a block list.</p>
+        /// <p>A new description for the block list.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description for a block list.</p>
+        /// <p>A new description for the block list.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9841,12 +10771,12 @@ pub mod update_query_suggestions_config_input {
         pub(crate) minimum_query_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier of the index you want to update query suggestions settings for.</p>
+        /// <p> The identifier of the index with query suggestions you want to update.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index you want to update query suggestions settings for.</p>
+        /// <p> The identifier of the index with query suggestions you want to update.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -10076,52 +11006,52 @@ pub mod update_thesaurus_input {
         pub(crate) source_s3_path: std::option::Option<crate::model::S3Path>,
     }
     impl Builder {
-        /// <p>The identifier of the thesaurus to update.</p>
+        /// <p>The identifier of the thesaurus you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the thesaurus to update.</p>
+        /// <p>The identifier of the thesaurus you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The updated name of the thesaurus.</p>
+        /// <p>A new name for the thesaurus.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The updated name of the thesaurus.</p>
+        /// <p>A new name for the thesaurus.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to update.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to update.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The updated description of the thesaurus.</p>
+        /// <p>A new description for the thesaurus.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The updated description of the thesaurus.</p>
+        /// <p>A new description for the thesaurus.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The updated role ARN of the thesaurus.</p>
+        /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The updated role ARN of the thesaurus.</p>
+        /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10269,37 +11199,37 @@ impl UpdateThesaurusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThesaurusInput {
-    /// <p>The identifier of the thesaurus to update.</p>
+    /// <p>The identifier of the thesaurus you want to update.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The updated name of the thesaurus.</p>
+    /// <p>A new name for the thesaurus.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index associated with the thesaurus to update.</p>
+    /// <p>The identifier of the index for the thesaurus.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The updated description of the thesaurus.</p>
+    /// <p>A new description for the thesaurus.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The updated role ARN of the thesaurus.</p>
+    /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
 }
 impl UpdateThesaurusInput {
-    /// <p>The identifier of the thesaurus to update.</p>
+    /// <p>The identifier of the thesaurus you want to update.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The updated name of the thesaurus.</p>
+    /// <p>A new name for the thesaurus.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The identifier of the index associated with the thesaurus to update.</p>
+    /// <p>The identifier of the index for the thesaurus.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The updated description of the thesaurus.</p>
+    /// <p>A new description for the thesaurus.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The updated role ARN of the thesaurus.</p>
+    /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10325,7 +11255,7 @@ impl std::fmt::Debug for UpdateThesaurusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQuerySuggestionsConfigInput {
-    /// <p>The identifier of the index you want to update query suggestions settings for.</p>
+    /// <p> The identifier of the index with query suggestions you want to update.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
     /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
@@ -10350,7 +11280,7 @@ pub struct UpdateQuerySuggestionsConfigInput {
     pub minimum_query_count: std::option::Option<i32>,
 }
 impl UpdateQuerySuggestionsConfigInput {
-    /// <p>The identifier of the index you want to update query suggestions settings for.</p>
+    /// <p> The identifier of the index with query suggestions you want to update.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -10412,13 +11342,13 @@ impl std::fmt::Debug for UpdateQuerySuggestionsConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQuerySuggestionsBlockListInput {
-    /// <p>The identifier of the index for a block list.</p>
+    /// <p>The identifier of the index for the block list.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of a block list.</p>
+    /// <p>The identifier of the block list you want to update.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of a block list.</p>
+    /// <p>A new name for the block list.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description for a block list.</p>
+    /// <p>A new description for the block list.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The S3 path where your block list text file sits in S3.</p>
     /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
@@ -10428,19 +11358,19 @@ pub struct UpdateQuerySuggestionsBlockListInput {
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateQuerySuggestionsBlockListInput {
-    /// <p>The identifier of the index for a block list.</p>
+    /// <p>The identifier of the index for the block list.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The unique identifier of a block list.</p>
+    /// <p>The identifier of the block list you want to update.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of a block list.</p>
+    /// <p>A new name for the block list.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description for a block list.</p>
+    /// <p>A new description for the block list.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -10472,15 +11402,15 @@ impl std::fmt::Debug for UpdateQuerySuggestionsBlockListInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIndexInput {
-    /// <p>The identifier of the index to update.</p>
+    /// <p>The identifier of the index you want to update.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the index to update.</p>
+    /// <p>The name of the index you want to update.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
+    /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A new description for the index.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The document metadata you want to update.</p>
+    /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
     pub document_metadata_configuration_updates:
         std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
     /// <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>
@@ -10496,15 +11426,15 @@ pub struct UpdateIndexInput {
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
 impl UpdateIndexInput {
-    /// <p>The identifier of the index to update.</p>
+    /// <p>The identifier of the index you want to update.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the index to update.</p>
+    /// <p>The name of the index you want to update.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
+    /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10512,7 +11442,7 @@ impl UpdateIndexInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The document metadata you want to update.</p>
+    /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
     pub fn document_metadata_configuration_updates(
         &self,
     ) -> std::option::Option<&[crate::model::DocumentMetadataConfiguration]> {
@@ -10568,15 +11498,15 @@ impl std::fmt::Debug for UpdateIndexInput {
 pub struct UpdateExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of your Amazon Kendra experience you want to update.</p>
+    /// <p>A new name for your Amazon Kendra experience.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Configuration information for your Amazon Kendra you want to update.</p>
+    /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
-    /// <p>The description of your Amazon Kendra experience you want to update.</p>
+    /// <p>A new description for your Amazon Kendra experience.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateExperienceInput {
@@ -10584,11 +11514,11 @@ impl UpdateExperienceInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of your Amazon Kendra experience you want to update.</p>
+    /// <p>A new name for your Amazon Kendra experience.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -10596,11 +11526,11 @@ impl UpdateExperienceInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Configuration information for your Amazon Kendra you want to update.</p>
+    /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::ExperienceConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The description of your Amazon Kendra experience you want to update.</p>
+    /// <p>A new description for your Amazon Kendra experience.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -10622,61 +11552,61 @@ impl std::fmt::Debug for UpdateExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceInput {
-    /// <p>The unique identifier of the data source to update.</p>
+    /// <p>The identifier of the data source you want to update.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
+    /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that contains the data source to update.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
+    /// <p>Configuration information you want to update for the data source connector.</p>
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
-    /// <p>The new description for the data source.</p>
+    /// <p>A new description for the data source connector.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The new update schedule for the data source.</p>
+    /// <p>The sync schedule you want to update for the data source connector.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
-    /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+    /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
 impl UpdateDataSourceInput {
-    /// <p>The unique identifier of the data source to update.</p>
+    /// <p>The identifier of the data source you want to update.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
+    /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The identifier of the index that contains the data source to update.</p>
+    /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
+    /// <p>Configuration information you want to update for the data source connector.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The new description for the data source.</p>
+    /// <p>A new description for the data source connector.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The new update schedule for the data source.</p>
+    /// <p>The sync schedule you want to update for the data source connector.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
-    /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+    /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub fn custom_document_enrichment_configuration(
         &self,
@@ -10698,6 +11628,68 @@ impl std::fmt::Debug for UpdateDataSourceInput {
         formatter.field(
             "custom_document_enrichment_configuration",
             &self.custom_document_enrichment_configuration,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAccessControlConfigurationInput {
+    /// <p>The identifier of the index for an access control configuration.</p>
+    pub index_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the access control configuration you want to update.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A new name for the access control configuration.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A new description for the access control configuration.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+    /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub hierarchical_access_control_list:
+        std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+}
+impl UpdateAccessControlConfigurationInput {
+    /// <p>The identifier of the index for an access control configuration.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The identifier of the access control configuration you want to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A new name for the access control configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A new description for the access control configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub fn access_control_list(&self) -> std::option::Option<&[crate::model::Principal]> {
+        self.access_control_list.as_deref()
+    }
+    /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub fn hierarchical_access_control_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::HierarchicalPrincipal]> {
+        self.hierarchical_access_control_list.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateAccessControlConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAccessControlConfigurationInput");
+        formatter.field("index_id", &self.index_id);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("access_control_list", &self.access_control_list);
+        formatter.field(
+            "hierarchical_access_control_list",
+            &self.hierarchical_access_control_list,
         );
         formatter.finish()
     }
@@ -11064,7 +12056,7 @@ impl std::fmt::Debug for PutPrincipalMappingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThesauriInput {
-    /// <p>The identifier of the index associated with the thesaurus to list.</p>
+    /// <p>The identifier of the index with one or more thesauri.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>). </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -11072,7 +12064,7 @@ pub struct ListThesauriInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListThesauriInput {
-    /// <p>The identifier of the index associated with the thesaurus to list.</p>
+    /// <p>The identifier of the index with one or more thesauri.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11383,7 +12375,7 @@ impl std::fmt::Debug for ListEntityPersonasInput {
 pub struct ListDataSourceSyncJobsInput {
     /// <p>The identifier of the data source.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -11399,7 +12391,7 @@ impl ListDataSourceSyncJobsInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11437,7 +12429,7 @@ impl std::fmt::Debug for ListDataSourceSyncJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesInput {
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with one or more data sources.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -11445,7 +12437,7 @@ pub struct ListDataSourcesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataSourcesInput {
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with one or more data sources.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11461,6 +12453,41 @@ impl ListDataSourcesInput {
 impl std::fmt::Debug for ListDataSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataSourcesInput");
+        formatter.field("index_id", &self.index_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAccessControlConfigurationsInput {
+    /// <p>The identifier of the index for the access control configuration.</p>
+    pub index_id: std::option::Option<std::string::String>,
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of access control configurations to return.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListAccessControlConfigurationsInput {
+    /// <p>The identifier of the index for the access control configuration.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of access control configurations to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListAccessControlConfigurationsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAccessControlConfigurationsInput");
         formatter.field("index_id", &self.index_id);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
@@ -11648,17 +12675,17 @@ impl std::fmt::Debug for DisassociateEntitiesFromExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThesaurusInput {
-    /// <p>The identifier of the thesaurus to describe.</p>
+    /// <p>The identifier of the thesaurus you want to get information on.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+    /// <p>The identifier of the index for the thesaurus.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeThesaurusInput {
-    /// <p>The identifier of the thesaurus to describe.</p>
+    /// <p>The identifier of the thesaurus you want to get information on.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+    /// <p>The identifier of the index for the thesaurus.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11676,11 +12703,11 @@ impl std::fmt::Debug for DescribeThesaurusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuerySuggestionsConfigInput {
-    /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
+    /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeQuerySuggestionsConfigInput {
-    /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
+    /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11699,7 +12726,7 @@ impl std::fmt::Debug for DescribeQuerySuggestionsConfigInput {
 pub struct DescribeQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index for the block list.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the block list.</p>
+    /// <p>The identifier of the block list you want to get information on.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeQuerySuggestionsBlockListInput {
@@ -11707,7 +12734,7 @@ impl DescribeQuerySuggestionsBlockListInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The unique identifier of the block list.</p>
+    /// <p>The identifier of the block list you want to get information on.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -11760,11 +12787,11 @@ impl std::fmt::Debug for DescribePrincipalMappingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexInput {
-    /// <p>The identifier of the index to describe.</p>
+    /// <p>The identifier of the index you want to get information on.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeIndexInput {
-    /// <p>The identifier of the index to describe.</p>
+    /// <p>The identifier of the index you want to get information on.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -11781,17 +12808,17 @@ impl std::fmt::Debug for DescribeIndexInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFaqInput {
-    /// <p>The unique identifier of the FAQ.</p>
+    /// <p>The identifier of the FAQ you want to get information on.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that contains the FAQ.</p>
+    /// <p>The identifier of the index for the FAQ.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeFaqInput {
-    /// <p>The unique identifier of the FAQ.</p>
+    /// <p>The identifier of the FAQ you want to get information on.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index that contains the FAQ.</p>
+    /// <p>The identifier of the index for the FAQ.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11811,7 +12838,7 @@ impl std::fmt::Debug for DescribeFaqInput {
 pub struct DescribeExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeExperienceInput {
@@ -11819,7 +12846,7 @@ impl DescribeExperienceInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11837,17 +12864,17 @@ impl std::fmt::Debug for DescribeExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourceInput {
-    /// <p>The unique identifier of the data source to describe.</p>
+    /// <p>The identifier of the data source.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeDataSourceInput {
-    /// <p>The unique identifier of the data source to describe.</p>
+    /// <p>The identifier of the data source.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index that contains the data source.</p>
+    /// <p>The identifier of the index used with the data source.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11864,18 +12891,46 @@ impl std::fmt::Debug for DescribeDataSourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteThesaurusInput {
-    /// <p>The identifier of the thesaurus to delete.</p>
-    pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index associated with the thesaurus to delete.</p>
+pub struct DescribeAccessControlConfigurationInput {
+    /// <p>The identifier of the index for an access control configuration.</p>
     pub index_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the access control configuration you want to get information on.</p>
+    pub id: std::option::Option<std::string::String>,
 }
-impl DeleteThesaurusInput {
-    /// <p>The identifier of the thesaurus to delete.</p>
+impl DescribeAccessControlConfigurationInput {
+    /// <p>The identifier of the index for an access control configuration.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The identifier of the access control configuration you want to get information on.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index associated with the thesaurus to delete.</p>
+}
+impl std::fmt::Debug for DescribeAccessControlConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAccessControlConfigurationInput");
+        formatter.field("index_id", &self.index_id);
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteThesaurusInput {
+    /// <p>The identifier of the thesaurus you want to delete.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the index for the thesaurus.</p>
+    pub index_id: std::option::Option<std::string::String>,
+}
+impl DeleteThesaurusInput {
+    /// <p>The identifier of the thesaurus you want to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the index for the thesaurus.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -11893,17 +12948,17 @@ impl std::fmt::Debug for DeleteThesaurusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQuerySuggestionsBlockListInput {
-    /// <p>The identifier of the you want to delete a block list from.</p>
+    /// <p>The identifier of the index for the block list.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the block list that needs to be deleted.</p>
+    /// <p>The identifier of the block list you want to delete.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteQuerySuggestionsBlockListInput {
-    /// <p>The identifier of the you want to delete a block list from.</p>
+    /// <p>The identifier of the index for the block list.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The unique identifier of the block list that needs to be deleted.</p>
+    /// <p>The identifier of the block list you want to delete.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -11924,7 +12979,7 @@ pub struct DeletePrincipalMappingInput {
     /// <p>The identifier of the index you want to delete a group from.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the data source you want to delete a group from.</p>
-    /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+    /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the group you want to delete.</p>
     pub group_id: std::option::Option<std::string::String>,
@@ -11939,7 +12994,7 @@ impl DeletePrincipalMappingInput {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source you want to delete a group from.</p>
-    /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+    /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -11969,11 +13024,11 @@ impl std::fmt::Debug for DeletePrincipalMappingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIndexInput {
-    /// <p>The identifier of the index to delete.</p>
+    /// <p>The identifier of the index you want to delete.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteIndexInput {
-    /// <p>The identifier of the index to delete.</p>
+    /// <p>The identifier of the index you want to delete.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -11990,17 +13045,17 @@ impl std::fmt::Debug for DeleteIndexInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFaqInput {
-    /// <p>The identifier of the FAQ to remove.</p>
+    /// <p>The identifier of the FAQ you want to remove.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The index to remove the FAQ from.</p>
+    /// <p>The identifier of the index for the FAQ.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DeleteFaqInput {
-    /// <p>The identifier of the FAQ to remove.</p>
+    /// <p>The identifier of the FAQ you want to remove.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The index to remove the FAQ from.</p>
+    /// <p>The identifier of the index for the FAQ.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -12020,7 +13075,7 @@ impl std::fmt::Debug for DeleteFaqInput {
 pub struct DeleteExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to delete.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DeleteExperienceInput {
@@ -12028,7 +13083,7 @@ impl DeleteExperienceInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -12046,17 +13101,17 @@ impl std::fmt::Debug for DeleteExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSourceInput {
-    /// <p>The unique identifier of the data source to delete.</p>
+    /// <p>The identifier of the data source you want to delete.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the index associated with the data source.</p>
+    /// <p>The identifier of the index used with the data source.</p>
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataSourceInput {
-    /// <p>The unique identifier of the data source to delete.</p>
+    /// <p>The identifier of the data source you want to delete.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The unique identifier of the index associated with the data source.</p>
+    /// <p>The identifier of the index used with the data source.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -12073,32 +13128,60 @@ impl std::fmt::Debug for DeleteDataSourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateThesaurusInput {
-    /// <p>The unique identifier of the index for the new thesaurus. </p>
+pub struct DeleteAccessControlConfigurationInput {
+    /// <p>The identifier of the index for an access control configuration.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The name for the new thesaurus.</p>
+    /// <p>The identifier of the access control configuration you want to delete.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl DeleteAccessControlConfigurationInput {
+    /// <p>The identifier of the index for an access control configuration.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The identifier of the access control configuration you want to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteAccessControlConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAccessControlConfigurationInput");
+        formatter.field("index_id", &self.index_id);
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateThesaurusInput {
+    /// <p>The identifier of the index for the thesaurus.</p>
+    pub index_id: std::option::Option<std::string::String>,
+    /// <p>A name for the thesaurus.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description for the new thesaurus.</p>
+    /// <p>A description for the thesaurus.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your resources and to control access to resources. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The thesaurus file Amazon S3 source path. </p>
+    /// <p>The path to the thesaurus file in S3.</p>
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateThesaurusInput {
-    /// <p>The unique identifier of the index for the new thesaurus. </p>
+    /// <p>The identifier of the index for the thesaurus.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The name for the new thesaurus.</p>
+    /// <p>A name for the thesaurus.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description for the new thesaurus.</p>
+    /// <p>A description for the thesaurus.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -12110,7 +13193,7 @@ impl CreateThesaurusInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The thesaurus file Amazon S3 source path. </p>
+    /// <p>The path to the thesaurus file in S3.</p>
     pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.source_s3_path.as_ref()
     }
@@ -12210,7 +13293,7 @@ impl std::fmt::Debug for CreateQuerySuggestionsBlockListInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIndexInput {
-    /// <p>The name for the new index.</p>
+    /// <p>A name for the index.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>
     /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
@@ -12251,7 +13334,7 @@ pub struct CreateIndexInput {
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
 impl CreateIndexInput {
-    /// <p>The name for the new index.</p>
+    /// <p>A name for the index.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -12341,19 +13424,19 @@ impl std::fmt::Debug for CreateIndexInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFaqInput {
-    /// <p>The identifier of the index that contains the FAQ.</p>
+    /// <p>The identifier of the index for the FAQ.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The name that should be associated with the FAQ.</p>
+    /// <p>A name for the FAQ.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A description of the FAQ.</p>
+    /// <p>A description for the FAQ.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The S3 location of the FAQ input data.</p>
+    /// <p>The path to the FAQ file in S3.</p>
     pub s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
     /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
@@ -12363,19 +13446,19 @@ pub struct CreateFaqInput {
     pub language_code: std::option::Option<std::string::String>,
 }
 impl CreateFaqInput {
-    /// <p>The identifier of the index that contains the FAQ.</p>
+    /// <p>The identifier of the index for the FAQ.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The name that should be associated with the FAQ.</p>
+    /// <p>A name for the FAQ.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A description of the FAQ.</p>
+    /// <p>A description for the FAQ.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The S3 location of the FAQ input data.</p>
+    /// <p>The path to the FAQ file in S3.</p>
     pub fn s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.s3_path.as_ref()
     }
@@ -12387,7 +13470,7 @@ impl CreateFaqInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+    /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
     /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
     pub fn file_format(&self) -> std::option::Option<&crate::model::FaqFileFormat> {
@@ -12478,83 +13561,83 @@ impl std::fmt::Debug for CreateExperienceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceInput {
-    /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
+    /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that should be associated with this data source.</p>
+    /// <p>The identifier of the index you want to use with the data source connector.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The type of repository that contains the data source.</p>
+    /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>Configuration information that is required to access the data source repository.</p>
+    /// <p>Configuration information to connect to your data source repository.</p>
     /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
-    /// <p>A description for the data source.</p>
+    /// <p>A description for the data source connector.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
+    /// <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
     /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
+    /// <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
+    /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
-    /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+    /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
 impl CreateDataSourceInput {
-    /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
+    /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The identifier of the index that should be associated with this data source.</p>
+    /// <p>The identifier of the index you want to use with the data source connector.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The type of repository that contains the data source.</p>
+    /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>Configuration information that is required to access the data source repository.</p>
+    /// <p>Configuration information to connect to your data source repository.</p>
     /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>A description for the data source.</p>
+    /// <p>A description for the data source connector.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
+    /// <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
     /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
+    /// <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
+    /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
-    /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+    /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub fn custom_document_enrichment_configuration(
         &self,
@@ -12579,6 +13662,68 @@ impl std::fmt::Debug for CreateDataSourceInput {
             "custom_document_enrichment_configuration",
             &self.custom_document_enrichment_configuration,
         );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAccessControlConfigurationInput {
+    /// <p>The identifier of the index to create an access control configuration for your documents.</p>
+    pub index_id: std::option::Option<std::string::String>,
+    /// <p>A name for the access control configuration.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description for the access control configuration.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+    /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub hierarchical_access_control_list:
+        std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+    /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateAccessControlConfigurationInput {
+    /// <p>The identifier of the index to create an access control configuration for your documents.</p>
+    pub fn index_id(&self) -> std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>A name for the access control configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for the access control configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub fn access_control_list(&self) -> std::option::Option<&[crate::model::Principal]> {
+        self.access_control_list.as_deref()
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub fn hierarchical_access_control_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::HierarchicalPrincipal]> {
+        self.hierarchical_access_control_list.as_deref()
+    }
+    /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateAccessControlConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAccessControlConfigurationInput");
+        formatter.field("index_id", &self.index_id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("access_control_list", &self.access_control_list);
+        formatter.field(
+            "hierarchical_access_control_list",
+            &self.hierarchical_access_control_list,
+        );
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }

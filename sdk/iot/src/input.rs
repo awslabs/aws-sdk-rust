@@ -32926,6 +32926,7 @@ pub mod register_ca_certificate_input {
         pub(crate) allow_auto_registration: std::option::Option<bool>,
         pub(crate) registration_config: std::option::Option<crate::model::RegistrationConfig>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) certificate_mode: std::option::Option<crate::model::CertificateMode>,
     }
     impl Builder {
         /// <p>The CA certificate.</p>
@@ -32941,12 +32942,12 @@ pub mod register_ca_certificate_input {
             self.ca_certificate = input;
             self
         }
-        /// <p>The private key verification certificate.</p>
+        /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
         pub fn verification_certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.verification_certificate = Some(input.into());
             self
         }
-        /// <p>The private key verification certificate.</p>
+        /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
         pub fn set_verification_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33016,6 +33017,19 @@ pub mod register_ca_certificate_input {
             self.tags = input;
             self
         }
+        /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+        pub fn certificate_mode(mut self, input: crate::model::CertificateMode) -> Self {
+            self.certificate_mode = Some(input);
+            self
+        }
+        /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+        pub fn set_certificate_mode(
+            mut self,
+            input: std::option::Option<crate::model::CertificateMode>,
+        ) -> Self {
+            self.certificate_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisterCaCertificateInput`](crate::input::RegisterCaCertificateInput).
         pub fn build(
             self,
@@ -33028,6 +33042,7 @@ pub mod register_ca_certificate_input {
                 allow_auto_registration: self.allow_auto_registration.unwrap_or_default(),
                 registration_config: self.registration_config,
                 tags: self.tags,
+                certificate_mode: self.certificate_mode,
             })
         }
     }
@@ -34406,12 +34421,12 @@ pub mod search_index_input {
             self.index_name = input;
             self
         }
-        /// <p>The search query string.</p>
+        /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_string = Some(input.into());
             self
         }
-        /// <p>The search query string.</p>
+        /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_string = input;
             self
@@ -44299,7 +44314,7 @@ impl std::fmt::Debug for SetDefaultAuthorizerInput {
 pub struct SearchIndexInput {
     /// <p>The search index name.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The search query string.</p>
+    /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -44313,7 +44328,7 @@ impl SearchIndexInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The search query string.</p>
+    /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
@@ -44592,7 +44607,7 @@ impl std::fmt::Debug for RegisterCertificateInput {
 pub struct RegisterCaCertificateInput {
     /// <p>The CA certificate.</p>
     pub ca_certificate: std::option::Option<std::string::String>,
-    /// <p>The private key verification certificate.</p>
+    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
     pub verification_certificate: std::option::Option<std::string::String>,
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
@@ -44607,13 +44622,15 @@ pub struct RegisterCaCertificateInput {
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+    pub certificate_mode: std::option::Option<crate::model::CertificateMode>,
 }
 impl RegisterCaCertificateInput {
     /// <p>The CA certificate.</p>
     pub fn ca_certificate(&self) -> std::option::Option<&str> {
         self.ca_certificate.as_deref()
     }
-    /// <p>The private key verification certificate.</p>
+    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
     pub fn verification_certificate(&self) -> std::option::Option<&str> {
         self.verification_certificate.as_deref()
     }
@@ -44638,6 +44655,10 @@ impl RegisterCaCertificateInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+    pub fn certificate_mode(&self) -> std::option::Option<&crate::model::CertificateMode> {
+        self.certificate_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for RegisterCaCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44648,6 +44669,7 @@ impl std::fmt::Debug for RegisterCaCertificateInput {
         formatter.field("allow_auto_registration", &self.allow_auto_registration);
         formatter.field("registration_config", &self.registration_config);
         formatter.field("tags", &self.tags);
+        formatter.field("certificate_mode", &self.certificate_mode);
         formatter.finish()
     }
 }

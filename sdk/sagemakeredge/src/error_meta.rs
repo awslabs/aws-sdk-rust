@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13,6 +13,22 @@ impl std::fmt::Display for Error {
         match self {
             Error::InternalServiceException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDeploymentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDeploymentsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetDeploymentsErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::GetDeploymentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
         }
     }
 }

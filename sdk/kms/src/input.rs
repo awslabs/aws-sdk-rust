@@ -971,14 +971,13 @@ pub mod create_key_input {
         /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code>, the key policy must allow the principal that is making the <code>CreateKey</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
         /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
         /// </ul>
-        /// <p>A key policy document must conform to the following rules.</p>
+        /// <p>A key policy document can include only the following characters:</p>
         /// <ul>
-        /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-        /// <li> <p>Must be UTF-8 encoded</p> </li>
-        /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-        /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+        /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+        /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+        /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
         /// </ul>
-        /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+        /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
@@ -989,14 +988,13 @@ pub mod create_key_input {
         /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code>, the key policy must allow the principal that is making the <code>CreateKey</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
         /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
         /// </ul>
-        /// <p>A key policy document must conform to the following rules.</p>
+        /// <p>A key policy document can include only the following characters:</p>
         /// <ul>
-        /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-        /// <li> <p>Must be UTF-8 encoded</p> </li>
-        /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-        /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+        /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+        /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+        /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
         /// </ul>
-        /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+        /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -1022,6 +1020,7 @@ pub mod create_key_input {
         /// <li> <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li>
         /// <li> <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
         /// <li> <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p> </li>
+        /// <li> <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
         /// </ul>
         pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
             self.key_usage = Some(input);
@@ -1034,6 +1033,7 @@ pub mod create_key_input {
         /// <li> <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li>
         /// <li> <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
         /// <li> <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p> </li>
+        /// <li> <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
         /// </ul>
         pub fn set_key_usage(
             mut self,
@@ -1060,7 +1060,7 @@ pub mod create_key_input {
             self.customer_master_key_spec = input;
             self
         }
-        /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key for encryption and decryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+        /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
         /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the cryptographic algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> <important>
         /// <p> <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
         /// </important>
@@ -1068,7 +1068,7 @@ pub mod create_key_input {
         /// <ul>
         /// <li> <p>Symmetric encryption key (default)</p>
         /// <ul>
-        /// <li> <p> <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li>
+        /// <li> <p> <code>SYMMETRIC_DEFAULT</code> </p> </li>
         /// </ul> </li>
         /// <li> <p>HMAC keys (symmetric)</p>
         /// <ul>
@@ -1092,13 +1092,17 @@ pub mod create_key_input {
         /// <li> <p>Other asymmetric elliptic curve key pairs</p>
         /// <ul>
         /// <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>SM2 key pairs (China Regions only)</p>
+        /// <ul>
+        /// <li> <p> <code>SM2</code> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn key_spec(mut self, input: crate::model::KeySpec) -> Self {
             self.key_spec = Some(input);
             self
         }
-        /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key for encryption and decryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+        /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
         /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the cryptographic algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> <important>
         /// <p> <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
         /// </important>
@@ -1106,7 +1110,7 @@ pub mod create_key_input {
         /// <ul>
         /// <li> <p>Symmetric encryption key (default)</p>
         /// <ul>
-        /// <li> <p> <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li>
+        /// <li> <p> <code>SYMMETRIC_DEFAULT</code> </p> </li>
         /// </ul> </li>
         /// <li> <p>HMAC keys (symmetric)</p>
         /// <ul>
@@ -1130,6 +1134,10 @@ pub mod create_key_input {
         /// <li> <p>Other asymmetric elliptic curve key pairs</p>
         /// <ul>
         /// <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>SM2 key pairs (China Regions only)</p>
+        /// <ul>
+        /// <li> <p> <code>SM2</code> </p> </li>
         /// </ul> </li>
         /// </ul>
         pub fn set_key_spec(mut self, input: std::option::Option<crate::model::KeySpec>) -> Self {
@@ -1154,7 +1162,7 @@ pub mod create_key_input {
         /// <p>This parameter is valid only for symmetric encryption KMS keys in a single Region. You cannot create any other type of KMS key in a custom key store.</p>
         /// <p>To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
         /// <p>The response includes the custom key store ID and the ID of the CloudHSM cluster.</p>
-        /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a single-tenant key store.</p>
+        /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a single-tenant key store.</p>
         pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_key_store_id = Some(input.into());
             self
@@ -1163,7 +1171,7 @@ pub mod create_key_input {
         /// <p>This parameter is valid only for symmetric encryption KMS keys in a single Region. You cannot create any other type of KMS key in a custom key store.</p>
         /// <p>To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
         /// <p>The response includes the custom key store ID and the ID of the CloudHSM cluster.</p>
-        /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a single-tenant key store.</p>
+        /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a single-tenant key store.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3752,13 +3760,13 @@ pub mod generate_data_key_pair_input {
             self
         }
         /// <p>Determines the type of data key pair that is generated. </p>
-        /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
+        /// <p>The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.</p>
         pub fn key_pair_spec(mut self, input: crate::model::DataKeyPairSpec) -> Self {
             self.key_pair_spec = Some(input);
             self
         }
         /// <p>Determines the type of data key pair that is generated. </p>
-        /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
+        /// <p>The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.</p>
         pub fn set_key_pair_spec(
             mut self,
             input: std::option::Option<crate::model::DataKeyPairSpec>,
@@ -3985,13 +3993,13 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self
         }
         /// <p>Determines the type of data key pair that is generated.</p>
-        /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
+        /// <p>The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.</p>
         pub fn key_pair_spec(mut self, input: crate::model::DataKeyPairSpec) -> Self {
             self.key_pair_spec = Some(input);
             self
         }
         /// <p>Determines the type of data key pair that is generated.</p>
-        /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
+        /// <p>The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.</p>
         pub fn set_key_pair_spec(
             mut self,
             input: std::option::Option<crate::model::DataKeyPairSpec>,
@@ -4597,12 +4605,12 @@ pub mod generate_random_input {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The length of the byte string.</p>
+        /// <p>The length of the random byte string. This parameter is required.</p>
         pub fn number_of_bytes(mut self, input: i32) -> Self {
             self.number_of_bytes = Some(input);
             self
         }
-        /// <p>The length of the byte string.</p>
+        /// <p>The length of the random byte string. This parameter is required.</p>
         pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_bytes = input;
             self
@@ -6768,13 +6776,13 @@ pub mod put_key_policy_input {
         /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.</p> </li>
         /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
         /// </ul>
-        /// <p>A key policy document must conform to the following rules.</p>
+        /// <p>A key policy document can include only the following characters:</p>
         /// <ul>
-        /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-        /// <li> <p>Must be UTF-8 encoded</p> </li>
-        /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-        /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+        /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+        /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+        /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
         /// </ul>
+        /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
@@ -6785,13 +6793,13 @@ pub mod put_key_policy_input {
         /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.</p> </li>
         /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
         /// </ul>
-        /// <p>A key policy document must conform to the following rules.</p>
+        /// <p>A key policy document can include only the following characters:</p>
         /// <ul>
-        /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-        /// <li> <p>Must be UTF-8 encoded</p> </li>
-        /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-        /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+        /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+        /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+        /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
         /// </ul>
+        /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -7356,13 +7364,13 @@ pub mod replicate_key_input {
         /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
         /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p> </li>
         /// </ul>
-        /// <p>A key policy document must conform to the following rules.</p>
+        /// <p>A key policy document can include only the following characters:</p>
         /// <ul>
-        /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-        /// <li> <p>Must be UTF-8 encoded</p> </li>
-        /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-        /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+        /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+        /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+        /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
         /// </ul>
+        /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
@@ -7374,13 +7382,13 @@ pub mod replicate_key_input {
         /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
         /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p> </li>
         /// </ul>
-        /// <p>A key policy document must conform to the following rules.</p>
+        /// <p>A key policy document can include only the following characters:</p>
         /// <ul>
-        /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-        /// <li> <p>Must be UTF-8 encoded</p> </li>
-        /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-        /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+        /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+        /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+        /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
         /// </ul>
+        /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -8673,12 +8681,12 @@ pub mod update_alias_input {
         pub(crate) target_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.</p>
+        /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
         }
-        /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.</p>
+        /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -10080,7 +10088,7 @@ impl std::fmt::Debug for UpdateCustomKeyStoreInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAliasInput {
-    /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.</p>
+    /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</p>
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>.</p>
     /// <p>The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric) and they must have the same key usage. </p>
@@ -10095,7 +10103,7 @@ pub struct UpdateAliasInput {
     pub target_key_id: std::option::Option<std::string::String>,
 }
 impl UpdateAliasInput {
-    /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.</p>
+    /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</p>
     pub fn alias_name(&self) -> std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -10442,13 +10450,13 @@ pub struct ReplicateKeyInput {
     /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
     /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p> </li>
     /// </ul>
-    /// <p>A key policy document must conform to the following rules.</p>
+    /// <p>A key policy document can include only the following characters:</p>
     /// <ul>
-    /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-    /// <li> <p>Must be UTF-8 encoded</p> </li>
-    /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-    /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+    /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+    /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+    /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
     /// </ul>
+    /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub policy: std::option::Option<std::string::String>,
     /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p> <important>
     /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately.</p>
@@ -10496,13 +10504,13 @@ impl ReplicateKeyInput {
     /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
     /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p> </li>
     /// </ul>
-    /// <p>A key policy document must conform to the following rules.</p>
+    /// <p>A key policy document can include only the following characters:</p>
     /// <ul>
-    /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-    /// <li> <p>Must be UTF-8 encoded</p> </li>
-    /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-    /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+    /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+    /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+    /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
     /// </ul>
+    /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -10718,13 +10726,13 @@ pub struct PutKeyPolicyInput {
     /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
-    /// <p>A key policy document must conform to the following rules.</p>
+    /// <p>A key policy document can include only the following characters:</p>
     /// <ul>
-    /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-    /// <li> <p>Must be UTF-8 encoded</p> </li>
-    /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-    /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+    /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+    /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+    /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
     /// </ul>
+    /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub policy: std::option::Option<std::string::String>,
     /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p> <important>
     /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately.</p>
@@ -10756,13 +10764,13 @@ impl PutKeyPolicyInput {
     /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
-    /// <p>A key policy document must conform to the following rules.</p>
+    /// <p>A key policy document can include only the following characters:</p>
     /// <ul>
-    /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-    /// <li> <p>Must be UTF-8 encoded</p> </li>
-    /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-    /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+    /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+    /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+    /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
     /// </ul>
+    /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -11324,13 +11332,13 @@ impl std::fmt::Debug for GetKeyPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateRandomInput {
-    /// <p>The length of the byte string.</p>
+    /// <p>The length of the random byte string. This parameter is required.</p>
     pub number_of_bytes: std::option::Option<i32>,
     /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub custom_key_store_id: std::option::Option<std::string::String>,
 }
 impl GenerateRandomInput {
-    /// <p>The length of the byte string.</p>
+    /// <p>The length of the random byte string. This parameter is required.</p>
     pub fn number_of_bytes(&self) -> std::option::Option<i32> {
         self.number_of_bytes
     }
@@ -11496,7 +11504,7 @@ pub struct GenerateDataKeyPairWithoutPlaintextInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Determines the type of data key pair that is generated.</p>
-    /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
+    /// <p>The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.</p>
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -11526,7 +11534,7 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
         self.key_id.as_deref()
     }
     /// <p>Determines the type of data key pair that is generated.</p>
-    /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
+    /// <p>The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.</p>
     pub fn key_pair_spec(&self) -> std::option::Option<&crate::model::DataKeyPairSpec> {
         self.key_pair_spec.as_ref()
     }
@@ -11568,7 +11576,7 @@ pub struct GenerateDataKeyPairInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Determines the type of data key pair that is generated. </p>
-    /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
+    /// <p>The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.</p>
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -11598,7 +11606,7 @@ impl GenerateDataKeyPairInput {
         self.key_id.as_deref()
     }
     /// <p>Determines the type of data key pair that is generated. </p>
-    /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
+    /// <p>The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.</p>
     pub fn key_pair_spec(&self) -> std::option::Option<&crate::model::DataKeyPairSpec> {
         self.key_pair_spec.as_ref()
     }
@@ -12210,14 +12218,13 @@ pub struct CreateKeyInput {
     /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code>, the key policy must allow the principal that is making the <code>CreateKey</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
     /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
-    /// <p>A key policy document must conform to the following rules.</p>
+    /// <p>A key policy document can include only the following characters:</p>
     /// <ul>
-    /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-    /// <li> <p>Must be UTF-8 encoded</p> </li>
-    /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-    /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+    /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+    /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+    /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
     /// </ul>
-    /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub policy: std::option::Option<std::string::String>,
     /// <p>A description of the KMS key.</p>
     /// <p>Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p>
@@ -12230,12 +12237,13 @@ pub struct CreateKeyInput {
     /// <li> <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li>
     /// <li> <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
     /// <li> <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
     /// </ul>
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
     /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
-    /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key for encryption and decryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the cryptographic algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> <important>
     /// <p> <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
     /// </important>
@@ -12243,7 +12251,7 @@ pub struct CreateKeyInput {
     /// <ul>
     /// <li> <p>Symmetric encryption key (default)</p>
     /// <ul>
-    /// <li> <p> <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li>
+    /// <li> <p> <code>SYMMETRIC_DEFAULT</code> </p> </li>
     /// </ul> </li>
     /// <li> <p>HMAC keys (symmetric)</p>
     /// <ul>
@@ -12268,6 +12276,10 @@ pub struct CreateKeyInput {
     /// <ul>
     /// <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p> </li>
     /// </ul> </li>
+    /// <li> <p>SM2 key pairs (China Regions only)</p>
+    /// <ul>
+    /// <li> <p> <code>SM2</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub key_spec: std::option::Option<crate::model::KeySpec>,
     /// <p>The source of the key material for the KMS key. You cannot change the origin after you create the KMS key. The default is <code>AWS_KMS</code>, which means that KMS creates the key material.</p>
@@ -12278,7 +12290,7 @@ pub struct CreateKeyInput {
     /// <p>This parameter is valid only for symmetric encryption KMS keys in a single Region. You cannot create any other type of KMS key in a custom key store.</p>
     /// <p>To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>The response includes the custom key store ID and the ID of the CloudHSM cluster.</p>
-    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a single-tenant key store.</p>
+    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a single-tenant key store.</p>
     pub custom_key_store_id: std::option::Option<std::string::String>,
     /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p> <important>
     /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately.</p>
@@ -12308,14 +12320,13 @@ impl CreateKeyInput {
     /// <li> <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code>, the key policy must allow the principal that is making the <code>CreateKey</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
     /// <li> <p>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
-    /// <p>A key policy document must conform to the following rules.</p>
+    /// <p>A key policy document can include only the following characters:</p>
     /// <ul>
-    /// <li> <p>Up to 32 kilobytes (32768 bytes)</p> </li>
-    /// <li> <p>Must be UTF-8 encoded</p> </li>
-    /// <li> <p>The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF.</p> </li>
-    /// <li> <p>The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.)</p> </li>
+    /// <li> <p>Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range.</p> </li>
+    /// <li> <p>Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+    /// <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters</p> </li>
     /// </ul>
-    /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// <p>For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -12332,6 +12343,7 @@ impl CreateKeyInput {
     /// <li> <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li>
     /// <li> <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
     /// <li> <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p> </li>
+    /// <li> <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li>
     /// </ul>
     pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsageType> {
         self.key_usage.as_ref()
@@ -12343,7 +12355,7 @@ impl CreateKeyInput {
     ) -> std::option::Option<&crate::model::CustomerMasterKeySpec> {
         self.customer_master_key_spec.as_ref()
     }
-    /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key for encryption and decryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the cryptographic algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> <important>
     /// <p> <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that are integrated with KMS</a> use symmetric encryption KMS keys to protect your data. These services do not support asymmetric KMS keys or HMAC KMS keys.</p>
     /// </important>
@@ -12351,7 +12363,7 @@ impl CreateKeyInput {
     /// <ul>
     /// <li> <p>Symmetric encryption key (default)</p>
     /// <ul>
-    /// <li> <p> <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li>
+    /// <li> <p> <code>SYMMETRIC_DEFAULT</code> </p> </li>
     /// </ul> </li>
     /// <li> <p>HMAC keys (symmetric)</p>
     /// <ul>
@@ -12376,6 +12388,10 @@ impl CreateKeyInput {
     /// <ul>
     /// <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p> </li>
     /// </ul> </li>
+    /// <li> <p>SM2 key pairs (China Regions only)</p>
+    /// <ul>
+    /// <li> <p> <code>SM2</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn key_spec(&self) -> std::option::Option<&crate::model::KeySpec> {
         self.key_spec.as_ref()
@@ -12390,7 +12406,7 @@ impl CreateKeyInput {
     /// <p>This parameter is valid only for symmetric encryption KMS keys in a single Region. You cannot create any other type of KMS key in a custom key store.</p>
     /// <p>To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>The response includes the custom key store ID and the ID of the CloudHSM cluster.</p>
-    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a single-tenant key store.</p>
+    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a single-tenant key store.</p>
     pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
         self.custom_key_store_id.as_deref()
     }

@@ -235,6 +235,33 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateAccessControlConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateAccessControlConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateAccessControlConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CreateAccessControlConfigurationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::CreateAccessControlConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::CreateAccessControlConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateAccessControlConfigurationErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::CreateAccessControlConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::CreateAccessControlConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::CreateAccessControlConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDataSourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -439,6 +466,32 @@ where
                 }
                 crate::error::CreateThesaurusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteAccessControlConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteAccessControlConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteAccessControlConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DeleteAccessControlConfigurationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::DeleteAccessControlConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DeleteAccessControlConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteAccessControlConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DeleteAccessControlConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DeleteAccessControlConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -664,6 +717,32 @@ where
                 }
                 crate::error::DeleteThesaurusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::DescribeAccessControlConfigurationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeAccessControlConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeAccessControlConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DescribeAccessControlConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DescribeAccessControlConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeAccessControlConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DescribeAccessControlConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DescribeAccessControlConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1013,6 +1092,31 @@ where
                 }
                 crate::error::GetSnapshotsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListAccessControlConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListAccessControlConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListAccessControlConfigurationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListAccessControlConfigurationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListAccessControlConfigurationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListAccessControlConfigurationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListAccessControlConfigurationsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::ListAccessControlConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1575,6 +1679,33 @@ where
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateAccessControlConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateAccessControlConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateAccessControlConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateAccessControlConfigurationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::UpdateAccessControlConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::UpdateAccessControlConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateAccessControlConfigurationErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::UpdateAccessControlConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::UpdateAccessControlConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::UpdateAccessControlConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

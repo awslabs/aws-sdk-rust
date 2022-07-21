@@ -829,6 +829,26 @@ pub(crate) fn reflens_structure_crate_output_describe_transit_gateway_peering_at
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_transit_gateway_policy_tables_output_next_token(
+    input: &crate::output::DescribeTransitGatewayPolicyTablesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_transit_gateway_route_table_announcements_output_next_token(
+    input: &crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_transit_gateway_route_tables_output_next_token(
     input: &crate::output::DescribeTransitGatewayRouteTablesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -1091,6 +1111,16 @@ pub(crate) fn reflens_structure_crate_output_get_transit_gateway_attachment_prop
 
 pub(crate) fn reflens_structure_crate_output_get_transit_gateway_multicast_domain_associations_output_next_token(
     input: &crate::output::GetTransitGatewayMulticastDomainAssociationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_get_transit_gateway_policy_table_associations_output_next_token(
+    input: &crate::output::GetTransitGatewayPolicyTableAssociationsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -2011,6 +2041,26 @@ pub(crate) fn lens_structure_crate_output_describe_transit_gateway_peering_attac
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_describe_transit_gateway_policy_tables_output_transit_gateway_policy_tables(
+    input: crate::output::DescribeTransitGatewayPolicyTablesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTable>> {
+    let input = match input.transit_gateway_policy_tables {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_transit_gateway_route_table_announcements_output_transit_gateway_route_table_announcements(
+    input: crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTableAnnouncement>> {
+    let input = match input.transit_gateway_route_table_announcements {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_describe_transit_gateway_route_tables_output_transit_gateway_route_tables(
     input: crate::output::DescribeTransitGatewayRouteTablesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTable>> {
@@ -2275,6 +2325,16 @@ pub(crate) fn lens_structure_crate_output_get_transit_gateway_multicast_domain_a
     input: crate::output::GetTransitGatewayMulticastDomainAssociationsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastDomainAssociation>> {
     let input = match input.multicast_domain_associations {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_get_transit_gateway_policy_table_associations_output_associations(
+    input: crate::output::GetTransitGatewayPolicyTableAssociationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTableAssociation>> {
+    let input = match input.associations {
         None => return None,
         Some(t) => t,
     };

@@ -1850,18 +1850,28 @@ pub fn serialize_structure_crate_input_test_connection_input(
     Ok(())
 }
 
+pub fn serialize_structure_crate_input_update_subscriptions_to_event_bridge_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateSubscriptionsToEventBridgeInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_417) = &input.force_move {
+        object.key("ForceMove").boolean(*var_417);
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_417) = &input.key {
-        object.key("Key").string(var_417.as_str());
+    if let Some(var_418) = &input.key {
+        object.key("Key").string(var_418.as_str());
     }
-    if let Some(var_418) = &input.value {
-        object.key("Value").string(var_418.as_str());
+    if let Some(var_419) = &input.value {
+        object.key("Value").string(var_419.as_str());
     }
-    if let Some(var_419) = &input.resource_arn {
-        object.key("ResourceArn").string(var_419.as_str());
+    if let Some(var_420) = &input.resource_arn {
+        object.key("ResourceArn").string(var_420.as_str());
     }
     Ok(())
 }
@@ -1870,8 +1880,8 @@ pub fn serialize_structure_crate_model_dynamo_db_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DynamoDbSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_420) = &input.service_access_role_arn {
-        object.key("ServiceAccessRoleArn").string(var_420.as_str());
+    if let Some(var_421) = &input.service_access_role_arn {
+        object.key("ServiceAccessRoleArn").string(var_421.as_str());
     }
     Ok(())
 }
@@ -1880,150 +1890,156 @@ pub fn serialize_structure_crate_model_s3_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Settings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_421) = &input.service_access_role_arn {
-        object.key("ServiceAccessRoleArn").string(var_421.as_str());
+    if let Some(var_422) = &input.service_access_role_arn {
+        object.key("ServiceAccessRoleArn").string(var_422.as_str());
     }
-    if let Some(var_422) = &input.external_table_definition {
+    if let Some(var_423) = &input.external_table_definition {
         object
             .key("ExternalTableDefinition")
-            .string(var_422.as_str());
+            .string(var_423.as_str());
     }
-    if let Some(var_423) = &input.csv_row_delimiter {
-        object.key("CsvRowDelimiter").string(var_423.as_str());
+    if let Some(var_424) = &input.csv_row_delimiter {
+        object.key("CsvRowDelimiter").string(var_424.as_str());
     }
-    if let Some(var_424) = &input.csv_delimiter {
-        object.key("CsvDelimiter").string(var_424.as_str());
+    if let Some(var_425) = &input.csv_delimiter {
+        object.key("CsvDelimiter").string(var_425.as_str());
     }
-    if let Some(var_425) = &input.bucket_folder {
-        object.key("BucketFolder").string(var_425.as_str());
+    if let Some(var_426) = &input.bucket_folder {
+        object.key("BucketFolder").string(var_426.as_str());
     }
-    if let Some(var_426) = &input.bucket_name {
-        object.key("BucketName").string(var_426.as_str());
+    if let Some(var_427) = &input.bucket_name {
+        object.key("BucketName").string(var_427.as_str());
     }
-    if let Some(var_427) = &input.compression_type {
-        object.key("CompressionType").string(var_427.as_str());
+    if let Some(var_428) = &input.compression_type {
+        object.key("CompressionType").string(var_428.as_str());
     }
-    if let Some(var_428) = &input.encryption_mode {
-        object.key("EncryptionMode").string(var_428.as_str());
+    if let Some(var_429) = &input.encryption_mode {
+        object.key("EncryptionMode").string(var_429.as_str());
     }
-    if let Some(var_429) = &input.server_side_encryption_kms_key_id {
+    if let Some(var_430) = &input.server_side_encryption_kms_key_id {
         object
             .key("ServerSideEncryptionKmsKeyId")
-            .string(var_429.as_str());
+            .string(var_430.as_str());
     }
-    if let Some(var_430) = &input.data_format {
-        object.key("DataFormat").string(var_430.as_str());
+    if let Some(var_431) = &input.data_format {
+        object.key("DataFormat").string(var_431.as_str());
     }
-    if let Some(var_431) = &input.encoding_type {
-        object.key("EncodingType").string(var_431.as_str());
+    if let Some(var_432) = &input.encoding_type {
+        object.key("EncodingType").string(var_432.as_str());
     }
-    if let Some(var_432) = &input.dict_page_size_limit {
+    if let Some(var_433) = &input.dict_page_size_limit {
         object.key("DictPageSizeLimit").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_432).into()),
-        );
-    }
-    if let Some(var_433) = &input.row_group_length {
-        object.key("RowGroupLength").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_433).into()),
         );
     }
-    if let Some(var_434) = &input.data_page_size {
-        object.key("DataPageSize").number(
+    if let Some(var_434) = &input.row_group_length {
+        object.key("RowGroupLength").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_434).into()),
         );
     }
-    if let Some(var_435) = &input.parquet_version {
-        object.key("ParquetVersion").string(var_435.as_str());
-    }
-    if let Some(var_436) = &input.enable_statistics {
-        object.key("EnableStatistics").boolean(*var_436);
-    }
-    if let Some(var_437) = &input.include_op_for_full_load {
-        object.key("IncludeOpForFullLoad").boolean(*var_437);
-    }
-    if let Some(var_438) = &input.cdc_inserts_only {
-        object.key("CdcInsertsOnly").boolean(*var_438);
-    }
-    if let Some(var_439) = &input.timestamp_column_name {
-        object.key("TimestampColumnName").string(var_439.as_str());
-    }
-    if let Some(var_440) = &input.parquet_timestamp_in_millisecond {
-        object
-            .key("ParquetTimestampInMillisecond")
-            .boolean(*var_440);
-    }
-    if let Some(var_441) = &input.cdc_inserts_and_updates {
-        object.key("CdcInsertsAndUpdates").boolean(*var_441);
-    }
-    if let Some(var_442) = &input.date_partition_enabled {
-        object.key("DatePartitionEnabled").boolean(*var_442);
-    }
-    if let Some(var_443) = &input.date_partition_sequence {
-        object.key("DatePartitionSequence").string(var_443.as_str());
-    }
-    if let Some(var_444) = &input.date_partition_delimiter {
-        object
-            .key("DatePartitionDelimiter")
-            .string(var_444.as_str());
-    }
-    if let Some(var_445) = &input.use_csv_no_sup_value {
-        object.key("UseCsvNoSupValue").boolean(*var_445);
-    }
-    if let Some(var_446) = &input.csv_no_sup_value {
-        object.key("CsvNoSupValue").string(var_446.as_str());
-    }
-    if let Some(var_447) = &input.preserve_transactions {
-        object.key("PreserveTransactions").boolean(*var_447);
-    }
-    if let Some(var_448) = &input.cdc_path {
-        object.key("CdcPath").string(var_448.as_str());
-    }
-    if let Some(var_449) = &input.use_task_start_time_for_full_load_timestamp {
-        object
-            .key("UseTaskStartTimeForFullLoadTimestamp")
-            .boolean(*var_449);
-    }
-    if let Some(var_450) = &input.canned_acl_for_objects {
-        object.key("CannedAclForObjects").string(var_450.as_str());
-    }
-    if let Some(var_451) = &input.add_column_name {
-        object.key("AddColumnName").boolean(*var_451);
-    }
-    if let Some(var_452) = &input.cdc_max_batch_interval {
-        object.key("CdcMaxBatchInterval").number(
+    if let Some(var_435) = &input.data_page_size {
+        object.key("DataPageSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_452).into()),
+            aws_smithy_types::Number::NegInt((*var_435).into()),
         );
     }
-    if let Some(var_453) = &input.cdc_min_file_size {
-        object.key("CdcMinFileSize").number(
+    if let Some(var_436) = &input.parquet_version {
+        object.key("ParquetVersion").string(var_436.as_str());
+    }
+    if let Some(var_437) = &input.enable_statistics {
+        object.key("EnableStatistics").boolean(*var_437);
+    }
+    if let Some(var_438) = &input.include_op_for_full_load {
+        object.key("IncludeOpForFullLoad").boolean(*var_438);
+    }
+    if let Some(var_439) = &input.cdc_inserts_only {
+        object.key("CdcInsertsOnly").boolean(*var_439);
+    }
+    if let Some(var_440) = &input.timestamp_column_name {
+        object.key("TimestampColumnName").string(var_440.as_str());
+    }
+    if let Some(var_441) = &input.parquet_timestamp_in_millisecond {
+        object
+            .key("ParquetTimestampInMillisecond")
+            .boolean(*var_441);
+    }
+    if let Some(var_442) = &input.cdc_inserts_and_updates {
+        object.key("CdcInsertsAndUpdates").boolean(*var_442);
+    }
+    if let Some(var_443) = &input.date_partition_enabled {
+        object.key("DatePartitionEnabled").boolean(*var_443);
+    }
+    if let Some(var_444) = &input.date_partition_sequence {
+        object.key("DatePartitionSequence").string(var_444.as_str());
+    }
+    if let Some(var_445) = &input.date_partition_delimiter {
+        object
+            .key("DatePartitionDelimiter")
+            .string(var_445.as_str());
+    }
+    if let Some(var_446) = &input.use_csv_no_sup_value {
+        object.key("UseCsvNoSupValue").boolean(*var_446);
+    }
+    if let Some(var_447) = &input.csv_no_sup_value {
+        object.key("CsvNoSupValue").string(var_447.as_str());
+    }
+    if let Some(var_448) = &input.preserve_transactions {
+        object.key("PreserveTransactions").boolean(*var_448);
+    }
+    if let Some(var_449) = &input.cdc_path {
+        object.key("CdcPath").string(var_449.as_str());
+    }
+    if let Some(var_450) = &input.use_task_start_time_for_full_load_timestamp {
+        object
+            .key("UseTaskStartTimeForFullLoadTimestamp")
+            .boolean(*var_450);
+    }
+    if let Some(var_451) = &input.canned_acl_for_objects {
+        object.key("CannedAclForObjects").string(var_451.as_str());
+    }
+    if let Some(var_452) = &input.add_column_name {
+        object.key("AddColumnName").boolean(*var_452);
+    }
+    if let Some(var_453) = &input.cdc_max_batch_interval {
+        object.key("CdcMaxBatchInterval").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_453).into()),
         );
     }
-    if let Some(var_454) = &input.csv_null_value {
-        object.key("CsvNullValue").string(var_454.as_str());
-    }
-    if let Some(var_455) = &input.ignore_header_rows {
-        object.key("IgnoreHeaderRows").number(
+    if let Some(var_454) = &input.cdc_min_file_size {
+        object.key("CdcMinFileSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_455).into()),
+            aws_smithy_types::Number::NegInt((*var_454).into()),
         );
     }
-    if let Some(var_456) = &input.max_file_size {
-        object.key("MaxFileSize").number(
+    if let Some(var_455) = &input.csv_null_value {
+        object.key("CsvNullValue").string(var_455.as_str());
+    }
+    if let Some(var_456) = &input.ignore_header_rows {
+        object.key("IgnoreHeaderRows").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_456).into()),
         );
     }
-    if let Some(var_457) = &input.rfc4180 {
-        object.key("Rfc4180").boolean(*var_457);
+    if let Some(var_457) = &input.max_file_size {
+        object.key("MaxFileSize").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_457).into()),
+        );
     }
-    if let Some(var_458) = &input.date_partition_timezone {
-        object.key("DatePartitionTimezone").string(var_458.as_str());
+    if let Some(var_458) = &input.rfc4180 {
+        object.key("Rfc4180").boolean(*var_458);
+    }
+    if let Some(var_459) = &input.date_partition_timezone {
+        object.key("DatePartitionTimezone").string(var_459.as_str());
+    }
+    if let Some(var_460) = &input.add_trailing_padding_character {
+        object.key("AddTrailingPaddingCharacter").boolean(*var_460);
+    }
+    if let Some(var_461) = &input.expected_bucket_owner {
+        object.key("ExpectedBucketOwner").string(var_461.as_str());
     }
     Ok(())
 }
@@ -2032,11 +2048,11 @@ pub fn serialize_structure_crate_model_dms_transfer_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DmsTransferSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_459) = &input.service_access_role_arn {
-        object.key("ServiceAccessRoleArn").string(var_459.as_str());
+    if let Some(var_462) = &input.service_access_role_arn {
+        object.key("ServiceAccessRoleArn").string(var_462.as_str());
     }
-    if let Some(var_460) = &input.bucket_name {
-        object.key("BucketName").string(var_460.as_str());
+    if let Some(var_463) = &input.bucket_name {
+        object.key("BucketName").string(var_463.as_str());
     }
     Ok(())
 }
@@ -2045,54 +2061,54 @@ pub fn serialize_structure_crate_model_mongo_db_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MongoDbSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_461) = &input.username {
-        object.key("Username").string(var_461.as_str());
+    if let Some(var_464) = &input.username {
+        object.key("Username").string(var_464.as_str());
     }
-    if let Some(var_462) = &input.password {
-        object.key("Password").string(var_462.as_str());
+    if let Some(var_465) = &input.password {
+        object.key("Password").string(var_465.as_str());
     }
-    if let Some(var_463) = &input.server_name {
-        object.key("ServerName").string(var_463.as_str());
+    if let Some(var_466) = &input.server_name {
+        object.key("ServerName").string(var_466.as_str());
     }
-    if let Some(var_464) = &input.port {
+    if let Some(var_467) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_464).into()),
+            aws_smithy_types::Number::NegInt((*var_467).into()),
         );
     }
-    if let Some(var_465) = &input.database_name {
-        object.key("DatabaseName").string(var_465.as_str());
+    if let Some(var_468) = &input.database_name {
+        object.key("DatabaseName").string(var_468.as_str());
     }
-    if let Some(var_466) = &input.auth_type {
-        object.key("AuthType").string(var_466.as_str());
+    if let Some(var_469) = &input.auth_type {
+        object.key("AuthType").string(var_469.as_str());
     }
-    if let Some(var_467) = &input.auth_mechanism {
-        object.key("AuthMechanism").string(var_467.as_str());
+    if let Some(var_470) = &input.auth_mechanism {
+        object.key("AuthMechanism").string(var_470.as_str());
     }
-    if let Some(var_468) = &input.nesting_level {
-        object.key("NestingLevel").string(var_468.as_str());
+    if let Some(var_471) = &input.nesting_level {
+        object.key("NestingLevel").string(var_471.as_str());
     }
-    if let Some(var_469) = &input.extract_doc_id {
-        object.key("ExtractDocId").string(var_469.as_str());
+    if let Some(var_472) = &input.extract_doc_id {
+        object.key("ExtractDocId").string(var_472.as_str());
     }
-    if let Some(var_470) = &input.docs_to_investigate {
-        object.key("DocsToInvestigate").string(var_470.as_str());
+    if let Some(var_473) = &input.docs_to_investigate {
+        object.key("DocsToInvestigate").string(var_473.as_str());
     }
-    if let Some(var_471) = &input.auth_source {
-        object.key("AuthSource").string(var_471.as_str());
+    if let Some(var_474) = &input.auth_source {
+        object.key("AuthSource").string(var_474.as_str());
     }
-    if let Some(var_472) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_472.as_str());
+    if let Some(var_475) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_475.as_str());
     }
-    if let Some(var_473) = &input.secrets_manager_access_role_arn {
+    if let Some(var_476) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_473.as_str());
+            .string(var_476.as_str());
     }
-    if let Some(var_474) = &input.secrets_manager_secret_id {
+    if let Some(var_477) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_474.as_str());
+            .string(var_477.as_str());
     }
     Ok(())
 }
@@ -2101,35 +2117,35 @@ pub fn serialize_structure_crate_model_kinesis_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::KinesisSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_475) = &input.stream_arn {
-        object.key("StreamArn").string(var_475.as_str());
+    if let Some(var_478) = &input.stream_arn {
+        object.key("StreamArn").string(var_478.as_str());
     }
-    if let Some(var_476) = &input.message_format {
-        object.key("MessageFormat").string(var_476.as_str());
+    if let Some(var_479) = &input.message_format {
+        object.key("MessageFormat").string(var_479.as_str());
     }
-    if let Some(var_477) = &input.service_access_role_arn {
-        object.key("ServiceAccessRoleArn").string(var_477.as_str());
+    if let Some(var_480) = &input.service_access_role_arn {
+        object.key("ServiceAccessRoleArn").string(var_480.as_str());
     }
-    if let Some(var_478) = &input.include_transaction_details {
-        object.key("IncludeTransactionDetails").boolean(*var_478);
+    if let Some(var_481) = &input.include_transaction_details {
+        object.key("IncludeTransactionDetails").boolean(*var_481);
     }
-    if let Some(var_479) = &input.include_partition_value {
-        object.key("IncludePartitionValue").boolean(*var_479);
+    if let Some(var_482) = &input.include_partition_value {
+        object.key("IncludePartitionValue").boolean(*var_482);
     }
-    if let Some(var_480) = &input.partition_include_schema_table {
-        object.key("PartitionIncludeSchemaTable").boolean(*var_480);
+    if let Some(var_483) = &input.partition_include_schema_table {
+        object.key("PartitionIncludeSchemaTable").boolean(*var_483);
     }
-    if let Some(var_481) = &input.include_table_alter_operations {
-        object.key("IncludeTableAlterOperations").boolean(*var_481);
+    if let Some(var_484) = &input.include_table_alter_operations {
+        object.key("IncludeTableAlterOperations").boolean(*var_484);
     }
-    if let Some(var_482) = &input.include_control_details {
-        object.key("IncludeControlDetails").boolean(*var_482);
+    if let Some(var_485) = &input.include_control_details {
+        object.key("IncludeControlDetails").boolean(*var_485);
     }
-    if let Some(var_483) = &input.include_null_and_empty {
-        object.key("IncludeNullAndEmpty").boolean(*var_483);
+    if let Some(var_486) = &input.include_null_and_empty {
+        object.key("IncludeNullAndEmpty").boolean(*var_486);
     }
-    if let Some(var_484) = &input.no_hex_prefix {
-        object.key("NoHexPrefix").boolean(*var_484);
+    if let Some(var_487) = &input.no_hex_prefix {
+        object.key("NoHexPrefix").boolean(*var_487);
     }
     Ok(())
 }
@@ -2138,64 +2154,64 @@ pub fn serialize_structure_crate_model_kafka_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::KafkaSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_485) = &input.broker {
-        object.key("Broker").string(var_485.as_str());
+    if let Some(var_488) = &input.broker {
+        object.key("Broker").string(var_488.as_str());
     }
-    if let Some(var_486) = &input.topic {
-        object.key("Topic").string(var_486.as_str());
+    if let Some(var_489) = &input.topic {
+        object.key("Topic").string(var_489.as_str());
     }
-    if let Some(var_487) = &input.message_format {
-        object.key("MessageFormat").string(var_487.as_str());
+    if let Some(var_490) = &input.message_format {
+        object.key("MessageFormat").string(var_490.as_str());
     }
-    if let Some(var_488) = &input.include_transaction_details {
-        object.key("IncludeTransactionDetails").boolean(*var_488);
+    if let Some(var_491) = &input.include_transaction_details {
+        object.key("IncludeTransactionDetails").boolean(*var_491);
     }
-    if let Some(var_489) = &input.include_partition_value {
-        object.key("IncludePartitionValue").boolean(*var_489);
+    if let Some(var_492) = &input.include_partition_value {
+        object.key("IncludePartitionValue").boolean(*var_492);
     }
-    if let Some(var_490) = &input.partition_include_schema_table {
-        object.key("PartitionIncludeSchemaTable").boolean(*var_490);
+    if let Some(var_493) = &input.partition_include_schema_table {
+        object.key("PartitionIncludeSchemaTable").boolean(*var_493);
     }
-    if let Some(var_491) = &input.include_table_alter_operations {
-        object.key("IncludeTableAlterOperations").boolean(*var_491);
+    if let Some(var_494) = &input.include_table_alter_operations {
+        object.key("IncludeTableAlterOperations").boolean(*var_494);
     }
-    if let Some(var_492) = &input.include_control_details {
-        object.key("IncludeControlDetails").boolean(*var_492);
+    if let Some(var_495) = &input.include_control_details {
+        object.key("IncludeControlDetails").boolean(*var_495);
     }
-    if let Some(var_493) = &input.message_max_bytes {
+    if let Some(var_496) = &input.message_max_bytes {
         object.key("MessageMaxBytes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_493).into()),
+            aws_smithy_types::Number::NegInt((*var_496).into()),
         );
     }
-    if let Some(var_494) = &input.include_null_and_empty {
-        object.key("IncludeNullAndEmpty").boolean(*var_494);
+    if let Some(var_497) = &input.include_null_and_empty {
+        object.key("IncludeNullAndEmpty").boolean(*var_497);
     }
-    if let Some(var_495) = &input.security_protocol {
-        object.key("SecurityProtocol").string(var_495.as_str());
+    if let Some(var_498) = &input.security_protocol {
+        object.key("SecurityProtocol").string(var_498.as_str());
     }
-    if let Some(var_496) = &input.ssl_client_certificate_arn {
+    if let Some(var_499) = &input.ssl_client_certificate_arn {
         object
             .key("SslClientCertificateArn")
-            .string(var_496.as_str());
+            .string(var_499.as_str());
     }
-    if let Some(var_497) = &input.ssl_client_key_arn {
-        object.key("SslClientKeyArn").string(var_497.as_str());
+    if let Some(var_500) = &input.ssl_client_key_arn {
+        object.key("SslClientKeyArn").string(var_500.as_str());
     }
-    if let Some(var_498) = &input.ssl_client_key_password {
-        object.key("SslClientKeyPassword").string(var_498.as_str());
+    if let Some(var_501) = &input.ssl_client_key_password {
+        object.key("SslClientKeyPassword").string(var_501.as_str());
     }
-    if let Some(var_499) = &input.ssl_ca_certificate_arn {
-        object.key("SslCaCertificateArn").string(var_499.as_str());
+    if let Some(var_502) = &input.ssl_ca_certificate_arn {
+        object.key("SslCaCertificateArn").string(var_502.as_str());
     }
-    if let Some(var_500) = &input.sasl_username {
-        object.key("SaslUsername").string(var_500.as_str());
+    if let Some(var_503) = &input.sasl_username {
+        object.key("SaslUsername").string(var_503.as_str());
     }
-    if let Some(var_501) = &input.sasl_password {
-        object.key("SaslPassword").string(var_501.as_str());
+    if let Some(var_504) = &input.sasl_password {
+        object.key("SaslPassword").string(var_504.as_str());
     }
-    if let Some(var_502) = &input.no_hex_prefix {
-        object.key("NoHexPrefix").boolean(*var_502);
+    if let Some(var_505) = &input.no_hex_prefix {
+        object.key("NoHexPrefix").boolean(*var_505);
     }
     Ok(())
 }
@@ -2204,23 +2220,26 @@ pub fn serialize_structure_crate_model_elasticsearch_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ElasticsearchSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_503) = &input.service_access_role_arn {
-        object.key("ServiceAccessRoleArn").string(var_503.as_str());
+    if let Some(var_506) = &input.service_access_role_arn {
+        object.key("ServiceAccessRoleArn").string(var_506.as_str());
     }
-    if let Some(var_504) = &input.endpoint_uri {
-        object.key("EndpointUri").string(var_504.as_str());
+    if let Some(var_507) = &input.endpoint_uri {
+        object.key("EndpointUri").string(var_507.as_str());
     }
-    if let Some(var_505) = &input.full_load_error_percentage {
+    if let Some(var_508) = &input.full_load_error_percentage {
         object.key("FullLoadErrorPercentage").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_505).into()),
+            aws_smithy_types::Number::NegInt((*var_508).into()),
         );
     }
-    if let Some(var_506) = &input.error_retry_duration {
+    if let Some(var_509) = &input.error_retry_duration {
         object.key("ErrorRetryDuration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_506).into()),
+            aws_smithy_types::Number::NegInt((*var_509).into()),
         );
+    }
+    if let Some(var_510) = &input.use_new_mapping_type {
+        object.key("UseNewMappingType").boolean(*var_510);
     }
     Ok(())
 }
@@ -2229,35 +2248,35 @@ pub fn serialize_structure_crate_model_neptune_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NeptuneSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_507) = &input.service_access_role_arn {
-        object.key("ServiceAccessRoleArn").string(var_507.as_str());
+    if let Some(var_511) = &input.service_access_role_arn {
+        object.key("ServiceAccessRoleArn").string(var_511.as_str());
     }
-    if let Some(var_508) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_508.as_str());
+    if let Some(var_512) = &input.s3_bucket_name {
+        object.key("S3BucketName").string(var_512.as_str());
     }
-    if let Some(var_509) = &input.s3_bucket_folder {
-        object.key("S3BucketFolder").string(var_509.as_str());
+    if let Some(var_513) = &input.s3_bucket_folder {
+        object.key("S3BucketFolder").string(var_513.as_str());
     }
-    if let Some(var_510) = &input.error_retry_duration {
+    if let Some(var_514) = &input.error_retry_duration {
         object.key("ErrorRetryDuration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_510).into()),
+            aws_smithy_types::Number::NegInt((*var_514).into()),
         );
     }
-    if let Some(var_511) = &input.max_file_size {
+    if let Some(var_515) = &input.max_file_size {
         object.key("MaxFileSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_511).into()),
+            aws_smithy_types::Number::NegInt((*var_515).into()),
         );
     }
-    if let Some(var_512) = &input.max_retry_count {
+    if let Some(var_516) = &input.max_retry_count {
         object.key("MaxRetryCount").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_512).into()),
+            aws_smithy_types::Number::NegInt((*var_516).into()),
         );
     }
-    if let Some(var_513) = &input.iam_auth_enabled {
-        object.key("IamAuthEnabled").boolean(*var_513);
+    if let Some(var_517) = &input.iam_auth_enabled {
+        object.key("IamAuthEnabled").boolean(*var_517);
     }
     Ok(())
 }
@@ -2266,119 +2285,119 @@ pub fn serialize_structure_crate_model_redshift_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RedshiftSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_514) = &input.accept_any_date {
-        object.key("AcceptAnyDate").boolean(*var_514);
+    if let Some(var_518) = &input.accept_any_date {
+        object.key("AcceptAnyDate").boolean(*var_518);
     }
-    if let Some(var_515) = &input.after_connect_script {
-        object.key("AfterConnectScript").string(var_515.as_str());
+    if let Some(var_519) = &input.after_connect_script {
+        object.key("AfterConnectScript").string(var_519.as_str());
     }
-    if let Some(var_516) = &input.bucket_folder {
-        object.key("BucketFolder").string(var_516.as_str());
+    if let Some(var_520) = &input.bucket_folder {
+        object.key("BucketFolder").string(var_520.as_str());
     }
-    if let Some(var_517) = &input.bucket_name {
-        object.key("BucketName").string(var_517.as_str());
+    if let Some(var_521) = &input.bucket_name {
+        object.key("BucketName").string(var_521.as_str());
     }
-    if let Some(var_518) = &input.case_sensitive_names {
-        object.key("CaseSensitiveNames").boolean(*var_518);
+    if let Some(var_522) = &input.case_sensitive_names {
+        object.key("CaseSensitiveNames").boolean(*var_522);
     }
-    if let Some(var_519) = &input.comp_update {
-        object.key("CompUpdate").boolean(*var_519);
+    if let Some(var_523) = &input.comp_update {
+        object.key("CompUpdate").boolean(*var_523);
     }
-    if let Some(var_520) = &input.connection_timeout {
+    if let Some(var_524) = &input.connection_timeout {
         object.key("ConnectionTimeout").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_520).into()),
+            aws_smithy_types::Number::NegInt((*var_524).into()),
         );
     }
-    if let Some(var_521) = &input.database_name {
-        object.key("DatabaseName").string(var_521.as_str());
+    if let Some(var_525) = &input.database_name {
+        object.key("DatabaseName").string(var_525.as_str());
     }
-    if let Some(var_522) = &input.date_format {
-        object.key("DateFormat").string(var_522.as_str());
+    if let Some(var_526) = &input.date_format {
+        object.key("DateFormat").string(var_526.as_str());
     }
-    if let Some(var_523) = &input.empty_as_null {
-        object.key("EmptyAsNull").boolean(*var_523);
+    if let Some(var_527) = &input.empty_as_null {
+        object.key("EmptyAsNull").boolean(*var_527);
     }
-    if let Some(var_524) = &input.encryption_mode {
-        object.key("EncryptionMode").string(var_524.as_str());
+    if let Some(var_528) = &input.encryption_mode {
+        object.key("EncryptionMode").string(var_528.as_str());
     }
-    if let Some(var_525) = &input.explicit_ids {
-        object.key("ExplicitIds").boolean(*var_525);
+    if let Some(var_529) = &input.explicit_ids {
+        object.key("ExplicitIds").boolean(*var_529);
     }
-    if let Some(var_526) = &input.file_transfer_upload_streams {
+    if let Some(var_530) = &input.file_transfer_upload_streams {
         object.key("FileTransferUploadStreams").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_526).into()),
-        );
-    }
-    if let Some(var_527) = &input.load_timeout {
-        object.key("LoadTimeout").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_527).into()),
-        );
-    }
-    if let Some(var_528) = &input.max_file_size {
-        object.key("MaxFileSize").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_528).into()),
-        );
-    }
-    if let Some(var_529) = &input.password {
-        object.key("Password").string(var_529.as_str());
-    }
-    if let Some(var_530) = &input.port {
-        object.key("Port").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_530).into()),
         );
     }
-    if let Some(var_531) = &input.remove_quotes {
-        object.key("RemoveQuotes").boolean(*var_531);
-    }
-    if let Some(var_532) = &input.replace_invalid_chars {
-        object.key("ReplaceInvalidChars").string(var_532.as_str());
-    }
-    if let Some(var_533) = &input.replace_chars {
-        object.key("ReplaceChars").string(var_533.as_str());
-    }
-    if let Some(var_534) = &input.server_name {
-        object.key("ServerName").string(var_534.as_str());
-    }
-    if let Some(var_535) = &input.service_access_role_arn {
-        object.key("ServiceAccessRoleArn").string(var_535.as_str());
-    }
-    if let Some(var_536) = &input.server_side_encryption_kms_key_id {
-        object
-            .key("ServerSideEncryptionKmsKeyId")
-            .string(var_536.as_str());
-    }
-    if let Some(var_537) = &input.time_format {
-        object.key("TimeFormat").string(var_537.as_str());
-    }
-    if let Some(var_538) = &input.trim_blanks {
-        object.key("TrimBlanks").boolean(*var_538);
-    }
-    if let Some(var_539) = &input.truncate_columns {
-        object.key("TruncateColumns").boolean(*var_539);
-    }
-    if let Some(var_540) = &input.username {
-        object.key("Username").string(var_540.as_str());
-    }
-    if let Some(var_541) = &input.write_buffer_size {
-        object.key("WriteBufferSize").number(
+    if let Some(var_531) = &input.load_timeout {
+        object.key("LoadTimeout").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_541).into()),
+            aws_smithy_types::Number::NegInt((*var_531).into()),
         );
     }
-    if let Some(var_542) = &input.secrets_manager_access_role_arn {
+    if let Some(var_532) = &input.max_file_size {
+        object.key("MaxFileSize").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_532).into()),
+        );
+    }
+    if let Some(var_533) = &input.password {
+        object.key("Password").string(var_533.as_str());
+    }
+    if let Some(var_534) = &input.port {
+        object.key("Port").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_534).into()),
+        );
+    }
+    if let Some(var_535) = &input.remove_quotes {
+        object.key("RemoveQuotes").boolean(*var_535);
+    }
+    if let Some(var_536) = &input.replace_invalid_chars {
+        object.key("ReplaceInvalidChars").string(var_536.as_str());
+    }
+    if let Some(var_537) = &input.replace_chars {
+        object.key("ReplaceChars").string(var_537.as_str());
+    }
+    if let Some(var_538) = &input.server_name {
+        object.key("ServerName").string(var_538.as_str());
+    }
+    if let Some(var_539) = &input.service_access_role_arn {
+        object.key("ServiceAccessRoleArn").string(var_539.as_str());
+    }
+    if let Some(var_540) = &input.server_side_encryption_kms_key_id {
+        object
+            .key("ServerSideEncryptionKmsKeyId")
+            .string(var_540.as_str());
+    }
+    if let Some(var_541) = &input.time_format {
+        object.key("TimeFormat").string(var_541.as_str());
+    }
+    if let Some(var_542) = &input.trim_blanks {
+        object.key("TrimBlanks").boolean(*var_542);
+    }
+    if let Some(var_543) = &input.truncate_columns {
+        object.key("TruncateColumns").boolean(*var_543);
+    }
+    if let Some(var_544) = &input.username {
+        object.key("Username").string(var_544.as_str());
+    }
+    if let Some(var_545) = &input.write_buffer_size {
+        object.key("WriteBufferSize").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_545).into()),
+        );
+    }
+    if let Some(var_546) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_542.as_str());
+            .string(var_546.as_str());
     }
-    if let Some(var_543) = &input.secrets_manager_secret_id {
+    if let Some(var_547) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_543.as_str());
+            .string(var_547.as_str());
     }
     Ok(())
 }
@@ -2387,75 +2406,78 @@ pub fn serialize_structure_crate_model_postgre_sql_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PostgreSqlSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_544) = &input.after_connect_script {
-        object.key("AfterConnectScript").string(var_544.as_str());
+    if let Some(var_548) = &input.after_connect_script {
+        object.key("AfterConnectScript").string(var_548.as_str());
     }
-    if let Some(var_545) = &input.capture_ddls {
-        object.key("CaptureDdls").boolean(*var_545);
+    if let Some(var_549) = &input.capture_ddls {
+        object.key("CaptureDdls").boolean(*var_549);
     }
-    if let Some(var_546) = &input.max_file_size {
+    if let Some(var_550) = &input.max_file_size {
         object.key("MaxFileSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_546).into()),
+            aws_smithy_types::Number::NegInt((*var_550).into()),
         );
     }
-    if let Some(var_547) = &input.database_name {
-        object.key("DatabaseName").string(var_547.as_str());
+    if let Some(var_551) = &input.database_name {
+        object.key("DatabaseName").string(var_551.as_str());
     }
-    if let Some(var_548) = &input.ddl_artifacts_schema {
-        object.key("DdlArtifactsSchema").string(var_548.as_str());
+    if let Some(var_552) = &input.ddl_artifacts_schema {
+        object.key("DdlArtifactsSchema").string(var_552.as_str());
     }
-    if let Some(var_549) = &input.execute_timeout {
+    if let Some(var_553) = &input.execute_timeout {
         object.key("ExecuteTimeout").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_549).into()),
-        );
-    }
-    if let Some(var_550) = &input.fail_tasks_on_lob_truncation {
-        object.key("FailTasksOnLobTruncation").boolean(*var_550);
-    }
-    if let Some(var_551) = &input.heartbeat_enable {
-        object.key("HeartbeatEnable").boolean(*var_551);
-    }
-    if let Some(var_552) = &input.heartbeat_schema {
-        object.key("HeartbeatSchema").string(var_552.as_str());
-    }
-    if let Some(var_553) = &input.heartbeat_frequency {
-        object.key("HeartbeatFrequency").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_553).into()),
         );
     }
-    if let Some(var_554) = &input.password {
-        object.key("Password").string(var_554.as_str());
+    if let Some(var_554) = &input.fail_tasks_on_lob_truncation {
+        object.key("FailTasksOnLobTruncation").boolean(*var_554);
     }
-    if let Some(var_555) = &input.port {
-        object.key("Port").number(
+    if let Some(var_555) = &input.heartbeat_enable {
+        object.key("HeartbeatEnable").boolean(*var_555);
+    }
+    if let Some(var_556) = &input.heartbeat_schema {
+        object.key("HeartbeatSchema").string(var_556.as_str());
+    }
+    if let Some(var_557) = &input.heartbeat_frequency {
+        object.key("HeartbeatFrequency").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_555).into()),
+            aws_smithy_types::Number::NegInt((*var_557).into()),
         );
     }
-    if let Some(var_556) = &input.server_name {
-        object.key("ServerName").string(var_556.as_str());
+    if let Some(var_558) = &input.password {
+        object.key("Password").string(var_558.as_str());
     }
-    if let Some(var_557) = &input.username {
-        object.key("Username").string(var_557.as_str());
+    if let Some(var_559) = &input.port {
+        object.key("Port").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_559).into()),
+        );
     }
-    if let Some(var_558) = &input.slot_name {
-        object.key("SlotName").string(var_558.as_str());
+    if let Some(var_560) = &input.server_name {
+        object.key("ServerName").string(var_560.as_str());
     }
-    if let Some(var_559) = &input.plugin_name {
-        object.key("PluginName").string(var_559.as_str());
+    if let Some(var_561) = &input.username {
+        object.key("Username").string(var_561.as_str());
     }
-    if let Some(var_560) = &input.secrets_manager_access_role_arn {
+    if let Some(var_562) = &input.slot_name {
+        object.key("SlotName").string(var_562.as_str());
+    }
+    if let Some(var_563) = &input.plugin_name {
+        object.key("PluginName").string(var_563.as_str());
+    }
+    if let Some(var_564) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_560.as_str());
+            .string(var_564.as_str());
     }
-    if let Some(var_561) = &input.secrets_manager_secret_id {
+    if let Some(var_565) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_561.as_str());
+            .string(var_565.as_str());
+    }
+    if let Some(var_566) = &input.trim_space_in_char {
+        object.key("TrimSpaceInChar").boolean(*var_566);
     }
     Ok(())
 }
@@ -2464,65 +2486,65 @@ pub fn serialize_structure_crate_model_my_sql_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MySqlSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_562) = &input.after_connect_script {
-        object.key("AfterConnectScript").string(var_562.as_str());
+    if let Some(var_567) = &input.after_connect_script {
+        object.key("AfterConnectScript").string(var_567.as_str());
     }
-    if let Some(var_563) = &input.clean_source_metadata_on_mismatch {
+    if let Some(var_568) = &input.clean_source_metadata_on_mismatch {
         object
             .key("CleanSourceMetadataOnMismatch")
-            .boolean(*var_563);
+            .boolean(*var_568);
     }
-    if let Some(var_564) = &input.database_name {
-        object.key("DatabaseName").string(var_564.as_str());
+    if let Some(var_569) = &input.database_name {
+        object.key("DatabaseName").string(var_569.as_str());
     }
-    if let Some(var_565) = &input.events_poll_interval {
+    if let Some(var_570) = &input.events_poll_interval {
         object.key("EventsPollInterval").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_565).into()),
-        );
-    }
-    if let Some(var_566) = &input.target_db_type {
-        object.key("TargetDbType").string(var_566.as_str());
-    }
-    if let Some(var_567) = &input.max_file_size {
-        object.key("MaxFileSize").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_567).into()),
-        );
-    }
-    if let Some(var_568) = &input.parallel_load_threads {
-        object.key("ParallelLoadThreads").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_568).into()),
-        );
-    }
-    if let Some(var_569) = &input.password {
-        object.key("Password").string(var_569.as_str());
-    }
-    if let Some(var_570) = &input.port {
-        object.key("Port").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_570).into()),
         );
     }
-    if let Some(var_571) = &input.server_name {
-        object.key("ServerName").string(var_571.as_str());
+    if let Some(var_571) = &input.target_db_type {
+        object.key("TargetDbType").string(var_571.as_str());
     }
-    if let Some(var_572) = &input.server_timezone {
-        object.key("ServerTimezone").string(var_572.as_str());
+    if let Some(var_572) = &input.max_file_size {
+        object.key("MaxFileSize").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_572).into()),
+        );
     }
-    if let Some(var_573) = &input.username {
-        object.key("Username").string(var_573.as_str());
+    if let Some(var_573) = &input.parallel_load_threads {
+        object.key("ParallelLoadThreads").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_573).into()),
+        );
     }
-    if let Some(var_574) = &input.secrets_manager_access_role_arn {
+    if let Some(var_574) = &input.password {
+        object.key("Password").string(var_574.as_str());
+    }
+    if let Some(var_575) = &input.port {
+        object.key("Port").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_575).into()),
+        );
+    }
+    if let Some(var_576) = &input.server_name {
+        object.key("ServerName").string(var_576.as_str());
+    }
+    if let Some(var_577) = &input.server_timezone {
+        object.key("ServerTimezone").string(var_577.as_str());
+    }
+    if let Some(var_578) = &input.username {
+        object.key("Username").string(var_578.as_str());
+    }
+    if let Some(var_579) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_574.as_str());
+            .string(var_579.as_str());
     }
-    if let Some(var_575) = &input.secrets_manager_secret_id {
+    if let Some(var_580) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_575.as_str());
+            .string(var_580.as_str());
     }
     Ok(())
 }
@@ -2531,170 +2553,173 @@ pub fn serialize_structure_crate_model_oracle_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OracleSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_576) = &input.add_supplemental_logging {
-        object.key("AddSupplementalLogging").boolean(*var_576);
+    if let Some(var_581) = &input.add_supplemental_logging {
+        object.key("AddSupplementalLogging").boolean(*var_581);
     }
-    if let Some(var_577) = &input.archived_log_dest_id {
+    if let Some(var_582) = &input.archived_log_dest_id {
         object.key("ArchivedLogDestId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_577).into()),
+            aws_smithy_types::Number::NegInt((*var_582).into()),
         );
     }
-    if let Some(var_578) = &input.additional_archived_log_dest_id {
+    if let Some(var_583) = &input.additional_archived_log_dest_id {
         object.key("AdditionalArchivedLogDestId").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_578).into()),
-        );
-    }
-    if let Some(var_579) = &input.extra_archived_log_dest_ids {
-        let mut array_580 = object.key("ExtraArchivedLogDestIds").start_array();
-        for item_581 in var_579 {
-            {
-                array_580.value().number(
-                    #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::NegInt((*item_581).into()),
-                );
-            }
-        }
-        array_580.finish();
-    }
-    if let Some(var_582) = &input.allow_select_nested_tables {
-        object.key("AllowSelectNestedTables").boolean(*var_582);
-    }
-    if let Some(var_583) = &input.parallel_asm_read_threads {
-        object.key("ParallelAsmReadThreads").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_583).into()),
         );
     }
-    if let Some(var_584) = &input.read_ahead_blocks {
+    if let Some(var_584) = &input.extra_archived_log_dest_ids {
+        let mut array_585 = object.key("ExtraArchivedLogDestIds").start_array();
+        for item_586 in var_584 {
+            {
+                array_585.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    aws_smithy_types::Number::NegInt((*item_586).into()),
+                );
+            }
+        }
+        array_585.finish();
+    }
+    if let Some(var_587) = &input.allow_select_nested_tables {
+        object.key("AllowSelectNestedTables").boolean(*var_587);
+    }
+    if let Some(var_588) = &input.parallel_asm_read_threads {
+        object.key("ParallelAsmReadThreads").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_588).into()),
+        );
+    }
+    if let Some(var_589) = &input.read_ahead_blocks {
         object.key("ReadAheadBlocks").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_584).into()),
+            aws_smithy_types::Number::NegInt((*var_589).into()),
         );
     }
-    if let Some(var_585) = &input.access_alternate_directly {
-        object.key("AccessAlternateDirectly").boolean(*var_585);
+    if let Some(var_590) = &input.access_alternate_directly {
+        object.key("AccessAlternateDirectly").boolean(*var_590);
     }
-    if let Some(var_586) = &input.use_alternate_folder_for_online {
-        object.key("UseAlternateFolderForOnline").boolean(*var_586);
+    if let Some(var_591) = &input.use_alternate_folder_for_online {
+        object.key("UseAlternateFolderForOnline").boolean(*var_591);
     }
-    if let Some(var_587) = &input.oracle_path_prefix {
-        object.key("OraclePathPrefix").string(var_587.as_str());
+    if let Some(var_592) = &input.oracle_path_prefix {
+        object.key("OraclePathPrefix").string(var_592.as_str());
     }
-    if let Some(var_588) = &input.use_path_prefix {
-        object.key("UsePathPrefix").string(var_588.as_str());
+    if let Some(var_593) = &input.use_path_prefix {
+        object.key("UsePathPrefix").string(var_593.as_str());
     }
-    if let Some(var_589) = &input.replace_path_prefix {
-        object.key("ReplacePathPrefix").boolean(*var_589);
+    if let Some(var_594) = &input.replace_path_prefix {
+        object.key("ReplacePathPrefix").boolean(*var_594);
     }
-    if let Some(var_590) = &input.enable_homogenous_tablespace {
-        object.key("EnableHomogenousTablespace").boolean(*var_590);
+    if let Some(var_595) = &input.enable_homogenous_tablespace {
+        object.key("EnableHomogenousTablespace").boolean(*var_595);
     }
-    if let Some(var_591) = &input.direct_path_no_log {
-        object.key("DirectPathNoLog").boolean(*var_591);
+    if let Some(var_596) = &input.direct_path_no_log {
+        object.key("DirectPathNoLog").boolean(*var_596);
     }
-    if let Some(var_592) = &input.archived_logs_only {
-        object.key("ArchivedLogsOnly").boolean(*var_592);
+    if let Some(var_597) = &input.archived_logs_only {
+        object.key("ArchivedLogsOnly").boolean(*var_597);
     }
-    if let Some(var_593) = &input.asm_password {
-        object.key("AsmPassword").string(var_593.as_str());
+    if let Some(var_598) = &input.asm_password {
+        object.key("AsmPassword").string(var_598.as_str());
     }
-    if let Some(var_594) = &input.asm_server {
-        object.key("AsmServer").string(var_594.as_str());
+    if let Some(var_599) = &input.asm_server {
+        object.key("AsmServer").string(var_599.as_str());
     }
-    if let Some(var_595) = &input.asm_user {
-        object.key("AsmUser").string(var_595.as_str());
+    if let Some(var_600) = &input.asm_user {
+        object.key("AsmUser").string(var_600.as_str());
     }
-    if let Some(var_596) = &input.char_length_semantics {
-        object.key("CharLengthSemantics").string(var_596.as_str());
+    if let Some(var_601) = &input.char_length_semantics {
+        object.key("CharLengthSemantics").string(var_601.as_str());
     }
-    if let Some(var_597) = &input.database_name {
-        object.key("DatabaseName").string(var_597.as_str());
+    if let Some(var_602) = &input.database_name {
+        object.key("DatabaseName").string(var_602.as_str());
     }
-    if let Some(var_598) = &input.direct_path_parallel_load {
-        object.key("DirectPathParallelLoad").boolean(*var_598);
+    if let Some(var_603) = &input.direct_path_parallel_load {
+        object.key("DirectPathParallelLoad").boolean(*var_603);
     }
-    if let Some(var_599) = &input.fail_tasks_on_lob_truncation {
-        object.key("FailTasksOnLobTruncation").boolean(*var_599);
+    if let Some(var_604) = &input.fail_tasks_on_lob_truncation {
+        object.key("FailTasksOnLobTruncation").boolean(*var_604);
     }
-    if let Some(var_600) = &input.number_datatype_scale {
+    if let Some(var_605) = &input.number_datatype_scale {
         object.key("NumberDatatypeScale").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_600).into()),
+            aws_smithy_types::Number::NegInt((*var_605).into()),
         );
     }
-    if let Some(var_601) = &input.password {
-        object.key("Password").string(var_601.as_str());
+    if let Some(var_606) = &input.password {
+        object.key("Password").string(var_606.as_str());
     }
-    if let Some(var_602) = &input.port {
+    if let Some(var_607) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_602).into()),
+            aws_smithy_types::Number::NegInt((*var_607).into()),
         );
     }
-    if let Some(var_603) = &input.read_table_space_name {
-        object.key("ReadTableSpaceName").boolean(*var_603);
+    if let Some(var_608) = &input.read_table_space_name {
+        object.key("ReadTableSpaceName").boolean(*var_608);
     }
-    if let Some(var_604) = &input.retry_interval {
+    if let Some(var_609) = &input.retry_interval {
         object.key("RetryInterval").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_604).into()),
-        );
-    }
-    if let Some(var_605) = &input.security_db_encryption {
-        object.key("SecurityDbEncryption").string(var_605.as_str());
-    }
-    if let Some(var_606) = &input.security_db_encryption_name {
-        object
-            .key("SecurityDbEncryptionName")
-            .string(var_606.as_str());
-    }
-    if let Some(var_607) = &input.server_name {
-        object.key("ServerName").string(var_607.as_str());
-    }
-    if let Some(var_608) = &input.spatial_data_option_to_geo_json_function_name {
-        object
-            .key("SpatialDataOptionToGeoJsonFunctionName")
-            .string(var_608.as_str());
-    }
-    if let Some(var_609) = &input.standby_delay_time {
-        object.key("StandbyDelayTime").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_609).into()),
         );
     }
-    if let Some(var_610) = &input.username {
-        object.key("Username").string(var_610.as_str());
+    if let Some(var_610) = &input.security_db_encryption {
+        object.key("SecurityDbEncryption").string(var_610.as_str());
     }
-    if let Some(var_611) = &input.use_b_file {
-        object.key("UseBFile").boolean(*var_611);
+    if let Some(var_611) = &input.security_db_encryption_name {
+        object
+            .key("SecurityDbEncryptionName")
+            .string(var_611.as_str());
     }
-    if let Some(var_612) = &input.use_direct_path_full_load {
-        object.key("UseDirectPathFullLoad").boolean(*var_612);
+    if let Some(var_612) = &input.server_name {
+        object.key("ServerName").string(var_612.as_str());
     }
-    if let Some(var_613) = &input.use_logminer_reader {
-        object.key("UseLogminerReader").boolean(*var_613);
+    if let Some(var_613) = &input.spatial_data_option_to_geo_json_function_name {
+        object
+            .key("SpatialDataOptionToGeoJsonFunctionName")
+            .string(var_613.as_str());
     }
-    if let Some(var_614) = &input.secrets_manager_access_role_arn {
+    if let Some(var_614) = &input.standby_delay_time {
+        object.key("StandbyDelayTime").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_614).into()),
+        );
+    }
+    if let Some(var_615) = &input.username {
+        object.key("Username").string(var_615.as_str());
+    }
+    if let Some(var_616) = &input.use_b_file {
+        object.key("UseBFile").boolean(*var_616);
+    }
+    if let Some(var_617) = &input.use_direct_path_full_load {
+        object.key("UseDirectPathFullLoad").boolean(*var_617);
+    }
+    if let Some(var_618) = &input.use_logminer_reader {
+        object.key("UseLogminerReader").boolean(*var_618);
+    }
+    if let Some(var_619) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_614.as_str());
+            .string(var_619.as_str());
     }
-    if let Some(var_615) = &input.secrets_manager_secret_id {
+    if let Some(var_620) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_615.as_str());
+            .string(var_620.as_str());
     }
-    if let Some(var_616) = &input.secrets_manager_oracle_asm_access_role_arn {
+    if let Some(var_621) = &input.secrets_manager_oracle_asm_access_role_arn {
         object
             .key("SecretsManagerOracleAsmAccessRoleArn")
-            .string(var_616.as_str());
+            .string(var_621.as_str());
     }
-    if let Some(var_617) = &input.secrets_manager_oracle_asm_secret_id {
+    if let Some(var_622) = &input.secrets_manager_oracle_asm_secret_id {
         object
             .key("SecretsManagerOracleAsmSecretId")
-            .string(var_617.as_str());
+            .string(var_622.as_str());
+    }
+    if let Some(var_623) = &input.trim_space_in_char {
+        object.key("TrimSpaceInChar").boolean(*var_623);
     }
     Ok(())
 }
@@ -2703,33 +2728,33 @@ pub fn serialize_structure_crate_model_sybase_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SybaseSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_618) = &input.database_name {
-        object.key("DatabaseName").string(var_618.as_str());
+    if let Some(var_624) = &input.database_name {
+        object.key("DatabaseName").string(var_624.as_str());
     }
-    if let Some(var_619) = &input.password {
-        object.key("Password").string(var_619.as_str());
+    if let Some(var_625) = &input.password {
+        object.key("Password").string(var_625.as_str());
     }
-    if let Some(var_620) = &input.port {
+    if let Some(var_626) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_620).into()),
+            aws_smithy_types::Number::NegInt((*var_626).into()),
         );
     }
-    if let Some(var_621) = &input.server_name {
-        object.key("ServerName").string(var_621.as_str());
+    if let Some(var_627) = &input.server_name {
+        object.key("ServerName").string(var_627.as_str());
     }
-    if let Some(var_622) = &input.username {
-        object.key("Username").string(var_622.as_str());
+    if let Some(var_628) = &input.username {
+        object.key("Username").string(var_628.as_str());
     }
-    if let Some(var_623) = &input.secrets_manager_access_role_arn {
+    if let Some(var_629) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_623.as_str());
+            .string(var_629.as_str());
     }
-    if let Some(var_624) = &input.secrets_manager_secret_id {
+    if let Some(var_630) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_624.as_str());
+            .string(var_630.as_str());
     }
     Ok(())
 }
@@ -2738,59 +2763,62 @@ pub fn serialize_structure_crate_model_microsoft_sql_server_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MicrosoftSqlServerSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_625) = &input.port {
+    if let Some(var_631) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_625).into()),
+            aws_smithy_types::Number::NegInt((*var_631).into()),
         );
     }
-    if let Some(var_626) = &input.bcp_packet_size {
+    if let Some(var_632) = &input.bcp_packet_size {
         object.key("BcpPacketSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_626).into()),
+            aws_smithy_types::Number::NegInt((*var_632).into()),
         );
     }
-    if let Some(var_627) = &input.database_name {
-        object.key("DatabaseName").string(var_627.as_str());
+    if let Some(var_633) = &input.database_name {
+        object.key("DatabaseName").string(var_633.as_str());
     }
-    if let Some(var_628) = &input.control_tables_file_group {
+    if let Some(var_634) = &input.control_tables_file_group {
         object
             .key("ControlTablesFileGroup")
-            .string(var_628.as_str());
+            .string(var_634.as_str());
     }
-    if let Some(var_629) = &input.password {
-        object.key("Password").string(var_629.as_str());
+    if let Some(var_635) = &input.password {
+        object.key("Password").string(var_635.as_str());
     }
-    if let Some(var_630) = &input.query_single_always_on_node {
-        object.key("QuerySingleAlwaysOnNode").boolean(*var_630);
+    if let Some(var_636) = &input.query_single_always_on_node {
+        object.key("QuerySingleAlwaysOnNode").boolean(*var_636);
     }
-    if let Some(var_631) = &input.read_backup_only {
-        object.key("ReadBackupOnly").boolean(*var_631);
+    if let Some(var_637) = &input.read_backup_only {
+        object.key("ReadBackupOnly").boolean(*var_637);
     }
-    if let Some(var_632) = &input.safeguard_policy {
-        object.key("SafeguardPolicy").string(var_632.as_str());
+    if let Some(var_638) = &input.safeguard_policy {
+        object.key("SafeguardPolicy").string(var_638.as_str());
     }
-    if let Some(var_633) = &input.server_name {
-        object.key("ServerName").string(var_633.as_str());
+    if let Some(var_639) = &input.server_name {
+        object.key("ServerName").string(var_639.as_str());
     }
-    if let Some(var_634) = &input.username {
-        object.key("Username").string(var_634.as_str());
+    if let Some(var_640) = &input.username {
+        object.key("Username").string(var_640.as_str());
     }
-    if let Some(var_635) = &input.use_bcp_full_load {
-        object.key("UseBcpFullLoad").boolean(*var_635);
+    if let Some(var_641) = &input.use_bcp_full_load {
+        object.key("UseBcpFullLoad").boolean(*var_641);
     }
-    if let Some(var_636) = &input.use_third_party_backup_device {
-        object.key("UseThirdPartyBackupDevice").boolean(*var_636);
+    if let Some(var_642) = &input.use_third_party_backup_device {
+        object.key("UseThirdPartyBackupDevice").boolean(*var_642);
     }
-    if let Some(var_637) = &input.secrets_manager_access_role_arn {
+    if let Some(var_643) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_637.as_str());
+            .string(var_643.as_str());
     }
-    if let Some(var_638) = &input.secrets_manager_secret_id {
+    if let Some(var_644) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_638.as_str());
+            .string(var_644.as_str());
+    }
+    if let Some(var_645) = &input.trim_space_in_char {
+        object.key("TrimSpaceInChar").boolean(*var_645);
     }
     Ok(())
 }
@@ -2799,45 +2827,45 @@ pub fn serialize_structure_crate_model_ibm_db2_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::IbmDb2Settings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_639) = &input.database_name {
-        object.key("DatabaseName").string(var_639.as_str());
+    if let Some(var_646) = &input.database_name {
+        object.key("DatabaseName").string(var_646.as_str());
     }
-    if let Some(var_640) = &input.password {
-        object.key("Password").string(var_640.as_str());
+    if let Some(var_647) = &input.password {
+        object.key("Password").string(var_647.as_str());
     }
-    if let Some(var_641) = &input.port {
+    if let Some(var_648) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_641).into()),
+            aws_smithy_types::Number::NegInt((*var_648).into()),
         );
     }
-    if let Some(var_642) = &input.server_name {
-        object.key("ServerName").string(var_642.as_str());
+    if let Some(var_649) = &input.server_name {
+        object.key("ServerName").string(var_649.as_str());
     }
-    if let Some(var_643) = &input.set_data_capture_changes {
-        object.key("SetDataCaptureChanges").boolean(*var_643);
+    if let Some(var_650) = &input.set_data_capture_changes {
+        object.key("SetDataCaptureChanges").boolean(*var_650);
     }
-    if let Some(var_644) = &input.current_lsn {
-        object.key("CurrentLsn").string(var_644.as_str());
+    if let Some(var_651) = &input.current_lsn {
+        object.key("CurrentLsn").string(var_651.as_str());
     }
-    if let Some(var_645) = &input.max_k_bytes_per_read {
+    if let Some(var_652) = &input.max_k_bytes_per_read {
         object.key("MaxKBytesPerRead").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_645).into()),
+            aws_smithy_types::Number::NegInt((*var_652).into()),
         );
     }
-    if let Some(var_646) = &input.username {
-        object.key("Username").string(var_646.as_str());
+    if let Some(var_653) = &input.username {
+        object.key("Username").string(var_653.as_str());
     }
-    if let Some(var_647) = &input.secrets_manager_access_role_arn {
+    if let Some(var_654) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_647.as_str());
+            .string(var_654.as_str());
     }
-    if let Some(var_648) = &input.secrets_manager_secret_id {
+    if let Some(var_655) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_648.as_str());
+            .string(var_655.as_str());
     }
     Ok(())
 }
@@ -2846,48 +2874,48 @@ pub fn serialize_structure_crate_model_doc_db_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DocDbSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_649) = &input.username {
-        object.key("Username").string(var_649.as_str());
+    if let Some(var_656) = &input.username {
+        object.key("Username").string(var_656.as_str());
     }
-    if let Some(var_650) = &input.password {
-        object.key("Password").string(var_650.as_str());
+    if let Some(var_657) = &input.password {
+        object.key("Password").string(var_657.as_str());
     }
-    if let Some(var_651) = &input.server_name {
-        object.key("ServerName").string(var_651.as_str());
+    if let Some(var_658) = &input.server_name {
+        object.key("ServerName").string(var_658.as_str());
     }
-    if let Some(var_652) = &input.port {
+    if let Some(var_659) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_652).into()),
+            aws_smithy_types::Number::NegInt((*var_659).into()),
         );
     }
-    if let Some(var_653) = &input.database_name {
-        object.key("DatabaseName").string(var_653.as_str());
+    if let Some(var_660) = &input.database_name {
+        object.key("DatabaseName").string(var_660.as_str());
     }
-    if let Some(var_654) = &input.nesting_level {
-        object.key("NestingLevel").string(var_654.as_str());
+    if let Some(var_661) = &input.nesting_level {
+        object.key("NestingLevel").string(var_661.as_str());
     }
-    if let Some(var_655) = &input.extract_doc_id {
-        object.key("ExtractDocId").boolean(*var_655);
+    if let Some(var_662) = &input.extract_doc_id {
+        object.key("ExtractDocId").boolean(*var_662);
     }
-    if let Some(var_656) = &input.docs_to_investigate {
+    if let Some(var_663) = &input.docs_to_investigate {
         object.key("DocsToInvestigate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_656).into()),
+            aws_smithy_types::Number::NegInt((*var_663).into()),
         );
     }
-    if let Some(var_657) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_657.as_str());
+    if let Some(var_664) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_664.as_str());
     }
-    if let Some(var_658) = &input.secrets_manager_access_role_arn {
+    if let Some(var_665) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_658.as_str());
+            .string(var_665.as_str());
     }
-    if let Some(var_659) = &input.secrets_manager_secret_id {
+    if let Some(var_666) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_659.as_str());
+            .string(var_666.as_str());
     }
     Ok(())
 }
@@ -2896,8 +2924,8 @@ pub fn serialize_structure_crate_model_redis_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RedisSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_660) = &input.server_name {
-        object.key("ServerName").string(var_660.as_str());
+    if let Some(var_667) = &input.server_name {
+        object.key("ServerName").string(var_667.as_str());
     }
     {
         object.key("Port").number(
@@ -2905,20 +2933,20 @@ pub fn serialize_structure_crate_model_redis_settings(
             aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_661) = &input.ssl_security_protocol {
-        object.key("SslSecurityProtocol").string(var_661.as_str());
+    if let Some(var_668) = &input.ssl_security_protocol {
+        object.key("SslSecurityProtocol").string(var_668.as_str());
     }
-    if let Some(var_662) = &input.auth_type {
-        object.key("AuthType").string(var_662.as_str());
+    if let Some(var_669) = &input.auth_type {
+        object.key("AuthType").string(var_669.as_str());
     }
-    if let Some(var_663) = &input.auth_user_name {
-        object.key("AuthUserName").string(var_663.as_str());
+    if let Some(var_670) = &input.auth_user_name {
+        object.key("AuthUserName").string(var_670.as_str());
     }
-    if let Some(var_664) = &input.auth_password {
-        object.key("AuthPassword").string(var_664.as_str());
+    if let Some(var_671) = &input.auth_password {
+        object.key("AuthPassword").string(var_671.as_str());
     }
-    if let Some(var_665) = &input.ssl_ca_certificate_arn {
-        object.key("SslCaCertificateArn").string(var_665.as_str());
+    if let Some(var_672) = &input.ssl_ca_certificate_arn {
+        object.key("SslCaCertificateArn").string(var_672.as_str());
     }
     Ok(())
 }
@@ -2927,65 +2955,65 @@ pub fn serialize_structure_crate_model_gcp_my_sql_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GcpMySqlSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_666) = &input.after_connect_script {
-        object.key("AfterConnectScript").string(var_666.as_str());
+    if let Some(var_673) = &input.after_connect_script {
+        object.key("AfterConnectScript").string(var_673.as_str());
     }
-    if let Some(var_667) = &input.clean_source_metadata_on_mismatch {
+    if let Some(var_674) = &input.clean_source_metadata_on_mismatch {
         object
             .key("CleanSourceMetadataOnMismatch")
-            .boolean(*var_667);
+            .boolean(*var_674);
     }
-    if let Some(var_668) = &input.database_name {
-        object.key("DatabaseName").string(var_668.as_str());
+    if let Some(var_675) = &input.database_name {
+        object.key("DatabaseName").string(var_675.as_str());
     }
-    if let Some(var_669) = &input.events_poll_interval {
+    if let Some(var_676) = &input.events_poll_interval {
         object.key("EventsPollInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_669).into()),
+            aws_smithy_types::Number::NegInt((*var_676).into()),
         );
     }
-    if let Some(var_670) = &input.target_db_type {
-        object.key("TargetDbType").string(var_670.as_str());
+    if let Some(var_677) = &input.target_db_type {
+        object.key("TargetDbType").string(var_677.as_str());
     }
-    if let Some(var_671) = &input.max_file_size {
+    if let Some(var_678) = &input.max_file_size {
         object.key("MaxFileSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_671).into()),
+            aws_smithy_types::Number::NegInt((*var_678).into()),
         );
     }
-    if let Some(var_672) = &input.parallel_load_threads {
+    if let Some(var_679) = &input.parallel_load_threads {
         object.key("ParallelLoadThreads").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_672).into()),
+            aws_smithy_types::Number::NegInt((*var_679).into()),
         );
     }
-    if let Some(var_673) = &input.password {
-        object.key("Password").string(var_673.as_str());
+    if let Some(var_680) = &input.password {
+        object.key("Password").string(var_680.as_str());
     }
-    if let Some(var_674) = &input.port {
+    if let Some(var_681) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_674).into()),
+            aws_smithy_types::Number::NegInt((*var_681).into()),
         );
     }
-    if let Some(var_675) = &input.server_name {
-        object.key("ServerName").string(var_675.as_str());
+    if let Some(var_682) = &input.server_name {
+        object.key("ServerName").string(var_682.as_str());
     }
-    if let Some(var_676) = &input.server_timezone {
-        object.key("ServerTimezone").string(var_676.as_str());
+    if let Some(var_683) = &input.server_timezone {
+        object.key("ServerTimezone").string(var_683.as_str());
     }
-    if let Some(var_677) = &input.username {
-        object.key("Username").string(var_677.as_str());
+    if let Some(var_684) = &input.username {
+        object.key("Username").string(var_684.as_str());
     }
-    if let Some(var_678) = &input.secrets_manager_access_role_arn {
+    if let Some(var_685) = &input.secrets_manager_access_role_arn {
         object
             .key("SecretsManagerAccessRoleArn")
-            .string(var_678.as_str());
+            .string(var_685.as_str());
     }
-    if let Some(var_679) = &input.secrets_manager_secret_id {
+    if let Some(var_686) = &input.secrets_manager_secret_id {
         object
             .key("SecretsManagerSecretId")
-            .string(var_679.as_str());
+            .string(var_686.as_str());
     }
     Ok(())
 }
@@ -2994,17 +3022,17 @@ pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_680) = &input.name {
-        object.key("Name").string(var_680.as_str());
+    if let Some(var_687) = &input.name {
+        object.key("Name").string(var_687.as_str());
     }
-    if let Some(var_681) = &input.values {
-        let mut array_682 = object.key("Values").start_array();
-        for item_683 in var_681 {
+    if let Some(var_688) = &input.values {
+        let mut array_689 = object.key("Values").start_array();
+        for item_690 in var_688 {
             {
-                array_682.value().string(item_683.as_str());
+                array_689.value().string(item_690.as_str());
             }
         }
-        array_682.finish();
+        array_689.finish();
     }
     Ok(())
 }
@@ -3013,11 +3041,11 @@ pub fn serialize_structure_crate_model_table_to_reload(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TableToReload,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_684) = &input.schema_name {
-        object.key("SchemaName").string(var_684.as_str());
+    if let Some(var_691) = &input.schema_name {
+        object.key("SchemaName").string(var_691.as_str());
     }
-    if let Some(var_685) = &input.table_name {
-        object.key("TableName").string(var_685.as_str());
+    if let Some(var_692) = &input.table_name {
+        object.key("TableName").string(var_692.as_str());
     }
     Ok(())
 }

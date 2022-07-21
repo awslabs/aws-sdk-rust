@@ -205,21 +205,25 @@ impl AsRef<str> for ParallelDataFormat {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranslationSettings {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You can optionally specify the desired level of formality for real-time translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
+    /// <p>Note that asynchronous translation jobs don't support formality. If you provide a value for formality, the <code>StartTextTranslationJob</code> API throws an exception (InvalidRequestException).</p>
+    /// <p>For target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
     pub formality: std::option::Option<crate::model::Formality>,
     /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
     /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
-    /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+    /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
     pub profanity: std::option::Option<crate::model::Profanity>,
 }
 impl TranslationSettings {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You can optionally specify the desired level of formality for real-time translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
+    /// <p>Note that asynchronous translation jobs don't support formality. If you provide a value for formality, the <code>StartTextTranslationJob</code> API throws an exception (InvalidRequestException).</p>
+    /// <p>For target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
     pub fn formality(&self) -> std::option::Option<&crate::model::Formality> {
         self.formality.as_ref()
     }
     /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
     /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
-    /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+    /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
     pub fn profanity(&self) -> std::option::Option<&crate::model::Profanity> {
         self.profanity.as_ref()
     }
@@ -242,12 +246,16 @@ pub mod translation_settings {
         pub(crate) profanity: std::option::Option<crate::model::Profanity>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>You can optionally specify the desired level of formality for real-time translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
+        /// <p>Note that asynchronous translation jobs don't support formality. If you provide a value for formality, the <code>StartTextTranslationJob</code> API throws an exception (InvalidRequestException).</p>
+        /// <p>For target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
         pub fn formality(mut self, input: crate::model::Formality) -> Self {
             self.formality = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>You can optionally specify the desired level of formality for real-time translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
+        /// <p>Note that asynchronous translation jobs don't support formality. If you provide a value for formality, the <code>StartTextTranslationJob</code> API throws an exception (InvalidRequestException).</p>
+        /// <p>For target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
         pub fn set_formality(
             mut self,
             input: std::option::Option<crate::model::Formality>,
@@ -257,14 +265,14 @@ pub mod translation_settings {
         }
         /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
         /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
-        /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+        /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
         pub fn profanity(mut self, input: crate::model::Profanity) -> Self {
             self.profanity = Some(input);
             self
         }
         /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
         /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
-        /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+        /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
         pub fn set_profanity(
             mut self,
             input: std::option::Option<crate::model::Profanity>,
@@ -839,7 +847,9 @@ impl AsRef<str> for EncryptionKeyType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDataConfig {
-    /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API endpoint you are calling.</p>
+    /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder. The folder must be in the same Region as the API endpoint you are calling.</p> <note>
+    /// <p>The URI can also point to a single input document, or it can provide the prefix for a collection of input documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file, Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses all of them as input.</p>
+    /// </note>
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
     /// <ul>
@@ -855,7 +865,9 @@ pub struct InputDataConfig {
     pub content_type: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
-    /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API endpoint you are calling.</p>
+    /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder. The folder must be in the same Region as the API endpoint you are calling.</p> <note>
+    /// <p>The URI can also point to a single input document, or it can provide the prefix for a collection of input documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file, Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses all of them as input.</p>
+    /// </note>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -892,12 +904,16 @@ pub mod input_data_config {
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API endpoint you are calling.</p>
+        /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder. The folder must be in the same Region as the API endpoint you are calling.</p> <note>
+        /// <p>The URI can also point to a single input document, or it can provide the prefix for a collection of input documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file, Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses all of them as input.</p>
+        /// </note>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API endpoint you are calling.</p>
+        /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder. The folder must be in the same Region as the API endpoint you are calling.</p> <note>
+        /// <p>The URI can also point to a single input document, or it can provide the prefix for a collection of input documents. For example. if you use the URI <code>S3://bucketName/prefix</code> and the prefix is a single file, Amazon Translate uses that files as input. If more than one file begins with the prefix, Amazon Translate uses all of them as input.</p>
+        /// </note>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -2438,13 +2454,181 @@ impl ParallelDataProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DisplayLanguageCode {
+    #[allow(missing_docs)] // documentation missing in model
+    De,
+    #[allow(missing_docs)] // documentation missing in model
+    En,
+    #[allow(missing_docs)] // documentation missing in model
+    Es,
+    #[allow(missing_docs)] // documentation missing in model
+    Fr,
+    #[allow(missing_docs)] // documentation missing in model
+    It,
+    #[allow(missing_docs)] // documentation missing in model
+    Ja,
+    #[allow(missing_docs)] // documentation missing in model
+    Ko,
+    #[allow(missing_docs)] // documentation missing in model
+    Pt,
+    #[allow(missing_docs)] // documentation missing in model
+    Zh,
+    #[allow(missing_docs)] // documentation missing in model
+    ZhTw,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DisplayLanguageCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "de" => DisplayLanguageCode::De,
+            "en" => DisplayLanguageCode::En,
+            "es" => DisplayLanguageCode::Es,
+            "fr" => DisplayLanguageCode::Fr,
+            "it" => DisplayLanguageCode::It,
+            "ja" => DisplayLanguageCode::Ja,
+            "ko" => DisplayLanguageCode::Ko,
+            "pt" => DisplayLanguageCode::Pt,
+            "zh" => DisplayLanguageCode::Zh,
+            "zh-TW" => DisplayLanguageCode::ZhTw,
+            other => DisplayLanguageCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DisplayLanguageCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DisplayLanguageCode::from(s))
+    }
+}
+impl DisplayLanguageCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DisplayLanguageCode::De => "de",
+            DisplayLanguageCode::En => "en",
+            DisplayLanguageCode::Es => "es",
+            DisplayLanguageCode::Fr => "fr",
+            DisplayLanguageCode::It => "it",
+            DisplayLanguageCode::Ja => "ja",
+            DisplayLanguageCode::Ko => "ko",
+            DisplayLanguageCode::Pt => "pt",
+            DisplayLanguageCode::Zh => "zh",
+            DisplayLanguageCode::ZhTw => "zh-TW",
+            DisplayLanguageCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW",
+        ]
+    }
+}
+impl AsRef<str> for DisplayLanguageCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A supported language.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Language {
+    /// <p>Language name of the supported language.</p>
+    pub language_name: std::option::Option<std::string::String>,
+    /// <p>Language code for the supported language.</p>
+    pub language_code: std::option::Option<std::string::String>,
+}
+impl Language {
+    /// <p>Language name of the supported language.</p>
+    pub fn language_name(&self) -> std::option::Option<&str> {
+        self.language_name.as_deref()
+    }
+    /// <p>Language code for the supported language.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+}
+impl std::fmt::Debug for Language {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Language");
+        formatter.field("language_name", &self.language_name);
+        formatter.field("language_code", &self.language_code);
+        formatter.finish()
+    }
+}
+/// See [`Language`](crate::model::Language).
+pub mod language {
+
+    /// A builder for [`Language`](crate::model::Language).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) language_name: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Language name of the supported language.</p>
+        pub fn language_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_name = Some(input.into());
+            self
+        }
+        /// <p>Language name of the supported language.</p>
+        pub fn set_language_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_name = input;
+            self
+        }
+        /// <p>Language code for the supported language.</p>
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
+            self
+        }
+        /// <p>Language code for the supported language.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Language`](crate::model::Language).
+        pub fn build(self) -> crate::model::Language {
+            crate::model::Language {
+                language_name: self.language_name,
+                language_code: self.language_code,
+            }
+        }
+    }
+}
+impl Language {
+    /// Creates a new builder-style object to manufacture [`Language`](crate::model::Language).
+    pub fn builder() -> crate::model::language::Builder {
+        crate::model::language::Builder::default()
+    }
+}
+
 /// <p>The location of the custom terminology data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminologyDataLocation {
     /// <p>The repository type for the custom terminology data.</p>
     pub repository_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -2456,7 +2640,7 @@ impl TerminologyDataLocation {
     pub fn repository_type(&self) -> std::option::Option<&str> {
         self.repository_type.as_deref()
     }
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -2496,7 +2680,7 @@ pub mod terminology_data_location {
             self.repository_type = input;
             self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
         /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -2505,7 +2689,7 @@ pub mod terminology_data_location {
             self.location = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
         /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -2530,7 +2714,7 @@ impl TerminologyDataLocation {
     }
 }
 
-/// <p>The data associated with the custom terminology.</p>
+/// <p>The data associated with the custom terminology. For information about the custom terminology file, see <a href="https://docs.aws.amazon.com/translate/latest/dg/creating-custom-terminology.html"> Creating a Custom Terminology</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminologyData {
@@ -2550,7 +2734,7 @@ pub struct TerminologyData {
     /// MULTI
     /// </dt>
     /// <dd>
-    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains terms in English and Spanish, then it can be used for jobs that translate English to Spanish and jobs that translate Spanish to English.</p>
+    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p>
     /// </dd>
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
@@ -2577,7 +2761,7 @@ impl TerminologyData {
     /// MULTI
     /// </dt>
     /// <dd>
-    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains terms in English and Spanish, then it can be used for jobs that translate English to Spanish and jobs that translate Spanish to English.</p>
+    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p>
     /// </dd>
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
@@ -2640,7 +2824,7 @@ pub mod terminology_data {
         /// MULTI
         /// </dt>
         /// <dd>
-        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains terms in English and Spanish, then it can be used for jobs that translate English to Spanish and jobs that translate Spanish to English.</p>
+        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p>
         /// </dd>
         /// </dl>
         /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
@@ -2660,7 +2844,7 @@ pub mod terminology_data {
         /// MULTI
         /// </dt>
         /// <dd>
-        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains terms in English and Spanish, then it can be used for jobs that translate English to Spanish and jobs that translate Spanish to English.</p>
+        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p>
         /// </dd>
         /// </dl>
         /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
@@ -2745,7 +2929,7 @@ impl AsRef<str> for MergeStrategy {
 pub struct ParallelDataDataLocation {
     /// <p>Describes the repository that contains the parallel data input file.</p>
     pub repository_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30 minute expiration.</p> <important>
+    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -2757,7 +2941,7 @@ impl ParallelDataDataLocation {
     pub fn repository_type(&self) -> std::option::Option<&str> {
         self.repository_type.as_deref()
     }
-    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30 minute expiration.</p> <important>
+    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -2797,7 +2981,7 @@ pub mod parallel_data_data_location {
             self.repository_type = input;
             self
         }
-        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30 minute expiration.</p> <important>
+        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important>
         /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -2806,7 +2990,7 @@ pub mod parallel_data_data_location {
             self.location = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30 minute expiration.</p> <important>
+        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important>
         /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>

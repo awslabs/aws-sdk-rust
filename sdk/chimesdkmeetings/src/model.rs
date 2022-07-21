@@ -11,7 +11,15 @@ pub struct Attendee {
     pub attendee_id: std::option::Option<std::string::String>,
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
     pub join_token: std::option::Option<std::string::String>,
-    /// <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+    /// <p>The capabilities assigned to an attendee: audio, video, or content.</p> <note>
+    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+    /// </note>
+    /// <p>When using capabilities, be aware of these corner cases:</p>
+    /// <ul>
+    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+    /// </ul>
     pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl Attendee {
@@ -27,7 +35,15 @@ impl Attendee {
     pub fn join_token(&self) -> std::option::Option<&str> {
         self.join_token.as_deref()
     }
-    /// <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+    /// <p>The capabilities assigned to an attendee: audio, video, or content.</p> <note>
+    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+    /// </note>
+    /// <p>When using capabilities, be aware of these corner cases:</p>
+    /// <ul>
+    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+    /// </ul>
     pub fn capabilities(&self) -> std::option::Option<&crate::model::AttendeeCapabilities> {
         self.capabilities.as_ref()
     }
@@ -87,12 +103,28 @@ pub mod attendee {
             self.join_token = input;
             self
         }
-        /// <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+        /// <p>The capabilities assigned to an attendee: audio, video, or content.</p> <note>
+        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+        /// </note>
+        /// <p>When using capabilities, be aware of these corner cases:</p>
+        /// <ul>
+        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+        /// </ul>
         pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
             self.capabilities = Some(input);
             self
         }
-        /// <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+        /// <p>The capabilities assigned to an attendee: audio, video, or content.</p> <note>
+        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+        /// </note>
+        /// <p>When using capabilities, be aware of these corner cases:</p>
+        /// <ul>
+        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+        /// </ul>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<crate::model::AttendeeCapabilities>,
@@ -118,7 +150,15 @@ impl Attendee {
     }
 }
 
-/// <p>The media capabilities of an attendee, including audio, video and content. </p>
+/// <p>The media capabilities of an attendee: audio, video, or content. </p> <note>
+/// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+/// </note>
+/// <p>When using capabilities, be aware of these corner cases:</p>
+/// <ul>
+/// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+/// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+/// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttendeeCapabilities {
@@ -392,7 +432,7 @@ pub struct EngineTranscribeMedicalSettings {
     pub r#type: std::option::Option<crate::model::TranscribeMedicalType>,
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
     pub region: std::option::Option<crate::model::TranscribeMedicalRegion>,
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
     pub content_identification_type:
@@ -417,7 +457,7 @@ impl EngineTranscribeMedicalSettings {
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
-    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
     pub fn region(&self) -> std::option::Option<&crate::model::TranscribeMedicalRegion> {
         self.region.as_ref()
     }
@@ -510,12 +550,12 @@ pub mod engine_transcribe_medical_settings {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+        /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
         pub fn region(mut self, input: crate::model::TranscribeMedicalRegion) -> Self {
             self.region = Some(input);
             self
         }
-        /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
+        /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
         pub fn set_region(
             mut self,
             input: std::option::Option<crate::model::TranscribeMedicalRegion>,
@@ -1714,6 +1754,8 @@ pub struct Meeting {
     pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
     /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
     pub primary_meeting_id: std::option::Option<std::string::String>,
+    /// <p>Array of strings.</p>
+    pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Meeting {
     /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1747,6 +1789,10 @@ impl Meeting {
     pub fn primary_meeting_id(&self) -> std::option::Option<&str> {
         self.primary_meeting_id.as_deref()
     }
+    /// <p>Array of strings.</p>
+    pub fn tenant_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.tenant_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for Meeting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1758,6 +1804,7 @@ impl std::fmt::Debug for Meeting {
         formatter.field("media_placement", &self.media_placement);
         formatter.field("meeting_features", &self.meeting_features);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
+        formatter.field("tenant_ids", &self.tenant_ids);
         formatter.finish()
     }
 }
@@ -1775,6 +1822,7 @@ pub mod meeting {
         pub(crate) meeting_features:
             std::option::Option<crate::model::MeetingFeaturesConfiguration>,
         pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
+        pub(crate) tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1867,6 +1915,25 @@ pub mod meeting {
             self.primary_meeting_id = input;
             self
         }
+        /// Appends an item to `tenant_ids`.
+        ///
+        /// To override the contents of this collection use [`set_tenant_ids`](Self::set_tenant_ids).
+        ///
+        /// <p>Array of strings.</p>
+        pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tenant_ids.unwrap_or_default();
+            v.push(input.into());
+            self.tenant_ids = Some(v);
+            self
+        }
+        /// <p>Array of strings.</p>
+        pub fn set_tenant_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tenant_ids = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Meeting`](crate::model::Meeting).
         pub fn build(self) -> crate::model::Meeting {
             crate::model::Meeting {
@@ -1877,6 +1944,7 @@ pub mod meeting {
                 media_placement: self.media_placement,
                 meeting_features: self.meeting_features,
                 primary_meeting_id: self.primary_meeting_id,
+                tenant_ids: self.tenant_ids,
             }
         }
     }

@@ -443,6 +443,7 @@ impl Client {
     ///   - [`chat_channel(ChatChannel)`](crate::client::fluent_builders::UpdateResponsePlan::chat_channel) / [`set_chat_channel(Option<ChatChannel>)`](crate::client::fluent_builders::UpdateResponsePlan::set_chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>  <p>Use the empty structure to remove the chat channel from the response plan.</p>
     ///   - [`engagements(Vec<String>)`](crate::client::fluent_builders::UpdateResponsePlan::engagements) / [`set_engagements(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_engagements): <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
     ///   - [`actions(Vec<Action>)`](crate::client::fluent_builders::UpdateResponsePlan::actions) / [`set_actions(Option<Vec<Action>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_actions): <p>The actions that this response plan takes at the beginning of an incident.</p>
+    ///   - [`incident_template_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_tags) / [`set_incident_template_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_tags): <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
     /// - On success, responds with [`UpdateResponsePlanOutput`](crate::output::UpdateResponsePlanOutput)
 
     /// - On failure, responds with [`SdkError<UpdateResponsePlanError>`](crate::error::UpdateResponsePlanError)
@@ -2849,6 +2850,29 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
         ) -> Self {
             self.inner = self.inner.set_actions(input);
+            self
+        }
+        /// Adds a key-value pair to `incidentTemplateTags`.
+        ///
+        /// To override the contents of this collection use [`set_incident_template_tags`](Self::set_incident_template_tags).
+        ///
+        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+        pub fn incident_template_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.incident_template_tags(k.into(), v.into());
+            self
+        }
+        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+        pub fn set_incident_template_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_incident_template_tags(input);
             self
         }
     }

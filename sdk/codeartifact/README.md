@@ -31,6 +31,7 @@ CodeArtifact supports these operations:
   - DeleteRepository: Deletes a repository.
   - DeleteRepositoryPermissionsPolicy: Deletes the resource policy that is set on a repository.
   - DescribeDomain: Returns a DomainDescription object that contains information about the requested domain.
+  - DescribePackage: Returns a [PackageDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html) object that contains details about a package.
   - DescribePackageVersion: Returns a [PackageVersionDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html) object that contains details about a package version.
   - DescribeRepository: Returns a RepositoryDescription object that contains detailed information about the requested repository.
   - DisposePackageVersions: Disposes versions of a package. A package version with the status Disposed cannot be restored because they have been permanently removed from storage.
@@ -54,6 +55,7 @@ CodeArtifact supports these operations:
   - ListRepositories: Returns a list of repositories owned by the Amazon Web Services account that called this method.
   - ListRepositoriesInDomain: Returns a list of the repositories in a domain.
   - PutDomainPermissionsPolicy: Attaches a resource policy to a domain.
+  - PutPackageOriginConfiguration: Sets the package origin configuration for a package, which determine how new versions of the package can be added to a specific repository.
   - PutRepositoryPermissionsPolicy: Sets the resource policy on a repository that specifies permissions to access it.
   - UpdatePackageVersionsStatus: Updates the status of one or more versions of a package.
   - UpdateRepository: Updates the properties of a repository.

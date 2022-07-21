@@ -1473,6 +1473,8 @@ pub mod create_studio_component_input {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
+        pub(crate) secure_initialization_role_arn: std::option::Option<std::string::String>,
+        pub(crate) runtime_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
@@ -1641,6 +1643,35 @@ pub mod create_studio_component_input {
             self.r#type = input;
             self
         }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn secure_initialization_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.secure_initialization_role_arn = Some(input.into());
+            self
+        }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn set_secure_initialization_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secure_initialization_role_arn = input;
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_role_arn = Some(input.into());
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn set_runtime_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateStudioComponentInput`](crate::input::CreateStudioComponentInput).
         pub fn build(
             self,
@@ -1658,6 +1689,8 @@ pub mod create_studio_component_input {
                 subtype: self.subtype,
                 tags: self.tags,
                 r#type: self.r#type,
+                secure_initialization_role_arn: self.secure_initialization_role_arn,
+                runtime_role_arn: self.runtime_role_arn,
             })
         }
     }
@@ -9182,6 +9215,8 @@ pub mod update_studio_component_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
         pub(crate) subtype: std::option::Option<crate::model::StudioComponentSubtype>,
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
+        pub(crate) secure_initialization_role_arn: std::option::Option<std::string::String>,
+        pub(crate) runtime_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
@@ -9338,6 +9373,35 @@ pub mod update_studio_component_input {
             self.r#type = input;
             self
         }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn secure_initialization_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.secure_initialization_role_arn = Some(input.into());
+            self
+        }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn set_secure_initialization_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secure_initialization_role_arn = input;
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_role_arn = Some(input.into());
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn set_runtime_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateStudioComponentInput`](crate::input::UpdateStudioComponentInput).
         pub fn build(
             self,
@@ -9355,6 +9419,8 @@ pub mod update_studio_component_input {
                 studio_id: self.studio_id,
                 subtype: self.subtype,
                 r#type: self.r#type,
+                secure_initialization_role_arn: self.secure_initialization_role_arn,
+                runtime_role_arn: self.runtime_role_arn,
             })
         }
     }
@@ -9943,6 +10009,10 @@ pub struct CreateStudioComponentInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    pub secure_initialization_role_arn: std::option::Option<std::string::String>,
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    pub runtime_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateStudioComponentInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
@@ -9998,6 +10068,14 @@ impl CreateStudioComponentInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
         self.r#type.as_ref()
     }
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
+        self.secure_initialization_role_arn.as_deref()
+    }
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
+        self.runtime_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateStudioComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10013,6 +10091,11 @@ impl std::fmt::Debug for CreateStudioComponentInput {
         formatter.field("subtype", &self.subtype);
         formatter.field("tags", &self.tags);
         formatter.field("r#type", &self.r#type);
+        formatter.field(
+            "secure_initialization_role_arn",
+            &self.secure_initialization_role_arn,
+        );
+        formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }
 }
@@ -10080,6 +10163,10 @@ pub struct UpdateStudioComponentInput {
     pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    pub secure_initialization_role_arn: std::option::Option<std::string::String>,
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    pub runtime_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateStudioComponentInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
@@ -10132,6 +10219,14 @@ impl UpdateStudioComponentInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
         self.r#type.as_ref()
     }
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
+        self.secure_initialization_role_arn.as_deref()
+    }
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
+        self.runtime_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateStudioComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10147,6 +10242,11 @@ impl std::fmt::Debug for UpdateStudioComponentInput {
         formatter.field("studio_id", &self.studio_id);
         formatter.field("subtype", &self.subtype);
         formatter.field("r#type", &self.r#type);
+        formatter.field(
+            "secure_initialization_role_arn",
+            &self.secure_initialization_role_arn,
+        );
+        formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }
 }

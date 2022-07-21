@@ -458,6 +458,9 @@ pub struct ReplicationConfigurationReplicatedDisk {
     pub iops: i64,
     /// <p>The throughput to use for the EBS volume in MiB/s. This parameter is valid only for gp3 volumes.</p>
     pub throughput: i64,
+    /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+    pub optimized_staging_disk_type:
+        std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
 }
 impl ReplicationConfigurationReplicatedDisk {
     /// <p>The name of the device.</p>
@@ -483,6 +486,13 @@ impl ReplicationConfigurationReplicatedDisk {
     pub fn throughput(&self) -> i64 {
         self.throughput
     }
+    /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+    pub fn optimized_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>
+    {
+        self.optimized_staging_disk_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicationConfigurationReplicatedDisk {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -492,6 +502,10 @@ impl std::fmt::Debug for ReplicationConfigurationReplicatedDisk {
         formatter.field("staging_disk_type", &self.staging_disk_type);
         formatter.field("iops", &self.iops);
         formatter.field("throughput", &self.throughput);
+        formatter.field(
+            "optimized_staging_disk_type",
+            &self.optimized_staging_disk_type,
+        );
         formatter.finish()
     }
 }
@@ -508,6 +522,9 @@ pub mod replication_configuration_replicated_disk {
         >,
         pub(crate) iops: std::option::Option<i64>,
         pub(crate) throughput: std::option::Option<i64>,
+        pub(crate) optimized_staging_disk_type: std::option::Option<
+            crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
+        >,
     }
     impl Builder {
         /// <p>The name of the device.</p>
@@ -568,6 +585,24 @@ pub mod replication_configuration_replicated_disk {
             self.throughput = input;
             self
         }
+        /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+        pub fn optimized_staging_disk_type(
+            mut self,
+            input: crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
+        ) -> Self {
+            self.optimized_staging_disk_type = Some(input);
+            self
+        }
+        /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+        pub fn set_optimized_staging_disk_type(
+            mut self,
+            input: std::option::Option<
+                crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
+            >,
+        ) -> Self {
+            self.optimized_staging_disk_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk).
         pub fn build(self) -> crate::model::ReplicationConfigurationReplicatedDisk {
             crate::model::ReplicationConfigurationReplicatedDisk {
@@ -576,6 +611,7 @@ pub mod replication_configuration_replicated_disk {
                 staging_disk_type: self.staging_disk_type,
                 iops: self.iops.unwrap_or_default(),
                 throughput: self.throughput.unwrap_or_default(),
+                optimized_staging_disk_type: self.optimized_staging_disk_type,
             }
         }
     }
@@ -679,6 +715,8 @@ impl AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
 )]
 pub enum ReplicationConfigurationDefaultLargeStagingDiskType {
     #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Gp2,
     #[allow(missing_docs)] // documentation missing in model
     Gp3,
@@ -690,6 +728,7 @@ pub enum ReplicationConfigurationDefaultLargeStagingDiskType {
 impl std::convert::From<&str> for ReplicationConfigurationDefaultLargeStagingDiskType {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => ReplicationConfigurationDefaultLargeStagingDiskType::Auto,
             "GP2" => ReplicationConfigurationDefaultLargeStagingDiskType::Gp2,
             "GP3" => ReplicationConfigurationDefaultLargeStagingDiskType::Gp3,
             "ST1" => ReplicationConfigurationDefaultLargeStagingDiskType::St1,
@@ -708,6 +747,7 @@ impl ReplicationConfigurationDefaultLargeStagingDiskType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ReplicationConfigurationDefaultLargeStagingDiskType::Auto => "AUTO",
             ReplicationConfigurationDefaultLargeStagingDiskType::Gp2 => "GP2",
             ReplicationConfigurationDefaultLargeStagingDiskType::Gp3 => "GP3",
             ReplicationConfigurationDefaultLargeStagingDiskType::St1 => "ST1",
@@ -716,7 +756,7 @@ impl ReplicationConfigurationDefaultLargeStagingDiskType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["GP2", "GP3", "ST1"]
+        &["AUTO", "GP2", "GP3", "ST1"]
     }
 }
 impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {

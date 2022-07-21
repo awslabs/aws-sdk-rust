@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAttendeeCapabilitiesOutput {
-    /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
-    /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+    /// <p>The updated attendee data.</p>
     pub attendee: std::option::Option<crate::model::Attendee>,
 }
 impl UpdateAttendeeCapabilitiesOutput {
-    /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
-    /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+    /// <p>The updated attendee data.</p>
     pub fn attendee(&self) -> std::option::Option<&crate::model::Attendee> {
         self.attendee.as_ref()
     }
@@ -30,14 +28,12 @@ pub mod update_attendee_capabilities_output {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
     }
     impl Builder {
-        /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
-        /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+        /// <p>The updated attendee data.</p>
         pub fn attendee(mut self, input: crate::model::Attendee) -> Self {
             self.attendee = Some(input);
             self
         }
-        /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
-        /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+        /// <p>The updated attendee data.</p>
         pub fn set_attendee(mut self, input: std::option::Option<crate::model::Attendee>) -> Self {
             self.attendee = input;
             self

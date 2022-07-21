@@ -437,6 +437,256 @@ impl std::error::Error for CreateEnvironmentError {
     }
 }
 
+/// Error type for the `CreateExtension` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateExtensionError {
+    /// Kind of error that occurred.
+    pub kind: CreateExtensionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateExtension` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateExtensionErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete one or more versions and try again.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateExtensionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateExtensionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateExtensionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateExtensionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateExtensionErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateExtensionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateExtensionError {
+    fn code(&self) -> Option<&str> {
+        CreateExtensionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateExtensionError {
+    /// Creates a new `CreateExtensionError`.
+    pub fn new(kind: CreateExtensionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateExtensionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateExtensionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateExtensionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateExtensionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateExtensionErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateExtensionErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `CreateExtensionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateExtensionErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateExtensionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateExtensionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateExtensionErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateExtensionErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateExtensionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateExtensionErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateExtensionErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateExtensionErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateExtensionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateExtensionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateExtensionAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateExtensionAssociationError {
+    /// Kind of error that occurred.
+    pub kind: CreateExtensionAssociationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateExtensionAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateExtensionAssociationErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete one or more versions and try again.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateExtensionAssociationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateExtensionAssociationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateExtensionAssociationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateExtensionAssociationErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateExtensionAssociationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateExtensionAssociationError {
+    fn code(&self) -> Option<&str> {
+        CreateExtensionAssociationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateExtensionAssociationError {
+    /// Creates a new `CreateExtensionAssociationError`.
+    pub fn new(kind: CreateExtensionAssociationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateExtensionAssociationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateExtensionAssociationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateExtensionAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateExtensionAssociationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateExtensionAssociationErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateExtensionAssociationErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateExtensionAssociationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateExtensionAssociationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateExtensionAssociationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateExtensionAssociationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateExtensionAssociationErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateExtensionAssociationErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateExtensionAssociationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateExtensionAssociationErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateExtensionAssociationErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateExtensionAssociationErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateHostedConfigurationVersion` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1079,6 +1329,233 @@ impl std::error::Error for DeleteEnvironmentError {
             DeleteEnvironmentErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteEnvironmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteExtension` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteExtensionError {
+    /// Kind of error that occurred.
+    pub kind: DeleteExtensionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteExtension` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteExtensionErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteExtensionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteExtensionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteExtensionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteExtensionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteExtensionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteExtensionError {
+    fn code(&self) -> Option<&str> {
+        DeleteExtensionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteExtensionError {
+    /// Creates a new `DeleteExtensionError`.
+    pub fn new(kind: DeleteExtensionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteExtensionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteExtensionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteExtensionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteExtensionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteExtensionErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteExtensionErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteExtensionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteExtensionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteExtensionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteExtensionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteExtensionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteExtensionErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteExtensionErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteExtensionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteExtensionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteExtensionAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteExtensionAssociationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteExtensionAssociationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteExtensionAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteExtensionAssociationErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteExtensionAssociationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteExtensionAssociationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteExtensionAssociationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteExtensionAssociationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteExtensionAssociationError {
+    fn code(&self) -> Option<&str> {
+        DeleteExtensionAssociationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteExtensionAssociationError {
+    /// Creates a new `DeleteExtensionAssociationError`.
+    pub fn new(kind: DeleteExtensionAssociationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteExtensionAssociationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteExtensionAssociationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteExtensionAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteExtensionAssociationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteExtensionAssociationErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteExtensionAssociationErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteExtensionAssociationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteExtensionAssociationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteExtensionAssociationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteExtensionAssociationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteExtensionAssociationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteExtensionAssociationErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteExtensionAssociationErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1890,6 +2367,233 @@ impl std::error::Error for GetEnvironmentError {
     }
 }
 
+/// Error type for the `GetExtension` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetExtensionError {
+    /// Kind of error that occurred.
+    pub kind: GetExtensionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetExtension` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetExtensionErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetExtensionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetExtensionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetExtensionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetExtensionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetExtensionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetExtensionError {
+    fn code(&self) -> Option<&str> {
+        GetExtensionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetExtensionError {
+    /// Creates a new `GetExtensionError`.
+    pub fn new(kind: GetExtensionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetExtensionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetExtensionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetExtensionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetExtensionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetExtensionErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetExtensionErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `GetExtensionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExtensionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExtensionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExtensionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for GetExtensionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetExtensionErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetExtensionErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetExtensionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetExtensionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetExtensionAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetExtensionAssociationError {
+    /// Kind of error that occurred.
+    pub kind: GetExtensionAssociationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetExtensionAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetExtensionAssociationErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetExtensionAssociationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetExtensionAssociationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetExtensionAssociationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetExtensionAssociationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetExtensionAssociationError {
+    fn code(&self) -> Option<&str> {
+        GetExtensionAssociationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetExtensionAssociationError {
+    /// Creates a new `GetExtensionAssociationError`.
+    pub fn new(kind: GetExtensionAssociationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetExtensionAssociationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetExtensionAssociationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetExtensionAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetExtensionAssociationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetExtensionAssociationErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExtensionAssociationErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExtensionAssociationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExtensionAssociationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExtensionAssociationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExtensionAssociationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for GetExtensionAssociationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetExtensionAssociationErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetExtensionAssociationErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetHostedConfigurationVersion` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2560,6 +3264,211 @@ impl std::error::Error for ListEnvironmentsError {
             ListEnvironmentsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListEnvironmentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListExtensionAssociations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListExtensionAssociationsError {
+    /// Kind of error that occurred.
+    pub kind: ListExtensionAssociationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListExtensionAssociations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListExtensionAssociationsErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListExtensionAssociationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListExtensionAssociationsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListExtensionAssociationsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListExtensionAssociationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListExtensionAssociationsError {
+    fn code(&self) -> Option<&str> {
+        ListExtensionAssociationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListExtensionAssociationsError {
+    /// Creates a new `ListExtensionAssociationsError`.
+    pub fn new(kind: ListExtensionAssociationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListExtensionAssociationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListExtensionAssociationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListExtensionAssociationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListExtensionAssociationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListExtensionAssociationsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListExtensionAssociationsErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListExtensionAssociationsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListExtensionAssociationsErrorKind::InternalServerException(_)
+        )
+    }
+}
+impl std::error::Error for ListExtensionAssociationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListExtensionAssociationsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListExtensionAssociationsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListExtensionAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListExtensions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListExtensionsError {
+    /// Kind of error that occurred.
+    pub kind: ListExtensionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListExtensions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListExtensionsErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListExtensionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListExtensionsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListExtensionsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListExtensionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListExtensionsError {
+    fn code(&self) -> Option<&str> {
+        ListExtensionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListExtensionsError {
+    /// Creates a new `ListExtensionsError`.
+    pub fn new(kind: ListExtensionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListExtensionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListExtensionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListExtensionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListExtensionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListExtensionsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListExtensionsErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ListExtensionsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListExtensionsErrorKind::InternalServerException(_)
+        )
+    }
+}
+impl std::error::Error for ListExtensionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListExtensionsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListExtensionsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListExtensionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3714,6 +4623,241 @@ impl std::error::Error for UpdateEnvironmentError {
             UpdateEnvironmentErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateEnvironmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateExtension` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateExtensionError {
+    /// Kind of error that occurred.
+    pub kind: UpdateExtensionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateExtension` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateExtensionErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateExtensionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateExtensionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateExtensionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateExtensionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateExtensionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateExtensionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateExtensionError {
+    fn code(&self) -> Option<&str> {
+        UpdateExtensionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateExtensionError {
+    /// Creates a new `UpdateExtensionError`.
+    pub fn new(kind: UpdateExtensionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateExtensionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateExtensionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateExtensionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateExtensionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateExtensionErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateExtensionErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateExtensionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateExtensionErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateExtensionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateExtensionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateExtensionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateExtensionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateExtensionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateExtensionErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateExtensionErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateExtensionErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateExtensionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateExtensionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateExtensionAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateExtensionAssociationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateExtensionAssociationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateExtensionAssociation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateExtensionAssociationErrorKind {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>There was an internal failure in the AppConfig service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateExtensionAssociationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateExtensionAssociationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateExtensionAssociationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateExtensionAssociationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateExtensionAssociationError {
+    fn code(&self) -> Option<&str> {
+        UpdateExtensionAssociationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateExtensionAssociationError {
+    /// Creates a new `UpdateExtensionAssociationError`.
+    pub fn new(kind: UpdateExtensionAssociationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateExtensionAssociationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateExtensionAssociationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateExtensionAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateExtensionAssociationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateExtensionAssociationErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateExtensionAssociationErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateExtensionAssociationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateExtensionAssociationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateExtensionAssociationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateExtensionAssociationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateExtensionAssociationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateExtensionAssociationErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateExtensionAssociationErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

@@ -1878,6 +1878,112 @@ impl BatchGetQueryExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetPreparedStatementOutput {
+    /// <p>The list of prepared statements returned.</p>
+    pub prepared_statements: std::option::Option<std::vec::Vec<crate::model::PreparedStatement>>,
+    /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
+    pub unprocessed_prepared_statement_names:
+        std::option::Option<std::vec::Vec<crate::model::UnprocessedPreparedStatementName>>,
+}
+impl BatchGetPreparedStatementOutput {
+    /// <p>The list of prepared statements returned.</p>
+    pub fn prepared_statements(&self) -> std::option::Option<&[crate::model::PreparedStatement]> {
+        self.prepared_statements.as_deref()
+    }
+    /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
+    pub fn unprocessed_prepared_statement_names(
+        &self,
+    ) -> std::option::Option<&[crate::model::UnprocessedPreparedStatementName]> {
+        self.unprocessed_prepared_statement_names.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetPreparedStatementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetPreparedStatementOutput");
+        formatter.field("prepared_statements", &self.prepared_statements);
+        formatter.field(
+            "unprocessed_prepared_statement_names",
+            &self.unprocessed_prepared_statement_names,
+        );
+        formatter.finish()
+    }
+}
+/// See [`BatchGetPreparedStatementOutput`](crate::output::BatchGetPreparedStatementOutput).
+pub mod batch_get_prepared_statement_output {
+
+    /// A builder for [`BatchGetPreparedStatementOutput`](crate::output::BatchGetPreparedStatementOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) prepared_statements:
+            std::option::Option<std::vec::Vec<crate::model::PreparedStatement>>,
+        pub(crate) unprocessed_prepared_statement_names:
+            std::option::Option<std::vec::Vec<crate::model::UnprocessedPreparedStatementName>>,
+    }
+    impl Builder {
+        /// Appends an item to `prepared_statements`.
+        ///
+        /// To override the contents of this collection use [`set_prepared_statements`](Self::set_prepared_statements).
+        ///
+        /// <p>The list of prepared statements returned.</p>
+        pub fn prepared_statements(mut self, input: crate::model::PreparedStatement) -> Self {
+            let mut v = self.prepared_statements.unwrap_or_default();
+            v.push(input);
+            self.prepared_statements = Some(v);
+            self
+        }
+        /// <p>The list of prepared statements returned.</p>
+        pub fn set_prepared_statements(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PreparedStatement>>,
+        ) -> Self {
+            self.prepared_statements = input;
+            self
+        }
+        /// Appends an item to `unprocessed_prepared_statement_names`.
+        ///
+        /// To override the contents of this collection use [`set_unprocessed_prepared_statement_names`](Self::set_unprocessed_prepared_statement_names).
+        ///
+        /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
+        pub fn unprocessed_prepared_statement_names(
+            mut self,
+            input: crate::model::UnprocessedPreparedStatementName,
+        ) -> Self {
+            let mut v = self
+                .unprocessed_prepared_statement_names
+                .unwrap_or_default();
+            v.push(input);
+            self.unprocessed_prepared_statement_names = Some(v);
+            self
+        }
+        /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
+        pub fn set_unprocessed_prepared_statement_names(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::UnprocessedPreparedStatementName>,
+            >,
+        ) -> Self {
+            self.unprocessed_prepared_statement_names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetPreparedStatementOutput`](crate::output::BatchGetPreparedStatementOutput).
+        pub fn build(self) -> crate::output::BatchGetPreparedStatementOutput {
+            crate::output::BatchGetPreparedStatementOutput {
+                prepared_statements: self.prepared_statements,
+                unprocessed_prepared_statement_names: self.unprocessed_prepared_statement_names,
+            }
+        }
+    }
+}
+impl BatchGetPreparedStatementOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetPreparedStatementOutput`](crate::output::BatchGetPreparedStatementOutput).
+    pub fn builder() -> crate::output::batch_get_prepared_statement_output::Builder {
+        crate::output::batch_get_prepared_statement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetNamedQueryOutput {
     /// <p>Information about the named query IDs submitted.</p>
     pub named_queries: std::option::Option<std::vec::Vec<crate::model::NamedQuery>>,

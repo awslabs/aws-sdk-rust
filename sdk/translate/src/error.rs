@@ -16,9 +16,9 @@ pub enum CreateParallelDataErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
+    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -288,7 +288,7 @@ pub struct DeleteTerminologyError {
 pub enum DeleteTerminologyErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -529,7 +529,7 @@ pub struct GetParallelDataError {
 pub enum GetParallelDataErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -655,7 +655,7 @@ pub struct GetTerminologyError {
 pub enum GetTerminologyErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -781,7 +781,7 @@ pub struct ImportTerminologyError {
 pub enum ImportTerminologyErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -892,6 +892,134 @@ impl std::error::Error for ImportTerminologyError {
     }
 }
 
+/// Error type for the `ListLanguages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListLanguagesError {
+    /// Kind of error that occurred.
+    pub kind: ListLanguagesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListLanguages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListLanguagesErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>Requested display language code is not supported.</p>
+    UnsupportedDisplayLanguageCodeException(crate::error::UnsupportedDisplayLanguageCodeException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListLanguagesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListLanguagesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListLanguagesErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListLanguagesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ListLanguagesErrorKind::UnsupportedDisplayLanguageCodeException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListLanguagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListLanguagesError {
+    fn code(&self) -> Option<&str> {
+        ListLanguagesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListLanguagesError {
+    /// Creates a new `ListLanguagesError`.
+    pub fn new(kind: ListLanguagesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListLanguagesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListLanguagesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListLanguagesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListLanguagesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListLanguagesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLanguagesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLanguagesErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLanguagesErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLanguagesErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLanguagesErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLanguagesErrorKind::UnsupportedDisplayLanguageCodeException`.
+    pub fn is_unsupported_display_language_code_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLanguagesErrorKind::UnsupportedDisplayLanguageCodeException(_)
+        )
+    }
+}
+impl std::error::Error for ListLanguagesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListLanguagesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListLanguagesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListLanguagesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ListLanguagesErrorKind::UnsupportedDisplayLanguageCodeException(_inner) => Some(_inner),
+            ListLanguagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListParallelData` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -907,7 +1035,7 @@ pub struct ListParallelDataError {
 pub enum ListParallelDataErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1022,7 +1150,7 @@ pub struct ListTerminologiesError {
 pub enum ListTerminologiesErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1137,9 +1265,9 @@ pub struct ListTextTranslationJobsError {
 pub enum ListTextTranslationJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
+    /// <p>The filter specified for the operation is not valid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
+    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1263,9 +1391,9 @@ pub struct StartTextTranslationJobError {
 pub enum StartTextTranslationJobErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
+    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1536,11 +1664,11 @@ pub enum TranslateTextErrorKind {
     DetectedLanguageLowConfidenceException(crate::error::DetectedLanguageLowConfidenceException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
+    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your request.</p>
+    /// <p>The Amazon Translate service is temporarily unavailable. Wait a bit and then retry your request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
@@ -1708,9 +1836,9 @@ pub enum UpdateParallelDataErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
+    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -2051,7 +2179,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
+/// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -2115,7 +2243,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+/// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
@@ -2545,7 +2673,7 @@ impl TextSizeLimitExceededException {
     }
 }
 
-/// <p>The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your request.</p>
+/// <p>The Amazon Translate service is temporarily unavailable. Wait a bit and then retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
@@ -2697,7 +2825,7 @@ impl DetectedLanguageLowConfidenceException {
     }
 }
 
-/// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
+/// <p>The filter specified for the operation is not valid. Specify a different filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterException {
@@ -2758,5 +2886,93 @@ impl InvalidFilterException {
     /// Creates a new builder-style object to manufacture [`InvalidFilterException`](crate::error::InvalidFilterException).
     pub fn builder() -> crate::error::invalid_filter_exception::Builder {
         crate::error::invalid_filter_exception::Builder::default()
+    }
+}
+
+/// <p>Requested display language code is not supported.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedDisplayLanguageCodeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    /// <p>Language code passed in with the request.</p>
+    pub display_language_code: std::option::Option<std::string::String>,
+}
+impl UnsupportedDisplayLanguageCodeException {
+    /// <p>Language code passed in with the request.</p>
+    pub fn display_language_code(&self) -> std::option::Option<&str> {
+        self.display_language_code.as_deref()
+    }
+}
+impl std::fmt::Debug for UnsupportedDisplayLanguageCodeException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UnsupportedDisplayLanguageCodeException");
+        formatter.field("message", &self.message);
+        formatter.field("display_language_code", &self.display_language_code);
+        formatter.finish()
+    }
+}
+impl UnsupportedDisplayLanguageCodeException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedDisplayLanguageCodeException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedDisplayLanguageCodeException")?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedDisplayLanguageCodeException {}
+/// See [`UnsupportedDisplayLanguageCodeException`](crate::error::UnsupportedDisplayLanguageCodeException).
+pub mod unsupported_display_language_code_exception {
+
+    /// A builder for [`UnsupportedDisplayLanguageCodeException`](crate::error::UnsupportedDisplayLanguageCodeException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) display_language_code: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>Language code passed in with the request.</p>
+        pub fn display_language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_language_code = Some(input.into());
+            self
+        }
+        /// <p>Language code passed in with the request.</p>
+        pub fn set_display_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.display_language_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnsupportedDisplayLanguageCodeException`](crate::error::UnsupportedDisplayLanguageCodeException).
+        pub fn build(self) -> crate::error::UnsupportedDisplayLanguageCodeException {
+            crate::error::UnsupportedDisplayLanguageCodeException {
+                message: self.message,
+                display_language_code: self.display_language_code,
+            }
+        }
+    }
+}
+impl UnsupportedDisplayLanguageCodeException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedDisplayLanguageCodeException`](crate::error::UnsupportedDisplayLanguageCodeException).
+    pub fn builder() -> crate::error::unsupported_display_language_code_exception::Builder {
+        crate::error::unsupported_display_language_code_exception::Builder::default()
     }
 }

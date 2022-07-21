@@ -141,6 +141,465 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
+/// <p>A structure that contains information about one experiment or launch that uses the specified segment. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RefResource {
+    /// <p>The name of the experiment or launch.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The ARN of the experiment or launch.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The status of the experiment or launch.</p>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The day and time that this experiment or launch started.</p>
+    pub start_time: std::option::Option<std::string::String>,
+    /// <p>The day and time that this experiment or launch ended.</p>
+    pub end_time: std::option::Option<std::string::String>,
+    /// <p>The day and time that this experiment or launch was most recently updated.</p>
+    pub last_updated_on: std::option::Option<std::string::String>,
+}
+impl RefResource {
+    /// <p>The name of the experiment or launch.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The ARN of the experiment or launch.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The status of the experiment or launch.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The day and time that this experiment or launch started.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>The day and time that this experiment or launch ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// <p>The day and time that this experiment or launch was most recently updated.</p>
+    pub fn last_updated_on(&self) -> std::option::Option<&str> {
+        self.last_updated_on.as_deref()
+    }
+}
+impl std::fmt::Debug for RefResource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RefResource");
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("arn", &self.arn);
+        formatter.field("status", &self.status);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("last_updated_on", &self.last_updated_on);
+        formatter.finish()
+    }
+}
+/// See [`RefResource`](crate::model::RefResource).
+pub mod ref_resource {
+
+    /// A builder for [`RefResource`](crate::model::RefResource).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<std::string::String>,
+        pub(crate) end_time: std::option::Option<std::string::String>,
+        pub(crate) last_updated_on: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the experiment or launch.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the experiment or launch.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The ARN of the experiment or launch.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the experiment or launch.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The status of the experiment or launch.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the experiment or launch.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The day and time that this experiment or launch started.</p>
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_time = Some(input.into());
+            self
+        }
+        /// <p>The day and time that this experiment or launch started.</p>
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The day and time that this experiment or launch ended.</p>
+        pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_time = Some(input.into());
+            self
+        }
+        /// <p>The day and time that this experiment or launch ended.</p>
+        pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>The day and time that this experiment or launch was most recently updated.</p>
+        pub fn last_updated_on(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_updated_on = Some(input.into());
+            self
+        }
+        /// <p>The day and time that this experiment or launch was most recently updated.</p>
+        pub fn set_last_updated_on(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_updated_on = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RefResource`](crate::model::RefResource).
+        pub fn build(self) -> crate::model::RefResource {
+            crate::model::RefResource {
+                name: self.name,
+                r#type: self.r#type,
+                arn: self.arn,
+                status: self.status,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                last_updated_on: self.last_updated_on,
+            }
+        }
+    }
+}
+impl RefResource {
+    /// Creates a new builder-style object to manufacture [`RefResource`](crate::model::RefResource).
+    pub fn builder() -> crate::model::ref_resource::Builder {
+        crate::model::ref_resource::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SegmentReferenceResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    Experiment,
+    #[allow(missing_docs)] // documentation missing in model
+    Launch,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SegmentReferenceResourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXPERIMENT" => SegmentReferenceResourceType::Experiment,
+            "LAUNCH" => SegmentReferenceResourceType::Launch,
+            other => SegmentReferenceResourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SegmentReferenceResourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SegmentReferenceResourceType::from(s))
+    }
+}
+impl SegmentReferenceResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SegmentReferenceResourceType::Experiment => "EXPERIMENT",
+            SegmentReferenceResourceType::Launch => "LAUNCH",
+            SegmentReferenceResourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EXPERIMENT", "LAUNCH"]
+    }
+}
+impl AsRef<str> for SegmentReferenceResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>This structure contains information about one audience <i>segment</i>. You can use segments in your experiments and launches to narrow the user sessions used for experiment or launch to only the user sessions that match one or more criteria.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Segment {
+    /// <p>The ARN of the segment.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the segment.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub pattern: std::option::Option<std::string::String>,
+    /// <p>The date and time that this segment was created.</p>
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that this segment was most recently updated.</p>
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The customer-created description for this segment.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
+    pub experiment_count: std::option::Option<i64>,
+    /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
+    pub launch_count: std::option::Option<i64>,
+    /// <p>The list of tag keys and values associated with this launch.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Segment {
+    /// <p>The ARN of the segment.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the segment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p></p>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
+    /// <p>The date and time that this segment was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+    /// <p>The date and time that this segment was most recently updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The customer-created description for this segment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
+    pub fn experiment_count(&self) -> std::option::Option<i64> {
+        self.experiment_count
+    }
+    /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
+    pub fn launch_count(&self) -> std::option::Option<i64> {
+        self.launch_count
+    }
+    /// <p>The list of tag keys and values associated with this launch.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for Segment {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Segment");
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("pattern", &self.pattern);
+        formatter.field("created_time", &self.created_time);
+        formatter.field("last_updated_time", &self.last_updated_time);
+        formatter.field("description", &self.description);
+        formatter.field("experiment_count", &self.experiment_count);
+        formatter.field("launch_count", &self.launch_count);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`Segment`](crate::model::Segment).
+pub mod segment {
+
+    /// A builder for [`Segment`](crate::model::Segment).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) pattern: std::option::Option<std::string::String>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) experiment_count: std::option::Option<i64>,
+        pub(crate) launch_count: std::option::Option<i64>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN of the segment.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the segment.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the segment.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the segment.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p></p>
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pattern = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pattern = input;
+            self
+        }
+        /// <p>The date and time that this segment was created.</p>
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_time = Some(input);
+            self
+        }
+        /// <p>The date and time that this segment was created.</p>
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// <p>The date and time that this segment was most recently updated.</p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p>The date and time that this segment was most recently updated.</p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// <p>The customer-created description for this segment.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The customer-created description for this segment.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
+        pub fn experiment_count(mut self, input: i64) -> Self {
+            self.experiment_count = Some(input);
+            self
+        }
+        /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
+        pub fn set_experiment_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.experiment_count = input;
+            self
+        }
+        /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
+        pub fn launch_count(mut self, input: i64) -> Self {
+            self.launch_count = Some(input);
+            self
+        }
+        /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
+        pub fn set_launch_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.launch_count = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tag keys and values associated with this launch.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The list of tag keys and values associated with this launch.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Segment`](crate::model::Segment).
+        pub fn build(self) -> crate::model::Segment {
+            crate::model::Segment {
+                arn: self.arn,
+                name: self.name,
+                pattern: self.pattern,
+                created_time: self.created_time,
+                last_updated_time: self.last_updated_time,
+                description: self.description,
+                experiment_count: self.experiment_count,
+                launch_count: self.launch_count,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl Segment {
+    /// Creates a new builder-style object to manufacture [`Segment`](crate::model::Segment).
+    pub fn builder() -> crate::model::segment::Builder {
+        crate::model::segment::Builder::default()
+    }
+}
+
 /// <p>This structure defines a project, which is the logical object in Evidently that can contain features, launches, and experiments. Use projects to group similar features together.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2329,7 +2788,12 @@ pub struct ScheduledSplit {
     /// <p>The date and time that this step of the launch starts.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+    /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
+    /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
     pub group_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+    /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+    /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+    pub segment_overrides: std::option::Option<std::vec::Vec<crate::model::SegmentOverride>>,
 }
 impl ScheduledSplit {
     /// <p>The date and time that this step of the launch starts.</p>
@@ -2337,10 +2801,17 @@ impl ScheduledSplit {
         self.start_time.as_ref()
     }
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+    /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
+    /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
     pub fn group_weights(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
         self.group_weights.as_ref()
+    }
+    /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+    /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+    pub fn segment_overrides(&self) -> std::option::Option<&[crate::model::SegmentOverride]> {
+        self.segment_overrides.as_deref()
     }
 }
 impl std::fmt::Debug for ScheduledSplit {
@@ -2348,6 +2819,7 @@ impl std::fmt::Debug for ScheduledSplit {
         let mut formatter = f.debug_struct("ScheduledSplit");
         formatter.field("start_time", &self.start_time);
         formatter.field("group_weights", &self.group_weights);
+        formatter.field("segment_overrides", &self.segment_overrides);
         formatter.finish()
     }
 }
@@ -2360,6 +2832,8 @@ pub mod scheduled_split {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) group_weights:
             std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+        pub(crate) segment_overrides:
+            std::option::Option<std::vec::Vec<crate::model::SegmentOverride>>,
     }
     impl Builder {
         /// <p>The date and time that this step of the launch starts.</p>
@@ -2380,6 +2854,8 @@ pub mod scheduled_split {
         /// To override the contents of this collection use [`set_group_weights`](Self::set_group_weights).
         ///
         /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+        /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
+        /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
         pub fn group_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.group_weights.unwrap_or_default();
             hash_map.insert(k.into(), v);
@@ -2387,6 +2863,8 @@ pub mod scheduled_split {
             self
         }
         /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+        /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
+        /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
         pub fn set_group_weights(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
@@ -2394,11 +2872,33 @@ pub mod scheduled_split {
             self.group_weights = input;
             self
         }
+        /// Appends an item to `segment_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_segment_overrides`](Self::set_segment_overrides).
+        ///
+        /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+        /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+        pub fn segment_overrides(mut self, input: crate::model::SegmentOverride) -> Self {
+            let mut v = self.segment_overrides.unwrap_or_default();
+            v.push(input);
+            self.segment_overrides = Some(v);
+            self
+        }
+        /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+        /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+        pub fn set_segment_overrides(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentOverride>>,
+        ) -> Self {
+            self.segment_overrides = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ScheduledSplit`](crate::model::ScheduledSplit).
         pub fn build(self) -> crate::model::ScheduledSplit {
             crate::model::ScheduledSplit {
                 start_time: self.start_time,
                 group_weights: self.group_weights,
+                segment_overrides: self.segment_overrides,
             }
         }
     }
@@ -2407,6 +2907,110 @@ impl ScheduledSplit {
     /// Creates a new builder-style object to manufacture [`ScheduledSplit`](crate::model::ScheduledSplit).
     pub fn builder() -> crate::model::scheduled_split::Builder {
         crate::model::scheduled_split::Builder::default()
+    }
+}
+
+/// <p>This structure specifies a segment that you have already created, and defines the traffic split for that segment to be used in a launch.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SegmentOverride {
+    /// <p>The ARN of the segment to use.</p>
+    pub segment: std::option::Option<std::string::String>,
+    /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
+    pub evaluation_order: std::option::Option<i64>,
+    /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
+    pub weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+}
+impl SegmentOverride {
+    /// <p>The ARN of the segment to use.</p>
+    pub fn segment(&self) -> std::option::Option<&str> {
+        self.segment.as_deref()
+    }
+    /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
+    pub fn evaluation_order(&self) -> std::option::Option<i64> {
+        self.evaluation_order
+    }
+    /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
+    pub fn weights(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
+        self.weights.as_ref()
+    }
+}
+impl std::fmt::Debug for SegmentOverride {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SegmentOverride");
+        formatter.field("segment", &self.segment);
+        formatter.field("evaluation_order", &self.evaluation_order);
+        formatter.field("weights", &self.weights);
+        formatter.finish()
+    }
+}
+/// See [`SegmentOverride`](crate::model::SegmentOverride).
+pub mod segment_override {
+
+    /// A builder for [`SegmentOverride`](crate::model::SegmentOverride).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) segment: std::option::Option<std::string::String>,
+        pub(crate) evaluation_order: std::option::Option<i64>,
+        pub(crate) weights:
+            std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the segment to use.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the segment to use.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.segment = input;
+            self
+        }
+        /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
+        pub fn evaluation_order(mut self, input: i64) -> Self {
+            self.evaluation_order = Some(input);
+            self
+        }
+        /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
+        pub fn set_evaluation_order(mut self, input: std::option::Option<i64>) -> Self {
+            self.evaluation_order = input;
+            self
+        }
+        /// Adds a key-value pair to `weights`.
+        ///
+        /// To override the contents of this collection use [`set_weights`](Self::set_weights).
+        ///
+        /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
+        pub fn weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
+            let mut hash_map = self.weights.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.weights = Some(hash_map);
+            self
+        }
+        /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
+        pub fn set_weights(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+        ) -> Self {
+            self.weights = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SegmentOverride`](crate::model::SegmentOverride).
+        pub fn build(self) -> crate::model::SegmentOverride {
+            crate::model::SegmentOverride {
+                segment: self.segment,
+                evaluation_order: self.evaluation_order,
+                weights: self.weights,
+            }
+        }
+    }
+}
+impl SegmentOverride {
+    /// Creates a new builder-style object to manufacture [`SegmentOverride`](crate::model::SegmentOverride).
+    pub fn builder() -> crate::model::segment_override::Builder {
+        crate::model::segment_override::Builder::default()
     }
 }
 
@@ -3293,7 +3897,12 @@ pub struct ScheduledSplitConfig {
     /// <p>The date and time that this step of the launch starts.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+    /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
+    /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
     pub group_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+    /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+    /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+    pub segment_overrides: std::option::Option<std::vec::Vec<crate::model::SegmentOverride>>,
 }
 impl ScheduledSplitConfig {
     /// <p>The date and time that this step of the launch starts.</p>
@@ -3301,10 +3910,17 @@ impl ScheduledSplitConfig {
         self.start_time.as_ref()
     }
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+    /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
+    /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
     pub fn group_weights(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
         self.group_weights.as_ref()
+    }
+    /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+    /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+    pub fn segment_overrides(&self) -> std::option::Option<&[crate::model::SegmentOverride]> {
+        self.segment_overrides.as_deref()
     }
 }
 impl std::fmt::Debug for ScheduledSplitConfig {
@@ -3312,6 +3928,7 @@ impl std::fmt::Debug for ScheduledSplitConfig {
         let mut formatter = f.debug_struct("ScheduledSplitConfig");
         formatter.field("start_time", &self.start_time);
         formatter.field("group_weights", &self.group_weights);
+        formatter.field("segment_overrides", &self.segment_overrides);
         formatter.finish()
     }
 }
@@ -3324,6 +3941,8 @@ pub mod scheduled_split_config {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) group_weights:
             std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+        pub(crate) segment_overrides:
+            std::option::Option<std::vec::Vec<crate::model::SegmentOverride>>,
     }
     impl Builder {
         /// <p>The date and time that this step of the launch starts.</p>
@@ -3344,6 +3963,8 @@ pub mod scheduled_split_config {
         /// To override the contents of this collection use [`set_group_weights`](Self::set_group_weights).
         ///
         /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+        /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
+        /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
         pub fn group_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.group_weights.unwrap_or_default();
             hash_map.insert(k.into(), v);
@@ -3351,6 +3972,8 @@ pub mod scheduled_split_config {
             self
         }
         /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+        /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
+        /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
         pub fn set_group_weights(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
@@ -3358,11 +3981,33 @@ pub mod scheduled_split_config {
             self.group_weights = input;
             self
         }
+        /// Appends an item to `segment_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_segment_overrides`](Self::set_segment_overrides).
+        ///
+        /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+        /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+        pub fn segment_overrides(mut self, input: crate::model::SegmentOverride) -> Self {
+            let mut v = self.segment_overrides.unwrap_or_default();
+            v.push(input);
+            self.segment_overrides = Some(v);
+            self
+        }
+        /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+        /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
+        pub fn set_segment_overrides(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentOverride>>,
+        ) -> Self {
+            self.segment_overrides = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ScheduledSplitConfig`](crate::model::ScheduledSplitConfig).
         pub fn build(self) -> crate::model::ScheduledSplitConfig {
             crate::model::ScheduledSplitConfig {
                 start_time: self.start_time,
                 group_weights: self.group_weights,
+                segment_overrides: self.segment_overrides,
             }
         }
     }
@@ -5026,6 +5671,8 @@ pub struct Experiment {
     /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
     pub sampling_rate: i64,
+    /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
+    pub segment: std::option::Option<std::string::String>,
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
     pub r#type: std::option::Option<crate::model::ExperimentType>,
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
@@ -5092,6 +5739,10 @@ impl Experiment {
     pub fn sampling_rate(&self) -> i64 {
         self.sampling_rate
     }
+    /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
+    pub fn segment(&self) -> std::option::Option<&str> {
+        self.segment.as_deref()
+    }
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ExperimentType> {
         self.r#type.as_ref()
@@ -5125,6 +5776,7 @@ impl std::fmt::Debug for Experiment {
         formatter.field("metric_goals", &self.metric_goals);
         formatter.field("randomization_salt", &self.randomization_salt);
         formatter.field("sampling_rate", &self.sampling_rate);
+        formatter.field("segment", &self.segment);
         formatter.field("r#type", &self.r#type);
         formatter.field("online_ab_definition", &self.online_ab_definition);
         formatter.field("tags", &self.tags);
@@ -5151,6 +5803,7 @@ pub mod experiment {
         pub(crate) metric_goals: std::option::Option<std::vec::Vec<crate::model::MetricGoal>>,
         pub(crate) randomization_salt: std::option::Option<std::string::String>,
         pub(crate) sampling_rate: std::option::Option<i64>,
+        pub(crate) segment: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ExperimentType>,
         pub(crate) online_ab_definition: std::option::Option<crate::model::OnlineAbDefinition>,
         pub(crate) tags: std::option::Option<
@@ -5339,6 +5992,16 @@ pub mod experiment {
             self.sampling_rate = input;
             self
         }
+        /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment = Some(input.into());
+            self
+        }
+        /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.segment = input;
+            self
+        }
         /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
         pub fn r#type(mut self, input: crate::model::ExperimentType) -> Self {
             self.r#type = Some(input);
@@ -5407,6 +6070,7 @@ pub mod experiment {
                 metric_goals: self.metric_goals,
                 randomization_salt: self.randomization_salt,
                 sampling_rate: self.sampling_rate.unwrap_or_default(),
+                segment: self.segment,
                 r#type: self.r#type,
                 online_ab_definition: self.online_ab_definition,
                 tags: self.tags,

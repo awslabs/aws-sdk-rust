@@ -976,6 +976,9 @@ where
                 crate::error::ImportClientBrandingErrorKind::ResourceLimitExceededException(
                     inner,
                 ) => Error::ResourceLimitExceededException(inner),
+                crate::error::ImportClientBrandingErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
                 crate::error::ImportClientBrandingErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }

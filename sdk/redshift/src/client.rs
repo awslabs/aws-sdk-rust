@@ -187,6 +187,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::AuthorizeSnapshotAccess::snapshot_identifier) / [`set_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::AuthorizeSnapshotAccess::set_snapshot_identifier): <p>The identifier of the snapshot the account is authorized to restore.</p>
+    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::AuthorizeSnapshotAccess::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::AuthorizeSnapshotAccess::set_snapshot_arn): <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
     ///   - [`snapshot_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::AuthorizeSnapshotAccess::snapshot_cluster_identifier) / [`set_snapshot_cluster_identifier(Option<String>)`](crate::client::fluent_builders::AuthorizeSnapshotAccess::set_snapshot_cluster_identifier): <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     ///   - [`account_with_restore_access(impl Into<String>)`](crate::client::fluent_builders::AuthorizeSnapshotAccess::account_with_restore_access) / [`set_account_with_restore_access(Option<String>)`](crate::client::fluent_builders::AuthorizeSnapshotAccess::set_account_with_restore_access): <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>  <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
     /// - On success, responds with [`AuthorizeSnapshotAccessOutput`](crate::output::AuthorizeSnapshotAccessOutput) with field(s):
@@ -294,7 +295,7 @@ impl Client {
     ///   - [`encrypted(bool)`](crate::client::fluent_builders::CreateCluster::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_encrypted): <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>  <p>Default: false</p>
     ///   - [`hsm_client_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::hsm_client_certificate_identifier) / [`set_hsm_client_certificate_identifier(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_hsm_client_certificate_identifier): <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     ///   - [`hsm_configuration_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::hsm_configuration_identifier) / [`set_hsm_configuration_identifier(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_hsm_configuration_identifier): <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_elastic_ip): <p>The Elastic IP (EIP) address for the cluster.</p>  <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_elastic_ip): <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>  <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCluster::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCluster::set_tags): <p>A list of tag instances.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_kms_key_id): <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     ///   - [`enhanced_vpc_routing(bool)`](crate::client::fluent_builders::CreateCluster::enhanced_vpc_routing) / [`set_enhanced_vpc_routing(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_enhanced_vpc_routing): <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>  <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>  <p>Default: false</p>
@@ -824,6 +825,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeClusterSnapshots::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DescribeClusterSnapshots::set_cluster_identifier): <p>The identifier of the cluster which generated the requested snapshots.</p>
     ///   - [`snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeClusterSnapshots::snapshot_identifier) / [`set_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::DescribeClusterSnapshots::set_snapshot_identifier): <p>The snapshot identifier of the snapshot about which to return information.</p>
+    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeClusterSnapshots::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::DescribeClusterSnapshots::set_snapshot_arn): <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
     ///   - [`snapshot_type(impl Into<String>)`](crate::client::fluent_builders::DescribeClusterSnapshots::snapshot_type) / [`set_snapshot_type(Option<String>)`](crate::client::fluent_builders::DescribeClusterSnapshots::set_snapshot_type): <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>  <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
     ///   - [`start_time(DateTime)`](crate::client::fluent_builders::DescribeClusterSnapshots::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeClusterSnapshots::set_start_time): <p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>  <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
     ///   - [`end_time(DateTime)`](crate::client::fluent_builders::DescribeClusterSnapshots::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeClusterSnapshots::set_end_time): <p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>  <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
@@ -1086,6 +1088,7 @@ impl Client {
     ///   - [`action_type(ActionType)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::action_type) / [`set_action_type(Option<ActionType>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::set_action_type): <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. </p>
     ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::set_cluster_identifier): <p>The identifier of the cluster to evaluate for possible node configurations.</p>
     ///   - [`snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::snapshot_identifier) / [`set_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::set_snapshot_identifier): <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
+    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::set_snapshot_arn): <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
     ///   - [`owner_account(impl Into<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::owner_account) / [`set_owner_account(Option<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::set_owner_account): <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     ///   - [`filters(Vec<NodeConfigurationOptionsFilter>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::filters) / [`set_filters(Option<Vec<NodeConfigurationOptionsFilter>>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::set_filters): <p>A set of name, operator, and value items to filter the results.</p>
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::set_marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
@@ -1799,6 +1802,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_cluster_identifier): <p>The identifier of the cluster that will be created from restoring the snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>   <li> <p>Alphabetic characters must be lowercase.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>   <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>  </ul>
     ///   - [`snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_identifier) / [`set_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_identifier): <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>  <p>Example: <code>my-snapshot-id</code> </p>
+    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_arn): <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
     ///   - [`snapshot_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_cluster_identifier) / [`set_snapshot_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_cluster_identifier): <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     ///   - [`port(i32)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_port): <p>The port number on which the cluster accepts connections.</p>  <p>Default: The same port as the original cluster.</p>  <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
     ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_availability_zone): <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>  <p>Default: A random, system-chosen Availability Zone.</p>  <p>Example: <code>us-east-2a</code> </p>
@@ -1808,7 +1812,7 @@ impl Client {
     ///   - [`owner_account(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::owner_account) / [`set_owner_account(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_owner_account): <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     ///   - [`hsm_client_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::hsm_client_certificate_identifier) / [`set_hsm_client_certificate_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_hsm_client_certificate_identifier): <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     ///   - [`hsm_configuration_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::hsm_configuration_identifier) / [`set_hsm_configuration_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_hsm_configuration_identifier): <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_elastic_ip): <p>The elastic IP (EIP) address for the cluster.</p>
+    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_elastic_ip): <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
     ///   - [`cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::cluster_parameter_group_name) / [`set_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_cluster_parameter_group_name): <p>The name of the parameter group to be associated with this cluster.</p>  <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
     ///   - [`cluster_security_groups(Vec<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::cluster_security_groups) / [`set_cluster_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_cluster_security_groups): <p>A list of security groups to be associated with this cluster.</p>  <p>Default: The default cluster security group for Amazon Redshift.</p>  <p>Cluster security groups only apply to clusters outside of VPCs.</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_vpc_security_group_ids): <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>  <p>Default: The default VPC security group is associated with the cluster.</p>  <p>VPC security groups only apply to clusters in VPCs.</p>
@@ -1905,6 +1909,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::RevokeSnapshotAccess::snapshot_identifier) / [`set_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::RevokeSnapshotAccess::set_snapshot_identifier): <p>The identifier of the snapshot that the account can no longer access.</p>
+    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::RevokeSnapshotAccess::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::RevokeSnapshotAccess::set_snapshot_arn): <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
     ///   - [`snapshot_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RevokeSnapshotAccess::snapshot_cluster_identifier) / [`set_snapshot_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RevokeSnapshotAccess::set_snapshot_cluster_identifier): <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     ///   - [`account_with_restore_access(impl Into<String>)`](crate::client::fluent_builders::RevokeSnapshotAccess::account_with_restore_access) / [`set_account_with_restore_access(Option<String>)`](crate::client::fluent_builders::RevokeSnapshotAccess::set_account_with_restore_access): <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
     /// - On success, responds with [`RevokeSnapshotAccessOutput`](crate::output::RevokeSnapshotAccessOutput) with field(s):
@@ -2508,6 +2513,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_snapshot_identifier(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_snapshot_arn(input);
             self
         }
         /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
@@ -3428,13 +3443,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hsm_configuration_identifier(input);
             self
         }
-        /// <p>The Elastic IP (EIP) address for the cluster.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
         /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.elastic_ip(input.into());
             self
         }
-        /// <p>The Elastic IP (EIP) address for the cluster.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
         /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_elastic_ip(input);
@@ -7051,6 +7066,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_identifier(input);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_snapshot_arn(input);
+            self
+        }
         /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
         /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
         pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8849,6 +8874,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_snapshot_identifier(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_snapshot_arn(input);
             self
         }
         /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
@@ -13602,6 +13637,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_identifier(input);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_snapshot_arn(input);
+            self
+        }
         /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
         pub fn snapshot_cluster_identifier(
             mut self,
@@ -13731,12 +13776,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hsm_configuration_identifier(input);
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster.</p>
+        /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.elastic_ip(input.into());
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster.</p>
+        /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_elastic_ip(input);
             self
@@ -14534,6 +14579,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_snapshot_identifier(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_snapshot_arn(input);
             self
         }
         /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>

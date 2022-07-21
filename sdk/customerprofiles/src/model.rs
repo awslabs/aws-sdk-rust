@@ -608,6 +608,8 @@ pub struct AutoMerging {
     pub consolidation: std::option::Option<crate::model::Consolidation>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+    pub min_allowed_confidence_score_for_merging: std::option::Option<f64>,
 }
 impl AutoMerging {
     /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
@@ -622,6 +624,10 @@ impl AutoMerging {
     pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
         self.conflict_resolution.as_ref()
     }
+    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+    pub fn min_allowed_confidence_score_for_merging(&self) -> std::option::Option<f64> {
+        self.min_allowed_confidence_score_for_merging
+    }
 }
 impl std::fmt::Debug for AutoMerging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -629,6 +635,10 @@ impl std::fmt::Debug for AutoMerging {
         formatter.field("enabled", &self.enabled);
         formatter.field("consolidation", &self.consolidation);
         formatter.field("conflict_resolution", &self.conflict_resolution);
+        formatter.field(
+            "min_allowed_confidence_score_for_merging",
+            &self.min_allowed_confidence_score_for_merging,
+        );
         formatter.finish()
     }
 }
@@ -641,6 +651,7 @@ pub mod auto_merging {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) consolidation: std::option::Option<crate::model::Consolidation>,
         pub(crate) conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+        pub(crate) min_allowed_confidence_score_for_merging: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
@@ -679,12 +690,27 @@ pub mod auto_merging {
             self.conflict_resolution = input;
             self
         }
+        /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+        pub fn min_allowed_confidence_score_for_merging(mut self, input: f64) -> Self {
+            self.min_allowed_confidence_score_for_merging = Some(input);
+            self
+        }
+        /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+        pub fn set_min_allowed_confidence_score_for_merging(
+            mut self,
+            input: std::option::Option<f64>,
+        ) -> Self {
+            self.min_allowed_confidence_score_for_merging = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AutoMerging`](crate::model::AutoMerging).
         pub fn build(self) -> crate::model::AutoMerging {
             crate::model::AutoMerging {
                 enabled: self.enabled,
                 consolidation: self.consolidation,
                 conflict_resolution: self.conflict_resolution,
+                min_allowed_confidence_score_for_merging: self
+                    .min_allowed_confidence_score_for_merging,
             }
         }
     }
@@ -7565,7 +7591,7 @@ pub struct MatchItem {
     pub match_id: std::option::Option<std::string::String>,
     /// <p>A list of identifiers for profiles that match.</p>
     pub profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>
+    /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
     pub confidence_score: std::option::Option<f64>,
 }
 impl MatchItem {
@@ -7577,7 +7603,7 @@ impl MatchItem {
     pub fn profile_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.profile_ids.as_deref()
     }
-    /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>
+    /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
     pub fn confidence_score(&self) -> std::option::Option<f64> {
         self.confidence_score
     }
@@ -7631,12 +7657,12 @@ pub mod match_item {
             self.profile_ids = input;
             self
         }
-        /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>
+        /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
         pub fn confidence_score(mut self, input: f64) -> Self {
             self.confidence_score = Some(input);
             self
         }
-        /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>
+        /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
         pub fn set_confidence_score(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence_score = input;
             self

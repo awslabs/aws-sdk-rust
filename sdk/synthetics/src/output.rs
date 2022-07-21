@@ -153,12 +153,12 @@ impl StartCanaryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>The list of tag keys and values associated with the canary that you specified.</p>
+    /// <p>The list of tag keys and values associated with the resource that you specified.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>The list of tag keys and values associated with the canary that you specified.</p>
+    /// <p>The list of tag keys and values associated with the resource that you specified.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -188,7 +188,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of tag keys and values associated with the canary that you specified.</p>
+        /// <p>The list of tag keys and values associated with the resource that you specified.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -199,7 +199,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The list of tag keys and values associated with the canary that you specified.</p>
+        /// <p>The list of tag keys and values associated with the resource that you specified.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -219,6 +219,304 @@ impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListGroupsOutput {
+    /// <p>An array of structures that each contain information about one group.</p>
+    pub groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGroupsOutput {
+    /// <p>An array of structures that each contain information about one group.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupSummary]> {
+        self.groups.as_deref()
+    }
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListGroupsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListGroupsOutput");
+        formatter.field("groups", &self.groups);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListGroupsOutput`](crate::output::ListGroupsOutput).
+pub mod list_groups_output {
+
+    /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>An array of structures that each contain information about one group.</p>
+        pub fn groups(mut self, input: crate::model::GroupSummary) -> Self {
+            let mut v = self.groups.unwrap_or_default();
+            v.push(input);
+            self.groups = Some(v);
+            self
+        }
+        /// <p>An array of structures that each contain information about one group.</p>
+        pub fn set_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
+        ) -> Self {
+            self.groups = input;
+            self
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::output::ListGroupsOutput).
+        pub fn build(self) -> crate::output::ListGroupsOutput {
+            crate::output::ListGroupsOutput {
+                groups: self.groups,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListGroupsOutput`](crate::output::ListGroupsOutput).
+    pub fn builder() -> crate::output::list_groups_output::Builder {
+        crate::output::list_groups_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListGroupResourcesOutput {
+    /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
+    pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGroupResourcesOutput {
+    /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListGroupResourcesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListGroupResourcesOutput");
+        formatter.field("resources", &self.resources);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
+pub mod list_group_resources_output {
+
+    /// A builder for [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
+        pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.resources.unwrap_or_default();
+            v.push(input.into());
+            self.resources = Some(v);
+            self
+        }
+        /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
+        pub fn build(self) -> crate::output::ListGroupResourcesOutput {
+            crate::output::ListGroupResourcesOutput {
+                resources: self.resources,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListGroupResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
+    pub fn builder() -> crate::output::list_group_resources_output::Builder {
+        crate::output::list_group_resources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAssociatedGroupsOutput {
+    /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
+    pub groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssociatedGroupsOutput {
+    /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupSummary]> {
+        self.groups.as_deref()
+    }
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAssociatedGroupsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAssociatedGroupsOutput");
+        formatter.field("groups", &self.groups);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
+pub mod list_associated_groups_output {
+
+    /// A builder for [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
+        pub fn groups(mut self, input: crate::model::GroupSummary) -> Self {
+            let mut v = self.groups.unwrap_or_default();
+            v.push(input);
+            self.groups = Some(v);
+            self
+        }
+        /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
+        pub fn set_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
+        ) -> Self {
+            self.groups = input;
+            self
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
+        pub fn build(self) -> crate::output::ListAssociatedGroupsOutput {
+            crate::output::ListAssociatedGroupsOutput {
+                groups: self.groups,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAssociatedGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
+    pub fn builder() -> crate::output::list_associated_groups_output::Builder {
+        crate::output::list_associated_groups_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetGroupOutput {
+    /// <p>A structure that contains information about the group.</p>
+    pub group: std::option::Option<crate::model::Group>,
+}
+impl GetGroupOutput {
+    /// <p>A structure that contains information about the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+}
+impl std::fmt::Debug for GetGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetGroupOutput");
+        formatter.field("group", &self.group);
+        formatter.finish()
+    }
+}
+/// See [`GetGroupOutput`](crate::output::GetGroupOutput).
+pub mod get_group_output {
+
+    /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group: std::option::Option<crate::model::Group>,
+    }
+    impl Builder {
+        /// <p>A structure that contains information about the group.</p>
+        pub fn group(mut self, input: crate::model::Group) -> Self {
+            self.group = Some(input);
+            self
+        }
+        /// <p>A structure that contains information about the group.</p>
+        pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
+            self.group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetGroupOutput`](crate::output::GetGroupOutput).
+        pub fn build(self) -> crate::output::GetGroupOutput {
+            crate::output::GetGroupOutput { group: self.group }
+        }
+    }
+}
+impl GetGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetGroupOutput`](crate::output::GetGroupOutput).
+    pub fn builder() -> crate::output::get_group_output::Builder {
+        crate::output::get_group_output::Builder::default()
     }
 }
 
@@ -308,11 +606,11 @@ impl GetCanaryRunsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCanaryOutput {
-    /// <p>A strucure that contains the full information about the canary.</p>
+    /// <p>A structure that contains the full information about the canary.</p>
     pub canary: std::option::Option<crate::model::Canary>,
 }
 impl GetCanaryOutput {
-    /// <p>A strucure that contains the full information about the canary.</p>
+    /// <p>A structure that contains the full information about the canary.</p>
     pub fn canary(&self) -> std::option::Option<&crate::model::Canary> {
         self.canary.as_ref()
     }
@@ -333,12 +631,12 @@ pub mod get_canary_output {
         pub(crate) canary: std::option::Option<crate::model::Canary>,
     }
     impl Builder {
-        /// <p>A strucure that contains the full information about the canary.</p>
+        /// <p>A structure that contains the full information about the canary.</p>
         pub fn canary(mut self, input: crate::model::Canary) -> Self {
             self.canary = Some(input);
             self
         }
-        /// <p>A strucure that contains the full information about the canary.</p>
+        /// <p>A structure that contains the full information about the canary.</p>
         pub fn set_canary(mut self, input: std::option::Option<crate::model::Canary>) -> Self {
             self.canary = input;
             self
@@ -355,6 +653,36 @@ impl GetCanaryOutput {
     /// Creates a new builder-style object to manufacture [`GetCanaryOutput`](crate::output::GetCanaryOutput).
     pub fn builder() -> crate::output::get_canary_output::Builder {
         crate::output::get_canary_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateResourceOutput {}
+impl std::fmt::Debug for DisassociateResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
+pub mod disassociate_resource_output {
+
+    /// A builder for [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
+        pub fn build(self) -> crate::output::DisassociateResourceOutput {
+            crate::output::DisassociateResourceOutput {}
+        }
+    }
+}
+impl DisassociateResourceOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
+    pub fn builder() -> crate::output::disassociate_resource_output::Builder {
+        crate::output::disassociate_resource_output::Builder::default()
     }
 }
 
@@ -609,6 +937,36 @@ impl DescribeCanariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteGroupOutput {}
+impl std::fmt::Debug for DeleteGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteGroupOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
+pub mod delete_group_output {
+
+    /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
+        pub fn build(self) -> crate::output::DeleteGroupOutput {
+            crate::output::DeleteGroupOutput {}
+        }
+    }
+}
+impl DeleteGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
+    pub fn builder() -> crate::output::delete_group_output::Builder {
+        crate::output::delete_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCanaryOutput {}
 impl std::fmt::Debug for DeleteCanaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -633,6 +991,58 @@ impl DeleteCanaryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
     pub fn builder() -> crate::output::delete_canary_output::Builder {
         crate::output::delete_canary_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateGroupOutput {
+    /// <p>A structure that contains information about the group that was just created.</p>
+    pub group: std::option::Option<crate::model::Group>,
+}
+impl CreateGroupOutput {
+    /// <p>A structure that contains information about the group that was just created.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateGroupOutput");
+        formatter.field("group", &self.group);
+        formatter.finish()
+    }
+}
+/// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
+pub mod create_group_output {
+
+    /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group: std::option::Option<crate::model::Group>,
+    }
+    impl Builder {
+        /// <p>A structure that contains information about the group that was just created.</p>
+        pub fn group(mut self, input: crate::model::Group) -> Self {
+            self.group = Some(input);
+            self
+        }
+        /// <p>A structure that contains information about the group that was just created.</p>
+        pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
+            self.group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::output::CreateGroupOutput).
+        pub fn build(self) -> crate::output::CreateGroupOutput {
+            crate::output::CreateGroupOutput { group: self.group }
+        }
+    }
+}
+impl CreateGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateGroupOutput`](crate::output::CreateGroupOutput).
+    pub fn builder() -> crate::output::create_group_output::Builder {
+        crate::output::create_group_output::Builder::default()
     }
 }
 
@@ -687,5 +1097,35 @@ impl CreateCanaryOutput {
     /// Creates a new builder-style object to manufacture [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
     pub fn builder() -> crate::output::create_canary_output::Builder {
         crate::output::create_canary_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateResourceOutput {}
+impl std::fmt::Debug for AssociateResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
+pub mod associate_resource_output {
+
+    /// A builder for [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
+        pub fn build(self) -> crate::output::AssociateResourceOutput {
+            crate::output::AssociateResourceOutput {}
+        }
+    }
+}
+impl AssociateResourceOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
+    pub fn builder() -> crate::output::associate_resource_output::Builder {
+        crate::output::associate_resource_output::Builder::default()
     }
 }

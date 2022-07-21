@@ -91,6 +91,17 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`GetDeployments`](crate::client::fluent_builders::GetDeployments) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::GetDeployments::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::GetDeployments::set_device_name): <p>The unique name of the device you want to get the configuration of active deployments from.</p>
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::GetDeployments::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::GetDeployments::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
+    /// - On success, responds with [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput) with field(s):
+    ///   - [`deployments(Option<Vec<EdgeDeployment>>)`](crate::output::GetDeploymentsOutput::deployments): <p>Returns a list of the configurations of the active deployments on the device.</p>
+    /// - On failure, responds with [`SdkError<GetDeploymentsError>`](crate::error::GetDeploymentsError)
+    pub fn get_deployments(&self) -> fluent_builders::GetDeployments {
+        fluent_builders::GetDeployments::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetDeviceRegistration`](crate::client::fluent_builders::GetDeviceRegistration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -111,6 +122,7 @@ impl Client {
     ///   - [`agent_version(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::agent_version) / [`set_agent_version(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_agent_version): <p>Returns the version of the agent.</p>
     ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_device_name): <p>The unique name of the device.</p>
     ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
+    ///   - [`deployment_result(DeploymentResult)`](crate::client::fluent_builders::SendHeartbeat::deployment_result) / [`set_deployment_result(Option<DeploymentResult>)`](crate::client::fluent_builders::SendHeartbeat::set_deployment_result): <p>Returns the result of a deployment on the device.</p>
     /// - On success, responds with [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
 
     /// - On failure, responds with [`SdkError<SendHeartbeatError>`](crate::error::SendHeartbeatError)
@@ -125,6 +137,72 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `GetDeployments`.
+    ///
+    /// <p>Use to get the active deployments from a device.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetDeployments {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_deployments_input::Builder,
+    }
+    impl GetDeployments {
+        /// Creates a new `GetDeployments`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDeploymentsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetDeploymentsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
+            self
+        }
+        /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_device_name(input);
+            self
+        }
+        /// <p>The name of the fleet that the device belongs to.</p>
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
+            self
+        }
+        /// <p>The name of the fleet that the device belongs to.</p>
+        pub fn set_device_fleet_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_device_fleet_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetDeviceRegistration`.
     ///
     /// <p>Use to check if a device is registered with SageMaker Edge Manager.</p>
@@ -301,6 +379,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_device_fleet_name(input);
+            self
+        }
+        /// <p>Returns the result of a deployment on the device.</p>
+        pub fn deployment_result(mut self, input: crate::model::DeploymentResult) -> Self {
+            self.inner = self.inner.deployment_result(input);
+            self
+        }
+        /// <p>Returns the result of a deployment on the device.</p>
+        pub fn set_deployment_result(
+            mut self,
+            input: std::option::Option<crate::model::DeploymentResult>,
+        ) -> Self {
+            self.inner = self.inner.set_deployment_result(input);
             self
         }
     }

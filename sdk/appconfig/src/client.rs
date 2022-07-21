@@ -135,7 +135,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentStrategy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_name): <p>A name for the deployment strategy.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentStrategy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_description): <p>A description of the deployment strategy.</p>
     ///   - [`deployment_duration_in_minutes(i32)`](crate::client::fluent_builders::CreateDeploymentStrategy::deployment_duration_in_minutes) / [`set_deployment_duration_in_minutes(Option<i32>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_deployment_duration_in_minutes): <p>Total amount of time for a deployment to last.</p>
-    ///   - [`final_bake_time_in_minutes(i32)`](crate::client::fluent_builders::CreateDeploymentStrategy::final_bake_time_in_minutes) / [`set_final_bake_time_in_minutes(i32)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_final_bake_time_in_minutes): <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
+    ///   - [`final_bake_time_in_minutes(i32)`](crate::client::fluent_builders::CreateDeploymentStrategy::final_bake_time_in_minutes) / [`set_final_bake_time_in_minutes(i32)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_final_bake_time_in_minutes): <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
     ///   - [`growth_factor(f32)`](crate::client::fluent_builders::CreateDeploymentStrategy::growth_factor) / [`set_growth_factor(Option<f32>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_growth_factor): <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     ///   - [`growth_type(GrowthType)`](crate::client::fluent_builders::CreateDeploymentStrategy::growth_type) / [`set_growth_type(Option<GrowthType>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_growth_type): <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>  <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>  <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>  <p> <code>2*(2^0)</code> </p>  <p> <code>2*(2^1)</code> </p>  <p> <code>2*(2^2)</code> </p>  <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     ///   - [`replicate_to(ReplicateTo)`](crate::client::fluent_builders::CreateDeploymentStrategy::replicate_to) / [`set_replicate_to(Option<ReplicateTo>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_replicate_to): <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
@@ -171,6 +171,46 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
     pub fn create_environment(&self) -> fluent_builders::CreateEnvironment {
         fluent_builders::CreateEnvironment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateExtension`](crate::client::fluent_builders::CreateExtension) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateExtension::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateExtension::set_name): <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExtension::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExtension::set_description): <p>Information about the extension.</p>
+    ///   - [`actions(HashMap<ActionPoint, Vec<Action>>)`](crate::client::fluent_builders::CreateExtension::actions) / [`set_actions(Option<HashMap<ActionPoint, Vec<Action>>>)`](crate::client::fluent_builders::CreateExtension::set_actions): <p>The actions defined in the extension.</p>
+    ///   - [`parameters(HashMap<String, Parameter>)`](crate::client::fluent_builders::CreateExtension::parameters) / [`set_parameters(Option<HashMap<String, Parameter>>)`](crate::client::fluent_builders::CreateExtension::set_parameters): <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateExtension::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateExtension::set_tags): <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
+    ///   - [`latest_version_number(i32)`](crate::client::fluent_builders::CreateExtension::latest_version_number) / [`set_latest_version_number(Option<i32>)`](crate::client::fluent_builders::CreateExtension::set_latest_version_number): <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
+    /// - On success, responds with [`CreateExtensionOutput`](crate::output::CreateExtensionOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateExtensionOutput::id): <p>The system-generated ID of the extension.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateExtensionOutput::name): <p>The extension name.</p>
+    ///   - [`version_number(i32)`](crate::output::CreateExtensionOutput::version_number): <p>The extension version number.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateExtensionOutput::arn): <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateExtensionOutput::description): <p>Information about the extension.</p>
+    ///   - [`actions(Option<HashMap<ActionPoint, Vec<Action>>>)`](crate::output::CreateExtensionOutput::actions): <p>The actions defined in the extension.</p>
+    ///   - [`parameters(Option<HashMap<String, Parameter>>)`](crate::output::CreateExtensionOutput::parameters): <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    /// - On failure, responds with [`SdkError<CreateExtensionError>`](crate::error::CreateExtensionError)
+    pub fn create_extension(&self) -> fluent_builders::CreateExtension {
+        fluent_builders::CreateExtension::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateExtensionAssociation`](crate::client::fluent_builders::CreateExtensionAssociation) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`extension_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateExtensionAssociation::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::client::fluent_builders::CreateExtensionAssociation::set_extension_identifier): <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    ///   - [`extension_version_number(i32)`](crate::client::fluent_builders::CreateExtensionAssociation::extension_version_number) / [`set_extension_version_number(Option<i32>)`](crate::client::fluent_builders::CreateExtensionAssociation::set_extension_version_number): <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateExtensionAssociation::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::CreateExtensionAssociation::set_resource_identifier): <p>The ARN of an application, configuration profile, or environment.</p>
+    ///   - [`parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateExtensionAssociation::parameters) / [`set_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateExtensionAssociation::set_parameters): <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateExtensionAssociation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateExtensionAssociation::set_tags): <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
+    /// - On success, responds with [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateExtensionAssociationOutput::id): <p>The system-generated ID for the association.</p>
+    ///   - [`extension_arn(Option<String>)`](crate::output::CreateExtensionAssociationOutput::extension_arn): <p>The ARN of the extension defined in the association.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::CreateExtensionAssociationOutput::resource_arn): <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateExtensionAssociationOutput::arn): <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    ///   - [`parameters(Option<HashMap<String, String>>)`](crate::output::CreateExtensionAssociationOutput::parameters): <p>The parameter names and values defined in the association.</p>
+    ///   - [`extension_version_number(i32)`](crate::output::CreateExtensionAssociationOutput::extension_version_number): <p>The version number for the extension defined in the association.</p>
+    /// - On failure, responds with [`SdkError<CreateExtensionAssociationError>`](crate::error::CreateExtensionAssociationError)
+    pub fn create_extension_association(&self) -> fluent_builders::CreateExtensionAssociation {
+        fluent_builders::CreateExtensionAssociation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateHostedConfigurationVersion`](crate::client::fluent_builders::CreateHostedConfigurationVersion) operation.
     ///
@@ -235,6 +275,27 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
     pub fn delete_environment(&self) -> fluent_builders::DeleteEnvironment {
         fluent_builders::DeleteEnvironment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteExtension`](crate::client::fluent_builders::DeleteExtension) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`extension_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteExtension::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::client::fluent_builders::DeleteExtension::set_extension_identifier): <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
+    ///   - [`version_number(i32)`](crate::client::fluent_builders::DeleteExtension::version_number) / [`set_version_number(Option<i32>)`](crate::client::fluent_builders::DeleteExtension::set_version_number): <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
+    /// - On success, responds with [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteExtensionError>`](crate::error::DeleteExtensionError)
+    pub fn delete_extension(&self) -> fluent_builders::DeleteExtension {
+        fluent_builders::DeleteExtension::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteExtensionAssociation`](crate::client::fluent_builders::DeleteExtensionAssociation) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`extension_association_id(impl Into<String>)`](crate::client::fluent_builders::DeleteExtensionAssociation::extension_association_id) / [`set_extension_association_id(Option<String>)`](crate::client::fluent_builders::DeleteExtensionAssociation::set_extension_association_id): <p>The ID of the extension association to delete.</p>
+    /// - On success, responds with [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteExtensionAssociationError>`](crate::error::DeleteExtensionAssociationError)
+    pub fn delete_extension_association(&self) -> fluent_builders::DeleteExtensionAssociation {
+        fluent_builders::DeleteExtensionAssociation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteHostedConfigurationVersion`](crate::client::fluent_builders::DeleteHostedConfigurationVersion) operation.
     ///
@@ -321,6 +382,7 @@ impl Client {
     ///   - [`percentage_complete(f32)`](crate::output::GetDeploymentOutput::percentage_complete): <p>The percentage of targets for which the deployment is available.</p>
     ///   - [`started_at(Option<DateTime>)`](crate::output::GetDeploymentOutput::started_at): <p>The time the deployment started.</p>
     ///   - [`completed_at(Option<DateTime>)`](crate::output::GetDeploymentOutput::completed_at): <p>The time the deployment completed. </p>
+    ///   - [`applied_extensions(Option<Vec<AppliedExtension>>)`](crate::output::GetDeploymentOutput::applied_extensions): <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::error::GetDeploymentError)
     pub fn get_deployment(&self) -> fluent_builders::GetDeployment {
         fluent_builders::GetDeployment::new(self.handle.clone())
@@ -357,6 +419,38 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::error::GetEnvironmentError)
     pub fn get_environment(&self) -> fluent_builders::GetEnvironment {
         fluent_builders::GetEnvironment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetExtension`](crate::client::fluent_builders::GetExtension) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`extension_identifier(impl Into<String>)`](crate::client::fluent_builders::GetExtension::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::client::fluent_builders::GetExtension::set_extension_identifier): <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    ///   - [`version_number(i32)`](crate::client::fluent_builders::GetExtension::version_number) / [`set_version_number(Option<i32>)`](crate::client::fluent_builders::GetExtension::set_version_number): <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
+    /// - On success, responds with [`GetExtensionOutput`](crate::output::GetExtensionOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::GetExtensionOutput::id): <p>The system-generated ID of the extension.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetExtensionOutput::name): <p>The extension name.</p>
+    ///   - [`version_number(i32)`](crate::output::GetExtensionOutput::version_number): <p>The extension version number.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetExtensionOutput::arn): <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetExtensionOutput::description): <p>Information about the extension.</p>
+    ///   - [`actions(Option<HashMap<ActionPoint, Vec<Action>>>)`](crate::output::GetExtensionOutput::actions): <p>The actions defined in the extension.</p>
+    ///   - [`parameters(Option<HashMap<String, Parameter>>)`](crate::output::GetExtensionOutput::parameters): <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    /// - On failure, responds with [`SdkError<GetExtensionError>`](crate::error::GetExtensionError)
+    pub fn get_extension(&self) -> fluent_builders::GetExtension {
+        fluent_builders::GetExtension::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetExtensionAssociation`](crate::client::fluent_builders::GetExtensionAssociation) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`extension_association_id(impl Into<String>)`](crate::client::fluent_builders::GetExtensionAssociation::extension_association_id) / [`set_extension_association_id(Option<String>)`](crate::client::fluent_builders::GetExtensionAssociation::set_extension_association_id): <p>The extension association ID to get.</p>
+    /// - On success, responds with [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::GetExtensionAssociationOutput::id): <p>The system-generated ID for the association.</p>
+    ///   - [`extension_arn(Option<String>)`](crate::output::GetExtensionAssociationOutput::extension_arn): <p>The ARN of the extension defined in the association.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::GetExtensionAssociationOutput::resource_arn): <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetExtensionAssociationOutput::arn): <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    ///   - [`parameters(Option<HashMap<String, String>>)`](crate::output::GetExtensionAssociationOutput::parameters): <p>The parameter names and values defined in the association.</p>
+    ///   - [`extension_version_number(i32)`](crate::output::GetExtensionAssociationOutput::extension_version_number): <p>The version number for the extension defined in the association.</p>
+    /// - On failure, responds with [`SdkError<GetExtensionAssociationError>`](crate::error::GetExtensionAssociationError)
+    pub fn get_extension_association(&self) -> fluent_builders::GetExtensionAssociation {
+        fluent_builders::GetExtensionAssociation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetHostedConfigurationVersion`](crate::client::fluent_builders::GetHostedConfigurationVersion) operation.
     ///
@@ -447,6 +541,36 @@ impl Client {
     pub fn list_environments(&self) -> fluent_builders::ListEnvironments {
         fluent_builders::ListEnvironments::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListExtensionAssociations`](crate::client::fluent_builders::ListExtensionAssociations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExtensionAssociations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::ListExtensionAssociations::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::ListExtensionAssociations::set_resource_identifier): <p>The ARN of an application, configuration profile, or environment.</p>
+    ///   - [`extension_identifier(impl Into<String>)`](crate::client::fluent_builders::ListExtensionAssociations::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::client::fluent_builders::ListExtensionAssociations::set_extension_identifier): <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    ///   - [`extension_version_number(i32)`](crate::client::fluent_builders::ListExtensionAssociations::extension_version_number) / [`set_extension_version_number(Option<i32>)`](crate::client::fluent_builders::ListExtensionAssociations::set_extension_version_number): <p>The version number for the extension defined in the association.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExtensionAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExtensionAssociations::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExtensionAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExtensionAssociations::set_next_token): <p>A token to start the list. Use this token to get the next set of results or pass null to get the first set of results. </p>
+    /// - On success, responds with [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput) with field(s):
+    ///   - [`items(Option<Vec<ExtensionAssociationSummary>>)`](crate::output::ListExtensionAssociationsOutput::items): <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListExtensionAssociationsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListExtensionAssociationsError>`](crate::error::ListExtensionAssociationsError)
+    pub fn list_extension_associations(&self) -> fluent_builders::ListExtensionAssociations {
+        fluent_builders::ListExtensionAssociations::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListExtensions`](crate::client::fluent_builders::ListExtensions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExtensions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExtensions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExtensions::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExtensions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExtensions::set_next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListExtensions::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListExtensions::set_name): <p>The extension name.</p>
+    /// - On success, responds with [`ListExtensionsOutput`](crate::output::ListExtensionsOutput) with field(s):
+    ///   - [`items(Option<Vec<ExtensionSummary>>)`](crate::output::ListExtensionsOutput::items): <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListExtensionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListExtensionsError>`](crate::error::ListExtensionsError)
+    pub fn list_extensions(&self) -> fluent_builders::ListExtensions {
+        fluent_builders::ListExtensions::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListHostedConfigurationVersions`](crate::client::fluent_builders::ListHostedConfigurationVersions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHostedConfigurationVersions::into_paginator).
     ///
@@ -503,6 +627,7 @@ impl Client {
     ///   - [`percentage_complete(f32)`](crate::output::StartDeploymentOutput::percentage_complete): <p>The percentage of targets for which the deployment is available.</p>
     ///   - [`started_at(Option<DateTime>)`](crate::output::StartDeploymentOutput::started_at): <p>The time the deployment started.</p>
     ///   - [`completed_at(Option<DateTime>)`](crate::output::StartDeploymentOutput::completed_at): <p>The time the deployment completed. </p>
+    ///   - [`applied_extensions(Option<Vec<AppliedExtension>>)`](crate::output::StartDeploymentOutput::applied_extensions): <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
     /// - On failure, responds with [`SdkError<StartDeploymentError>`](crate::error::StartDeploymentError)
     pub fn start_deployment(&self) -> fluent_builders::StartDeployment {
         fluent_builders::StartDeployment::new(self.handle.clone())
@@ -532,6 +657,7 @@ impl Client {
     ///   - [`percentage_complete(f32)`](crate::output::StopDeploymentOutput::percentage_complete): <p>The percentage of targets for which the deployment is available.</p>
     ///   - [`started_at(Option<DateTime>)`](crate::output::StopDeploymentOutput::started_at): <p>The time the deployment started.</p>
     ///   - [`completed_at(Option<DateTime>)`](crate::output::StopDeploymentOutput::completed_at): <p>The time the deployment completed. </p>
+    ///   - [`applied_extensions(Option<Vec<AppliedExtension>>)`](crate::output::StopDeploymentOutput::applied_extensions): <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
     /// - On failure, responds with [`SdkError<StopDeploymentError>`](crate::error::StopDeploymentError)
     pub fn stop_deployment(&self) -> fluent_builders::StopDeployment {
         fluent_builders::StopDeployment::new(self.handle.clone())
@@ -635,6 +761,42 @@ impl Client {
     pub fn update_environment(&self) -> fluent_builders::UpdateEnvironment {
         fluent_builders::UpdateEnvironment::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateExtension`](crate::client::fluent_builders::UpdateExtension) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`extension_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateExtension::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::client::fluent_builders::UpdateExtension::set_extension_identifier): <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExtension::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExtension::set_description): <p>Information about the extension.</p>
+    ///   - [`actions(HashMap<ActionPoint, Vec<Action>>)`](crate::client::fluent_builders::UpdateExtension::actions) / [`set_actions(Option<HashMap<ActionPoint, Vec<Action>>>)`](crate::client::fluent_builders::UpdateExtension::set_actions): <p>The actions defined in the extension.</p>
+    ///   - [`parameters(HashMap<String, Parameter>)`](crate::client::fluent_builders::UpdateExtension::parameters) / [`set_parameters(Option<HashMap<String, Parameter>>)`](crate::client::fluent_builders::UpdateExtension::set_parameters): <p>One or more parameters for the actions called by the extension.</p>
+    ///   - [`version_number(i32)`](crate::client::fluent_builders::UpdateExtension::version_number) / [`set_version_number(Option<i32>)`](crate::client::fluent_builders::UpdateExtension::set_version_number): <p>The extension version number.</p>
+    /// - On success, responds with [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::UpdateExtensionOutput::id): <p>The system-generated ID of the extension.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateExtensionOutput::name): <p>The extension name.</p>
+    ///   - [`version_number(i32)`](crate::output::UpdateExtensionOutput::version_number): <p>The extension version number.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateExtensionOutput::arn): <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateExtensionOutput::description): <p>Information about the extension.</p>
+    ///   - [`actions(Option<HashMap<ActionPoint, Vec<Action>>>)`](crate::output::UpdateExtensionOutput::actions): <p>The actions defined in the extension.</p>
+    ///   - [`parameters(Option<HashMap<String, Parameter>>)`](crate::output::UpdateExtensionOutput::parameters): <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    /// - On failure, responds with [`SdkError<UpdateExtensionError>`](crate::error::UpdateExtensionError)
+    pub fn update_extension(&self) -> fluent_builders::UpdateExtension {
+        fluent_builders::UpdateExtension::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateExtensionAssociation`](crate::client::fluent_builders::UpdateExtensionAssociation) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`extension_association_id(impl Into<String>)`](crate::client::fluent_builders::UpdateExtensionAssociation::extension_association_id) / [`set_extension_association_id(Option<String>)`](crate::client::fluent_builders::UpdateExtensionAssociation::set_extension_association_id): <p>The system-generated ID for the association.</p>
+    ///   - [`parameters(HashMap<String, String>)`](crate::client::fluent_builders::UpdateExtensionAssociation::parameters) / [`set_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateExtensionAssociation::set_parameters): <p>The parameter names and values defined in the extension.</p>
+    /// - On success, responds with [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::UpdateExtensionAssociationOutput::id): <p>The system-generated ID for the association.</p>
+    ///   - [`extension_arn(Option<String>)`](crate::output::UpdateExtensionAssociationOutput::extension_arn): <p>The ARN of the extension defined in the association.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::UpdateExtensionAssociationOutput::resource_arn): <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateExtensionAssociationOutput::arn): <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    ///   - [`parameters(Option<HashMap<String, String>>)`](crate::output::UpdateExtensionAssociationOutput::parameters): <p>The parameter names and values defined in the association.</p>
+    ///   - [`extension_version_number(i32)`](crate::output::UpdateExtensionAssociationOutput::extension_version_number): <p>The version number for the extension defined in the association.</p>
+    /// - On failure, responds with [`SdkError<UpdateExtensionAssociationError>`](crate::error::UpdateExtensionAssociationError)
+    pub fn update_extension_association(&self) -> fluent_builders::UpdateExtensionAssociation {
+        fluent_builders::UpdateExtensionAssociation::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ValidateConfiguration`](crate::client::fluent_builders::ValidateConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -657,7 +819,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>Creates an application. An application in AppConfig is a logical unit of code that provides capabilities for your customers. For example, an application can be a microservice that runs on Amazon EC2 instances, a mobile application installed by your users, a serverless application using Amazon API Gateway and Lambda, or any system you run on behalf of others.</p>
+    /// <p>Creates an application. In AppConfig, an application is simply an organizational construct like a folder. This organizational construct has a relationship with some unit of executable code. For example, you could create an application called MyMobileApp to organize and manage configuration data for a mobile application installed by your users.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication {
         handle: std::sync::Arc<super::Handle>,
@@ -993,12 +1155,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_duration_in_minutes(input);
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
+        /// <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.inner = self.inner.final_bake_time_in_minutes(input);
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
+        /// <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_final_bake_time_in_minutes(input);
             self
@@ -1077,7 +1239,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironment`.
     ///
-    /// <p>Creates an environment. For each application, you define one or more environments. An environment is a logical deployment group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code> environment. You can also define environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code> components for your application. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration.</p>
+    /// <p>Creates an environment. For each application, you define one or more environments. An environment is a deployment group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code> environment. You can also define environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code> components for your application. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment {
         handle: std::sync::Arc<super::Handle>,
@@ -1181,6 +1343,277 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateExtension`.
+    ///
+    /// <p>Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different points during the AppConfig workflow of creating or deploying a configuration.</p>
+    /// <p>You can create your own extensions or use the Amazon Web Services-authored extensions provided by AppConfig. For most use-cases, to create your own extension, you must create an Lambda function to perform any computation and processing defined in the extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateExtension {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_extension_input::Builder,
+    }
+    impl CreateExtension {
+        /// Creates a new `CreateExtension`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateExtensionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateExtensionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Adds a key-value pair to `Actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions defined in the extension.</p>
+        pub fn actions(
+            mut self,
+            k: crate::model::ActionPoint,
+            v: std::vec::Vec<crate::model::Action>,
+        ) -> Self {
+            self.inner = self.inner.actions(k, v);
+            self
+        }
+        /// <p>The actions defined in the extension.</p>
+        pub fn set_actions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::ActionPoint,
+                    std::vec::Vec<crate::model::Action>,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_actions(input);
+            self
+        }
+        /// Adds a key-value pair to `Parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::Parameter,
+        ) -> Self {
+            self.inner = self.inner.parameters(k.into(), v);
+            self
+        }
+        /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::Parameter>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_parameters(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
+        pub fn latest_version_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.latest_version_number(input);
+            self
+        }
+        /// <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
+        pub fn set_latest_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_latest_version_number(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateExtensionAssociation`.
+    ///
+    /// <p>When you create an extension or configure an Amazon Web Services-authored extension, you associate the extension with an AppConfig application, environment, or configuration profile. For example, you can choose to run the <code>AppConfig deployment events to Amazon SNS</code> Amazon Web Services-authored extension and receive notifications on an Amazon SNS topic anytime a configuration deployment is started for a specific application. Defining which extension to associate with an AppConfig resource is called an <i>extension association</i>. An extension association is a specified relationship between an extension and an AppConfig resource, such as an application or a configuration profile. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateExtensionAssociation {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_extension_association_input::Builder,
+    }
+    impl CreateExtensionAssociation {
+        /// Creates a new `CreateExtensionAssociation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateExtensionAssociationOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateExtensionAssociationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+        pub fn extension_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extension_identifier(input.into());
+            self
+        }
+        /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+        pub fn set_extension_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_extension_identifier(input);
+            self
+        }
+        /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
+        pub fn extension_version_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.extension_version_number(input);
+            self
+        }
+        /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
+        pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_extension_version_number(input);
+            self
+        }
+        /// <p>The ARN of an application, configuration profile, or environment.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
+            self
+        }
+        /// <p>The ARN of an application, configuration profile, or environment.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_identifier(input);
+            self
+        }
+        /// Adds a key-value pair to `Parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.parameters(k.into(), v.into());
+            self
+        }
+        /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_parameters(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1547,6 +1980,128 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_environment_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteExtension`.
+    ///
+    /// <p>Deletes an AppConfig extension. You must delete all associations to an extension before you delete the extension.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteExtension {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_extension_input::Builder,
+    }
+    impl DeleteExtension {
+        /// Creates a new `DeleteExtension`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteExtensionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteExtensionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
+        pub fn extension_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extension_identifier(input.into());
+            self
+        }
+        /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
+        pub fn set_extension_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_extension_identifier(input);
+            self
+        }
+        /// <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
+        pub fn version_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.version_number(input);
+            self
+        }
+        /// <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
+        pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version_number(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteExtensionAssociation`.
+    ///
+    /// <p>Deletes an extension association. This action doesn't delete extensions defined in the association.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteExtensionAssociation {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_extension_association_input::Builder,
+    }
+    impl DeleteExtensionAssociation {
+        /// Creates a new `DeleteExtensionAssociation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteExtensionAssociationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteExtensionAssociationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the extension association to delete.</p>
+        pub fn extension_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extension_association_id(input.into());
+            self
+        }
+        /// <p>The ID of the extension association to delete.</p>
+        pub fn set_extension_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_extension_association_id(input);
             self
         }
     }
@@ -2008,7 +2563,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEnvironment`.
     ///
-    /// <p>Retrieves information about an environment. An environment is a logical deployment group of AppConfig applications, such as applications in a <code>Production</code> environment or in an <code>EU_Region</code> environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.</p>
+    /// <p>Retrieves information about an environment. An environment is a deployment group of AppConfig applications, such as applications in a <code>Production</code> environment or in an <code>EU_Region</code> environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironment {
         handle: std::sync::Arc<super::Handle>,
@@ -2072,6 +2627,128 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_environment_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetExtension`.
+    ///
+    /// <p>Returns information about an AppConfig extension.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetExtension {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_extension_input::Builder,
+    }
+    impl GetExtension {
+        /// Creates a new `GetExtension`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetExtensionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetExtensionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+        pub fn extension_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extension_identifier(input.into());
+            self
+        }
+        /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+        pub fn set_extension_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_extension_identifier(input);
+            self
+        }
+        /// <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
+        pub fn version_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.version_number(input);
+            self
+        }
+        /// <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
+        pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version_number(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetExtensionAssociation`.
+    ///
+    /// <p>Returns information about an AppConfig extension association. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetExtensionAssociation {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_extension_association_input::Builder,
+    }
+    impl GetExtensionAssociation {
+        /// Creates a new `GetExtensionAssociation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetExtensionAssociationOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetExtensionAssociationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The extension association ID to get.</p>
+        pub fn extension_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extension_association_id(input.into());
+            self
+        }
+        /// <p>The extension association ID to get.</p>
+        pub fn set_extension_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_extension_association_id(input);
             self
         }
     }
@@ -2558,6 +3235,190 @@ pub mod fluent_builders {
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListExtensionAssociations`.
+    ///
+    /// <p>Lists all AppConfig extension associations in the account. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListExtensionAssociations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_extension_associations_input::Builder,
+    }
+    impl ListExtensionAssociations {
+        /// Creates a new `ListExtensionAssociations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListExtensionAssociationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExtensionAssociationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExtensionAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExtensionAssociationsPaginator {
+            crate::paginator::ListExtensionAssociationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of an application, configuration profile, or environment.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
+            self
+        }
+        /// <p>The ARN of an application, configuration profile, or environment.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_identifier(input);
+            self
+        }
+        /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+        pub fn extension_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extension_identifier(input.into());
+            self
+        }
+        /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+        pub fn set_extension_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_extension_identifier(input);
+            self
+        }
+        /// <p>The version number for the extension defined in the association.</p>
+        pub fn extension_version_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.extension_version_number(input);
+            self
+        }
+        /// <p>The version number for the extension defined in the association.</p>
+        pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_extension_version_number(input);
+            self
+        }
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token to start the list. Use this token to get the next set of results or pass null to get the first set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token to start the list. Use this token to get the next set of results or pass null to get the first set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListExtensions`.
+    ///
+    /// <p>Lists all custom and Amazon Web Services-authored AppConfig extensions in the account. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListExtensions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_extensions_input::Builder,
+    }
+    impl ListExtensions {
+        /// Creates a new `ListExtensions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListExtensionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExtensionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExtensionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExtensionsPaginator {
+            crate::paginator::ListExtensionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token to start the list. Use this token to get the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token to start the list. Use this token to get the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The extension name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The extension name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -3497,6 +4358,210 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
         ) -> Self {
             self.inner = self.inner.set_monitors(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateExtension`.
+    ///
+    /// <p>Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateExtension {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_extension_input::Builder,
+    }
+    impl UpdateExtension {
+        /// Creates a new `UpdateExtension`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateExtensionOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateExtensionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+        pub fn extension_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extension_identifier(input.into());
+            self
+        }
+        /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+        pub fn set_extension_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_extension_identifier(input);
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Adds a key-value pair to `Actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions defined in the extension.</p>
+        pub fn actions(
+            mut self,
+            k: crate::model::ActionPoint,
+            v: std::vec::Vec<crate::model::Action>,
+        ) -> Self {
+            self.inner = self.inner.actions(k, v);
+            self
+        }
+        /// <p>The actions defined in the extension.</p>
+        pub fn set_actions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::ActionPoint,
+                    std::vec::Vec<crate::model::Action>,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_actions(input);
+            self
+        }
+        /// Adds a key-value pair to `Parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>One or more parameters for the actions called by the extension.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::Parameter,
+        ) -> Self {
+            self.inner = self.inner.parameters(k.into(), v);
+            self
+        }
+        /// <p>One or more parameters for the actions called by the extension.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::Parameter>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_parameters(input);
+            self
+        }
+        /// <p>The extension version number.</p>
+        pub fn version_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.version_number(input);
+            self
+        }
+        /// <p>The extension version number.</p>
+        pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_version_number(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateExtensionAssociation`.
+    ///
+    /// <p>Updates an association. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateExtensionAssociation {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_extension_association_input::Builder,
+    }
+    impl UpdateExtensionAssociation {
+        /// Creates a new `UpdateExtensionAssociation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateExtensionAssociationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateExtensionAssociationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The system-generated ID for the association.</p>
+        pub fn extension_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extension_association_id(input.into());
+            self
+        }
+        /// <p>The system-generated ID for the association.</p>
+        pub fn set_extension_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_extension_association_id(input);
+            self
+        }
+        /// Adds a key-value pair to `Parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameter names and values defined in the extension.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.parameters(k.into(), v.into());
+            self
+        }
+        /// <p>The parameter names and values defined in the extension.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_parameters(input);
             self
         }
     }

@@ -164,22 +164,39 @@ impl Client {
     pub fn clear_query_suggestions(&self) -> fluent_builders::ClearQuerySuggestions {
         fluent_builders::ClearQuerySuggestions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateAccessControlConfiguration`](crate::client::fluent_builders::CreateAccessControlConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_index_id): <p>The identifier of the index to create an access control configuration for your documents.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_name): <p>A name for the access control configuration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_description): <p>A description for the access control configuration.</p>
+    ///   - [`access_control_list(Vec<Principal>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::access_control_list) / [`set_access_control_list(Option<Vec<Principal>>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_access_control_list): <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    ///   - [`hierarchical_access_control_list(Vec<HierarchicalPrincipal>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::hierarchical_access_control_list) / [`set_hierarchical_access_control_list(Option<Vec<HierarchicalPrincipal>>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_hierarchical_access_control_list): <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_client_token): <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
+    /// - On success, responds with [`CreateAccessControlConfigurationOutput`](crate::output::CreateAccessControlConfigurationOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateAccessControlConfigurationOutput::id): <p>The identifier of the access control configuration for your documents in an index.</p>
+    /// - On failure, responds with [`SdkError<CreateAccessControlConfigurationError>`](crate::error::CreateAccessControlConfigurationError)
+    pub fn create_access_control_configuration(
+        &self,
+    ) -> fluent_builders::CreateAccessControlConfiguration {
+        fluent_builders::CreateAccessControlConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateDataSource`](crate::client::fluent_builders::CreateDataSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_name): <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_index_id): <p>The identifier of the index that should be associated with this data source.</p>
-    ///   - [`r#type(DataSourceType)`](crate::client::fluent_builders::CreateDataSource::type) / [`set_type(Option<DataSourceType>)`](crate::client::fluent_builders::CreateDataSource::set_type): <p>The type of repository that contains the data source.</p>
-    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::CreateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_configuration): <p>Configuration information that is required to access the data source repository.</p>  <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_description): <p>A description for the data source.</p>
-    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_schedule): <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>  <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>  <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataSource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataSource::set_tags): <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_client_token): <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
-    ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_language_code): <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::CreateDataSource::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_custom_document_enrichment_configuration): <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_name): <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_index_id): <p>The identifier of the index you want to use with the data source connector.</p>
+    ///   - [`r#type(DataSourceType)`](crate::client::fluent_builders::CreateDataSource::type) / [`set_type(Option<DataSourceType>)`](crate::client::fluent_builders::CreateDataSource::set_type): <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
+    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::CreateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_configuration): <p>Configuration information to connect to your data source repository.</p>  <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_description): <p>A description for the data source connector.</p>
+    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_schedule): <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>  <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>  <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataSource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataSource::set_tags): <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_client_token): <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
+    ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_language_code): <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::CreateDataSource::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_custom_document_enrichment_configuration): <p>Configuration information for altering document metadata and content during the document ingestion process.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     /// - On success, responds with [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateDataSourceOutput::id): <p>A unique identifier for the data source.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateDataSourceOutput::id): <p>The identifier of the data source connector.</p>
     /// - On failure, responds with [`SdkError<CreateDataSourceError>`](crate::error::CreateDataSourceError)
     pub fn create_data_source(&self) -> fluent_builders::CreateDataSource {
         fluent_builders::CreateDataSource::new(self.handle.clone())
@@ -202,13 +219,13 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateFaq`](crate::client::fluent_builders::CreateFaq) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_index_id): <p>The identifier of the index that contains the FAQ.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_name): <p>The name that should be associated with the FAQ.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_description): <p>A description of the FAQ.</p>
-    ///   - [`s3_path(S3Path)`](crate::client::fluent_builders::CreateFaq::s3_path) / [`set_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateFaq::set_s3_path): <p>The S3 location of the FAQ input data.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_index_id): <p>The identifier of the index for the FAQ.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_name): <p>A name for the FAQ.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_description): <p>A description for the FAQ.</p>
+    ///   - [`s3_path(S3Path)`](crate::client::fluent_builders::CreateFaq::s3_path) / [`set_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateFaq::set_s3_path): <p>The path to the FAQ file in S3.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFaq::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFaq::set_tags): <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    ///   - [`file_format(FaqFileFormat)`](crate::client::fluent_builders::CreateFaq::file_format) / [`set_file_format(Option<FaqFileFormat>)`](crate::client::fluent_builders::CreateFaq::set_file_format): <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>  <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
+    ///   - [`file_format(FaqFileFormat)`](crate::client::fluent_builders::CreateFaq::file_format) / [`set_file_format(Option<FaqFileFormat>)`](crate::client::fluent_builders::CreateFaq::set_file_format): <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>  <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_client_token): <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
     ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_language_code): <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     /// - On success, responds with [`CreateFaqOutput`](crate::output::CreateFaqOutput) with field(s):
@@ -220,7 +237,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateIndex`](crate::client::fluent_builders::CreateIndex) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_name): <p>The name for the new index.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_name): <p>A name for the index.</p>
     ///   - [`edition(IndexEdition)`](crate::client::fluent_builders::CreateIndex::edition) / [`set_edition(Option<IndexEdition>)`](crate::client::fluent_builders::CreateIndex::set_edition): <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>  <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>  <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_role_arn): <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
     ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::CreateIndex::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::CreateIndex::set_server_side_encryption_configuration): <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
@@ -257,12 +274,12 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateThesaurus`](crate::client::fluent_builders::CreateThesaurus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_index_id): <p>The unique identifier of the index for the new thesaurus. </p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_name): <p>The name for the new thesaurus.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_description): <p>The description for the new thesaurus.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_index_id): <p>The identifier of the index for the thesaurus.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_name): <p>A name for the thesaurus.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_description): <p>A description for the thesaurus.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_role_arn): <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateThesaurus::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateThesaurus::set_tags): <p>A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your resources and to control access to resources. </p>
-    ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::CreateThesaurus::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateThesaurus::set_source_s3_path): <p>The thesaurus file Amazon S3 source path. </p>
+    ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::CreateThesaurus::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateThesaurus::set_source_s3_path): <p>The path to the thesaurus file in S3.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_client_token): <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
     /// - On success, responds with [`CreateThesaurusOutput`](crate::output::CreateThesaurusOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateThesaurusOutput::id): <p>The unique identifier of the thesaurus. </p>
@@ -270,11 +287,24 @@ impl Client {
     pub fn create_thesaurus(&self) -> fluent_builders::CreateThesaurus {
         fluent_builders::CreateThesaurus::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteAccessControlConfiguration`](crate::client::fluent_builders::DeleteAccessControlConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessControlConfiguration::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessControlConfiguration::set_index_id): <p>The identifier of the index for an access control configuration.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessControlConfiguration::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessControlConfiguration::set_id): <p>The identifier of the access control configuration you want to delete.</p>
+    /// - On success, responds with [`DeleteAccessControlConfigurationOutput`](crate::output::DeleteAccessControlConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessControlConfigurationError>`](crate::error::DeleteAccessControlConfigurationError)
+    pub fn delete_access_control_configuration(
+        &self,
+    ) -> fluent_builders::DeleteAccessControlConfiguration {
+        fluent_builders::DeleteAccessControlConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteDataSource`](crate::client::fluent_builders::DeleteDataSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_id): <p>The unique identifier of the data source to delete.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_index_id): <p>The unique identifier of the index associated with the data source.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_id): <p>The identifier of the data source you want to delete.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_index_id): <p>The identifier of the index used with the data source.</p>
     /// - On success, responds with [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::error::DeleteDataSourceError)
@@ -285,7 +315,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteExperience::set_id): <p>The identifier of your Amazon Kendra experience you want to delete.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
     /// - On success, responds with [`DeleteExperienceOutput`](crate::output::DeleteExperienceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteExperienceError>`](crate::error::DeleteExperienceError)
@@ -295,8 +325,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteFaq`](crate::client::fluent_builders::DeleteFaq) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteFaq::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteFaq::set_id): <p>The identifier of the FAQ to remove.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFaq::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteFaq::set_index_id): <p>The index to remove the FAQ from.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteFaq::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteFaq::set_id): <p>The identifier of the FAQ you want to remove.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFaq::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteFaq::set_index_id): <p>The identifier of the index for the FAQ.</p>
     /// - On success, responds with [`DeleteFaqOutput`](crate::output::DeleteFaqOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFaqError>`](crate::error::DeleteFaqError)
@@ -306,7 +336,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteIndex`](crate::client::fluent_builders::DeleteIndex) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteIndex::set_id): <p>The identifier of the index to delete.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteIndex::set_id): <p>The identifier of the index you want to delete.</p>
     /// - On success, responds with [`DeleteIndexOutput`](crate::output::DeleteIndexOutput)
 
     /// - On failure, responds with [`SdkError<DeleteIndexError>`](crate::error::DeleteIndexError)
@@ -317,7 +347,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::set_index_id): <p>The identifier of the index you want to delete a group from.</p>
-    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::set_data_source_id): <p>The identifier of the data source you want to delete a group from.</p>  <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::set_data_source_id): <p>The identifier of the data source you want to delete a group from.</p>  <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
     ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::set_group_id): <p>The identifier of the group you want to delete.</p>
     ///   - [`ordering_id(i64)`](crate::client::fluent_builders::DeletePrincipalMapping::ordering_id) / [`set_ordering_id(Option<i64>)`](crate::client::fluent_builders::DeletePrincipalMapping::set_ordering_id): <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>  <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>  <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra. </p>
     /// - On success, responds with [`DeletePrincipalMappingOutput`](crate::output::DeletePrincipalMappingOutput)
@@ -329,8 +359,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteQuerySuggestionsBlockList`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::set_index_id): <p>The identifier of the you want to delete a block list from.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::set_id): <p>The unique identifier of the block list that needs to be deleted.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::set_index_id): <p>The identifier of the index for the block list.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::set_id): <p>The identifier of the block list you want to delete.</p>
     /// - On success, responds with [`DeleteQuerySuggestionsBlockListOutput`](crate::output::DeleteQuerySuggestionsBlockListOutput)
 
     /// - On failure, responds with [`SdkError<DeleteQuerySuggestionsBlockListError>`](crate::error::DeleteQuerySuggestionsBlockListError)
@@ -342,28 +372,45 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteThesaurus`](crate::client::fluent_builders::DeleteThesaurus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteThesaurus::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteThesaurus::set_id): <p>The identifier of the thesaurus to delete.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteThesaurus::set_index_id): <p>The identifier of the index associated with the thesaurus to delete.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteThesaurus::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteThesaurus::set_id): <p>The identifier of the thesaurus you want to delete.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteThesaurus::set_index_id): <p>The identifier of the index for the thesaurus.</p>
     /// - On success, responds with [`DeleteThesaurusOutput`](crate::output::DeleteThesaurusOutput)
 
     /// - On failure, responds with [`SdkError<DeleteThesaurusError>`](crate::error::DeleteThesaurusError)
     pub fn delete_thesaurus(&self) -> fluent_builders::DeleteThesaurus {
         fluent_builders::DeleteThesaurus::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeAccessControlConfiguration`](crate::client::fluent_builders::DescribeAccessControlConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccessControlConfiguration::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeAccessControlConfiguration::set_index_id): <p>The identifier of the index for an access control configuration.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccessControlConfiguration::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeAccessControlConfiguration::set_id): <p>The identifier of the access control configuration you want to get information on.</p>
+    /// - On success, responds with [`DescribeAccessControlConfigurationOutput`](crate::output::DescribeAccessControlConfigurationOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeAccessControlConfigurationOutput::name): <p>The name for the access control configuration.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeAccessControlConfigurationOutput::description): <p>The description for the access control configuration.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::DescribeAccessControlConfigurationOutput::error_message): <p>The error message containing details if there are issues processing the access control configuration.</p>
+    ///   - [`access_control_list(Option<Vec<Principal>>)`](crate::output::DescribeAccessControlConfigurationOutput::access_control_list): <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    ///   - [`hierarchical_access_control_list(Option<Vec<HierarchicalPrincipal>>)`](crate::output::DescribeAccessControlConfigurationOutput::hierarchical_access_control_list): <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccessControlConfigurationError>`](crate::error::DescribeAccessControlConfigurationError)
+    pub fn describe_access_control_configuration(
+        &self,
+    ) -> fluent_builders::DescribeAccessControlConfiguration {
+        fluent_builders::DescribeAccessControlConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeDataSource`](crate::client::fluent_builders::DescribeDataSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_id): <p>The unique identifier of the data source to describe.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_index_id): <p>The identifier of the index that contains the data source.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_id): <p>The identifier of the data source.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_index_id): <p>The identifier of the index used with the data source.</p>
     /// - On success, responds with [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::DescribeDataSourceOutput::id): <p>The identifier of the data source.</p>
     ///   - [`index_id(Option<String>)`](crate::output::DescribeDataSourceOutput::index_id): <p>The identifier of the index that contains the data source.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeDataSourceOutput::name): <p>The name that you gave the data source when it was created.</p>
     ///   - [`r#type(Option<DataSourceType>)`](crate::output::DescribeDataSourceOutput::type): <p>The type of the data source.</p>
-    ///   - [`configuration(Option<DataSourceConfiguration>)`](crate::output::DescribeDataSourceOutput::configuration): <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
+    ///   - [`configuration(Option<DataSourceConfiguration>)`](crate::output::DescribeDataSourceOutput::configuration): <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::created_at): <p>The Unix timestamp of when the data source was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::updated_at): <p>The Unix timestamp of when the data source was last updated.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeDataSourceOutput::description): <p>The description of the data source.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeDataSourceOutput::description): <p>The description for the data source.</p>
     ///   - [`status(Option<DataSourceStatus>)`](crate::output::DescribeDataSourceOutput::status): <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
     ///   - [`schedule(Option<String>)`](crate::output::DescribeDataSourceOutput::schedule): <p>The schedule for Amazon Kendra to update the index.</p>
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeDataSourceOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.</p>
@@ -378,7 +425,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeExperience::set_id): <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
     /// - On success, responds with [`DescribeExperienceOutput`](crate::output::DescribeExperienceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::DescribeExperienceOutput::id): <p>Shows the identifier of your Amazon Kendra experience.</p>
     ///   - [`index_id(Option<String>)`](crate::output::DescribeExperienceOutput::index_id): <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
@@ -398,11 +445,11 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeFaq`](crate::client::fluent_builders::DescribeFaq) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeFaq::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeFaq::set_id): <p>The unique identifier of the FAQ.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFaq::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeFaq::set_index_id): <p>The identifier of the index that contains the FAQ.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeFaq::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeFaq::set_id): <p>The identifier of the FAQ you want to get information on.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFaq::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeFaq::set_index_id): <p>The identifier of the index for the FAQ.</p>
     /// - On success, responds with [`DescribeFaqOutput`](crate::output::DescribeFaqOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::DescribeFaqOutput::id): <p>The identifier of the FAQ.</p>
-    ///   - [`index_id(Option<String>)`](crate::output::DescribeFaqOutput::index_id): <p>The identifier of the index that contains the FAQ.</p>
+    ///   - [`index_id(Option<String>)`](crate::output::DescribeFaqOutput::index_id): <p>The identifier of the index for the FAQ.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeFaqOutput::name): <p>The name that you gave the FAQ when it was created.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeFaqOutput::description): <p>The description of the FAQ that you provided when it was created.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeFaqOutput::created_at): <p>The date and time that the FAQ was created.</p>
@@ -420,7 +467,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeIndex`](crate::client::fluent_builders::DescribeIndex) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeIndex::set_id): <p>The identifier of the index to describe.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeIndex::set_id): <p>The identifier of the index you want to get information on.</p>
     /// - On success, responds with [`DescribeIndexOutput`](crate::output::DescribeIndexOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::DescribeIndexOutput::name): <p>The name of the index.</p>
     ///   - [`id(Option<String>)`](crate::output::DescribeIndexOutput::id): <p>The identifier of the index.</p>
@@ -431,13 +478,13 @@ impl Client {
     ///   - [`description(Option<String>)`](crate::output::DescribeIndexOutput::description): <p>The description for the index.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeIndexOutput::created_at): <p>The Unix datetime that the index was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeIndexOutput::updated_at): <p>The Unix datetime that the index was last updated.</p>
-    ///   - [`document_metadata_configurations(Option<Vec<DocumentMetadataConfiguration>>)`](crate::output::DescribeIndexOutput::document_metadata_configurations): <p>Configuration settings for any metadata applied to the documents in the index.</p>
+    ///   - [`document_metadata_configurations(Option<Vec<DocumentMetadataConfiguration>>)`](crate::output::DescribeIndexOutput::document_metadata_configurations): <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
     ///   - [`index_statistics(Option<IndexStatistics>)`](crate::output::DescribeIndexOutput::index_statistics): <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
     ///   - [`error_message(Option<String>)`](crate::output::DescribeIndexOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     ///   - [`capacity_units(Option<CapacityUnitsConfiguration>)`](crate::output::DescribeIndexOutput::capacity_units): <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     ///   - [`user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::output::DescribeIndexOutput::user_token_configurations): <p>The user token configuration for the Amazon Kendra index.</p>
     ///   - [`user_context_policy(Option<UserContextPolicy>)`](crate::output::DescribeIndexOutput::user_context_policy): <p>The user context policy for the Amazon Kendra index.</p>
-    ///   - [`user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::output::DescribeIndexOutput::user_group_resolution_configuration): <p>Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+    ///   - [`user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::output::DescribeIndexOutput::user_group_resolution_configuration): <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
     /// - On failure, responds with [`SdkError<DescribeIndexError>`](crate::error::DescribeIndexError)
     pub fn describe_index(&self) -> fluent_builders::DescribeIndex {
         fluent_builders::DescribeIndex::new(self.handle.clone())
@@ -461,20 +508,20 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::set_index_id): <p>The identifier of the index for the block list.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::set_id): <p>The unique identifier of the block list.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::set_id): <p>The identifier of the block list you want to get information on.</p>
     /// - On success, responds with [`DescribeQuerySuggestionsBlockListOutput`](crate::output::DescribeQuerySuggestionsBlockListOutput) with field(s):
-    ///   - [`index_id(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::index_id): <p>Shows the identifier of the index for the block list.</p>
-    ///   - [`id(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::id): <p>Shows the unique identifier of the block list.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::name): <p>Shows the name of the block list.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::description): <p>Shows the description for the block list.</p>
-    ///   - [`status(Option<QuerySuggestionsBlockListStatus>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::status): <p>Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::error_message): <p>Shows the error message with details when there are issues in processing the block list.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::created_at): <p>Shows the date-time a block list for query suggestions was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::updated_at): <p>Shows the date-time a block list for query suggestions was last updated.</p>
+    ///   - [`index_id(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::index_id): <p>The identifier of the index for the block list.</p>
+    ///   - [`id(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::id): <p>The identifier of the block list.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::name): <p>The name of the block list.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::description): <p>The description for the block list.</p>
+    ///   - [`status(Option<QuerySuggestionsBlockListStatus>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::status): <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::error_message): <p>The error message containing details if there are issues processing the block list.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::created_at): <p>The date-time a block list for query suggestions was created.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::updated_at): <p>The date-time a block list for query suggestions was last updated.</p>
     ///   - [`source_s3_path(Option<S3Path>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::source_s3_path): <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>  <p>Each block word or phrase should be on a separate line in a text file.</p>  <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    ///   - [`item_count(Option<i32>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::item_count): <p>Shows the current number of valid, non-empty words or phrases in the block list text file.</p>
-    ///   - [`file_size_bytes(Option<i64>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::file_size_bytes): <p>Shows the current size of the block list text file in S3.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::role_arn): <p>Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>  <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    ///   - [`item_count(Option<i32>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::item_count): <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
+    ///   - [`file_size_bytes(Option<i64>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::file_size_bytes): <p>The current size of the block list text file in S3.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::role_arn): <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>  <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     /// - On failure, responds with [`SdkError<DescribeQuerySuggestionsBlockListError>`](crate::error::DescribeQuerySuggestionsBlockListError)
     pub fn describe_query_suggestions_block_list(
         &self,
@@ -484,17 +531,17 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeQuerySuggestionsConfig`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig::set_index_id): <p>The identifier of the index you want to describe query suggestions settings for.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig::set_index_id): <p>The identifier of the index with query suggestions that you want to get information on.</p>
     /// - On success, responds with [`DescribeQuerySuggestionsConfigOutput`](crate::output::DescribeQuerySuggestionsConfigOutput) with field(s):
-    ///   - [`mode(Option<Mode>)`](crate::output::DescribeQuerySuggestionsConfigOutput::mode): <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>  <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
-    ///   - [`status(Option<QuerySuggestionsStatus>)`](crate::output::DescribeQuerySuggestionsConfigOutput::status): <p>Shows whether the status of query suggestions settings is currently Active or Updating.</p>  <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
-    ///   - [`query_log_look_back_window_in_days(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::query_log_look_back_window_in_days): <p>Shows how recent your queries are in your query log time window (in days).</p>
-    ///   - [`include_queries_without_user_information(Option<bool>)`](crate::output::DescribeQuerySuggestionsConfigOutput::include_queries_without_user_information): <p>Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query suggestions.</p>
-    ///   - [`minimum_number_of_querying_users(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::minimum_number_of_querying_users): <p>Shows the minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
-    ///   - [`minimum_query_count(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::minimum_query_count): <p>Shows the minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
-    ///   - [`last_suggestions_build_time(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsConfigOutput::last_suggestions_build_time): <p>Shows the date-time query suggestions for an index was last updated.</p>
-    ///   - [`last_clear_time(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsConfigOutput::last_clear_time): <p>Shows the date-time query suggestions for an index was last cleared.</p>  <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
-    ///   - [`total_suggestions_count(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::total_suggestions_count): <p>Shows the current total count of query suggestions for an index.</p>  <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
+    ///   - [`mode(Option<Mode>)`](crate::output::DescribeQuerySuggestionsConfigOutput::mode): <p>Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>  <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
+    ///   - [`status(Option<QuerySuggestionsStatus>)`](crate::output::DescribeQuerySuggestionsConfigOutput::status): <p>Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.</p>  <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
+    ///   - [`query_log_look_back_window_in_days(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::query_log_look_back_window_in_days): <p>How recent your queries are in your query log time window (in days).</p>
+    ///   - [`include_queries_without_user_information(Option<bool>)`](crate::output::DescribeQuerySuggestionsConfigOutput::include_queries_without_user_information): <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
+    ///   - [`minimum_number_of_querying_users(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::minimum_number_of_querying_users): <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+    ///   - [`minimum_query_count(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::minimum_query_count): <p>The minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
+    ///   - [`last_suggestions_build_time(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsConfigOutput::last_suggestions_build_time): <p>The date-time query suggestions for an index was last updated.</p>
+    ///   - [`last_clear_time(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsConfigOutput::last_clear_time): <p>The date-time query suggestions for an index was last cleared.</p>  <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
+    ///   - [`total_suggestions_count(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::total_suggestions_count): <p>The current total count of query suggestions for an index.</p>  <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
     /// - On failure, responds with [`SdkError<DescribeQuerySuggestionsConfigError>`](crate::error::DescribeQuerySuggestionsConfigError)
     pub fn describe_query_suggestions_config(
         &self,
@@ -504,11 +551,11 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeThesaurus`](crate::client::fluent_builders::DescribeThesaurus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeThesaurus::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeThesaurus::set_id): <p>The identifier of the thesaurus to describe.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeThesaurus::set_index_id): <p>The identifier of the index associated with the thesaurus to describe.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeThesaurus::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeThesaurus::set_id): <p>The identifier of the thesaurus you want to get information on.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeThesaurus::set_index_id): <p>The identifier of the index for the thesaurus.</p>
     /// - On success, responds with [`DescribeThesaurusOutput`](crate::output::DescribeThesaurusOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::DescribeThesaurusOutput::id): <p>The identifier of the thesaurus.</p>
-    ///   - [`index_id(Option<String>)`](crate::output::DescribeThesaurusOutput::index_id): <p>The identifier of the index associated with the thesaurus to describe.</p>
+    ///   - [`index_id(Option<String>)`](crate::output::DescribeThesaurusOutput::index_id): <p>The identifier of the index for the thesaurus.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeThesaurusOutput::name): <p>The thesaurus name.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeThesaurusOutput::description): <p>The thesaurus description.</p>
     ///   - [`status(Option<ThesaurusStatus>)`](crate::output::DescribeThesaurusOutput::status): <p>The current status of the thesaurus. When the value is <code>ACTIVE</code>, queries are able to use the thesaurus. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>  <p>If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means that Amazon Kendra could not ingest the new thesaurus file. The old thesaurus file is still active. </p>
@@ -583,11 +630,27 @@ impl Client {
     pub fn get_snapshots(&self) -> fluent_builders::GetSnapshots {
         fluent_builders::GetSnapshots::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListAccessControlConfigurations`](crate::client::fluent_builders::ListAccessControlConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessControlConfigurations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessControlConfigurations::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListAccessControlConfigurations::set_index_id): <p>The identifier of the index for the access control configuration.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessControlConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessControlConfigurations::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessControlConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccessControlConfigurations::set_max_results): <p>The maximum number of access control configurations to return.</p>
+    /// - On success, responds with [`ListAccessControlConfigurationsOutput`](crate::output::ListAccessControlConfigurationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListAccessControlConfigurationsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+    ///   - [`access_control_configurations(Option<Vec<AccessControlConfigurationSummary>>)`](crate::output::ListAccessControlConfigurationsOutput::access_control_configurations): <p>The details of your access control configurations.</p>
+    /// - On failure, responds with [`SdkError<ListAccessControlConfigurationsError>`](crate::error::ListAccessControlConfigurationsError)
+    pub fn list_access_control_configurations(
+        &self,
+    ) -> fluent_builders::ListAccessControlConfigurations {
+        fluent_builders::ListAccessControlConfigurations::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListDataSources`](crate::client::fluent_builders::ListDataSources) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSources::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_index_id): <p>The identifier of the index that contains the data source.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_index_id): <p>The identifier of the index used with one or more data sources.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data sources (<code>DataSourceSummaryItems</code>). </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSources::set_max_results): <p>The maximum number of data sources to return.</p>
     /// - On success, responds with [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput) with field(s):
@@ -602,7 +665,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_id): <p>The identifier of the data source.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_index_id): <p>The identifier of the index that contains the data source.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_index_id): <p>The identifier of the index used with the data source.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSourceSyncJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_max_results): <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     ///   - [`start_time_filter(TimeRange)`](crate::client::fluent_builders::ListDataSourceSyncJobs::start_time_filter) / [`set_start_time_filter(Option<TimeRange>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_start_time_filter): <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates. </p>
@@ -732,7 +795,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThesauri::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListThesauri::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListThesauri::set_index_id): <p>The identifier of the index associated with the thesaurus to list.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListThesauri::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListThesauri::set_index_id): <p>The identifier of the index with one or more thesauri.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThesauri::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThesauri::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>). </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThesauri::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThesauri::set_max_results): <p>The maximum number of thesauri to return.</p>
     /// - On success, responds with [`ListThesauriOutput`](crate::output::ListThesauriOutput) with field(s):
@@ -841,18 +904,35 @@ impl Client {
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateAccessControlConfiguration`](crate::client::fluent_builders::UpdateAccessControlConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_index_id): <p>The identifier of the index for an access control configuration.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_id): <p>The identifier of the access control configuration you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_name): <p>A new name for the access control configuration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_description): <p>A new description for the access control configuration.</p>
+    ///   - [`access_control_list(Vec<Principal>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::access_control_list) / [`set_access_control_list(Option<Vec<Principal>>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_access_control_list): <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    ///   - [`hierarchical_access_control_list(Vec<HierarchicalPrincipal>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::hierarchical_access_control_list) / [`set_hierarchical_access_control_list(Option<Vec<HierarchicalPrincipal>>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_hierarchical_access_control_list): <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    /// - On success, responds with [`UpdateAccessControlConfigurationOutput`](crate::output::UpdateAccessControlConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAccessControlConfigurationError>`](crate::error::UpdateAccessControlConfigurationError)
+    pub fn update_access_control_configuration(
+        &self,
+    ) -> fluent_builders::UpdateAccessControlConfiguration {
+        fluent_builders::UpdateAccessControlConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateDataSource`](crate::client::fluent_builders::UpdateDataSource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_id): <p>The unique identifier of the data source to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_name): <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_index_id): <p>The identifier of the index that contains the data source to update.</p>
-    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::UpdateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_configuration): <p>Configuration information for an Amazon Kendra data source you want to update.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_description): <p>The new description for the data source.</p>
-    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_schedule): <p>The new update schedule for the data source.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
-    ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_language_code): <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::UpdateDataSource::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_custom_document_enrichment_configuration): <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_id): <p>The identifier of the data source you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_name): <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_index_id): <p>The identifier of the index used with the data source connector.</p>
+    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::UpdateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_configuration): <p>Configuration information you want to update for the data source connector.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_description): <p>A new description for the data source connector.</p>
+    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_schedule): <p>The sync schedule you want to update for the data source connector.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_language_code): <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::UpdateDataSource::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_custom_document_enrichment_configuration): <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     /// - On success, responds with [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDataSourceError>`](crate::error::UpdateDataSourceError)
@@ -863,11 +943,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_id): <p>The identifier of your Amazon Kendra experience you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_name): <p>The name of your Amazon Kendra experience you want to update.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_name): <p>A new name for your Amazon Kendra experience.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::UpdateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::UpdateExperience::set_configuration): <p>Configuration information for your Amazon Kendra you want to update.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_description): <p>The description of your Amazon Kendra experience you want to update.</p>
+    ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::UpdateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::UpdateExperience::set_configuration): <p>Configuration information you want to update for your Amazon Kendra experience.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_description): <p>A new description for your Amazon Kendra experience.</p>
     /// - On success, responds with [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput)
 
     /// - On failure, responds with [`SdkError<UpdateExperienceError>`](crate::error::UpdateExperienceError)
@@ -877,11 +957,11 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateIndex`](crate::client::fluent_builders::UpdateIndex) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_id): <p>The identifier of the index to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_name): <p>The name of the index to update.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_role_arn): <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_id): <p>The identifier of the index you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_name): <p>The name of the index you want to update.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_role_arn): <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_description): <p>A new description for the index.</p>
-    ///   - [`document_metadata_configuration_updates(Vec<DocumentMetadataConfiguration>)`](crate::client::fluent_builders::UpdateIndex::document_metadata_configuration_updates) / [`set_document_metadata_configuration_updates(Option<Vec<DocumentMetadataConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_document_metadata_configuration_updates): <p>The document metadata you want to update.</p>
+    ///   - [`document_metadata_configuration_updates(Vec<DocumentMetadataConfiguration>)`](crate::client::fluent_builders::UpdateIndex::document_metadata_configuration_updates) / [`set_document_metadata_configuration_updates(Option<Vec<DocumentMetadataConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_document_metadata_configuration_updates): <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
     ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::UpdateIndex::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_capacity_units): <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>  <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
     ///   - [`user_token_configurations(Vec<UserTokenConfiguration>)`](crate::client::fluent_builders::UpdateIndex::user_token_configurations) / [`set_user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_user_token_configurations): <p>The user token configuration.</p>
     ///   - [`user_context_policy(UserContextPolicy)`](crate::client::fluent_builders::UpdateIndex::user_context_policy) / [`set_user_context_policy(Option<UserContextPolicy>)`](crate::client::fluent_builders::UpdateIndex::set_user_context_policy): <p>The user context policy.</p>
@@ -895,10 +975,10 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateQuerySuggestionsBlockList`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_index_id): <p>The identifier of the index for a block list.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_id): <p>The unique identifier of a block list.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_name): <p>The name of a block list.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_description): <p>The description for a block list.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_index_id): <p>The identifier of the index for the block list.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_id): <p>The identifier of the block list you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_name): <p>A new name for the block list.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_description): <p>A new description for the block list.</p>
     ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_source_s3_path): <p>The S3 path where your block list text file sits in S3.</p>  <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>  <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_role_arn): <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
     /// - On success, responds with [`UpdateQuerySuggestionsBlockListOutput`](crate::output::UpdateQuerySuggestionsBlockListOutput)
@@ -912,7 +992,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateQuerySuggestionsConfig`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_index_id): <p>The identifier of the index you want to update query suggestions settings for.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_index_id): <p> The identifier of the index with query suggestions you want to update.</p>
     ///   - [`mode(Mode)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::mode) / [`set_mode(Option<Mode>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_mode): <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>  <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>  <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
     ///   - [`query_log_look_back_window_in_days(i32)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::query_log_look_back_window_in_days) / [`set_query_log_look_back_window_in_days(Option<i32>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_query_log_look_back_window_in_days): <p>How recent your queries are in your query log time window.</p>  <p>The time window is the number of days from current day to past days.</p>  <p>By default, Amazon Kendra sets this to 180.</p>
     ///   - [`include_queries_without_user_information(bool)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::include_queries_without_user_information) / [`set_include_queries_without_user_information(Option<bool>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_include_queries_without_user_information): <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>  <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>  <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>  <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
@@ -927,11 +1007,11 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateThesaurus`](crate::client::fluent_builders::UpdateThesaurus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_id): <p>The identifier of the thesaurus to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_name): <p>The updated name of the thesaurus.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_index_id): <p>The identifier of the index associated with the thesaurus to update.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_description): <p>The updated description of the thesaurus.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_role_arn): <p>The updated role ARN of the thesaurus.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_id): <p>The identifier of the thesaurus you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_name): <p>A new name for the thesaurus.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_index_id): <p>The identifier of the index for the thesaurus.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_description): <p>A new description for the thesaurus.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_role_arn): <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
     ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::UpdateThesaurus::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::UpdateThesaurus::set_source_s3_path): <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     /// - On success, responds with [`UpdateThesaurusOutput`](crate::output::UpdateThesaurusOutput)
 
@@ -1271,6 +1351,7 @@ pub mod fluent_builders {
     /// <p>Adds one or more documents to an index.</p>
     /// <p>The <code>BatchPutDocument</code> API enables you to ingest inline documents or a set of documents stored in an Amazon S3 bucket. Use this API to ingest your text and unstructured text into an index, add custom attributes to the documents, and to attach an access control list to the documents added to the index.</p>
     /// <p>The documents are indexed asynchronously. You can see the progress of the batch using Amazon Web Services CloudWatch. Any error messages related to processing the batch are sent to your Amazon Web Services CloudWatch log.</p>
+    /// <p>For an example of ingesting inline documents using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-binary-doc.html">Adding files directly to an index</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutDocument {
         handle: std::sync::Arc<super::Handle>,
@@ -1437,12 +1518,135 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateAccessControlConfiguration`.
+    ///
+    /// <p>Creates an access configuration for your documents. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    /// <p>You can use this to re-configure your existing document level access control without indexing all of your documents again. For example, your index contains top-secret company documents that only certain employees or users should access. One of these users leaves the company or switches to a team that should be blocked from access to top-secret documents. Your documents in your index still give this user access to top-secret documents due to the user having access at the time your documents were indexed. You can create a specific access control configuration for this user with deny access. You can later update the access control configuration to allow access in the case the user returns to the company and re-joins the 'top-secret' team. You can re-configure access control for your documents circumstances change.</p>
+    /// <p>To apply your access control configuration to certain documents, you call the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a> API with the <code>AccessControlConfigurationId</code> included in the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a> object. If you use an S3 bucket as a data source, you update the <code>.metadata.json</code> with the <code>AccessControlConfigurationId</code> and synchronize your data source. Amazon Kendra currently only supports access control configuration for S3 data sources and documents indexed using the <code>BatchPutDocument</code> API.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateAccessControlConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_access_control_configuration_input::Builder,
+    }
+    impl CreateAccessControlConfiguration {
+        /// Creates a new `CreateAccessControlConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAccessControlConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateAccessControlConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index to create an access control configuration for your documents.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
+            self
+        }
+        /// <p>The identifier of the index to create an access control configuration for your documents.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>A name for the access control configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A name for the access control configuration.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A description for the access control configuration.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description for the access control configuration.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `AccessControlList`.
+        ///
+        /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
+        ///
+        /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn access_control_list(mut self, input: crate::model::Principal) -> Self {
+            self.inner = self.inner.access_control_list(input);
+            self
+        }
+        /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn set_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        ) -> Self {
+            self.inner = self.inner.set_access_control_list(input);
+            self
+        }
+        /// Appends an item to `HierarchicalAccessControlList`.
+        ///
+        /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).
+        ///
+        /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn hierarchical_access_control_list(
+            mut self,
+            input: crate::model::HierarchicalPrincipal,
+        ) -> Self {
+            self.inner = self.inner.hierarchical_access_control_list(input);
+            self
+        }
+        /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn set_hierarchical_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+        ) -> Self {
+            self.inner = self.inner.set_hierarchical_access_control_list(input);
+            self
+        }
+        /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateDataSource`.
     ///
     /// <p>Creates a data source that you want to use with an Amazon Kendra index. </p>
     /// <p>You specify a name, data source connector type and description for your data source. You also specify configuration information for the data source connector.</p>
     /// <p> <code>CreateDataSource</code> is a synchronous operation. The operation returns 200 if the data source was successfully created. Otherwise, an exception is raised.</p>
     /// <p>Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a> data sources are the only supported data sources in the Amazon Web Services GovCloud (US-West) region.</p>
+    /// <p>For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting started with Python SDK</a>. For an example of creating an index and data source using the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting started with Java SDK</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSource {
         handle: std::sync::Arc<super::Handle>,
@@ -1482,32 +1686,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
+        /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
+        /// <p>A unique name for the data source connector. A data source name can't be changed without deleting and recreating the data source connector.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The identifier of the index that should be associated with this data source.</p>
+        /// <p>The identifier of the index you want to use with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index that should be associated with this data source.</p>
+        /// <p>The identifier of the index you want to use with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The type of repository that contains the data source.</p>
+        /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of repository that contains the data source.</p>
+        /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataSourceType>,
@@ -1515,14 +1719,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>Configuration information that is required to access the data source repository.</p>
+        /// <p>Configuration information to connect to your data source repository.</p>
         /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Configuration information that is required to access the data source repository.</p>
+        /// <p>Configuration information to connect to your data source repository.</p>
         /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn set_configuration(
@@ -1532,36 +1736,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>A description for the data source.</p>
+        /// <p>A description for the data source connector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description for the data source.</p>
+        /// <p>A description for the data source connector.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
+        /// <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
         /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
+        /// <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
         /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1572,12 +1776,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
+        /// <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
+        /// <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1585,22 +1789,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language_code(input.into());
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+        /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1608,7 +1812,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+        /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
@@ -1617,7 +1821,7 @@ pub mod fluent_builders {
             self.inner = self.inner.custom_document_enrichment_configuration(input);
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>
+        /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn set_custom_document_enrichment_configuration(
             mut self,
@@ -1631,7 +1835,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateExperience`.
     ///
-    /// <p>Creates an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
+    /// <p>Creates an Amazon Kendra experience such as a search application. For more information on creating a search application experience, including using the Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExperience {
         handle: std::sync::Arc<super::Handle>,
@@ -1739,6 +1943,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an new set of frequently asked question (FAQ) questions and answers.</p>
     /// <p>Adding FAQs to an index is an asynchronous operation.</p>
+    /// <p>For an example of adding an FAQ to an index using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html#using-faq-file">Using your FAQ file</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFaq {
         handle: std::sync::Arc<super::Handle>,
@@ -1778,42 +1983,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The name that should be associated with the FAQ.</p>
+        /// <p>A name for the FAQ.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name that should be associated with the FAQ.</p>
+        /// <p>A name for the FAQ.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A description of the FAQ.</p>
+        /// <p>A description for the FAQ.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the FAQ.</p>
+        /// <p>A description for the FAQ.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The S3 location of the FAQ input data.</p>
+        /// <p>The path to the FAQ file in S3.</p>
         pub fn s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.inner = self.inner.s3_path(input);
             self
         }
-        /// <p>The S3 location of the FAQ input data.</p>
+        /// <p>The path to the FAQ file in S3.</p>
         pub fn set_s3_path(mut self, input: std::option::Option<crate::model::S3Path>) -> Self {
             self.inner = self.inner.set_s3_path(input);
             self
@@ -1845,14 +2050,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+        /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
         /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
         pub fn file_format(mut self, input: crate::model::FaqFileFormat) -> Self {
             self.inner = self.inner.file_format(input);
             self
         }
-        /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
+        /// <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>
         /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
         pub fn set_file_format(
@@ -1888,8 +2093,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateIndex`.
     ///
-    /// <p>Creates a new Amazon Kendra index. Index creation is an asynchronous API. To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p>
-    /// <p>Once the index is active you can index your documents using the <code>BatchPutDocument</code> API or using one of the supported data sources. </p>
+    /// <p>Creates an Amazon Kendra index. Index creation is an asynchronous API. To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p>
+    /// <p>Once the index is active you can index your documents using the <code>BatchPutDocument</code> API or using one of the supported data sources.</p>
+    /// <p>For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting started with Python SDK</a>. For an example of creating an index and data source using the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting started with Java SDK</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIndex {
         handle: std::sync::Arc<super::Handle>,
@@ -1929,12 +2135,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for the new index.</p>
+        /// <p>A name for the index.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name for the new index.</p>
+        /// <p>A name for the index.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -2104,6 +2310,7 @@ pub mod fluent_builders {
     /// <p>You need to provide the file location of your block list text file in your S3 bucket. In your text file, enter each block word or phrase on a separate line.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     /// <p> <code>CreateQuerySuggestionsBlockList</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
+    /// <p>For an example of creating a block list for query suggestions using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#suggestions-block-list">Query suggestions block list</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQuerySuggestionsBlockList {
         handle: std::sync::Arc<super::Handle>,
@@ -2237,6 +2444,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateThesaurus`.
     ///
     /// <p>Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.</p>
+    /// <p>For an example of adding a thesaurus file to an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/index-synonyms-adding-thesaurus-file.html">Adding custom synonyms to an index</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateThesaurus {
         handle: std::sync::Arc<super::Handle>,
@@ -2276,32 +2484,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the index for the new thesaurus. </p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The unique identifier of the index for the new thesaurus. </p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The name for the new thesaurus.</p>
+        /// <p>A name for the thesaurus.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name for the new thesaurus.</p>
+        /// <p>A name for the thesaurus.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description for the new thesaurus.</p>
+        /// <p>A description for the thesaurus.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description for the new thesaurus.</p>
+        /// <p>A description for the thesaurus.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -2333,12 +2541,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The thesaurus file Amazon S3 source path. </p>
+        /// <p>The path to the thesaurus file in S3.</p>
         pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.inner = self.inner.source_s3_path(input);
             self
         }
-        /// <p>The thesaurus file Amazon S3 source path. </p>
+        /// <p>The path to the thesaurus file in S3.</p>
         pub fn set_source_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -2354,6 +2562,69 @@ pub mod fluent_builders {
         /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteAccessControlConfiguration`.
+    ///
+    /// <p>Deletes an access control configuration that you created for your documents in an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteAccessControlConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_access_control_configuration_input::Builder,
+    }
+    impl DeleteAccessControlConfiguration {
+        /// Creates a new `DeleteAccessControlConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAccessControlConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAccessControlConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
+            self
+        }
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to delete.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to delete.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -2399,22 +2670,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the data source to delete.</p>
+        /// <p>The identifier of the data source you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier of the data source to delete.</p>
+        /// <p>The identifier of the data source you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The unique identifier of the index associated with the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The unique identifier of the index associated with the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -2472,12 +2743,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -2525,22 +2796,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the FAQ to remove.</p>
+        /// <p>The identifier of the FAQ you want to remove.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the FAQ to remove.</p>
+        /// <p>The identifier of the FAQ you want to remove.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The index to remove the FAQ from.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The index to remove the FAQ from.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -2588,12 +2859,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the index to delete.</p>
+        /// <p>The identifier of the index you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the index to delete.</p>
+        /// <p>The identifier of the index you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -2655,13 +2926,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the data source you want to delete a group from.</p>
-        /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+        /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The identifier of the data source you want to delete a group from.</p>
-        /// <p>This is useful if a group is tied to multiple data sources and you want to delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+        /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2738,22 +3009,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the you want to delete a block list from.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the you want to delete a block list from.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The unique identifier of the block list that needs to be deleted.</p>
+        /// <p>The identifier of the block list you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier of the block list that needs to be deleted.</p>
+        /// <p>The identifier of the block list you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -2801,24 +3072,89 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the thesaurus to delete.</p>
+        /// <p>The identifier of the thesaurus you want to delete.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the thesaurus to delete.</p>
+        /// <p>The identifier of the thesaurus you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to delete.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to delete.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeAccessControlConfiguration`.
+    ///
+    /// <p>Gets information about an access control configuration that you created for your documents in an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeAccessControlConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_access_control_configuration_input::Builder,
+    }
+    impl DescribeAccessControlConfiguration {
+        /// Creates a new `DescribeAccessControlConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAccessControlConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeAccessControlConfigurationError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
+            self
+        }
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to get information on.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to get information on.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -2864,22 +3200,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the data source to describe.</p>
+        /// <p>The identifier of the data source.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier of the data source to describe.</p>
+        /// <p>The identifier of the data source.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -2937,12 +3273,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to get information on.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -2990,22 +3326,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the FAQ.</p>
+        /// <p>The identifier of the FAQ you want to get information on.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier of the FAQ.</p>
+        /// <p>The identifier of the FAQ you want to get information on.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -3013,7 +3349,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeIndex`.
     ///
-    /// <p>Describes an existing Amazon Kendra index.</p>
+    /// <p>Gets information about an existing Amazon Kendra index.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIndex {
         handle: std::sync::Arc<super::Handle>,
@@ -3053,12 +3389,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the index to describe.</p>
+        /// <p>The identifier of the index you want to get information on.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the index to describe.</p>
+        /// <p>The identifier of the index you want to get information on.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -3143,7 +3479,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeQuerySuggestionsBlockList`.
     ///
-    /// <p>Describes a block list used for query suggestions for an index.</p>
+    /// <p>Gets information about a block list used for query suggestions for an index.</p>
     /// <p>This is used to check the current settings that are applied to a block list.</p>
     /// <p> <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3195,12 +3531,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The unique identifier of the block list.</p>
+        /// <p>The identifier of the block list you want to get information on.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier of the block list.</p>
+        /// <p>The identifier of the block list you want to get information on.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -3208,7 +3544,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeQuerySuggestionsConfig`.
     ///
-    /// <p>Describes the settings of query suggestions for an index.</p>
+    /// <p>Gets information on the settings of query suggestions for an index.</p>
     /// <p>This is used to check the current settings applied to query suggestions.</p>
     /// <p> <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3250,12 +3586,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
+        /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index you want to describe query suggestions settings for.</p>
+        /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -3263,7 +3599,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeThesaurus`.
     ///
-    /// <p>Describes an existing Amazon Kendra thesaurus.</p>
+    /// <p>Gets information about an existing Amazon Kendra thesaurus.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeThesaurus {
         handle: std::sync::Arc<super::Handle>,
@@ -3303,22 +3639,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the thesaurus to describe.</p>
+        /// <p>The identifier of the thesaurus you want to get information on.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the thesaurus to describe.</p>
+        /// <p>The identifier of the thesaurus you want to get information on.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -3684,6 +4020,85 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListAccessControlConfigurations`.
+    ///
+    /// <p>Lists one or more access control configurations for an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAccessControlConfigurations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_access_control_configurations_input::Builder,
+    }
+    impl ListAccessControlConfigurations {
+        /// Creates a new `ListAccessControlConfigurations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAccessControlConfigurationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAccessControlConfigurationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccessControlConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAccessControlConfigurationsPaginator {
+            crate::paginator::ListAccessControlConfigurationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the index for the access control configuration.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
+            self
+        }
+        /// <p>The identifier of the index for the access control configuration.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of access control configurations to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of access control configurations to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListDataSources`.
     ///
     /// <p>Lists the data sources that you have created.</p>
@@ -3732,12 +4147,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListDataSourcesPaginator {
             crate::paginator::ListDataSourcesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with one or more data sources.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with one or more data sources.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -3821,12 +4236,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source.</p>
+        /// <p>The identifier of the index used with the data source.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -4514,7 +4929,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListThesauri`.
     ///
-    /// <p>Lists the Amazon Kendra thesauri associated with an index.</p>
+    /// <p>Lists the thesauri for an index.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListThesauri {
         handle: std::sync::Arc<super::Handle>,
@@ -4560,12 +4975,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListThesauriPaginator {
             crate::paginator::ListThesauriPaginator::new(self.handle, self.inner)
         }
-        /// <p>The identifier of the index associated with the thesaurus to list.</p>
+        /// <p>The identifier of the index with one or more thesauri.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to list.</p>
+        /// <p>The identifier of the index with one or more thesauri.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -4595,7 +5010,7 @@ pub mod fluent_builders {
     ///
     /// <p>Maps users to their groups so that you only need to provide the user ID when you issue the query.</p>
     /// <p>You can also map sub groups to groups. For example, the group "Company Intellectual Property Teams" includes sub groups "Research" and "Engineering". These sub groups include their own list of users or people who work in these teams. Only users who work in research and engineering, and therefore belong in the intellectual property group, can see top-secret company documents in their search results.</p>
-    /// <p>You map users to their groups when you want to filter search results for different users based on their group’s access to documents. For more information on filtering search results for different users, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+    /// <p>This is useful for user context filtering, where search results are filtered based on the user or their group access to documents. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     /// <p>If more than five <code>PUT</code> actions for a group are currently processing, a validation exception is thrown.</p>
     /// <p> <code>PutPrincipalMapping</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -5319,6 +5734,128 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateAccessControlConfiguration`.
+    ///
+    /// <p>Updates an access control configuration for your documents in an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    /// <p>You can update an access control configuration you created without indexing all of your documents again. For example, your index contains top-secret company documents that only certain employees or users should access. You created an 'allow' access control configuration for one user who recently joined the 'top-secret' team, switching from a team with 'deny' access to top-secret documents. However, the user suddenly returns to their previous team and should no longer have access to top secret documents. You can update the access control configuration to re-configure access control for your documents as circumstances change.</p>
+    /// <p>You call the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a> API to apply the updated access control configuration, with the <code>AccessControlConfigurationId</code> included in the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a> object. If you use an S3 bucket as a data source, you synchronize your data source to apply the the <code>AccessControlConfigurationId</code> in the <code>.metadata.json</code> file. Amazon Kendra currently only supports access control configuration for S3 data sources and documents indexed using the <code>BatchPutDocument</code> API.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateAccessControlConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_access_control_configuration_input::Builder,
+    }
+    impl UpdateAccessControlConfiguration {
+        /// Creates a new `UpdateAccessControlConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateAccessControlConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateAccessControlConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
+            self
+        }
+        /// <p>The identifier of the index for an access control configuration.</p>
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to update.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The identifier of the access control configuration you want to update.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>A new name for the access control configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A new name for the access control configuration.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A new description for the access control configuration.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A new description for the access control configuration.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `AccessControlList`.
+        ///
+        /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
+        ///
+        /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn access_control_list(mut self, input: crate::model::Principal) -> Self {
+            self.inner = self.inner.access_control_list(input);
+            self
+        }
+        /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn set_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        ) -> Self {
+            self.inner = self.inner.set_access_control_list(input);
+            self
+        }
+        /// Appends an item to `HierarchicalAccessControlList`.
+        ///
+        /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).
+        ///
+        /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn hierarchical_access_control_list(
+            mut self,
+            input: crate::model::HierarchicalPrincipal,
+        ) -> Self {
+            self.inner = self.inner.hierarchical_access_control_list(input);
+            self
+        }
+        /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn set_hierarchical_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+        ) -> Self {
+            self.inner = self.inner.set_hierarchical_access_control_list(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateDataSource`.
     ///
     /// <p>Updates an existing Amazon Kendra data source.</p>
@@ -5361,42 +5898,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the data source to update.</p>
+        /// <p>The identifier of the data source you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier of the data source to update.</p>
+        /// <p>The identifier of the data source you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
+        /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
+        /// <p>A new name for the data source connector. You must first delete the data source and re-create it to change the name of the data source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The identifier of the index that contains the data source to update.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the data source to update.</p>
+        /// <p>The identifier of the index used with the data source connector.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
+        /// <p>Configuration information you want to update for the data source connector.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
+        /// <p>Configuration information you want to update for the data source connector.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -5404,42 +5941,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The new description for the data source.</p>
+        /// <p>A new description for the data source connector.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The new description for the data source.</p>
+        /// <p>A new description for the data source connector.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The new update schedule for the data source.</p>
+        /// <p>The sync schedule you want to update for the data source connector.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>The new update schedule for the data source.</p>
+        /// <p>The sync schedule you want to update for the data source connector.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+        /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language_code(input.into());
             self
         }
-        /// <p>The code for a language. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+        /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5447,7 +5984,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+        /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
@@ -5456,7 +5993,7 @@ pub mod fluent_builders {
             self.inner = self.inner.custom_document_enrichment_configuration(input);
             self
         }
-        /// <p>Configuration information for altering document metadata and content during the document ingestion process when you update a data source.</p>
+        /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn set_custom_document_enrichment_configuration(
             mut self,
@@ -5520,22 +6057,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The name of your Amazon Kendra experience you want to update.</p>
+        /// <p>A new name for your Amazon Kendra experience.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of your Amazon Kendra experience you want to update.</p>
+        /// <p>A new name for your Amazon Kendra experience.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
+        /// <p>The identifier of the index for your Amazon Kendra experience.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -5550,12 +6087,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Configuration information for your Amazon Kendra you want to update.</p>
+        /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
         pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Configuration information for your Amazon Kendra you want to update.</p>
+        /// <p>Configuration information you want to update for your Amazon Kendra experience.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ExperienceConfiguration>,
@@ -5563,12 +6100,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The description of your Amazon Kendra experience you want to update.</p>
+        /// <p>A new description for your Amazon Kendra experience.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of your Amazon Kendra experience you want to update.</p>
+        /// <p>A new description for your Amazon Kendra experience.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -5616,32 +6153,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the index to update.</p>
+        /// <p>The identifier of the index you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the index to update.</p>
+        /// <p>The identifier of the index you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The name of the index to update.</p>
+        /// <p>The name of the index you want to update.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the index to update.</p>
+        /// <p>The name of the index you want to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
+        /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
+        /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -5660,7 +6197,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_document_metadata_configuration_updates`](Self::set_document_metadata_configuration_updates).
         ///
-        /// <p>The document metadata you want to update.</p>
+        /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
         pub fn document_metadata_configuration_updates(
             mut self,
             input: crate::model::DocumentMetadataConfiguration,
@@ -5668,7 +6205,7 @@ pub mod fluent_builders {
             self.inner = self.inner.document_metadata_configuration_updates(input);
             self
         }
-        /// <p>The document metadata you want to update.</p>
+        /// <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
         pub fn set_document_metadata_configuration_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
@@ -5789,42 +6326,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the index for a block list.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index for a block list.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The unique identifier of a block list.</p>
+        /// <p>The identifier of the block list you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The unique identifier of a block list.</p>
+        /// <p>The identifier of the block list you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The name of a block list.</p>
+        /// <p>A new name for the block list.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of a block list.</p>
+        /// <p>A new name for the block list.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description for a block list.</p>
+        /// <p>A new description for the block list.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description for a block list.</p>
+        /// <p>A new description for the block list.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -5904,12 +6441,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the index you want to update query suggestions settings for.</p>
+        /// <p> The identifier of the index with query suggestions you want to update.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index you want to update query suggestions settings for.</p>
+        /// <p> The identifier of the index with query suggestions you want to update.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -6000,7 +6537,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateThesaurus`.
     ///
-    /// <p>Updates a thesaurus file associated with an index.</p>
+    /// <p>Updates a thesaurus for an index.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateThesaurus {
         handle: std::sync::Arc<super::Handle>,
@@ -6040,52 +6577,52 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the thesaurus to update.</p>
+        /// <p>The identifier of the thesaurus you want to update.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the thesaurus to update.</p>
+        /// <p>The identifier of the thesaurus you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The updated name of the thesaurus.</p>
+        /// <p>A new name for the thesaurus.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The updated name of the thesaurus.</p>
+        /// <p>A new name for the thesaurus.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to update.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to update.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The updated description of the thesaurus.</p>
+        /// <p>A new description for the thesaurus.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The updated description of the thesaurus.</p>
+        /// <p>A new description for the thesaurus.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The updated role ARN of the thesaurus.</p>
+        /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The updated role ARN of the thesaurus.</p>
+        /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self

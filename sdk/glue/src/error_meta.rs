@@ -27,7 +27,7 @@ pub enum Error {
     GlueEncryptionException(crate::error::GlueEncryptionException),
     /// <p>The same unique identifier was associated with two different records.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The blueprint is in an invalid state to perform a requested operation.</p>
     IllegalBlueprintStateException(crate::error::IllegalBlueprintStateException),
     /// <p>The session is in an invalid state to perform a requested operation.</p>
     IllegalSessionStateException(crate::error::IllegalSessionStateException),

@@ -301,6 +301,69 @@ impl PutRepositoryPermissionsPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutPackageOriginConfigurationOutput {
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that describes the origin configuration set for the package. It contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that describes how new versions of the package can be introduced to the repository.</p>
+    pub origin_configuration: std::option::Option<crate::model::PackageOriginConfiguration>,
+}
+impl PutPackageOriginConfigurationOutput {
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that describes the origin configuration set for the package. It contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that describes how new versions of the package can be introduced to the repository.</p>
+    pub fn origin_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PackageOriginConfiguration> {
+        self.origin_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for PutPackageOriginConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutPackageOriginConfigurationOutput");
+        formatter.field("origin_configuration", &self.origin_configuration);
+        formatter.finish()
+    }
+}
+/// See [`PutPackageOriginConfigurationOutput`](crate::output::PutPackageOriginConfigurationOutput).
+pub mod put_package_origin_configuration_output {
+
+    /// A builder for [`PutPackageOriginConfigurationOutput`](crate::output::PutPackageOriginConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) origin_configuration:
+            std::option::Option<crate::model::PackageOriginConfiguration>,
+    }
+    impl Builder {
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that describes the origin configuration set for the package. It contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that describes how new versions of the package can be introduced to the repository.</p>
+        pub fn origin_configuration(
+            mut self,
+            input: crate::model::PackageOriginConfiguration,
+        ) -> Self {
+            self.origin_configuration = Some(input);
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that describes the origin configuration set for the package. It contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that describes how new versions of the package can be introduced to the repository.</p>
+        pub fn set_origin_configuration(
+            mut self,
+            input: std::option::Option<crate::model::PackageOriginConfiguration>,
+        ) -> Self {
+            self.origin_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutPackageOriginConfigurationOutput`](crate::output::PutPackageOriginConfigurationOutput).
+        pub fn build(self) -> crate::output::PutPackageOriginConfigurationOutput {
+            crate::output::PutPackageOriginConfigurationOutput {
+                origin_configuration: self.origin_configuration,
+            }
+        }
+    }
+}
+impl PutPackageOriginConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutPackageOriginConfigurationOutput`](crate::output::PutPackageOriginConfigurationOutput).
+    pub fn builder() -> crate::output::put_package_origin_configuration_output::Builder {
+        crate::output::put_package_origin_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDomainPermissionsPolicyOutput {
     /// <p> The resource policy that was set after processing the request. </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -594,11 +657,11 @@ pub struct ListPackageVersionsOutput {
     pub default_display_version: std::option::Option<std::string::String>,
     /// <p> A format of the package. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package. </p>
@@ -621,11 +684,11 @@ impl ListPackageVersionsOutput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -704,21 +767,21 @@ pub mod list_package_versions_output {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -789,11 +852,11 @@ impl ListPackageVersionsOutput {
 pub struct ListPackageVersionDependenciesOutput {
     /// <p> A format that specifies the type of the package that contains the returned dependencies. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the returned package versions dependencies. </p>
@@ -812,11 +875,11 @@ impl ListPackageVersionDependenciesOutput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -884,21 +947,21 @@ pub mod list_package_version_dependencies_output {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -991,18 +1054,18 @@ impl ListPackageVersionDependenciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionAssetsOutput {
-    /// <p> The format of the package that contains the returned package version assets. </p>
+    /// <p> The format of the package that contains the requested package version assets. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p> The name of the package that contains the returned package version assets. </p>
+    /// <p> The name of the package that contains the requested package version assets. </p>
     pub package: std::option::Option<std::string::String>,
-    /// <p> The version of the package associated with the returned assets. </p>
+    /// <p> The version of the package associated with the requested assets. </p>
     pub version: std::option::Option<std::string::String>,
     /// <p> The current revision associated with the package version. </p>
     pub version_revision: std::option::Option<std::string::String>,
@@ -1012,24 +1075,24 @@ pub struct ListPackageVersionAssetsOutput {
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
 }
 impl ListPackageVersionAssetsOutput {
-    /// <p> The format of the package that contains the returned package version assets. </p>
+    /// <p> The format of the package that contains the requested package version assets. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p> The name of the package that contains the returned package version assets. </p>
+    /// <p> The name of the package that contains the requested package version assets. </p>
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p> The version of the package associated with the returned assets. </p>
+    /// <p> The version of the package associated with the requested assets. </p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -1074,12 +1137,12 @@ pub mod list_package_version_assets_output {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
     }
     impl Builder {
-        /// <p> The format of the package that contains the returned package version assets. </p>
+        /// <p> The format of the package that contains the requested package version assets. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the package that contains the returned package version assets. </p>
+        /// <p> The format of the package that contains the requested package version assets. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -1087,42 +1150,42 @@ pub mod list_package_version_assets_output {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p> The name of the package that contains the returned package version assets. </p>
+        /// <p> The name of the package that contains the requested package version assets. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.package = Some(input.into());
             self
         }
-        /// <p> The name of the package that contains the returned package version assets. </p>
+        /// <p> The name of the package that contains the requested package version assets. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package = input;
             self
         }
-        /// <p> The version of the package associated with the returned assets. </p>
+        /// <p> The version of the package associated with the requested assets. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p> The version of the package associated with the returned assets. </p>
+        /// <p> The version of the package associated with the requested assets. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1474,11 +1537,11 @@ impl GetRepositoryEndpointOutput {
 pub struct GetPackageVersionReadmeOutput {
     /// <p> The format of the package with the requested readme file. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the returned readme file. </p>
@@ -1495,11 +1558,11 @@ impl GetPackageVersionReadmeOutput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -1560,21 +1623,21 @@ pub mod get_package_version_readme_output {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -2223,6 +2286,63 @@ impl DescribePackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput).
     pub fn builder() -> crate::output::describe_package_version_output::Builder {
         crate::output::describe_package_version_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePackageOutput {
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
+    pub package: std::option::Option<crate::model::PackageDescription>,
+}
+impl DescribePackageOutput {
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
+    pub fn package(&self) -> std::option::Option<&crate::model::PackageDescription> {
+        self.package.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribePackageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribePackageOutput");
+        formatter.field("package", &self.package);
+        formatter.finish()
+    }
+}
+/// See [`DescribePackageOutput`](crate::output::DescribePackageOutput).
+pub mod describe_package_output {
+
+    /// A builder for [`DescribePackageOutput`](crate::output::DescribePackageOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) package: std::option::Option<crate::model::PackageDescription>,
+    }
+    impl Builder {
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
+        pub fn package(mut self, input: crate::model::PackageDescription) -> Self {
+            self.package = Some(input);
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
+        pub fn set_package(
+            mut self,
+            input: std::option::Option<crate::model::PackageDescription>,
+        ) -> Self {
+            self.package = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribePackageOutput`](crate::output::DescribePackageOutput).
+        pub fn build(self) -> crate::output::DescribePackageOutput {
+            crate::output::DescribePackageOutput {
+                package: self.package,
+            }
+        }
+    }
+}
+impl DescribePackageOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePackageOutput`](crate::output::DescribePackageOutput).
+    pub fn builder() -> crate::output::describe_package_output::Builder {
+        crate::output::describe_package_output::Builder::default()
     }
 }
 

@@ -300,6 +300,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | FinSpace User Environment Management service | [aws-sdk-finspace](https://crates.io/crates/aws-sdk-finspace) ([docs](https://docs.rs/aws-sdk-finspace)) |
 | Firewall Management Service | [aws-sdk-fms](https://crates.io/crates/aws-sdk-fms) ([docs](https://docs.rs/aws-sdk-fms)) |
 | GameSparks | [aws-sdk-gamesparks](https://crates.io/crates/aws-sdk-gamesparks) ([docs](https://docs.rs/aws-sdk-gamesparks)) |
+| IAM Roles Anywhere | [aws-sdk-rolesanywhere](https://crates.io/crates/aws-sdk-rolesanywhere) ([docs](https://docs.rs/aws-sdk-rolesanywhere)) |
 | Inspector2 | [aws-sdk-inspector2](https://crates.io/crates/aws-sdk-inspector2) ([docs](https://docs.rs/aws-sdk-inspector2)) |
 | Managed Streaming for Kafka | [aws-sdk-kafka](https://crates.io/crates/aws-sdk-kafka) ([docs](https://docs.rs/aws-sdk-kafka)) |
 | Managed Streaming for Kafka Connect | [aws-sdk-kafkaconnect](https://crates.io/crates/aws-sdk-kafkaconnect) ([docs](https://docs.rs/aws-sdk-kafkaconnect)) |

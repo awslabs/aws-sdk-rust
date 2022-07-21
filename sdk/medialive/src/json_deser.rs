@@ -1283,6 +1283,13 @@ pub fn deser_operation_crate_operation_delete_reservation(
                             .transpose()?,
                         );
                     }
+                    "renewalSettings" => {
+                        builder = builder.set_renewal_settings(
+                            crate::json_deser::deser_structure_crate_model_renewal_settings(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "reservationId" => {
                         builder = builder.set_reservation_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -2339,6 +2346,13 @@ pub fn deser_operation_crate_operation_describe_reservation(
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                        );
+                    }
+                    "renewalSettings" => {
+                        builder = builder.set_renewal_settings(
+                            crate::json_deser::deser_structure_crate_model_renewal_settings(
+                                tokens,
+                            )?,
                         );
                     }
                     "reservationId" => {
@@ -5722,6 +5736,66 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_renewal_settings<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::RenewalSettings>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::RenewalSettings::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "automaticRenewal" => {
+                                builder = builder.set_automatic_renewal(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::ReservationAutomaticRenewal::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "renewalCount" => {
+                                builder = builder.set_renewal_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_reservation_resource_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -6909,6 +6983,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "renewalSettings" => {
+                                builder = builder.set_renewal_settings(
+                                    crate::json_deser::deser_structure_crate_model_renewal_settings(tokens)?
                                 );
                             }
                             "reservationId" => {
@@ -9753,6 +9832,19 @@ where
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "accessibility" => {
+                                builder = builder.set_accessibility(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::AccessibilityType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "captionSelectorName" => {
                                 builder = builder.set_caption_selector_name(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(

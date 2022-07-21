@@ -911,6 +911,123 @@ pub fn parse_create_domain_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_edge_deployment_plan_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateEdgeDeploymentPlanOutput,
+    crate::error::CreateEdgeDeploymentPlanError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateEdgeDeploymentPlanError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateEdgeDeploymentPlanError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceLimitExceeded" => crate::error::CreateEdgeDeploymentPlanError {
+            meta: generic,
+            kind: crate::error::CreateEdgeDeploymentPlanErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEdgeDeploymentPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateEdgeDeploymentPlanError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_edge_deployment_plan_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateEdgeDeploymentPlanOutput,
+    crate::error::CreateEdgeDeploymentPlanError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_edge_deployment_plan_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_edge_deployment_plan(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateEdgeDeploymentPlanError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_edge_deployment_stage_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateEdgeDeploymentStageOutput,
+    crate::error::CreateEdgeDeploymentStageError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateEdgeDeploymentStageError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateEdgeDeploymentStageError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceLimitExceeded" => crate::error::CreateEdgeDeploymentStageError {
+            meta: generic,
+            kind: crate::error::CreateEdgeDeploymentStageErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEdgeDeploymentStageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateEdgeDeploymentStageError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_edge_deployment_stage_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateEdgeDeploymentStageOutput,
+    crate::error::CreateEdgeDeploymentStageError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_edge_deployment_stage_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_edge_packaging_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3788,6 +3905,122 @@ pub fn parse_delete_domain_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_edge_deployment_plan_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteEdgeDeploymentPlanOutput,
+    crate::error::DeleteEdgeDeploymentPlanError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteEdgeDeploymentPlanError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteEdgeDeploymentPlanError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::DeleteEdgeDeploymentPlanError {
+                meta: generic,
+                kind: crate::error::DeleteEdgeDeploymentPlanErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEdgeDeploymentPlanError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteEdgeDeploymentPlanError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_edge_deployment_plan_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteEdgeDeploymentPlanOutput,
+    crate::error::DeleteEdgeDeploymentPlanError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_edge_deployment_plan_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_edge_deployment_stage_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteEdgeDeploymentStageOutput,
+    crate::error::DeleteEdgeDeploymentStageError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteEdgeDeploymentStageError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteEdgeDeploymentStageError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::DeleteEdgeDeploymentStageError {
+                meta: generic,
+                kind: crate::error::DeleteEdgeDeploymentStageErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEdgeDeploymentStageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteEdgeDeploymentStageError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_edge_deployment_stage_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteEdgeDeploymentStageOutput,
+    crate::error::DeleteEdgeDeploymentStageError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_edge_deployment_stage_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError> {
@@ -5809,6 +6042,69 @@ pub fn parse_describe_domain_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_edge_deployment_plan_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeEdgeDeploymentPlanOutput,
+    crate::error::DescribeEdgeDeploymentPlanError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeEdgeDeploymentPlanError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeEdgeDeploymentPlanError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeEdgeDeploymentPlanError {
+                meta: generic,
+                kind: crate::error::DescribeEdgeDeploymentPlanErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEdgeDeploymentPlanError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeEdgeDeploymentPlanError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_edge_deployment_plan_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeEdgeDeploymentPlanOutput,
+    crate::error::DescribeEdgeDeploymentPlanError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_edge_deployment_plan_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_edge_deployment_plan(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeEdgeDeploymentPlanError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_edge_packaging_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -6045,6 +6341,69 @@ pub fn parse_describe_feature_group_response(
             output,
         )
         .map_err(crate::error::DescribeFeatureGroupError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_feature_metadata_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFeatureMetadataOutput,
+    crate::error::DescribeFeatureMetadataError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeFeatureMetadataError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeFeatureMetadataError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeFeatureMetadataError {
+                meta: generic,
+                kind: crate::error::DescribeFeatureMetadataErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFeatureMetadataError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeFeatureMetadataError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_feature_metadata_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFeatureMetadataOutput,
+    crate::error::DescribeFeatureMetadataError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_feature_metadata_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_feature_metadata(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeFeatureMetadataError::unhandled)?;
         output.build()
     })
 }
@@ -8503,6 +8862,38 @@ pub fn parse_list_domains_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_edge_deployment_plans_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListEdgeDeploymentPlansOutput,
+    crate::error::ListEdgeDeploymentPlansError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListEdgeDeploymentPlansError::unhandled)?;
+    Err(crate::error::ListEdgeDeploymentPlansError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_edge_deployment_plans_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListEdgeDeploymentPlansOutput,
+    crate::error::ListEdgeDeploymentPlansError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_edge_deployment_plans_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_edge_deployment_plans(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListEdgeDeploymentPlansError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_edge_packaging_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -9588,6 +9979,34 @@ pub fn parse_list_projects_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_stage_devices_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListStageDevicesOutput, crate::error::ListStageDevicesError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListStageDevicesError::unhandled)?;
+    Err(crate::error::ListStageDevicesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_stage_devices_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListStageDevicesOutput, crate::error::ListStageDevicesError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_stage_devices_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_stage_devices(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListStageDevicesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_studio_lifecycle_configs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10479,6 +10898,35 @@ pub fn parse_send_pipeline_execution_step_success_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_edge_deployment_stage_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartEdgeDeploymentStageOutput,
+    crate::error::StartEdgeDeploymentStageError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartEdgeDeploymentStageError::unhandled)?;
+    Err(crate::error::StartEdgeDeploymentStageError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_edge_deployment_stage_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartEdgeDeploymentStageOutput,
+    crate::error::StartEdgeDeploymentStageError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_edge_deployment_stage_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_monitoring_schedule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10765,6 +11213,33 @@ pub fn parse_stop_compilation_job_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::stop_compilation_job_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_edge_deployment_stage_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopEdgeDeploymentStageOutput,
+    crate::error::StopEdgeDeploymentStageError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StopEdgeDeploymentStageError::unhandled)?;
+    Err(crate::error::StopEdgeDeploymentStageError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_edge_deployment_stage_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopEdgeDeploymentStageOutput,
+    crate::error::StopEdgeDeploymentStageError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::stop_edge_deployment_stage_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -11896,6 +12371,119 @@ pub fn parse_update_experiment_response(
             output,
         )
         .map_err(crate::error::UpdateExperimentError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_feature_group_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateFeatureGroupOutput,
+    crate::error::UpdateFeatureGroupError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateFeatureGroupError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateFeatureGroupError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::UpdateFeatureGroupError {
+                meta: generic,
+                kind: crate::error::UpdateFeatureGroupErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFeatureGroupError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateFeatureGroupError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_feature_group_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateFeatureGroupOutput,
+    crate::error::UpdateFeatureGroupError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_feature_group_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_feature_group(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateFeatureGroupError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_feature_metadata_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateFeatureMetadataOutput,
+    crate::error::UpdateFeatureMetadataError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateFeatureMetadataError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateFeatureMetadataError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::UpdateFeatureMetadataError {
+                meta: generic,
+                kind: crate::error::UpdateFeatureMetadataErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFeatureMetadataError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateFeatureMetadataError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_feature_metadata_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateFeatureMetadataOutput,
+    crate::error::UpdateFeatureMetadataError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_feature_metadata_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }

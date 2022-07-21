@@ -326,6 +326,7 @@ pub mod add_job_flow_steps_input {
     pub struct Builder {
         pub(crate) job_flow_id: std::option::Option<std::string::String>,
         pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
+        pub(crate) execution_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
@@ -357,6 +358,21 @@ pub mod add_job_flow_steps_input {
             self.steps = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+        /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+        /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+        pub fn set_execution_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AddJobFlowStepsInput`](crate::input::AddJobFlowStepsInput).
         pub fn build(
             self,
@@ -365,6 +381,7 @@ pub mod add_job_flow_steps_input {
             Ok(crate::input::AddJobFlowStepsInput {
                 job_flow_id: self.job_flow_id,
                 steps: self.steps,
+                execution_role_arn: self.execution_role_arn,
             })
         }
     }
@@ -11119,6 +11136,9 @@ pub struct AddJobFlowStepsInput {
     pub job_flow_id: std::option::Option<std::string::String>,
     /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    pub execution_role_arn: std::option::Option<std::string::String>,
 }
 impl AddJobFlowStepsInput {
     /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
@@ -11129,12 +11149,18 @@ impl AddJobFlowStepsInput {
     pub fn steps(&self) -> std::option::Option<&[crate::model::StepConfig]> {
         self.steps.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AddJobFlowStepsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddJobFlowStepsInput");
         formatter.field("job_flow_id", &self.job_flow_id);
         formatter.field("steps", &self.steps);
+        formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.finish()
     }
 }

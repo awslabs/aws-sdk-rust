@@ -571,6 +571,112 @@ pub fn parse_create_alias_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_availability_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateAvailabilityConfigurationOutput,
+    crate::error::CreateAvailabilityConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateAvailabilityConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateAvailabilityConfigurationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::CreateAvailabilityConfigurationError { meta: generic, kind: crate::error::CreateAvailabilityConfigurationErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "LimitExceededException" => crate::error::CreateAvailabilityConfigurationError { meta: generic, kind: crate::error::CreateAvailabilityConfigurationErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NameAvailabilityException" => crate::error::CreateAvailabilityConfigurationError { meta: generic, kind: crate::error::CreateAvailabilityConfigurationErrorKind::NameAvailabilityException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::name_availability_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_name_availability_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotFoundException" => crate::error::CreateAvailabilityConfigurationError { meta: generic, kind: crate::error::CreateAvailabilityConfigurationErrorKind::OrganizationNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationStateException" => crate::error::CreateAvailabilityConfigurationError { meta: generic, kind: crate::error::CreateAvailabilityConfigurationErrorKind::OrganizationStateException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CreateAvailabilityConfigurationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_availability_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateAvailabilityConfigurationOutput,
+    crate::error::CreateAvailabilityConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::create_availability_configuration_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError> {
@@ -1522,6 +1628,70 @@ pub fn parse_delete_alias_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_alias_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_availability_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteAvailabilityConfigurationOutput,
+    crate::error::DeleteAvailabilityConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteAvailabilityConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteAvailabilityConfigurationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "OrganizationNotFoundException" => crate::error::DeleteAvailabilityConfigurationError { meta: generic, kind: crate::error::DeleteAvailabilityConfigurationErrorKind::OrganizationNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationStateException" => crate::error::DeleteAvailabilityConfigurationError { meta: generic, kind: crate::error::DeleteAvailabilityConfigurationErrorKind::OrganizationStateException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeleteAvailabilityConfigurationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_availability_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteAvailabilityConfigurationOutput,
+    crate::error::DeleteAvailabilityConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_availability_configuration_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -4554,6 +4724,88 @@ pub fn parse_list_aliases_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_availability_configurations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAvailabilityConfigurationsOutput,
+    crate::error::ListAvailabilityConfigurationsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListAvailabilityConfigurationsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListAvailabilityConfigurationsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "OrganizationNotFoundException" => crate::error::ListAvailabilityConfigurationsError {
+            meta: generic,
+            kind:
+                crate::error::ListAvailabilityConfigurationsErrorKind::OrganizationNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::organization_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailabilityConfigurationsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "OrganizationStateException" => crate::error::ListAvailabilityConfigurationsError {
+            meta: generic,
+            kind: crate::error::ListAvailabilityConfigurationsErrorKind::OrganizationStateException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::organization_state_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailabilityConfigurationsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::ListAvailabilityConfigurationsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_availability_configurations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAvailabilityConfigurationsOutput,
+    crate::error::ListAvailabilityConfigurationsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_availability_configurations_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_list_availability_configurations(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListAvailabilityConfigurationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_group_members_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGroupMembersOutput, crate::error::ListGroupMembersError>
@@ -7025,6 +7277,132 @@ pub fn parse_tag_resource_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_test_availability_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::TestAvailabilityConfigurationOutput,
+    crate::error::TestAvailabilityConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::TestAvailabilityConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::TestAvailabilityConfigurationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::TestAvailabilityConfigurationError {
+            meta: generic,
+            kind: crate::error::TestAvailabilityConfigurationErrorKind::InvalidParameterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestAvailabilityConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "OrganizationNotFoundException" => crate::error::TestAvailabilityConfigurationError {
+            meta: generic,
+            kind:
+                crate::error::TestAvailabilityConfigurationErrorKind::OrganizationNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::organization_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestAvailabilityConfigurationError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "OrganizationStateException" => crate::error::TestAvailabilityConfigurationError {
+            meta: generic,
+            kind: crate::error::TestAvailabilityConfigurationErrorKind::OrganizationStateException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::organization_state_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestAvailabilityConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceNotFoundException" => crate::error::TestAvailabilityConfigurationError {
+            meta: generic,
+            kind: crate::error::TestAvailabilityConfigurationErrorKind::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestAvailabilityConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::TestAvailabilityConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_test_availability_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::TestAvailabilityConfigurationOutput,
+    crate::error::TestAvailabilityConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::test_availability_configuration_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_test_availability_configuration(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::TestAvailabilityConfigurationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
@@ -7065,6 +7443,98 @@ pub fn parse_untag_resource_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_availability_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateAvailabilityConfigurationOutput,
+    crate::error::UpdateAvailabilityConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateAvailabilityConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateAvailabilityConfigurationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::UpdateAvailabilityConfigurationError { meta: generic, kind: crate::error::UpdateAvailabilityConfigurationErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotFoundException" => crate::error::UpdateAvailabilityConfigurationError { meta: generic, kind: crate::error::UpdateAvailabilityConfigurationErrorKind::OrganizationNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationStateException" => crate::error::UpdateAvailabilityConfigurationError { meta: generic, kind: crate::error::UpdateAvailabilityConfigurationErrorKind::OrganizationStateException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::UpdateAvailabilityConfigurationError { meta: generic, kind: crate::error::UpdateAvailabilityConfigurationErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateAvailabilityConfigurationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_availability_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateAvailabilityConfigurationOutput,
+    crate::error::UpdateAvailabilityConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_availability_configuration_output::Builder::default();
         let _ = response;
         output.build()
     })

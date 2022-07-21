@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetNamedQuery {
     }
 }
 
+/// Operation shape for `BatchGetPreparedStatement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_get_prepared_statement`](crate::client::Client::batch_get_prepared_statement).
+///
+/// See [`crate::client::fluent_builders::BatchGetPreparedStatement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchGetPreparedStatement {
+    _private: (),
+}
+impl BatchGetPreparedStatement {
+    /// Creates a new builder-style object to manufacture [`BatchGetPreparedStatementInput`](crate::input::BatchGetPreparedStatementInput).
+    pub fn builder() -> crate::input::batch_get_prepared_statement_input::Builder {
+        crate::input::batch_get_prepared_statement_input::Builder::default()
+    }
+    /// Creates a new `BatchGetPreparedStatement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchGetPreparedStatement {
+    type Output = std::result::Result<
+        crate::output::BatchGetPreparedStatementOutput,
+        crate::error::BatchGetPreparedStatementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_prepared_statement_error(response)
+        } else {
+            crate::operation_deser::parse_batch_get_prepared_statement_response(response)
+        }
+    }
+}
+
 /// Operation shape for `BatchGetQueryExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

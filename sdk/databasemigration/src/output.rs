@@ -3,6 +3,60 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSubscriptionsToEventBridgeOutput {
+    /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
+    pub result: std::option::Option<std::string::String>,
+}
+impl UpdateSubscriptionsToEventBridgeOutput {
+    /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
+    pub fn result(&self) -> std::option::Option<&str> {
+        self.result.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateSubscriptionsToEventBridgeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSubscriptionsToEventBridgeOutput");
+        formatter.field("result", &self.result);
+        formatter.finish()
+    }
+}
+/// See [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput).
+pub mod update_subscriptions_to_event_bridge_output {
+
+    /// A builder for [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
+        pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.result = Some(input.into());
+            self
+        }
+        /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
+        pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.result = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput).
+        pub fn build(self) -> crate::output::UpdateSubscriptionsToEventBridgeOutput {
+            crate::output::UpdateSubscriptionsToEventBridgeOutput {
+                result: self.result,
+            }
+        }
+    }
+}
+impl UpdateSubscriptionsToEventBridgeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput).
+    pub fn builder() -> crate::output::update_subscriptions_to_event_bridge_output::Builder {
+        crate::output::update_subscriptions_to_event_bridge_output::Builder::default()
+    }
+}
+
+/// <p></p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestConnectionOutput {
     /// <p>The connection tested.</p>
     pub connection: std::option::Option<crate::model::Connection>,

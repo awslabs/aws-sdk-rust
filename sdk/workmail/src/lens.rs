@@ -9,6 +9,16 @@ pub(crate) fn reflens_structure_crate_output_list_aliases_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_availability_configurations_output_next_token(
+    input: &crate::output::ListAvailabilityConfigurationsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_group_members_output_next_token(
     input: &crate::output::ListGroupMembersOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -103,6 +113,16 @@ pub(crate) fn reflens_structure_crate_output_list_users_output_next_token(
     input: &crate::output::ListUsersOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_availability_configurations_output_availability_configurations(
+    input: crate::output::ListAvailabilityConfigurationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AvailabilityConfiguration>> {
+    let input = match input.availability_configurations {
         None => return None,
         Some(t) => t,
     };

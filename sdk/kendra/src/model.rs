@@ -128,7 +128,7 @@ impl AsRef<str> for Mode {
     }
 }
 
-/// <p>Provides the configuration information to fetch access levels of groups and users from an Amazon Web Services Single Sign On identity source. This is useful for setting up user context filtering, where Amazon Kendra filters search results for different users based on their group's access to documents. You can also map your users to their groups for user context filtering using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping API</a>.</p>
+/// <p>Provides the configuration information to fetch access levels of groups and users from an Amazon Web Services Single Sign On identity source. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents. You can also use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping</a> API to map users to their groups so that you only need to provide the user ID when you issue the query.</p>
 /// <p>To set up an Amazon Web Services SSO identity source in the console to use with Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon Web Services SSO identity source</a>. You must also grant the required permissions to use Amazon Web Services SSO with Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for Amazon Web Services SSO</a>.</p>
 /// <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your Amazon Web Services SSO identify source. You must create your index in the management account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
 #[non_exhaustive]
@@ -722,20 +722,20 @@ impl AsRef<str> for KeyLocation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityUnitsConfiguration {
-    /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first.</p>
+    /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.</p>
     pub storage_capacity_units: std::option::Option<i32>,
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
-    /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.</p>
+    /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
     /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
     pub query_capacity_units: std::option::Option<i32>,
 }
 impl CapacityUnitsConfiguration {
-    /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first.</p>
+    /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.</p>
     pub fn storage_capacity_units(&self) -> std::option::Option<i32> {
         self.storage_capacity_units
     }
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
-    /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.</p>
+    /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
     /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
     pub fn query_capacity_units(&self) -> std::option::Option<i32> {
         self.query_capacity_units
@@ -759,25 +759,25 @@ pub mod capacity_units_configuration {
         pub(crate) query_capacity_units: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first.</p>
+        /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.</p>
         pub fn storage_capacity_units(mut self, input: i32) -> Self {
             self.storage_capacity_units = Some(input);
             self
         }
-        /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first.</p>
+        /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.</p>
         pub fn set_storage_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
             self.storage_capacity_units = input;
             self
         }
         /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
-        /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.</p>
+        /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
         /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
         pub fn query_capacity_units(mut self, input: i32) -> Self {
             self.query_capacity_units = Some(input);
             self
         }
         /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
-        /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.</p>
+        /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
         /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
         pub fn set_query_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
             self.query_capacity_units = input;
@@ -799,7 +799,7 @@ impl CapacityUnitsConfiguration {
     }
 }
 
-/// <p>Specifies the properties of a custom index field.</p>
+/// <p>Specifies the properties, such as relevance tuning and searchability, of an index field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentMetadataConfiguration {
@@ -807,7 +807,7 @@ pub struct DocumentMetadataConfiguration {
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the index field. </p>
     pub r#type: std::option::Option<crate::model::DocumentAttributeValueType>,
-    /// <p>Provides manual tuning parameters to determine how the field affects the search results.</p>
+    /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
     pub relevance: std::option::Option<crate::model::Relevance>,
     /// <p>Provides information about how the field is used during a search.</p>
     pub search: std::option::Option<crate::model::Search>,
@@ -821,7 +821,7 @@ impl DocumentMetadataConfiguration {
     pub fn r#type(&self) -> std::option::Option<&crate::model::DocumentAttributeValueType> {
         self.r#type.as_ref()
     }
-    /// <p>Provides manual tuning parameters to determine how the field affects the search results.</p>
+    /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
     pub fn relevance(&self) -> std::option::Option<&crate::model::Relevance> {
         self.relevance.as_ref()
     }
@@ -875,12 +875,12 @@ pub mod document_metadata_configuration {
             self.r#type = input;
             self
         }
-        /// <p>Provides manual tuning parameters to determine how the field affects the search results.</p>
+        /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
         pub fn relevance(mut self, input: crate::model::Relevance) -> Self {
             self.relevance = Some(input);
             self
         }
-        /// <p>Provides manual tuning parameters to determine how the field affects the search results.</p>
+        /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
         pub fn set_relevance(
             mut self,
             input: std::option::Option<crate::model::Relevance>,
@@ -1027,7 +1027,7 @@ impl Search {
     }
 }
 
-/// <p>Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
+/// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Relevance {
@@ -2461,6 +2461,8 @@ pub struct DataSourceConfiguration {
     pub jira_configuration: std::option::Option<crate::model::JiraConfiguration>,
     /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
     pub git_hub_configuration: std::option::Option<crate::model::GitHubConfiguration>,
+    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    pub alfresco_configuration: std::option::Option<crate::model::AlfrescoConfiguration>,
 }
 impl DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2547,6 +2549,12 @@ impl DataSourceConfiguration {
     pub fn git_hub_configuration(&self) -> std::option::Option<&crate::model::GitHubConfiguration> {
         self.git_hub_configuration.as_ref()
     }
+    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    pub fn alfresco_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AlfrescoConfiguration> {
+        self.alfresco_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2570,6 +2578,7 @@ impl std::fmt::Debug for DataSourceConfiguration {
         formatter.field("quip_configuration", &self.quip_configuration);
         formatter.field("jira_configuration", &self.jira_configuration);
         formatter.field("git_hub_configuration", &self.git_hub_configuration);
+        formatter.field("alfresco_configuration", &self.alfresco_configuration);
         formatter.finish()
     }
 }
@@ -2603,6 +2612,7 @@ pub mod data_source_configuration {
         pub(crate) quip_configuration: std::option::Option<crate::model::QuipConfiguration>,
         pub(crate) jira_configuration: std::option::Option<crate::model::JiraConfiguration>,
         pub(crate) git_hub_configuration: std::option::Option<crate::model::GitHubConfiguration>,
+        pub(crate) alfresco_configuration: std::option::Option<crate::model::AlfrescoConfiguration>,
     }
     impl Builder {
         /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2840,6 +2850,22 @@ pub mod data_source_configuration {
             self.git_hub_configuration = input;
             self
         }
+        /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+        pub fn alfresco_configuration(
+            mut self,
+            input: crate::model::AlfrescoConfiguration,
+        ) -> Self {
+            self.alfresco_configuration = Some(input);
+            self
+        }
+        /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+        pub fn set_alfresco_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AlfrescoConfiguration>,
+        ) -> Self {
+            self.alfresco_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
         pub fn build(self) -> crate::model::DataSourceConfiguration {
             crate::model::DataSourceConfiguration {
@@ -2859,6 +2885,7 @@ pub mod data_source_configuration {
                 quip_configuration: self.quip_configuration,
                 jira_configuration: self.jira_configuration,
                 git_hub_configuration: self.git_hub_configuration,
+                alfresco_configuration: self.alfresco_configuration,
             }
         }
     }
@@ -2867,6 +2894,646 @@ impl DataSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
     pub fn builder() -> crate::model::data_source_configuration::Builder {
         crate::model::data_source_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to Alfresco as your data source.</p> <note>
+/// <p>Alfresco data source connector is currently in preview mode. Basic authentication is currently supported. If you would like to use Alfresco connector in production, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlfrescoConfiguration {
+    /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
+    pub site_url: std::option::Option<std::string::String>,
+    /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
+    pub site_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>username—The user name of the Alfresco account.</p> </li>
+    /// <li> <p>password—The password of the Alfresco account.</p> </li>
+    /// </ul>
+    pub secret_arn: std::option::Option<std::string::String>,
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco.</p>
+    pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
+    /// <p> <code>TRUE</code> to index shared files.</p>
+    pub crawl_system_folders: bool,
+    /// <p> <code>TRUE</code> to index comments of blogs and other content.</p>
+    pub crawl_comments: bool,
+    /// <p>Specify whether to index document libraries, wikis, or blogs. You can specify one or more of these options.</p>
+    pub entity_filter: std::option::Option<std::vec::Vec<crate::model::AlfrescoEntity>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco document libraries to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    pub document_library_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    pub blog_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco wikis to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    pub wiki_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of regular expression patterns to include certain files in your Alfresco data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to exclude certain files in your Alfresco data source. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Alfresco. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+}
+impl AlfrescoConfiguration {
+    /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
+    pub fn site_url(&self) -> std::option::Option<&str> {
+        self.site_url.as_deref()
+    }
+    /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>username—The user name of the Alfresco account.</p> </li>
+    /// <li> <p>password—The password of the Alfresco account.</p> </li>
+    /// </ul>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco.</p>
+    pub fn ssl_certificate_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.ssl_certificate_s3_path.as_ref()
+    }
+    /// <p> <code>TRUE</code> to index shared files.</p>
+    pub fn crawl_system_folders(&self) -> bool {
+        self.crawl_system_folders
+    }
+    /// <p> <code>TRUE</code> to index comments of blogs and other content.</p>
+    pub fn crawl_comments(&self) -> bool {
+        self.crawl_comments
+    }
+    /// <p>Specify whether to index document libraries, wikis, or blogs. You can specify one or more of these options.</p>
+    pub fn entity_filter(&self) -> std::option::Option<&[crate::model::AlfrescoEntity]> {
+        self.entity_filter.as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco document libraries to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    pub fn document_library_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.document_library_field_mappings.as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    pub fn blog_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.blog_field_mappings.as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco wikis to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+    pub fn wiki_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.wiki_field_mappings.as_deref()
+    }
+    /// <p>A list of regular expression patterns to include certain files in your Alfresco data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn inclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.inclusion_patterns.as_deref()
+    }
+    /// <p>A list of regular expression patterns to exclude certain files in your Alfresco data source. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusion_patterns.as_deref()
+    }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Alfresco. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn vpc_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for AlfrescoConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlfrescoConfiguration");
+        formatter.field("site_url", &self.site_url);
+        formatter.field("site_id", &self.site_id);
+        formatter.field("secret_arn", &self.secret_arn);
+        formatter.field("ssl_certificate_s3_path", &self.ssl_certificate_s3_path);
+        formatter.field("crawl_system_folders", &self.crawl_system_folders);
+        formatter.field("crawl_comments", &self.crawl_comments);
+        formatter.field("entity_filter", &self.entity_filter);
+        formatter.field(
+            "document_library_field_mappings",
+            &self.document_library_field_mappings,
+        );
+        formatter.field("blog_field_mappings", &self.blog_field_mappings);
+        formatter.field("wiki_field_mappings", &self.wiki_field_mappings);
+        formatter.field("inclusion_patterns", &self.inclusion_patterns);
+        formatter.field("exclusion_patterns", &self.exclusion_patterns);
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.finish()
+    }
+}
+/// See [`AlfrescoConfiguration`](crate::model::AlfrescoConfiguration).
+pub mod alfresco_configuration {
+
+    /// A builder for [`AlfrescoConfiguration`](crate::model::AlfrescoConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) site_url: std::option::Option<std::string::String>,
+        pub(crate) site_id: std::option::Option<std::string::String>,
+        pub(crate) secret_arn: std::option::Option<std::string::String>,
+        pub(crate) ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
+        pub(crate) crawl_system_folders: std::option::Option<bool>,
+        pub(crate) crawl_comments: std::option::Option<bool>,
+        pub(crate) entity_filter: std::option::Option<std::vec::Vec<crate::model::AlfrescoEntity>>,
+        pub(crate) document_library_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) blog_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) wiki_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+    }
+    impl Builder {
+        /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
+        pub fn site_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.site_url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
+        pub fn set_site_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.site_url = input;
+            self
+        }
+        /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.site_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
+        pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.site_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>username—The user name of the Alfresco account.</p> </li>
+        /// <li> <p>password—The password of the Alfresco account.</p> </li>
+        /// </ul>
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>username—The user name of the Alfresco account.</p> </li>
+        /// <li> <p>password—The password of the Alfresco account.</p> </li>
+        /// </ul>
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
+            self
+        }
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco.</p>
+        pub fn ssl_certificate_s3_path(mut self, input: crate::model::S3Path) -> Self {
+            self.ssl_certificate_s3_path = Some(input);
+            self
+        }
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco.</p>
+        pub fn set_ssl_certificate_s3_path(
+            mut self,
+            input: std::option::Option<crate::model::S3Path>,
+        ) -> Self {
+            self.ssl_certificate_s3_path = input;
+            self
+        }
+        /// <p> <code>TRUE</code> to index shared files.</p>
+        pub fn crawl_system_folders(mut self, input: bool) -> Self {
+            self.crawl_system_folders = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to index shared files.</p>
+        pub fn set_crawl_system_folders(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_system_folders = input;
+            self
+        }
+        /// <p> <code>TRUE</code> to index comments of blogs and other content.</p>
+        pub fn crawl_comments(mut self, input: bool) -> Self {
+            self.crawl_comments = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to index comments of blogs and other content.</p>
+        pub fn set_crawl_comments(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_comments = input;
+            self
+        }
+        /// Appends an item to `entity_filter`.
+        ///
+        /// To override the contents of this collection use [`set_entity_filter`](Self::set_entity_filter).
+        ///
+        /// <p>Specify whether to index document libraries, wikis, or blogs. You can specify one or more of these options.</p>
+        pub fn entity_filter(mut self, input: crate::model::AlfrescoEntity) -> Self {
+            let mut v = self.entity_filter.unwrap_or_default();
+            v.push(input);
+            self.entity_filter = Some(v);
+            self
+        }
+        /// <p>Specify whether to index document libraries, wikis, or blogs. You can specify one or more of these options.</p>
+        pub fn set_entity_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlfrescoEntity>>,
+        ) -> Self {
+            self.entity_filter = input;
+            self
+        }
+        /// Appends an item to `document_library_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_document_library_field_mappings`](Self::set_document_library_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco document libraries to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+        pub fn document_library_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.document_library_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.document_library_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco document libraries to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+        pub fn set_document_library_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.document_library_field_mappings = input;
+            self
+        }
+        /// Appends an item to `blog_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_blog_field_mappings`](Self::set_blog_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+        pub fn blog_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.blog_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.blog_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+        pub fn set_blog_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.blog_field_mappings = input;
+            self
+        }
+        /// Appends an item to `wiki_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_wiki_field_mappings`](Self::set_wiki_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco wikis to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+        pub fn wiki_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.wiki_field_mappings.unwrap_or_default();
+            v.push(input);
+            self.wiki_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco wikis to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
+        pub fn set_wiki_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.wiki_field_mappings = input;
+            self
+        }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to include certain files in your Alfresco data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.inclusion_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to include certain files in your Alfresco data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_inclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inclusion_patterns = input;
+            self
+        }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to exclude certain files in your Alfresco data source. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.exclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.exclusion_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to exclude certain files in your Alfresco data source. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_exclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusion_patterns = input;
+            self
+        }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Alfresco. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Alfresco. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlfrescoConfiguration`](crate::model::AlfrescoConfiguration).
+        pub fn build(self) -> crate::model::AlfrescoConfiguration {
+            crate::model::AlfrescoConfiguration {
+                site_url: self.site_url,
+                site_id: self.site_id,
+                secret_arn: self.secret_arn,
+                ssl_certificate_s3_path: self.ssl_certificate_s3_path,
+                crawl_system_folders: self.crawl_system_folders.unwrap_or_default(),
+                crawl_comments: self.crawl_comments.unwrap_or_default(),
+                entity_filter: self.entity_filter,
+                document_library_field_mappings: self.document_library_field_mappings,
+                blog_field_mappings: self.blog_field_mappings,
+                wiki_field_mappings: self.wiki_field_mappings,
+                inclusion_patterns: self.inclusion_patterns,
+                exclusion_patterns: self.exclusion_patterns,
+                vpc_configuration: self.vpc_configuration,
+            }
+        }
+    }
+}
+impl AlfrescoConfiguration {
+    /// Creates a new builder-style object to manufacture [`AlfrescoConfiguration`](crate::model::AlfrescoConfiguration).
+    pub fn builder() -> crate::model::alfresco_configuration::Builder {
+        crate::model::alfresco_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceVpcConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
+pub mod data_source_vpc_configuration {
+
+    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
+        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
+            crate::model::DataSourceVpcConfiguration {
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl DataSourceVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
+    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
+        crate::model::data_source_vpc_configuration::Builder::default()
+    }
+}
+
+/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub data_source_field_name: std::option::Option<std::string::String>,
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub date_field_format: std::option::Option<std::string::String>,
+    /// <p>The name of the field in the index.</p>
+    pub index_field_name: std::option::Option<std::string::String>,
+}
+impl DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
+        self.data_source_field_name.as_deref()
+    }
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub fn date_field_format(&self) -> std::option::Option<&str> {
+        self.date_field_format.as_deref()
+    }
+    /// <p>The name of the field in the index.</p>
+    pub fn index_field_name(&self) -> std::option::Option<&str> {
+        self.index_field_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceToIndexFieldMapping {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
+        formatter.field("data_source_field_name", &self.data_source_field_name);
+        formatter.field("date_field_format", &self.date_field_format);
+        formatter.field("index_field_name", &self.index_field_name);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
+pub mod data_source_to_index_field_mapping {
+
+    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
+        pub(crate) date_field_format: std::option::Option<std::string::String>,
+        pub(crate) index_field_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn set_data_source_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_field_name = input;
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.date_field_format = Some(input.into());
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn set_date_field_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.date_field_format = input;
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn set_index_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.index_field_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
+        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
+            crate::model::DataSourceToIndexFieldMapping {
+                data_source_field_name: self.data_source_field_name,
+                date_field_format: self.date_field_format,
+                index_field_name: self.index_field_name,
+            }
+        }
+    }
+}
+impl DataSourceToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
+    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
+        crate::model::data_source_to_index_field_mapping::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AlfrescoEntity {
+    #[allow(missing_docs)] // documentation missing in model
+    Blog,
+    #[allow(missing_docs)] // documentation missing in model
+    DocumentLibrary,
+    #[allow(missing_docs)] // documentation missing in model
+    Wiki,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AlfrescoEntity {
+    fn from(s: &str) -> Self {
+        match s {
+            "blog" => AlfrescoEntity::Blog,
+            "documentLibrary" => AlfrescoEntity::DocumentLibrary,
+            "wiki" => AlfrescoEntity::Wiki,
+            other => AlfrescoEntity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AlfrescoEntity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AlfrescoEntity::from(s))
+    }
+}
+impl AlfrescoEntity {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AlfrescoEntity::Blog => "blog",
+            AlfrescoEntity::DocumentLibrary => "documentLibrary",
+            AlfrescoEntity::Wiki => "wiki",
+            AlfrescoEntity::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["blog", "documentLibrary", "wiki"]
+    }
+}
+impl AsRef<str> for AlfrescoEntity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3656,198 +4323,6 @@ impl GitHubConfiguration {
     }
 }
 
-/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub data_source_field_name: std::option::Option<std::string::String>,
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub date_field_format: std::option::Option<std::string::String>,
-    /// <p>The name of the field in the index.</p>
-    pub index_field_name: std::option::Option<std::string::String>,
-}
-impl DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
-        self.data_source_field_name.as_deref()
-    }
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub fn date_field_format(&self) -> std::option::Option<&str> {
-        self.date_field_format.as_deref()
-    }
-    /// <p>The name of the field in the index.</p>
-    pub fn index_field_name(&self) -> std::option::Option<&str> {
-        self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
-pub mod data_source_to_index_field_mapping {
-
-    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
-        pub(crate) date_field_format: std::option::Option<std::string::String>,
-        pub(crate) index_field_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.data_source_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn set_data_source_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_field_name = input;
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
-            self.date_field_format = Some(input.into());
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn set_date_field_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.date_field_format = input;
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.index_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn set_index_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.index_field_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
-        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
-            crate::model::DataSourceToIndexFieldMapping {
-                data_source_field_name: self.data_source_field_name,
-                date_field_format: self.date_field_format,
-                index_field_name: self.index_field_name,
-            }
-        }
-    }
-}
-impl DataSourceToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
-    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
-        crate::model::data_source_to_index_field_mapping::Builder::default()
-    }
-}
-
-/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.subnet_ids.as_deref()
-    }
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceVpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
-pub mod data_source_vpc_configuration {
-
-    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// Appends an item to `subnet_ids`.
-        ///
-        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
-        ///
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// Appends an item to `security_group_ids`.
-        ///
-        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
-        ///
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
-        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
-            crate::model::DataSourceVpcConfiguration {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-            }
-        }
-    }
-}
-impl DataSourceVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
-    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
-        crate::model::data_source_vpc_configuration::Builder::default()
-    }
-}
-
 /// <p>Provides the configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4101,7 +4576,7 @@ pub struct OnPremiseConfiguration {
     pub host_url: std::option::Option<std::string::String>,
     /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     pub organization_name: std::option::Option<std::string::String>,
-    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub. </p>
     pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
 }
 impl OnPremiseConfiguration {
@@ -4113,7 +4588,7 @@ impl OnPremiseConfiguration {
     pub fn organization_name(&self) -> std::option::Option<&str> {
         self.organization_name.as_deref()
     }
-    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub. </p>
     pub fn ssl_certificate_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.ssl_certificate_s3_path.as_ref()
     }
@@ -4161,12 +4636,12 @@ pub mod on_premise_configuration {
             self.organization_name = input;
             self
         }
-        /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub. </p>
         pub fn ssl_certificate_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.ssl_certificate_s3_path = Some(input);
             self
         }
-        /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to GitHub. </p>
         pub fn set_ssl_certificate_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -4271,15 +4746,15 @@ impl SaaSConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JiraConfiguration {
-    /// <p>The URL of the Jira account. For example, company.attlassian.net or https://jira.company.com. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+    /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
     pub jira_account_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
+    /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jira-id—The ID of the Jira account.</p> </li>
-    /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
+    /// <li> <p>jiraId—The Jira username.</p> </li>
+    /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication"> Authentication for a Jira data source</a>.</p> </li>
     /// </ul>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>Specify to use the change log option to update your index.</p>
+    /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub use_change_log: bool,
     /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
     pub project: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4312,19 +4787,19 @@ pub struct JiraConfiguration {
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
 }
 impl JiraConfiguration {
-    /// <p>The URL of the Jira account. For example, company.attlassian.net or https://jira.company.com. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+    /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
     pub fn jira_account_url(&self) -> std::option::Option<&str> {
         self.jira_account_url.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
+    /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jira-id—The ID of the Jira account.</p> </li>
-    /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
+    /// <li> <p>jiraId—The Jira username.</p> </li>
+    /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication"> Authentication for a Jira data source</a>.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>Specify to use the change log option to update your index.</p>
+    /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub fn use_change_log(&self) -> bool {
         self.use_change_log
     }
@@ -4439,12 +4914,12 @@ pub mod jira_configuration {
         pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     }
     impl Builder {
-        /// <p>The URL of the Jira account. For example, company.attlassian.net or https://jira.company.com. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+        /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
         pub fn jira_account_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.jira_account_url = Some(input.into());
             self
         }
-        /// <p>The URL of the Jira account. For example, company.attlassian.net or https://jira.company.com. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
+        /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
         pub fn set_jira_account_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4452,30 +4927,30 @@ pub mod jira_configuration {
             self.jira_account_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
+        /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>jira-id—The ID of the Jira account.</p> </li>
-        /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
+        /// <li> <p>jiraId—The Jira username.</p> </li>
+        /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication"> Authentication for a Jira data source</a>.</p> </li>
         /// </ul>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
+        /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>jira-id—The ID of the Jira account.</p> </li>
-        /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
+        /// <li> <p>jiraId—The Jira username.</p> </li>
+        /// <li> <p>jiraCredentials—The Jira API token. For more information on creating an API token in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication"> Authentication for a Jira data source</a>.</p> </li>
         /// </ul>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
         }
-        /// <p>Specify to use the change log option to update your index.</p>
+        /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
         pub fn use_change_log(mut self, input: bool) -> Self {
             self.use_change_log = Some(input);
             self
         }
-        /// <p>Specify to use the change log option to update your index.</p>
+        /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
         pub fn set_use_change_log(mut self, input: std::option::Option<bool>) -> Self {
             self.use_change_log = input;
             self
@@ -4819,13 +5294,13 @@ pub struct QuipConfiguration {
     /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for a Quip data source</a>.</p> </li>
     /// </ul>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>Specify whether to crawl file comments in Quip. You can specify one or more of these options.</p>
+    /// <p> <code>TRUE</code> to index file comments.</p>
     pub crawl_file_comments: bool,
-    /// <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of these options.</p>
+    /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
     pub crawl_chat_rooms: bool,
-    /// <p>Specify whether to crawl attachments in Quip. You can specify one or more of these options.</p>
+    /// <p> <code>TRUE</code> to index attachments.</p>
     pub crawl_attachments: bool,
-    /// <p>The identifier of the Quip folder IDs to index.</p>
+    /// <p>The identifiers of the Quip folders you want to index.</p>
     pub folder_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip threads to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
     pub thread_field_mappings:
@@ -4855,19 +5330,19 @@ impl QuipConfiguration {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>Specify whether to crawl file comments in Quip. You can specify one or more of these options.</p>
+    /// <p> <code>TRUE</code> to index file comments.</p>
     pub fn crawl_file_comments(&self) -> bool {
         self.crawl_file_comments
     }
-    /// <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of these options.</p>
+    /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
     pub fn crawl_chat_rooms(&self) -> bool {
         self.crawl_chat_rooms
     }
-    /// <p>Specify whether to crawl attachments in Quip. You can specify one or more of these options.</p>
+    /// <p> <code>TRUE</code> to index attachments.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
-    /// <p>The identifier of the Quip folder IDs to index.</p>
+    /// <p>The identifiers of the Quip folders you want to index.</p>
     pub fn folder_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.folder_ids.as_deref()
     }
@@ -4971,32 +5446,32 @@ pub mod quip_configuration {
             self.secret_arn = input;
             self
         }
-        /// <p>Specify whether to crawl file comments in Quip. You can specify one or more of these options.</p>
+        /// <p> <code>TRUE</code> to index file comments.</p>
         pub fn crawl_file_comments(mut self, input: bool) -> Self {
             self.crawl_file_comments = Some(input);
             self
         }
-        /// <p>Specify whether to crawl file comments in Quip. You can specify one or more of these options.</p>
+        /// <p> <code>TRUE</code> to index file comments.</p>
         pub fn set_crawl_file_comments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_file_comments = input;
             self
         }
-        /// <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of these options.</p>
+        /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
         pub fn crawl_chat_rooms(mut self, input: bool) -> Self {
             self.crawl_chat_rooms = Some(input);
             self
         }
-        /// <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of these options.</p>
+        /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
         pub fn set_crawl_chat_rooms(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_chat_rooms = input;
             self
         }
-        /// <p>Specify whether to crawl attachments in Quip. You can specify one or more of these options.</p>
+        /// <p> <code>TRUE</code> to index attachments.</p>
         pub fn crawl_attachments(mut self, input: bool) -> Self {
             self.crawl_attachments = Some(input);
             self
         }
-        /// <p>Specify whether to crawl attachments in Quip. You can specify one or more of these options.</p>
+        /// <p> <code>TRUE</code> to index attachments.</p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
@@ -5005,14 +5480,14 @@ pub mod quip_configuration {
         ///
         /// To override the contents of this collection use [`set_folder_ids`](Self::set_folder_ids).
         ///
-        /// <p>The identifier of the Quip folder IDs to index.</p>
+        /// <p>The identifiers of the Quip folders you want to index.</p>
         pub fn folder_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.folder_ids.unwrap_or_default();
             v.push(input.into());
             self.folder_ids = Some(v);
             self
         }
-        /// <p>The identifier of the Quip folder IDs to index.</p>
+        /// <p>The identifiers of the Quip folders you want to index.</p>
         pub fn set_folder_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6550,8 +7025,8 @@ pub struct WebCrawlerConfiguration {
     /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication. To store web proxy credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a>.</p>
     pub proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
     /// <p>Configuration information required to connect to websites using authentication.</p>
-    /// <p>You can connect to websites using basic authentication of user name and password.</p>
-    /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
+    /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
+    /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     pub authentication_configuration:
         std::option::Option<crate::model::AuthenticationConfiguration>,
 }
@@ -6602,8 +7077,8 @@ impl WebCrawlerConfiguration {
         self.proxy_configuration.as_ref()
     }
     /// <p>Configuration information required to connect to websites using authentication.</p>
-    /// <p>You can connect to websites using basic authentication of user name and password.</p>
-    /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
+    /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
+    /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     pub fn authentication_configuration(
         &self,
     ) -> std::option::Option<&crate::model::AuthenticationConfiguration> {
@@ -6786,8 +7261,8 @@ pub mod web_crawler_configuration {
             self
         }
         /// <p>Configuration information required to connect to websites using authentication.</p>
-        /// <p>You can connect to websites using basic authentication of user name and password.</p>
-        /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
+        /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
+        /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
         pub fn authentication_configuration(
             mut self,
             input: crate::model::AuthenticationConfiguration,
@@ -6796,8 +7271,8 @@ pub mod web_crawler_configuration {
             self
         }
         /// <p>Configuration information required to connect to websites using authentication.</p>
-        /// <p>You can connect to websites using basic authentication of user name and password.</p>
-        /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
+        /// <p>You can connect to websites using basic authentication of user name and password. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a> to store your authentication credentials.</p>
+        /// <p>You must provide the website host name and port number. For example, the host name of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
         pub fn set_authentication_configuration(
             mut self,
             input: std::option::Option<crate::model::AuthenticationConfiguration>,
@@ -7694,13 +8169,9 @@ impl GoogleDriveConfiguration {
 pub struct ConfluenceConfiguration {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
     pub server_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Confluence server. The secret must contain a JSON structure with the following keys:</p>
-    /// <ul>
-    /// <li> <p>username—The user name or email address of a user with administrative privileges for the Confluence server.</p> </li>
-    /// <li> <p>password—The password associated with the user logging in to the Confluence server.</p> </li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the version of the Confluence installation that you are connecting to.</p>
+    /// <p>The version or the type of Confluence installation to connect to.</p>
     pub version: std::option::Option<crate::model::ConfluenceVersion>,
     /// <p>Configuration information for indexing Confluence spaces.</p>
     pub space_configuration: std::option::Option<crate::model::ConfluenceSpaceConfiguration>,
@@ -7715,7 +8186,7 @@ pub struct ConfluenceConfiguration {
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>A list of regular expression patterns to include certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are included in the index. Content that doesn't match the patterns is excluded from the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>&gt;A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
+    /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConfluenceConfiguration {
@@ -7723,15 +8194,11 @@ impl ConfluenceConfiguration {
     pub fn server_url(&self) -> std::option::Option<&str> {
         self.server_url.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Confluence server. The secret must contain a JSON structure with the following keys:</p>
-    /// <ul>
-    /// <li> <p>username—The user name or email address of a user with administrative privileges for the Confluence server.</p> </li>
-    /// <li> <p>password—The password associated with the user logging in to the Confluence server.</p> </li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>Specifies the version of the Confluence installation that you are connecting to.</p>
+    /// <p>The version or the type of Confluence installation to connect to.</p>
     pub fn version(&self) -> std::option::Option<&crate::model::ConfluenceVersion> {
         self.version.as_ref()
     }
@@ -7769,7 +8236,7 @@ impl ConfluenceConfiguration {
     pub fn inclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.inclusion_patterns.as_deref()
     }
-    /// <p>&gt;A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
+    /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
     pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_patterns.as_deref()
     }
@@ -7822,30 +8289,22 @@ pub mod confluence_configuration {
             self.server_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Confluence server. The secret must contain a JSON structure with the following keys:</p>
-        /// <ul>
-        /// <li> <p>username—The user name or email address of a user with administrative privileges for the Confluence server.</p> </li>
-        /// <li> <p>password—The password associated with the user logging in to the Confluence server.</p> </li>
-        /// </ul>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Confluence server. The secret must contain a JSON structure with the following keys:</p>
-        /// <ul>
-        /// <li> <p>username—The user name or email address of a user with administrative privileges for the Confluence server.</p> </li>
-        /// <li> <p>password—The password associated with the user logging in to the Confluence server.</p> </li>
-        /// </ul>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence cloud, you use a generated API token as the password. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
         }
-        /// <p>Specifies the version of the Confluence installation that you are connecting to.</p>
+        /// <p>The version or the type of Confluence installation to connect to.</p>
         pub fn version(mut self, input: crate::model::ConfluenceVersion) -> Self {
             self.version = Some(input);
             self
         }
-        /// <p>Specifies the version of the Confluence installation that you are connecting to.</p>
+        /// <p>The version or the type of Confluence installation to connect to.</p>
         pub fn set_version(
             mut self,
             input: std::option::Option<crate::model::ConfluenceVersion>,
@@ -7956,14 +8415,14 @@ pub mod confluence_configuration {
         ///
         /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
         ///
-        /// <p>&gt;A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
+        /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
         pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.exclusion_patterns = Some(v);
             self
         }
-        /// <p>&gt;A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
+        /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
         pub fn set_exclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7999,7 +8458,7 @@ impl ConfluenceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceAttachmentConfiguration {
-    /// <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source. </p>
+    /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub crawl_attachments: bool,
     /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
@@ -8007,7 +8466,7 @@ pub struct ConfluenceAttachmentConfiguration {
         std::option::Option<std::vec::Vec<crate::model::ConfluenceAttachmentToIndexFieldMapping>>,
 }
 impl ConfluenceAttachmentConfiguration {
-    /// <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source. </p>
+    /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
@@ -8039,12 +8498,12 @@ pub mod confluence_attachment_configuration {
         >,
     }
     impl Builder {
-        /// <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source. </p>
+        /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
         pub fn crawl_attachments(mut self, input: bool) -> Self {
             self.crawl_attachments = Some(input);
             self
         }
-        /// <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source. </p>
+        /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
@@ -8585,13 +9044,13 @@ impl AsRef<str> for ConfluenceBlogFieldName {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluencePageConfiguration {
-    /// <p>&gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
+    /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub page_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::ConfluencePageToIndexFieldMapping>>,
 }
 impl ConfluencePageConfiguration {
-    /// <p>&gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
+    /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub fn page_field_mappings(
         &self,
@@ -8620,7 +9079,7 @@ pub mod confluence_page_configuration {
         ///
         /// To override the contents of this collection use [`set_page_field_mappings`](Self::set_page_field_mappings).
         ///
-        /// <p>&gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
+        /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
         /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn page_field_mappings(
             mut self,
@@ -8631,7 +9090,7 @@ pub mod confluence_page_configuration {
             self.page_field_mappings = Some(v);
             self
         }
-        /// <p>&gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
+        /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
         /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn set_page_field_mappings(
             mut self,
@@ -8876,9 +9335,9 @@ impl AsRef<str> for ConfluencePageFieldName {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceSpaceConfiguration {
-    /// <p>Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+    /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     pub crawl_personal_spaces: bool,
-    /// <p>Specifies whether Amazon Kendra should index archived spaces.</p>
+    /// <p> <code>TRUE</code> to index archived spaces.</p>
     pub crawl_archived_spaces: bool,
     /// <p>A list of space keys for Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are indexed. Spaces that aren't in the list aren't indexed. A space in the list must exist. Otherwise, Amazon Kendra logs an error when the data source is synchronized. If a space is in both the <code>IncludeSpaces</code> and the <code>ExcludeSpaces</code> list, the space is excluded.</p>
     pub include_spaces: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8890,11 +9349,11 @@ pub struct ConfluenceSpaceConfiguration {
         std::option::Option<std::vec::Vec<crate::model::ConfluenceSpaceToIndexFieldMapping>>,
 }
 impl ConfluenceSpaceConfiguration {
-    /// <p>Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+    /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     pub fn crawl_personal_spaces(&self) -> bool {
         self.crawl_personal_spaces
     }
-    /// <p>Specifies whether Amazon Kendra should index archived spaces.</p>
+    /// <p> <code>TRUE</code> to index archived spaces.</p>
     pub fn crawl_archived_spaces(&self) -> bool {
         self.crawl_archived_spaces
     }
@@ -8939,22 +9398,22 @@ pub mod confluence_space_configuration {
             std::option::Option<std::vec::Vec<crate::model::ConfluenceSpaceToIndexFieldMapping>>,
     }
     impl Builder {
-        /// <p>Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+        /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
         pub fn crawl_personal_spaces(mut self, input: bool) -> Self {
             self.crawl_personal_spaces = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
+        /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
         pub fn set_crawl_personal_spaces(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_personal_spaces = input;
             self
         }
-        /// <p>Specifies whether Amazon Kendra should index archived spaces.</p>
+        /// <p> <code>TRUE</code> to index archived spaces.</p>
         pub fn crawl_archived_spaces(mut self, input: bool) -> Self {
             self.crawl_archived_spaces = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon Kendra should index archived spaces.</p>
+        /// <p> <code>TRUE</code> to index archived spaces.</p>
         pub fn set_crawl_archived_spaces(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_archived_spaces = input;
             self
@@ -9273,7 +9732,7 @@ impl AsRef<str> for ConfluenceVersion {
 pub struct ServiceNowConfiguration {
     /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
     pub host_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication for a ServiceNow data source</a>.</p>
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the release that the ServiceNow host is running. If the host is not running the <code>LONDON</code> release, use <code>OTHERS</code>.</p>
     pub service_now_build_version: std::option::Option<crate::model::ServiceNowBuildVersionType>,
@@ -9283,7 +9742,7 @@ pub struct ServiceNowConfiguration {
     /// <p>Configuration information for crawling service catalogs in the ServiceNow site.</p>
     pub service_catalog_configuration:
         std::option::Option<crate::model::ServiceNowServiceCatalogConfiguration>,
-    /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the OAuth token and secret provided in the Secrets Manager secret, and the user name and password are used to determine which information Amazon Kendra has access to.</p>
+    /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the credentials of client ID, client secret, user name and password.</p>
     /// <p>When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
     pub authentication_type: std::option::Option<crate::model::ServiceNowAuthenticationType>,
 }
@@ -9292,7 +9751,7 @@ impl ServiceNowConfiguration {
     pub fn host_url(&self) -> std::option::Option<&str> {
         self.host_url.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication for a ServiceNow data source</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -9314,7 +9773,7 @@ impl ServiceNowConfiguration {
     ) -> std::option::Option<&crate::model::ServiceNowServiceCatalogConfiguration> {
         self.service_catalog_configuration.as_ref()
     }
-    /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the OAuth token and secret provided in the Secrets Manager secret, and the user name and password are used to determine which information Amazon Kendra has access to.</p>
+    /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the credentials of client ID, client secret, user name and password.</p>
     /// <p>When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
     pub fn authentication_type(
         &self,
@@ -9368,12 +9827,12 @@ pub mod service_now_configuration {
             self.host_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication for a ServiceNow data source</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication for a ServiceNow data source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -9426,7 +9885,7 @@ pub mod service_now_configuration {
             self.service_catalog_configuration = input;
             self
         }
-        /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the OAuth token and secret provided in the Secrets Manager secret, and the user name and password are used to determine which information Amazon Kendra has access to.</p>
+        /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the credentials of client ID, client secret, user name and password.</p>
         /// <p>When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
         pub fn authentication_type(
             mut self,
@@ -9435,7 +9894,7 @@ pub mod service_now_configuration {
             self.authentication_type = Some(input);
             self
         }
-        /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the OAuth token and secret provided in the Secrets Manager secret, and the user name and password are used to determine which information Amazon Kendra has access to.</p>
+        /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the credentials of client ID, client secret, user name and password.</p>
         /// <p>When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
         pub fn set_authentication_type(
             mut self,
@@ -9523,7 +9982,7 @@ impl AsRef<str> for ServiceNowAuthenticationType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowServiceCatalogConfiguration {
-    /// <p>Indicates whether Amazon Kendra should crawl attachments to the service catalog items. </p>
+    /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
     pub crawl_attachments: bool,
     /// <p>A list of regular expression patterns to include certain attachments of catalogs in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
@@ -9540,7 +9999,7 @@ pub struct ServiceNowServiceCatalogConfiguration {
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
 impl ServiceNowServiceCatalogConfiguration {
-    /// <p>Indicates whether Amazon Kendra should crawl attachments to the service catalog items. </p>
+    /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
@@ -9604,12 +10063,12 @@ pub mod service_now_service_catalog_configuration {
             std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     }
     impl Builder {
-        /// <p>Indicates whether Amazon Kendra should crawl attachments to the service catalog items. </p>
+        /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
         pub fn crawl_attachments(mut self, input: bool) -> Self {
             self.crawl_attachments = Some(input);
             self
         }
-        /// <p>Indicates whether Amazon Kendra should crawl attachments to the service catalog items. </p>
+        /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
@@ -9734,7 +10193,7 @@ impl ServiceNowServiceCatalogConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceNowKnowledgeArticleConfiguration {
-    /// <p>Indicates whether Amazon Kendra should index attachments to knowledge articles.</p>
+    /// <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
     pub crawl_attachments: bool,
     /// <p>A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
@@ -9754,7 +10213,7 @@ pub struct ServiceNowKnowledgeArticleConfiguration {
     pub filter_query: std::option::Option<std::string::String>,
 }
 impl ServiceNowKnowledgeArticleConfiguration {
-    /// <p>Indicates whether Amazon Kendra should index attachments to knowledge articles.</p>
+    /// <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
@@ -9825,12 +10284,12 @@ pub mod service_now_knowledge_article_configuration {
         pub(crate) filter_query: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether Amazon Kendra should index attachments to knowledge articles.</p>
+        /// <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
         pub fn crawl_attachments(mut self, input: bool) -> Self {
             self.crawl_attachments = Some(input);
             self
         }
-        /// <p>Indicates whether Amazon Kendra should index attachments to knowledge articles.</p>
+        /// <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
@@ -10038,7 +10497,7 @@ pub struct OneDriveConfiguration {
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map OneDrive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to OneDrive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The OneDrive data source field names must exist in your OneDrive custom metadata.</p>
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
-    /// <p>A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (<code>False</code>). </p>
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub disable_local_groups: bool,
 }
 impl OneDriveConfiguration {
@@ -10070,7 +10529,7 @@ impl OneDriveConfiguration {
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
     }
-    /// <p>A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (<code>False</code>). </p>
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub fn disable_local_groups(&self) -> bool {
         self.disable_local_groups
     }
@@ -10204,12 +10663,12 @@ pub mod one_drive_configuration {
             self.field_mappings = input;
             self
         }
-        /// <p>A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (<code>False</code>). </p>
+        /// <p> <code>TRUE</code> to disable local groups information.</p>
         pub fn disable_local_groups(mut self, input: bool) -> Self {
             self.disable_local_groups = Some(input);
             self
         }
-        /// <p>A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (<code>False</code>). </p>
+        /// <p> <code>TRUE</code> to disable local groups information.</p>
         pub fn set_disable_local_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_local_groups = input;
             self
@@ -12439,48 +12898,48 @@ impl AsRef<str> for DatabaseEngineType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SharePointConfiguration {
-    /// <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+    /// <p>The version of Microsoft SharePoint that you use.</p>
     pub share_point_version: std::option::Option<crate::model::SharePointVersion>,
-    /// <p>The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.</p>
+    /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>. For more information about Secrets Manager see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p> <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the index; otherwise, <code>FALSE</code>.</p>
+    /// <p> <code>TRUE</code> to index document attachments.</p>
     pub crawl_attachments: bool,
     /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
     pub use_change_log: bool,
     /// <p>A list of regular expression patterns to include certain documents in your SharePoint. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
-    /// <p>The regex is applied to the display URL of the SharePoint document.</p>
+    /// <p>The regex applies to the display URL of the SharePoint document.</p>
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain documents in your SharePoint. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
-    /// <p>The regex is applied to the display URL of the SharePoint document.</p>
+    /// <p>The regex applies to the display URL of the SharePoint document.</p>
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map SharePoint data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to SharePoint fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The SharePoint data source field names must exist in your SharePoint custom metadata.</p>
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>The Microsoft SharePoint attribute field that contains the title of the document.</p>
     pub document_title_field_name: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (<code>False</code>). </p>
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub disable_local_groups: bool,
-    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
     pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
 }
 impl SharePointConfiguration {
-    /// <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+    /// <p>The version of Microsoft SharePoint that you use.</p>
     pub fn share_point_version(&self) -> std::option::Option<&crate::model::SharePointVersion> {
         self.share_point_version.as_ref()
     }
-    /// <p>The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.</p>
+    /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
     pub fn urls(&self) -> std::option::Option<&[std::string::String]> {
         self.urls.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>. For more information about Secrets Manager see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p> <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the index; otherwise, <code>FALSE</code>.</p>
+    /// <p> <code>TRUE</code> to index document attachments.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
@@ -12489,16 +12948,16 @@ impl SharePointConfiguration {
         self.use_change_log
     }
     /// <p>A list of regular expression patterns to include certain documents in your SharePoint. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
-    /// <p>The regex is applied to the display URL of the SharePoint document.</p>
+    /// <p>The regex applies to the display URL of the SharePoint document.</p>
     pub fn inclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.inclusion_patterns.as_deref()
     }
     /// <p>A list of regular expression patterns to exclude certain documents in your SharePoint. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
-    /// <p>The regex is applied to the display URL of the SharePoint document.</p>
+    /// <p>The regex applies to the display URL of the SharePoint document.</p>
     pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_patterns.as_deref()
     }
-    /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
@@ -12514,11 +12973,11 @@ impl SharePointConfiguration {
     pub fn document_title_field_name(&self) -> std::option::Option<&str> {
         self.document_title_field_name.as_deref()
     }
-    /// <p>A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (<code>False</code>). </p>
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub fn disable_local_groups(&self) -> bool {
         self.disable_local_groups
     }
-    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
     pub fn ssl_certificate_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.ssl_certificate_s3_path.as_ref()
     }
@@ -12562,12 +13021,12 @@ pub mod share_point_configuration {
         pub(crate) ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
     }
     impl Builder {
-        /// <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+        /// <p>The version of Microsoft SharePoint that you use.</p>
         pub fn share_point_version(mut self, input: crate::model::SharePointVersion) -> Self {
             self.share_point_version = Some(input);
             self
         }
-        /// <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+        /// <p>The version of Microsoft SharePoint that you use.</p>
         pub fn set_share_point_version(
             mut self,
             input: std::option::Option<crate::model::SharePointVersion>,
@@ -12579,14 +13038,14 @@ pub mod share_point_configuration {
         ///
         /// To override the contents of this collection use [`set_urls`](Self::set_urls).
         ///
-        /// <p>The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.</p>
+        /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
         pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.urls.unwrap_or_default();
             v.push(input.into());
             self.urls = Some(v);
             self
         }
-        /// <p>The URLs of the Microsoft SharePoint site that contains the documents that should be indexed.</p>
+        /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
         pub fn set_urls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12594,22 +13053,22 @@ pub mod share_point_configuration {
             self.urls = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>. For more information about Secrets Manager see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>. For more information about Secrets Manager see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
         }
-        /// <p> <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the index; otherwise, <code>FALSE</code>.</p>
+        /// <p> <code>TRUE</code> to index document attachments.</p>
         pub fn crawl_attachments(mut self, input: bool) -> Self {
             self.crawl_attachments = Some(input);
             self
         }
-        /// <p> <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint site in the index; otherwise, <code>FALSE</code>.</p>
+        /// <p> <code>TRUE</code> to index document attachments.</p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
@@ -12629,7 +13088,7 @@ pub mod share_point_configuration {
         /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
         ///
         /// <p>A list of regular expression patterns to include certain documents in your SharePoint. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
-        /// <p>The regex is applied to the display URL of the SharePoint document.</p>
+        /// <p>The regex applies to the display URL of the SharePoint document.</p>
         pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inclusion_patterns.unwrap_or_default();
             v.push(input.into());
@@ -12637,7 +13096,7 @@ pub mod share_point_configuration {
             self
         }
         /// <p>A list of regular expression patterns to include certain documents in your SharePoint. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
-        /// <p>The regex is applied to the display URL of the SharePoint document.</p>
+        /// <p>The regex applies to the display URL of the SharePoint document.</p>
         pub fn set_inclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12650,7 +13109,7 @@ pub mod share_point_configuration {
         /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
         ///
         /// <p>A list of regular expression patterns to exclude certain documents in your SharePoint. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
-        /// <p>The regex is applied to the display URL of the SharePoint document.</p>
+        /// <p>The regex applies to the display URL of the SharePoint document.</p>
         pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusion_patterns.unwrap_or_default();
             v.push(input.into());
@@ -12658,7 +13117,7 @@ pub mod share_point_configuration {
             self
         }
         /// <p>A list of regular expression patterns to exclude certain documents in your SharePoint. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
-        /// <p>The regex is applied to the display URL of the SharePoint document.</p>
+        /// <p>The regex applies to the display URL of the SharePoint document.</p>
         pub fn set_exclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12666,7 +13125,7 @@ pub mod share_point_configuration {
             self.exclusion_patterns = input;
             self
         }
-        /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
         pub fn vpc_configuration(
             mut self,
             input: crate::model::DataSourceVpcConfiguration,
@@ -12674,7 +13133,7 @@ pub mod share_point_configuration {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+        /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
@@ -12717,22 +13176,22 @@ pub mod share_point_configuration {
             self.document_title_field_name = input;
             self
         }
-        /// <p>A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (<code>False</code>). </p>
+        /// <p> <code>TRUE</code> to disable local groups information.</p>
         pub fn disable_local_groups(mut self, input: bool) -> Self {
             self.disable_local_groups = Some(input);
             self
         }
-        /// <p>A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (<code>False</code>). </p>
+        /// <p> <code>TRUE</code> to disable local groups information.</p>
         pub fn set_disable_local_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_local_groups = input;
             self
         }
-        /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
         pub fn ssl_certificate_s3_path(mut self, input: crate::model::S3Path) -> Self {
             self.ssl_certificate_s3_path = Some(input);
             self
         }
-        /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+        /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
         pub fn set_ssl_certificate_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -13180,6 +13639,296 @@ impl DocumentsMetadataConfiguration {
     /// Creates a new builder-style object to manufacture [`DocumentsMetadataConfiguration`](crate::model::DocumentsMetadataConfiguration).
     pub fn builder() -> crate::model::documents_metadata_configuration::Builder {
         crate::model::documents_metadata_configuration::Builder::default()
+    }
+}
+
+/// <p> Information to define the hierarchy for which documents users should have access to. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HierarchicalPrincipal {
+    /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
+    pub principal_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+}
+impl HierarchicalPrincipal {
+    /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
+    pub fn principal_list(&self) -> std::option::Option<&[crate::model::Principal]> {
+        self.principal_list.as_deref()
+    }
+}
+impl std::fmt::Debug for HierarchicalPrincipal {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HierarchicalPrincipal");
+        formatter.field("principal_list", &self.principal_list);
+        formatter.finish()
+    }
+}
+/// See [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
+pub mod hierarchical_principal {
+
+    /// A builder for [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) principal_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+    }
+    impl Builder {
+        /// Appends an item to `principal_list`.
+        ///
+        /// To override the contents of this collection use [`set_principal_list`](Self::set_principal_list).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
+        pub fn principal_list(mut self, input: crate::model::Principal) -> Self {
+            let mut v = self.principal_list.unwrap_or_default();
+            v.push(input);
+            self.principal_list = Some(v);
+            self
+        }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
+        pub fn set_principal_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        ) -> Self {
+            self.principal_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
+        pub fn build(self) -> crate::model::HierarchicalPrincipal {
+            crate::model::HierarchicalPrincipal {
+                principal_list: self.principal_list,
+            }
+        }
+    }
+}
+impl HierarchicalPrincipal {
+    /// Creates a new builder-style object to manufacture [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
+    pub fn builder() -> crate::model::hierarchical_principal::Builder {
+        crate::model::hierarchical_principal::Builder::default()
+    }
+}
+
+/// <p>Provides user and group information for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Principal {
+    /// <p>The name of the user or group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The type of principal.</p>
+    pub r#type: std::option::Option<crate::model::PrincipalType>,
+    /// <p>Whether to allow or deny document access to the principal.</p>
+    pub access: std::option::Option<crate::model::ReadAccessType>,
+    /// <p>The identifier of the data source the principal should access documents from.</p>
+    pub data_source_id: std::option::Option<std::string::String>,
+}
+impl Principal {
+    /// <p>The name of the user or group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of principal.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Whether to allow or deny document access to the principal.</p>
+    pub fn access(&self) -> std::option::Option<&crate::model::ReadAccessType> {
+        self.access.as_ref()
+    }
+    /// <p>The identifier of the data source the principal should access documents from.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+}
+impl std::fmt::Debug for Principal {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Principal");
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("access", &self.access);
+        formatter.field("data_source_id", &self.data_source_id);
+        formatter.finish()
+    }
+}
+/// See [`Principal`](crate::model::Principal).
+pub mod principal {
+
+    /// A builder for [`Principal`](crate::model::Principal).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::PrincipalType>,
+        pub(crate) access: std::option::Option<crate::model::ReadAccessType>,
+        pub(crate) data_source_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the user or group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the user or group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The type of principal.</p>
+        pub fn r#type(mut self, input: crate::model::PrincipalType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of principal.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Whether to allow or deny document access to the principal.</p>
+        pub fn access(mut self, input: crate::model::ReadAccessType) -> Self {
+            self.access = Some(input);
+            self
+        }
+        /// <p>Whether to allow or deny document access to the principal.</p>
+        pub fn set_access(
+            mut self,
+            input: std::option::Option<crate::model::ReadAccessType>,
+        ) -> Self {
+            self.access = input;
+            self
+        }
+        /// <p>The identifier of the data source the principal should access documents from.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the data source the principal should access documents from.</p>
+        pub fn set_data_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Principal`](crate::model::Principal).
+        pub fn build(self) -> crate::model::Principal {
+            crate::model::Principal {
+                name: self.name,
+                r#type: self.r#type,
+                access: self.access,
+                data_source_id: self.data_source_id,
+            }
+        }
+    }
+}
+impl Principal {
+    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
+    pub fn builder() -> crate::model::principal::Builder {
+        crate::model::principal::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReadAccessType {
+    #[allow(missing_docs)] // documentation missing in model
+    Allow,
+    #[allow(missing_docs)] // documentation missing in model
+    Deny,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReadAccessType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALLOW" => ReadAccessType::Allow,
+            "DENY" => ReadAccessType::Deny,
+            other => ReadAccessType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReadAccessType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReadAccessType::from(s))
+    }
+}
+impl ReadAccessType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReadAccessType::Allow => "ALLOW",
+            ReadAccessType::Deny => "DENY",
+            ReadAccessType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALLOW", "DENY"]
+    }
+}
+impl AsRef<str> for ReadAccessType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PrincipalType {
+    #[allow(missing_docs)] // documentation missing in model
+    Group,
+    #[allow(missing_docs)] // documentation missing in model
+    User,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PrincipalType {
+    fn from(s: &str) -> Self {
+        match s {
+            "GROUP" => PrincipalType::Group,
+            "USER" => PrincipalType::User,
+            other => PrincipalType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PrincipalType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PrincipalType::from(s))
+    }
+}
+impl PrincipalType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PrincipalType::Group => "GROUP",
+            PrincipalType::User => "USER",
+            PrincipalType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["GROUP", "USER"]
+    }
+}
+impl AsRef<str> for PrincipalType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -15099,7 +15848,7 @@ impl SpellCorrectionConfiguration {
 }
 
 /// <p>Provides information about the user context for an Amazon Kendra index.</p>
-/// <p>This is used for filtering search results for different users based on their access to documents.</p>
+/// <p>User context filtering is a kind of personalized search with the benefit of controlling access to documents. For example, not all teams that search the company portal for information should access top-secret company documents, nor are these documents relevant to all users. Only specific users or groups of teams given access to top-secret documents should see these documents in their search results.</p>
 /// <p>You provide one of the following:</p>
 /// <ul>
 /// <li> <p>User token</p> </li>
@@ -15491,17 +16240,17 @@ impl AsRef<str> for SortOrder {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentRelevanceConfiguration {
-    /// <p>The name of the tuning configuration to override document relevance at the index level.</p>
+    /// <p>The name of the index field.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
+    /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub relevance: std::option::Option<crate::model::Relevance>,
 }
 impl DocumentRelevanceConfiguration {
-    /// <p>The name of the tuning configuration to override document relevance at the index level.</p>
+    /// <p>The name of the index field.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
+    /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub fn relevance(&self) -> std::option::Option<&crate::model::Relevance> {
         self.relevance.as_ref()
     }
@@ -15524,22 +16273,22 @@ pub mod document_relevance_configuration {
         pub(crate) relevance: std::option::Option<crate::model::Relevance>,
     }
     impl Builder {
-        /// <p>The name of the tuning configuration to override document relevance at the index level.</p>
+        /// <p>The name of the index field.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the tuning configuration to override document relevance at the index level.</p>
+        /// <p>The name of the index field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
+        /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
         pub fn relevance(mut self, input: crate::model::Relevance) -> Self {
             self.relevance = Some(input);
             self
         }
-        /// <p>Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
+        /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
         pub fn set_relevance(
             mut self,
             input: std::option::Option<crate::model::Relevance>,
@@ -15960,7 +16709,7 @@ impl AttributeFilter {
     }
 }
 
-/// <p>A list of users or sub groups that belong to a group. Users and groups are useful for filtering search results to different users based on their group's access to documents.</p>
+/// <p>A list of users or sub groups that belong to a group. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupMembers {
@@ -16662,7 +17411,7 @@ impl AsRef<str> for QuerySuggestionsBlockListStatus {
     }
 }
 
-/// <p>A summary of information on the configuration of an index.</p>
+/// <p>Summary information on the configuration of an index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexConfigurationSummary {
@@ -16953,21 +17702,21 @@ impl AsRef<str> for IndexEdition {
     }
 }
 
-/// <p> Group summary information. </p>
+/// <p>Summary information for groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupSummary {
-    /// <p> The identifier of the group you want group summary information on. </p>
+    /// <p>The identifier of the group you want group summary information on.</p>
     pub group_id: std::option::Option<std::string::String>,
-    /// <p> The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action. </p>
+    /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
     pub ordering_id: std::option::Option<i64>,
 }
 impl GroupSummary {
-    /// <p> The identifier of the group you want group summary information on. </p>
+    /// <p>The identifier of the group you want group summary information on.</p>
     pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p> The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action. </p>
+    /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
     pub fn ordering_id(&self) -> std::option::Option<i64> {
         self.ordering_id
     }
@@ -16990,22 +17739,22 @@ pub mod group_summary {
         pub(crate) ordering_id: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p> The identifier of the group you want group summary information on. </p>
+        /// <p>The identifier of the group you want group summary information on.</p>
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_id = Some(input.into());
             self
         }
-        /// <p> The identifier of the group you want group summary information on. </p>
+        /// <p>The identifier of the group you want group summary information on.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
         }
-        /// <p> The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action. </p>
+        /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
         pub fn ordering_id(mut self, input: i64) -> Self {
             self.ordering_id = Some(input);
             self
         }
-        /// <p> The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action. </p>
+        /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
         pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
             self.ordering_id = input;
             self
@@ -17026,7 +17775,7 @@ impl GroupSummary {
     }
 }
 
-/// <p>Provides information about a frequently asked questions and answer contained in an index.</p>
+/// <p>Summary information for frequently asked questions and answers included in an index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaqSummary {
@@ -18958,6 +19707,8 @@ impl AsRef<str> for DataSourceStatus {
 )]
 pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
+    Alfresco,
+    #[allow(missing_docs)] // documentation missing in model
     Box,
     #[allow(missing_docs)] // documentation missing in model
     Confluence,
@@ -18997,6 +19748,7 @@ pub enum DataSourceType {
 impl std::convert::From<&str> for DataSourceType {
     fn from(s: &str) -> Self {
         match s {
+            "ALFRESCO" => DataSourceType::Alfresco,
             "BOX" => DataSourceType::Box,
             "CONFLUENCE" => DataSourceType::Confluence,
             "CUSTOM" => DataSourceType::Custom,
@@ -19029,6 +19781,7 @@ impl DataSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DataSourceType::Alfresco => "ALFRESCO",
             DataSourceType::Box => "BOX",
             DataSourceType::Confluence => "CONFLUENCE",
             DataSourceType::Custom => "CUSTOM",
@@ -19052,6 +19805,7 @@ impl DataSourceType {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "ALFRESCO",
             "BOX",
             "CONFLUENCE",
             "CUSTOM",
@@ -19075,6 +19829,58 @@ impl DataSourceType {
 impl AsRef<str> for DataSourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Summary information on an access control configuration that you created for your documents in an index.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessControlConfigurationSummary {
+    /// <p>The identifier of the access control configuration.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl AccessControlConfigurationSummary {
+    /// <p>The identifier of the access control configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for AccessControlConfigurationSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessControlConfigurationSummary");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`AccessControlConfigurationSummary`](crate::model::AccessControlConfigurationSummary).
+pub mod access_control_configuration_summary {
+
+    /// A builder for [`AccessControlConfigurationSummary`](crate::model::AccessControlConfigurationSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the access control configuration.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the access control configuration.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessControlConfigurationSummary`](crate::model::AccessControlConfigurationSummary).
+        pub fn build(self) -> crate::model::AccessControlConfigurationSummary {
+            crate::model::AccessControlConfigurationSummary { id: self.id }
+        }
+    }
+}
+impl AccessControlConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`AccessControlConfigurationSummary`](crate::model::AccessControlConfigurationSummary).
+    pub fn builder() -> crate::model::access_control_configuration_summary::Builder {
+        crate::model::access_control_configuration_summary::Builder::default()
     }
 }
 
@@ -19732,7 +20538,7 @@ impl AsRef<str> for QuerySuggestionsStatus {
     }
 }
 
-/// <p>Information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+/// <p>Summary information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupOrderingIdSummary {
@@ -20333,13 +21139,15 @@ pub struct Document {
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
     /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
-    /// <p>Information on user and group access rights, which is used for user context filtering.</p>
+    /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
     pub hierarchical_access_control_list:
         std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
     pub content_type: std::option::Option<crate::model::ContentType>,
+    /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
+    pub access_control_configuration_id: std::option::Option<std::string::String>,
 }
 impl Document {
     /// <p>A unique identifier of the document in the index.</p>
@@ -20365,7 +21173,7 @@ impl Document {
     pub fn attributes(&self) -> std::option::Option<&[crate::model::DocumentAttribute]> {
         self.attributes.as_deref()
     }
-    /// <p>Information on user and group access rights, which is used for user context filtering.</p>
+    /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn access_control_list(&self) -> std::option::Option<&[crate::model::Principal]> {
         self.access_control_list.as_deref()
     }
@@ -20378,6 +21186,10 @@ impl Document {
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
     pub fn content_type(&self) -> std::option::Option<&crate::model::ContentType> {
         self.content_type.as_ref()
+    }
+    /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
+    pub fn access_control_configuration_id(&self) -> std::option::Option<&str> {
+        self.access_control_configuration_id.as_deref()
     }
 }
 impl std::fmt::Debug for Document {
@@ -20394,6 +21206,10 @@ impl std::fmt::Debug for Document {
             &self.hierarchical_access_control_list,
         );
         formatter.field("content_type", &self.content_type);
+        formatter.field(
+            "access_control_configuration_id",
+            &self.access_control_configuration_id,
+        );
         formatter.finish()
     }
 }
@@ -20412,6 +21228,7 @@ pub mod document {
         pub(crate) hierarchical_access_control_list:
             std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
         pub(crate) content_type: std::option::Option<crate::model::ContentType>,
+        pub(crate) access_control_configuration_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A unique identifier of the document in the index.</p>
@@ -20483,14 +21300,14 @@ pub mod document {
         ///
         /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
         ///
-        /// <p>Information on user and group access rights, which is used for user context filtering.</p>
+        /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
         pub fn access_control_list(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.access_control_list.unwrap_or_default();
             v.push(input);
             self.access_control_list = Some(v);
             self
         }
-        /// <p>Information on user and group access rights, which is used for user context filtering.</p>
+        /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
         pub fn set_access_control_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -20533,6 +21350,22 @@ pub mod document {
             self.content_type = input;
             self
         }
+        /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
+        pub fn access_control_configuration_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.access_control_configuration_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
+        pub fn set_access_control_configuration_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_control_configuration_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Document`](crate::model::Document).
         pub fn build(self) -> crate::model::Document {
             crate::model::Document {
@@ -20544,6 +21377,7 @@ pub mod document {
                 access_control_list: self.access_control_list,
                 hierarchical_access_control_list: self.hierarchical_access_control_list,
                 content_type: self.content_type,
+                access_control_configuration_id: self.access_control_configuration_id,
             }
         }
     }
@@ -20617,296 +21451,6 @@ impl ContentType {
     }
 }
 impl AsRef<str> for ContentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p> Information to define the hierarchy for which documents users should have access to. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HierarchicalPrincipal {
-    /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub principal_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
-}
-impl HierarchicalPrincipal {
-    /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-    pub fn principal_list(&self) -> std::option::Option<&[crate::model::Principal]> {
-        self.principal_list.as_deref()
-    }
-}
-impl std::fmt::Debug for HierarchicalPrincipal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchicalPrincipal");
-        formatter.field("principal_list", &self.principal_list);
-        formatter.finish()
-    }
-}
-/// See [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
-pub mod hierarchical_principal {
-
-    /// A builder for [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) principal_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
-    }
-    impl Builder {
-        /// Appends an item to `principal_list`.
-        ///
-        /// To override the contents of this collection use [`set_principal_list`](Self::set_principal_list).
-        ///
-        /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-        pub fn principal_list(mut self, input: crate::model::Principal) -> Self {
-            let mut v = self.principal_list.unwrap_or_default();
-            v.push(input);
-            self.principal_list = Some(v);
-            self
-        }
-        /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
-        pub fn set_principal_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
-        ) -> Self {
-            self.principal_list = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
-        pub fn build(self) -> crate::model::HierarchicalPrincipal {
-            crate::model::HierarchicalPrincipal {
-                principal_list: self.principal_list,
-            }
-        }
-    }
-}
-impl HierarchicalPrincipal {
-    /// Creates a new builder-style object to manufacture [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
-    pub fn builder() -> crate::model::hierarchical_principal::Builder {
-        crate::model::hierarchical_principal::Builder::default()
-    }
-}
-
-/// <p>Provides user and group information for document access filtering.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Principal {
-    /// <p>The name of the user or group.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The type of principal.</p>
-    pub r#type: std::option::Option<crate::model::PrincipalType>,
-    /// <p>Whether to allow or deny access to the principal.</p>
-    pub access: std::option::Option<crate::model::ReadAccessType>,
-    /// <p>The identifier of the data source the principal should access documents from.</p>
-    pub data_source_id: std::option::Option<std::string::String>,
-}
-impl Principal {
-    /// <p>The name of the user or group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>The type of principal.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PrincipalType> {
-        self.r#type.as_ref()
-    }
-    /// <p>Whether to allow or deny access to the principal.</p>
-    pub fn access(&self) -> std::option::Option<&crate::model::ReadAccessType> {
-        self.access.as_ref()
-    }
-    /// <p>The identifier of the data source the principal should access documents from.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
-        self.data_source_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Principal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Principal");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("access", &self.access);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
-/// See [`Principal`](crate::model::Principal).
-pub mod principal {
-
-    /// A builder for [`Principal`](crate::model::Principal).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) r#type: std::option::Option<crate::model::PrincipalType>,
-        pub(crate) access: std::option::Option<crate::model::ReadAccessType>,
-        pub(crate) data_source_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the user or group.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name of the user or group.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The type of principal.</p>
-        pub fn r#type(mut self, input: crate::model::PrincipalType) -> Self {
-            self.r#type = Some(input);
-            self
-        }
-        /// <p>The type of principal.</p>
-        pub fn set_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// <p>Whether to allow or deny access to the principal.</p>
-        pub fn access(mut self, input: crate::model::ReadAccessType) -> Self {
-            self.access = Some(input);
-            self
-        }
-        /// <p>Whether to allow or deny access to the principal.</p>
-        pub fn set_access(
-            mut self,
-            input: std::option::Option<crate::model::ReadAccessType>,
-        ) -> Self {
-            self.access = input;
-            self
-        }
-        /// <p>The identifier of the data source the principal should access documents from.</p>
-        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.data_source_id = Some(input.into());
-            self
-        }
-        /// <p>The identifier of the data source the principal should access documents from.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Principal`](crate::model::Principal).
-        pub fn build(self) -> crate::model::Principal {
-            crate::model::Principal {
-                name: self.name,
-                r#type: self.r#type,
-                access: self.access,
-                data_source_id: self.data_source_id,
-            }
-        }
-    }
-}
-impl Principal {
-    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
-    pub fn builder() -> crate::model::principal::Builder {
-        crate::model::principal::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ReadAccessType {
-    #[allow(missing_docs)] // documentation missing in model
-    Allow,
-    #[allow(missing_docs)] // documentation missing in model
-    Deny,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ReadAccessType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALLOW" => ReadAccessType::Allow,
-            "DENY" => ReadAccessType::Deny,
-            other => ReadAccessType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ReadAccessType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReadAccessType::from(s))
-    }
-}
-impl ReadAccessType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReadAccessType::Allow => "ALLOW",
-            ReadAccessType::Deny => "DENY",
-            ReadAccessType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["ALLOW", "DENY"]
-    }
-}
-impl AsRef<str> for ReadAccessType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum PrincipalType {
-    #[allow(missing_docs)] // documentation missing in model
-    Group,
-    #[allow(missing_docs)] // documentation missing in model
-    User,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for PrincipalType {
-    fn from(s: &str) -> Self {
-        match s {
-            "GROUP" => PrincipalType::Group,
-            "USER" => PrincipalType::User,
-            other => PrincipalType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for PrincipalType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PrincipalType::from(s))
-    }
-}
-impl PrincipalType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PrincipalType::Group => "GROUP",
-            PrincipalType::User => "USER",
-            PrincipalType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["GROUP", "USER"]
-    }
-}
-impl AsRef<str> for PrincipalType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

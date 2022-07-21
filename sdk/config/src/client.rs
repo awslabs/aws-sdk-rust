@@ -1167,7 +1167,7 @@ impl Client {
     ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::PutResourceConfig::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::PutResourceConfig::set_resource_id): <p>Unique identifier of the resource.</p>
     ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::PutResourceConfig::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::PutResourceConfig::set_resource_name): <p>Name of the resource.</p>
     ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::PutResourceConfig::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::PutResourceConfig::set_configuration): <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>   <p>The configuration JSON must not exceed 64 KB.</p>  </note>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PutResourceConfig::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutResourceConfig::set_tags): <p>Tags associated with the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PutResourceConfig::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutResourceConfig::set_tags): <p>Tags associated with the resource.</p> <note>   <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>  </note>
     /// - On success, responds with [`PutResourceConfigOutput`](crate::output::PutResourceConfigOutput)
 
     /// - On failure, responds with [`SdkError<PutResourceConfigError>`](crate::error::PutResourceConfigError)
@@ -3876,7 +3876,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOrganizationConfigRules`.
     ///
     /// <p>Returns a list of organization Config rules. </p> <note>
-    /// <p>When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization Config rule names. It is only applicable, when you request all the organization Config rules.</p>
+    /// <p>When you specify the limit and the next token, you receive a paginated response.</p>
+    /// <p>Limit and next token are not applicable if you specify organization Config rule names. It is only applicable, when you request all the organization Config rules.</p>
+    /// <p> <i>For accounts within an organzation</i> </p>
+    /// <p>If you deploy an organizational rule or conformance pack in an organization administrator account, and then establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated administrator account, you won't be able to see the organizational rule or conformance pack in the organization administrator account from the delegated administrator account or see the organizational rule or conformance pack in the delegated administrator account from organization administrator account. The <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only see and interact with the organization-related resource that were deployed from within the account calling those APIs.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfigRules {
@@ -4068,6 +4071,8 @@ pub mod fluent_builders {
     /// <p>Returns a list of organization conformance packs. </p> <note>
     /// <p>When you specify the limit and the next token, you receive a paginated response. </p>
     /// <p>Limit and next token are not applicable if you specify organization conformance packs names. They are only applicable, when you request all the organization conformance packs. </p>
+    /// <p> <i>For accounts within an organzation</i> </p>
+    /// <p>If you deploy an organizational rule or conformance pack in an organization administrator account, and then establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated administrator account, you won't be able to see the organizational rule or conformance pack in the organization administrator account from the delegated administrator account or see the organizational rule or conformance pack in the delegated administrator account from organization administrator account. The <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only see and interact with the organization-related resource that were deployed from within the account calling those APIs.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConformancePacks {
@@ -6902,8 +6907,7 @@ pub mod fluent_builders {
     /// <p>If you are adding an Config managed rule, specify the rule's identifier for the <code>SourceIdentifier</code> key. To reference Config managed rule identifiers, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About Config managed rules</a>.</p>
     /// <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by Config for new rules.</p>
     /// <p>If you are updating a rule that you added previously, you can specify the rule by <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in this request.</p>
-    /// <p>The maximum number of rules that Config supports is 150.</p>
-    /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>For information on how many Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     /// <p>For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigRule {
@@ -7157,7 +7161,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConformancePack`.
     ///
-    /// <p>Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily deployed in an account and a region and across Amazon Web Services Organization.</p>
+    /// <p>Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily deployed in an account and a region and across Amazon Web Services Organization. For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     /// <p>This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service linked role is created only when the role does not exist in your account. </p> <note>
     /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
     /// </note>
@@ -7517,12 +7521,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutOrganizationConfigRule`.
     ///
-    /// <p>Adds or updates organization Config rule for your entire organization evaluating whether your Amazon Web Services resources comply with your desired configurations.</p>
-    /// <p> Only a master account and a delegated administrator can create or update an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. </p>
+    /// <p>Adds or updates organization Config rule for your entire organization evaluating whether your Amazon Web Services resources comply with your desired configurations. For information on how many organization Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
+    /// <p> Only a master account and a delegated administrator can create or update an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated administrators.</p>
     /// <p>This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your organization. The service linked role is created only when the role does not exist in the caller account. Config verifies the existence of role with <code>GetRole</code> action.</p>
     /// <p>To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
-    /// <p>You can use this action to create both Config custom rules and Config managed rules. If you are adding a new Config custom rule, you must first create Lambda function in the master account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an IAM role in the managed-account that can be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code> action to add the rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. If you are adding an Config managed rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.</p>
-    /// <p>The maximum number of organization Config rules that Config supports is 150 and 3 delegated administrator per organization. </p> <note>
+    /// <p>You can use this action to create both Config custom rules and Config managed rules. If you are adding a new Config custom rule, you must first create Lambda function in the master account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an IAM role in the managed-account that can be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code> action to add the rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. If you are adding an Config managed rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.</p> <note>
     /// <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.</p>
     /// <p>Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.</p>
     /// </note>
@@ -7651,13 +7654,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutOrganizationConformancePack`.
     ///
-    /// <p>Deploys conformance packs across member accounts in an Amazon Web Services Organization.</p>
-    /// <p>Only a master account and a delegated administrator can call this API. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+    /// <p>Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how many organization conformance packs and how many Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
+    /// <p>Only a master account and a delegated administrator can call this API. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated administrators.</p>
     /// <p>This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the <code>EnableAWSServiceAccess</code> action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your organization. The service linked role is created only when the role does not exist in the caller account. To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <note>
     /// <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.</p>
     /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
     /// <p>Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance pack is created or updated. You cannot update a conformance pack while it is in this state.</p>
-    /// <p>You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated administrator per organization. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutOrganizationConformancePack {
@@ -7821,6 +7823,9 @@ pub mod fluent_builders {
     /// <p>Adds or updates the remediation configuration with a specific Config rule with the selected target or action. The API creates the <code>RemediationConfiguration</code> object for the Config rule. The Config rule must already exist for you to add a remediation configuration. The target (SSM document) must exist and have permissions to use the target. </p> <note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call this again to ensure the remediations can run.</p>
     /// <p>This API does not support adding remediation configurations for service-linked Config Rules such as Organization Config rules, the rules deployed by conformance packs, and rules deployed by Amazon Web Services Security Hub.</p>
+    /// </note> <note>
+    /// <p>For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code> or use a value in the <code>assumeRole</code>field to remediate your resources. The SSM automation document can use either as long as it maps to a valid parameter.</p>
+    /// <p>However, for automatic remediation configuration, the only valid <code>assumeRole</code> field value is <code>AutomationAssumeRole</code> and you need to provide a value for <code>AutomationAssumeRole</code> to remediate your resources.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRemediationConfigurations {
@@ -8105,7 +8110,9 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags associated with the resource.</p>
+        /// <p>Tags associated with the resource.</p> <note>
+        /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
+        /// </note>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8114,7 +8121,9 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Tags associated with the resource.</p>
+        /// <p>Tags associated with the resource.</p> <note>
+        /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
+        /// </note>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

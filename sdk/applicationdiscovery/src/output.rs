@@ -743,6 +743,9 @@ pub struct GetDiscoverySummaryOutput {
     pub connector_summary: std::option::Option<crate::model::CustomerConnectorInfo>,
     /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
     pub me_collector_summary: std::option::Option<crate::model::CustomerMeCollectorInfo>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub agentless_collector_summary:
+        std::option::Option<crate::model::CustomerAgentlessCollectorInfo>,
 }
 impl GetDiscoverySummaryOutput {
     /// <p>The number of servers discovered.</p>
@@ -775,6 +778,12 @@ impl GetDiscoverySummaryOutput {
     ) -> std::option::Option<&crate::model::CustomerMeCollectorInfo> {
         self.me_collector_summary.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn agentless_collector_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerAgentlessCollectorInfo> {
+        self.agentless_collector_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDiscoverySummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -789,6 +798,10 @@ impl std::fmt::Debug for GetDiscoverySummaryOutput {
         formatter.field("agent_summary", &self.agent_summary);
         formatter.field("connector_summary", &self.connector_summary);
         formatter.field("me_collector_summary", &self.me_collector_summary);
+        formatter.field(
+            "agentless_collector_summary",
+            &self.agentless_collector_summary,
+        );
         formatter.finish()
     }
 }
@@ -805,6 +818,8 @@ pub mod get_discovery_summary_output {
         pub(crate) agent_summary: std::option::Option<crate::model::CustomerAgentInfo>,
         pub(crate) connector_summary: std::option::Option<crate::model::CustomerConnectorInfo>,
         pub(crate) me_collector_summary: std::option::Option<crate::model::CustomerMeCollectorInfo>,
+        pub(crate) agentless_collector_summary:
+            std::option::Option<crate::model::CustomerAgentlessCollectorInfo>,
     }
     impl Builder {
         /// <p>The number of servers discovered.</p>
@@ -892,6 +907,22 @@ pub mod get_discovery_summary_output {
             self.me_collector_summary = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn agentless_collector_summary(
+            mut self,
+            input: crate::model::CustomerAgentlessCollectorInfo,
+        ) -> Self {
+            self.agentless_collector_summary = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_agentless_collector_summary(
+            mut self,
+            input: std::option::Option<crate::model::CustomerAgentlessCollectorInfo>,
+        ) -> Self {
+            self.agentless_collector_summary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDiscoverySummaryOutput`](crate::output::GetDiscoverySummaryOutput).
         pub fn build(self) -> crate::output::GetDiscoverySummaryOutput {
             crate::output::GetDiscoverySummaryOutput {
@@ -904,6 +935,7 @@ pub mod get_discovery_summary_output {
                 agent_summary: self.agent_summary,
                 connector_summary: self.connector_summary,
                 me_collector_summary: self.me_collector_summary,
+                agentless_collector_summary: self.agentless_collector_summary,
             }
         }
     }

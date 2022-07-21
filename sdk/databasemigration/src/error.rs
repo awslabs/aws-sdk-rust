@@ -7365,195 +7365,114 @@ impl std::error::Error for TestConnectionError {
     }
 }
 
-/// <p>The quota for this resource quota has been exceeded.</p>
+/// Error type for the `UpdateSubscriptionsToEventBridge` operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceQuotaExceededFault {
-    /// <p></p>
-    pub message: std::option::Option<std::string::String>,
+#[derive(std::fmt::Debug)]
+pub struct UpdateSubscriptionsToEventBridgeError {
+    /// Kind of error that occurred.
+    pub kind: UpdateSubscriptionsToEventBridgeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
 }
-impl std::fmt::Debug for ResourceQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceQuotaExceededFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ResourceQuotaExceededFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceQuotaExceededFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceQuotaExceededFault")?;
-        if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceQuotaExceededFault {}
-/// See [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault).
-pub mod resource_quota_exceeded_fault {
-
-    /// A builder for [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p></p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p></p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault).
-        pub fn build(self) -> crate::error::ResourceQuotaExceededFault {
-            crate::error::ResourceQuotaExceededFault {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ResourceQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault).
-    pub fn builder() -> crate::error::resource_quota_exceeded_fault::Builder {
-        crate::error::resource_quota_exceeded_fault::Builder::default()
-    }
-}
-
-/// <p>The resource could not be found.</p>
+/// Types of errors that can occur for the `UpdateSubscriptionsToEventBridge` operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotFoundFault {
-    /// <p></p>
-    pub message: std::option::Option<std::string::String>,
+#[derive(std::fmt::Debug)]
+pub enum UpdateSubscriptionsToEventBridgeErrorKind {
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
+    AccessDeniedFault(crate::error::AccessDeniedFault),
+    /// <p>The resource is in a state that prevents it from being used for database migration.</p>
+    InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
-impl std::fmt::Debug for ResourceNotFoundFault {
+impl std::fmt::Display for UpdateSubscriptionsToEventBridgeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ResourceNotFoundFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundFault")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceNotFoundFault {}
-/// See [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
-pub mod resource_not_found_fault {
-
-    /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p></p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p></p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
-        pub fn build(self) -> crate::error::ResourceNotFoundFault {
-            crate::error::ResourceNotFoundFault {
-                message: self.message,
+        match &self.kind {
+            UpdateSubscriptionsToEventBridgeErrorKind::AccessDeniedFault(_inner) => _inner.fmt(f),
+            UpdateSubscriptionsToEventBridgeErrorKind::InvalidResourceStateFault(_inner) => {
+                _inner.fmt(f)
             }
+            UpdateSubscriptionsToEventBridgeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
-impl ResourceNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
-    pub fn builder() -> crate::error::resource_not_found_fault::Builder {
-        crate::error::resource_not_found_fault::Builder::default()
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateSubscriptionsToEventBridgeError {
+    fn code(&self) -> Option<&str> {
+        UpdateSubscriptionsToEventBridgeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
     }
 }
+impl UpdateSubscriptionsToEventBridgeError {
+    /// Creates a new `UpdateSubscriptionsToEventBridgeError`.
+    pub fn new(
+        kind: UpdateSubscriptionsToEventBridgeErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
 
-/// <p>DMS cannot access the KMS key.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KmsKeyNotAccessibleFault {
-    /// <p></p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KmsKeyNotAccessibleFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KmsKeyNotAccessibleFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
+    /// Creates the `UpdateSubscriptionsToEventBridgeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateSubscriptionsToEventBridgeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
     }
-}
-impl KmsKeyNotAccessibleFault {
-    /// Returns the error message.
+
+    /// Creates the `UpdateSubscriptionsToEventBridgeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateSubscriptionsToEventBridgeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
+        self.meta.message()
     }
-}
-impl std::fmt::Display for KmsKeyNotAccessibleFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KmsKeyNotAccessibleFault [KMSKeyNotAccessibleFault]")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for KmsKeyNotAccessibleFault {}
-/// See [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
-pub mod kms_key_not_accessible_fault {
 
-    /// A builder for [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
     }
-    impl Builder {
-        /// <p></p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p></p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
-        pub fn build(self) -> crate::error::KmsKeyNotAccessibleFault {
-            crate::error::KmsKeyNotAccessibleFault {
-                message: self.message,
-            }
-        }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateSubscriptionsToEventBridgeErrorKind::AccessDeniedFault`.
+    pub fn is_access_denied_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSubscriptionsToEventBridgeErrorKind::AccessDeniedFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSubscriptionsToEventBridgeErrorKind::InvalidResourceStateFault`.
+    pub fn is_invalid_resource_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSubscriptionsToEventBridgeErrorKind::InvalidResourceStateFault(_)
+        )
     }
 }
-impl KmsKeyNotAccessibleFault {
-    /// Creates a new builder-style object to manufacture [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
-    pub fn builder() -> crate::error::kms_key_not_accessible_fault::Builder {
-        crate::error::kms_key_not_accessible_fault::Builder::default()
+impl std::error::Error for UpdateSubscriptionsToEventBridgeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateSubscriptionsToEventBridgeErrorKind::AccessDeniedFault(_inner) => Some(_inner),
+            UpdateSubscriptionsToEventBridgeErrorKind::InvalidResourceStateFault(_inner) => {
+                Some(_inner)
+            }
+            UpdateSubscriptionsToEventBridgeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
     }
 }
 
@@ -7580,8 +7499,8 @@ impl InvalidResourceStateFault {
 impl std::fmt::Display for InvalidResourceStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResourceStateFault")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
@@ -7644,8 +7563,8 @@ impl AccessDeniedFault {
 impl std::fmt::Display for AccessDeniedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedFault")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -7682,6 +7601,198 @@ impl AccessDeniedFault {
     /// Creates a new builder-style object to manufacture [`AccessDeniedFault`](crate::error::AccessDeniedFault).
     pub fn builder() -> crate::error::access_denied_fault::Builder {
         crate::error::access_denied_fault::Builder::default()
+    }
+}
+
+/// <p>The quota for this resource quota has been exceeded.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceQuotaExceededFault {
+    /// <p></p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceQuotaExceededFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceQuotaExceededFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResourceQuotaExceededFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceQuotaExceededFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceQuotaExceededFault")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceQuotaExceededFault {}
+/// See [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault).
+pub mod resource_quota_exceeded_fault {
+
+    /// A builder for [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p></p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault).
+        pub fn build(self) -> crate::error::ResourceQuotaExceededFault {
+            crate::error::ResourceQuotaExceededFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ResourceQuotaExceededFault`](crate::error::ResourceQuotaExceededFault).
+    pub fn builder() -> crate::error::resource_quota_exceeded_fault::Builder {
+        crate::error::resource_quota_exceeded_fault::Builder::default()
+    }
+}
+
+/// <p>The resource could not be found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotFoundFault {
+    /// <p></p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceNotFoundFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResourceNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotFoundFault")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotFoundFault {}
+/// See [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
+pub mod resource_not_found_fault {
+
+    /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p></p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
+        pub fn build(self) -> crate::error::ResourceNotFoundFault {
+            crate::error::ResourceNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
+    pub fn builder() -> crate::error::resource_not_found_fault::Builder {
+        crate::error::resource_not_found_fault::Builder::default()
+    }
+}
+
+/// <p>DMS cannot access the KMS key.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KmsKeyNotAccessibleFault {
+    /// <p></p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for KmsKeyNotAccessibleFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KmsKeyNotAccessibleFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl KmsKeyNotAccessibleFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for KmsKeyNotAccessibleFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "KmsKeyNotAccessibleFault [KMSKeyNotAccessibleFault]")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for KmsKeyNotAccessibleFault {}
+/// See [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
+pub mod kms_key_not_accessible_fault {
+
+    /// A builder for [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p></p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
+        pub fn build(self) -> crate::error::KmsKeyNotAccessibleFault {
+            crate::error::KmsKeyNotAccessibleFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl KmsKeyNotAccessibleFault {
+    /// Creates a new builder-style object to manufacture [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
+    pub fn builder() -> crate::error::kms_key_not_accessible_fault::Builder {
+        crate::error::kms_key_not_accessible_fault::Builder::default()
     }
 }
 

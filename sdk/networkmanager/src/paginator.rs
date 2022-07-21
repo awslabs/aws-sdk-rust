@@ -22,6 +22,14 @@ impl DescribeGlobalNetworksPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `global_networks`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeGlobalNetworksPaginatorItems {
+        crate::paginator::DescribeGlobalNetworksPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -107,6 +115,14 @@ impl GetConnectionsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `connections`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetConnectionsPaginatorItems {
+        crate::paginator::GetConnectionsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -196,6 +212,14 @@ impl GetConnectPeerAssociationsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `connect_peer_associations`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetConnectPeerAssociationsPaginatorItems {
+        crate::paginator::GetConnectPeerAssociationsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -260,6 +284,101 @@ impl GetConnectPeerAssociationsPaginator {
     }
 }
 
+/// Paginator for [`GetCoreNetworkChangeEvents`](crate::operation::GetCoreNetworkChangeEvents)
+pub struct GetCoreNetworkChangeEventsPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::get_core_network_change_events_input::Builder,
+}
+
+impl GetCoreNetworkChangeEventsPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::get_core_network_change_events_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `core_network_change_events`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetCoreNetworkChangeEventsPaginatorItems {
+        crate::paginator::GetCoreNetworkChangeEventsPaginatorItems(self)
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::GetCoreNetworkChangeEventsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCoreNetworkChangeEventsError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_get_core_network_change_events_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
 /// Paginator for [`GetCoreNetworkChangeSet`](crate::operation::GetCoreNetworkChangeSet)
 pub struct GetCoreNetworkChangeSetPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -281,6 +400,14 @@ impl GetCoreNetworkChangeSetPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `core_network_changes`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetCoreNetworkChangeSetPaginatorItems {
+        crate::paginator::GetCoreNetworkChangeSetPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -370,6 +497,14 @@ impl GetCustomerGatewayAssociationsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `customer_gateway_associations`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetCustomerGatewayAssociationsPaginatorItems {
+        crate::paginator::GetCustomerGatewayAssociationsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -455,6 +590,14 @@ impl GetDevicesPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `devices`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetDevicesPaginatorItems {
+        crate::paginator::GetDevicesPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -544,6 +687,14 @@ impl GetLinkAssociationsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `link_associations`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetLinkAssociationsPaginatorItems {
+        crate::paginator::GetLinkAssociationsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -629,6 +780,14 @@ impl GetLinksPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `links`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetLinksPaginatorItems {
+        crate::paginator::GetLinksPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -718,6 +877,14 @@ impl GetNetworkResourceCountsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `network_resource_counts`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetNetworkResourceCountsPaginatorItems {
+        crate::paginator::GetNetworkResourceCountsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -803,6 +970,14 @@ impl GetNetworkResourceRelationshipsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `relationships`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetNetworkResourceRelationshipsPaginatorItems {
+        crate::paginator::GetNetworkResourceRelationshipsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -892,6 +1067,14 @@ impl GetNetworkResourcesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `network_resources`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetNetworkResourcesPaginatorItems {
+        crate::paginator::GetNetworkResourcesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -977,6 +1160,14 @@ impl GetNetworkTelemetryPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `network_telemetry`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetNetworkTelemetryPaginatorItems {
+        crate::paginator::GetNetworkTelemetryPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -1066,6 +1257,14 @@ impl GetSitesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `sites`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetSitesPaginatorItems {
+        crate::paginator::GetSitesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -1151,6 +1350,14 @@ impl GetTransitGatewayConnectPeerAssociationsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `transit_gateway_connect_peer_associations`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetTransitGatewayConnectPeerAssociationsPaginatorItems {
+        crate::paginator::GetTransitGatewayConnectPeerAssociationsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -1242,6 +1449,14 @@ impl GetTransitGatewayRegistrationsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `transit_gateway_registrations`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::GetTransitGatewayRegistrationsPaginatorItems {
+        crate::paginator::GetTransitGatewayRegistrationsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -1327,6 +1542,14 @@ impl ListAttachmentsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `attachments`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListAttachmentsPaginatorItems {
+        crate::paginator::ListAttachmentsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -1416,6 +1639,14 @@ impl ListConnectPeersPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `connect_peers`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListConnectPeersPaginatorItems {
+        crate::paginator::ListConnectPeersPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -1501,6 +1732,14 @@ impl ListCoreNetworkPolicyVersionsPaginator {
     pub fn page_size(mut self, limit: i32) -> Self {
         self.builder.max_results = Some(limit);
         self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `core_network_policy_versions`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListCoreNetworkPolicyVersionsPaginatorItems {
+        crate::paginator::ListCoreNetworkPolicyVersionsPaginatorItems(self)
     }
 
     /// Create the pagination stream
@@ -1590,6 +1829,14 @@ impl ListCoreNetworksPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `core_networks`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListCoreNetworksPaginatorItems {
+        crate::paginator::ListCoreNetworksPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -1650,6 +1897,638 @@ impl ListCoreNetworksPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Paginator for [`ListPeerings`](crate::operation::ListPeerings)
+pub struct ListPeeringsPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::list_peerings_input::Builder,
+}
+
+impl ListPeeringsPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::list_peerings_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `peerings`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListPeeringsPaginatorItems {
+        crate::paginator::ListPeeringsPaginatorItems(self)
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::ListPeeringsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListPeeringsError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_list_peerings_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
+/// Flattened paginator for `DescribeGlobalNetworksPaginator`
+///
+/// This is created with [`.items()`](DescribeGlobalNetworksPaginator::items)
+pub struct DescribeGlobalNetworksPaginatorItems(DescribeGlobalNetworksPaginator);
+
+impl DescribeGlobalNetworksPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::GlobalNetwork,
+            aws_smithy_http::result::SdkError<crate::error::DescribeGlobalNetworksError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_global_networks_output_global_networks(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `GetConnectionsPaginator`
+///
+/// This is created with [`.items()`](GetConnectionsPaginator::items)
+pub struct GetConnectionsPaginatorItems(GetConnectionsPaginator);
+
+impl GetConnectionsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Connection,
+            aws_smithy_http::result::SdkError<crate::error::GetConnectionsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_get_connections_output_connections(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `GetConnectPeerAssociationsPaginator`
+///
+/// This is created with [`.items()`](GetConnectPeerAssociationsPaginator::items)
+pub struct GetConnectPeerAssociationsPaginatorItems(GetConnectPeerAssociationsPaginator);
+
+impl GetConnectPeerAssociationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ConnectPeerAssociation,
+            aws_smithy_http::result::SdkError<crate::error::GetConnectPeerAssociationsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_connect_peer_associations_output_connect_peer_associations(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `GetCoreNetworkChangeEventsPaginator`
+///
+/// This is created with [`.items()`](GetCoreNetworkChangeEventsPaginator::items)
+pub struct GetCoreNetworkChangeEventsPaginatorItems(GetCoreNetworkChangeEventsPaginator);
+
+impl GetCoreNetworkChangeEventsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::CoreNetworkChangeEvent,
+            aws_smithy_http::result::SdkError<crate::error::GetCoreNetworkChangeEventsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_core_network_change_events_output_core_network_change_events(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `GetCoreNetworkChangeSetPaginator`
+///
+/// This is created with [`.items()`](GetCoreNetworkChangeSetPaginator::items)
+pub struct GetCoreNetworkChangeSetPaginatorItems(GetCoreNetworkChangeSetPaginator);
+
+impl GetCoreNetworkChangeSetPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::CoreNetworkChange,
+            aws_smithy_http::result::SdkError<crate::error::GetCoreNetworkChangeSetError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_core_network_change_set_output_core_network_changes(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `GetCustomerGatewayAssociationsPaginator`
+///
+/// This is created with [`.items()`](GetCustomerGatewayAssociationsPaginator::items)
+pub struct GetCustomerGatewayAssociationsPaginatorItems(GetCustomerGatewayAssociationsPaginator);
+
+impl GetCustomerGatewayAssociationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::CustomerGatewayAssociation,
+            aws_smithy_http::result::SdkError<crate::error::GetCustomerGatewayAssociationsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_customer_gateway_associations_output_customer_gateway_associations(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `GetDevicesPaginator`
+///
+/// This is created with [`.items()`](GetDevicesPaginator::items)
+pub struct GetDevicesPaginatorItems(GetDevicesPaginator);
+
+impl GetDevicesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Device,
+            aws_smithy_http::result::SdkError<crate::error::GetDevicesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_get_devices_output_devices(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `GetLinkAssociationsPaginator`
+///
+/// This is created with [`.items()`](GetLinkAssociationsPaginator::items)
+pub struct GetLinkAssociationsPaginatorItems(GetLinkAssociationsPaginator);
+
+impl GetLinkAssociationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::LinkAssociation,
+            aws_smithy_http::result::SdkError<crate::error::GetLinkAssociationsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_get_link_associations_output_link_associations(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `GetLinksPaginator`
+///
+/// This is created with [`.items()`](GetLinksPaginator::items)
+pub struct GetLinksPaginatorItems(GetLinksPaginator);
+
+impl GetLinksPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Link,
+            aws_smithy_http::result::SdkError<crate::error::GetLinksError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_get_links_output_links(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `GetNetworkResourceCountsPaginator`
+///
+/// This is created with [`.items()`](GetNetworkResourceCountsPaginator::items)
+pub struct GetNetworkResourceCountsPaginatorItems(GetNetworkResourceCountsPaginator);
+
+impl GetNetworkResourceCountsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::NetworkResourceCount,
+            aws_smithy_http::result::SdkError<crate::error::GetNetworkResourceCountsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_network_resource_counts_output_network_resource_counts(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `GetNetworkResourceRelationshipsPaginator`
+///
+/// This is created with [`.items()`](GetNetworkResourceRelationshipsPaginator::items)
+pub struct GetNetworkResourceRelationshipsPaginatorItems(GetNetworkResourceRelationshipsPaginator);
+
+impl GetNetworkResourceRelationshipsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Relationship,
+            aws_smithy_http::result::SdkError<crate::error::GetNetworkResourceRelationshipsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_network_resource_relationships_output_relationships(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `GetNetworkResourcesPaginator`
+///
+/// This is created with [`.items()`](GetNetworkResourcesPaginator::items)
+pub struct GetNetworkResourcesPaginatorItems(GetNetworkResourcesPaginator);
+
+impl GetNetworkResourcesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::NetworkResource,
+            aws_smithy_http::result::SdkError<crate::error::GetNetworkResourcesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_get_network_resources_output_network_resources(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `GetNetworkTelemetryPaginator`
+///
+/// This is created with [`.items()`](GetNetworkTelemetryPaginator::items)
+pub struct GetNetworkTelemetryPaginatorItems(GetNetworkTelemetryPaginator);
+
+impl GetNetworkTelemetryPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::NetworkTelemetry,
+            aws_smithy_http::result::SdkError<crate::error::GetNetworkTelemetryError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_get_network_telemetry_output_network_telemetry(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `GetSitesPaginator`
+///
+/// This is created with [`.items()`](GetSitesPaginator::items)
+pub struct GetSitesPaginatorItems(GetSitesPaginator);
+
+impl GetSitesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Site,
+            aws_smithy_http::result::SdkError<crate::error::GetSitesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_get_sites_output_sites(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `GetTransitGatewayConnectPeerAssociationsPaginator`
+///
+/// This is created with [`.items()`](GetTransitGatewayConnectPeerAssociationsPaginator::items)
+pub struct GetTransitGatewayConnectPeerAssociationsPaginatorItems(
+    GetTransitGatewayConnectPeerAssociationsPaginator,
+);
+
+impl GetTransitGatewayConnectPeerAssociationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::TransitGatewayConnectPeerAssociation,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetTransitGatewayConnectPeerAssociationsError,
+            >,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_transit_gateway_connect_peer_associations_output_transit_gateway_connect_peer_associations(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `GetTransitGatewayRegistrationsPaginator`
+///
+/// This is created with [`.items()`](GetTransitGatewayRegistrationsPaginator::items)
+pub struct GetTransitGatewayRegistrationsPaginatorItems(GetTransitGatewayRegistrationsPaginator);
+
+impl GetTransitGatewayRegistrationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::TransitGatewayRegistration,
+            aws_smithy_http::result::SdkError<crate::error::GetTransitGatewayRegistrationsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_transit_gateway_registrations_output_transit_gateway_registrations(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListAttachmentsPaginator`
+///
+/// This is created with [`.items()`](ListAttachmentsPaginator::items)
+pub struct ListAttachmentsPaginatorItems(ListAttachmentsPaginator);
+
+impl ListAttachmentsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Attachment,
+            aws_smithy_http::result::SdkError<crate::error::ListAttachmentsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_attachments_output_attachments(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListConnectPeersPaginator`
+///
+/// This is created with [`.items()`](ListConnectPeersPaginator::items)
+pub struct ListConnectPeersPaginatorItems(ListConnectPeersPaginator);
+
+impl ListConnectPeersPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::ConnectPeerSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListConnectPeersError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_connect_peers_output_connect_peers(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListCoreNetworkPolicyVersionsPaginator`
+///
+/// This is created with [`.items()`](ListCoreNetworkPolicyVersionsPaginator::items)
+pub struct ListCoreNetworkPolicyVersionsPaginatorItems(ListCoreNetworkPolicyVersionsPaginator);
+
+impl ListCoreNetworkPolicyVersionsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::CoreNetworkPolicyVersion,
+            aws_smithy_http::result::SdkError<crate::error::ListCoreNetworkPolicyVersionsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_core_network_policy_versions_output_core_network_policy_versions(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `ListCoreNetworksPaginator`
+///
+/// This is created with [`.items()`](ListCoreNetworksPaginator::items)
+pub struct ListCoreNetworksPaginatorItems(ListCoreNetworksPaginator);
+
+impl ListCoreNetworksPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::CoreNetworkSummary,
+            aws_smithy_http::result::SdkError<crate::error::ListCoreNetworksError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_core_networks_output_core_networks(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListPeeringsPaginator`
+///
+/// This is created with [`.items()`](ListPeeringsPaginator::items)
+pub struct ListPeeringsPaginatorItems(ListPeeringsPaginator);
+
+impl ListPeeringsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::Peering,
+            aws_smithy_http::result::SdkError<crate::error::ListPeeringsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_peerings_output_peerings(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

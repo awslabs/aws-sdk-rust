@@ -74,6 +74,84 @@ pub fn parse_batch_get_named_query_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_prepared_statement_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetPreparedStatementOutput,
+    crate::error::BatchGetPreparedStatementError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchGetPreparedStatementError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::BatchGetPreparedStatementError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::BatchGetPreparedStatementError {
+            meta: generic,
+            kind: crate::error::BatchGetPreparedStatementErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetPreparedStatementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::BatchGetPreparedStatementError {
+            meta: generic,
+            kind: crate::error::BatchGetPreparedStatementErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetPreparedStatementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::BatchGetPreparedStatementError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_prepared_statement_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetPreparedStatementOutput,
+    crate::error::BatchGetPreparedStatementError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_get_prepared_statement_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_prepared_statement(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchGetPreparedStatementError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_batch_get_query_execution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

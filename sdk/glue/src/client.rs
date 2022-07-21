@@ -390,6 +390,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::CreateDatabase::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::CreateDatabase::set_catalog_id): <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
     ///   - [`database_input(DatabaseInput)`](crate::client::fluent_builders::CreateDatabase::database_input) / [`set_database_input(Option<DatabaseInput>)`](crate::client::fluent_builders::CreateDatabase::set_database_input): <p>The metadata for the database.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDatabase::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDatabase::set_tags): <p>The tags you assign to the database.</p>
     /// - On success, responds with [`CreateDatabaseOutput`](crate::output::CreateDatabaseOutput)
 
     /// - On failure, responds with [`SdkError<CreateDatabaseError>`](crate::error::CreateDatabaseError)
@@ -447,19 +448,19 @@ impl Client {
     ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::CreateJob::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::CreateJob::set_role): <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
     ///   - [`execution_property(ExecutionProperty)`](crate::client::fluent_builders::CreateJob::execution_property) / [`set_execution_property(Option<ExecutionProperty>)`](crate::client::fluent_builders::CreateJob::set_execution_property): <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     ///   - [`command(JobCommand)`](crate::client::fluent_builders::CreateJob::command) / [`set_command(Option<JobCommand>)`](crate::client::fluent_builders::CreateJob::set_command): <p>The <code>JobCommand</code> that runs this job.</p>
-    ///   - [`default_arguments(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::default_arguments) / [`set_default_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_default_arguments): <p>The default arguments for this job.</p>  <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>  <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>  <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    ///   - [`default_arguments(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::default_arguments) / [`set_default_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_default_arguments): <p>The default arguments for this job.</p>  <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>  <p>Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job. </p>  <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>  <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     ///   - [`non_overridable_arguments(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::non_overridable_arguments) / [`set_non_overridable_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_non_overridable_arguments): <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
     ///   - [`connections(ConnectionsList)`](crate::client::fluent_builders::CreateJob::connections) / [`set_connections(Option<ConnectionsList>)`](crate::client::fluent_builders::CreateJob::set_connections): <p>The connections used for this job.</p>
     ///   - [`max_retries(i32)`](crate::client::fluent_builders::CreateJob::max_retries) / [`set_max_retries(i32)`](crate::client::fluent_builders::CreateJob::set_max_retries): <p>The maximum number of times to retry this job if it fails.</p>
-    ///   - [`allocated_capacity(i32)`](crate::client::fluent_builders::CreateJob::allocated_capacity) / [`set_allocated_capacity(i32)`](crate::client::fluent_builders::CreateJob::set_allocated_capacity): <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>  <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    ///   - [`allocated_capacity(i32)`](crate::client::fluent_builders::CreateJob::allocated_capacity) / [`set_allocated_capacity(i32)`](crate::client::fluent_builders::CreateJob::set_allocated_capacity): <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>  <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     ///   - [`timeout(i32)`](crate::client::fluent_builders::CreateJob::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::CreateJob::set_timeout): <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::CreateJob::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::CreateJob::set_max_capacity): <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>  <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>  <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>  <ul>   <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>   <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>  </ul>  <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::CreateJob::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::CreateJob::set_max_capacity): <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>  <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>  <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>  <ul>   <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>   <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>  </ul>  <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
     ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateJob::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateJob::set_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_tags): <p>The tags to use with this job. You may use tags to limit access to the job. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     ///   - [`notification_property(NotificationProperty)`](crate::client::fluent_builders::CreateJob::notification_property) / [`set_notification_property(Option<NotificationProperty>)`](crate::client::fluent_builders::CreateJob::set_notification_property): <p>Specifies configuration properties of a job notification.</p>
     ///   - [`glue_version(impl Into<String>)`](crate::client::fluent_builders::CreateJob::glue_version) / [`set_glue_version(Option<String>)`](crate::client::fluent_builders::CreateJob::set_glue_version): <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>  <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>  <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
-    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateJob::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateJob::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>  <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateJob::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateJob::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>  </ul>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateJob::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateJob::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateJob::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateJob::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>  </ul>
     ///   - [`code_gen_configuration_nodes(HashMap<String, CodeGenConfigurationNode>)`](crate::client::fluent_builders::CreateJob::code_gen_configuration_nodes) / [`set_code_gen_configuration_nodes(Option<HashMap<String, CodeGenConfigurationNode>>)`](crate::client::fluent_builders::CreateJob::set_code_gen_configuration_nodes): <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateJobOutput::name): <p>The unique name that was provided for this job definition.</p>
@@ -595,11 +596,11 @@ impl Client {
     ///   - [`idle_timeout(i32)`](crate::client::fluent_builders::CreateSession::idle_timeout) / [`set_idle_timeout(Option<i32>)`](crate::client::fluent_builders::CreateSession::set_idle_timeout): <p>The number of seconds when idle before request times out. </p>
     ///   - [`default_arguments(HashMap<String, String>)`](crate::client::fluent_builders::CreateSession::default_arguments) / [`set_default_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSession::set_default_arguments): <p>A map array of key-value pairs. Max is 75 pairs. </p>
     ///   - [`connections(ConnectionsList)`](crate::client::fluent_builders::CreateSession::connections) / [`set_connections(Option<ConnectionsList>)`](crate::client::fluent_builders::CreateSession::set_connections): <p>The number of connections to use for the session. </p>
-    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::CreateSession::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::CreateSession::set_max_capacity): <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
-    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateSession::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateSession::set_number_of_workers): <p>The number of workers to use for the session. </p>
-    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateSession::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateSession::set_worker_type): <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::CreateSession::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::CreateSession::set_max_capacity): <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateSession::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateSession::set_number_of_workers): <p>The number of workers of a defined <code>WorkerType</code> to use for the session. </p>
+    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateSession::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateSession::set_worker_type): <p>The type of predefined worker that is allocated to use for the session. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>  </ul>
     ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateSession::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateSession::set_security_configuration): <p>The name of the SecurityConfiguration structure to be used with the session </p>
-    ///   - [`glue_version(impl Into<String>)`](crate::client::fluent_builders::CreateSession::glue_version) / [`set_glue_version(Option<String>)`](crate::client::fluent_builders::CreateSession::set_glue_version): <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+    ///   - [`glue_version(impl Into<String>)`](crate::client::fluent_builders::CreateSession::glue_version) / [`set_glue_version(Option<String>)`](crate::client::fluent_builders::CreateSession::set_glue_version): <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. </p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSession::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSession::set_tags): <p>The map of key value pairs (tags) belonging to the session.</p>
     ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::CreateSession::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::CreateSession::set_request_origin): <p>The origin of the request. </p>
     /// - On success, responds with [`CreateSessionOutput`](crate::output::CreateSessionOutput) with field(s):
@@ -1047,7 +1048,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetConnection::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetConnection::set_catalog_id): <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetConnection::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetConnection::set_name): <p>The name of the connection definition to retrieve.</p>
-    ///   - [`hide_password(bool)`](crate::client::fluent_builders::GetConnection::hide_password) / [`set_hide_password(bool)`](crate::client::fluent_builders::GetConnection::set_hide_password): <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+    ///   - [`hide_password(bool)`](crate::client::fluent_builders::GetConnection::hide_password) / [`set_hide_password(bool)`](crate::client::fluent_builders::GetConnection::set_hide_password): <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     /// - On success, responds with [`GetConnectionOutput`](crate::output::GetConnectionOutput) with field(s):
     ///   - [`connection(Option<Connection>)`](crate::output::GetConnectionOutput::connection): <p>The requested connection definition.</p>
     /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::error::GetConnectionError)
@@ -1060,7 +1061,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetConnections::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetConnections::set_catalog_id): <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     ///   - [`filter(GetConnectionsFilter)`](crate::client::fluent_builders::GetConnections::filter) / [`set_filter(Option<GetConnectionsFilter>)`](crate::client::fluent_builders::GetConnections::set_filter): <p>A filter that controls which connections are returned.</p>
-    ///   - [`hide_password(bool)`](crate::client::fluent_builders::GetConnections::hide_password) / [`set_hide_password(bool)`](crate::client::fluent_builders::GetConnections::set_hide_password): <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+    ///   - [`hide_password(bool)`](crate::client::fluent_builders::GetConnections::hide_password) / [`set_hide_password(bool)`](crate::client::fluent_builders::GetConnections::set_hide_password): <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetConnections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetConnections::set_next_token): <p>A continuation token, if this is a continuation call.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetConnections::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetConnections::set_max_results): <p>The maximum number of connections to return in one response.</p>
     /// - On success, responds with [`GetConnectionsOutput`](crate::output::GetConnectionsOutput) with field(s):
@@ -1951,7 +1952,7 @@ impl Client {
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ListSessions::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ListSessions::set_tags): <p>Tags belonging to the session. </p>
     ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::ListSessions::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::ListSessions::set_request_origin): <p>The origin of the request. </p>
     /// - On success, responds with [`ListSessionsOutput`](crate::output::ListSessionsOutput) with field(s):
-    ///   - [`ids(Option<Vec<String>>)`](crate::output::ListSessionsOutput::ids): <p>Returns the Id of the session. </p>
+    ///   - [`ids(Option<Vec<String>>)`](crate::output::ListSessionsOutput::ids): <p>Returns the ID of the session. </p>
     ///   - [`sessions(Option<Vec<Session>>)`](crate::output::ListSessionsOutput::sessions): <p>Returns the session object. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSessionsOutput::next_token): <p>The token for the next set of results, or null if there are no more result. </p>
     /// - On failure, responds with [`SdkError<ListSessionsError>`](crate::error::ListSessionsError)
@@ -1963,10 +1964,10 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::ListStatements::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::ListStatements::set_session_id): <p>The Session ID of the statements.</p>
     ///   - [`request_origin(impl Into<String>)`](crate::client::fluent_builders::ListStatements::request_origin) / [`set_request_origin(Option<String>)`](crate::client::fluent_builders::ListStatements::set_request_origin): <p>The origin of the request to list statements.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStatements::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStatements::set_next_token): (undocumented)
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStatements::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStatements::set_next_token): <p>A continuation token, if this is a continuation call.</p>
     /// - On success, responds with [`ListStatementsOutput`](crate::output::ListStatementsOutput) with field(s):
     ///   - [`statements(Option<Vec<Statement>>)`](crate::output::ListStatementsOutput::statements): <p>Returns the list of statements.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListStatementsOutput::next_token): (undocumented)
+    ///   - [`next_token(Option<String>)`](crate::output::ListStatementsOutput::next_token): <p>A continuation token, if not all statements have yet been returned.</p>
     /// - On failure, responds with [`SdkError<ListStatementsError>`](crate::error::ListStatementsError)
     pub fn list_statements(&self) -> fluent_builders::ListStatements {
         fluent_builders::ListStatements::new(self.handle.clone())
@@ -2222,14 +2223,14 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartJobRun::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartJobRun::set_job_name): <p>The name of the job definition to use.</p>
     ///   - [`job_run_id(impl Into<String>)`](crate::client::fluent_builders::StartJobRun::job_run_id) / [`set_job_run_id(Option<String>)`](crate::client::fluent_builders::StartJobRun::set_job_run_id): <p>The ID of a previous <code>JobRun</code> to retry.</p>
-    ///   - [`arguments(HashMap<String, String>)`](crate::client::fluent_builders::StartJobRun::arguments) / [`set_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartJobRun::set_arguments): <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>  <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>  <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>  <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
-    ///   - [`allocated_capacity(i32)`](crate::client::fluent_builders::StartJobRun::allocated_capacity) / [`set_allocated_capacity(i32)`](crate::client::fluent_builders::StartJobRun::set_allocated_capacity): <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>  <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
-    ///   - [`timeout(i32)`](crate::client::fluent_builders::StartJobRun::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::StartJobRun::set_timeout): <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
-    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::StartJobRun::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::StartJobRun::set_max_capacity): <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>  <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>  <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>  <ul>   <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>   <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>  </ul>
+    ///   - [`arguments(HashMap<String, String>)`](crate::client::fluent_builders::StartJobRun::arguments) / [`set_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartJobRun::set_arguments): <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>  <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>  <p>Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job. </p>  <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>  <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    ///   - [`allocated_capacity(i32)`](crate::client::fluent_builders::StartJobRun::allocated_capacity) / [`set_allocated_capacity(i32)`](crate::client::fluent_builders::StartJobRun::set_allocated_capacity): <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>  <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    ///   - [`timeout(i32)`](crate::client::fluent_builders::StartJobRun::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::StartJobRun::set_timeout): <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>  <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
+    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::StartJobRun::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::StartJobRun::set_max_capacity): <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>  <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>  <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>  <ul>   <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>   <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>  </ul>
     ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::StartJobRun::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::StartJobRun::set_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
     ///   - [`notification_property(NotificationProperty)`](crate::client::fluent_builders::StartJobRun::notification_property) / [`set_notification_property(Option<NotificationProperty>)`](crate::client::fluent_builders::StartJobRun::set_notification_property): <p>Specifies configuration properties of a job run notification.</p>
-    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::StartJobRun::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::StartJobRun::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>  </ul>
-    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::StartJobRun::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::StartJobRun::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>  <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::StartJobRun::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::StartJobRun::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>   <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>  </ul>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::StartJobRun::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::StartJobRun::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
     /// - On success, responds with [`StartJobRunOutput`](crate::output::StartJobRunOutput) with field(s):
     ///   - [`job_run_id(Option<String>)`](crate::output::StartJobRunOutput::job_run_id): <p>The ID assigned to this job run.</p>
     /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::error::StartJobRunError)
@@ -2489,7 +2490,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::UpdateJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::UpdateJob::set_job_name): <p>The name of the job definition to update.</p>
-    ///   - [`job_update(JobUpdate)`](crate::client::fluent_builders::UpdateJob::job_update) / [`set_job_update(Option<JobUpdate>)`](crate::client::fluent_builders::UpdateJob::set_job_update): <p>Specifies the values with which to update the job definition.</p>
+    ///   - [`job_update(JobUpdate)`](crate::client::fluent_builders::UpdateJob::job_update) / [`set_job_update(Option<JobUpdate>)`](crate::client::fluent_builders::UpdateJob::set_job_update): <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
     /// - On success, responds with [`UpdateJobOutput`](crate::output::UpdateJobOutput) with field(s):
     ///   - [`job_name(Option<String>)`](crate::output::UpdateJobOutput::job_name): <p>Returns the name of the updated job definition.</p>
     /// - On failure, responds with [`SdkError<UpdateJobError>`](crate::error::UpdateJobError)
@@ -2565,7 +2566,7 @@ impl Client {
     ///   - [`table_input(TableInput)`](crate::client::fluent_builders::UpdateTable::table_input) / [`set_table_input(Option<TableInput>)`](crate::client::fluent_builders::UpdateTable::set_table_input): <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     ///   - [`skip_archive(bool)`](crate::client::fluent_builders::UpdateTable::skip_archive) / [`set_skip_archive(Option<bool>)`](crate::client::fluent_builders::UpdateTable::set_skip_archive): <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
     ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_transaction_id): <p>The transaction ID at which to update the table contents. </p>
-    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_version_id): (undocumented)
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_version_id): <p>The version ID at which to update the table contents. </p>
     /// - On success, responds with [`UpdateTableOutput`](crate::output::UpdateTableOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTableError>`](crate::error::UpdateTableError)
@@ -3838,7 +3839,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelStatement`.
     ///
-    /// <p>Cancels the statement..</p>
+    /// <p>Cancels the statement.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelStatement {
         handle: std::sync::Arc<super::Handle>,
@@ -4655,6 +4656,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_input(input);
             self
         }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags you assign to the database.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags you assign to the database.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDevEndpoint`.
     ///
@@ -5043,6 +5067,7 @@ pub mod fluent_builders {
         ///
         /// <p>The default arguments for this job.</p>
         /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job. </p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn default_arguments(
@@ -5055,6 +5080,7 @@ pub mod fluent_builders {
         }
         /// <p>The default arguments for this job.</p>
         /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job. </p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_default_arguments(
@@ -5113,13 +5139,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.allocated_capacity(input);
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_allocated_capacity(input);
             self
@@ -5139,7 +5165,7 @@ pub mod fluent_builders {
         /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
         /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
-        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
@@ -5151,7 +5177,7 @@ pub mod fluent_builders {
         /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
         /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
-        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
@@ -5222,32 +5248,32 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
             self
         }
-        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
         /// <ul>
         /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
         /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.inner = self.inner.worker_type(input);
             self
         }
-        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
         /// <ul>
         /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
         /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -6269,32 +6295,44 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connections(input);
             self
         }
-        /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The number of AWS Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
         }
-        /// <p>The number of workers to use for the session. </p>
+        /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_workers(input);
             self
         }
-        /// <p>The number of workers to use for the session. </p>
+        /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
             self
         }
-        /// <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+        /// <p>The type of predefined worker that is allocated to use for the session. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
+        /// <ul>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
+        /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.inner = self.inner.worker_type(input);
             self
         }
-        /// <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+        /// <p>The type of predefined worker that is allocated to use for the session. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
+        /// <ul>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
+        /// </ul>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -6315,12 +6353,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_configuration(input);
             self
         }
-        /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+        /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. </p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.glue_version(input.into());
             self
         }
-        /// <p>The Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The GlueVersion must be greater than 2.0. </p>
+        /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. </p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_glue_version(input);
             self
@@ -9120,12 +9158,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn hide_password(mut self, input: bool) -> Self {
             self.inner = self.inner.hide_password(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn set_hide_password(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_hide_password(input);
             self
@@ -9202,12 +9240,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn hide_password(mut self, input: bool) -> Self {
             self.inner = self.inner.hide_password(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn set_hide_password(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_hide_password(input);
             self
@@ -14426,7 +14464,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSessions`.
     ///
-    /// <p>Retrieve a session..</p>
+    /// <p>Retrieve a list of sessions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSessions {
         handle: std::sync::Arc<super::Handle>,
@@ -14594,12 +14632,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_request_origin(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A continuation token, if this is a continuation call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A continuation token, if this is a continuation call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -16189,6 +16227,7 @@ pub mod fluent_builders {
         ///
         /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
         /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job. </p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn arguments(
@@ -16201,6 +16240,7 @@ pub mod fluent_builders {
         }
         /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
         /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job. </p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_arguments(
@@ -16213,23 +16253,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.allocated_capacity(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_allocated_capacity(input);
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
+        /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
+        /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
@@ -16239,7 +16281,7 @@ pub mod fluent_builders {
         /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
         /// <ul>
         /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
-        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.inner = self.inner.max_capacity(input);
@@ -16250,7 +16292,7 @@ pub mod fluent_builders {
         /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
         /// <ul>
         /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
-        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
@@ -16282,21 +16324,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_property(input);
             self
         }
-        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
         /// <ul>
         /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
         /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
         /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.inner = self.inner.worker_type(input);
             self
         }
-        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
         /// <ul>
         /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
         /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
         /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -16306,13 +16350,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
             self
@@ -17995,7 +18037,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateJob`.
     ///
-    /// <p>Updates an existing job definition.</p>
+    /// <p>Updates an existing job definition. The previous job definition is completely overwritten by this information.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJob {
         handle: std::sync::Arc<super::Handle>,
@@ -18045,12 +18087,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>Specifies the values with which to update the job definition.</p>
+        /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
         pub fn job_update(mut self, input: crate::model::JobUpdate) -> Self {
             self.inner = self.inner.job_update(input);
             self
         }
-        /// <p>Specifies the values with which to update the job definition.</p>
+        /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
         pub fn set_job_update(
             mut self,
             input: std::option::Option<crate::model::JobUpdate>,
@@ -18606,12 +18648,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transaction_id(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The version ID at which to update the table contents. </p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_id(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The version ID at which to update the table contents. </p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self

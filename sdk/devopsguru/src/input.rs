@@ -2480,6 +2480,167 @@ impl ListAnomaliesForInsightInput {
     }
 }
 
+/// See [`ListAnomalousLogGroupsInput`](crate::input::ListAnomalousLogGroupsInput).
+pub mod list_anomalous_log_groups_input {
+
+    /// A builder for [`ListAnomalousLogGroupsInput`](crate::input::ListAnomalousLogGroupsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) insight_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The ID of the insight containing the log groups. </p>
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.insight_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the insight containing the log groups. </p>
+        pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.insight_id = input;
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAnomalousLogGroupsInput`](crate::input::ListAnomalousLogGroupsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListAnomalousLogGroupsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListAnomalousLogGroupsInput {
+                insight_id: self.insight_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAnomalousLogGroupsInputOperationOutputAlias = crate::operation::ListAnomalousLogGroups;
+#[doc(hidden)]
+pub type ListAnomalousLogGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListAnomalousLogGroupsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAnomalousLogGroups`](crate::operation::ListAnomalousLogGroups)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAnomalousLogGroups,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAnomalousLogGroupsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/list-log-anomalies").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAnomalousLogGroupsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_anomalous_log_groups(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAnomalousLogGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAnomalousLogGroups",
+            "devopsguru",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAnomalousLogGroupsInput`](crate::input::ListAnomalousLogGroupsInput).
+    pub fn builder() -> crate::input::list_anomalous_log_groups_input::Builder {
+        crate::input::list_anomalous_log_groups_input::Builder::default()
+    }
+}
+
 /// See [`ListEventsInput`](crate::input::ListEventsInput).
 pub mod list_events_input {
 
@@ -2812,6 +2973,170 @@ impl ListInsightsInput {
     /// Creates a new builder-style object to manufacture [`ListInsightsInput`](crate::input::ListInsightsInput).
     pub fn builder() -> crate::input::list_insights_input::Builder {
         crate::input::list_insights_input::Builder::default()
+    }
+}
+
+/// See [`ListMonitoredResourcesInput`](crate::input::ListMonitoredResourcesInput).
+pub mod list_monitored_resources_input {
+
+    /// A builder for [`ListMonitoredResourcesInput`](crate::input::ListMonitoredResourcesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<crate::model::ListMonitoredResourcesFilters>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+        pub fn filters(mut self, input: crate::model::ListMonitoredResourcesFilters) -> Self {
+            self.filters = Some(input);
+            self
+        }
+        /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ListMonitoredResourcesFilters>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMonitoredResourcesInput`](crate::input::ListMonitoredResourcesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListMonitoredResourcesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListMonitoredResourcesInput {
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListMonitoredResourcesInputOperationOutputAlias = crate::operation::ListMonitoredResources;
+#[doc(hidden)]
+pub type ListMonitoredResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListMonitoredResourcesInput {
+    /// Consumes the builder and constructs an Operation<[`ListMonitoredResources`](crate::operation::ListMonitoredResources)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMonitoredResources,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListMonitoredResourcesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/monitoredResources").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListMonitoredResourcesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_monitored_resources(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMonitoredResources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMonitoredResources",
+            "devopsguru",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesInput`](crate::input::ListMonitoredResourcesInput).
+    pub fn builder() -> crate::input::list_monitored_resources_input::Builder {
+        crate::input::list_monitored_resources_input::Builder::default()
     }
 }
 
@@ -4989,6 +5314,41 @@ impl std::fmt::Debug for ListNotificationChannelsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMonitoredResourcesInput {
+    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    pub filters: std::option::Option<crate::model::ListMonitoredResourcesFilters>,
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMonitoredResourcesInput {
+    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ListMonitoredResourcesFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMonitoredResourcesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMonitoredResourcesInput");
+        formatter.field("filters", &self.filters);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsInput {
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -5059,6 +5419,41 @@ impl std::fmt::Debug for ListEventsInput {
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
         formatter.field("account_id", &self.account_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAnomalousLogGroupsInput {
+    /// <p> The ID of the insight containing the log groups. </p>
+    pub insight_id: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAnomalousLogGroupsInput {
+    /// <p> The ID of the insight containing the log groups. </p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAnomalousLogGroupsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAnomalousLogGroupsInput");
+        formatter.field("insight_id", &self.insight_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }

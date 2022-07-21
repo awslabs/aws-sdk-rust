@@ -423,12 +423,28 @@ pub mod create_attendee_input {
             self.external_user_id = input;
             self
         }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
+        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+        /// </note>
+        /// <p>When using capabilities, be aware of these corner cases:</p>
+        /// <ul>
+        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+        /// </ul>
         pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
             self.capabilities = Some(input);
             self
         }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
+        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+        /// </note>
+        /// <p>When using capabilities, be aware of these corner cases:</p>
+        /// <ul>
+        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+        /// </ul>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<crate::model::AttendeeCapabilities>,
@@ -588,6 +604,7 @@ pub mod create_meeting_input {
         pub(crate) meeting_features:
             std::option::Option<crate::model::MeetingFeaturesConfiguration>,
         pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
+        pub(crate) tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -688,6 +705,25 @@ pub mod create_meeting_input {
             self.primary_meeting_id = input;
             self
         }
+        /// Appends an item to `tenant_ids`.
+        ///
+        /// To override the contents of this collection use [`set_tenant_ids`](Self::set_tenant_ids).
+        ///
+        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+        pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tenant_ids.unwrap_or_default();
+            v.push(input.into());
+            self.tenant_ids = Some(v);
+            self
+        }
+        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+        pub fn set_tenant_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tenant_ids = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::input::CreateMeetingInput).
         pub fn build(
             self,
@@ -701,6 +737,7 @@ pub mod create_meeting_input {
                 notifications_configuration: self.notifications_configuration,
                 meeting_features: self.meeting_features,
                 primary_meeting_id: self.primary_meeting_id,
+                tenant_ids: self.tenant_ids,
             })
         }
     }
@@ -830,6 +867,7 @@ pub mod create_meeting_with_attendees_input {
         pub(crate) attendees:
             std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
         pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
+        pub(crate) tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -949,6 +987,25 @@ pub mod create_meeting_with_attendees_input {
             self.primary_meeting_id = input;
             self
         }
+        /// Appends an item to `tenant_ids`.
+        ///
+        /// To override the contents of this collection use [`set_tenant_ids`](Self::set_tenant_ids).
+        ///
+        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+        pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tenant_ids.unwrap_or_default();
+            v.push(input.into());
+            self.tenant_ids = Some(v);
+            self
+        }
+        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+        pub fn set_tenant_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tenant_ids = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
         pub fn build(
             self,
@@ -965,6 +1022,7 @@ pub mod create_meeting_with_attendees_input {
                 notifications_configuration: self.notifications_configuration,
                 attendees: self.attendees,
                 primary_meeting_id: self.primary_meeting_id,
+                tenant_ids: self.tenant_ids,
             })
         }
     }
@@ -2656,6 +2714,8 @@ pub struct CreateMeetingWithAttendeesInput {
     pub attendees: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     pub primary_meeting_id: std::option::Option<std::string::String>,
+    /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateMeetingWithAttendeesInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -2696,6 +2756,10 @@ impl CreateMeetingWithAttendeesInput {
     pub fn primary_meeting_id(&self) -> std::option::Option<&str> {
         self.primary_meeting_id.as_deref()
     }
+    /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    pub fn tenant_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.tenant_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2711,6 +2775,7 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
         );
         formatter.field("attendees", &self.attendees);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
+        formatter.field("tenant_ids", &self.tenant_ids);
         formatter.finish()
     }
 }
@@ -2735,6 +2800,8 @@ pub struct CreateMeetingInput {
     pub meeting_features: std::option::Option<crate::model::MeetingFeaturesConfiguration>,
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     pub primary_meeting_id: std::option::Option<std::string::String>,
+    /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -2771,6 +2838,10 @@ impl CreateMeetingInput {
     pub fn primary_meeting_id(&self) -> std::option::Option<&str> {
         self.primary_meeting_id.as_deref()
     }
+    /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    pub fn tenant_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.tenant_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMeetingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2785,6 +2856,7 @@ impl std::fmt::Debug for CreateMeetingInput {
         );
         formatter.field("meeting_features", &self.meeting_features);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
+        formatter.field("tenant_ids", &self.tenant_ids);
         formatter.finish()
     }
 }
@@ -2797,7 +2869,15 @@ pub struct CreateAttendeeInput {
     pub meeting_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub external_user_id: std::option::Option<std::string::String>,
-    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
+    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
+    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+    /// </note>
+    /// <p>When using capabilities, be aware of these corner cases:</p>
+    /// <ul>
+    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+    /// </ul>
     pub capabilities: std::option::Option<crate::model::AttendeeCapabilities>,
 }
 impl CreateAttendeeInput {
@@ -2809,7 +2889,15 @@ impl CreateAttendeeInput {
     pub fn external_user_id(&self) -> std::option::Option<&str> {
         self.external_user_id.as_deref()
     }
-    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
+    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
+    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+    /// </note>
+    /// <p>When using capabilities, be aware of these corner cases:</p>
+    /// <ul>
+    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+    /// </ul>
     pub fn capabilities(&self) -> std::option::Option<&crate::model::AttendeeCapabilities> {
         self.capabilities.as_ref()
     }

@@ -600,11 +600,11 @@ impl StartRouteAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOrganizationServiceAccessUpdateOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
     pub organization_status: std::option::Option<crate::model::OrganizationStatus>,
 }
 impl StartOrganizationServiceAccessUpdateOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
     pub fn organization_status(&self) -> std::option::Option<&crate::model::OrganizationStatus> {
         self.organization_status.as_ref()
     }
@@ -625,12 +625,12 @@ pub mod start_organization_service_access_update_output {
         pub(crate) organization_status: std::option::Option<crate::model::OrganizationStatus>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
         pub fn organization_status(mut self, input: crate::model::OrganizationStatus) -> Self {
             self.organization_status = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
         pub fn set_organization_status(
             mut self,
             input: std::option::Option<crate::model::OrganizationStatus>,
@@ -986,18 +986,100 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPeeringsOutput {
+    /// <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
+    pub peerings: std::option::Option<std::vec::Vec<crate::model::Peering>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPeeringsOutput {
+    /// <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
+    pub fn peerings(&self) -> std::option::Option<&[crate::model::Peering]> {
+        self.peerings.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListPeeringsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPeeringsOutput");
+        formatter.field("peerings", &self.peerings);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListPeeringsOutput`](crate::output::ListPeeringsOutput).
+pub mod list_peerings_output {
+
+    /// A builder for [`ListPeeringsOutput`](crate::output::ListPeeringsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) peerings: std::option::Option<std::vec::Vec<crate::model::Peering>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `peerings`.
+        ///
+        /// To override the contents of this collection use [`set_peerings`](Self::set_peerings).
+        ///
+        /// <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
+        pub fn peerings(mut self, input: crate::model::Peering) -> Self {
+            let mut v = self.peerings.unwrap_or_default();
+            v.push(input);
+            self.peerings = Some(v);
+            self
+        }
+        /// <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
+        pub fn set_peerings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Peering>>,
+        ) -> Self {
+            self.peerings = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPeeringsOutput`](crate::output::ListPeeringsOutput).
+        pub fn build(self) -> crate::output::ListPeeringsOutput {
+            crate::output::ListPeeringsOutput {
+                peerings: self.peerings,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListPeeringsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPeeringsOutput`](crate::output::ListPeeringsOutput).
+    pub fn builder() -> crate::output::list_peerings_output::Builder {
+        crate::output::list_peerings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationServiceAccessStatusOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Displays the status of an Amazon Web Services Organization.</p>
     pub organization_status: std::option::Option<crate::model::OrganizationStatus>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationServiceAccessStatusOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Displays the status of an Amazon Web Services Organization.</p>
     pub fn organization_status(&self) -> std::option::Option<&crate::model::OrganizationStatus> {
         self.organization_status.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1020,12 +1102,12 @@ pub mod list_organization_service_access_status_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Displays the status of an Amazon Web Services Organization.</p>
         pub fn organization_status(mut self, input: crate::model::OrganizationStatus) -> Self {
             self.organization_status = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Displays the status of an Amazon Web Services Organization.</p>
         pub fn set_organization_status(
             mut self,
             input: std::option::Option<crate::model::OrganizationStatus>,
@@ -1033,12 +1115,12 @@ pub mod list_organization_service_access_status_output {
             self.organization_status = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1459,6 +1541,73 @@ impl GetVpcAttachmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTransitGatewayRouteTableAttachmentOutput {
+    /// <p>Returns information about the transit gateway route table attachment.</p>
+    pub transit_gateway_route_table_attachment:
+        std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
+}
+impl GetTransitGatewayRouteTableAttachmentOutput {
+    /// <p>Returns information about the transit gateway route table attachment.</p>
+    pub fn transit_gateway_route_table_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayRouteTableAttachment> {
+        self.transit_gateway_route_table_attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for GetTransitGatewayRouteTableAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTransitGatewayRouteTableAttachmentOutput");
+        formatter.field(
+            "transit_gateway_route_table_attachment",
+            &self.transit_gateway_route_table_attachment,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetTransitGatewayRouteTableAttachmentOutput`](crate::output::GetTransitGatewayRouteTableAttachmentOutput).
+pub mod get_transit_gateway_route_table_attachment_output {
+
+    /// A builder for [`GetTransitGatewayRouteTableAttachmentOutput`](crate::output::GetTransitGatewayRouteTableAttachmentOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_route_table_attachment:
+            std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
+    }
+    impl Builder {
+        /// <p>Returns information about the transit gateway route table attachment.</p>
+        pub fn transit_gateway_route_table_attachment(
+            mut self,
+            input: crate::model::TransitGatewayRouteTableAttachment,
+        ) -> Self {
+            self.transit_gateway_route_table_attachment = Some(input);
+            self
+        }
+        /// <p>Returns information about the transit gateway route table attachment.</p>
+        pub fn set_transit_gateway_route_table_attachment(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
+        ) -> Self {
+            self.transit_gateway_route_table_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTransitGatewayRouteTableAttachmentOutput`](crate::output::GetTransitGatewayRouteTableAttachmentOutput).
+        pub fn build(self) -> crate::output::GetTransitGatewayRouteTableAttachmentOutput {
+            crate::output::GetTransitGatewayRouteTableAttachmentOutput {
+                transit_gateway_route_table_attachment: self.transit_gateway_route_table_attachment,
+            }
+        }
+    }
+}
+impl GetTransitGatewayRouteTableAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayRouteTableAttachmentOutput`](crate::output::GetTransitGatewayRouteTableAttachmentOutput).
+    pub fn builder() -> crate::output::get_transit_gateway_route_table_attachment_output::Builder {
+        crate::output::get_transit_gateway_route_table_attachment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayRegistrationsOutput {
     /// <p>The transit gateway registrations.</p>
     pub transit_gateway_registrations:
@@ -1545,6 +1694,69 @@ impl GetTransitGatewayRegistrationsOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayRegistrationsOutput`](crate::output::GetTransitGatewayRegistrationsOutput).
     pub fn builder() -> crate::output::get_transit_gateway_registrations_output::Builder {
         crate::output::get_transit_gateway_registrations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTransitGatewayPeeringOutput {
+    /// <p>Returns information about a transit gateway peering. </p>
+    pub transit_gateway_peering: std::option::Option<crate::model::TransitGatewayPeering>,
+}
+impl GetTransitGatewayPeeringOutput {
+    /// <p>Returns information about a transit gateway peering. </p>
+    pub fn transit_gateway_peering(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPeering> {
+        self.transit_gateway_peering.as_ref()
+    }
+}
+impl std::fmt::Debug for GetTransitGatewayPeeringOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTransitGatewayPeeringOutput");
+        formatter.field("transit_gateway_peering", &self.transit_gateway_peering);
+        formatter.finish()
+    }
+}
+/// See [`GetTransitGatewayPeeringOutput`](crate::output::GetTransitGatewayPeeringOutput).
+pub mod get_transit_gateway_peering_output {
+
+    /// A builder for [`GetTransitGatewayPeeringOutput`](crate::output::GetTransitGatewayPeeringOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_peering:
+            std::option::Option<crate::model::TransitGatewayPeering>,
+    }
+    impl Builder {
+        /// <p>Returns information about a transit gateway peering. </p>
+        pub fn transit_gateway_peering(
+            mut self,
+            input: crate::model::TransitGatewayPeering,
+        ) -> Self {
+            self.transit_gateway_peering = Some(input);
+            self
+        }
+        /// <p>Returns information about a transit gateway peering. </p>
+        pub fn set_transit_gateway_peering(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayPeering>,
+        ) -> Self {
+            self.transit_gateway_peering = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTransitGatewayPeeringOutput`](crate::output::GetTransitGatewayPeeringOutput).
+        pub fn build(self) -> crate::output::GetTransitGatewayPeeringOutput {
+            crate::output::GetTransitGatewayPeeringOutput {
+                transit_gateway_peering: self.transit_gateway_peering,
+            }
+        }
+    }
+}
+impl GetTransitGatewayPeeringOutput {
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayPeeringOutput`](crate::output::GetTransitGatewayPeeringOutput).
+    pub fn builder() -> crate::output::get_transit_gateway_peering_output::Builder {
+        crate::output::get_transit_gateway_peering_output::Builder::default()
     }
 }
 
@@ -2885,6 +3097,98 @@ impl GetCoreNetworkChangeSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCoreNetworkChangeEventsOutput {
+    /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
+    pub core_network_change_events:
+        std::option::Option<std::vec::Vec<crate::model::CoreNetworkChangeEvent>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCoreNetworkChangeEventsOutput {
+    /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
+    pub fn core_network_change_events(
+        &self,
+    ) -> std::option::Option<&[crate::model::CoreNetworkChangeEvent]> {
+        self.core_network_change_events.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetCoreNetworkChangeEventsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCoreNetworkChangeEventsOutput");
+        formatter.field(
+            "core_network_change_events",
+            &self.core_network_change_events,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetCoreNetworkChangeEventsOutput`](crate::output::GetCoreNetworkChangeEventsOutput).
+pub mod get_core_network_change_events_output {
+
+    /// A builder for [`GetCoreNetworkChangeEventsOutput`](crate::output::GetCoreNetworkChangeEventsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_change_events:
+            std::option::Option<std::vec::Vec<crate::model::CoreNetworkChangeEvent>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `core_network_change_events`.
+        ///
+        /// To override the contents of this collection use [`set_core_network_change_events`](Self::set_core_network_change_events).
+        ///
+        /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
+        pub fn core_network_change_events(
+            mut self,
+            input: crate::model::CoreNetworkChangeEvent,
+        ) -> Self {
+            let mut v = self.core_network_change_events.unwrap_or_default();
+            v.push(input);
+            self.core_network_change_events = Some(v);
+            self
+        }
+        /// <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
+        pub fn set_core_network_change_events(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CoreNetworkChangeEvent>>,
+        ) -> Self {
+            self.core_network_change_events = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCoreNetworkChangeEventsOutput`](crate::output::GetCoreNetworkChangeEventsOutput).
+        pub fn build(self) -> crate::output::GetCoreNetworkChangeEventsOutput {
+            crate::output::GetCoreNetworkChangeEventsOutput {
+                core_network_change_events: self.core_network_change_events,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetCoreNetworkChangeEventsOutput {
+    /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeEventsOutput`](crate::output::GetCoreNetworkChangeEventsOutput).
+    pub fn builder() -> crate::output::get_core_network_change_events_output::Builder {
+        crate::output::get_core_network_change_events_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreNetworkOutput {
     /// <p>Details about a core network.</p>
     pub core_network: std::option::Option<crate::model::CoreNetwork>,
@@ -3741,6 +4045,60 @@ impl DeleteResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePeeringOutput {
+    /// <p>Information about a deleted peering connection.</p>
+    pub peering: std::option::Option<crate::model::Peering>,
+}
+impl DeletePeeringOutput {
+    /// <p>Information about a deleted peering connection.</p>
+    pub fn peering(&self) -> std::option::Option<&crate::model::Peering> {
+        self.peering.as_ref()
+    }
+}
+impl std::fmt::Debug for DeletePeeringOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePeeringOutput");
+        formatter.field("peering", &self.peering);
+        formatter.finish()
+    }
+}
+/// See [`DeletePeeringOutput`](crate::output::DeletePeeringOutput).
+pub mod delete_peering_output {
+
+    /// A builder for [`DeletePeeringOutput`](crate::output::DeletePeeringOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) peering: std::option::Option<crate::model::Peering>,
+    }
+    impl Builder {
+        /// <p>Information about a deleted peering connection.</p>
+        pub fn peering(mut self, input: crate::model::Peering) -> Self {
+            self.peering = Some(input);
+            self
+        }
+        /// <p>Information about a deleted peering connection.</p>
+        pub fn set_peering(mut self, input: std::option::Option<crate::model::Peering>) -> Self {
+            self.peering = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeletePeeringOutput`](crate::output::DeletePeeringOutput).
+        pub fn build(self) -> crate::output::DeletePeeringOutput {
+            crate::output::DeletePeeringOutput {
+                peering: self.peering,
+            }
+        }
+    }
+}
+impl DeletePeeringOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePeeringOutput`](crate::output::DeletePeeringOutput).
+    pub fn builder() -> crate::output::delete_peering_output::Builder {
+        crate::output::delete_peering_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLinkOutput {
     /// <p>Information about the link.</p>
     pub link: std::option::Option<crate::model::Link>,
@@ -4240,6 +4598,137 @@ impl CreateVpcAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcAttachmentOutput`](crate::output::CreateVpcAttachmentOutput).
     pub fn builder() -> crate::output::create_vpc_attachment_output::Builder {
         crate::output::create_vpc_attachment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateTransitGatewayRouteTableAttachmentOutput {
+    /// <p>The route table associated with the create transit gateway route table attachment request.</p>
+    pub transit_gateway_route_table_attachment:
+        std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
+}
+impl CreateTransitGatewayRouteTableAttachmentOutput {
+    /// <p>The route table associated with the create transit gateway route table attachment request.</p>
+    pub fn transit_gateway_route_table_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayRouteTableAttachment> {
+        self.transit_gateway_route_table_attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateTransitGatewayRouteTableAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateTransitGatewayRouteTableAttachmentOutput");
+        formatter.field(
+            "transit_gateway_route_table_attachment",
+            &self.transit_gateway_route_table_attachment,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateTransitGatewayRouteTableAttachmentOutput`](crate::output::CreateTransitGatewayRouteTableAttachmentOutput).
+pub mod create_transit_gateway_route_table_attachment_output {
+
+    /// A builder for [`CreateTransitGatewayRouteTableAttachmentOutput`](crate::output::CreateTransitGatewayRouteTableAttachmentOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_route_table_attachment:
+            std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
+    }
+    impl Builder {
+        /// <p>The route table associated with the create transit gateway route table attachment request.</p>
+        pub fn transit_gateway_route_table_attachment(
+            mut self,
+            input: crate::model::TransitGatewayRouteTableAttachment,
+        ) -> Self {
+            self.transit_gateway_route_table_attachment = Some(input);
+            self
+        }
+        /// <p>The route table associated with the create transit gateway route table attachment request.</p>
+        pub fn set_transit_gateway_route_table_attachment(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayRouteTableAttachment>,
+        ) -> Self {
+            self.transit_gateway_route_table_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableAttachmentOutput`](crate::output::CreateTransitGatewayRouteTableAttachmentOutput).
+        pub fn build(self) -> crate::output::CreateTransitGatewayRouteTableAttachmentOutput {
+            crate::output::CreateTransitGatewayRouteTableAttachmentOutput {
+                transit_gateway_route_table_attachment: self.transit_gateway_route_table_attachment,
+            }
+        }
+    }
+}
+impl CreateTransitGatewayRouteTableAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAttachmentOutput`](crate::output::CreateTransitGatewayRouteTableAttachmentOutput).
+    pub fn builder() -> crate::output::create_transit_gateway_route_table_attachment_output::Builder
+    {
+        crate::output::create_transit_gateway_route_table_attachment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateTransitGatewayPeeringOutput {
+    /// <p>Returns information about the transit gateway peering connection request.</p>
+    pub transit_gateway_peering: std::option::Option<crate::model::TransitGatewayPeering>,
+}
+impl CreateTransitGatewayPeeringOutput {
+    /// <p>Returns information about the transit gateway peering connection request.</p>
+    pub fn transit_gateway_peering(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPeering> {
+        self.transit_gateway_peering.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateTransitGatewayPeeringOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateTransitGatewayPeeringOutput");
+        formatter.field("transit_gateway_peering", &self.transit_gateway_peering);
+        formatter.finish()
+    }
+}
+/// See [`CreateTransitGatewayPeeringOutput`](crate::output::CreateTransitGatewayPeeringOutput).
+pub mod create_transit_gateway_peering_output {
+
+    /// A builder for [`CreateTransitGatewayPeeringOutput`](crate::output::CreateTransitGatewayPeeringOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_peering:
+            std::option::Option<crate::model::TransitGatewayPeering>,
+    }
+    impl Builder {
+        /// <p>Returns information about the transit gateway peering connection request.</p>
+        pub fn transit_gateway_peering(
+            mut self,
+            input: crate::model::TransitGatewayPeering,
+        ) -> Self {
+            self.transit_gateway_peering = Some(input);
+            self
+        }
+        /// <p>Returns information about the transit gateway peering connection request.</p>
+        pub fn set_transit_gateway_peering(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayPeering>,
+        ) -> Self {
+            self.transit_gateway_peering = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateTransitGatewayPeeringOutput`](crate::output::CreateTransitGatewayPeeringOutput).
+        pub fn build(self) -> crate::output::CreateTransitGatewayPeeringOutput {
+            crate::output::CreateTransitGatewayPeeringOutput {
+                transit_gateway_peering: self.transit_gateway_peering,
+            }
+        }
+    }
+}
+impl CreateTransitGatewayPeeringOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPeeringOutput`](crate::output::CreateTransitGatewayPeeringOutput).
+    pub fn builder() -> crate::output::create_transit_gateway_peering_output::Builder {
+        crate::output::create_transit_gateway_peering_output::Builder::default()
     }
 }
 

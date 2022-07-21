@@ -2743,7 +2743,7 @@ impl ListTriggersOutput {
 pub struct ListStatementsOutput {
     /// <p>Returns the list of statements.</p>
     pub statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A continuation token, if not all statements have yet been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStatementsOutput {
@@ -2751,7 +2751,7 @@ impl ListStatementsOutput {
     pub fn statements(&self) -> std::option::Option<&[crate::model::Statement]> {
         self.statements.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A continuation token, if not all statements have yet been returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2793,12 +2793,12 @@ pub mod list_statements_output {
             self.statements = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A continuation token, if not all statements have yet been returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A continuation token, if not all statements have yet been returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2823,7 +2823,7 @@ impl ListStatementsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSessionsOutput {
-    /// <p>Returns the Id of the session. </p>
+    /// <p>Returns the ID of the session. </p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Returns the session object. </p>
     pub sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
@@ -2831,7 +2831,7 @@ pub struct ListSessionsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSessionsOutput {
-    /// <p>Returns the Id of the session. </p>
+    /// <p>Returns the ID of the session. </p>
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
@@ -2868,14 +2868,14 @@ pub mod list_sessions_output {
         ///
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
         ///
-        /// <p>Returns the Id of the session. </p>
+        /// <p>Returns the ID of the session. </p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
             v.push(input.into());
             self.ids = Some(v);
             self
         }
-        /// <p>Returns the Id of the session. </p>
+        /// <p>Returns the ID of the session. </p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

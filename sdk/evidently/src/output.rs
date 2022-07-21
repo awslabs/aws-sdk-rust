@@ -2,6 +2,308 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSegmentReferencesOutput {
+    /// <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
+    pub referenced_by: std::option::Option<std::vec::Vec<crate::model::RefResource>>,
+    /// <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSegmentReferencesOutput {
+    /// <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
+    pub fn referenced_by(&self) -> std::option::Option<&[crate::model::RefResource]> {
+        self.referenced_by.as_deref()
+    }
+    /// <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSegmentReferencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSegmentReferencesOutput");
+        formatter.field("referenced_by", &self.referenced_by);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListSegmentReferencesOutput`](crate::output::ListSegmentReferencesOutput).
+pub mod list_segment_references_output {
+
+    /// A builder for [`ListSegmentReferencesOutput`](crate::output::ListSegmentReferencesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) referenced_by: std::option::Option<std::vec::Vec<crate::model::RefResource>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `referenced_by`.
+        ///
+        /// To override the contents of this collection use [`set_referenced_by`](Self::set_referenced_by).
+        ///
+        /// <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
+        pub fn referenced_by(mut self, input: crate::model::RefResource) -> Self {
+            let mut v = self.referenced_by.unwrap_or_default();
+            v.push(input);
+            self.referenced_by = Some(v);
+            self
+        }
+        /// <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
+        pub fn set_referenced_by(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RefResource>>,
+        ) -> Self {
+            self.referenced_by = input;
+            self
+        }
+        /// <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSegmentReferencesOutput`](crate::output::ListSegmentReferencesOutput).
+        pub fn build(self) -> crate::output::ListSegmentReferencesOutput {
+            crate::output::ListSegmentReferencesOutput {
+                referenced_by: self.referenced_by,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSegmentReferencesOutput {
+    /// Creates a new builder-style object to manufacture [`ListSegmentReferencesOutput`](crate::output::ListSegmentReferencesOutput).
+    pub fn builder() -> crate::output::list_segment_references_output::Builder {
+        crate::output::list_segment_references_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSegmentsOutput {
+    /// <p>An array of structures that contain information about the segments in this Region.</p>
+    pub segments: std::option::Option<std::vec::Vec<crate::model::Segment>>,
+    /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSegmentsOutput {
+    /// <p>An array of structures that contain information about the segments in this Region.</p>
+    pub fn segments(&self) -> std::option::Option<&[crate::model::Segment]> {
+        self.segments.as_deref()
+    }
+    /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSegmentsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSegmentsOutput");
+        formatter.field("segments", &self.segments);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListSegmentsOutput`](crate::output::ListSegmentsOutput).
+pub mod list_segments_output {
+
+    /// A builder for [`ListSegmentsOutput`](crate::output::ListSegmentsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) segments: std::option::Option<std::vec::Vec<crate::model::Segment>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `segments`.
+        ///
+        /// To override the contents of this collection use [`set_segments`](Self::set_segments).
+        ///
+        /// <p>An array of structures that contain information about the segments in this Region.</p>
+        pub fn segments(mut self, input: crate::model::Segment) -> Self {
+            let mut v = self.segments.unwrap_or_default();
+            v.push(input);
+            self.segments = Some(v);
+            self
+        }
+        /// <p>An array of structures that contain information about the segments in this Region.</p>
+        pub fn set_segments(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Segment>>,
+        ) -> Self {
+            self.segments = input;
+            self
+        }
+        /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSegmentsOutput`](crate::output::ListSegmentsOutput).
+        pub fn build(self) -> crate::output::ListSegmentsOutput {
+            crate::output::ListSegmentsOutput {
+                segments: self.segments,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSegmentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSegmentsOutput`](crate::output::ListSegmentsOutput).
+    pub fn builder() -> crate::output::list_segments_output::Builder {
+        crate::output::list_segments_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSegmentOutput {
+    /// <p>A structure that contains the complete information about the segment that was just created.</p>
+    pub segment: std::option::Option<crate::model::Segment>,
+}
+impl CreateSegmentOutput {
+    /// <p>A structure that contains the complete information about the segment that was just created.</p>
+    pub fn segment(&self) -> std::option::Option<&crate::model::Segment> {
+        self.segment.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateSegmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSegmentOutput");
+        formatter.field("segment", &self.segment);
+        formatter.finish()
+    }
+}
+/// See [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
+pub mod create_segment_output {
+
+    /// A builder for [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) segment: std::option::Option<crate::model::Segment>,
+    }
+    impl Builder {
+        /// <p>A structure that contains the complete information about the segment that was just created.</p>
+        pub fn segment(mut self, input: crate::model::Segment) -> Self {
+            self.segment = Some(input);
+            self
+        }
+        /// <p>A structure that contains the complete information about the segment that was just created.</p>
+        pub fn set_segment(mut self, input: std::option::Option<crate::model::Segment>) -> Self {
+            self.segment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
+        pub fn build(self) -> crate::output::CreateSegmentOutput {
+            crate::output::CreateSegmentOutput {
+                segment: self.segment,
+            }
+        }
+    }
+}
+impl CreateSegmentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
+    pub fn builder() -> crate::output::create_segment_output::Builder {
+        crate::output::create_segment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSegmentOutput {}
+impl std::fmt::Debug for DeleteSegmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSegmentOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
+pub mod delete_segment_output {
+
+    /// A builder for [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
+        pub fn build(self) -> crate::output::DeleteSegmentOutput {
+            crate::output::DeleteSegmentOutput {}
+        }
+    }
+}
+impl DeleteSegmentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
+    pub fn builder() -> crate::output::delete_segment_output::Builder {
+        crate::output::delete_segment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSegmentOutput {
+    /// <p>A structure that contains the complete information about the segment.</p>
+    pub segment: std::option::Option<crate::model::Segment>,
+}
+impl GetSegmentOutput {
+    /// <p>A structure that contains the complete information about the segment.</p>
+    pub fn segment(&self) -> std::option::Option<&crate::model::Segment> {
+        self.segment.as_ref()
+    }
+}
+impl std::fmt::Debug for GetSegmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSegmentOutput");
+        formatter.field("segment", &self.segment);
+        formatter.finish()
+    }
+}
+/// See [`GetSegmentOutput`](crate::output::GetSegmentOutput).
+pub mod get_segment_output {
+
+    /// A builder for [`GetSegmentOutput`](crate::output::GetSegmentOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) segment: std::option::Option<crate::model::Segment>,
+    }
+    impl Builder {
+        /// <p>A structure that contains the complete information about the segment.</p>
+        pub fn segment(mut self, input: crate::model::Segment) -> Self {
+            self.segment = Some(input);
+            self
+        }
+        /// <p>A structure that contains the complete information about the segment.</p>
+        pub fn set_segment(mut self, input: std::option::Option<crate::model::Segment>) -> Self {
+            self.segment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSegmentOutput`](crate::output::GetSegmentOutput).
+        pub fn build(self) -> crate::output::GetSegmentOutput {
+            crate::output::GetSegmentOutput {
+                segment: self.segment,
+            }
+        }
+    }
+}
+impl GetSegmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetSegmentOutput`](crate::output::GetSegmentOutput).
+    pub fn builder() -> crate::output::get_segment_output::Builder {
+        crate::output::get_segment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectDataDeliveryOutput {
     /// <p>A structure containing details about the project that you updated.</p>
     pub project: std::option::Option<crate::model::Project>,
@@ -1812,6 +2114,60 @@ impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TestSegmentPatternOutput {
+    /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
+    pub r#match: std::option::Option<bool>,
+}
+impl TestSegmentPatternOutput {
+    /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
+    pub fn r#match(&self) -> std::option::Option<bool> {
+        self.r#match
+    }
+}
+impl std::fmt::Debug for TestSegmentPatternOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TestSegmentPatternOutput");
+        formatter.field("r#match", &self.r#match);
+        formatter.finish()
+    }
+}
+/// See [`TestSegmentPatternOutput`](crate::output::TestSegmentPatternOutput).
+pub mod test_segment_pattern_output {
+
+    /// A builder for [`TestSegmentPatternOutput`](crate::output::TestSegmentPatternOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#match: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
+        pub fn r#match(mut self, input: bool) -> Self {
+            self.r#match = Some(input);
+            self
+        }
+        /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
+        pub fn set_match(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#match = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TestSegmentPatternOutput`](crate::output::TestSegmentPatternOutput).
+        pub fn build(self) -> crate::output::TestSegmentPatternOutput {
+            crate::output::TestSegmentPatternOutput {
+                r#match: self.r#match,
+            }
+        }
+    }
+}
+impl TestSegmentPatternOutput {
+    /// Creates a new builder-style object to manufacture [`TestSegmentPatternOutput`](crate::output::TestSegmentPatternOutput).
+    pub fn builder() -> crate::output::test_segment_pattern_output::Builder {
+        crate::output::test_segment_pattern_output::Builder::default()
     }
 }
 

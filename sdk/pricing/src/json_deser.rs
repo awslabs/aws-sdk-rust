@@ -349,7 +349,7 @@ pub fn deser_operation_crate_operation_get_products(
                     }
                     "PriceList" => {
                         builder = builder.set_price_list(
-                            crate::json_deser::deser_list_com_amazonaws_pricing_price_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_pricing_price_list_json_items(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -460,7 +460,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_pricing_price_list<'a, I>(
+pub fn deser_list_com_amazonaws_pricing_price_list_json_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where

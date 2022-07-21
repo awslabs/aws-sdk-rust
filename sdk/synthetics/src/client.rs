@@ -91,6 +91,17 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`AssociateResource`](crate::client::fluent_builders::AssociateResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`group_identifier(impl Into<String>)`](crate::client::fluent_builders::AssociateResource::group_identifier) / [`set_group_identifier(Option<String>)`](crate::client::fluent_builders::AssociateResource::set_group_identifier): <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::AssociateResource::set_resource_arn): <p>The ARN of the canary that you want to associate with the specified group.</p>
+    /// - On success, responds with [`AssociateResourceOutput`](crate::output::AssociateResourceOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateResourceError>`](crate::error::AssociateResourceError)
+    pub fn associate_resource(&self) -> fluent_builders::AssociateResource {
+        fluent_builders::AssociateResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateCanary`](crate::client::fluent_builders::CreateCanary) operation.
     ///
     /// - The fluent builder is configurable:
@@ -99,7 +110,7 @@ impl Client {
     ///   - [`artifact_s3_location(impl Into<String>)`](crate::client::fluent_builders::CreateCanary::artifact_s3_location) / [`set_artifact_s3_location(Option<String>)`](crate::client::fluent_builders::CreateCanary::set_artifact_s3_location): <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
     ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCanary::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateCanary::set_execution_role_arn): <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>  <ul>   <li> <p> <code>s3:PutObject</code> </p> </li>   <li> <p> <code>s3:GetBucketLocation</code> </p> </li>   <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>   <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>   <li> <p> <code>logs:CreateLogGroup</code> </p> </li>   <li> <p> <code>logs:CreateLogStream</code> </p> </li>   <li> <p> <code>logs:PutLogEvents</code> </p> </li>  </ul>
     ///   - [`schedule(CanaryScheduleInput)`](crate::client::fluent_builders::CreateCanary::schedule) / [`set_schedule(Option<CanaryScheduleInput>)`](crate::client::fluent_builders::CreateCanary::set_schedule): <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
-    ///   - [`run_config(CanaryRunConfigInput)`](crate::client::fluent_builders::CreateCanary::run_config) / [`set_run_config(Option<CanaryRunConfigInput>)`](crate::client::fluent_builders::CreateCanary::set_run_config): <p>A structure that contains the configuration for individual canary runs, such as timeout value.</p>
+    ///   - [`run_config(CanaryRunConfigInput)`](crate::client::fluent_builders::CreateCanary::run_config) / [`set_run_config(Option<CanaryRunConfigInput>)`](crate::client::fluent_builders::CreateCanary::set_run_config): <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>   <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>  </important>
     ///   - [`success_retention_period_in_days(i32)`](crate::client::fluent_builders::CreateCanary::success_retention_period_in_days) / [`set_success_retention_period_in_days(Option<i32>)`](crate::client::fluent_builders::CreateCanary::set_success_retention_period_in_days): <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     ///   - [`failure_retention_period_in_days(i32)`](crate::client::fluent_builders::CreateCanary::failure_retention_period_in_days) / [`set_failure_retention_period_in_days(Option<i32>)`](crate::client::fluent_builders::CreateCanary::set_failure_retention_period_in_days): <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     ///   - [`runtime_version(impl Into<String>)`](crate::client::fluent_builders::CreateCanary::runtime_version) / [`set_runtime_version(Option<String>)`](crate::client::fluent_builders::CreateCanary::set_runtime_version): <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
@@ -112,6 +123,17 @@ impl Client {
     pub fn create_canary(&self) -> fluent_builders::CreateCanary {
         fluent_builders::CreateCanary::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_name): <p>The name for the group. It can include any Unicode characters.</p>  <p>The names for all groups in your account, across all Regions, must be unique.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateGroup::set_tags): <p>A list of key-value pairs to associate with the group. You can associate as many as 50 tags with a group.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
+    ///   - [`group(Option<Group>)`](crate::output::CreateGroupOutput::group): <p>A structure that contains information about the group that was just created.</p>
+    /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
+    pub fn create_group(&self) -> fluent_builders::CreateGroup {
+        fluent_builders::CreateGroup::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteCanary`](crate::client::fluent_builders::DeleteCanary) operation.
     ///
     /// - The fluent builder is configurable:
@@ -122,6 +144,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteCanaryError>`](crate::error::DeleteCanaryError)
     pub fn delete_canary(&self) -> fluent_builders::DeleteCanary {
         fluent_builders::DeleteCanary::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`group_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_identifier) / [`set_group_identifier(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_identifier): <p>Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
+    pub fn delete_group(&self) -> fluent_builders::DeleteGroup {
+        fluent_builders::DeleteGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeCanaries`](crate::client::fluent_builders::DescribeCanaries) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeCanaries::into_paginator).
@@ -141,7 +173,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeCanariesLastRun::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeCanariesLastRun::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeCanariesLastRun::set_next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeCanariesLastRun::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeCanariesLastRun::set_next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeCanariesLastRun::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeCanariesLastRun::set_max_results): <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
     ///   - [`names(Vec<String>)`](crate::client::fluent_builders::DescribeCanariesLastRun::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeCanariesLastRun::set_names): <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>  <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>  <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
     /// - On success, responds with [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput) with field(s):
@@ -164,12 +196,23 @@ impl Client {
     pub fn describe_runtime_versions(&self) -> fluent_builders::DescribeRuntimeVersions {
         fluent_builders::DescribeRuntimeVersions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DisassociateResource`](crate::client::fluent_builders::DisassociateResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`group_identifier(impl Into<String>)`](crate::client::fluent_builders::DisassociateResource::group_identifier) / [`set_group_identifier(Option<String>)`](crate::client::fluent_builders::DisassociateResource::set_group_identifier): <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DisassociateResource::set_resource_arn): <p>The ARN of the canary that you want to remove from the specified group.</p>
+    /// - On success, responds with [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateResourceError>`](crate::error::DisassociateResourceError)
+    pub fn disassociate_resource(&self) -> fluent_builders::DisassociateResource {
+        fluent_builders::DisassociateResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetCanary`](crate::client::fluent_builders::GetCanary) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetCanary::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetCanary::set_name): <p>The name of the canary that you want details for.</p>
     /// - On success, responds with [`GetCanaryOutput`](crate::output::GetCanaryOutput) with field(s):
-    ///   - [`canary(Option<Canary>)`](crate::output::GetCanaryOutput::canary): <p>A strucure that contains the full information about the canary.</p>
+    ///   - [`canary(Option<Canary>)`](crate::output::GetCanaryOutput::canary): <p>A structure that contains the full information about the canary.</p>
     /// - On failure, responds with [`SdkError<GetCanaryError>`](crate::error::GetCanaryError)
     pub fn get_canary(&self) -> fluent_builders::GetCanary {
         fluent_builders::GetCanary::new(self.handle.clone())
@@ -188,12 +231,63 @@ impl Client {
     pub fn get_canary_runs(&self) -> fluent_builders::GetCanaryRuns {
         fluent_builders::GetCanaryRuns::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetGroup`](crate::client::fluent_builders::GetGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`group_identifier(impl Into<String>)`](crate::client::fluent_builders::GetGroup::group_identifier) / [`set_group_identifier(Option<String>)`](crate::client::fluent_builders::GetGroup::set_group_identifier): <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    /// - On success, responds with [`GetGroupOutput`](crate::output::GetGroupOutput) with field(s):
+    ///   - [`group(Option<Group>)`](crate::output::GetGroupOutput::group): <p>A structure that contains information about the group.</p>
+    /// - On failure, responds with [`SdkError<GetGroupError>`](crate::error::GetGroupError)
+    pub fn get_group(&self) -> fluent_builders::GetGroup {
+        fluent_builders::GetGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListAssociatedGroups`](crate::client::fluent_builders::ListAssociatedGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedGroups::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssociatedGroups::set_next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssociatedGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssociatedGroups::set_max_results): <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListAssociatedGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedGroups::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListAssociatedGroups::set_resource_arn): <p>The ARN of the canary that you want to view groups for.</p>
+    /// - On success, responds with [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput) with field(s):
+    ///   - [`groups(Option<Vec<GroupSummary>>)`](crate::output::ListAssociatedGroupsOutput::groups): <p>An array of structures that contain information about the groups that this canary is associated with.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssociatedGroupsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListAssociatedGroupsError>`](crate::error::ListAssociatedGroupsError)
+    pub fn list_associated_groups(&self) -> fluent_builders::ListAssociatedGroups {
+        fluent_builders::ListAssociatedGroups::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListGroupResources`](crate::client::fluent_builders::ListGroupResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupResources::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupResources::set_next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupResources::set_max_results): <p>Specify this parameter to limit how many canary ARNs are returned each time you use the <code>ListGroupResources</code> operation. If you omit this parameter, the default of 20 is used.</p>
+    ///   - [`group_identifier(impl Into<String>)`](crate::client::fluent_builders::ListGroupResources::group_identifier) / [`set_group_identifier(Option<String>)`](crate::client::fluent_builders::ListGroupResources::set_group_identifier): <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    /// - On success, responds with [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput) with field(s):
+    ///   - [`resources(Option<Vec<String>>)`](crate::output::ListGroupResourcesOutput::resources): <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupResourcesOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListGroupResourcesError>`](crate::error::ListGroupResourcesError)
+    pub fn list_group_resources(&self) -> fluent_builders::ListGroupResources {
+        fluent_builders::ListGroupResources::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroups::set_next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_max_results): <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
+    /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
+    ///   - [`groups(Option<Vec<GroupSummary>>)`](crate::output::ListGroupsOutput::groups): <p>An array of structures that each contain information about one group.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::error::ListGroupsError)
+    pub fn list_groups(&self) -> fluent_builders::ListGroups {
+        fluent_builders::ListGroups::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the canary that you want to view tags for.</p>  <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the canary or group that you want to view tags for.</p>  <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>  <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tag keys and values associated with the canary that you specified.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tag keys and values associated with the resource that you specified.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
@@ -211,7 +305,7 @@ impl Client {
     /// Constructs a fluent builder for the [`StopCanary`](crate::client::fluent_builders::StopCanary) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopCanary::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopCanary::set_name): <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopCanary::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopCanary::set_name): <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.</p>
     /// - On success, responds with [`StopCanaryOutput`](crate::output::StopCanaryOutput)
 
     /// - On failure, responds with [`SdkError<StopCanaryError>`](crate::error::StopCanaryError)
@@ -221,8 +315,8 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the canary that you're adding tags to.</p>  <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of key-value pairs to associate with the canary.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the canary or group that you're adding tags to.</p>  <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>  <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of key-value pairs to associate with the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -232,7 +326,7 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the canary that you're removing tags from.</p>  <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the canary or group that you're removing tags from.</p>  <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>  <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
     ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
@@ -248,7 +342,7 @@ impl Client {
     ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCanary::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateCanary::set_execution_role_arn): <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>  <ul>   <li> <p> <code>s3:PutObject</code> </p> </li>   <li> <p> <code>s3:GetBucketLocation</code> </p> </li>   <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>   <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>   <li> <p> <code>logs:CreateLogGroup</code> </p> </li>   <li> <p> <code>logs:CreateLogStream</code> </p> </li>   <li> <p> <code>logs:CreateLogStream</code> </p> </li>  </ul>
     ///   - [`runtime_version(impl Into<String>)`](crate::client::fluent_builders::UpdateCanary::runtime_version) / [`set_runtime_version(Option<String>)`](crate::client::fluent_builders::UpdateCanary::set_runtime_version): <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
     ///   - [`schedule(CanaryScheduleInput)`](crate::client::fluent_builders::UpdateCanary::schedule) / [`set_schedule(Option<CanaryScheduleInput>)`](crate::client::fluent_builders::UpdateCanary::set_schedule): <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
-    ///   - [`run_config(CanaryRunConfigInput)`](crate::client::fluent_builders::UpdateCanary::run_config) / [`set_run_config(Option<CanaryRunConfigInput>)`](crate::client::fluent_builders::UpdateCanary::set_run_config): <p>A structure that contains the timeout value that is used for each individual run of the canary.</p>
+    ///   - [`run_config(CanaryRunConfigInput)`](crate::client::fluent_builders::UpdateCanary::run_config) / [`set_run_config(Option<CanaryRunConfigInput>)`](crate::client::fluent_builders::UpdateCanary::set_run_config): <p>A structure that contains the timeout value that is used for each individual run of the canary.</p> <important>   <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>  </important>
     ///   - [`success_retention_period_in_days(i32)`](crate::client::fluent_builders::UpdateCanary::success_retention_period_in_days) / [`set_success_retention_period_in_days(Option<i32>)`](crate::client::fluent_builders::UpdateCanary::set_success_retention_period_in_days): <p>The number of days to retain data about successful runs of this canary.</p>
     ///   - [`failure_retention_period_in_days(i32)`](crate::client::fluent_builders::UpdateCanary::failure_retention_period_in_days) / [`set_failure_retention_period_in_days(Option<i32>)`](crate::client::fluent_builders::UpdateCanary::set_failure_retention_period_in_days): <p>The number of days to retain data about failed runs of this canary.</p>
     ///   - [`vpc_config(VpcConfigInput)`](crate::client::fluent_builders::UpdateCanary::vpc_config) / [`set_vpc_config(Option<VpcConfigInput>)`](crate::client::fluent_builders::UpdateCanary::set_vpc_config): <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
@@ -269,11 +363,78 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `AssociateResource`.
+    ///
+    /// <p>Associates a canary with a group. Using groups can help you with managing and automating your canaries, and you can also view aggregated run results and statistics for all canaries in a group. </p>
+    /// <p>You must run this operation in the Region where the canary exists.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociateResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::associate_resource_input::Builder,
+    }
+    impl AssociateResource {
+        /// Creates a new `AssociateResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_identifier(input.into());
+            self
+        }
+        /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn set_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_group_identifier(input);
+            self
+        }
+        /// <p>The ARN of the canary that you want to associate with the specified group.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the canary that you want to associate with the specified group.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateCanary`.
     ///
     /// <p>Creates a canary. Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help you check the availability and latency of your web services and troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and metrics. You can set up a canary to run continuously or just once. </p>
     /// <p>Do not use <code>CreateCanary</code> to modify an existing canary. Use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a> instead.</p>
-    /// <p>To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new IAM role for the canary, you also need the the <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary Roles and Permissions</a>.</p>
+    /// <p>To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new IAM role for the canary, you also need the <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary Roles and Permissions</a>.</p>
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the Amazon Resource Name (ARN) for the canary, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCanary {
@@ -396,12 +557,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>A structure that contains the configuration for individual canary runs, such as timeout value.</p>
+        /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
+        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+        /// </important>
         pub fn run_config(mut self, input: crate::model::CanaryRunConfigInput) -> Self {
             self.inner = self.inner.run_config(input);
             self
         }
-        /// <p>A structure that contains the configuration for individual canary runs, such as timeout value.</p>
+        /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
+        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+        /// </important>
         pub fn set_run_config(
             mut self,
             input: std::option::Option<crate::model::CanaryRunConfigInput>,
@@ -500,11 +665,94 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateGroup`.
+    ///
+    /// <p>Creates a group which you can use to associate canaries with each other, including cross-Region canaries. Using groups can help you with managing and automating your canaries, and you can also view aggregated run results and statistics for all canaries in a group. </p>
+    /// <p>Groups are global resources. When you create a group, it is replicated across Amazon Web Services Regions, and you can view it and add canaries to it from any Region. Although the group ARN format reflects the Region name where it was created, a group is not constrained to any Region. This means that you can put canaries from multiple Regions into the same group, and then use that group to view and manage all of those canaries in a single view.</p>
+    /// <p>Groups are supported in all Regions except the Regions that are disabled by default. For more information about these Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Enabling a Region</a>.</p>
+    /// <p>Each group can contain as many as 10 canaries. You can have as many as 20 groups in your account. Any single canary can be a member of up to 10 groups.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_group_input::Builder,
+    }
+    impl CreateGroup {
+        /// Creates a new `CreateGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name for the group. It can include any Unicode characters.</p>
+        /// <p>The names for all groups in your account, across all Regions, must be unique.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name for the group. It can include any Unicode characters.</p>
+        /// <p>The names for all groups in your account, across all Regions, must be unique.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of key-value pairs to associate with the group. You can associate as many as 50 tags with a group.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>A list of key-value pairs to associate with the group. You can associate as many as 50 tags with a group.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteCanary`.
     ///
     /// <p>Permanently deletes the specified canary.</p>
     /// <p>If you specify <code>DeleteLambda</code> to <code>true</code>, CloudWatch Synthetics also deletes the Lambda functions and layers that are used by the canary.</p>
-    /// <p>Other esources used and created by the canary are not automatically deleted. After you delete a canary that you do not intend to use again, you should also delete the following:</p>
+    /// <p>Other resources used and created by the canary are not automatically deleted. After you delete a canary that you do not intend to use again, you should also delete the following:</p>
     /// <ul>
     /// <li> <p>The CloudWatch alarms created for this canary. These alarms have a name of <code>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i> </code>.</p> </li>
     /// <li> <p>Amazon S3 objects and buckets, such as the canary's artifact location.</p> </li>
@@ -571,6 +819,63 @@ pub mod fluent_builders {
         /// <p>Type: Boolean</p>
         pub fn set_delete_lambda(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_lambda(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteGroup`.
+    ///
+    /// <p>Deletes a group. The group doesn't need to be empty to be deleted. If there are canaries in the group, they are not deleted when you delete the group. </p>
+    /// <p>Groups are a global resource that appear in all Regions, but the request to delete a group must be made from its home Region. You can find the home Region of a group within its ARN.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_group_input::Builder,
+    }
+    impl DeleteGroup {
+        /// Creates a new `DeleteGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_identifier(input.into());
+            self
+        }
+        /// <p>Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn set_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_group_identifier(input);
             self
         }
     }
@@ -716,12 +1021,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeCanariesLastRunPaginator {
             crate::paginator::DescribeCanariesLastRunPaginator::new(self.handle, self.inner)
         }
-        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -824,6 +1129,72 @@ pub mod fluent_builders {
         /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DisassociateResource`.
+    ///
+    /// <p>Removes a canary from a group. You must run this operation in the Region where the canary exists.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::disassociate_resource_input::Builder,
+    }
+    impl DisassociateResource {
+        /// Creates a new `DisassociateResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::DisassociateResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_identifier(input.into());
+            self
+        }
+        /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn set_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_group_identifier(input);
+            self
+        }
+        /// <p>The ARN of the canary that you want to remove from the specified group.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the canary that you want to remove from the specified group.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -959,9 +1330,295 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetGroup`.
+    ///
+    /// <p>Returns information about one group. Groups are a global resource, so you can use this operation from any Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_group_input::Builder,
+    }
+    impl GetGroup {
+        /// Creates a new `GetGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_identifier(input.into());
+            self
+        }
+        /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn set_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_group_identifier(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAssociatedGroups`.
+    ///
+    /// <p>Returns a list of the groups that the specified canary is associated with. The canary that you specify must be in the current Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAssociatedGroups {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_associated_groups_input::Builder,
+    }
+    impl ListAssociatedGroups {
+        /// Creates a new `ListAssociatedGroups`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAssociatedGroupsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAssociatedGroupsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociatedGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssociatedGroupsPaginator {
+            crate::paginator::ListAssociatedGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListAssociatedGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListAssociatedGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The ARN of the canary that you want to view groups for.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the canary that you want to view groups for.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListGroupResources`.
+    ///
+    /// <p>This operation returns a list of the ARNs of the canaries that are associated with the specified group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListGroupResources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_group_resources_input::Builder,
+    }
+    impl ListGroupResources {
+        /// Creates a new `ListGroupResources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListGroupResourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListGroupResourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGroupResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGroupResourcesPaginator {
+            crate::paginator::ListGroupResourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Specify this parameter to limit how many canary ARNs are returned each time you use the <code>ListGroupResources</code> operation. If you omit this parameter, the default of 20 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Specify this parameter to limit how many canary ARNs are returned each time you use the <code>ListGroupResources</code> operation. If you omit this parameter, the default of 20 is used.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_identifier(input.into());
+            self
+        }
+        /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+        pub fn set_group_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_group_identifier(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListGroups`.
+    ///
+    /// <p>Returns a list of all groups in the account, displaying their names, unique IDs, and ARNs. The groups from all Regions are returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListGroups {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_groups_input::Builder,
+    }
+    impl ListGroups {
+        /// Creates a new `ListGroups`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListGroupsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListGroupsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGroupsPaginator {
+            crate::paginator::ListGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Displays the tags associated with a canary.</p>
+    /// <p>Displays the tags associated with a canary or group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -1001,14 +1658,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the canary that you want to view tags for.</p>
+        /// <p>The ARN of the canary or group that you want to view tags for.</p>
         /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+        /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the canary that you want to view tags for.</p>
+        /// <p>The ARN of the canary or group that you want to view tags for.</p>
         /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+        /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1069,7 +1728,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopCanary`.
     ///
-    /// <p>Stops the canary to prevent all future runs. If the canary is currently running, Synthetics stops waiting for the current run of the specified canary to complete. The run that is in progress completes on its own, publishes metrics, and uploads artifacts, but it is not recorded in Synthetics as a completed run.</p>
+    /// <p>Stops the canary to prevent all future runs. If the canary is currently running,the run that is in progress completes on its own, publishes metrics, and uploads artifacts, but it is not recorded in Synthetics as a completed run.</p>
     /// <p>You can use <code>StartCanary</code> to start it running again with the canary’s current schedule at any point in the future. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCanary {
@@ -1110,12 +1769,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+        /// <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+        /// <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1123,11 +1782,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns one or more tags (key-value pairs) to the specified canary. </p>
+    /// <p>Assigns one or more tags (key-value pairs) to the specified canary or group. </p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    /// <p>You can use the <code>TagResource</code> action with a canary that already has tags. If you specify a new tag key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces the previous value for that tag.</p>
-    /// <p>You can associate as many as 50 tags with a canary.</p>
+    /// <p>You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>
+    /// <p>You can associate as many as 50 tags with a canary or group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -1167,14 +1826,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the canary that you're adding tags to.</p>
+        /// <p>The ARN of the canary or group that you're adding tags to.</p>
         /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+        /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the canary that you're adding tags to.</p>
+        /// <p>The ARN of the canary or group that you're adding tags to.</p>
         /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+        /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1183,7 +1844,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of key-value pairs to associate with the canary.</p>
+        /// <p>The list of key-value pairs to associate with the resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1192,7 +1853,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The list of key-value pairs to associate with the canary.</p>
+        /// <p>The list of key-value pairs to associate with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1205,7 +1866,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes one or more tags from the specified canary.</p>
+    /// <p>Removes one or more tags from the specified resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -1245,14 +1906,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the canary that you're removing tags from.</p>
+        /// <p>The ARN of the canary or group that you're removing tags from.</p>
         /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+        /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the canary that you're removing tags from.</p>
+        /// <p>The ARN of the canary or group that you're removing tags from.</p>
         /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+        /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1277,7 +1940,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCanary`.
     ///
-    /// <p>Use this operation to change the settings of a canary that has already been created.</p>
+    /// <p>Updates the configuration of a canary that has already been created.</p>
     /// <p>You can't use this operation to update the tags of an existing canary. To change the tags of an existing canary, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCanary {
@@ -1400,12 +2063,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p>
+        /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p> <important>
+        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+        /// </important>
         pub fn run_config(mut self, input: crate::model::CanaryRunConfigInput) -> Self {
             self.inner = self.inner.run_config(input);
             self
         }
-        /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p>
+        /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p> <important>
+        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+        /// </important>
         pub fn set_run_config(
             mut self,
             input: std::option::Option<crate::model::CanaryRunConfigInput>,

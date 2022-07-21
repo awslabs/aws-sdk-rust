@@ -638,7 +638,7 @@ pub struct VisibilityConfig {
     pub sampled_requests_enabled: bool,
     /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a>.</p>
     pub cloud_watch_metrics_enabled: bool,
-    /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example "All" and "Default_Action." </p>
+    /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl VisibilityConfig {
@@ -650,7 +650,7 @@ impl VisibilityConfig {
     pub fn cloud_watch_metrics_enabled(&self) -> bool {
         self.cloud_watch_metrics_enabled
     }
-    /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example "All" and "Default_Action." </p>
+    /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -698,12 +698,12 @@ pub mod visibility_config {
             self.cloud_watch_metrics_enabled = input;
             self
         }
-        /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example "All" and "Default_Action." </p>
+        /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example "All" and "Default_Action." </p>
+        /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -1513,7 +1513,6 @@ impl RuleAction {
 /// </ul>
 /// <p>You can configure the expiration time in the <code>CaptchaConfig</code> <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule setting overrides the web ACL setting. </p>
 /// <p>This action option is available for rules. It isn't available for web ACL default actions. </p>
-/// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptchaAction {
@@ -1716,7 +1715,7 @@ impl BlockAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomResponse {
     /// <p>The HTTP status code to return to the client. </p>
-    /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub response_code: std::option::Option<i32>,
     /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
     pub custom_response_body_key: std::option::Option<std::string::String>,
@@ -1726,7 +1725,7 @@ pub struct CustomResponse {
 }
 impl CustomResponse {
     /// <p>The HTTP status code to return to the client. </p>
-    /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn response_code(&self) -> std::option::Option<i32> {
         self.response_code
     }
@@ -1762,13 +1761,13 @@ pub mod custom_response {
     }
     impl Builder {
         /// <p>The HTTP status code to return to the client. </p>
-        /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn response_code(mut self, input: i32) -> Self {
             self.response_code = Some(input);
             self
         }
         /// <p>The HTTP status code to return to the client. </p>
-        /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_response_code(mut self, input: std::option::Option<i32>) -> Self {
             self.response_code = input;
             self
@@ -1828,14 +1827,14 @@ impl CustomResponse {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statement {
-    /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is refered to as a string match statement.</p>
+    /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
     pub byte_match_statement: std::option::Option<crate::model::ByteMatchStatement>,
-    /// <p>Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.</p>
+    /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
     pub sqli_match_statement: std::option::Option<crate::model::SqliMatchStatement>,
-    /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+    /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
     pub xss_match_statement: std::option::Option<crate::model::XssMatchStatement>,
     /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
-    /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
+    /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests that have a request body greater than 8192 bytes.</p>
     /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     pub size_constraint_statement: std::option::Option<crate::model::SizeConstraintStatement>,
     /// <p>A rule statement used to identify web requests based on country of origin. </p>
@@ -1859,7 +1858,7 @@ pub struct Statement {
     /// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
     /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
     /// </ul>
-    /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
+    /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are not counted towards the rate limit and are not affected by this rule.</p>
     /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
     pub rate_based_statement: std::option::Option<crate::model::RateBasedStatement>,
     /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
@@ -1878,20 +1877,20 @@ pub struct Statement {
     pub regex_match_statement: std::option::Option<crate::model::RegexMatchStatement>,
 }
 impl Statement {
-    /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is refered to as a string match statement.</p>
+    /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
     pub fn byte_match_statement(&self) -> std::option::Option<&crate::model::ByteMatchStatement> {
         self.byte_match_statement.as_ref()
     }
-    /// <p>Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.</p>
+    /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
     pub fn sqli_match_statement(&self) -> std::option::Option<&crate::model::SqliMatchStatement> {
         self.sqli_match_statement.as_ref()
     }
-    /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+    /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
     pub fn xss_match_statement(&self) -> std::option::Option<&crate::model::XssMatchStatement> {
         self.xss_match_statement.as_ref()
     }
     /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
-    /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
+    /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests that have a request body greater than 8192 bytes.</p>
     /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     pub fn size_constraint_statement(
         &self,
@@ -1931,7 +1930,7 @@ impl Statement {
     /// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
     /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
     /// </ul>
-    /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
+    /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are not counted towards the rate limit and are not affected by this rule.</p>
     /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
     pub fn rate_based_statement(&self) -> std::option::Option<&crate::model::RateBasedStatement> {
         self.rate_based_statement.as_ref()
@@ -2026,12 +2025,12 @@ pub mod statement {
         pub(crate) regex_match_statement: std::option::Option<crate::model::RegexMatchStatement>,
     }
     impl Builder {
-        /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is refered to as a string match statement.</p>
+        /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
         pub fn byte_match_statement(mut self, input: crate::model::ByteMatchStatement) -> Self {
             self.byte_match_statement = Some(input);
             self
         }
-        /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is refered to as a string match statement.</p>
+        /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
         pub fn set_byte_match_statement(
             mut self,
             input: std::option::Option<crate::model::ByteMatchStatement>,
@@ -2039,12 +2038,12 @@ pub mod statement {
             self.byte_match_statement = input;
             self
         }
-        /// <p>Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.</p>
+        /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
         pub fn sqli_match_statement(mut self, input: crate::model::SqliMatchStatement) -> Self {
             self.sqli_match_statement = Some(input);
             self
         }
-        /// <p>Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.</p>
+        /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
         pub fn set_sqli_match_statement(
             mut self,
             input: std::option::Option<crate::model::SqliMatchStatement>,
@@ -2052,12 +2051,12 @@ pub mod statement {
             self.sqli_match_statement = input;
             self
         }
-        /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+        /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
         pub fn xss_match_statement(mut self, input: crate::model::XssMatchStatement) -> Self {
             self.xss_match_statement = Some(input);
             self
         }
-        /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+        /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
         pub fn set_xss_match_statement(
             mut self,
             input: std::option::Option<crate::model::XssMatchStatement>,
@@ -2066,7 +2065,7 @@ pub mod statement {
             self
         }
         /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
-        /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
+        /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests that have a request body greater than 8192 bytes.</p>
         /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
         pub fn size_constraint_statement(
             mut self,
@@ -2076,7 +2075,7 @@ pub mod statement {
             self
         }
         /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
-        /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
+        /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests that have a request body greater than 8192 bytes.</p>
         /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
         pub fn set_size_constraint_statement(
             mut self,
@@ -2160,7 +2159,7 @@ pub mod statement {
         /// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
         /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
         /// </ul>
-        /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
+        /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are not counted towards the rate limit and are not affected by this rule.</p>
         /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
         pub fn rate_based_statement(mut self, input: crate::model::RateBasedStatement) -> Self {
             self.rate_based_statement = Some(input);
@@ -2174,7 +2173,7 @@ pub mod statement {
         /// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
         /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
         /// </ul>
-        /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
+        /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are not counted towards the rate limit and are not affected by this rule.</p>
         /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
         pub fn set_rate_based_statement(
             mut self,
@@ -2303,7 +2302,7 @@ impl Statement {
 pub struct RegexMatchStatement {
     /// <p>The string representing the regular expression.</p>
     pub regex_string: std::option::Option<std::string::String>,
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
@@ -2313,7 +2312,7 @@ impl RegexMatchStatement {
     pub fn regex_string(&self) -> std::option::Option<&str> {
         self.regex_string.as_deref()
     }
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
@@ -2353,12 +2352,12 @@ pub mod regex_match_statement {
             self.regex_string = input;
             self
         }
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -3081,14 +3080,14 @@ impl FieldToMatch {
 }
 
 /// <p>Inspect the cookies in the web request. You can specify the parts of the cookies to inspect and you can narrow the set of cookies to inspect by including or excluding specific keys.</p>
-/// <p>This is used to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
 /// <p>Example JSON: <code>"Cookies": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cookies {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
     pub match_pattern: std::option::Option<crate::model::CookieMatchPattern>,
     /// <p>The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
     pub match_scope: std::option::Option<crate::model::MapMatchScope>,
@@ -3104,7 +3103,7 @@ pub struct Cookies {
 impl Cookies {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
     pub fn match_pattern(&self) -> std::option::Option<&crate::model::CookieMatchPattern> {
         self.match_pattern.as_ref()
     }
@@ -3145,14 +3144,14 @@ pub mod cookies {
     impl Builder {
         /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
         /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-        /// <p>Example JSON: <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+        /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
         pub fn match_pattern(mut self, input: crate::model::CookieMatchPattern) -> Self {
             self.match_pattern = Some(input);
             self
         }
         /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
         /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-        /// <p>Example JSON: <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+        /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
         pub fn set_match_pattern(
             mut self,
             input: std::option::Option<crate::model::CookieMatchPattern>,
@@ -3335,7 +3334,7 @@ impl AsRef<str> for MapMatchScope {
 
 /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
 /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-/// <p>Example JSON: <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+/// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CookieMatchPattern {
@@ -3477,16 +3476,16 @@ impl All {
     }
 }
 
-/// <p>Inspect the headers in the web request. You can specify the parts of the headers to inspect and you can narrow the set of headers to inspect by including or excluding specific keys.</p>
-/// <p>This is used to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
-/// <p>Alternately, you can use the <code>SingleHeader</code> <code>FieldToMatch</code> setting to inspect the value of a single header, identified by its key. </p>
+/// <p>Inspect all headers in the web request. You can specify the parts of the headers to inspect and you can narrow the set of headers to inspect by including or excluding specific keys.</p>
+/// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>If you want to inspect just the value of a single header, use the <code>SingleHeader</code> <code>FieldToMatch</code> setting instead.</p>
 /// <p>Example JSON: <code>"Headers": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Headers {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-    /// <p>Example JSON: <code>"HeaderMatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
+    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
     pub match_pattern: std::option::Option<crate::model::HeaderMatchPattern>,
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
     pub match_scope: std::option::Option<crate::model::MapMatchScope>,
@@ -3502,7 +3501,7 @@ pub struct Headers {
 impl Headers {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-    /// <p>Example JSON: <code>"HeaderMatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
+    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
     pub fn match_pattern(&self) -> std::option::Option<&crate::model::HeaderMatchPattern> {
         self.match_pattern.as_ref()
     }
@@ -3543,14 +3542,14 @@ pub mod headers {
     impl Builder {
         /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
         /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-        /// <p>Example JSON: <code>"HeaderMatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
+        /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
         pub fn match_pattern(mut self, input: crate::model::HeaderMatchPattern) -> Self {
             self.match_pattern = Some(input);
             self
         }
         /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
         /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-        /// <p>Example JSON: <code>"HeaderMatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
+        /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
         pub fn set_match_pattern(
             mut self,
             input: std::option::Option<crate::model::HeaderMatchPattern>,
@@ -3615,7 +3614,7 @@ impl Headers {
 
 /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
 /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-/// <p>Example JSON: <code>"HeaderMatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
+/// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HeaderMatchPattern {
@@ -3726,7 +3725,7 @@ impl HeaderMatchPattern {
 }
 
 /// <p>Inspect the body of the web request as JSON. The body immediately follows the request headers. </p>
-/// <p>This is used to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
 /// <p>Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON that result from the matches that you indicate. </p>
 /// <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code> </p>
 #[non_exhaustive]
@@ -4194,7 +4193,7 @@ impl Method {
 }
 
 /// <p>Inspect the body of the web request. The body immediately follows the request headers.</p>
-/// <p>This is used to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Body {
@@ -4380,7 +4379,7 @@ impl AllQueryArguments {
 }
 
 /// <p>Inspect one query argument in the web request, identified by name, for example <i>UserName</i> or <i>SalesRegion</i>. The name isn't case sensitive. </p>
-/// <p>This is used to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
 /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4435,7 +4434,7 @@ impl SingleQueryArgument {
 
 /// <p>Inspect one of the headers in the web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. The name isn't case sensitive.</p>
 /// <p>You can filter and inspect all headers with the <code>FieldToMatch</code> setting <code>Headers</code>.</p>
-/// <p>This is used to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
 /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5364,7 +5363,7 @@ impl AndStatement {
 /// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
 /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
 /// </ul>
-/// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
+/// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet the criteria of both of the nested statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet the criteria of both of the nested statements are not counted towards the rate limit and are not affected by this rule.</p>
 /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5756,7 +5755,7 @@ impl AsRef<str> for RateBasedStatementAggregateKeyType {
 pub struct RegexPatternSetReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the <code>RegexPatternSet</code> that this statement references.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
@@ -5766,7 +5765,7 @@ impl RegexPatternSetReferenceStatement {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
@@ -5806,12 +5805,12 @@ pub mod regex_pattern_set_reference_statement {
             self.arn = input;
             self
         }
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -7412,12 +7411,12 @@ impl AsRef<str> for CountryCode {
 }
 
 /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
-/// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
+/// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests that have a request body greater than 8192 bytes.</p>
 /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SizeConstraintStatement {
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
     /// <p>The operator to use to compare the request part to the size setting. </p>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
@@ -7427,7 +7426,7 @@ pub struct SizeConstraintStatement {
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
 }
 impl SizeConstraintStatement {
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
@@ -7467,12 +7466,12 @@ pub mod size_constraint_statement {
             std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
     }
     impl Builder {
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -7611,17 +7610,17 @@ impl AsRef<str> for ComparisonOperator {
     }
 }
 
-/// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+/// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct XssMatchStatement {
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
 }
 impl XssMatchStatement {
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
@@ -7649,12 +7648,12 @@ pub mod xss_match_statement {
             std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
     }
     impl Builder {
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -7697,17 +7696,22 @@ impl XssMatchStatement {
     }
 }
 
-/// <p>Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.</p>
+/// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqliMatchStatement {
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
+    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p>
+    /// <p>Default: <code>LOW</code> </p>
+    pub sensitivity_level: std::option::Option<crate::model::SensitivityLevel>,
 }
 impl SqliMatchStatement {
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
@@ -7715,12 +7719,20 @@ impl SqliMatchStatement {
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
     }
+    /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+    /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p>
+    /// <p>Default: <code>LOW</code> </p>
+    pub fn sensitivity_level(&self) -> std::option::Option<&crate::model::SensitivityLevel> {
+        self.sensitivity_level.as_ref()
+    }
 }
 impl std::fmt::Debug for SqliMatchStatement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqliMatchStatement");
         formatter.field("field_to_match", &self.field_to_match);
         formatter.field("text_transformations", &self.text_transformations);
+        formatter.field("sensitivity_level", &self.sensitivity_level);
         formatter.finish()
     }
 }
@@ -7733,14 +7745,15 @@ pub mod sqli_match_statement {
         pub(crate) field_to_match: std::option::Option<crate::model::FieldToMatch>,
         pub(crate) text_transformations:
             std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
+        pub(crate) sensitivity_level: std::option::Option<crate::model::SensitivityLevel>,
     }
     impl Builder {
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -7767,11 +7780,31 @@ pub mod sqli_match_statement {
             self.text_transformations = input;
             self
         }
+        /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+        /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
+        /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p>
+        /// <p>Default: <code>LOW</code> </p>
+        pub fn sensitivity_level(mut self, input: crate::model::SensitivityLevel) -> Self {
+            self.sensitivity_level = Some(input);
+            self
+        }
+        /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
+        /// <p> <code>HIGH</code> detects more attacks, but might generate more false positives, especially if your web requests frequently contain unusual strings. For information about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing and tuning</a> in the <i>WAF Developer Guide</i>.</p>
+        /// <p> <code>LOW</code> is generally a better choice for resources that already have other protections against SQL injection attacks or that have a low tolerance for false positives. </p>
+        /// <p>Default: <code>LOW</code> </p>
+        pub fn set_sensitivity_level(
+            mut self,
+            input: std::option::Option<crate::model::SensitivityLevel>,
+        ) -> Self {
+            self.sensitivity_level = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SqliMatchStatement`](crate::model::SqliMatchStatement).
         pub fn build(self) -> crate::model::SqliMatchStatement {
             crate::model::SqliMatchStatement {
                 field_to_match: self.field_to_match,
                 text_transformations: self.text_transformations,
+                sensitivity_level: self.sensitivity_level,
             }
         }
     }
@@ -7783,7 +7816,62 @@ impl SqliMatchStatement {
     }
 }
 
-/// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is refered to as a string match statement.</p>
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SensitivityLevel {
+    #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SensitivityLevel {
+    fn from(s: &str) -> Self {
+        match s {
+            "HIGH" => SensitivityLevel::High,
+            "LOW" => SensitivityLevel::Low,
+            other => SensitivityLevel::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SensitivityLevel {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SensitivityLevel::from(s))
+    }
+}
+impl SensitivityLevel {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SensitivityLevel::High => "HIGH",
+            SensitivityLevel::Low => "LOW",
+            SensitivityLevel::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HIGH", "LOW"]
+    }
+}
+impl AsRef<str> for SensitivityLevel {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ByteMatchStatement {
@@ -7800,7 +7888,7 @@ pub struct ByteMatchStatement {
     /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
     pub search_string: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
@@ -7837,7 +7925,7 @@ impl ByteMatchStatement {
     pub fn search_string(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.search_string.as_ref()
     }
-    /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+    /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
@@ -7924,12 +8012,12 @@ pub mod byte_match_statement {
             self.search_string = input;
             self
         }
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of the web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
+        /// <p>The part of the web request that you want WAF to inspect. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -8854,17 +8942,17 @@ impl Filter {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
-    /// <p>A single action condition.</p>
+    /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
     pub action_condition: std::option::Option<crate::model::ActionCondition>,
-    /// <p>A single label name condition.</p>
+    /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
     pub label_name_condition: std::option::Option<crate::model::LabelNameCondition>,
 }
 impl Condition {
-    /// <p>A single action condition.</p>
+    /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
     pub fn action_condition(&self) -> std::option::Option<&crate::model::ActionCondition> {
         self.action_condition.as_ref()
     }
-    /// <p>A single label name condition.</p>
+    /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
     pub fn label_name_condition(&self) -> std::option::Option<&crate::model::LabelNameCondition> {
         self.label_name_condition.as_ref()
     }
@@ -8887,12 +8975,12 @@ pub mod condition {
         pub(crate) label_name_condition: std::option::Option<crate::model::LabelNameCondition>,
     }
     impl Builder {
-        /// <p>A single action condition.</p>
+        /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
         pub fn action_condition(mut self, input: crate::model::ActionCondition) -> Self {
             self.action_condition = Some(input);
             self
         }
-        /// <p>A single action condition.</p>
+        /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
         pub fn set_action_condition(
             mut self,
             input: std::option::Option<crate::model::ActionCondition>,
@@ -8900,12 +8988,12 @@ pub mod condition {
             self.action_condition = input;
             self
         }
-        /// <p>A single label name condition.</p>
+        /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
         pub fn label_name_condition(mut self, input: crate::model::LabelNameCondition) -> Self {
             self.label_name_condition = Some(input);
             self
         }
-        /// <p>A single label name condition.</p>
+        /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
         pub fn set_label_name_condition(
             mut self,
             input: std::option::Option<crate::model::LabelNameCondition>,

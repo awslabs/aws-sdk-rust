@@ -193,7 +193,7 @@ impl AsRef<str> for EncryptionMode {
     }
 }
 
-/// <p>An object that specifies what screenshots to use as a baseline for visual monitoring by this canary, and optionally the parts of the screenshots to ignore during the visual monitoring comparison.</p>
+/// <p>An object that specifies what screenshots to use as a baseline for visual monitoring by this canary. It can optionally also specify parts of the screenshots to ignore during the visual monitoring comparison.</p>
 /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -286,7 +286,7 @@ impl VisualReferenceInput {
 pub struct BaseScreenshot {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
     pub screenshot_name: std::option::Option<std::string::String>,
-    /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see {LINK}</p>
+    /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
     pub ignore_coordinates: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BaseScreenshot {
@@ -294,7 +294,7 @@ impl BaseScreenshot {
     pub fn screenshot_name(&self) -> std::option::Option<&str> {
         self.screenshot_name.as_deref()
     }
-    /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see {LINK}</p>
+    /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
     pub fn ignore_coordinates(&self) -> std::option::Option<&[std::string::String]> {
         self.ignore_coordinates.as_deref()
     }
@@ -334,14 +334,14 @@ pub mod base_screenshot {
         ///
         /// To override the contents of this collection use [`set_ignore_coordinates`](Self::set_ignore_coordinates).
         ///
-        /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see {LINK}</p>
+        /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
         pub fn ignore_coordinates(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ignore_coordinates.unwrap_or_default();
             v.push(input.into());
             self.ignore_coordinates = Some(v);
             self
         }
-        /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch Logs console to draw the boundaries on the screen. For more information, see {LINK}</p>
+        /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
         pub fn set_ignore_coordinates(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -470,7 +470,9 @@ pub struct CanaryRunConfigInput {
     pub active_tracing: std::option::Option<bool>,
     /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
     /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
-    /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p>
+    /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important>
+    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// </important>
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -491,7 +493,9 @@ impl CanaryRunConfigInput {
     }
     /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
     /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
-    /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p>
+    /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important>
+    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// </important>
     pub fn environment_variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -563,7 +567,9 @@ pub mod canary_run_config_input {
         ///
         /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
         /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
-        /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p>
+        /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important>
+        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+        /// </important>
         pub fn environment_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -576,7 +582,9 @@ pub mod canary_run_config_input {
         }
         /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
         /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
-        /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p>
+        /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important>
+        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+        /// </important>
         pub fn set_environment_variables(
             mut self,
             input: std::option::Option<
@@ -824,6 +832,274 @@ impl CanaryCodeInput {
     /// Creates a new builder-style object to manufacture [`CanaryCodeInput`](crate::model::CanaryCodeInput).
     pub fn builder() -> crate::model::canary_code_input::Builder {
         crate::model::canary_code_input::Builder::default()
+    }
+}
+
+/// <p>A structure containing some information about a group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GroupSummary {
+    /// <p>The unique ID of the group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the group.</p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl GroupSummary {
+    /// <p>The unique ID of the group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+impl std::fmt::Debug for GroupSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GroupSummary");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+/// See [`GroupSummary`](crate::model::GroupSummary).
+pub mod group_summary {
+
+    /// A builder for [`GroupSummary`](crate::model::GroupSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The ARN of the group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GroupSummary`](crate::model::GroupSummary).
+        pub fn build(self) -> crate::model::GroupSummary {
+            crate::model::GroupSummary {
+                id: self.id,
+                name: self.name,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl GroupSummary {
+    /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary).
+    pub fn builder() -> crate::model::group_summary::Builder {
+        crate::model::group_summary::Builder::default()
+    }
+}
+
+/// <p>This structure contains information about one group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Group {
+    /// <p>The unique ID of the group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the group.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The list of key-value pairs that are associated with the canary.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The date and time that the group was created.</p>
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the group was most recently updated.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl Group {
+    /// <p>The unique ID of the group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The list of key-value pairs that are associated with the canary.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The date and time that the group was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+    /// <p>The date and time that the group was most recently updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+}
+impl std::fmt::Debug for Group {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Group");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.field("tags", &self.tags);
+        formatter.field("created_time", &self.created_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.finish()
+    }
+}
+/// See [`Group`](crate::model::Group).
+pub mod group {
+
+    /// A builder for [`Group`](crate::model::Group).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The ARN of the group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of key-value pairs that are associated with the canary.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The list of key-value pairs that are associated with the canary.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The date and time that the group was created.</p>
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the group was created.</p>
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// <p>The date and time that the group was most recently updated.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the group was most recently updated.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Group`](crate::model::Group).
+        pub fn build(self) -> crate::model::Group {
+            crate::model::Group {
+                id: self.id,
+                name: self.name,
+                arn: self.arn,
+                tags: self.tags,
+                created_time: self.created_time,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl Group {
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
+    pub fn builder() -> crate::model::group::Builder {
+        crate::model::group::Builder::default()
     }
 }
 
@@ -1747,7 +2023,7 @@ impl ArtifactConfigOutput {
 pub struct VisualReferenceOutput {
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
     pub base_screenshots: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
-    /// <p>The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring comparisons during future runs of this canary.</p>
+    /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
     pub base_canary_run_id: std::option::Option<std::string::String>,
 }
 impl VisualReferenceOutput {
@@ -1755,7 +2031,7 @@ impl VisualReferenceOutput {
     pub fn base_screenshots(&self) -> std::option::Option<&[crate::model::BaseScreenshot]> {
         self.base_screenshots.as_deref()
     }
-    /// <p>The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring comparisons during future runs of this canary.</p>
+    /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
     pub fn base_canary_run_id(&self) -> std::option::Option<&str> {
         self.base_canary_run_id.as_deref()
     }
@@ -1798,12 +2074,12 @@ pub mod visual_reference_output {
             self.base_screenshots = input;
             self
         }
-        /// <p>The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring comparisons during future runs of this canary.</p>
+        /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
         pub fn base_canary_run_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_canary_run_id = Some(input.into());
             self
         }
-        /// <p>The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring comparisons during future runs of this canary.</p>
+        /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
         pub fn set_base_canary_run_id(
             mut self,
             input: std::option::Option<std::string::String>,

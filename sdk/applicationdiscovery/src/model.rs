@@ -1160,6 +1160,210 @@ impl AsRef<str> for ConfigurationItemType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomerAgentlessCollectorInfo {
+    #[allow(missing_docs)] // documentation missing in model
+    pub active_agentless_collectors: i32,
+    #[allow(missing_docs)] // documentation missing in model
+    pub healthy_agentless_collectors: i32,
+    #[allow(missing_docs)] // documentation missing in model
+    pub deny_listed_agentless_collectors: i32,
+    #[allow(missing_docs)] // documentation missing in model
+    pub shutdown_agentless_collectors: i32,
+    #[allow(missing_docs)] // documentation missing in model
+    pub unhealthy_agentless_collectors: i32,
+    #[allow(missing_docs)] // documentation missing in model
+    pub total_agentless_collectors: i32,
+    #[allow(missing_docs)] // documentation missing in model
+    pub unknown_agentless_collectors: i32,
+}
+impl CustomerAgentlessCollectorInfo {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn active_agentless_collectors(&self) -> i32 {
+        self.active_agentless_collectors
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn healthy_agentless_collectors(&self) -> i32 {
+        self.healthy_agentless_collectors
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn deny_listed_agentless_collectors(&self) -> i32 {
+        self.deny_listed_agentless_collectors
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn shutdown_agentless_collectors(&self) -> i32 {
+        self.shutdown_agentless_collectors
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn unhealthy_agentless_collectors(&self) -> i32 {
+        self.unhealthy_agentless_collectors
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn total_agentless_collectors(&self) -> i32 {
+        self.total_agentless_collectors
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn unknown_agentless_collectors(&self) -> i32 {
+        self.unknown_agentless_collectors
+    }
+}
+impl std::fmt::Debug for CustomerAgentlessCollectorInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomerAgentlessCollectorInfo");
+        formatter.field(
+            "active_agentless_collectors",
+            &self.active_agentless_collectors,
+        );
+        formatter.field(
+            "healthy_agentless_collectors",
+            &self.healthy_agentless_collectors,
+        );
+        formatter.field(
+            "deny_listed_agentless_collectors",
+            &self.deny_listed_agentless_collectors,
+        );
+        formatter.field(
+            "shutdown_agentless_collectors",
+            &self.shutdown_agentless_collectors,
+        );
+        formatter.field(
+            "unhealthy_agentless_collectors",
+            &self.unhealthy_agentless_collectors,
+        );
+        formatter.field(
+            "total_agentless_collectors",
+            &self.total_agentless_collectors,
+        );
+        formatter.field(
+            "unknown_agentless_collectors",
+            &self.unknown_agentless_collectors,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CustomerAgentlessCollectorInfo`](crate::model::CustomerAgentlessCollectorInfo).
+pub mod customer_agentless_collector_info {
+
+    /// A builder for [`CustomerAgentlessCollectorInfo`](crate::model::CustomerAgentlessCollectorInfo).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) active_agentless_collectors: std::option::Option<i32>,
+        pub(crate) healthy_agentless_collectors: std::option::Option<i32>,
+        pub(crate) deny_listed_agentless_collectors: std::option::Option<i32>,
+        pub(crate) shutdown_agentless_collectors: std::option::Option<i32>,
+        pub(crate) unhealthy_agentless_collectors: std::option::Option<i32>,
+        pub(crate) total_agentless_collectors: std::option::Option<i32>,
+        pub(crate) unknown_agentless_collectors: std::option::Option<i32>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn active_agentless_collectors(mut self, input: i32) -> Self {
+            self.active_agentless_collectors = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_active_agentless_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.active_agentless_collectors = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn healthy_agentless_collectors(mut self, input: i32) -> Self {
+            self.healthy_agentless_collectors = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_healthy_agentless_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.healthy_agentless_collectors = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn deny_listed_agentless_collectors(mut self, input: i32) -> Self {
+            self.deny_listed_agentless_collectors = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_deny_listed_agentless_collectors(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.deny_listed_agentless_collectors = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn shutdown_agentless_collectors(mut self, input: i32) -> Self {
+            self.shutdown_agentless_collectors = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_shutdown_agentless_collectors(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.shutdown_agentless_collectors = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn unhealthy_agentless_collectors(mut self, input: i32) -> Self {
+            self.unhealthy_agentless_collectors = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_unhealthy_agentless_collectors(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.unhealthy_agentless_collectors = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn total_agentless_collectors(mut self, input: i32) -> Self {
+            self.total_agentless_collectors = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_total_agentless_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_agentless_collectors = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn unknown_agentless_collectors(mut self, input: i32) -> Self {
+            self.unknown_agentless_collectors = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_unknown_agentless_collectors(mut self, input: std::option::Option<i32>) -> Self {
+            self.unknown_agentless_collectors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomerAgentlessCollectorInfo`](crate::model::CustomerAgentlessCollectorInfo).
+        pub fn build(self) -> crate::model::CustomerAgentlessCollectorInfo {
+            crate::model::CustomerAgentlessCollectorInfo {
+                active_agentless_collectors: self.active_agentless_collectors.unwrap_or_default(),
+                healthy_agentless_collectors: self.healthy_agentless_collectors.unwrap_or_default(),
+                deny_listed_agentless_collectors: self
+                    .deny_listed_agentless_collectors
+                    .unwrap_or_default(),
+                shutdown_agentless_collectors: self
+                    .shutdown_agentless_collectors
+                    .unwrap_or_default(),
+                unhealthy_agentless_collectors: self
+                    .unhealthy_agentless_collectors
+                    .unwrap_or_default(),
+                total_agentless_collectors: self.total_agentless_collectors.unwrap_or_default(),
+                unknown_agentless_collectors: self.unknown_agentless_collectors.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CustomerAgentlessCollectorInfo {
+    /// Creates a new builder-style object to manufacture [`CustomerAgentlessCollectorInfo`](crate::model::CustomerAgentlessCollectorInfo).
+    pub fn builder() -> crate::model::customer_agentless_collector_info::Builder {
+        crate::model::customer_agentless_collector_info::Builder::default()
+    }
+}
+
 /// <p> The inventory data for installed Migration Evaluator collectors. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

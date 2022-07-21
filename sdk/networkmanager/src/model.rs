@@ -303,7 +303,7 @@ impl VpcOptions {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attachment {
-    /// <p>A core network ID.</p>
+    /// <p>The ID of a core network.</p>
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The ARN of a core network.</p>
     pub core_network_arn: std::option::Option<std::string::String>,
@@ -333,7 +333,7 @@ pub struct Attachment {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Attachment {
-    /// <p>A core network ID.</p>
+    /// <p>The ID of a core network.</p>
     pub fn core_network_id(&self) -> std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
@@ -438,12 +438,12 @@ pub mod attachment {
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>A core network ID.</p>
+        /// <p>The ID of a core network.</p>
         pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_network_id = Some(input.into());
             self
         }
-        /// <p>A core network ID.</p>
+        /// <p>The ID of a core network.</p>
         pub fn set_core_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -655,7 +655,7 @@ impl Attachment {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProposedSegmentChange {
-    /// <p>The key-value tags that changed for the segment.</p>
+    /// <p>The list of key-value tags that changed for the segment.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The rule number in the policy document that applies to this change.</p>
     pub attachment_policy_rule_number: std::option::Option<i32>,
@@ -663,7 +663,7 @@ pub struct ProposedSegmentChange {
     pub segment_name: std::option::Option<std::string::String>,
 }
 impl ProposedSegmentChange {
-    /// <p>The key-value tags that changed for the segment.</p>
+    /// <p>The list of key-value tags that changed for the segment.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -703,14 +703,14 @@ pub mod proposed_segment_change {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value tags that changed for the segment.</p>
+        /// <p>The list of key-value tags that changed for the segment.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The key-value tags that changed for the segment.</p>
+        /// <p>The list of key-value tags that changed for the segment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -949,6 +949,8 @@ pub enum AttachmentType {
     #[allow(missing_docs)] // documentation missing in model
     SiteToSiteVpn,
     #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayRouteTable,
+    #[allow(missing_docs)] // documentation missing in model
     Vpc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -958,6 +960,7 @@ impl std::convert::From<&str> for AttachmentType {
         match s {
             "CONNECT" => AttachmentType::Connect,
             "SITE_TO_SITE_VPN" => AttachmentType::SiteToSiteVpn,
+            "TRANSIT_GATEWAY_ROUTE_TABLE" => AttachmentType::TransitGatewayRouteTable,
             "VPC" => AttachmentType::Vpc,
             other => AttachmentType::Unknown(other.to_owned()),
         }
@@ -976,13 +979,19 @@ impl AttachmentType {
         match self {
             AttachmentType::Connect => "CONNECT",
             AttachmentType::SiteToSiteVpn => "SITE_TO_SITE_VPN",
+            AttachmentType::TransitGatewayRouteTable => "TRANSIT_GATEWAY_ROUTE_TABLE",
             AttachmentType::Vpc => "VPC",
             AttachmentType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["CONNECT", "SITE_TO_SITE_VPN", "VPC"]
+        &[
+            "CONNECT",
+            "SITE_TO_SITE_VPN",
+            "TRANSIT_GATEWAY_ROUTE_TABLE",
+            "VPC",
+        ]
     }
 }
 impl AsRef<str> for AttachmentType {
@@ -2457,7 +2466,7 @@ pub struct CoreNetwork {
     pub segments: std::option::Option<std::vec::Vec<crate::model::CoreNetworkSegment>>,
     /// <p>The edges within a core network.</p>
     pub edges: std::option::Option<std::vec::Vec<crate::model::CoreNetworkEdge>>,
-    /// <p>The tags associated with a core network.</p>
+    /// <p>The list of key-value tags associated with a core network.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CoreNetwork {
@@ -2493,7 +2502,7 @@ impl CoreNetwork {
     pub fn edges(&self) -> std::option::Option<&[crate::model::CoreNetworkEdge]> {
         self.edges.as_deref()
     }
-    /// <p>The tags associated with a core network.</p>
+    /// <p>The list of key-value tags associated with a core network.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -2647,14 +2656,14 @@ pub mod core_network {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags associated with a core network.</p>
+        /// <p>The list of key-value tags associated with a core network.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags associated with a core network.</p>
+        /// <p>The list of key-value tags associated with a core network.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4514,33 +4523,33 @@ impl RouteAnalysisEndpointOptionsSpecification {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The status of an Amazon Web Services Organization and the accounts within that organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationStatus {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of an Amazon Web Services Organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub organization_aws_service_access_status: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub slr_deployment_status: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub account_status_list: std::option::Option<std::vec::Vec<crate::model::AccountStatus>>,
 }
 impl OrganizationStatus {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of an Amazon Web Services Organization.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn organization_aws_service_access_status(&self) -> std::option::Option<&str> {
         self.organization_aws_service_access_status.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub fn slr_deployment_status(&self) -> std::option::Option<&str> {
         self.slr_deployment_status.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub fn account_status_list(&self) -> std::option::Option<&[crate::model::AccountStatus]> {
         self.account_status_list.as_deref()
     }
@@ -4571,12 +4580,12 @@ pub mod organization_status {
             std::option::Option<std::vec::Vec<crate::model::AccountStatus>>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of an Amazon Web Services Organization.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of an Amazon Web Services Organization.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4584,7 +4593,7 @@ pub mod organization_status {
             self.organization_id = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
         pub fn organization_aws_service_access_status(
             mut self,
             input: impl Into<std::string::String>,
@@ -4592,7 +4601,7 @@ pub mod organization_status {
             self.organization_aws_service_access_status = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
         pub fn set_organization_aws_service_access_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4600,12 +4609,12 @@ pub mod organization_status {
             self.organization_aws_service_access_status = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
         pub fn slr_deployment_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.slr_deployment_status = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
         pub fn set_slr_deployment_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4617,13 +4626,14 @@ pub mod organization_status {
         ///
         /// To override the contents of this collection use [`set_account_status_list`](Self::set_account_status_list).
         ///
+        /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
         pub fn account_status_list(mut self, input: crate::model::AccountStatus) -> Self {
             let mut v = self.account_status_list.unwrap_or_default();
             v.push(input);
             self.account_status_list = Some(v);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
         pub fn set_account_status_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountStatus>>,
@@ -4649,21 +4659,21 @@ impl OrganizationStatus {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>Describes the current status of an account within an Amazon Web Services Organization, including service-linked roles (SLRs).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountStatus {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of an account within the Amazon Web Services Organization.</p>
     pub account_id: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of SLR deployment for the account.</p>
     pub slr_deployment_status: std::option::Option<std::string::String>,
 }
 impl AccountStatus {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of an account within the Amazon Web Services Organization.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of SLR deployment for the account.</p>
     pub fn slr_deployment_status(&self) -> std::option::Option<&str> {
         self.slr_deployment_status.as_deref()
     }
@@ -4686,22 +4696,22 @@ pub mod account_status {
         pub(crate) slr_deployment_status: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of an account within the Amazon Web Services Organization.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of an account within the Amazon Web Services Organization.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of SLR deployment for the account.</p>
         pub fn slr_deployment_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.slr_deployment_status = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of SLR deployment for the account.</p>
         pub fn set_slr_deployment_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5408,6 +5418,372 @@ impl AsRef<str> for TransitGatewayRegistrationState {
     }
 }
 
+/// <p>Describes a peering connection.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Peering {
+    /// <p>The ID of the core network for the peering request.</p>
+    pub core_network_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of a core network.</p>
+    pub core_network_arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the peering attachment. </p>
+    pub peering_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the account owner.</p>
+    pub owner_account_id: std::option::Option<std::string::String>,
+    /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
+    pub peering_type: std::option::Option<crate::model::PeeringType>,
+    /// <p>The current state of the peering connection. </p>
+    pub state: std::option::Option<crate::model::PeeringState>,
+    /// <p>The edge location for the peer.</p>
+    pub edge_location: std::option::Option<std::string::String>,
+    /// <p>The resource ARN of the peer.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The list of key-value tags associated with the peering.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The timestamp when the attachment peer was created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl Peering {
+    /// <p>The ID of the core network for the peering request.</p>
+    pub fn core_network_id(&self) -> std::option::Option<&str> {
+        self.core_network_id.as_deref()
+    }
+    /// <p>The ARN of a core network.</p>
+    pub fn core_network_arn(&self) -> std::option::Option<&str> {
+        self.core_network_arn.as_deref()
+    }
+    /// <p>The ID of the peering attachment. </p>
+    pub fn peering_id(&self) -> std::option::Option<&str> {
+        self.peering_id.as_deref()
+    }
+    /// <p>The ID of the account owner.</p>
+    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
+    pub fn peering_type(&self) -> std::option::Option<&crate::model::PeeringType> {
+        self.peering_type.as_ref()
+    }
+    /// <p>The current state of the peering connection. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::PeeringState> {
+        self.state.as_ref()
+    }
+    /// <p>The edge location for the peer.</p>
+    pub fn edge_location(&self) -> std::option::Option<&str> {
+        self.edge_location.as_deref()
+    }
+    /// <p>The resource ARN of the peer.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of key-value tags associated with the peering.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The timestamp when the attachment peer was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+}
+impl std::fmt::Debug for Peering {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Peering");
+        formatter.field("core_network_id", &self.core_network_id);
+        formatter.field("core_network_arn", &self.core_network_arn);
+        formatter.field("peering_id", &self.peering_id);
+        formatter.field("owner_account_id", &self.owner_account_id);
+        formatter.field("peering_type", &self.peering_type);
+        formatter.field("state", &self.state);
+        formatter.field("edge_location", &self.edge_location);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.field("created_at", &self.created_at);
+        formatter.finish()
+    }
+}
+/// See [`Peering`](crate::model::Peering).
+pub mod peering {
+
+    /// A builder for [`Peering`](crate::model::Peering).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_id: std::option::Option<std::string::String>,
+        pub(crate) core_network_arn: std::option::Option<std::string::String>,
+        pub(crate) peering_id: std::option::Option<std::string::String>,
+        pub(crate) owner_account_id: std::option::Option<std::string::String>,
+        pub(crate) peering_type: std::option::Option<crate::model::PeeringType>,
+        pub(crate) state: std::option::Option<crate::model::PeeringState>,
+        pub(crate) edge_location: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ID of the core network for the peering request.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.core_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the core network for the peering request.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.core_network_id = input;
+            self
+        }
+        /// <p>The ARN of a core network.</p>
+        pub fn core_network_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.core_network_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of a core network.</p>
+        pub fn set_core_network_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.core_network_arn = input;
+            self
+        }
+        /// <p>The ID of the peering attachment. </p>
+        pub fn peering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.peering_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the peering attachment. </p>
+        pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.peering_id = input;
+            self
+        }
+        /// <p>The ID of the account owner.</p>
+        pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_account_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the account owner.</p>
+        pub fn set_owner_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.owner_account_id = input;
+            self
+        }
+        /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
+        pub fn peering_type(mut self, input: crate::model::PeeringType) -> Self {
+            self.peering_type = Some(input);
+            self
+        }
+        /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
+        pub fn set_peering_type(
+            mut self,
+            input: std::option::Option<crate::model::PeeringType>,
+        ) -> Self {
+            self.peering_type = input;
+            self
+        }
+        /// <p>The current state of the peering connection. </p>
+        pub fn state(mut self, input: crate::model::PeeringState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state of the peering connection. </p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::PeeringState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The edge location for the peer.</p>
+        pub fn edge_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_location = Some(input.into());
+            self
+        }
+        /// <p>The edge location for the peer.</p>
+        pub fn set_edge_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_location = input;
+            self
+        }
+        /// <p>The resource ARN of the peer.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The resource ARN of the peer.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of key-value tags associated with the peering.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The list of key-value tags associated with the peering.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The timestamp when the attachment peer was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The timestamp when the attachment peer was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Peering`](crate::model::Peering).
+        pub fn build(self) -> crate::model::Peering {
+            crate::model::Peering {
+                core_network_id: self.core_network_id,
+                core_network_arn: self.core_network_arn,
+                peering_id: self.peering_id,
+                owner_account_id: self.owner_account_id,
+                peering_type: self.peering_type,
+                state: self.state,
+                edge_location: self.edge_location,
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+                created_at: self.created_at,
+            }
+        }
+    }
+}
+impl Peering {
+    /// Creates a new builder-style object to manufacture [`Peering`](crate::model::Peering).
+    pub fn builder() -> crate::model::peering::Builder {
+        crate::model::peering::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PeeringState {
+    #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PeeringState {
+    fn from(s: &str) -> Self {
+        match s {
+            "AVAILABLE" => PeeringState::Available,
+            "CREATING" => PeeringState::Creating,
+            "DELETING" => PeeringState::Deleting,
+            "FAILED" => PeeringState::Failed,
+            other => PeeringState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PeeringState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PeeringState::from(s))
+    }
+}
+impl PeeringState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PeeringState::Available => "AVAILABLE",
+            PeeringState::Creating => "CREATING",
+            PeeringState::Deleting => "DELETING",
+            PeeringState::Failed => "FAILED",
+            PeeringState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AVAILABLE", "CREATING", "DELETING", "FAILED"]
+    }
+}
+impl AsRef<str> for PeeringState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PeeringType {
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGateway,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PeeringType {
+    fn from(s: &str) -> Self {
+        match s {
+            "TRANSIT_GATEWAY" => PeeringType::TransitGateway,
+            other => PeeringType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PeeringType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PeeringType::from(s))
+    }
+}
+impl PeeringType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PeeringType::TransitGateway => "TRANSIT_GATEWAY",
+            PeeringType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["TRANSIT_GATEWAY"]
+    }
+}
+impl AsRef<str> for PeeringType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Returns summary information about a core network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5777,7 +6153,7 @@ pub struct ConnectPeerSummary {
     pub connect_peer_state: std::option::Option<crate::model::ConnectPeerState>,
     /// <p>The timestamp when a Connect peer was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The tags associated with a Connect peer summary.</p>
+    /// <p>The list of key-value tags associated with the Connect peer summary.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ConnectPeerSummary {
@@ -5805,7 +6181,7 @@ impl ConnectPeerSummary {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The tags associated with a Connect peer summary.</p>
+    /// <p>The list of key-value tags associated with the Connect peer summary.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -5920,14 +6296,14 @@ pub mod connect_peer_summary {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags associated with a Connect peer summary.</p>
+        /// <p>The list of key-value tags associated with the Connect peer summary.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags associated with a Connect peer summary.</p>
+        /// <p>The list of key-value tags associated with the Connect peer summary.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6016,6 +6392,186 @@ impl ConnectPeerState {
 impl AsRef<str> for ConnectPeerState {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Describes a transit gateway route table attachment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TransitGatewayRouteTableAttachment {
+    /// <p>Describes a core network attachment.</p>
+    pub attachment: std::option::Option<crate::model::Attachment>,
+    /// <p>The ID of the peering attachment.</p>
+    pub peering_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the transit gateway attachment route table.</p>
+    pub transit_gateway_route_table_arn: std::option::Option<std::string::String>,
+}
+impl TransitGatewayRouteTableAttachment {
+    /// <p>Describes a core network attachment.</p>
+    pub fn attachment(&self) -> std::option::Option<&crate::model::Attachment> {
+        self.attachment.as_ref()
+    }
+    /// <p>The ID of the peering attachment.</p>
+    pub fn peering_id(&self) -> std::option::Option<&str> {
+        self.peering_id.as_deref()
+    }
+    /// <p>The ARN of the transit gateway attachment route table.</p>
+    pub fn transit_gateway_route_table_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_route_table_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for TransitGatewayRouteTableAttachment {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TransitGatewayRouteTableAttachment");
+        formatter.field("attachment", &self.attachment);
+        formatter.field("peering_id", &self.peering_id);
+        formatter.field(
+            "transit_gateway_route_table_arn",
+            &self.transit_gateway_route_table_arn,
+        );
+        formatter.finish()
+    }
+}
+/// See [`TransitGatewayRouteTableAttachment`](crate::model::TransitGatewayRouteTableAttachment).
+pub mod transit_gateway_route_table_attachment {
+
+    /// A builder for [`TransitGatewayRouteTableAttachment`](crate::model::TransitGatewayRouteTableAttachment).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attachment: std::option::Option<crate::model::Attachment>,
+        pub(crate) peering_id: std::option::Option<std::string::String>,
+        pub(crate) transit_gateway_route_table_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Describes a core network attachment.</p>
+        pub fn attachment(mut self, input: crate::model::Attachment) -> Self {
+            self.attachment = Some(input);
+            self
+        }
+        /// <p>Describes a core network attachment.</p>
+        pub fn set_attachment(
+            mut self,
+            input: std::option::Option<crate::model::Attachment>,
+        ) -> Self {
+            self.attachment = input;
+            self
+        }
+        /// <p>The ID of the peering attachment.</p>
+        pub fn peering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.peering_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the peering attachment.</p>
+        pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.peering_id = input;
+            self
+        }
+        /// <p>The ARN of the transit gateway attachment route table.</p>
+        pub fn transit_gateway_route_table_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_route_table_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway attachment route table.</p>
+        pub fn set_transit_gateway_route_table_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_route_table_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TransitGatewayRouteTableAttachment`](crate::model::TransitGatewayRouteTableAttachment).
+        pub fn build(self) -> crate::model::TransitGatewayRouteTableAttachment {
+            crate::model::TransitGatewayRouteTableAttachment {
+                attachment: self.attachment,
+                peering_id: self.peering_id,
+                transit_gateway_route_table_arn: self.transit_gateway_route_table_arn,
+            }
+        }
+    }
+}
+impl TransitGatewayRouteTableAttachment {
+    /// Creates a new builder-style object to manufacture [`TransitGatewayRouteTableAttachment`](crate::model::TransitGatewayRouteTableAttachment).
+    pub fn builder() -> crate::model::transit_gateway_route_table_attachment::Builder {
+        crate::model::transit_gateway_route_table_attachment::Builder::default()
+    }
+}
+
+/// <p>Describes a transit gateway peering attachment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TransitGatewayPeering {
+    /// <p>Describes a transit gateway peer connection.</p>
+    pub peering: std::option::Option<crate::model::Peering>,
+    /// <p>The ARN of the transit gateway.</p>
+    pub transit_gateway_arn: std::option::Option<std::string::String>,
+}
+impl TransitGatewayPeering {
+    /// <p>Describes a transit gateway peer connection.</p>
+    pub fn peering(&self) -> std::option::Option<&crate::model::Peering> {
+        self.peering.as_ref()
+    }
+    /// <p>The ARN of the transit gateway.</p>
+    pub fn transit_gateway_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for TransitGatewayPeering {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TransitGatewayPeering");
+        formatter.field("peering", &self.peering);
+        formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
+        formatter.finish()
+    }
+}
+/// See [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
+pub mod transit_gateway_peering {
+
+    /// A builder for [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) peering: std::option::Option<crate::model::Peering>,
+        pub(crate) transit_gateway_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Describes a transit gateway peer connection.</p>
+        pub fn peering(mut self, input: crate::model::Peering) -> Self {
+            self.peering = Some(input);
+            self
+        }
+        /// <p>Describes a transit gateway peer connection.</p>
+        pub fn set_peering(mut self, input: std::option::Option<crate::model::Peering>) -> Self {
+            self.peering = input;
+            self
+        }
+        /// <p>The ARN of the transit gateway.</p>
+        pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transit_gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway.</p>
+        pub fn set_transit_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
+        pub fn build(self) -> crate::model::TransitGatewayPeering {
+            crate::model::TransitGatewayPeering {
+                peering: self.peering,
+                transit_gateway_arn: self.transit_gateway_arn,
+            }
+        }
+    }
+}
+impl TransitGatewayPeering {
+    /// Creates a new builder-style object to manufacture [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
+    pub fn builder() -> crate::model::transit_gateway_peering::Builder {
+        crate::model::transit_gateway_peering::Builder::default()
     }
 }
 
@@ -7418,7 +7974,7 @@ impl RouteTableIdentifier {
 pub struct NetworkResource {
     /// <p>The ARN of the gateway.</p>
     pub registered_gateway_arn: std::option::Option<std::string::String>,
-    /// <p>a core network ID.</p>
+    /// <p>The ID of a core network.</p>
     pub core_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
     pub aws_region: std::option::Option<std::string::String>,
@@ -7467,7 +8023,7 @@ impl NetworkResource {
     pub fn registered_gateway_arn(&self) -> std::option::Option<&str> {
         self.registered_gateway_arn.as_deref()
     }
-    /// <p>a core network ID.</p>
+    /// <p>The ID of a core network.</p>
     pub fn core_network_id(&self) -> std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
@@ -7584,12 +8140,12 @@ pub mod network_resource {
             self.registered_gateway_arn = input;
             self
         }
-        /// <p>a core network ID.</p>
+        /// <p>The ID of a core network.</p>
         pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_network_id = Some(input.into());
             self
         }
-        /// <p>a core network ID.</p>
+        /// <p>The ID of a core network.</p>
         pub fn set_core_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8333,6 +8889,8 @@ pub struct CoreNetworkChange {
     pub previous_values: std::option::Option<crate::model::CoreNetworkChangeValues>,
     /// <p>The new value for a core network</p>
     pub new_values: std::option::Option<crate::model::CoreNetworkChangeValues>,
+    /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+    pub identifier_path: std::option::Option<std::string::String>,
 }
 impl CoreNetworkChange {
     /// <p>The type of change.</p>
@@ -8355,6 +8913,10 @@ impl CoreNetworkChange {
     pub fn new_values(&self) -> std::option::Option<&crate::model::CoreNetworkChangeValues> {
         self.new_values.as_ref()
     }
+    /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+    pub fn identifier_path(&self) -> std::option::Option<&str> {
+        self.identifier_path.as_deref()
+    }
 }
 impl std::fmt::Debug for CoreNetworkChange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8364,6 +8926,7 @@ impl std::fmt::Debug for CoreNetworkChange {
         formatter.field("identifier", &self.identifier);
         formatter.field("previous_values", &self.previous_values);
         formatter.field("new_values", &self.new_values);
+        formatter.field("identifier_path", &self.identifier_path);
         formatter.finish()
     }
 }
@@ -8378,6 +8941,7 @@ pub mod core_network_change {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) previous_values: std::option::Option<crate::model::CoreNetworkChangeValues>,
         pub(crate) new_values: std::option::Option<crate::model::CoreNetworkChangeValues>,
+        pub(crate) identifier_path: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The type of change.</p>
@@ -8439,6 +9003,19 @@ pub mod core_network_change {
             self.new_values = input;
             self
         }
+        /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+        pub fn identifier_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier_path = Some(input.into());
+            self
+        }
+        /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+        pub fn set_identifier_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identifier_path = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CoreNetworkChange`](crate::model::CoreNetworkChange).
         pub fn build(self) -> crate::model::CoreNetworkChange {
             crate::model::CoreNetworkChange {
@@ -8447,6 +9024,7 @@ pub mod core_network_change {
                 identifier: self.identifier,
                 previous_values: self.previous_values,
                 new_values: self.new_values,
+                identifier_path: self.identifier_path,
             }
         }
     }
@@ -8730,13 +9308,21 @@ pub enum ChangeType {
     #[allow(missing_docs)] // documentation missing in model
     AttachmentMapping,
     #[allow(missing_docs)] // documentation missing in model
+    AttachmentPoliciesConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     AttachmentRoutePropagation,
     #[allow(missing_docs)] // documentation missing in model
     AttachmentRouteStatic,
     #[allow(missing_docs)] // documentation missing in model
+    CoreNetworkConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     CoreNetworkEdge,
     #[allow(missing_docs)] // documentation missing in model
     CoreNetworkSegment,
+    #[allow(missing_docs)] // documentation missing in model
+    SegmentsConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    SegmentActionsConfiguration,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -8744,10 +9330,14 @@ impl std::convert::From<&str> for ChangeType {
     fn from(s: &str) -> Self {
         match s {
             "ATTACHMENT_MAPPING" => ChangeType::AttachmentMapping,
+            "ATTACHMENT_POLICIES_CONFIGURATION" => ChangeType::AttachmentPoliciesConfiguration,
             "ATTACHMENT_ROUTE_PROPAGATION" => ChangeType::AttachmentRoutePropagation,
             "ATTACHMENT_ROUTE_STATIC" => ChangeType::AttachmentRouteStatic,
+            "CORE_NETWORK_CONFIGURATION" => ChangeType::CoreNetworkConfiguration,
             "CORE_NETWORK_EDGE" => ChangeType::CoreNetworkEdge,
             "CORE_NETWORK_SEGMENT" => ChangeType::CoreNetworkSegment,
+            "SEGMENTS_CONFIGURATION" => ChangeType::SegmentsConfiguration,
+            "SEGMENT_ACTIONS_CONFIGURATION" => ChangeType::SegmentActionsConfiguration,
             other => ChangeType::Unknown(other.to_owned()),
         }
     }
@@ -8764,10 +9354,14 @@ impl ChangeType {
     pub fn as_str(&self) -> &str {
         match self {
             ChangeType::AttachmentMapping => "ATTACHMENT_MAPPING",
+            ChangeType::AttachmentPoliciesConfiguration => "ATTACHMENT_POLICIES_CONFIGURATION",
             ChangeType::AttachmentRoutePropagation => "ATTACHMENT_ROUTE_PROPAGATION",
             ChangeType::AttachmentRouteStatic => "ATTACHMENT_ROUTE_STATIC",
+            ChangeType::CoreNetworkConfiguration => "CORE_NETWORK_CONFIGURATION",
             ChangeType::CoreNetworkEdge => "CORE_NETWORK_EDGE",
             ChangeType::CoreNetworkSegment => "CORE_NETWORK_SEGMENT",
+            ChangeType::SegmentsConfiguration => "SEGMENTS_CONFIGURATION",
+            ChangeType::SegmentActionsConfiguration => "SEGMENT_ACTIONS_CONFIGURATION",
             ChangeType::Unknown(s) => s.as_ref(),
         }
     }
@@ -8775,14 +9369,362 @@ impl ChangeType {
     pub fn values() -> &'static [&'static str] {
         &[
             "ATTACHMENT_MAPPING",
+            "ATTACHMENT_POLICIES_CONFIGURATION",
             "ATTACHMENT_ROUTE_PROPAGATION",
             "ATTACHMENT_ROUTE_STATIC",
+            "CORE_NETWORK_CONFIGURATION",
             "CORE_NETWORK_EDGE",
             "CORE_NETWORK_SEGMENT",
+            "SEGMENTS_CONFIGURATION",
+            "SEGMENT_ACTIONS_CONFIGURATION",
         ]
     }
 }
 impl AsRef<str> for ChangeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes a core network change event. This can be a change to a segment, attachment, route, etc.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CoreNetworkChangeEvent {
+    /// <p>Describes the type of change event. </p>
+    pub r#type: std::option::Option<crate::model::ChangeType>,
+    /// <p>The action taken for the change event.</p>
+    pub action: std::option::Option<crate::model::ChangeAction>,
+    /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+    pub identifier_path: std::option::Option<std::string::String>,
+    /// <p>The timestamp for an event change in status.</p>
+    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The status of the core network change event.</p>
+    pub status: std::option::Option<crate::model::ChangeStatus>,
+    /// <p>Details of the change event.</p>
+    pub values: std::option::Option<crate::model::CoreNetworkChangeEventValues>,
+}
+impl CoreNetworkChangeEvent {
+    /// <p>Describes the type of change event. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChangeType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The action taken for the change event.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+        self.action.as_ref()
+    }
+    /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+    pub fn identifier_path(&self) -> std::option::Option<&str> {
+        self.identifier_path.as_deref()
+    }
+    /// <p>The timestamp for an event change in status.</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.event_time.as_ref()
+    }
+    /// <p>The status of the core network change event.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChangeStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Details of the change event.</p>
+    pub fn values(&self) -> std::option::Option<&crate::model::CoreNetworkChangeEventValues> {
+        self.values.as_ref()
+    }
+}
+impl std::fmt::Debug for CoreNetworkChangeEvent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CoreNetworkChangeEvent");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("action", &self.action);
+        formatter.field("identifier_path", &self.identifier_path);
+        formatter.field("event_time", &self.event_time);
+        formatter.field("status", &self.status);
+        formatter.field("values", &self.values);
+        formatter.finish()
+    }
+}
+/// See [`CoreNetworkChangeEvent`](crate::model::CoreNetworkChangeEvent).
+pub mod core_network_change_event {
+
+    /// A builder for [`CoreNetworkChangeEvent`](crate::model::CoreNetworkChangeEvent).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::ChangeType>,
+        pub(crate) action: std::option::Option<crate::model::ChangeAction>,
+        pub(crate) identifier_path: std::option::Option<std::string::String>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status: std::option::Option<crate::model::ChangeStatus>,
+        pub(crate) values: std::option::Option<crate::model::CoreNetworkChangeEventValues>,
+    }
+    impl Builder {
+        /// <p>Describes the type of change event. </p>
+        pub fn r#type(mut self, input: crate::model::ChangeType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Describes the type of change event. </p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ChangeType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The action taken for the change event.</p>
+        pub fn action(mut self, input: crate::model::ChangeAction) -> Self {
+            self.action = Some(input);
+            self
+        }
+        /// <p>The action taken for the change event.</p>
+        pub fn set_action(
+            mut self,
+            input: std::option::Option<crate::model::ChangeAction>,
+        ) -> Self {
+            self.action = input;
+            self
+        }
+        /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+        pub fn identifier_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier_path = Some(input.into());
+            self
+        }
+        /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+        pub fn set_identifier_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identifier_path = input;
+            self
+        }
+        /// <p>The timestamp for an event change in status.</p>
+        pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.event_time = Some(input);
+            self
+        }
+        /// <p>The timestamp for an event change in status.</p>
+        pub fn set_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.event_time = input;
+            self
+        }
+        /// <p>The status of the core network change event.</p>
+        pub fn status(mut self, input: crate::model::ChangeStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the core network change event.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ChangeStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Details of the change event.</p>
+        pub fn values(mut self, input: crate::model::CoreNetworkChangeEventValues) -> Self {
+            self.values = Some(input);
+            self
+        }
+        /// <p>Details of the change event.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetworkChangeEventValues>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CoreNetworkChangeEvent`](crate::model::CoreNetworkChangeEvent).
+        pub fn build(self) -> crate::model::CoreNetworkChangeEvent {
+            crate::model::CoreNetworkChangeEvent {
+                r#type: self.r#type,
+                action: self.action,
+                identifier_path: self.identifier_path,
+                event_time: self.event_time,
+                status: self.status,
+                values: self.values,
+            }
+        }
+    }
+}
+impl CoreNetworkChangeEvent {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeEvent`](crate::model::CoreNetworkChangeEvent).
+    pub fn builder() -> crate::model::core_network_change_event::Builder {
+        crate::model::core_network_change_event::Builder::default()
+    }
+}
+
+/// <p>Describes a core network change event.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CoreNetworkChangeEventValues {
+    /// <p>The edge location for the core network change event.</p>
+    pub edge_location: std::option::Option<std::string::String>,
+    /// <p>The segment name if the change event is associated with a segment.</p>
+    pub segment_name: std::option::Option<std::string::String>,
+    /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
+    pub attachment_id: std::option::Option<std::string::String>,
+    /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
+    pub cidr: std::option::Option<std::string::String>,
+}
+impl CoreNetworkChangeEventValues {
+    /// <p>The edge location for the core network change event.</p>
+    pub fn edge_location(&self) -> std::option::Option<&str> {
+        self.edge_location.as_deref()
+    }
+    /// <p>The segment name if the change event is associated with a segment.</p>
+    pub fn segment_name(&self) -> std::option::Option<&str> {
+        self.segment_name.as_deref()
+    }
+    /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
+    pub fn cidr(&self) -> std::option::Option<&str> {
+        self.cidr.as_deref()
+    }
+}
+impl std::fmt::Debug for CoreNetworkChangeEventValues {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CoreNetworkChangeEventValues");
+        formatter.field("edge_location", &self.edge_location);
+        formatter.field("segment_name", &self.segment_name);
+        formatter.field("attachment_id", &self.attachment_id);
+        formatter.field("cidr", &self.cidr);
+        formatter.finish()
+    }
+}
+/// See [`CoreNetworkChangeEventValues`](crate::model::CoreNetworkChangeEventValues).
+pub mod core_network_change_event_values {
+
+    /// A builder for [`CoreNetworkChangeEventValues`](crate::model::CoreNetworkChangeEventValues).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_location: std::option::Option<std::string::String>,
+        pub(crate) segment_name: std::option::Option<std::string::String>,
+        pub(crate) attachment_id: std::option::Option<std::string::String>,
+        pub(crate) cidr: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The edge location for the core network change event.</p>
+        pub fn edge_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_location = Some(input.into());
+            self
+        }
+        /// <p>The edge location for the core network change event.</p>
+        pub fn set_edge_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_location = input;
+            self
+        }
+        /// <p>The segment name if the change event is associated with a segment.</p>
+        pub fn segment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment_name = Some(input.into());
+            self
+        }
+        /// <p>The segment name if the change event is associated with a segment.</p>
+        pub fn set_segment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.segment_name = input;
+            self
+        }
+        /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attachment_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attachment_id = input;
+            self
+        }
+        /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
+        pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr = Some(input.into());
+            self
+        }
+        /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CoreNetworkChangeEventValues`](crate::model::CoreNetworkChangeEventValues).
+        pub fn build(self) -> crate::model::CoreNetworkChangeEventValues {
+            crate::model::CoreNetworkChangeEventValues {
+                edge_location: self.edge_location,
+                segment_name: self.segment_name,
+                attachment_id: self.attachment_id,
+                cidr: self.cidr,
+            }
+        }
+    }
+}
+impl CoreNetworkChangeEventValues {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeEventValues`](crate::model::CoreNetworkChangeEventValues).
+    pub fn builder() -> crate::model::core_network_change_event_values::Builder {
+        crate::model::core_network_change_event_values::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ChangeStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Complete,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    NotStarted,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ChangeStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETE" => ChangeStatus::Complete,
+            "FAILED" => ChangeStatus::Failed,
+            "IN_PROGRESS" => ChangeStatus::InProgress,
+            "NOT_STARTED" => ChangeStatus::NotStarted,
+            other => ChangeStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ChangeStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ChangeStatus::from(s))
+    }
+}
+impl ChangeStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ChangeStatus::Complete => "COMPLETE",
+            ChangeStatus::Failed => "FAILED",
+            ChangeStatus::InProgress => "IN_PROGRESS",
+            ChangeStatus::NotStarted => "NOT_STARTED",
+            ChangeStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "FAILED", "IN_PROGRESS", "NOT_STARTED"]
+    }
+}
+impl AsRef<str> for ChangeStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -9008,7 +9950,7 @@ pub struct ConnectPeer {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration of the Connect peer.</p>
     pub configuration: std::option::Option<crate::model::ConnectPeerConfiguration>,
-    /// <p>The tags associated with the Connect peer.</p>
+    /// <p>The list of key-value tags associated with the Connect peer.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ConnectPeer {
@@ -9040,7 +9982,7 @@ impl ConnectPeer {
     pub fn configuration(&self) -> std::option::Option<&crate::model::ConnectPeerConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The tags associated with the Connect peer.</p>
+    /// <p>The list of key-value tags associated with the Connect peer.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -9170,14 +10112,14 @@ pub mod connect_peer {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags associated with the Connect peer.</p>
+        /// <p>The list of key-value tags associated with the Connect peer.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags associated with the Connect peer.</p>
+        /// <p>The list of key-value tags associated with the Connect peer.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,

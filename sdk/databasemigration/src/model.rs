@@ -237,10 +237,20 @@ pub struct ReplicationTask {
     pub last_failure_message: std::option::Option<std::string::String>,
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.</p> </li>
-    /// <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.</p> </li>
-    /// <li> <p> <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full load stopped as specified before starting the CDC migration.</p> </li>
-    /// <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.</p> </li>
+    /// <li> <p> <code>"Stop Reason NORMAL"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p> </li>
+    /// <li> <p> <code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p> </li>
+    /// <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
     /// </ul>
     pub stop_reason: std::option::Option<std::string::String>,
     /// <p>The date the replication task was created.</p>
@@ -329,10 +339,20 @@ impl ReplicationTask {
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.</p> </li>
-    /// <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.</p> </li>
-    /// <li> <p> <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full load stopped as specified before starting the CDC migration.</p> </li>
-    /// <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.</p> </li>
+    /// <li> <p> <code>"Stop Reason NORMAL"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p> </li>
+    /// <li> <p> <code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p> </li>
+    /// <li> <p> <code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p> </li>
+    /// <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+    /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
     /// </ul>
     pub fn stop_reason(&self) -> std::option::Option<&str> {
         self.stop_reason.as_deref()
@@ -611,10 +631,20 @@ pub mod replication_task {
         }
         /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
         /// <ul>
-        /// <li> <p> <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.</p> </li>
-        /// <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.</p> </li>
-        /// <li> <p> <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full load stopped as specified before starting the CDC migration.</p> </li>
-        /// <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.</p> </li>
+        /// <li> <p> <code>"Stop Reason NORMAL"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p> </li>
+        /// <li> <p> <code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p> </li>
+        /// <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
         /// </ul>
         pub fn stop_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.stop_reason = Some(input.into());
@@ -622,10 +652,20 @@ pub mod replication_task {
         }
         /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
         /// <ul>
-        /// <li> <p> <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.</p> </li>
-        /// <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load completed.</p> </li>
-        /// <li> <p> <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration, the full load stopped as specified before starting the CDC migration.</p> </li>
-        /// <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server time.</p> </li>
+        /// <li> <p> <code>"Stop Reason NORMAL"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p> </li>
+        /// <li> <p> <code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p> </li>
+        /// <li> <p> <code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p> </li>
+        /// <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+        /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
         /// </ul>
         pub fn set_stop_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stop_reason = input;
@@ -5640,6 +5680,8 @@ pub struct MicrosoftSqlServerSettings {
     pub secrets_manager_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SQL Server endpoint connection details.</p>
     pub secrets_manager_secret_id: std::option::Option<std::string::String>,
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    pub trim_space_in_char: std::option::Option<bool>,
 }
 impl MicrosoftSqlServerSettings {
     /// <p>Endpoint TCP port.</p>
@@ -5702,6 +5744,10 @@ impl MicrosoftSqlServerSettings {
     pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    pub fn trim_space_in_char(&self) -> std::option::Option<bool> {
+        self.trim_space_in_char
+    }
 }
 impl std::fmt::Debug for MicrosoftSqlServerSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5729,6 +5775,7 @@ impl std::fmt::Debug for MicrosoftSqlServerSettings {
             &self.secrets_manager_access_role_arn,
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.finish()
     }
 }
@@ -5752,6 +5799,7 @@ pub mod microsoft_sql_server_settings {
         pub(crate) use_third_party_backup_device: std::option::Option<bool>,
         pub(crate) secrets_manager_access_role_arn: std::option::Option<std::string::String>,
         pub(crate) secrets_manager_secret_id: std::option::Option<std::string::String>,
+        pub(crate) trim_space_in_char: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Endpoint TCP port.</p>
@@ -5923,6 +5971,16 @@ pub mod microsoft_sql_server_settings {
             self.secrets_manager_secret_id = input;
             self
         }
+        /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+        pub fn trim_space_in_char(mut self, input: bool) -> Self {
+            self.trim_space_in_char = Some(input);
+            self
+        }
+        /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+        pub fn set_trim_space_in_char(mut self, input: std::option::Option<bool>) -> Self {
+            self.trim_space_in_char = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MicrosoftSqlServerSettings`](crate::model::MicrosoftSqlServerSettings).
         pub fn build(self) -> crate::model::MicrosoftSqlServerSettings {
             crate::model::MicrosoftSqlServerSettings {
@@ -5940,6 +5998,7 @@ pub mod microsoft_sql_server_settings {
                 use_third_party_backup_device: self.use_third_party_backup_device,
                 secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
                 secrets_manager_secret_id: self.secrets_manager_secret_id,
+                trim_space_in_char: self.trim_space_in_char,
             }
         }
     }
@@ -6309,6 +6368,8 @@ pub struct OracleSettings {
     pub secrets_manager_oracle_asm_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
     pub secrets_manager_oracle_asm_secret_id: std::option::Option<std::string::String>,
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    pub trim_space_in_char: std::option::Option<bool>,
 }
 impl OracleSettings {
     /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
@@ -6488,6 +6549,10 @@ impl OracleSettings {
     pub fn secrets_manager_oracle_asm_secret_id(&self) -> std::option::Option<&str> {
         self.secrets_manager_oracle_asm_secret_id.as_deref()
     }
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    pub fn trim_space_in_char(&self) -> std::option::Option<bool> {
+        self.trim_space_in_char
+    }
 }
 impl std::fmt::Debug for OracleSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6565,6 +6630,7 @@ impl std::fmt::Debug for OracleSettings {
             "secrets_manager_oracle_asm_secret_id",
             &self.secrets_manager_oracle_asm_secret_id,
         );
+        formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.finish()
     }
 }
@@ -6616,6 +6682,7 @@ pub mod oracle_settings {
         pub(crate) secrets_manager_oracle_asm_access_role_arn:
             std::option::Option<std::string::String>,
         pub(crate) secrets_manager_oracle_asm_secret_id: std::option::Option<std::string::String>,
+        pub(crate) trim_space_in_char: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
@@ -7119,6 +7186,16 @@ pub mod oracle_settings {
             self.secrets_manager_oracle_asm_secret_id = input;
             self
         }
+        /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+        pub fn trim_space_in_char(mut self, input: bool) -> Self {
+            self.trim_space_in_char = Some(input);
+            self
+        }
+        /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+        pub fn set_trim_space_in_char(mut self, input: std::option::Option<bool>) -> Self {
+            self.trim_space_in_char = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OracleSettings`](crate::model::OracleSettings).
         pub fn build(self) -> crate::model::OracleSettings {
             crate::model::OracleSettings {
@@ -7164,6 +7241,7 @@ pub mod oracle_settings {
                 secrets_manager_oracle_asm_access_role_arn: self
                     .secrets_manager_oracle_asm_access_role_arn,
                 secrets_manager_oracle_asm_secret_id: self.secrets_manager_oracle_asm_secret_id,
+                trim_space_in_char: self.trim_space_in_char,
             }
         }
     }
@@ -7655,6 +7733,8 @@ pub struct PostgreSqlSettings {
     pub secrets_manager_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint connection details.</p>
     pub secrets_manager_secret_id: std::option::Option<std::string::String>,
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    pub trim_space_in_char: std::option::Option<bool>,
 }
 impl PostgreSqlSettings {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -7739,6 +7819,10 @@ impl PostgreSqlSettings {
     pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    pub fn trim_space_in_char(&self) -> std::option::Option<bool> {
+        self.trim_space_in_char
+    }
 }
 impl std::fmt::Debug for PostgreSqlSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7767,6 +7851,7 @@ impl std::fmt::Debug for PostgreSqlSettings {
             &self.secrets_manager_access_role_arn,
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.finish()
     }
 }
@@ -7794,6 +7879,7 @@ pub mod postgre_sql_settings {
         pub(crate) plugin_name: std::option::Option<crate::model::PluginNameValue>,
         pub(crate) secrets_manager_access_role_arn: std::option::Option<std::string::String>,
         pub(crate) secrets_manager_secret_id: std::option::Option<std::string::String>,
+        pub(crate) trim_space_in_char: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -8023,6 +8109,16 @@ pub mod postgre_sql_settings {
             self.secrets_manager_secret_id = input;
             self
         }
+        /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+        pub fn trim_space_in_char(mut self, input: bool) -> Self {
+            self.trim_space_in_char = Some(input);
+            self
+        }
+        /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+        pub fn set_trim_space_in_char(mut self, input: std::option::Option<bool>) -> Self {
+            self.trim_space_in_char = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PostgreSqlSettings`](crate::model::PostgreSqlSettings).
         pub fn build(self) -> crate::model::PostgreSqlSettings {
             crate::model::PostgreSqlSettings {
@@ -8044,6 +8140,7 @@ pub mod postgre_sql_settings {
                 plugin_name: self.plugin_name,
                 secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
                 secrets_manager_secret_id: self.secrets_manager_secret_id,
+                trim_space_in_char: self.trim_space_in_char,
             }
         }
     }
@@ -9057,6 +9154,8 @@ pub struct ElasticsearchSettings {
     pub full_load_error_percentage: std::option::Option<i32>,
     /// <p>The maximum number of seconds for which DMS retries failed API requests to the OpenSearch cluster.</p>
     pub error_retry_duration: std::option::Option<i32>,
+    /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
+    pub use_new_mapping_type: std::option::Option<bool>,
 }
 impl ElasticsearchSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
@@ -9076,6 +9175,10 @@ impl ElasticsearchSettings {
     pub fn error_retry_duration(&self) -> std::option::Option<i32> {
         self.error_retry_duration
     }
+    /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
+    pub fn use_new_mapping_type(&self) -> std::option::Option<bool> {
+        self.use_new_mapping_type
+    }
 }
 impl std::fmt::Debug for ElasticsearchSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9087,6 +9190,7 @@ impl std::fmt::Debug for ElasticsearchSettings {
             &self.full_load_error_percentage,
         );
         formatter.field("error_retry_duration", &self.error_retry_duration);
+        formatter.field("use_new_mapping_type", &self.use_new_mapping_type);
         formatter.finish()
     }
 }
@@ -9100,6 +9204,7 @@ pub mod elasticsearch_settings {
         pub(crate) endpoint_uri: std::option::Option<std::string::String>,
         pub(crate) full_load_error_percentage: std::option::Option<i32>,
         pub(crate) error_retry_duration: std::option::Option<i32>,
+        pub(crate) use_new_mapping_type: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
@@ -9147,6 +9252,16 @@ pub mod elasticsearch_settings {
             self.error_retry_duration = input;
             self
         }
+        /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
+        pub fn use_new_mapping_type(mut self, input: bool) -> Self {
+            self.use_new_mapping_type = Some(input);
+            self
+        }
+        /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
+        pub fn set_use_new_mapping_type(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_new_mapping_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ElasticsearchSettings`](crate::model::ElasticsearchSettings).
         pub fn build(self) -> crate::model::ElasticsearchSettings {
             crate::model::ElasticsearchSettings {
@@ -9154,6 +9269,7 @@ pub mod elasticsearch_settings {
                 endpoint_uri: self.endpoint_uri,
                 full_load_error_percentage: self.full_load_error_percentage,
                 error_retry_duration: self.error_retry_duration,
+                use_new_mapping_type: self.use_new_mapping_type,
             }
         }
     }
@@ -10667,6 +10783,12 @@ pub struct S3Settings {
     /// <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert the current UTC time into a specified time zone. The conversion occurs when a date partition folder is created and a CDC filename is generated. The time zone format is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the following example.</p>
     /// <p> <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName": "dms-nattarat-test"}'</code> </p>
     pub date_partition_timezone: std::option::Option<std::string::String>,
+    /// <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The default value is <code>false</code>.</p>
+    pub add_trailing_padding_character: std::option::Option<bool>,
+    /// <p>To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting. </p>
+    /// <p>Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code> </p>
+    /// <p>When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner against the specified parameter.</p>
+    pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl S3Settings {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an S3 bucket.</p>
@@ -10905,6 +11027,16 @@ impl S3Settings {
     pub fn date_partition_timezone(&self) -> std::option::Option<&str> {
         self.date_partition_timezone.as_deref()
     }
+    /// <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The default value is <code>false</code>.</p>
+    pub fn add_trailing_padding_character(&self) -> std::option::Option<bool> {
+        self.add_trailing_padding_character
+    }
+    /// <p>To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting. </p>
+    /// <p>Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code> </p>
+    /// <p>When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner against the specified parameter.</p>
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10956,6 +11088,11 @@ impl std::fmt::Debug for S3Settings {
         formatter.field("max_file_size", &self.max_file_size);
         formatter.field("rfc4180", &self.rfc4180);
         formatter.field("date_partition_timezone", &self.date_partition_timezone);
+        formatter.field(
+            "add_trailing_padding_character",
+            &self.add_trailing_padding_character,
+        );
+        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
     }
 }
@@ -11006,6 +11143,8 @@ pub mod s3_settings {
         pub(crate) max_file_size: std::option::Option<i32>,
         pub(crate) rfc4180: std::option::Option<bool>,
         pub(crate) date_partition_timezone: std::option::Option<std::string::String>,
+        pub(crate) add_trailing_padding_character: std::option::Option<bool>,
+        pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an S3 bucket.</p>
@@ -11616,6 +11755,36 @@ pub mod s3_settings {
             self.date_partition_timezone = input;
             self
         }
+        /// <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The default value is <code>false</code>.</p>
+        pub fn add_trailing_padding_character(mut self, input: bool) -> Self {
+            self.add_trailing_padding_character = Some(input);
+            self
+        }
+        /// <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code> to add padding on string data. The default value is <code>false</code>.</p>
+        pub fn set_add_trailing_padding_character(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.add_trailing_padding_character = input;
+            self
+        }
+        /// <p>To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting. </p>
+        /// <p>Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code> </p>
+        /// <p>When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner against the specified parameter.</p>
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
+            self
+        }
+        /// <p>To specify a bucket owner and prevent sniping, you can use the <code>ExpectedBucketOwner</code> endpoint setting. </p>
+        /// <p>Example: <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code> </p>
+        /// <p>When you make a request to test a connection or perform a migration, S3 checks the account ID of the bucket owner against the specified parameter.</p>
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_bucket_owner = input;
+            self
+        }
         /// Consumes the builder and constructs a [`S3Settings`](crate::model::S3Settings).
         pub fn build(self) -> crate::model::S3Settings {
             crate::model::S3Settings {
@@ -11658,6 +11827,8 @@ pub mod s3_settings {
                 max_file_size: self.max_file_size,
                 rfc4180: self.rfc4180,
                 date_partition_timezone: self.date_partition_timezone,
+                add_trailing_padding_character: self.add_trailing_padding_character,
+                expected_bucket_owner: self.expected_bucket_owner,
             }
         }
     }

@@ -3792,21 +3792,21 @@ impl EbsConfiguration {
     }
 }
 
-/// <p>Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.</p>
+/// <p>Configuration of requested EBS block device associated with the instance group with count of volumes that are associated to every instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsBlockDeviceConfig {
-    /// <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
     pub volume_specification: std::option::Option<crate::model::VolumeSpecification>,
-    /// <p>Number of EBS volumes with a specific volume configuration that will be associated with every instance in the instance group</p>
+    /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
     pub volumes_per_instance: std::option::Option<i32>,
 }
 impl EbsBlockDeviceConfig {
-    /// <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
     pub fn volume_specification(&self) -> std::option::Option<&crate::model::VolumeSpecification> {
         self.volume_specification.as_ref()
     }
-    /// <p>Number of EBS volumes with a specific volume configuration that will be associated with every instance in the instance group</p>
+    /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
     pub fn volumes_per_instance(&self) -> std::option::Option<i32> {
         self.volumes_per_instance
     }
@@ -3829,12 +3829,12 @@ pub mod ebs_block_device_config {
         pub(crate) volumes_per_instance: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+        /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
         pub fn volume_specification(mut self, input: crate::model::VolumeSpecification) -> Self {
             self.volume_specification = Some(input);
             self
         }
-        /// <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+        /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
         pub fn set_volume_specification(
             mut self,
             input: std::option::Option<crate::model::VolumeSpecification>,
@@ -3842,12 +3842,12 @@ pub mod ebs_block_device_config {
             self.volume_specification = input;
             self
         }
-        /// <p>Number of EBS volumes with a specific volume configuration that will be associated with every instance in the instance group</p>
+        /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
         pub fn volumes_per_instance(mut self, input: i32) -> Self {
             self.volumes_per_instance = Some(input);
             self
         }
-        /// <p>Number of EBS volumes with a specific volume configuration that will be associated with every instance in the instance group</p>
+        /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
         pub fn set_volumes_per_instance(mut self, input: std::option::Option<i32>) -> Self {
             self.volumes_per_instance = input;
             self
@@ -3868,7 +3868,7 @@ impl EbsBlockDeviceConfig {
     }
 }
 
-/// <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+/// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeSpecification {
@@ -3878,6 +3878,8 @@ pub struct VolumeSpecification {
     pub iops: std::option::Option<i32>,
     /// <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.</p>
     pub size_in_gb: std::option::Option<i32>,
+    /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+    pub throughput: std::option::Option<i32>,
 }
 impl VolumeSpecification {
     /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
@@ -3892,6 +3894,10 @@ impl VolumeSpecification {
     pub fn size_in_gb(&self) -> std::option::Option<i32> {
         self.size_in_gb
     }
+    /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+    pub fn throughput(&self) -> std::option::Option<i32> {
+        self.throughput
+    }
 }
 impl std::fmt::Debug for VolumeSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3899,6 +3905,7 @@ impl std::fmt::Debug for VolumeSpecification {
         formatter.field("volume_type", &self.volume_type);
         formatter.field("iops", &self.iops);
         formatter.field("size_in_gb", &self.size_in_gb);
+        formatter.field("throughput", &self.throughput);
         formatter.finish()
     }
 }
@@ -3911,6 +3918,7 @@ pub mod volume_specification {
         pub(crate) volume_type: std::option::Option<std::string::String>,
         pub(crate) iops: std::option::Option<i32>,
         pub(crate) size_in_gb: std::option::Option<i32>,
+        pub(crate) throughput: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
@@ -3943,12 +3951,23 @@ pub mod volume_specification {
             self.size_in_gb = input;
             self
         }
+        /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+        pub fn throughput(mut self, input: i32) -> Self {
+            self.throughput = Some(input);
+            self
+        }
+        /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+        pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.throughput = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VolumeSpecification`](crate::model::VolumeSpecification).
         pub fn build(self) -> crate::model::VolumeSpecification {
             crate::model::VolumeSpecification {
                 volume_type: self.volume_type,
                 iops: self.iops,
                 size_in_gb: self.size_in_gb,
+                throughput: self.throughput,
             }
         }
     }
@@ -9708,13 +9727,13 @@ impl InstanceGroup {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsBlockDevice {
-    /// <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
     pub volume_specification: std::option::Option<crate::model::VolumeSpecification>,
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     pub device: std::option::Option<std::string::String>,
 }
 impl EbsBlockDevice {
-    /// <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
     pub fn volume_specification(&self) -> std::option::Option<&crate::model::VolumeSpecification> {
         self.volume_specification.as_ref()
     }
@@ -9741,12 +9760,12 @@ pub mod ebs_block_device {
         pub(crate) device: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+        /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
         pub fn volume_specification(mut self, input: crate::model::VolumeSpecification) -> Self {
             self.volume_specification = Some(input);
             self
         }
-        /// <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+        /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
         pub fn set_volume_specification(
             mut self,
             input: std::option::Option<crate::model::VolumeSpecification>,
@@ -12602,6 +12621,9 @@ pub struct Step {
     pub action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
     /// <p>The current execution status details of the cluster step.</p>
     pub status: std::option::Option<crate::model::StepStatus>,
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    pub execution_role_arn: std::option::Option<std::string::String>,
 }
 impl Step {
     /// <p>The identifier of the cluster step.</p>
@@ -12626,6 +12648,11 @@ impl Step {
     pub fn status(&self) -> std::option::Option<&crate::model::StepStatus> {
         self.status.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Step {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12635,6 +12662,7 @@ impl std::fmt::Debug for Step {
         formatter.field("config", &self.config);
         formatter.field("action_on_failure", &self.action_on_failure);
         formatter.field("status", &self.status);
+        formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.finish()
     }
 }
@@ -12649,6 +12677,7 @@ pub mod step {
         pub(crate) config: std::option::Option<crate::model::HadoopStepConfig>,
         pub(crate) action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
         pub(crate) status: std::option::Option<crate::model::StepStatus>,
+        pub(crate) execution_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the cluster step.</p>
@@ -12711,6 +12740,21 @@ pub mod step {
             self.status = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+        /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+        /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+        pub fn set_execution_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Step`](crate::model::Step).
         pub fn build(self) -> crate::model::Step {
             crate::model::Step {
@@ -12719,6 +12763,7 @@ pub mod step {
                 config: self.config,
                 action_on_failure: self.action_on_failure,
                 status: self.status,
+                execution_role_arn: self.execution_role_arn,
             }
         }
     }

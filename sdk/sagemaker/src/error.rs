@@ -1501,6 +1501,192 @@ impl std::error::Error for CreateDomainError {
     }
 }
 
+/// Error type for the `CreateEdgeDeploymentPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateEdgeDeploymentPlanError {
+    /// Kind of error that occurred.
+    pub kind: CreateEdgeDeploymentPlanErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateEdgeDeploymentPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateEdgeDeploymentPlanErrorKind {
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateEdgeDeploymentPlanError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateEdgeDeploymentPlanErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateEdgeDeploymentPlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateEdgeDeploymentPlanError {
+    fn code(&self) -> Option<&str> {
+        CreateEdgeDeploymentPlanError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateEdgeDeploymentPlanError {
+    /// Creates a new `CreateEdgeDeploymentPlanError`.
+    pub fn new(kind: CreateEdgeDeploymentPlanErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateEdgeDeploymentPlanError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateEdgeDeploymentPlanErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateEdgeDeploymentPlanError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateEdgeDeploymentPlanErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateEdgeDeploymentPlanErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEdgeDeploymentPlanErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+}
+impl std::error::Error for CreateEdgeDeploymentPlanError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateEdgeDeploymentPlanErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            CreateEdgeDeploymentPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateEdgeDeploymentStage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateEdgeDeploymentStageError {
+    /// Kind of error that occurred.
+    pub kind: CreateEdgeDeploymentStageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateEdgeDeploymentStage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateEdgeDeploymentStageErrorKind {
+    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateEdgeDeploymentStageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateEdgeDeploymentStageErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateEdgeDeploymentStageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateEdgeDeploymentStageError {
+    fn code(&self) -> Option<&str> {
+        CreateEdgeDeploymentStageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateEdgeDeploymentStageError {
+    /// Creates a new `CreateEdgeDeploymentStageError`.
+    pub fn new(kind: CreateEdgeDeploymentStageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateEdgeDeploymentStageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateEdgeDeploymentStageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateEdgeDeploymentStageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateEdgeDeploymentStageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateEdgeDeploymentStageErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEdgeDeploymentStageErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+}
+impl std::error::Error for CreateEdgeDeploymentStageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateEdgeDeploymentStageErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            CreateEdgeDeploymentStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateEdgePackagingJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5880,6 +6066,192 @@ impl std::error::Error for DeleteDomainError {
     }
 }
 
+/// Error type for the `DeleteEdgeDeploymentPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteEdgeDeploymentPlanError {
+    /// Kind of error that occurred.
+    pub kind: DeleteEdgeDeploymentPlanErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteEdgeDeploymentPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteEdgeDeploymentPlanErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteEdgeDeploymentPlanError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteEdgeDeploymentPlanErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            DeleteEdgeDeploymentPlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteEdgeDeploymentPlanError {
+    fn code(&self) -> Option<&str> {
+        DeleteEdgeDeploymentPlanError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteEdgeDeploymentPlanError {
+    /// Creates a new `DeleteEdgeDeploymentPlanError`.
+    pub fn new(kind: DeleteEdgeDeploymentPlanErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteEdgeDeploymentPlanError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteEdgeDeploymentPlanErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteEdgeDeploymentPlanError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteEdgeDeploymentPlanErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteEdgeDeploymentPlanErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEdgeDeploymentPlanErrorKind::ResourceInUse(_)
+        )
+    }
+}
+impl std::error::Error for DeleteEdgeDeploymentPlanError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteEdgeDeploymentPlanErrorKind::ResourceInUse(_inner) => Some(_inner),
+            DeleteEdgeDeploymentPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteEdgeDeploymentStage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteEdgeDeploymentStageError {
+    /// Kind of error that occurred.
+    pub kind: DeleteEdgeDeploymentStageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteEdgeDeploymentStage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteEdgeDeploymentStageErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteEdgeDeploymentStageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteEdgeDeploymentStageErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            DeleteEdgeDeploymentStageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteEdgeDeploymentStageError {
+    fn code(&self) -> Option<&str> {
+        DeleteEdgeDeploymentStageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteEdgeDeploymentStageError {
+    /// Creates a new `DeleteEdgeDeploymentStageError`.
+    pub fn new(kind: DeleteEdgeDeploymentStageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteEdgeDeploymentStageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteEdgeDeploymentStageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteEdgeDeploymentStageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteEdgeDeploymentStageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteEdgeDeploymentStageErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEdgeDeploymentStageErrorKind::ResourceInUse(_)
+        )
+    }
+}
+impl std::error::Error for DeleteEdgeDeploymentStageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteEdgeDeploymentStageErrorKind::ResourceInUse(_inner) => Some(_inner),
+            DeleteEdgeDeploymentStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9590,6 +9962,99 @@ impl std::error::Error for DescribeDomainError {
     }
 }
 
+/// Error type for the `DescribeEdgeDeploymentPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeEdgeDeploymentPlanError {
+    /// Kind of error that occurred.
+    pub kind: DescribeEdgeDeploymentPlanErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeEdgeDeploymentPlan` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeEdgeDeploymentPlanErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeEdgeDeploymentPlanError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeEdgeDeploymentPlanErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeEdgeDeploymentPlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeEdgeDeploymentPlanError {
+    fn code(&self) -> Option<&str> {
+        DescribeEdgeDeploymentPlanError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeEdgeDeploymentPlanError {
+    /// Creates a new `DescribeEdgeDeploymentPlanError`.
+    pub fn new(kind: DescribeEdgeDeploymentPlanErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeEdgeDeploymentPlanError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeEdgeDeploymentPlanErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeEdgeDeploymentPlanError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeEdgeDeploymentPlanErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeEdgeDeploymentPlanErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEdgeDeploymentPlanErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DescribeEdgeDeploymentPlanError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeEdgeDeploymentPlanErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeEdgeDeploymentPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeEdgePackagingJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10026,6 +10491,99 @@ impl std::error::Error for DescribeFeatureGroupError {
         match &self.kind {
             DescribeFeatureGroupErrorKind::ResourceNotFound(_inner) => Some(_inner),
             DescribeFeatureGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeFeatureMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeFeatureMetadataError {
+    /// Kind of error that occurred.
+    pub kind: DescribeFeatureMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeFeatureMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeFeatureMetadataErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeFeatureMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeFeatureMetadataErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeFeatureMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeFeatureMetadataError {
+    fn code(&self) -> Option<&str> {
+        DescribeFeatureMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeFeatureMetadataError {
+    /// Creates a new `DescribeFeatureMetadataError`.
+    pub fn new(kind: DescribeFeatureMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeFeatureMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeFeatureMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeFeatureMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeFeatureMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeFeatureMetadataErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFeatureMetadataErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DescribeFeatureMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeFeatureMetadataErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeFeatureMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -14814,6 +15372,88 @@ impl std::error::Error for ListDomainsError {
     }
 }
 
+/// Error type for the `ListEdgeDeploymentPlans` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListEdgeDeploymentPlansError {
+    /// Kind of error that occurred.
+    pub kind: ListEdgeDeploymentPlansErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListEdgeDeploymentPlans` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListEdgeDeploymentPlansErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListEdgeDeploymentPlansError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListEdgeDeploymentPlansErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListEdgeDeploymentPlansError {
+    fn code(&self) -> Option<&str> {
+        ListEdgeDeploymentPlansError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListEdgeDeploymentPlansError {
+    /// Creates a new `ListEdgeDeploymentPlansError`.
+    pub fn new(kind: ListEdgeDeploymentPlansErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListEdgeDeploymentPlansError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListEdgeDeploymentPlansErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListEdgeDeploymentPlansError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListEdgeDeploymentPlansErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListEdgeDeploymentPlansError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListEdgeDeploymentPlansErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListEdgePackagingJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17427,6 +18067,88 @@ impl std::error::Error for ListProjectsError {
     }
 }
 
+/// Error type for the `ListStageDevices` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListStageDevicesError {
+    /// Kind of error that occurred.
+    pub kind: ListStageDevicesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListStageDevices` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListStageDevicesErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListStageDevicesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListStageDevicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListStageDevicesError {
+    fn code(&self) -> Option<&str> {
+        ListStageDevicesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListStageDevicesError {
+    /// Creates a new `ListStageDevicesError`.
+    pub fn new(kind: ListStageDevicesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListStageDevicesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListStageDevicesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListStageDevicesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListStageDevicesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListStageDevicesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListStageDevicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListStudioLifecycleConfigs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19153,6 +19875,88 @@ impl std::error::Error for SendPipelineExecutionStepSuccessError {
     }
 }
 
+/// Error type for the `StartEdgeDeploymentStage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartEdgeDeploymentStageError {
+    /// Kind of error that occurred.
+    pub kind: StartEdgeDeploymentStageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartEdgeDeploymentStage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartEdgeDeploymentStageErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartEdgeDeploymentStageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartEdgeDeploymentStageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartEdgeDeploymentStageError {
+    fn code(&self) -> Option<&str> {
+        StartEdgeDeploymentStageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartEdgeDeploymentStageError {
+    /// Creates a new `StartEdgeDeploymentStageError`.
+    pub fn new(kind: StartEdgeDeploymentStageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartEdgeDeploymentStageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartEdgeDeploymentStageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartEdgeDeploymentStageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartEdgeDeploymentStageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for StartEdgeDeploymentStageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartEdgeDeploymentStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartMonitoringSchedule` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19619,6 +20423,88 @@ impl std::error::Error for StopCompilationJobError {
         match &self.kind {
             StopCompilationJobErrorKind::ResourceNotFound(_inner) => Some(_inner),
             StopCompilationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StopEdgeDeploymentStage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopEdgeDeploymentStageError {
+    /// Kind of error that occurred.
+    pub kind: StopEdgeDeploymentStageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StopEdgeDeploymentStage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopEdgeDeploymentStageErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopEdgeDeploymentStageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopEdgeDeploymentStageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopEdgeDeploymentStageError {
+    fn code(&self) -> Option<&str> {
+        StopEdgeDeploymentStageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopEdgeDeploymentStageError {
+    /// Creates a new `StopEdgeDeploymentStageError`.
+    pub fn new(kind: StopEdgeDeploymentStageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopEdgeDeploymentStageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopEdgeDeploymentStageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopEdgeDeploymentStageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopEdgeDeploymentStageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for StopEdgeDeploymentStageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopEdgeDeploymentStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -21556,6 +22442,189 @@ impl std::error::Error for UpdateExperimentError {
             UpdateExperimentErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateExperimentErrorKind::ResourceNotFound(_inner) => Some(_inner),
             UpdateExperimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateFeatureGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateFeatureGroupError {
+    /// Kind of error that occurred.
+    pub kind: UpdateFeatureGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateFeatureGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFeatureGroupErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFeatureGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFeatureGroupErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            UpdateFeatureGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateFeatureGroupError {
+    fn code(&self) -> Option<&str> {
+        UpdateFeatureGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFeatureGroupError {
+    /// Creates a new `UpdateFeatureGroupError`.
+    pub fn new(kind: UpdateFeatureGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateFeatureGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFeatureGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateFeatureGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFeatureGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateFeatureGroupErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateFeatureGroupErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for UpdateFeatureGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFeatureGroupErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            UpdateFeatureGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateFeatureMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateFeatureMetadataError {
+    /// Kind of error that occurred.
+    pub kind: UpdateFeatureMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateFeatureMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFeatureMetadataErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFeatureMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFeatureMetadataErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            UpdateFeatureMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateFeatureMetadataError {
+    fn code(&self) -> Option<&str> {
+        UpdateFeatureMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFeatureMetadataError {
+    /// Creates a new `UpdateFeatureMetadataError`.
+    pub fn new(kind: UpdateFeatureMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateFeatureMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFeatureMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateFeatureMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFeatureMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateFeatureMetadataErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFeatureMetadataErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for UpdateFeatureMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFeatureMetadataErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            UpdateFeatureMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

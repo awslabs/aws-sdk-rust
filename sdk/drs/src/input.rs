@@ -706,12 +706,12 @@ pub mod delete_recovery_instance_input {
         pub(crate) recovery_instance_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>RThe ID of the Recovery Instance to be deleted.</p>
+        /// <p>The ID of the Recovery Instance to be deleted.</p>
         pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_instance_id = Some(input.into());
             self
         }
-        /// <p>RThe ID of the Recovery Instance to be deleted.</p>
+        /// <p>The ID of the Recovery Instance to be deleted.</p>
         pub fn set_recovery_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6724,11 +6724,11 @@ impl std::fmt::Debug for DisconnectRecoveryInstanceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecoveryInstanceInput {
-    /// <p>RThe ID of the Recovery Instance to be deleted.</p>
+    /// <p>The ID of the Recovery Instance to be deleted.</p>
     pub recovery_instance_id: std::option::Option<std::string::String>,
 }
 impl DeleteRecoveryInstanceInput {
-    /// <p>RThe ID of the Recovery Instance to be deleted.</p>
+    /// <p>The ID of the Recovery Instance to be deleted.</p>
     pub fn recovery_instance_id(&self) -> std::option::Option<&str> {
         self.recovery_instance_id.as_deref()
     }

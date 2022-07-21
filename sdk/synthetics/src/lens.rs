@@ -38,3 +38,33 @@ pub(crate) fn reflens_structure_crate_output_get_canary_runs_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn reflens_structure_crate_output_list_associated_groups_output_next_token(
+    input: &crate::output::ListAssociatedGroupsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_group_resources_output_next_token(
+    input: &crate::output::ListGroupResourcesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_groups_output_next_token(
+    input: &crate::output::ListGroupsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

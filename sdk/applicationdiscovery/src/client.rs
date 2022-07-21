@@ -284,6 +284,7 @@ impl Client {
     ///   - [`agent_summary(Option<CustomerAgentInfo>)`](crate::output::GetDiscoverySummaryOutput::agent_summary): <p>Details about discovered agents, including agent status and health.</p>
     ///   - [`connector_summary(Option<CustomerConnectorInfo>)`](crate::output::GetDiscoverySummaryOutput::connector_summary): <p>Details about discovered connectors, including connector status and health.</p>
     ///   - [`me_collector_summary(Option<CustomerMeCollectorInfo>)`](crate::output::GetDiscoverySummaryOutput::me_collector_summary): <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    ///   - [`agentless_collector_summary(Option<CustomerAgentlessCollectorInfo>)`](crate::output::GetDiscoverySummaryOutput::agentless_collector_summary): (undocumented)
     /// - On failure, responds with [`SdkError<GetDiscoverySummaryError>`](crate::error::GetDiscoverySummaryError)
     pub fn get_discovery_summary(&self) -> fluent_builders::GetDiscoverySummary {
         fluent_builders::GetDiscoverySummary::new(self.handle.clone())

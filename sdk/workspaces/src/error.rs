@@ -4639,6 +4639,8 @@ pub enum ImportClientBrandingErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>Your resource limits have been exceeded.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4648,6 +4650,7 @@ impl std::fmt::Display for ImportClientBrandingError {
             ImportClientBrandingErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ImportClientBrandingErrorKind::InvalidParameterValuesException(_inner) => _inner.fmt(f),
             ImportClientBrandingErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
+            ImportClientBrandingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ImportClientBrandingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4723,6 +4726,13 @@ impl ImportClientBrandingError {
             ImportClientBrandingErrorKind::ResourceLimitExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `ImportClientBrandingErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportClientBrandingErrorKind::ResourceNotFoundException(_)
+        )
+    }
 }
 impl std::error::Error for ImportClientBrandingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4730,6 +4740,7 @@ impl std::error::Error for ImportClientBrandingError {
             ImportClientBrandingErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ImportClientBrandingErrorKind::InvalidParameterValuesException(_inner) => Some(_inner),
             ImportClientBrandingErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
+            ImportClientBrandingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ImportClientBrandingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }

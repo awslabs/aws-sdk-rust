@@ -149,7 +149,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`protocol(FsxProtocol)`](crate::client::fluent_builders::CreateLocationFsxOntap::protocol) / [`set_protocol(Option<FsxProtocol>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_protocol): <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
-    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_security_group_arns): <p>Specifies the security groups that DataSync can use to access your FSx for ONTAP file system. You must configure the security groups to allow outbound traffic on the following ports (depending on the protocol that you're using):</p>  <ul>   <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p> </li>   <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>  </ul>  <p>Your file system's security groups must also allow inbound traffic on the same port.</p>
+    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_security_group_arns): <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>  <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>  <ul>   <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>   <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>  </ul>  <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     ///   - [`storage_virtual_machine_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::storage_virtual_machine_arn) / [`set_storage_virtual_machine_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_storage_virtual_machine_arn): <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
     ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_subdirectory): <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>   <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>  </note>
     ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationFsxOntap::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_tags): <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
@@ -176,15 +176,15 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateLocationFsxWindows`](crate::client::fluent_builders::CreateLocationFsxWindows) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_subdirectory): <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx for Windows File Server file system is used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for Windows File Server destination.</p>
-    ///   - [`fsx_filesystem_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::fsx_filesystem_arn) / [`set_fsx_filesystem_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_fsx_filesystem_arn): <p>The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_security_group_arns): <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationFsxWindows::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_tags): <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    ///   - [`user(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::user) / [`set_user(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_user): <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>  <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_domain): <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_password): <p>The password of the user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_subdirectory): <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
+    ///   - [`fsx_filesystem_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::fsx_filesystem_arn) / [`set_fsx_filesystem_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_fsx_filesystem_arn): <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
+    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_security_group_arns): <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>   <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>   <ul>    <li> <p>Configure the security group to allow it to communicate within itself.</p> </li>    <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>   </ul>  </note>
+    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationFsxWindows::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_tags): <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
+    ///   - [`user(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::user) / [`set_user(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_user): <p>Specifies the user who has the permissions to access files and folders in the file system.</p>  <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_domain): <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_password): <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
     /// - On success, responds with [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationFsxWindowsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
+    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationFsxWindowsOutput::location_arn): <p>The ARN of the FSx for Windows File Server file system location you created.</p>
     /// - On failure, responds with [`SdkError<CreateLocationFsxWindowsError>`](crate::error::CreateLocationFsxWindowsError)
     pub fn create_location_fsx_windows(&self) -> fluent_builders::CreateLocationFsxWindows {
         fluent_builders::CreateLocationFsxWindows::new(self.handle.clone())
@@ -1267,22 +1267,24 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
         ///
-        /// <p>Specifies the security groups that DataSync can use to access your FSx for ONTAP file system. You must configure the security groups to allow outbound traffic on the following ports (depending on the protocol that you're using):</p>
+        /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+        /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
         /// <ul>
-        /// <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p> </li>
+        /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>
         /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
         /// </ul>
-        /// <p>Your file system's security groups must also allow inbound traffic on the same port.</p>
+        /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_arns(input.into());
             self
         }
-        /// <p>Specifies the security groups that DataSync can use to access your FSx for ONTAP file system. You must configure the security groups to allow outbound traffic on the following ports (depending on the protocol that you're using):</p>
+        /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
+        /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
         /// <ul>
-        /// <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p> </li>
+        /// <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>
         /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
         /// </ul>
-        /// <p>Your file system's security groups must also allow inbound traffic on the same port.</p>
+        /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
         pub fn set_security_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1493,22 +1495,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx for Windows File Server file system is used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for Windows File Server destination.</p>
+        /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx for Windows File Server file system is used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for Windows File Server destination.</p>
+        /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
         pub fn fsx_filesystem_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fsx_filesystem_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
         pub fn set_fsx_filesystem_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1520,12 +1522,24 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
         ///
-        /// <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
+        /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
+        /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
+        /// <ul>
+        /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li>
+        /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
+        /// </ul>
+        /// </note>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_arns(input.into());
             self
         }
-        /// <p>The ARNs of the security groups that are used to configure the FSx for Windows File Server file system.</p>
+        /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
+        /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
+        /// <ul>
+        /// <li> <p>Configure the security group to allow it to communicate within itself.</p> </li>
+        /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
+        /// </ul>
+        /// </note>
         pub fn set_security_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1537,12 +1551,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+        /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+        /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -1550,34 +1564,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+        /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
         /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user(input.into());
             self
         }
-        /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+        /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
         /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user(input);
             self
         }
-        /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+        /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+        /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The password of the user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+        /// <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input.into());
             self
         }
-        /// <p>The password of the user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+        /// <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_password(input);
             self
@@ -2374,12 +2388,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTask`.
     ///
-    /// <p>Creates a task.</p>
-    /// <p>A task includes a source location and a destination location, and a configuration that specifies how data is transferred. A task always transfers data from the source location to the destination location. The configuration specifies options such as task scheduling, bandwidth limits, etc. A task is the complete definition of a data transfer.</p>
-    /// <p>When you create a task that transfers data between Amazon Web Services services in different Amazon Web Services Regions, one of the two locations that you specify must reside in the Region where DataSync is being used. The other location must be specified in a different Region.</p>
-    /// <p>You can transfer data between commercial Amazon Web Services Regions except for China, or between Amazon Web Services GovCloud (US) Regions.</p> <important>
-    /// <p>When you use DataSync to copy files or objects between Amazon Web Services Regions, you pay for data transfer between Regions. This is billed as data transfer OUT from your source Region to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer pricing</a>. </p>
-    /// </important>
+    /// <p>Configures a task, which defines where and how DataSync transfers your data.</p>
+    /// <p>A task includes a source location, a destination location, and the preferences for how and when you want to transfer your data (such as bandwidth limits, scheduling, among other options).</p>
+    /// <p>When you create a task that transfers data between Amazon Web Services services in different Amazon Web Services Regions, one of your locations must reside in the Region where you're using DataSync.</p>
+    /// <p>For more information, see the following topics:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html">Working with DataSync locations</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure DataSync task settings</a> </p> </li>
+    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTask {
         handle: std::sync::Arc<super::Handle>,
@@ -3716,7 +3732,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTasks`.
     ///
-    /// <p>Returns a list of all the tasks.</p>
+    /// <p>Returns a list of the DataSync tasks you created.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTasks {
         handle: std::sync::Arc<super::Handle>,

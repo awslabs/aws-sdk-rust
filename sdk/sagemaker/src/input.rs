@@ -3629,6 +3629,402 @@ impl CreateDomainInput {
     }
 }
 
+/// See [`CreateEdgeDeploymentPlanInput`](crate::input::CreateEdgeDeploymentPlanInput).
+pub mod create_edge_deployment_plan_input {
+
+    /// A builder for [`CreateEdgeDeploymentPlanInput`](crate::input::CreateEdgeDeploymentPlanInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) model_configs:
+            std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentModelConfig>>,
+        pub(crate) device_fleet_name: std::option::Option<std::string::String>,
+        pub(crate) stages: std::option::Option<std::vec::Vec<crate::model::DeploymentStage>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// Appends an item to `model_configs`.
+        ///
+        /// To override the contents of this collection use [`set_model_configs`](Self::set_model_configs).
+        ///
+        /// <p>List of models associated with the edge deployment plan.</p>
+        pub fn model_configs(mut self, input: crate::model::EdgeDeploymentModelConfig) -> Self {
+            let mut v = self.model_configs.unwrap_or_default();
+            v.push(input);
+            self.model_configs = Some(v);
+            self
+        }
+        /// <p>List of models associated with the edge deployment plan.</p>
+        pub fn set_model_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentModelConfig>>,
+        ) -> Self {
+            self.model_configs = input;
+            self
+        }
+        /// <p>The device fleet used for this edge deployment plan.</p>
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_fleet_name = Some(input.into());
+            self
+        }
+        /// <p>The device fleet used for this edge deployment plan.</p>
+        pub fn set_device_fleet_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.device_fleet_name = input;
+            self
+        }
+        /// Appends an item to `stages`.
+        ///
+        /// To override the contents of this collection use [`set_stages`](Self::set_stages).
+        ///
+        /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
+        pub fn stages(mut self, input: crate::model::DeploymentStage) -> Self {
+            let mut v = self.stages.unwrap_or_default();
+            v.push(input);
+            self.stages = Some(v);
+            self
+        }
+        /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
+        pub fn set_stages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeploymentStage>>,
+        ) -> Self {
+            self.stages = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>List of tags with which to tag the edge deployment plan.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>List of tags with which to tag the edge deployment plan.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEdgeDeploymentPlanInput`](crate::input::CreateEdgeDeploymentPlanInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateEdgeDeploymentPlanInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateEdgeDeploymentPlanInput {
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                model_configs: self.model_configs,
+                device_fleet_name: self.device_fleet_name,
+                stages: self.stages,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateEdgeDeploymentPlanInputOperationOutputAlias =
+    crate::operation::CreateEdgeDeploymentPlan;
+#[doc(hidden)]
+pub type CreateEdgeDeploymentPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateEdgeDeploymentPlanInput {
+    /// Consumes the builder and constructs an Operation<[`CreateEdgeDeploymentPlan`](crate::operation::CreateEdgeDeploymentPlan)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateEdgeDeploymentPlan,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateEdgeDeploymentPlanInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateEdgeDeploymentPlanInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.CreateEdgeDeploymentPlan",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_edge_deployment_plan(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateEdgeDeploymentPlan::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateEdgeDeploymentPlan",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentPlanInput`](crate::input::CreateEdgeDeploymentPlanInput).
+    pub fn builder() -> crate::input::create_edge_deployment_plan_input::Builder {
+        crate::input::create_edge_deployment_plan_input::Builder::default()
+    }
+}
+
+/// See [`CreateEdgeDeploymentStageInput`](crate::input::CreateEdgeDeploymentStageInput).
+pub mod create_edge_deployment_stage_input {
+
+    /// A builder for [`CreateEdgeDeploymentStageInput`](crate::input::CreateEdgeDeploymentStageInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) stages: std::option::Option<std::vec::Vec<crate::model::DeploymentStage>>,
+    }
+    impl Builder {
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// Appends an item to `stages`.
+        ///
+        /// To override the contents of this collection use [`set_stages`](Self::set_stages).
+        ///
+        /// <p>List of stages to be added to the edge deployment plan.</p>
+        pub fn stages(mut self, input: crate::model::DeploymentStage) -> Self {
+            let mut v = self.stages.unwrap_or_default();
+            v.push(input);
+            self.stages = Some(v);
+            self
+        }
+        /// <p>List of stages to be added to the edge deployment plan.</p>
+        pub fn set_stages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeploymentStage>>,
+        ) -> Self {
+            self.stages = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEdgeDeploymentStageInput`](crate::input::CreateEdgeDeploymentStageInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateEdgeDeploymentStageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateEdgeDeploymentStageInput {
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                stages: self.stages,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateEdgeDeploymentStageInputOperationOutputAlias =
+    crate::operation::CreateEdgeDeploymentStage;
+#[doc(hidden)]
+pub type CreateEdgeDeploymentStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateEdgeDeploymentStageInput {
+    /// Consumes the builder and constructs an Operation<[`CreateEdgeDeploymentStage`](crate::operation::CreateEdgeDeploymentStage)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateEdgeDeploymentStage,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateEdgeDeploymentStageInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateEdgeDeploymentStageInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.CreateEdgeDeploymentStage",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_edge_deployment_stage(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateEdgeDeploymentStage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateEdgeDeploymentStage",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentStageInput`](crate::input::CreateEdgeDeploymentStageInput).
+    pub fn builder() -> crate::input::create_edge_deployment_stage_input::Builder {
+        crate::input::create_edge_deployment_stage_input::Builder::default()
+    }
+}
+
 /// See [`CreateEdgePackagingJobInput`](crate::input::CreateEdgePackagingJobInput).
 pub mod create_edge_packaging_job_input {
 
@@ -14282,6 +14678,314 @@ impl DeleteDomainInput {
     }
 }
 
+/// See [`DeleteEdgeDeploymentPlanInput`](crate::input::DeleteEdgeDeploymentPlanInput).
+pub mod delete_edge_deployment_plan_input {
+
+    /// A builder for [`DeleteEdgeDeploymentPlanInput`](crate::input::DeleteEdgeDeploymentPlanInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the edge deployment plan to delete.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan to delete.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEdgeDeploymentPlanInput`](crate::input::DeleteEdgeDeploymentPlanInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteEdgeDeploymentPlanInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteEdgeDeploymentPlanInput {
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteEdgeDeploymentPlanInputOperationOutputAlias =
+    crate::operation::DeleteEdgeDeploymentPlan;
+#[doc(hidden)]
+pub type DeleteEdgeDeploymentPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteEdgeDeploymentPlanInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteEdgeDeploymentPlan`](crate::operation::DeleteEdgeDeploymentPlan)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteEdgeDeploymentPlan,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteEdgeDeploymentPlanInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteEdgeDeploymentPlanInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DeleteEdgeDeploymentPlan",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_edge_deployment_plan(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteEdgeDeploymentPlan::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteEdgeDeploymentPlan",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentPlanInput`](crate::input::DeleteEdgeDeploymentPlanInput).
+    pub fn builder() -> crate::input::delete_edge_deployment_plan_input::Builder {
+        crate::input::delete_edge_deployment_plan_input::Builder::default()
+    }
+}
+
+/// See [`DeleteEdgeDeploymentStageInput`](crate::input::DeleteEdgeDeploymentStageInput).
+pub mod delete_edge_deployment_stage_input {
+
+    /// A builder for [`DeleteEdgeDeploymentStageInput`](crate::input::DeleteEdgeDeploymentStageInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the edge deployment plan from which the stage will be deleted.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan from which the stage will be deleted.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// <p>The name of the stage.</p>
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stage.</p>
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEdgeDeploymentStageInput`](crate::input::DeleteEdgeDeploymentStageInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteEdgeDeploymentStageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteEdgeDeploymentStageInput {
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                stage_name: self.stage_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteEdgeDeploymentStageInputOperationOutputAlias =
+    crate::operation::DeleteEdgeDeploymentStage;
+#[doc(hidden)]
+pub type DeleteEdgeDeploymentStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteEdgeDeploymentStageInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteEdgeDeploymentStage`](crate::operation::DeleteEdgeDeploymentStage)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteEdgeDeploymentStage,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteEdgeDeploymentStageInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteEdgeDeploymentStageInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DeleteEdgeDeploymentStage",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_edge_deployment_stage(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteEdgeDeploymentStage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteEdgeDeploymentStage",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentStageInput`](crate::input::DeleteEdgeDeploymentStageInput).
+    pub fn builder() -> crate::input::delete_edge_deployment_stage_input::Builder {
+        crate::input::delete_edge_deployment_stage_input::Builder::default()
+    }
+}
+
 /// See [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
 pub mod delete_endpoint_input {
 
@@ -20312,6 +21016,175 @@ impl DescribeDomainInput {
     }
 }
 
+/// See [`DescribeEdgeDeploymentPlanInput`](crate::input::DescribeEdgeDeploymentPlanInput).
+pub mod describe_edge_deployment_plan_input {
+
+    /// A builder for [`DescribeEdgeDeploymentPlanInput`](crate::input::DescribeEdgeDeploymentPlanInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the deployment plan to describe.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the deployment plan to describe.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// <p>If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to select (50 by default).</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to select (50 by default).</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEdgeDeploymentPlanInput`](crate::input::DescribeEdgeDeploymentPlanInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeEdgeDeploymentPlanInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeEdgeDeploymentPlanInput {
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeEdgeDeploymentPlanInputOperationOutputAlias =
+    crate::operation::DescribeEdgeDeploymentPlan;
+#[doc(hidden)]
+pub type DescribeEdgeDeploymentPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeEdgeDeploymentPlanInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeEdgeDeploymentPlan`](crate::operation::DescribeEdgeDeploymentPlan)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeEdgeDeploymentPlan,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeEdgeDeploymentPlanInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeEdgeDeploymentPlanInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeEdgeDeploymentPlan",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_edge_deployment_plan(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeEdgeDeploymentPlan::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeEdgeDeploymentPlan",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeEdgeDeploymentPlanInput`](crate::input::DescribeEdgeDeploymentPlanInput).
+    pub fn builder() -> crate::input::describe_edge_deployment_plan_input::Builder {
+        crate::input::describe_edge_deployment_plan_input::Builder::default()
+    }
+}
+
 /// See [`DescribeEdgePackagingJobInput`](crate::input::DescribeEdgePackagingJobInput).
 pub mod describe_edge_packaging_job_input {
 
@@ -21045,6 +21918,166 @@ impl DescribeFeatureGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureGroupInput`](crate::input::DescribeFeatureGroupInput).
     pub fn builder() -> crate::input::describe_feature_group_input::Builder {
         crate::input::describe_feature_group_input::Builder::default()
+    }
+}
+
+/// See [`DescribeFeatureMetadataInput`](crate::input::DescribeFeatureMetadataInput).
+pub mod describe_feature_metadata_input {
+
+    /// A builder for [`DescribeFeatureMetadataInput`](crate::input::DescribeFeatureMetadataInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) feature_group_name: std::option::Option<std::string::String>,
+        pub(crate) feature_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the feature group containing the feature.</p>
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the feature group containing the feature.</p>
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_name = input;
+            self
+        }
+        /// <p>The name of the feature.</p>
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the feature.</p>
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFeatureMetadataInput`](crate::input::DescribeFeatureMetadataInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeFeatureMetadataInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeFeatureMetadataInput {
+                feature_group_name: self.feature_group_name,
+                feature_name: self.feature_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeFeatureMetadataInputOperationOutputAlias =
+    crate::operation::DescribeFeatureMetadata;
+#[doc(hidden)]
+pub type DescribeFeatureMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeFeatureMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeFeatureMetadata`](crate::operation::DescribeFeatureMetadata)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFeatureMetadata,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeFeatureMetadataInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFeatureMetadataInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeFeatureMetadata",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_feature_metadata(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFeatureMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFeatureMetadata",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeFeatureMetadataInput`](crate::input::DescribeFeatureMetadataInput).
+    pub fn builder() -> crate::input::describe_feature_metadata_input::Builder {
+        crate::input::describe_feature_metadata_input::Builder::default()
     }
 }
 
@@ -30249,6 +31282,283 @@ impl ListDomainsInput {
     }
 }
 
+/// See [`ListEdgeDeploymentPlansInput`](crate::input::ListEdgeDeploymentPlansInput).
+pub mod list_edge_deployment_plans_input {
+
+    /// A builder for [`ListEdgeDeploymentPlansInput`](crate::input::ListEdgeDeploymentPlansInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) name_contains: std::option::Option<std::string::String>,
+        pub(crate) device_fleet_name_contains: std::option::Option<std::string::String>,
+        pub(crate) sort_by: std::option::Option<crate::model::ListEdgeDeploymentPlansSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+    }
+    impl Builder {
+        /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to select (50 by default).</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to select (50 by default).</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Selects edge deployment plans created after this time.</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>Selects edge deployment plans created after this time.</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>Selects edge deployment plans created before this time.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>Selects edge deployment plans created before this time.</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>Selects edge deployment plans that were last updated after this time.</p>
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time_after = Some(input);
+            self
+        }
+        /// <p>Selects edge deployment plans that were last updated after this time.</p>
+        pub fn set_last_modified_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time_after = input;
+            self
+        }
+        /// <p>Selects edge deployment plans that were last updated before this time.</p>
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time_before = Some(input);
+            self
+        }
+        /// <p>Selects edge deployment plans that were last updated before this time.</p>
+        pub fn set_last_modified_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time_before = input;
+            self
+        }
+        /// <p>Selects edge deployment plans with names containing this name.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_contains = Some(input.into());
+            self
+        }
+        /// <p>Selects edge deployment plans with names containing this name.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_contains = input;
+            self
+        }
+        /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
+        pub fn device_fleet_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_fleet_name_contains = Some(input.into());
+            self
+        }
+        /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
+        pub fn set_device_fleet_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.device_fleet_name_contains = input;
+            self
+        }
+        /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
+        pub fn sort_by(mut self, input: crate::model::ListEdgeDeploymentPlansSortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ListEdgeDeploymentPlansSortBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>The direction of the sorting (ascending or descending).</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>The direction of the sorting (ascending or descending).</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEdgeDeploymentPlansInput`](crate::input::ListEdgeDeploymentPlansInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListEdgeDeploymentPlansInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListEdgeDeploymentPlansInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                creation_time_after: self.creation_time_after,
+                creation_time_before: self.creation_time_before,
+                last_modified_time_after: self.last_modified_time_after,
+                last_modified_time_before: self.last_modified_time_before,
+                name_contains: self.name_contains,
+                device_fleet_name_contains: self.device_fleet_name_contains,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListEdgeDeploymentPlansInputOperationOutputAlias =
+    crate::operation::ListEdgeDeploymentPlans;
+#[doc(hidden)]
+pub type ListEdgeDeploymentPlansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListEdgeDeploymentPlansInput {
+    /// Consumes the builder and constructs an Operation<[`ListEdgeDeploymentPlans`](crate::operation::ListEdgeDeploymentPlans)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListEdgeDeploymentPlans,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListEdgeDeploymentPlansInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListEdgeDeploymentPlansInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListEdgeDeploymentPlans",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_edge_deployment_plans(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEdgeDeploymentPlans::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEdgeDeploymentPlans",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListEdgeDeploymentPlansInput`](crate::input::ListEdgeDeploymentPlansInput).
+    pub fn builder() -> crate::input::list_edge_deployment_plans_input::Builder {
+        crate::input::list_edge_deployment_plans_input::Builder::default()
+    }
+}
+
 /// See [`ListEdgePackagingJobsInput`](crate::input::ListEdgePackagingJobsInput).
 pub mod list_edge_packaging_jobs_input {
 
@@ -37934,6 +39244,202 @@ impl ListProjectsInput {
     }
 }
 
+/// See [`ListStageDevicesInput`](crate::input::ListStageDevicesInput).
+pub mod list_stage_devices_input {
+
+    /// A builder for [`ListStageDevicesInput`](crate::input::ListStageDevicesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) exclude_devices_deployed_in_other_stage: std::option::Option<bool>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of requests to select.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of requests to select.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// <p>Toggle for excluding devices deployed in other stages.</p>
+        pub fn exclude_devices_deployed_in_other_stage(mut self, input: bool) -> Self {
+            self.exclude_devices_deployed_in_other_stage = Some(input);
+            self
+        }
+        /// <p>Toggle for excluding devices deployed in other stages.</p>
+        pub fn set_exclude_devices_deployed_in_other_stage(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.exclude_devices_deployed_in_other_stage = input;
+            self
+        }
+        /// <p>The name of the stage in the deployment.</p>
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stage in the deployment.</p>
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStageDevicesInput`](crate::input::ListStageDevicesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListStageDevicesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListStageDevicesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                exclude_devices_deployed_in_other_stage: self
+                    .exclude_devices_deployed_in_other_stage
+                    .unwrap_or_default(),
+                stage_name: self.stage_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListStageDevicesInputOperationOutputAlias = crate::operation::ListStageDevices;
+#[doc(hidden)]
+pub type ListStageDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListStageDevicesInput {
+    /// Consumes the builder and constructs an Operation<[`ListStageDevices`](crate::operation::ListStageDevices)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListStageDevices,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListStageDevicesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListStageDevicesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListStageDevices",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_stage_devices(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStageDevices::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStageDevices",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListStageDevicesInput`](crate::input::ListStageDevicesInput).
+    pub fn builder() -> crate::input::list_stage_devices_input::Builder {
+        crate::input::list_stage_devices_input::Builder::default()
+    }
+}
+
 /// See [`ListStudioLifecycleConfigsInput`](crate::input::ListStudioLifecycleConfigsInput).
 pub mod list_studio_lifecycle_configs_input {
 
@@ -41929,6 +43435,166 @@ impl SendPipelineExecutionStepSuccessInput {
     }
 }
 
+/// See [`StartEdgeDeploymentStageInput`](crate::input::StartEdgeDeploymentStageInput).
+pub mod start_edge_deployment_stage_input {
+
+    /// A builder for [`StartEdgeDeploymentStageInput`](crate::input::StartEdgeDeploymentStageInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the edge deployment plan to start.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan to start.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// <p>The name of the stage to start.</p>
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stage to start.</p>
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartEdgeDeploymentStageInput`](crate::input::StartEdgeDeploymentStageInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartEdgeDeploymentStageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartEdgeDeploymentStageInput {
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                stage_name: self.stage_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartEdgeDeploymentStageInputOperationOutputAlias =
+    crate::operation::StartEdgeDeploymentStage;
+#[doc(hidden)]
+pub type StartEdgeDeploymentStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl StartEdgeDeploymentStageInput {
+    /// Consumes the builder and constructs an Operation<[`StartEdgeDeploymentStage`](crate::operation::StartEdgeDeploymentStage)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartEdgeDeploymentStage,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartEdgeDeploymentStageInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartEdgeDeploymentStageInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.StartEdgeDeploymentStage",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_edge_deployment_stage(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartEdgeDeploymentStage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartEdgeDeploymentStage",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartEdgeDeploymentStageInput`](crate::input::StartEdgeDeploymentStageInput).
+    pub fn builder() -> crate::input::start_edge_deployment_stage_input::Builder {
+        crate::input::start_edge_deployment_stage_input::Builder::default()
+    }
+}
+
 /// See [`StartMonitoringScheduleInput`](crate::input::StartMonitoringScheduleInput).
 pub mod start_monitoring_schedule_input {
 
@@ -42744,6 +44410,166 @@ impl StopCompilationJobInput {
     /// Creates a new builder-style object to manufacture [`StopCompilationJobInput`](crate::input::StopCompilationJobInput).
     pub fn builder() -> crate::input::stop_compilation_job_input::Builder {
         crate::input::stop_compilation_job_input::Builder::default()
+    }
+}
+
+/// See [`StopEdgeDeploymentStageInput`](crate::input::StopEdgeDeploymentStageInput).
+pub mod stop_edge_deployment_stage_input {
+
+    /// A builder for [`StopEdgeDeploymentStageInput`](crate::input::StopEdgeDeploymentStageInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the edge deployment plan to stop.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan to stop.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// <p>The name of the stage to stop.</p>
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stage to stop.</p>
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopEdgeDeploymentStageInput`](crate::input::StopEdgeDeploymentStageInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StopEdgeDeploymentStageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StopEdgeDeploymentStageInput {
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                stage_name: self.stage_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StopEdgeDeploymentStageInputOperationOutputAlias =
+    crate::operation::StopEdgeDeploymentStage;
+#[doc(hidden)]
+pub type StopEdgeDeploymentStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl StopEdgeDeploymentStageInput {
+    /// Consumes the builder and constructs an Operation<[`StopEdgeDeploymentStage`](crate::operation::StopEdgeDeploymentStage)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopEdgeDeploymentStage,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StopEdgeDeploymentStageInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopEdgeDeploymentStageInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.StopEdgeDeploymentStage",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_edge_deployment_stage(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopEdgeDeploymentStage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopEdgeDeploymentStage",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StopEdgeDeploymentStageInput`](crate::input::StopEdgeDeploymentStageInput).
+    pub fn builder() -> crate::input::stop_edge_deployment_stage_input::Builder {
+        crate::input::stop_edge_deployment_stage_input::Builder::default()
     }
 }
 
@@ -46254,6 +48080,383 @@ impl UpdateExperimentInput {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentInput`](crate::input::UpdateExperimentInput).
     pub fn builder() -> crate::input::update_experiment_input::Builder {
         crate::input::update_experiment_input::Builder::default()
+    }
+}
+
+/// See [`UpdateFeatureGroupInput`](crate::input::UpdateFeatureGroupInput).
+pub mod update_feature_group_input {
+
+    /// A builder for [`UpdateFeatureGroupInput`](crate::input::UpdateFeatureGroupInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) feature_group_name: std::option::Option<std::string::String>,
+        pub(crate) feature_additions:
+            std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
+    }
+    impl Builder {
+        /// <p>The name of the feature group that you're updating.</p>
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the feature group that you're updating.</p>
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_name = input;
+            self
+        }
+        /// Appends an item to `feature_additions`.
+        ///
+        /// To override the contents of this collection use [`set_feature_additions`](Self::set_feature_additions).
+        ///
+        /// <p>A list of the features that you're adding to the feature group.</p>
+        pub fn feature_additions(mut self, input: crate::model::FeatureDefinition) -> Self {
+            let mut v = self.feature_additions.unwrap_or_default();
+            v.push(input);
+            self.feature_additions = Some(v);
+            self
+        }
+        /// <p>A list of the features that you're adding to the feature group.</p>
+        pub fn set_feature_additions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
+        ) -> Self {
+            self.feature_additions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFeatureGroupInput`](crate::input::UpdateFeatureGroupInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateFeatureGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateFeatureGroupInput {
+                feature_group_name: self.feature_group_name,
+                feature_additions: self.feature_additions,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateFeatureGroupInputOperationOutputAlias = crate::operation::UpdateFeatureGroup;
+#[doc(hidden)]
+pub type UpdateFeatureGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateFeatureGroupInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateFeatureGroup`](crate::operation::UpdateFeatureGroup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFeatureGroup,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateFeatureGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFeatureGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.UpdateFeatureGroup",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_feature_group(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFeatureGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFeatureGroup",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateFeatureGroupInput`](crate::input::UpdateFeatureGroupInput).
+    pub fn builder() -> crate::input::update_feature_group_input::Builder {
+        crate::input::update_feature_group_input::Builder::default()
+    }
+}
+
+/// See [`UpdateFeatureMetadataInput`](crate::input::UpdateFeatureMetadataInput).
+pub mod update_feature_metadata_input {
+
+    /// A builder for [`UpdateFeatureMetadataInput`](crate::input::UpdateFeatureMetadataInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) feature_group_name: std::option::Option<std::string::String>,
+        pub(crate) feature_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) parameter_additions:
+            std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
+        pub(crate) parameter_removals: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the feature group containing the feature that you're updating.</p>
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the feature group containing the feature that you're updating.</p>
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_name = input;
+            self
+        }
+        /// <p>The name of the feature that you're updating.</p>
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the feature that you're updating.</p>
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
+            self
+        }
+        /// <p>A description that you can write to better describe the feature.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description that you can write to better describe the feature.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `parameter_additions`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_additions`](Self::set_parameter_additions).
+        ///
+        /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
+        pub fn parameter_additions(mut self, input: crate::model::FeatureParameter) -> Self {
+            let mut v = self.parameter_additions.unwrap_or_default();
+            v.push(input);
+            self.parameter_additions = Some(v);
+            self
+        }
+        /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
+        pub fn set_parameter_additions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
+        ) -> Self {
+            self.parameter_additions = input;
+            self
+        }
+        /// Appends an item to `parameter_removals`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_removals`](Self::set_parameter_removals).
+        ///
+        /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
+        pub fn parameter_removals(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.parameter_removals.unwrap_or_default();
+            v.push(input.into());
+            self.parameter_removals = Some(v);
+            self
+        }
+        /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
+        pub fn set_parameter_removals(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.parameter_removals = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFeatureMetadataInput`](crate::input::UpdateFeatureMetadataInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateFeatureMetadataInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateFeatureMetadataInput {
+                feature_group_name: self.feature_group_name,
+                feature_name: self.feature_name,
+                description: self.description,
+                parameter_additions: self.parameter_additions,
+                parameter_removals: self.parameter_removals,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateFeatureMetadataInputOperationOutputAlias = crate::operation::UpdateFeatureMetadata;
+#[doc(hidden)]
+pub type UpdateFeatureMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateFeatureMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateFeatureMetadata`](crate::operation::UpdateFeatureMetadata)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFeatureMetadata,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateFeatureMetadataInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFeatureMetadataInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.UpdateFeatureMetadata",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_feature_metadata(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFeatureMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFeatureMetadata",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateFeatureMetadataInput`](crate::input::UpdateFeatureMetadataInput).
+    pub fn builder() -> crate::input::update_feature_metadata_input::Builder {
+        crate::input::update_feature_metadata_input::Builder::default()
     }
 }
 
@@ -50184,6 +52387,83 @@ impl std::fmt::Debug for UpdateImageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFeatureMetadataInput {
+    /// <p>The name of the feature group containing the feature that you're updating.</p>
+    pub feature_group_name: std::option::Option<std::string::String>,
+    /// <p>The name of the feature that you're updating.</p>
+    pub feature_name: std::option::Option<std::string::String>,
+    /// <p>A description that you can write to better describe the feature.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
+    pub parameter_additions: std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
+    /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
+    pub parameter_removals: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateFeatureMetadataInput {
+    /// <p>The name of the feature group containing the feature that you're updating.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The name of the feature that you're updating.</p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
+    /// <p>A description that you can write to better describe the feature.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
+    pub fn parameter_additions(&self) -> std::option::Option<&[crate::model::FeatureParameter]> {
+        self.parameter_additions.as_deref()
+    }
+    /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
+    pub fn parameter_removals(&self) -> std::option::Option<&[std::string::String]> {
+        self.parameter_removals.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateFeatureMetadataInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFeatureMetadataInput");
+        formatter.field("feature_group_name", &self.feature_group_name);
+        formatter.field("feature_name", &self.feature_name);
+        formatter.field("description", &self.description);
+        formatter.field("parameter_additions", &self.parameter_additions);
+        formatter.field("parameter_removals", &self.parameter_removals);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFeatureGroupInput {
+    /// <p>The name of the feature group that you're updating.</p>
+    pub feature_group_name: std::option::Option<std::string::String>,
+    /// <p>A list of the features that you're adding to the feature group.</p>
+    pub feature_additions: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
+}
+impl UpdateFeatureGroupInput {
+    /// <p>The name of the feature group that you're updating.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>A list of the features that you're adding to the feature group.</p>
+    pub fn feature_additions(&self) -> std::option::Option<&[crate::model::FeatureDefinition]> {
+        self.feature_additions.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateFeatureGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFeatureGroupInput");
+        formatter.field("feature_group_name", &self.feature_group_name);
+        formatter.field("feature_additions", &self.feature_additions);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentInput {
     /// <p>The name of the experiment to update.</p>
     pub experiment_name: std::option::Option<std::string::String>,
@@ -50865,6 +53145,34 @@ impl std::fmt::Debug for StopEdgePackagingJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopEdgeDeploymentStageInput {
+    /// <p>The name of the edge deployment plan to stop.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>The name of the stage to stop.</p>
+    pub stage_name: std::option::Option<std::string::String>,
+}
+impl StopEdgeDeploymentStageInput {
+    /// <p>The name of the edge deployment plan to stop.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>The name of the stage to stop.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+}
+impl std::fmt::Debug for StopEdgeDeploymentStageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopEdgeDeploymentStageInput");
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field("stage_name", &self.stage_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCompilationJobInput {
     /// <p>The name of the model compilation job to stop.</p>
     pub compilation_job_name: std::option::Option<std::string::String>,
@@ -51006,6 +53314,34 @@ impl std::fmt::Debug for StartMonitoringScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMonitoringScheduleInput");
         formatter.field("monitoring_schedule_name", &self.monitoring_schedule_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartEdgeDeploymentStageInput {
+    /// <p>The name of the edge deployment plan to start.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>The name of the stage to start.</p>
+    pub stage_name: std::option::Option<std::string::String>,
+}
+impl StartEdgeDeploymentStageInput {
+    /// <p>The name of the edge deployment plan to start.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>The name of the stage to start.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+}
+impl std::fmt::Debug for StartEdgeDeploymentStageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartEdgeDeploymentStageInput");
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field("stage_name", &self.stage_name);
         formatter.finish()
     }
 }
@@ -52042,6 +54378,58 @@ impl std::fmt::Debug for ListStudioLifecycleConfigsInput {
         formatter.field("modified_time_after", &self.modified_time_after);
         formatter.field("sort_by", &self.sort_by);
         formatter.field("sort_order", &self.sort_order);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStageDevicesInput {
+    /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of requests to select.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The name of the edge deployment plan.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>Toggle for excluding devices deployed in other stages.</p>
+    pub exclude_devices_deployed_in_other_stage: bool,
+    /// <p>The name of the stage in the deployment.</p>
+    pub stage_name: std::option::Option<std::string::String>,
+}
+impl ListStageDevicesInput {
+    /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of requests to select.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>Toggle for excluding devices deployed in other stages.</p>
+    pub fn exclude_devices_deployed_in_other_stage(&self) -> bool {
+        self.exclude_devices_deployed_in_other_stage
+    }
+    /// <p>The name of the stage in the deployment.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+}
+impl std::fmt::Debug for ListStageDevicesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListStageDevicesInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field(
+            "exclude_devices_deployed_in_other_stage",
+            &self.exclude_devices_deployed_in_other_stage,
+        );
+        formatter.field("stage_name", &self.stage_name);
         formatter.finish()
     }
 }
@@ -54318,6 +56706,93 @@ impl std::fmt::Debug for ListEdgePackagingJobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEdgeDeploymentPlansInput {
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to select (50 by default).</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>Selects edge deployment plans created after this time.</p>
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Selects edge deployment plans created before this time.</p>
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Selects edge deployment plans that were last updated after this time.</p>
+    pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Selects edge deployment plans that were last updated before this time.</p>
+    pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Selects edge deployment plans with names containing this name.</p>
+    pub name_contains: std::option::Option<std::string::String>,
+    /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
+    pub device_fleet_name_contains: std::option::Option<std::string::String>,
+    /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
+    pub sort_by: std::option::Option<crate::model::ListEdgeDeploymentPlansSortBy>,
+    /// <p>The direction of the sorting (ascending or descending).</p>
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl ListEdgeDeploymentPlansInput {
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to select (50 by default).</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Selects edge deployment plans created after this time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Selects edge deployment plans created before this time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Selects edge deployment plans that were last updated after this time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>Selects edge deployment plans that were last updated before this time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>Selects edge deployment plans with names containing this name.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
+    pub fn device_fleet_name_contains(&self) -> std::option::Option<&str> {
+        self.device_fleet_name_contains.as_deref()
+    }
+    /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListEdgeDeploymentPlansSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The direction of the sorting (ascending or descending).</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
+impl std::fmt::Debug for ListEdgeDeploymentPlansInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEdgeDeploymentPlansInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("creation_time_after", &self.creation_time_after);
+        formatter.field("creation_time_before", &self.creation_time_before);
+        formatter.field("last_modified_time_after", &self.last_modified_time_after);
+        formatter.field("last_modified_time_before", &self.last_modified_time_before);
+        formatter.field("name_contains", &self.name_contains);
+        formatter.field(
+            "device_fleet_name_contains",
+            &self.device_fleet_name_contains,
+        );
+        formatter.field("sort_by", &self.sort_by);
+        formatter.field("sort_order", &self.sort_order);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -56175,6 +58650,34 @@ impl std::fmt::Debug for DescribeFlowDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFeatureMetadataInput {
+    /// <p>The name of the feature group containing the feature.</p>
+    pub feature_group_name: std::option::Option<std::string::String>,
+    /// <p>The name of the feature.</p>
+    pub feature_name: std::option::Option<std::string::String>,
+}
+impl DescribeFeatureMetadataInput {
+    /// <p>The name of the feature group containing the feature.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The name of the feature.</p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFeatureMetadataInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFeatureMetadataInput");
+        formatter.field("feature_group_name", &self.feature_group_name);
+        formatter.field("feature_name", &self.feature_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFeatureGroupInput {
     /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
     pub feature_group_name: std::option::Option<std::string::String>,
@@ -56280,6 +58783,41 @@ impl std::fmt::Debug for DescribeEdgePackagingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEdgePackagingJobInput");
         formatter.field("edge_packaging_job_name", &self.edge_packaging_job_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEdgeDeploymentPlanInput {
+    /// <p>The name of the deployment plan to describe.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to select (50 by default).</p>
+    pub max_results: i32,
+}
+impl DescribeEdgeDeploymentPlanInput {
+    /// <p>The name of the deployment plan to describe.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to select (50 by default).</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for DescribeEdgeDeploymentPlanInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeEdgeDeploymentPlanInput");
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -57219,6 +59757,55 @@ impl std::fmt::Debug for DeleteEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEndpointInput");
         formatter.field("endpoint_name", &self.endpoint_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEdgeDeploymentStageInput {
+    /// <p>The name of the edge deployment plan from which the stage will be deleted.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>The name of the stage.</p>
+    pub stage_name: std::option::Option<std::string::String>,
+}
+impl DeleteEdgeDeploymentStageInput {
+    /// <p>The name of the edge deployment plan from which the stage will be deleted.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>The name of the stage.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteEdgeDeploymentStageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEdgeDeploymentStageInput");
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field("stage_name", &self.stage_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEdgeDeploymentPlanInput {
+    /// <p>The name of the edge deployment plan to delete.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+}
+impl DeleteEdgeDeploymentPlanInput {
+    /// <p>The name of the edge deployment plan to delete.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteEdgeDeploymentPlanInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEdgeDeploymentPlanInput");
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
         formatter.finish()
     }
 }
@@ -60315,6 +62902,83 @@ impl std::fmt::Debug for CreateEdgePackagingJobInput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("output_config", &self.output_config);
         formatter.field("resource_key", &self.resource_key);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEdgeDeploymentStageInput {
+    /// <p>The name of the edge deployment plan.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>List of stages to be added to the edge deployment plan.</p>
+    pub stages: std::option::Option<std::vec::Vec<crate::model::DeploymentStage>>,
+}
+impl CreateEdgeDeploymentStageInput {
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>List of stages to be added to the edge deployment plan.</p>
+    pub fn stages(&self) -> std::option::Option<&[crate::model::DeploymentStage]> {
+        self.stages.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateEdgeDeploymentStageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEdgeDeploymentStageInput");
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field("stages", &self.stages);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEdgeDeploymentPlanInput {
+    /// <p>The name of the edge deployment plan.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>List of models associated with the edge deployment plan.</p>
+    pub model_configs: std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentModelConfig>>,
+    /// <p>The device fleet used for this edge deployment plan.</p>
+    pub device_fleet_name: std::option::Option<std::string::String>,
+    /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
+    pub stages: std::option::Option<std::vec::Vec<crate::model::DeploymentStage>>,
+    /// <p>List of tags with which to tag the edge deployment plan.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateEdgeDeploymentPlanInput {
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>List of models associated with the edge deployment plan.</p>
+    pub fn model_configs(&self) -> std::option::Option<&[crate::model::EdgeDeploymentModelConfig]> {
+        self.model_configs.as_deref()
+    }
+    /// <p>The device fleet used for this edge deployment plan.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
+    pub fn stages(&self) -> std::option::Option<&[crate::model::DeploymentStage]> {
+        self.stages.as_deref()
+    }
+    /// <p>List of tags with which to tag the edge deployment plan.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateEdgeDeploymentPlanInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEdgeDeploymentPlanInput");
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field("model_configs", &self.model_configs);
+        formatter.field("device_fleet_name", &self.device_fleet_name);
+        formatter.field("stages", &self.stages);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

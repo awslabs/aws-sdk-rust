@@ -636,7 +636,7 @@ pub mod create_load_balancer_input {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
         /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
         /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -648,7 +648,7 @@ pub mod create_load_balancer_input {
             self.subnets = Some(v);
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
         /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
         /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -665,7 +665,7 @@ pub mod create_load_balancer_input {
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
         /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
         /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -677,7 +677,7 @@ pub mod create_load_balancer_input {
             self.subnet_mappings = Some(v);
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
         /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
         /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -1255,12 +1255,12 @@ pub mod create_target_group_input {
             self.health_check_path = input;
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
         pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
             self.health_check_interval_seconds = Some(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -4671,13 +4671,11 @@ pub mod modify_target_group_input {
             self
         }
         /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.health_check_protocol = Some(input);
             self
         }
         /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -4726,13 +4724,11 @@ pub mod modify_target_group_input {
             self
         }
         /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
             self.health_check_interval_seconds = Some(input);
             self
         }
         /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -4741,13 +4737,11 @@ pub mod modify_target_group_input {
             self
         }
         /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
             self.health_check_timeout_seconds = Some(input);
             self
         }
         /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_timeout_seconds = input;
             self
@@ -4773,13 +4767,11 @@ pub mod modify_target_group_input {
             self
         }
         /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn matcher(mut self, input: crate::model::Matcher) -> Self {
             self.matcher = Some(input);
             self
         }
         /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_matcher(mut self, input: std::option::Option<crate::model::Matcher>) -> Self {
             self.matcher = input;
             self
@@ -6476,7 +6468,6 @@ pub struct ModifyTargetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_arn: std::option::Option<std::string::String>,
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub health_check_protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
     pub health_check_port: std::option::Option<std::string::String>,
@@ -6487,17 +6478,14 @@ pub struct ModifyTargetGroupInput {
     /// <p>Indicates whether health checks are enabled.</p>
     pub health_check_enabled: std::option::Option<bool>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
-    /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub health_check_interval_seconds: std::option::Option<i32>,
     /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
-    /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub health_check_timeout_seconds: std::option::Option<i32>,
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     pub healthy_threshold_count: std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
     pub unhealthy_threshold_count: std::option::Option<i32>,
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
-    /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub matcher: std::option::Option<crate::model::Matcher>,
 }
 impl ModifyTargetGroupInput {
@@ -6506,7 +6494,6 @@ impl ModifyTargetGroupInput {
         self.target_group_arn.as_deref()
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
         self.health_check_protocol.as_ref()
     }
@@ -6525,12 +6512,10 @@ impl ModifyTargetGroupInput {
         self.health_check_enabled
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
-    /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
         self.health_check_interval_seconds
     }
     /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
-    /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub fn health_check_timeout_seconds(&self) -> std::option::Option<i32> {
         self.health_check_timeout_seconds
     }
@@ -6543,7 +6528,6 @@ impl ModifyTargetGroupInput {
         self.unhealthy_threshold_count
     }
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
-    /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub fn matcher(&self) -> std::option::Option<&crate::model::Matcher> {
         self.matcher.as_ref()
     }
@@ -7223,7 +7207,7 @@ pub struct CreateTargetGroupInput {
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub health_check_path: std::option::Option<std::string::String>,
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     pub health_check_interval_seconds: std::option::Option<i32>,
     /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
     pub health_check_timeout_seconds: std::option::Option<i32>,
@@ -7286,7 +7270,7 @@ impl CreateTargetGroupInput {
     pub fn health_check_path(&self) -> std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
         self.health_check_interval_seconds
     }
@@ -7413,14 +7397,14 @@ pub struct CreateLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -7449,7 +7433,7 @@ impl CreateLoadBalancerInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -7458,7 +7442,7 @@ impl CreateLoadBalancerInput {
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
     /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>

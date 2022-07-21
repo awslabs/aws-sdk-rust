@@ -292,6 +292,36 @@ impl UpdateLensReviewOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateGlobalSettingsOutput {}
+impl std::fmt::Debug for UpdateGlobalSettingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateGlobalSettingsOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
+pub mod update_global_settings_output {
+
+    /// A builder for [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
+        pub fn build(self) -> crate::output::UpdateGlobalSettingsOutput {
+            crate::output::UpdateGlobalSettingsOutput {}
+        }
+    }
+}
+impl UpdateGlobalSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
+    pub fn builder() -> crate::output::update_global_settings_output::Builder {
+        crate::output::update_global_settings_output::Builder::default()
+    }
+}
+
 /// <p>Output of a update answer call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

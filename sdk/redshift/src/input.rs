@@ -1041,6 +1041,7 @@ pub mod authorize_snapshot_access_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_identifier: std::option::Option<std::string::String>,
+        pub(crate) snapshot_arn: std::option::Option<std::string::String>,
         pub(crate) snapshot_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) account_with_restore_access: std::option::Option<std::string::String>,
     }
@@ -1056,6 +1057,16 @@ pub mod authorize_snapshot_access_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.snapshot_identifier = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_arn = input;
             self
         }
         /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
@@ -1101,6 +1112,7 @@ pub mod authorize_snapshot_access_input {
         > {
             Ok(crate::input::AuthorizeSnapshotAccessInput {
                 snapshot_identifier: self.snapshot_identifier,
+                snapshot_arn: self.snapshot_arn,
                 snapshot_cluster_identifier: self.snapshot_cluster_identifier,
                 account_with_restore_access: self.account_with_restore_access,
             })
@@ -2534,13 +2546,13 @@ pub mod create_cluster_input {
             self.hsm_configuration_identifier = input;
             self
         }
-        /// <p>The Elastic IP (EIP) address for the cluster.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
         /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.elastic_ip = Some(input.into());
             self
         }
-        /// <p>The Elastic IP (EIP) address for the cluster.</p>
+        /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
         /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
@@ -9499,6 +9511,7 @@ pub mod describe_cluster_snapshots_input {
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) snapshot_identifier: std::option::Option<std::string::String>,
+        pub(crate) snapshot_arn: std::option::Option<std::string::String>,
         pub(crate) snapshot_type: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9536,6 +9549,16 @@ pub mod describe_cluster_snapshots_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.snapshot_identifier = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_arn = input;
             self
         }
         /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
@@ -9709,6 +9732,7 @@ pub mod describe_cluster_snapshots_input {
             Ok(crate::input::DescribeClusterSnapshotsInput {
                 cluster_identifier: self.cluster_identifier,
                 snapshot_identifier: self.snapshot_identifier,
+                snapshot_arn: self.snapshot_arn,
                 snapshot_type: self.snapshot_type,
                 start_time: self.start_time,
                 end_time: self.end_time,
@@ -12685,6 +12709,7 @@ pub mod describe_node_configuration_options_input {
         pub(crate) action_type: std::option::Option<crate::model::ActionType>,
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) snapshot_identifier: std::option::Option<std::string::String>,
+        pub(crate) snapshot_arn: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) filters:
             std::option::Option<std::vec::Vec<crate::model::NodeConfigurationOptionsFilter>>,
@@ -12729,6 +12754,16 @@ pub mod describe_node_configuration_options_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.snapshot_identifier = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_arn = input;
             self
         }
         /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
@@ -12798,6 +12833,7 @@ pub mod describe_node_configuration_options_input {
                 action_type: self.action_type,
                 cluster_identifier: self.cluster_identifier,
                 snapshot_identifier: self.snapshot_identifier,
+                snapshot_arn: self.snapshot_arn,
                 owner_account: self.owner_account,
                 filters: self.filters,
                 marker: self.marker,
@@ -21402,6 +21438,7 @@ pub mod restore_from_cluster_snapshot_input {
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) snapshot_identifier: std::option::Option<std::string::String>,
+        pub(crate) snapshot_arn: std::option::Option<std::string::String>,
         pub(crate) snapshot_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -21477,6 +21514,16 @@ pub mod restore_from_cluster_snapshot_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.snapshot_identifier = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_arn = input;
             self
         }
         /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
@@ -21608,12 +21655,12 @@ pub mod restore_from_cluster_snapshot_input {
             self.hsm_configuration_identifier = input;
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster.</p>
+        /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.elastic_ip = Some(input.into());
             self
         }
-        /// <p>The elastic IP (EIP) address for the cluster.</p>
+        /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
             self
@@ -21962,6 +22009,7 @@ pub mod restore_from_cluster_snapshot_input {
             Ok(crate::input::RestoreFromClusterSnapshotInput {
                 cluster_identifier: self.cluster_identifier,
                 snapshot_identifier: self.snapshot_identifier,
+                snapshot_arn: self.snapshot_arn,
                 snapshot_cluster_identifier: self.snapshot_cluster_identifier,
                 port: self.port,
                 availability_zone: self.availability_zone,
@@ -22883,6 +22931,7 @@ pub mod revoke_snapshot_access_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_identifier: std::option::Option<std::string::String>,
+        pub(crate) snapshot_arn: std::option::Option<std::string::String>,
         pub(crate) snapshot_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) account_with_restore_access: std::option::Option<std::string::String>,
     }
@@ -22898,6 +22947,16 @@ pub mod revoke_snapshot_access_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.snapshot_identifier = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_arn = input;
             self
         }
         /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
@@ -22939,6 +22998,7 @@ pub mod revoke_snapshot_access_input {
         {
             Ok(crate::input::RevokeSnapshotAccessInput {
                 snapshot_identifier: self.snapshot_identifier,
+                snapshot_arn: self.snapshot_arn,
                 snapshot_cluster_identifier: self.snapshot_cluster_identifier,
                 account_with_restore_access: self.account_with_restore_access,
             })
@@ -23484,6 +23544,8 @@ impl std::fmt::Debug for RotateEncryptionKeyInput {
 pub struct RevokeSnapshotAccessInput {
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
     pub snapshot_identifier: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
+    pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
@@ -23493,6 +23555,10 @@ impl RevokeSnapshotAccessInput {
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
     pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+        self.snapshot_arn.as_deref()
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
@@ -23507,6 +23573,7 @@ impl std::fmt::Debug for RevokeSnapshotAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeSnapshotAccessInput");
         formatter.field("snapshot_identifier", &self.snapshot_identifier);
+        formatter.field("snapshot_arn", &self.snapshot_arn);
         formatter.field(
             "snapshot_cluster_identifier",
             &self.snapshot_cluster_identifier,
@@ -23729,6 +23796,8 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub snapshot_identifier: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+    pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The port number on which the cluster accepts connections.</p>
@@ -23753,7 +23822,7 @@ pub struct RestoreFromClusterSnapshotInput {
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
-    /// <p>The elastic IP (EIP) address for the cluster.</p>
+    /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The name of the parameter group to be associated with this cluster.</p>
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
@@ -23842,6 +23911,10 @@ impl RestoreFromClusterSnapshotInput {
     pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster.</p>
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+        self.snapshot_arn.as_deref()
+    }
     /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
         self.snapshot_cluster_identifier.as_deref()
@@ -23884,7 +23957,7 @@ impl RestoreFromClusterSnapshotInput {
     pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
         self.hsm_configuration_identifier.as_deref()
     }
-    /// <p>The elastic IP (EIP) address for the cluster.</p>
+    /// <p>The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
     pub fn elastic_ip(&self) -> std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }
@@ -24004,6 +24077,7 @@ impl std::fmt::Debug for RestoreFromClusterSnapshotInput {
         let mut formatter = f.debug_struct("RestoreFromClusterSnapshotInput");
         formatter.field("cluster_identifier", &self.cluster_identifier);
         formatter.field("snapshot_identifier", &self.snapshot_identifier);
+        formatter.field("snapshot_arn", &self.snapshot_arn);
         formatter.field(
             "snapshot_cluster_identifier",
             &self.snapshot_cluster_identifier,
@@ -26336,6 +26410,8 @@ pub struct DescribeNodeConfigurationOptionsInput {
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
     pub snapshot_identifier: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
+    pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>A set of name, operator, and value items to filter the results.</p>
@@ -26359,6 +26435,10 @@ impl DescribeNodeConfigurationOptionsInput {
     /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
     pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+        self.snapshot_arn.as_deref()
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     pub fn owner_account(&self) -> std::option::Option<&str> {
@@ -26385,6 +26465,7 @@ impl std::fmt::Debug for DescribeNodeConfigurationOptionsInput {
         formatter.field("action_type", &self.action_type);
         formatter.field("cluster_identifier", &self.cluster_identifier);
         formatter.field("snapshot_identifier", &self.snapshot_identifier);
+        formatter.field("snapshot_arn", &self.snapshot_arn);
         formatter.field("owner_account", &self.owner_account);
         formatter.field("filters", &self.filters);
         formatter.field("marker", &self.marker);
@@ -27131,6 +27212,8 @@ pub struct DescribeClusterSnapshotsInput {
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The snapshot identifier of the snapshot about which to return information.</p>
     pub snapshot_identifier: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
+    pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
     /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
     pub snapshot_type: std::option::Option<std::string::String>,
@@ -27171,6 +27254,10 @@ impl DescribeClusterSnapshotsInput {
     /// <p>The snapshot identifier of the snapshot about which to return information.</p>
     pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.</p>
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+        self.snapshot_arn.as_deref()
     }
     /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
     /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
@@ -27229,6 +27316,7 @@ impl std::fmt::Debug for DescribeClusterSnapshotsInput {
         let mut formatter = f.debug_struct("DescribeClusterSnapshotsInput");
         formatter.field("cluster_identifier", &self.cluster_identifier);
         formatter.field("snapshot_identifier", &self.snapshot_identifier);
+        formatter.field("snapshot_arn", &self.snapshot_arn);
         formatter.field("snapshot_type", &self.snapshot_type);
         formatter.field("start_time", &self.start_time);
         formatter.field("end_time", &self.end_time);
@@ -28914,7 +29002,7 @@ pub struct CreateClusterInput {
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
-    /// <p>The Elastic IP (EIP) address for the cluster.</p>
+    /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
@@ -29109,7 +29197,7 @@ impl CreateClusterInput {
     pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
         self.hsm_configuration_identifier.as_deref()
     }
-    /// <p>The Elastic IP (EIP) address for the cluster.</p>
+    /// <p>The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned on.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn elastic_ip(&self) -> std::option::Option<&str> {
         self.elastic_ip.as_deref()
@@ -29450,6 +29538,8 @@ impl std::fmt::Debug for BatchDeleteClusterSnapshotsInput {
 pub struct AuthorizeSnapshotAccessInput {
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
     pub snapshot_identifier: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
+    pub snapshot_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
@@ -29460,6 +29550,10 @@ impl AuthorizeSnapshotAccessInput {
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
     pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+        self.snapshot_arn.as_deref()
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
@@ -29475,6 +29569,7 @@ impl std::fmt::Debug for AuthorizeSnapshotAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeSnapshotAccessInput");
         formatter.field("snapshot_identifier", &self.snapshot_identifier);
+        formatter.field("snapshot_arn", &self.snapshot_arn);
         formatter.field(
             "snapshot_cluster_identifier",
             &self.snapshot_cluster_identifier,

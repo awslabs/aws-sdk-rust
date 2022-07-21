@@ -2340,6 +2340,9 @@ pub struct IncidentTemplate {
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
+    /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</p>
+    pub incident_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl IncidentTemplate {
     /// <p>The title of the incident. </p>
@@ -2364,6 +2367,13 @@ impl IncidentTemplate {
     ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
         self.notification_targets.as_deref()
     }
+    /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</p>
+    pub fn incident_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.incident_tags.as_ref()
+    }
 }
 impl std::fmt::Debug for IncidentTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2373,6 +2383,7 @@ impl std::fmt::Debug for IncidentTemplate {
         formatter.field("summary", &self.summary);
         formatter.field("dedupe_string", &self.dedupe_string);
         formatter.field("notification_targets", &self.notification_targets);
+        formatter.field("incident_tags", &self.incident_tags);
         formatter.finish()
     }
 }
@@ -2388,6 +2399,9 @@ pub mod incident_template {
         pub(crate) dedupe_string: std::option::Option<std::string::String>,
         pub(crate) notification_targets:
             std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
+        pub(crate) incident_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The title of the incident. </p>
@@ -2452,6 +2466,31 @@ pub mod incident_template {
             self.notification_targets = input;
             self
         }
+        /// Adds a key-value pair to `incident_tags`.
+        ///
+        /// To override the contents of this collection use [`set_incident_tags`](Self::set_incident_tags).
+        ///
+        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</p>
+        pub fn incident_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.incident_tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.incident_tags = Some(hash_map);
+            self
+        }
+        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</p>
+        pub fn set_incident_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.incident_tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IncidentTemplate`](crate::model::IncidentTemplate).
         pub fn build(self) -> crate::model::IncidentTemplate {
             crate::model::IncidentTemplate {
@@ -2460,6 +2499,7 @@ pub mod incident_template {
                 summary: self.summary,
                 dedupe_string: self.dedupe_string,
                 notification_targets: self.notification_targets,
+                incident_tags: self.incident_tags,
             }
         }
     }

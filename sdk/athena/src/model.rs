@@ -2797,6 +2797,8 @@ pub struct QueryExecution {
     pub work_group: std::option::Option<std::string::String>,
     /// <p>The engine version that executed the query.</p>
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
+    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    pub execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl QueryExecution {
     /// <p>The unique identifier for each query execution.</p>
@@ -2837,6 +2839,10 @@ impl QueryExecution {
     pub fn engine_version(&self) -> std::option::Option<&crate::model::EngineVersion> {
         self.engine_version.as_ref()
     }
+    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    pub fn execution_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.execution_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for QueryExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2850,6 +2856,7 @@ impl std::fmt::Debug for QueryExecution {
         formatter.field("statistics", &self.statistics);
         formatter.field("work_group", &self.work_group);
         formatter.field("engine_version", &self.engine_version);
+        formatter.field("execution_parameters", &self.execution_parameters);
         formatter.finish()
     }
 }
@@ -2869,6 +2876,7 @@ pub mod query_execution {
         pub(crate) statistics: std::option::Option<crate::model::QueryExecutionStatistics>,
         pub(crate) work_group: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<crate::model::EngineVersion>,
+        pub(crate) execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The unique identifier for each query execution.</p>
@@ -2985,6 +2993,25 @@ pub mod query_execution {
             self.engine_version = input;
             self
         }
+        /// Appends an item to `execution_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_execution_parameters`](Self::set_execution_parameters).
+        ///
+        /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+        pub fn execution_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.execution_parameters.unwrap_or_default();
+            v.push(input.into());
+            self.execution_parameters = Some(v);
+            self
+        }
+        /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+        pub fn set_execution_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.execution_parameters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryExecution`](crate::model::QueryExecution).
         pub fn build(self) -> crate::model::QueryExecution {
             crate::model::QueryExecution {
@@ -2997,6 +3024,7 @@ pub mod query_execution {
                 statistics: self.statistics,
                 work_group: self.work_group,
                 engine_version: self.engine_version,
+                execution_parameters: self.execution_parameters,
             }
         }
     }
@@ -4187,6 +4215,124 @@ impl UnprocessedQueryExecutionId {
     /// Creates a new builder-style object to manufacture [`UnprocessedQueryExecutionId`](crate::model::UnprocessedQueryExecutionId).
     pub fn builder() -> crate::model::unprocessed_query_execution_id::Builder {
         crate::model::unprocessed_query_execution_id::Builder::default()
+    }
+}
+
+/// <p>The name of a prepared statement that could not be returned.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnprocessedPreparedStatementName {
+    /// <p>The name of a prepared statement that could not be returned due to an error.</p>
+    pub statement_name: std::option::Option<std::string::String>,
+    /// <p>The error code returned when the request for the prepared statement failed.</p>
+    pub error_code: std::option::Option<std::string::String>,
+    /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+    /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+    /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
+    /// </ul>
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl UnprocessedPreparedStatementName {
+    /// <p>The name of a prepared statement that could not be returned due to an error.</p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>The error code returned when the request for the prepared statement failed.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+    /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+    /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
+    /// </ul>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+impl std::fmt::Debug for UnprocessedPreparedStatementName {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UnprocessedPreparedStatementName");
+        formatter.field("statement_name", &self.statement_name);
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_message", &self.error_message);
+        formatter.finish()
+    }
+}
+/// See [`UnprocessedPreparedStatementName`](crate::model::UnprocessedPreparedStatementName).
+pub mod unprocessed_prepared_statement_name {
+
+    /// A builder for [`UnprocessedPreparedStatementName`](crate::model::UnprocessedPreparedStatementName).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) statement_name: std::option::Option<std::string::String>,
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of a prepared statement that could not be returned due to an error.</p>
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.statement_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a prepared statement that could not be returned due to an error.</p>
+        pub fn set_statement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.statement_name = input;
+            self
+        }
+        /// <p>The error code returned when the request for the prepared statement failed.</p>
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
+            self
+        }
+        /// <p>The error code returned when the request for the prepared statement failed.</p>
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+        /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+        /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
+        /// </ul>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
+        /// <ul>
+        /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+        /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+        /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
+        /// </ul>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnprocessedPreparedStatementName`](crate::model::UnprocessedPreparedStatementName).
+        pub fn build(self) -> crate::model::UnprocessedPreparedStatementName {
+            crate::model::UnprocessedPreparedStatementName {
+                statement_name: self.statement_name,
+                error_code: self.error_code,
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl UnprocessedPreparedStatementName {
+    /// Creates a new builder-style object to manufacture [`UnprocessedPreparedStatementName`](crate::model::UnprocessedPreparedStatementName).
+    pub fn builder() -> crate::model::unprocessed_prepared_statement_name::Builder {
+        crate::model::unprocessed_prepared_statement_name::Builder::default()
     }
 }
 

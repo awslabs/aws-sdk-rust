@@ -561,6 +561,7 @@ where
                 crate::error::AuthorizeSnapshotAccessErrorKind::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
                 crate::error::AuthorizeSnapshotAccessErrorKind::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
                 crate::error::AuthorizeSnapshotAccessErrorKind::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+                crate::error::AuthorizeSnapshotAccessErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
                 crate::error::AuthorizeSnapshotAccessErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1596,6 +1597,9 @@ where
                 crate::error::DescribeClusterSnapshotsErrorKind::InvalidTagFault(inner) => {
                     Error::InvalidTagFault(inner)
                 }
+                crate::error::DescribeClusterSnapshotsErrorKind::UnsupportedOperationFault(
+                    inner,
+                ) => Error::UnsupportedOperationFault(inner),
                 crate::error::DescribeClusterSnapshotsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1935,6 +1939,7 @@ where
                 crate::error::DescribeNodeConfigurationOptionsErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
                 crate::error::DescribeNodeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault(inner) => Error::ClusterSnapshotNotFoundFault(inner),
                 crate::error::DescribeNodeConfigurationOptionsErrorKind::InvalidClusterSnapshotStateFault(inner) => Error::InvalidClusterSnapshotStateFault(inner),
+                crate::error::DescribeNodeConfigurationOptionsErrorKind::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
                 crate::error::DescribeNodeConfigurationOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -3173,6 +3178,9 @@ where
                 crate::error::RevokeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault(
                     inner,
                 ) => Error::ClusterSnapshotNotFoundFault(inner),
+                crate::error::RevokeSnapshotAccessErrorKind::UnsupportedOperationFault(inner) => {
+                    Error::UnsupportedOperationFault(inner)
+                }
                 crate::error::RevokeSnapshotAccessErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }

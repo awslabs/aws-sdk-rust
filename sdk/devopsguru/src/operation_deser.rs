@@ -1577,6 +1577,23 @@ pub fn parse_describe_service_integration_error(
                 tmp
             }),
         },
+        "ResourceNotFoundException" => crate::error::DescribeServiceIntegrationError {
+            meta: generic,
+            kind: crate::error::DescribeServiceIntegrationErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceIntegrationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeServiceIntegrationError {
             meta: generic,
             kind: crate::error::DescribeServiceIntegrationErrorKind::ThrottlingException({
@@ -2039,6 +2056,143 @@ pub fn parse_list_anomalies_for_insight_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_anomalous_log_groups_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAnomalousLogGroupsOutput,
+    crate::error::ListAnomalousLogGroupsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListAnomalousLogGroupsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListAnomalousLogGroupsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListAnomalousLogGroupsError {
+            meta: generic,
+            kind: crate::error::ListAnomalousLogGroupsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAnomalousLogGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::ListAnomalousLogGroupsError {
+            meta: generic,
+            kind: crate::error::ListAnomalousLogGroupsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAnomalousLogGroupsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_anomalous_log_groups_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListAnomalousLogGroupsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListAnomalousLogGroupsError {
+            meta: generic,
+            kind: crate::error::ListAnomalousLogGroupsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAnomalousLogGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListAnomalousLogGroupsError {
+            meta: generic,
+            kind: crate::error::ListAnomalousLogGroupsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAnomalousLogGroupsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_anomalous_log_groups_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListAnomalousLogGroupsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListAnomalousLogGroupsError {
+            meta: generic,
+            kind: crate::error::ListAnomalousLogGroupsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAnomalousLogGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListAnomalousLogGroupsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_anomalous_log_groups_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAnomalousLogGroupsOutput,
+    crate::error::ListAnomalousLogGroupsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_anomalous_log_groups_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_anomalous_log_groups(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListAnomalousLogGroupsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_events_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListEventsOutput, crate::error::ListEventsError> {
@@ -2271,6 +2425,126 @@ pub fn parse_list_insights_response(
             output,
         )
         .map_err(crate::error::ListInsightsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_monitored_resources_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMonitoredResourcesOutput,
+    crate::error::ListMonitoredResourcesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListMonitoredResourcesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListMonitoredResourcesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListMonitoredResourcesError {
+            meta: generic,
+            kind: crate::error::ListMonitoredResourcesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMonitoredResourcesError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_monitored_resources_internal_server_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListMonitoredResourcesError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListMonitoredResourcesError {
+            meta: generic,
+            kind: crate::error::ListMonitoredResourcesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMonitoredResourcesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListMonitoredResourcesError {
+            meta: generic,
+            kind: crate::error::ListMonitoredResourcesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMonitoredResourcesError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_monitored_resources_throttling_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::ListMonitoredResourcesError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListMonitoredResourcesError {
+            meta: generic,
+            kind: crate::error::ListMonitoredResourcesErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMonitoredResourcesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListMonitoredResourcesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_monitored_resources_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMonitoredResourcesOutput,
+    crate::error::ListMonitoredResourcesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_monitored_resources_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_monitored_resources(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMonitoredResourcesError::unhandled)?;
         output.build()
     })
 }

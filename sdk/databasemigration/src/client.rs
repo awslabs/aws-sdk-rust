@@ -533,7 +533,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_filters): <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>  <ul>   <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>   <li> <p> <code>database-name</code> – The name of the database.</p> </li>   <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>   <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>   <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>   <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>  </ul>  <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_filters): <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>  <ul>   <li> <p> <code>database-id</code> – The ID of the database.</p> </li>   <li> <p> <code>database-name</code> – The name of the database.</p> </li>   <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>   <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>   <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>   <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>  </ul>  <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
     ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// - On success, responds with [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput) with field(s):
@@ -1037,6 +1037,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<TestConnectionError>`](crate::error::TestConnectionError)
     pub fn test_connection(&self) -> fluent_builders::TestConnection {
         fluent_builders::TestConnection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateSubscriptionsToEventBridge`](crate::client::fluent_builders::UpdateSubscriptionsToEventBridge) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`force_move(bool)`](crate::client::fluent_builders::UpdateSubscriptionsToEventBridge::force_move) / [`set_force_move(Option<bool>)`](crate::client::fluent_builders::UpdateSubscriptionsToEventBridge::set_force_move): <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.6 or higher. </p>
+    /// - On success, responds with [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput) with field(s):
+    ///   - [`result(Option<String>)`](crate::output::UpdateSubscriptionsToEventBridgeOutput::result): <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
+    /// - On failure, responds with [`SdkError<UpdateSubscriptionsToEventBridgeError>`](crate::error::UpdateSubscriptionsToEventBridgeError)
+    pub fn update_subscriptions_to_event_bridge(
+        &self,
+    ) -> fluent_builders::UpdateSubscriptionsToEventBridge {
+        fluent_builders::UpdateSubscriptionsToEventBridge::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -4361,28 +4373,28 @@ pub mod fluent_builders {
         ///
         /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
         /// <ul>
-        /// <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li>
         /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
         /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
         /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
         /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
         /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
         /// </ul>
-        /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
         /// <ul>
-        /// <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>database-id</code> – The ID of the database.</p> </li>
         /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
         /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
         /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
         /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
         /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
         /// </ul>
-        /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7976,6 +7988,60 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_endpoint_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateSubscriptionsToEventBridge`.
+    ///
+    /// <p>Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding Amazon EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance versions are 3.4.6 or higher. If any replication instances are from versions earlier than 3.4.6, the operation raises an error and tells you to upgrade these instances to version 3.4.6 or higher. To enable migration regardless of version, set the <code>Force</code> option to true. However, if you don't upgrade instances earlier than version 3.4.6, some types of events might not be available when you use Amazon EventBridge.</p>
+    /// <p>To call this operation, make sure that you have certain permissions added to your user account. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#CHAP_Events-migrate-to-eventbridge">Migrating event subscriptions to Amazon EventBridge</a> in the <i>Amazon Web Services Database Migration Service User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateSubscriptionsToEventBridge {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_subscriptions_to_event_bridge_input::Builder,
+    }
+    impl UpdateSubscriptionsToEventBridge {
+        /// Creates a new `UpdateSubscriptionsToEventBridge`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSubscriptionsToEventBridgeOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSubscriptionsToEventBridgeError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.6 or higher. </p>
+        pub fn force_move(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_move(input);
+            self
+        }
+        /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.6 or higher. </p>
+        pub fn set_force_move(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_force_move(input);
             self
         }
     }

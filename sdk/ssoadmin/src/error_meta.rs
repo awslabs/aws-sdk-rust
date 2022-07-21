@@ -36,6 +36,37 @@ impl std::fmt::Display for Error {
 }
 impl<R>
     From<
+        aws_smithy_http::result::SdkError<
+            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
         aws_smithy_http::result::SdkError<crate::error::AttachManagedPolicyToPermissionSetError, R>,
     > for Error
 where
@@ -265,6 +296,35 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DeletePermissionsBoundaryFromPermissionSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeletePermissionsBoundaryFromPermissionSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePermissionSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -452,6 +512,36 @@ where
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::error::DetachManagedPolicyFromPermissionSetError,
             R,
         >,
@@ -499,6 +589,35 @@ where
                 crate::error::GetInlinePolicyForPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetInlinePolicyForPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::GetInlinePolicyForPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetPermissionsBoundaryForPermissionSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetPermissionsBoundaryForPermissionSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }
@@ -619,6 +738,35 @@ where
                 crate::error::ListAccountsForProvisionedPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListAccountsForProvisionedPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }
@@ -855,6 +1003,36 @@ where
                 crate::error::PutInlinePolicyToPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::PutInlinePolicyToPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::PutInlinePolicyToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::PutPermissionsBoundaryToPermissionSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::PutPermissionsBoundaryToPermissionSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

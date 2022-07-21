@@ -9671,8 +9671,132 @@ impl DescribeAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAccountSubscriptionOutput {
+    /// <p>A structure that contains the following elements:</p>
+    /// <ul>
+    /// <li> <p>Your Amazon QuickSight account name.</p> </li>
+    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
+    /// </ul>
+    pub account_info: std::option::Option<crate::model::AccountInfo>,
+    /// <p>The HTTP status of the request.</p>
+    pub status: i32,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl DescribeAccountSubscriptionOutput {
+    /// <p>A structure that contains the following elements:</p>
+    /// <ul>
+    /// <li> <p>Your Amazon QuickSight account name.</p> </li>
+    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
+    /// </ul>
+    pub fn account_info(&self) -> std::option::Option<&crate::model::AccountInfo> {
+        self.account_info.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeAccountSubscriptionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAccountSubscriptionOutput");
+        formatter.field("account_info", &self.account_info);
+        formatter.field("status", &self.status);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+/// See [`DescribeAccountSubscriptionOutput`](crate::output::DescribeAccountSubscriptionOutput).
+pub mod describe_account_subscription_output {
+
+    /// A builder for [`DescribeAccountSubscriptionOutput`](crate::output::DescribeAccountSubscriptionOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_info: std::option::Option<crate::model::AccountInfo>,
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A structure that contains the following elements:</p>
+        /// <ul>
+        /// <li> <p>Your Amazon QuickSight account name.</p> </li>
+        /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+        /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+        /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+        /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
+        /// </ul>
+        pub fn account_info(mut self, input: crate::model::AccountInfo) -> Self {
+            self.account_info = Some(input);
+            self
+        }
+        /// <p>A structure that contains the following elements:</p>
+        /// <ul>
+        /// <li> <p>Your Amazon QuickSight account name.</p> </li>
+        /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+        /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+        /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+        /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
+        /// </ul>
+        pub fn set_account_info(
+            mut self,
+            input: std::option::Option<crate::model::AccountInfo>,
+        ) -> Self {
+            self.account_info = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAccountSubscriptionOutput`](crate::output::DescribeAccountSubscriptionOutput).
+        pub fn build(self) -> crate::output::DescribeAccountSubscriptionOutput {
+            crate::output::DescribeAccountSubscriptionOutput {
+                account_info: self.account_info,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl DescribeAccountSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAccountSubscriptionOutput`](crate::output::DescribeAccountSubscriptionOutput).
+    pub fn builder() -> crate::output::describe_account_subscription_output::Builder {
+        crate::output::describe_account_subscription_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountSettingsOutput {
-    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
+    /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -9680,7 +9804,8 @@ pub struct DescribeAccountSettingsOutput {
     pub status: i32,
 }
 impl DescribeAccountSettingsOutput {
-    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
+    /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
     pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
         self.account_settings.as_ref()
     }
@@ -9713,12 +9838,14 @@ pub mod describe_account_settings_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
+        /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
         pub fn account_settings(mut self, input: crate::model::AccountSettings) -> Self {
             self.account_settings = Some(input);
             self
         }
-        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
+        /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
         pub fn set_account_settings(
             mut self,
             input: std::option::Option<crate::model::AccountSettings>,
@@ -13575,6 +13702,101 @@ impl CreateAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnalysisOutput`](crate::output::CreateAnalysisOutput).
     pub fn builder() -> crate::output::create_analysis_output::Builder {
         crate::output::create_analysis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAccountSubscriptionOutput {
+    /// <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
+    pub signup_response: std::option::Option<crate::model::SignupResponse>,
+    /// <p>The HTTP status of the request.</p>
+    pub status: i32,
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl CreateAccountSubscriptionOutput {
+    /// <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
+    pub fn signup_response(&self) -> std::option::Option<&crate::model::SignupResponse> {
+        self.signup_response.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateAccountSubscriptionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAccountSubscriptionOutput");
+        formatter.field("signup_response", &self.signup_response);
+        formatter.field("status", &self.status);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateAccountSubscriptionOutput`](crate::output::CreateAccountSubscriptionOutput).
+pub mod create_account_subscription_output {
+
+    /// A builder for [`CreateAccountSubscriptionOutput`](crate::output::CreateAccountSubscriptionOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) signup_response: std::option::Option<crate::model::SignupResponse>,
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
+        pub fn signup_response(mut self, input: crate::model::SignupResponse) -> Self {
+            self.signup_response = Some(input);
+            self
+        }
+        /// <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
+        pub fn set_signup_response(
+            mut self,
+            input: std::option::Option<crate::model::SignupResponse>,
+        ) -> Self {
+            self.signup_response = input;
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The HTTP status of the request.</p>
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services request ID for this operation.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAccountSubscriptionOutput`](crate::output::CreateAccountSubscriptionOutput).
+        pub fn build(self) -> crate::output::CreateAccountSubscriptionOutput {
+            crate::output::CreateAccountSubscriptionOutput {
+                signup_response: self.signup_response,
+                status: self.status.unwrap_or_default(),
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl CreateAccountSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAccountSubscriptionOutput`](crate::output::CreateAccountSubscriptionOutput).
+    pub fn builder() -> crate::output::create_account_subscription_output::Builder {
+        crate::output::create_account_subscription_output::Builder::default()
     }
 }
 

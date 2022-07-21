@@ -19295,7 +19295,7 @@ pub struct StartBlueprintRunError {
 pub enum StartBlueprintRunErrorKind {
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The blueprint is in an invalid state to perform a requested operation.</p>
     IllegalBlueprintStateException(crate::error::IllegalBlueprintStateException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -21623,7 +21623,7 @@ pub enum UpdateBlueprintErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The blueprint is in an invalid state to perform a requested operation.</p>
     IllegalBlueprintStateException(crate::error::IllegalBlueprintStateException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -24948,11 +24948,11 @@ impl CrawlerRunningException {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The blueprint is in an invalid state to perform a requested operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IllegalBlueprintStateException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message describing the problem.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IllegalBlueprintStateException {
@@ -24987,12 +24987,12 @@ pub mod illegal_blueprint_state_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A message describing the problem.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>A message describing the problem.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

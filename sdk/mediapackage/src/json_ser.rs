@@ -342,6 +342,11 @@ pub fn serialize_structure_crate_model_dash_package(
         crate::json_ser::serialize_structure_crate_model_dash_encryption(&mut object_81, var_80)?;
         object_81.finish();
     }
+    if input.include_iframe_only_stream {
+        object
+            .key("includeIframeOnlyStream")
+            .boolean(input.include_iframe_only_stream);
+    }
     if let Some(var_82) = &input.manifest_layout {
         object.key("manifestLayout").string(var_82.as_str());
     }

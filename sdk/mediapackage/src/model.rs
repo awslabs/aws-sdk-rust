@@ -653,6 +653,24 @@ impl EncryptionContractConfiguration {
 pub enum PresetSpeke20Video {
     #[allow(missing_docs)] // documentation missing in model
     PresetVideo1,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo2,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo3,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo4,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo5,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo6,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo7,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetVideo8,
+    #[allow(missing_docs)] // documentation missing in model
+    Shared,
+    #[allow(missing_docs)] // documentation missing in model
+    Unencrypted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -660,6 +678,15 @@ impl std::convert::From<&str> for PresetSpeke20Video {
     fn from(s: &str) -> Self {
         match s {
             "PRESET-VIDEO-1" => PresetSpeke20Video::PresetVideo1,
+            "PRESET-VIDEO-2" => PresetSpeke20Video::PresetVideo2,
+            "PRESET-VIDEO-3" => PresetSpeke20Video::PresetVideo3,
+            "PRESET-VIDEO-4" => PresetSpeke20Video::PresetVideo4,
+            "PRESET-VIDEO-5" => PresetSpeke20Video::PresetVideo5,
+            "PRESET-VIDEO-6" => PresetSpeke20Video::PresetVideo6,
+            "PRESET-VIDEO-7" => PresetSpeke20Video::PresetVideo7,
+            "PRESET-VIDEO-8" => PresetSpeke20Video::PresetVideo8,
+            "SHARED" => PresetSpeke20Video::Shared,
+            "UNENCRYPTED" => PresetSpeke20Video::Unencrypted,
             other => PresetSpeke20Video::Unknown(other.to_owned()),
         }
     }
@@ -676,12 +703,32 @@ impl PresetSpeke20Video {
     pub fn as_str(&self) -> &str {
         match self {
             PresetSpeke20Video::PresetVideo1 => "PRESET-VIDEO-1",
+            PresetSpeke20Video::PresetVideo2 => "PRESET-VIDEO-2",
+            PresetSpeke20Video::PresetVideo3 => "PRESET-VIDEO-3",
+            PresetSpeke20Video::PresetVideo4 => "PRESET-VIDEO-4",
+            PresetSpeke20Video::PresetVideo5 => "PRESET-VIDEO-5",
+            PresetSpeke20Video::PresetVideo6 => "PRESET-VIDEO-6",
+            PresetSpeke20Video::PresetVideo7 => "PRESET-VIDEO-7",
+            PresetSpeke20Video::PresetVideo8 => "PRESET-VIDEO-8",
+            PresetSpeke20Video::Shared => "SHARED",
+            PresetSpeke20Video::Unencrypted => "UNENCRYPTED",
             PresetSpeke20Video::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["PRESET-VIDEO-1"]
+        &[
+            "PRESET-VIDEO-1",
+            "PRESET-VIDEO-2",
+            "PRESET-VIDEO-3",
+            "PRESET-VIDEO-4",
+            "PRESET-VIDEO-5",
+            "PRESET-VIDEO-6",
+            "PRESET-VIDEO-7",
+            "PRESET-VIDEO-8",
+            "SHARED",
+            "UNENCRYPTED",
+        ]
     }
 }
 impl AsRef<str> for PresetSpeke20Video {
@@ -704,6 +751,14 @@ impl AsRef<str> for PresetSpeke20Video {
 pub enum PresetSpeke20Audio {
     #[allow(missing_docs)] // documentation missing in model
     PresetAudio1,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetAudio2,
+    #[allow(missing_docs)] // documentation missing in model
+    PresetAudio3,
+    #[allow(missing_docs)] // documentation missing in model
+    Shared,
+    #[allow(missing_docs)] // documentation missing in model
+    Unencrypted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -711,6 +766,10 @@ impl std::convert::From<&str> for PresetSpeke20Audio {
     fn from(s: &str) -> Self {
         match s {
             "PRESET-AUDIO-1" => PresetSpeke20Audio::PresetAudio1,
+            "PRESET-AUDIO-2" => PresetSpeke20Audio::PresetAudio2,
+            "PRESET-AUDIO-3" => PresetSpeke20Audio::PresetAudio3,
+            "SHARED" => PresetSpeke20Audio::Shared,
+            "UNENCRYPTED" => PresetSpeke20Audio::Unencrypted,
             other => PresetSpeke20Audio::Unknown(other.to_owned()),
         }
     }
@@ -727,12 +786,22 @@ impl PresetSpeke20Audio {
     pub fn as_str(&self) -> &str {
         match self {
             PresetSpeke20Audio::PresetAudio1 => "PRESET-AUDIO-1",
+            PresetSpeke20Audio::PresetAudio2 => "PRESET-AUDIO-2",
+            PresetSpeke20Audio::PresetAudio3 => "PRESET-AUDIO-3",
+            PresetSpeke20Audio::Shared => "SHARED",
+            PresetSpeke20Audio::Unencrypted => "UNENCRYPTED",
             PresetSpeke20Audio::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["PRESET-AUDIO-1"]
+        &[
+            "PRESET-AUDIO-1",
+            "PRESET-AUDIO-2",
+            "PRESET-AUDIO-3",
+            "SHARED",
+            "UNENCRYPTED",
+        ]
     }
 }
 impl AsRef<str> for PresetSpeke20Audio {
@@ -1558,6 +1627,8 @@ pub struct DashPackage {
     pub ads_on_delivery_restrictions: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
     pub encryption: std::option::Option<crate::model::DashEncryption>,
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub include_iframe_only_stream: bool,
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
     pub manifest_layout: std::option::Option<crate::model::ManifestLayout>,
     /// Time window (in seconds) contained in each manifest.
@@ -1597,6 +1668,10 @@ impl DashPackage {
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
     pub fn encryption(&self) -> std::option::Option<&crate::model::DashEncryption> {
         self.encryption.as_ref()
+    }
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub fn include_iframe_only_stream(&self) -> bool {
+        self.include_iframe_only_stream
     }
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
     pub fn manifest_layout(&self) -> std::option::Option<&crate::model::ManifestLayout> {
@@ -1658,6 +1733,10 @@ impl std::fmt::Debug for DashPackage {
             &self.ads_on_delivery_restrictions,
         );
         formatter.field("encryption", &self.encryption);
+        formatter.field(
+            "include_iframe_only_stream",
+            &self.include_iframe_only_stream,
+        );
         formatter.field("manifest_layout", &self.manifest_layout);
         formatter.field("manifest_window_seconds", &self.manifest_window_seconds);
         formatter.field("min_buffer_time_seconds", &self.min_buffer_time_seconds);
@@ -1686,6 +1765,7 @@ pub mod dash_package {
         pub(crate) ads_on_delivery_restrictions:
             std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
         pub(crate) encryption: std::option::Option<crate::model::DashEncryption>,
+        pub(crate) include_iframe_only_stream: std::option::Option<bool>,
         pub(crate) manifest_layout: std::option::Option<crate::model::ManifestLayout>,
         pub(crate) manifest_window_seconds: std::option::Option<i32>,
         pub(crate) min_buffer_time_seconds: std::option::Option<i32>,
@@ -1748,6 +1828,16 @@ pub mod dash_package {
             input: std::option::Option<crate::model::DashEncryption>,
         ) -> Self {
             self.encryption = input;
+            self
+        }
+        /// When enabled, an I-Frame only stream will be included in the output.
+        pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
+            self.include_iframe_only_stream = Some(input);
+            self
+        }
+        /// When enabled, an I-Frame only stream will be included in the output.
+        pub fn set_include_iframe_only_stream(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_iframe_only_stream = input;
             self
         }
         /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
@@ -1906,6 +1996,7 @@ pub mod dash_package {
                 ad_triggers: self.ad_triggers,
                 ads_on_delivery_restrictions: self.ads_on_delivery_restrictions,
                 encryption: self.encryption,
+                include_iframe_only_stream: self.include_iframe_only_stream.unwrap_or_default(),
                 manifest_layout: self.manifest_layout,
                 manifest_window_seconds: self.manifest_window_seconds.unwrap_or_default(),
                 min_buffer_time_seconds: self.min_buffer_time_seconds.unwrap_or_default(),

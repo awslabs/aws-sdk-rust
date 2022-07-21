@@ -632,6 +632,123 @@ impl std::error::Error for CreateProjectError {
     }
 }
 
+/// Error type for the `CreateSegment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateSegmentError {
+    /// Kind of error that occurred.
+    pub kind: CreateSegmentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateSegment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateSegmentErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource was in an inconsistent state during an update or a deletion.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request would cause a service quota to be exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateSegmentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateSegmentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateSegmentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateSegmentErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateSegmentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateSegmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateSegmentError {
+    fn code(&self) -> Option<&str> {
+        CreateSegmentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateSegmentError {
+    /// Creates a new `CreateSegmentError`.
+    pub fn new(kind: CreateSegmentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateSegmentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateSegmentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateSegmentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateSegmentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateSegmentErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateSegmentErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSegmentErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateSegmentErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateSegmentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateSegmentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateSegmentErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateSegmentErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateSegmentErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateSegmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteExperiment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1148,6 +1265,131 @@ impl std::error::Error for DeleteProjectError {
             DeleteProjectErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteProjectErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteSegment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteSegmentError {
+    /// Kind of error that occurred.
+    pub kind: DeleteSegmentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteSegment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteSegmentErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource was in an inconsistent state during an update or a deletion.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request references a resource that does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteSegmentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteSegmentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteSegmentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteSegmentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteSegmentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteSegmentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteSegmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteSegmentError {
+    fn code(&self) -> Option<&str> {
+        DeleteSegmentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteSegmentError {
+    /// Creates a new `DeleteSegmentError`.
+    pub fn new(kind: DeleteSegmentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteSegmentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteSegmentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteSegmentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteSegmentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSegmentErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSegmentErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSegmentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSegmentErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSegmentErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteSegmentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteSegmentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteSegmentErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteSegmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteSegmentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteSegmentErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteSegmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1874,6 +2116,123 @@ impl std::error::Error for GetProjectError {
     }
 }
 
+/// Error type for the `GetSegment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetSegmentError {
+    /// Kind of error that occurred.
+    pub kind: GetSegmentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetSegment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetSegmentErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request references a resource that does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetSegmentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetSegmentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetSegmentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetSegmentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetSegmentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetSegmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetSegmentError {
+    fn code(&self) -> Option<&str> {
+        GetSegmentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetSegmentError {
+    /// Creates a new `GetSegmentError`.
+    pub fn new(kind: GetSegmentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetSegmentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetSegmentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetSegmentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetSegmentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetSegmentErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSegmentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetSegmentErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetSegmentErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetSegmentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetSegmentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetSegmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetSegmentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetSegmentErrorKind::ValidationException(_inner) => Some(_inner),
+            GetSegmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListExperiments` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2311,6 +2670,238 @@ impl std::error::Error for ListProjectsError {
             ListProjectsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListProjectsErrorKind::ValidationException(_inner) => Some(_inner),
             ListProjectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListSegmentReferences` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSegmentReferencesError {
+    /// Kind of error that occurred.
+    pub kind: ListSegmentReferencesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListSegmentReferences` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSegmentReferencesErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request references a resource that does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListSegmentReferencesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSegmentReferencesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListSegmentReferencesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListSegmentReferencesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListSegmentReferencesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListSegmentReferencesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSegmentReferencesError {
+    fn code(&self) -> Option<&str> {
+        ListSegmentReferencesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSegmentReferencesError {
+    /// Creates a new `ListSegmentReferencesError`.
+    pub fn new(kind: ListSegmentReferencesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSegmentReferencesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSegmentReferencesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSegmentReferencesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSegmentReferencesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSegmentReferencesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSegmentReferencesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSegmentReferencesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSegmentReferencesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSegmentReferencesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSegmentReferencesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSegmentReferencesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSegmentReferencesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListSegmentReferencesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSegmentReferencesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListSegmentReferencesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListSegmentReferencesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListSegmentReferencesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListSegmentReferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListSegments` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSegmentsError {
+    /// Kind of error that occurred.
+    pub kind: ListSegmentsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListSegments` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSegmentsErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListSegmentsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSegmentsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListSegmentsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListSegmentsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListSegmentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSegmentsError {
+    fn code(&self) -> Option<&str> {
+        ListSegmentsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSegmentsError {
+    /// Creates a new `ListSegmentsError`.
+    pub fn new(kind: ListSegmentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSegmentsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSegmentsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSegmentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSegmentsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSegmentsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ListSegmentsErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListSegmentsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListSegmentsErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListSegmentsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListSegmentsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListSegmentsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSegmentsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListSegmentsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListSegmentsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListSegmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3196,6 +3787,121 @@ impl std::error::Error for TagResourceError {
     }
 }
 
+/// Error type for the `TestSegmentPattern` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TestSegmentPatternError {
+    /// Kind of error that occurred.
+    pub kind: TestSegmentPatternErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `TestSegmentPattern` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TestSegmentPatternErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request was denied because of request throttling. Retry the request.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TestSegmentPatternError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TestSegmentPatternErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            TestSegmentPatternErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            TestSegmentPatternErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            TestSegmentPatternErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for TestSegmentPatternError {
+    fn code(&self) -> Option<&str> {
+        TestSegmentPatternError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl TestSegmentPatternError {
+    /// Creates a new `TestSegmentPatternError`.
+    pub fn new(kind: TestSegmentPatternErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `TestSegmentPatternError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TestSegmentPatternErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `TestSegmentPatternError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TestSegmentPatternErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `TestSegmentPatternErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestSegmentPatternErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TestSegmentPatternErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestSegmentPatternErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TestSegmentPatternErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestSegmentPatternErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for TestSegmentPatternError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TestSegmentPatternErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            TestSegmentPatternErrorKind::ThrottlingException(_inner) => Some(_inner),
+            TestSegmentPatternErrorKind::ValidationException(_inner) => Some(_inner),
+            TestSegmentPatternErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UntagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3688,6 +4394,8 @@ pub struct UpdateProjectError {
 pub enum UpdateProjectErrorKind {
     /// <p>You do not have sufficient permissions to perform this action. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource was in an inconsistent state during an update or a deletion.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The request references a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request would cause a service quota to be exceeded.</p>
@@ -3701,6 +4409,7 @@ impl std::fmt::Display for UpdateProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateProjectErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateProjectErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateProjectErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateProjectErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             UpdateProjectErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -3762,6 +4471,10 @@ impl UpdateProjectError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::AccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateProjectErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `UpdateProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -3785,6 +4498,7 @@ impl std::error::Error for UpdateProjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateProjectErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateProjectErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateProjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateProjectErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             UpdateProjectErrorKind::ValidationException(_inner) => Some(_inner),
@@ -4051,30 +4765,18 @@ impl ValidationException {
     }
 }
 
-/// <p>The request would cause a service quota to be exceeded.</p>
+/// <p>The request was denied because of request throttling. Retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceQuotaExceededException {
+pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>The ID of the resource that caused the exception.</p>
-    pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The type of the resource that is associated with the error.</p>
-    pub resource_type: std::option::Option<std::string::String>,
     /// <p>The ID of the service that is associated with the error.</p>
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The ID of the service quota that was exceeded.</p>
     pub quota_code: std::option::Option<std::string::String>,
 }
-impl ServiceQuotaExceededException {
-    /// <p>The ID of the resource that caused the exception.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
-        self.resource_id.as_deref()
-    }
-    /// <p>The type of the resource that is associated with the error.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
-        self.resource_type.as_deref()
-    }
+impl ThrottlingException {
     /// <p>The ID of the service that is associated with the error.</p>
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
@@ -4084,42 +4786,38 @@ impl ServiceQuotaExceededException {
         self.quota_code.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceQuotaExceededException {
+impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
+        let mut formatter = f.debug_struct("ThrottlingException");
         formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
         formatter.field("service_code", &self.service_code);
         formatter.field("quota_code", &self.quota_code);
         formatter.finish()
     }
 }
-impl ServiceQuotaExceededException {
+impl ThrottlingException {
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceQuotaExceededException {
+impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceQuotaExceededException")?;
+        write!(f, "ThrottlingException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceQuotaExceededException {}
-/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-pub mod service_quota_exceeded_exception {
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException).
+pub mod throttling_exception {
 
-    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) resource_id: std::option::Option<std::string::String>,
-        pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) quota_code: std::option::Option<std::string::String>,
     }
@@ -4132,29 +4830,6 @@ pub mod service_quota_exceeded_exception {
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
-            self
-        }
-        /// <p>The ID of the resource that caused the exception.</p>
-        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(input.into());
-            self
-        }
-        /// <p>The ID of the resource that caused the exception.</p>
-        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
-        }
-        /// <p>The type of the resource that is associated with the error.</p>
-        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(input.into());
-            self
-        }
-        /// <p>The type of the resource that is associated with the error.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
             self
         }
         /// <p>The ID of the service that is associated with the error.</p>
@@ -4177,22 +4852,20 @@ pub mod service_quota_exceeded_exception {
             self.quota_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
-            crate::error::ServiceQuotaExceededException {
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
                 message: self.message,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
                 service_code: self.service_code,
                 quota_code: self.quota_code,
             }
         }
     }
 }
-impl ServiceQuotaExceededException {
-    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
-        crate::error::service_quota_exceeded_exception::Builder::default()
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
     }
 }
 
@@ -4303,6 +4976,215 @@ impl ResourceNotFoundException {
     }
 }
 
+/// <p>You do not have sufficient permissions to perform this action. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessDeniedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
+pub mod access_denied_exception {
+
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
+/// <p>The request would cause a service quota to be exceeded.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The ID of the resource that caused the exception.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The type of the resource that is associated with the error.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The ID of the service that is associated with the error.</p>
+    pub service_code: std::option::Option<std::string::String>,
+    /// <p>The ID of the service quota that was exceeded.</p>
+    pub quota_code: std::option::Option<std::string::String>,
+}
+impl ServiceQuotaExceededException {
+    /// <p>The ID of the resource that caused the exception.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource that is associated with the error.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the service that is associated with the error.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The ID of the service quota that was exceeded.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+}
+impl std::fmt::Debug for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
+        formatter.field("message", &self.message);
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("service_code", &self.service_code);
+        formatter.field("quota_code", &self.quota_code);
+        formatter.finish()
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+pub mod service_quota_exceeded_exception {
+
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) service_code: std::option::Option<std::string::String>,
+        pub(crate) quota_code: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The ID of the resource that caused the exception.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the resource that caused the exception.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The type of the resource that is associated with the error.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The type of the resource that is associated with the error.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The ID of the service that is associated with the error.</p>
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_code = Some(input.into());
+            self
+        }
+        /// <p>The ID of the service that is associated with the error.</p>
+        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_code = input;
+            self
+        }
+        /// <p>The ID of the service quota that was exceeded.</p>
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quota_code = Some(input.into());
+            self
+        }
+        /// <p>The ID of the service quota that was exceeded.</p>
+        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.quota_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
+                message: self.message,
+                resource_id: self.resource_id,
+                resource_type: self.resource_type,
+                service_code: self.service_code,
+                quota_code: self.quota_code,
+            }
+        }
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>A resource was in an inconsistent state during an update or a deletion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4342,8 +5224,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -4407,174 +5289,6 @@ impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
     pub fn builder() -> crate::error::conflict_exception::Builder {
         crate::error::conflict_exception::Builder::default()
-    }
-}
-
-/// <p>You do not have sufficient permissions to perform this action. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AccessDeniedException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl AccessDeniedException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
-pub mod access_denied_exception {
-
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
-        pub fn build(self) -> crate::error::AccessDeniedException {
-            crate::error::AccessDeniedException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
-    pub fn builder() -> crate::error::access_denied_exception::Builder {
-        crate::error::access_denied_exception::Builder::default()
-    }
-}
-
-/// <p>The request was denied because of request throttling. Retry the request.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ThrottlingException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    /// <p>The ID of the service that is associated with the error.</p>
-    pub service_code: std::option::Option<std::string::String>,
-    /// <p>The ID of the service quota that was exceeded.</p>
-    pub quota_code: std::option::Option<std::string::String>,
-}
-impl ThrottlingException {
-    /// <p>The ID of the service that is associated with the error.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
-        self.service_code.as_deref()
-    }
-    /// <p>The ID of the service quota that was exceeded.</p>
-    pub fn quota_code(&self) -> std::option::Option<&str> {
-        self.quota_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.finish()
-    }
-}
-impl ThrottlingException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ThrottlingException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ThrottlingException {}
-/// See [`ThrottlingException`](crate::error::ThrottlingException).
-pub mod throttling_exception {
-
-    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) service_code: std::option::Option<std::string::String>,
-        pub(crate) quota_code: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>The ID of the service that is associated with the error.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.service_code = Some(input.into());
-            self
-        }
-        /// <p>The ID of the service that is associated with the error.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_code = input;
-            self
-        }
-        /// <p>The ID of the service quota that was exceeded.</p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.quota_code = Some(input.into());
-            self
-        }
-        /// <p>The ID of the service quota that was exceeded.</p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.quota_code = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
-        pub fn build(self) -> crate::error::ThrottlingException {
-            crate::error::ThrottlingException {
-                message: self.message,
-                service_code: self.service_code,
-                quota_code: self.quota_code,
-            }
-        }
-    }
-}
-impl ThrottlingException {
-    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
-    pub fn builder() -> crate::error::throttling_exception::Builder {
-        crate::error::throttling_exception::Builder::default()
     }
 }
 

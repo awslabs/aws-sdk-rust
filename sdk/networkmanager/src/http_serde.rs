@@ -419,7 +419,7 @@ pub fn deser_header_create_site_to_site_vpn_attachment_throttling_exception_retr
     }
 }
 
-pub fn deser_header_create_vpc_attachment_internal_server_exception_retry_after_seconds(
+pub fn deser_header_create_transit_gateway_peering_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -434,7 +434,7 @@ pub fn deser_header_create_vpc_attachment_internal_server_exception_retry_after_
     }
 }
 
-pub fn deser_header_create_vpc_attachment_throttling_exception_retry_after_seconds(
+pub fn deser_header_create_transit_gateway_peering_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -449,7 +449,7 @@ pub fn deser_header_create_vpc_attachment_throttling_exception_retry_after_secon
     }
 }
 
-pub fn deser_header_delete_attachment_internal_server_exception_retry_after_seconds(
+pub fn deser_header_create_transit_gateway_route_table_attachment_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -464,7 +464,7 @@ pub fn deser_header_delete_attachment_internal_server_exception_retry_after_seco
     }
 }
 
-pub fn deser_header_delete_attachment_throttling_exception_retry_after_seconds(
+pub fn deser_header_create_transit_gateway_route_table_attachment_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -479,7 +479,7 @@ pub fn deser_header_delete_attachment_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_delete_connection_internal_server_exception_retry_after_seconds(
+pub fn deser_header_create_vpc_attachment_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -494,7 +494,7 @@ pub fn deser_header_delete_connection_internal_server_exception_retry_after_seco
     }
 }
 
-pub fn deser_header_delete_connection_throttling_exception_retry_after_seconds(
+pub fn deser_header_create_vpc_attachment_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -509,7 +509,7 @@ pub fn deser_header_delete_connection_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_delete_connect_peer_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_attachment_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -524,7 +524,7 @@ pub fn deser_header_delete_connect_peer_internal_server_exception_retry_after_se
     }
 }
 
-pub fn deser_header_delete_connect_peer_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_attachment_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -539,7 +539,7 @@ pub fn deser_header_delete_connect_peer_throttling_exception_retry_after_seconds
     }
 }
 
-pub fn deser_header_delete_core_network_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_connection_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -554,7 +554,7 @@ pub fn deser_header_delete_core_network_internal_server_exception_retry_after_se
     }
 }
 
-pub fn deser_header_delete_core_network_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_connection_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -569,7 +569,7 @@ pub fn deser_header_delete_core_network_throttling_exception_retry_after_seconds
     }
 }
 
-pub fn deser_header_delete_core_network_policy_version_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_connect_peer_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -584,7 +584,7 @@ pub fn deser_header_delete_core_network_policy_version_internal_server_exception
     }
 }
 
-pub fn deser_header_delete_core_network_policy_version_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_connect_peer_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -599,7 +599,7 @@ pub fn deser_header_delete_core_network_policy_version_throttling_exception_retr
     }
 }
 
-pub fn deser_header_delete_device_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_core_network_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -614,7 +614,7 @@ pub fn deser_header_delete_device_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_delete_device_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_core_network_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -629,7 +629,7 @@ pub fn deser_header_delete_device_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_delete_global_network_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_core_network_policy_version_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -644,7 +644,7 @@ pub fn deser_header_delete_global_network_internal_server_exception_retry_after_
     }
 }
 
-pub fn deser_header_delete_global_network_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_core_network_policy_version_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -659,7 +659,7 @@ pub fn deser_header_delete_global_network_throttling_exception_retry_after_secon
     }
 }
 
-pub fn deser_header_delete_link_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_device_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -674,7 +674,7 @@ pub fn deser_header_delete_link_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_delete_link_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_device_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -689,7 +689,7 @@ pub fn deser_header_delete_link_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_delete_resource_policy_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_global_network_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -704,7 +704,7 @@ pub fn deser_header_delete_resource_policy_internal_server_exception_retry_after
     }
 }
 
-pub fn deser_header_delete_resource_policy_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_global_network_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -719,7 +719,7 @@ pub fn deser_header_delete_resource_policy_throttling_exception_retry_after_seco
     }
 }
 
-pub fn deser_header_delete_site_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_link_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -734,7 +734,7 @@ pub fn deser_header_delete_site_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_delete_site_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_link_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -749,7 +749,7 @@ pub fn deser_header_delete_site_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_deregister_transit_gateway_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_peering_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -764,7 +764,7 @@ pub fn deser_header_deregister_transit_gateway_internal_server_exception_retry_a
     }
 }
 
-pub fn deser_header_deregister_transit_gateway_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_peering_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -779,7 +779,7 @@ pub fn deser_header_deregister_transit_gateway_throttling_exception_retry_after_
     }
 }
 
-pub fn deser_header_describe_global_networks_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_resource_policy_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -794,7 +794,7 @@ pub fn deser_header_describe_global_networks_internal_server_exception_retry_aft
     }
 }
 
-pub fn deser_header_describe_global_networks_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_resource_policy_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -809,7 +809,7 @@ pub fn deser_header_describe_global_networks_throttling_exception_retry_after_se
     }
 }
 
-pub fn deser_header_disassociate_connect_peer_internal_server_exception_retry_after_seconds(
+pub fn deser_header_delete_site_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -824,7 +824,7 @@ pub fn deser_header_disassociate_connect_peer_internal_server_exception_retry_af
     }
 }
 
-pub fn deser_header_disassociate_connect_peer_throttling_exception_retry_after_seconds(
+pub fn deser_header_delete_site_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -839,7 +839,7 @@ pub fn deser_header_disassociate_connect_peer_throttling_exception_retry_after_s
     }
 }
 
-pub fn deser_header_disassociate_customer_gateway_internal_server_exception_retry_after_seconds(
+pub fn deser_header_deregister_transit_gateway_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -854,7 +854,7 @@ pub fn deser_header_disassociate_customer_gateway_internal_server_exception_retr
     }
 }
 
-pub fn deser_header_disassociate_customer_gateway_throttling_exception_retry_after_seconds(
+pub fn deser_header_deregister_transit_gateway_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -869,7 +869,7 @@ pub fn deser_header_disassociate_customer_gateway_throttling_exception_retry_aft
     }
 }
 
-pub fn deser_header_disassociate_link_internal_server_exception_retry_after_seconds(
+pub fn deser_header_describe_global_networks_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -884,7 +884,7 @@ pub fn deser_header_disassociate_link_internal_server_exception_retry_after_seco
     }
 }
 
-pub fn deser_header_disassociate_link_throttling_exception_retry_after_seconds(
+pub fn deser_header_describe_global_networks_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -899,7 +899,7 @@ pub fn deser_header_disassociate_link_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_disassociate_transit_gateway_connect_peer_internal_server_exception_retry_after_seconds(
+pub fn deser_header_disassociate_connect_peer_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -914,7 +914,7 @@ pub fn deser_header_disassociate_transit_gateway_connect_peer_internal_server_ex
     }
 }
 
-pub fn deser_header_disassociate_transit_gateway_connect_peer_throttling_exception_retry_after_seconds(
+pub fn deser_header_disassociate_connect_peer_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -929,7 +929,7 @@ pub fn deser_header_disassociate_transit_gateway_connect_peer_throttling_excepti
     }
 }
 
-pub fn deser_header_execute_core_network_change_set_internal_server_exception_retry_after_seconds(
+pub fn deser_header_disassociate_customer_gateway_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -944,7 +944,7 @@ pub fn deser_header_execute_core_network_change_set_internal_server_exception_re
     }
 }
 
-pub fn deser_header_execute_core_network_change_set_throttling_exception_retry_after_seconds(
+pub fn deser_header_disassociate_customer_gateway_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -959,7 +959,7 @@ pub fn deser_header_execute_core_network_change_set_throttling_exception_retry_a
     }
 }
 
-pub fn deser_header_get_connect_attachment_internal_server_exception_retry_after_seconds(
+pub fn deser_header_disassociate_link_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -974,7 +974,7 @@ pub fn deser_header_get_connect_attachment_internal_server_exception_retry_after
     }
 }
 
-pub fn deser_header_get_connect_attachment_throttling_exception_retry_after_seconds(
+pub fn deser_header_disassociate_link_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -989,7 +989,7 @@ pub fn deser_header_get_connect_attachment_throttling_exception_retry_after_seco
     }
 }
 
-pub fn deser_header_get_connections_internal_server_exception_retry_after_seconds(
+pub fn deser_header_disassociate_transit_gateway_connect_peer_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1004,7 +1004,7 @@ pub fn deser_header_get_connections_internal_server_exception_retry_after_second
     }
 }
 
-pub fn deser_header_get_connections_throttling_exception_retry_after_seconds(
+pub fn deser_header_disassociate_transit_gateway_connect_peer_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1019,7 +1019,7 @@ pub fn deser_header_get_connections_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_connect_peer_internal_server_exception_retry_after_seconds(
+pub fn deser_header_execute_core_network_change_set_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1034,7 +1034,7 @@ pub fn deser_header_get_connect_peer_internal_server_exception_retry_after_secon
     }
 }
 
-pub fn deser_header_get_connect_peer_throttling_exception_retry_after_seconds(
+pub fn deser_header_execute_core_network_change_set_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1049,7 +1049,7 @@ pub fn deser_header_get_connect_peer_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_connect_peer_associations_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_connect_attachment_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1064,7 +1064,7 @@ pub fn deser_header_get_connect_peer_associations_internal_server_exception_retr
     }
 }
 
-pub fn deser_header_get_connect_peer_associations_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_connect_attachment_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1079,7 +1079,7 @@ pub fn deser_header_get_connect_peer_associations_throttling_exception_retry_aft
     }
 }
 
-pub fn deser_header_get_core_network_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_connections_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1094,7 +1094,7 @@ pub fn deser_header_get_core_network_internal_server_exception_retry_after_secon
     }
 }
 
-pub fn deser_header_get_core_network_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_connections_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1109,7 +1109,7 @@ pub fn deser_header_get_core_network_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_core_network_change_set_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_connect_peer_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1124,7 +1124,7 @@ pub fn deser_header_get_core_network_change_set_internal_server_exception_retry_
     }
 }
 
-pub fn deser_header_get_core_network_change_set_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_connect_peer_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1139,7 +1139,7 @@ pub fn deser_header_get_core_network_change_set_throttling_exception_retry_after
     }
 }
 
-pub fn deser_header_get_core_network_policy_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_connect_peer_associations_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1154,7 +1154,7 @@ pub fn deser_header_get_core_network_policy_internal_server_exception_retry_afte
     }
 }
 
-pub fn deser_header_get_core_network_policy_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_connect_peer_associations_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1169,7 +1169,7 @@ pub fn deser_header_get_core_network_policy_throttling_exception_retry_after_sec
     }
 }
 
-pub fn deser_header_get_customer_gateway_associations_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_core_network_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1184,7 +1184,7 @@ pub fn deser_header_get_customer_gateway_associations_internal_server_exception_
     }
 }
 
-pub fn deser_header_get_customer_gateway_associations_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_core_network_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1199,7 +1199,7 @@ pub fn deser_header_get_customer_gateway_associations_throttling_exception_retry
     }
 }
 
-pub fn deser_header_get_devices_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_core_network_change_events_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1214,7 +1214,7 @@ pub fn deser_header_get_devices_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_devices_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_core_network_change_events_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1229,7 +1229,7 @@ pub fn deser_header_get_devices_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_link_associations_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_core_network_change_set_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1244,7 +1244,7 @@ pub fn deser_header_get_link_associations_internal_server_exception_retry_after_
     }
 }
 
-pub fn deser_header_get_link_associations_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_core_network_change_set_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1259,7 +1259,7 @@ pub fn deser_header_get_link_associations_throttling_exception_retry_after_secon
     }
 }
 
-pub fn deser_header_get_links_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_core_network_policy_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1274,7 +1274,7 @@ pub fn deser_header_get_links_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_links_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_core_network_policy_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1289,7 +1289,7 @@ pub fn deser_header_get_links_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_network_resource_counts_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_customer_gateway_associations_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1304,7 +1304,7 @@ pub fn deser_header_get_network_resource_counts_internal_server_exception_retry_
     }
 }
 
-pub fn deser_header_get_network_resource_counts_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_customer_gateway_associations_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1319,7 +1319,7 @@ pub fn deser_header_get_network_resource_counts_throttling_exception_retry_after
     }
 }
 
-pub fn deser_header_get_network_resource_relationships_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_devices_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1334,7 +1334,7 @@ pub fn deser_header_get_network_resource_relationships_internal_server_exception
     }
 }
 
-pub fn deser_header_get_network_resource_relationships_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_devices_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1349,7 +1349,7 @@ pub fn deser_header_get_network_resource_relationships_throttling_exception_retr
     }
 }
 
-pub fn deser_header_get_network_resources_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_link_associations_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1364,7 +1364,7 @@ pub fn deser_header_get_network_resources_internal_server_exception_retry_after_
     }
 }
 
-pub fn deser_header_get_network_resources_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_link_associations_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1379,7 +1379,7 @@ pub fn deser_header_get_network_resources_throttling_exception_retry_after_secon
     }
 }
 
-pub fn deser_header_get_network_routes_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_links_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1394,7 +1394,7 @@ pub fn deser_header_get_network_routes_internal_server_exception_retry_after_sec
     }
 }
 
-pub fn deser_header_get_network_routes_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_links_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1409,7 +1409,7 @@ pub fn deser_header_get_network_routes_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_network_telemetry_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_network_resource_counts_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1424,7 +1424,7 @@ pub fn deser_header_get_network_telemetry_internal_server_exception_retry_after_
     }
 }
 
-pub fn deser_header_get_network_telemetry_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_network_resource_counts_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1439,7 +1439,7 @@ pub fn deser_header_get_network_telemetry_throttling_exception_retry_after_secon
     }
 }
 
-pub fn deser_header_get_resource_policy_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_network_resource_relationships_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1454,7 +1454,7 @@ pub fn deser_header_get_resource_policy_internal_server_exception_retry_after_se
     }
 }
 
-pub fn deser_header_get_resource_policy_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_network_resource_relationships_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1469,7 +1469,7 @@ pub fn deser_header_get_resource_policy_throttling_exception_retry_after_seconds
     }
 }
 
-pub fn deser_header_get_route_analysis_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_network_resources_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1484,7 +1484,7 @@ pub fn deser_header_get_route_analysis_internal_server_exception_retry_after_sec
     }
 }
 
-pub fn deser_header_get_route_analysis_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_network_resources_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1499,7 +1499,7 @@ pub fn deser_header_get_route_analysis_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_sites_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_network_routes_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1514,7 +1514,7 @@ pub fn deser_header_get_sites_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_sites_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_network_routes_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1529,7 +1529,7 @@ pub fn deser_header_get_sites_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_site_to_site_vpn_attachment_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_network_telemetry_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1544,7 +1544,7 @@ pub fn deser_header_get_site_to_site_vpn_attachment_internal_server_exception_re
     }
 }
 
-pub fn deser_header_get_site_to_site_vpn_attachment_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_network_telemetry_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1559,7 +1559,7 @@ pub fn deser_header_get_site_to_site_vpn_attachment_throttling_exception_retry_a
     }
 }
 
-pub fn deser_header_get_transit_gateway_connect_peer_associations_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_resource_policy_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1574,7 +1574,7 @@ pub fn deser_header_get_transit_gateway_connect_peer_associations_internal_serve
     }
 }
 
-pub fn deser_header_get_transit_gateway_connect_peer_associations_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_resource_policy_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1589,7 +1589,7 @@ pub fn deser_header_get_transit_gateway_connect_peer_associations_throttling_exc
     }
 }
 
-pub fn deser_header_get_transit_gateway_registrations_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_route_analysis_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1604,7 +1604,7 @@ pub fn deser_header_get_transit_gateway_registrations_internal_server_exception_
     }
 }
 
-pub fn deser_header_get_transit_gateway_registrations_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_route_analysis_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1619,7 +1619,7 @@ pub fn deser_header_get_transit_gateway_registrations_throttling_exception_retry
     }
 }
 
-pub fn deser_header_get_vpc_attachment_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_sites_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1634,7 +1634,7 @@ pub fn deser_header_get_vpc_attachment_internal_server_exception_retry_after_sec
     }
 }
 
-pub fn deser_header_get_vpc_attachment_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_sites_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1649,7 +1649,7 @@ pub fn deser_header_get_vpc_attachment_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_list_attachments_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_site_to_site_vpn_attachment_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1664,7 +1664,7 @@ pub fn deser_header_list_attachments_internal_server_exception_retry_after_secon
     }
 }
 
-pub fn deser_header_list_attachments_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_site_to_site_vpn_attachment_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1679,7 +1679,7 @@ pub fn deser_header_list_attachments_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_list_connect_peers_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_transit_gateway_connect_peer_associations_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1694,7 +1694,7 @@ pub fn deser_header_list_connect_peers_internal_server_exception_retry_after_sec
     }
 }
 
-pub fn deser_header_list_connect_peers_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_transit_gateway_connect_peer_associations_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1709,7 +1709,7 @@ pub fn deser_header_list_connect_peers_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_list_core_network_policy_versions_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_transit_gateway_peering_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1724,7 +1724,7 @@ pub fn deser_header_list_core_network_policy_versions_internal_server_exception_
     }
 }
 
-pub fn deser_header_list_core_network_policy_versions_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_transit_gateway_peering_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1739,7 +1739,7 @@ pub fn deser_header_list_core_network_policy_versions_throttling_exception_retry
     }
 }
 
-pub fn deser_header_list_core_networks_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_transit_gateway_registrations_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1754,7 +1754,7 @@ pub fn deser_header_list_core_networks_internal_server_exception_retry_after_sec
     }
 }
 
-pub fn deser_header_list_core_networks_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_transit_gateway_registrations_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1769,7 +1769,7 @@ pub fn deser_header_list_core_networks_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_list_tags_for_resource_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_transit_gateway_route_table_attachment_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1784,7 +1784,7 @@ pub fn deser_header_list_tags_for_resource_internal_server_exception_retry_after
     }
 }
 
-pub fn deser_header_list_tags_for_resource_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_transit_gateway_route_table_attachment_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1799,7 +1799,7 @@ pub fn deser_header_list_tags_for_resource_throttling_exception_retry_after_seco
     }
 }
 
-pub fn deser_header_put_core_network_policy_internal_server_exception_retry_after_seconds(
+pub fn deser_header_get_vpc_attachment_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1814,7 +1814,7 @@ pub fn deser_header_put_core_network_policy_internal_server_exception_retry_afte
     }
 }
 
-pub fn deser_header_put_core_network_policy_throttling_exception_retry_after_seconds(
+pub fn deser_header_get_vpc_attachment_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1829,7 +1829,7 @@ pub fn deser_header_put_core_network_policy_throttling_exception_retry_after_sec
     }
 }
 
-pub fn deser_header_put_resource_policy_internal_server_exception_retry_after_seconds(
+pub fn deser_header_list_attachments_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1844,7 +1844,7 @@ pub fn deser_header_put_resource_policy_internal_server_exception_retry_after_se
     }
 }
 
-pub fn deser_header_put_resource_policy_throttling_exception_retry_after_seconds(
+pub fn deser_header_list_attachments_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1859,7 +1859,7 @@ pub fn deser_header_put_resource_policy_throttling_exception_retry_after_seconds
     }
 }
 
-pub fn deser_header_register_transit_gateway_internal_server_exception_retry_after_seconds(
+pub fn deser_header_list_connect_peers_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1874,7 +1874,7 @@ pub fn deser_header_register_transit_gateway_internal_server_exception_retry_aft
     }
 }
 
-pub fn deser_header_register_transit_gateway_throttling_exception_retry_after_seconds(
+pub fn deser_header_list_connect_peers_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1889,7 +1889,7 @@ pub fn deser_header_register_transit_gateway_throttling_exception_retry_after_se
     }
 }
 
-pub fn deser_header_reject_attachment_internal_server_exception_retry_after_seconds(
+pub fn deser_header_list_core_network_policy_versions_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1904,7 +1904,7 @@ pub fn deser_header_reject_attachment_internal_server_exception_retry_after_seco
     }
 }
 
-pub fn deser_header_reject_attachment_throttling_exception_retry_after_seconds(
+pub fn deser_header_list_core_network_policy_versions_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1919,7 +1919,7 @@ pub fn deser_header_reject_attachment_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_restore_core_network_policy_version_internal_server_exception_retry_after_seconds(
+pub fn deser_header_list_core_networks_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1934,7 +1934,7 @@ pub fn deser_header_restore_core_network_policy_version_internal_server_exceptio
     }
 }
 
-pub fn deser_header_restore_core_network_policy_version_throttling_exception_retry_after_seconds(
+pub fn deser_header_list_core_networks_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1949,7 +1949,7 @@ pub fn deser_header_restore_core_network_policy_version_throttling_exception_ret
     }
 }
 
-pub fn deser_header_start_organization_service_access_update_internal_server_exception_retry_after_seconds(
+pub fn deser_header_list_peerings_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1964,7 +1964,7 @@ pub fn deser_header_start_organization_service_access_update_internal_server_exc
     }
 }
 
-pub fn deser_header_start_organization_service_access_update_throttling_exception_retry_after_seconds(
+pub fn deser_header_list_peerings_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1979,7 +1979,7 @@ pub fn deser_header_start_organization_service_access_update_throttling_exceptio
     }
 }
 
-pub fn deser_header_start_route_analysis_internal_server_exception_retry_after_seconds(
+pub fn deser_header_list_tags_for_resource_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -1994,7 +1994,7 @@ pub fn deser_header_start_route_analysis_internal_server_exception_retry_after_s
     }
 }
 
-pub fn deser_header_start_route_analysis_throttling_exception_retry_after_seconds(
+pub fn deser_header_list_tags_for_resource_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2009,7 +2009,7 @@ pub fn deser_header_start_route_analysis_throttling_exception_retry_after_second
     }
 }
 
-pub fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
+pub fn deser_header_put_core_network_policy_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2024,7 +2024,7 @@ pub fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_tag_resource_throttling_exception_retry_after_seconds(
+pub fn deser_header_put_core_network_policy_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2039,7 +2039,7 @@ pub fn deser_header_tag_resource_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_untag_resource_internal_server_exception_retry_after_seconds(
+pub fn deser_header_put_resource_policy_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2054,7 +2054,7 @@ pub fn deser_header_untag_resource_internal_server_exception_retry_after_seconds
     }
 }
 
-pub fn deser_header_untag_resource_throttling_exception_retry_after_seconds(
+pub fn deser_header_put_resource_policy_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2069,7 +2069,7 @@ pub fn deser_header_untag_resource_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_update_connection_internal_server_exception_retry_after_seconds(
+pub fn deser_header_register_transit_gateway_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2084,7 +2084,7 @@ pub fn deser_header_update_connection_internal_server_exception_retry_after_seco
     }
 }
 
-pub fn deser_header_update_connection_throttling_exception_retry_after_seconds(
+pub fn deser_header_register_transit_gateway_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2099,7 +2099,7 @@ pub fn deser_header_update_connection_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_update_core_network_internal_server_exception_retry_after_seconds(
+pub fn deser_header_reject_attachment_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2114,7 +2114,7 @@ pub fn deser_header_update_core_network_internal_server_exception_retry_after_se
     }
 }
 
-pub fn deser_header_update_core_network_throttling_exception_retry_after_seconds(
+pub fn deser_header_reject_attachment_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2129,7 +2129,7 @@ pub fn deser_header_update_core_network_throttling_exception_retry_after_seconds
     }
 }
 
-pub fn deser_header_update_device_internal_server_exception_retry_after_seconds(
+pub fn deser_header_restore_core_network_policy_version_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2144,7 +2144,7 @@ pub fn deser_header_update_device_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_update_device_throttling_exception_retry_after_seconds(
+pub fn deser_header_restore_core_network_policy_version_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2159,7 +2159,7 @@ pub fn deser_header_update_device_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_update_global_network_internal_server_exception_retry_after_seconds(
+pub fn deser_header_start_organization_service_access_update_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2174,7 +2174,7 @@ pub fn deser_header_update_global_network_internal_server_exception_retry_after_
     }
 }
 
-pub fn deser_header_update_global_network_throttling_exception_retry_after_seconds(
+pub fn deser_header_start_organization_service_access_update_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2189,7 +2189,7 @@ pub fn deser_header_update_global_network_throttling_exception_retry_after_secon
     }
 }
 
-pub fn deser_header_update_link_internal_server_exception_retry_after_seconds(
+pub fn deser_header_start_route_analysis_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2204,7 +2204,7 @@ pub fn deser_header_update_link_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_update_link_throttling_exception_retry_after_seconds(
+pub fn deser_header_start_route_analysis_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2219,7 +2219,7 @@ pub fn deser_header_update_link_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_update_network_resource_metadata_internal_server_exception_retry_after_seconds(
+pub fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2234,7 +2234,7 @@ pub fn deser_header_update_network_resource_metadata_internal_server_exception_r
     }
 }
 
-pub fn deser_header_update_network_resource_metadata_throttling_exception_retry_after_seconds(
+pub fn deser_header_tag_resource_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2249,7 +2249,7 @@ pub fn deser_header_update_network_resource_metadata_throttling_exception_retry_
     }
 }
 
-pub fn deser_header_update_site_internal_server_exception_retry_after_seconds(
+pub fn deser_header_untag_resource_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2264,7 +2264,7 @@ pub fn deser_header_update_site_internal_server_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_update_site_throttling_exception_retry_after_seconds(
+pub fn deser_header_untag_resource_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2279,7 +2279,7 @@ pub fn deser_header_update_site_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_update_vpc_attachment_internal_server_exception_retry_after_seconds(
+pub fn deser_header_update_connection_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2294,7 +2294,7 @@ pub fn deser_header_update_vpc_attachment_internal_server_exception_retry_after_
     }
 }
 
-pub fn deser_header_update_vpc_attachment_throttling_exception_retry_after_seconds(
+pub fn deser_header_update_connection_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -2306,5 +2306,215 @@ pub fn deser_header_update_vpc_attachment_throttling_exception_retry_after_secon
     } else {
         let mut var_154 = var_154;
         Ok(var_154.pop())
+    }
+}
+
+pub fn deser_header_update_core_network_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_155 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_155.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_155.len()),
+        ))
+    } else {
+        let mut var_155 = var_155;
+        Ok(var_155.pop())
+    }
+}
+
+pub fn deser_header_update_core_network_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_156 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_156.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_156.len()),
+        ))
+    } else {
+        let mut var_156 = var_156;
+        Ok(var_156.pop())
+    }
+}
+
+pub fn deser_header_update_device_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_157 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_157.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_157.len()),
+        ))
+    } else {
+        let mut var_157 = var_157;
+        Ok(var_157.pop())
+    }
+}
+
+pub fn deser_header_update_device_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_158 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_158.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_158.len()),
+        ))
+    } else {
+        let mut var_158 = var_158;
+        Ok(var_158.pop())
+    }
+}
+
+pub fn deser_header_update_global_network_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_159 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_159.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_159.len()),
+        ))
+    } else {
+        let mut var_159 = var_159;
+        Ok(var_159.pop())
+    }
+}
+
+pub fn deser_header_update_global_network_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_160 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_160.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_160.len()),
+        ))
+    } else {
+        let mut var_160 = var_160;
+        Ok(var_160.pop())
+    }
+}
+
+pub fn deser_header_update_link_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_161 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_161.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_161.len()),
+        ))
+    } else {
+        let mut var_161 = var_161;
+        Ok(var_161.pop())
+    }
+}
+
+pub fn deser_header_update_link_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_162 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_162.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_162.len()),
+        ))
+    } else {
+        let mut var_162 = var_162;
+        Ok(var_162.pop())
+    }
+}
+
+pub fn deser_header_update_network_resource_metadata_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_163 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_163.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_163.len()),
+        ))
+    } else {
+        let mut var_163 = var_163;
+        Ok(var_163.pop())
+    }
+}
+
+pub fn deser_header_update_network_resource_metadata_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_164 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_164.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_164.len()),
+        ))
+    } else {
+        let mut var_164 = var_164;
+        Ok(var_164.pop())
+    }
+}
+
+pub fn deser_header_update_site_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_165 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_165.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_165.len()),
+        ))
+    } else {
+        let mut var_165 = var_165;
+        Ok(var_165.pop())
+    }
+}
+
+pub fn deser_header_update_site_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_166 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_166.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_166.len()),
+        ))
+    } else {
+        let mut var_166 = var_166;
+        Ok(var_166.pop())
+    }
+}
+
+pub fn deser_header_update_vpc_attachment_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_167 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_167.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_167.len()),
+        ))
+    } else {
+        let mut var_167 = var_167;
+        Ok(var_167.pop())
+    }
+}
+
+pub fn deser_header_update_vpc_attachment_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_168 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_168.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_168.len()),
+        ))
+    } else {
+        let mut var_168 = var_168;
+        Ok(var_168.pop())
     }
 }

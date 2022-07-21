@@ -2692,11 +2692,12 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`ca_certificate(impl Into<String>)`](crate::client::fluent_builders::RegisterCACertificate::ca_certificate) / [`set_ca_certificate(Option<String>)`](crate::client::fluent_builders::RegisterCACertificate::set_ca_certificate): <p>The CA certificate.</p>
-    ///   - [`verification_certificate(impl Into<String>)`](crate::client::fluent_builders::RegisterCACertificate::verification_certificate) / [`set_verification_certificate(Option<String>)`](crate::client::fluent_builders::RegisterCACertificate::set_verification_certificate): <p>The private key verification certificate.</p>
+    ///   - [`verification_certificate(impl Into<String>)`](crate::client::fluent_builders::RegisterCACertificate::verification_certificate) / [`set_verification_certificate(Option<String>)`](crate::client::fluent_builders::RegisterCACertificate::set_verification_certificate): <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
     ///   - [`set_as_active(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_as_active) / [`set_set_as_active(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_set_as_active): <p>A boolean value that specifies if the CA certificate is set to active.</p>  <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
     ///   - [`allow_auto_registration(bool)`](crate::client::fluent_builders::RegisterCACertificate::allow_auto_registration) / [`set_allow_auto_registration(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_allow_auto_registration): <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
     ///   - [`registration_config(RegistrationConfig)`](crate::client::fluent_builders::RegisterCACertificate::registration_config) / [`set_registration_config(Option<RegistrationConfig>)`](crate::client::fluent_builders::RegisterCACertificate::set_registration_config): <p>Information about the registration configuration.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RegisterCACertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RegisterCACertificate::set_tags): <p>Metadata which can be used to manage the CA certificate.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    ///   - [`certificate_mode(CertificateMode)`](crate::client::fluent_builders::RegisterCACertificate::certificate_mode) / [`set_certificate_mode(Option<CertificateMode>)`](crate::client::fluent_builders::RegisterCACertificate::set_certificate_mode): <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
     /// - On success, responds with [`RegisterCaCertificateOutput`](crate::output::RegisterCaCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::RegisterCaCertificateOutput::certificate_arn): <p>The CA certificate ARN.</p>
     ///   - [`certificate_id(Option<String>)`](crate::output::RegisterCaCertificateOutput::certificate_id): <p>The CA certificate identifier.</p>
@@ -2794,7 +2795,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::SearchIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::SearchIndex::set_index_name): <p>The search index name.</p>
-    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::SearchIndex::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::SearchIndex::set_query_string): <p>The search query string.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::SearchIndex::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::SearchIndex::set_query_string): <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchIndex::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchIndex::set_next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchIndex::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchIndex::set_max_results): <p>The maximum number of results to return at one time.</p>
     ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::SearchIndex::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::SearchIndex::set_query_version): <p>The query version.</p>
@@ -18482,7 +18483,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterCACertificate`.
     ///
-    /// <p>Registers a CA certificate with IoT. This CA certificate can then be used to sign device certificates, which can be then registered with IoT. You can register up to 10 CA certificates per Amazon Web Services account that have the same subject field. This enables you to have up to 10 certificate authorities sign your device certificates. If you have more than one CA certificate registered, make sure you pass the CA certificate when you register your device certificates with the <code>RegisterCertificate</code> action.</p>
+    /// <p>Registers a CA certificate with Amazon Web Services IoT Core. There is no limit to the number of CA certificates you can register in your Amazon Web Services account. You can register up to 10 CA certificates with the same <code>CA subject field</code> per Amazon Web Services account.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCACertificate</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterCACertificate {
@@ -18536,12 +18537,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ca_certificate(input);
             self
         }
-        /// <p>The private key verification certificate.</p>
+        /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
         pub fn verification_certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.verification_certificate(input.into());
             self
         }
-        /// <p>The private key verification certificate.</p>
+        /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
         pub fn set_verification_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18609,10 +18610,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+        pub fn certificate_mode(mut self, input: crate::model::CertificateMode) -> Self {
+            self.inner = self.inner.certificate_mode(input);
+            self
+        }
+        /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+        pub fn set_certificate_mode(
+            mut self,
+            input: std::option::Option<crate::model::CertificateMode>,
+        ) -> Self {
+            self.inner = self.inner.set_certificate_mode(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `RegisterCertificate`.
     ///
-    /// <p>Registers a device certificate with IoT. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered.</p>
+    /// <p>Registers a device certificate with IoT in the same <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a> as the signing CA. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCertificate</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterCertificate {
@@ -19229,12 +19243,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_name(input);
             self
         }
-        /// <p>The search query string.</p>
+        /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.query_string(input.into());
             self
         }
-        /// <p>The search query string.</p>
+        /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_query_string(input);
             self

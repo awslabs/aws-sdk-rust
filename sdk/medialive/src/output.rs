@@ -3210,6 +3210,8 @@ pub struct DescribeReservationOutput {
     pub offering_type: std::option::Option<crate::model::OfferingType>,
     /// AWS region, e.g. 'us-west-2'
     pub region: std::option::Option<std::string::String>,
+    /// Renewal settings for the reservation
+    pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: std::option::Option<std::string::String>,
     /// Resource configuration details
@@ -3273,6 +3275,10 @@ impl DescribeReservationOutput {
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
+    /// Renewal settings for the reservation
+    pub fn renewal_settings(&self) -> std::option::Option<&crate::model::RenewalSettings> {
+        self.renewal_settings.as_ref()
+    }
     /// Unique reservation ID, e.g. '1234567'
     pub fn reservation_id(&self) -> std::option::Option<&str> {
         self.reservation_id.as_deref()
@@ -3318,6 +3324,7 @@ impl std::fmt::Debug for DescribeReservationOutput {
         formatter.field("offering_id", &self.offering_id);
         formatter.field("offering_type", &self.offering_type);
         formatter.field("region", &self.region);
+        formatter.field("renewal_settings", &self.renewal_settings);
         formatter.field("reservation_id", &self.reservation_id);
         formatter.field("resource_specification", &self.resource_specification);
         formatter.field("start", &self.start);
@@ -3345,6 +3352,7 @@ pub mod describe_reservation_output {
         pub(crate) offering_id: std::option::Option<std::string::String>,
         pub(crate) offering_type: std::option::Option<crate::model::OfferingType>,
         pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) renewal_settings: std::option::Option<crate::model::RenewalSettings>,
         pub(crate) reservation_id: std::option::Option<std::string::String>,
         pub(crate) resource_specification:
             std::option::Option<crate::model::ReservationResourceSpecification>,
@@ -3488,6 +3496,19 @@ pub mod describe_reservation_output {
             self.region = input;
             self
         }
+        /// Renewal settings for the reservation
+        pub fn renewal_settings(mut self, input: crate::model::RenewalSettings) -> Self {
+            self.renewal_settings = Some(input);
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn set_renewal_settings(
+            mut self,
+            input: std::option::Option<crate::model::RenewalSettings>,
+        ) -> Self {
+            self.renewal_settings = input;
+            self
+        }
         /// Unique reservation ID, e.g. '1234567'
         pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reservation_id = Some(input.into());
@@ -3590,6 +3611,7 @@ pub mod describe_reservation_output {
                 offering_id: self.offering_id,
                 offering_type: self.offering_type,
                 region: self.region,
+                renewal_settings: self.renewal_settings,
                 reservation_id: self.reservation_id,
                 resource_specification: self.resource_specification,
                 start: self.start,
@@ -5924,6 +5946,8 @@ pub struct DeleteReservationOutput {
     pub offering_type: std::option::Option<crate::model::OfferingType>,
     /// AWS region, e.g. 'us-west-2'
     pub region: std::option::Option<std::string::String>,
+    /// Renewal settings for the reservation
+    pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: std::option::Option<std::string::String>,
     /// Resource configuration details
@@ -5987,6 +6011,10 @@ impl DeleteReservationOutput {
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
+    /// Renewal settings for the reservation
+    pub fn renewal_settings(&self) -> std::option::Option<&crate::model::RenewalSettings> {
+        self.renewal_settings.as_ref()
+    }
     /// Unique reservation ID, e.g. '1234567'
     pub fn reservation_id(&self) -> std::option::Option<&str> {
         self.reservation_id.as_deref()
@@ -6032,6 +6060,7 @@ impl std::fmt::Debug for DeleteReservationOutput {
         formatter.field("offering_id", &self.offering_id);
         formatter.field("offering_type", &self.offering_type);
         formatter.field("region", &self.region);
+        formatter.field("renewal_settings", &self.renewal_settings);
         formatter.field("reservation_id", &self.reservation_id);
         formatter.field("resource_specification", &self.resource_specification);
         formatter.field("start", &self.start);
@@ -6059,6 +6088,7 @@ pub mod delete_reservation_output {
         pub(crate) offering_id: std::option::Option<std::string::String>,
         pub(crate) offering_type: std::option::Option<crate::model::OfferingType>,
         pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) renewal_settings: std::option::Option<crate::model::RenewalSettings>,
         pub(crate) reservation_id: std::option::Option<std::string::String>,
         pub(crate) resource_specification:
             std::option::Option<crate::model::ReservationResourceSpecification>,
@@ -6202,6 +6232,19 @@ pub mod delete_reservation_output {
             self.region = input;
             self
         }
+        /// Renewal settings for the reservation
+        pub fn renewal_settings(mut self, input: crate::model::RenewalSettings) -> Self {
+            self.renewal_settings = Some(input);
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn set_renewal_settings(
+            mut self,
+            input: std::option::Option<crate::model::RenewalSettings>,
+        ) -> Self {
+            self.renewal_settings = input;
+            self
+        }
         /// Unique reservation ID, e.g. '1234567'
         pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reservation_id = Some(input.into());
@@ -6304,6 +6347,7 @@ pub mod delete_reservation_output {
                 offering_id: self.offering_id,
                 offering_type: self.offering_type,
                 region: self.region,
+                renewal_settings: self.renewal_settings,
                 reservation_id: self.reservation_id,
                 resource_specification: self.resource_specification,
                 start: self.start,

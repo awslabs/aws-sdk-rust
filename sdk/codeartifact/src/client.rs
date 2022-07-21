@@ -97,7 +97,7 @@ impl Client {
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_domain): <p>The name of the domain that contains the repository.</p>
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_repository): <p> The name of the repository to which the external connection is added. </p>
-    ///   - [`external_connection(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::external_connection) / [`set_external_connection(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_external_connection): <p> The name of the external connection to add to the repository. The following values are supported: </p>  <ul>   <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>   <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>   <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>   <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>   <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>   <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>   <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>  </ul>
+    ///   - [`external_connection(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::external_connection) / [`set_external_connection(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_external_connection): <p> The name of the external connection to add to the repository. The following values are supported: </p>  <ul>   <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>   <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>   <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>   <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>   <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>   <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>  </ul>
     /// - On success, responds with [`AssociateExternalConnectionOutput`](crate::output::AssociateExternalConnectionOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::output::AssociateExternalConnectionOutput::repository): <p> Information about the connected repository after processing the request. </p>
     /// - On failure, responds with [`SdkError<AssociateExternalConnectionError>`](crate::error::AssociateExternalConnectionError)
@@ -109,12 +109,12 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_domain): <p> The name of the domain that contains the source and destination repositories. </p>
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    ///   - [`source_repository(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::source_repository) / [`set_source_repository(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_source_repository): <p> The name of the repository that contains the package versions to copy. </p>
+    ///   - [`source_repository(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::source_repository) / [`set_source_repository(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_source_repository): <p> The name of the repository that contains the package versions to be copied. </p>
     ///   - [`destination_repository(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::destination_repository) / [`set_destination_repository(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_destination_repository): <p> The name of the repository into which package versions are copied. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::CopyPackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::CopyPackageVersions::set_format): <p> The format of the package that is copied. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
-    ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_package): <p> The name of the package that is copied. </p>
-    ///   - [`versions(Vec<String>)`](crate::client::fluent_builders::CopyPackageVersions::versions) / [`set_versions(Option<Vec<String>>)`](crate::client::fluent_builders::CopyPackageVersions::set_versions): <p> The versions of the package to copy. </p> <note>   <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>  </note>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::CopyPackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::CopyPackageVersions::set_format): <p> The format of the package versions to be copied. </p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_namespace): <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_package): <p> The name of the package that contains the versions to be copied. </p>
+    ///   - [`versions(Vec<String>)`](crate::client::fluent_builders::CopyPackageVersions::versions) / [`set_versions(Option<Vec<String>>)`](crate::client::fluent_builders::CopyPackageVersions::set_versions): <p> The versions of the package to be copied. </p> <note>   <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>  </note>
     ///   - [`version_revisions(HashMap<String, String>)`](crate::client::fluent_builders::CopyPackageVersions::version_revisions) / [`set_version_revisions(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CopyPackageVersions::set_version_revisions): <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>   <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>  </note>
     ///   - [`allow_overwrite(bool)`](crate::client::fluent_builders::CopyPackageVersions::allow_overwrite) / [`set_allow_overwrite(Option<bool>)`](crate::client::fluent_builders::CopyPackageVersions::set_allow_overwrite): <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
     ///   - [`include_from_upstream(bool)`](crate::client::fluent_builders::CopyPackageVersions::include_from_upstream) / [`set_include_from_upstream(Option<bool>)`](crate::client::fluent_builders::CopyPackageVersions::set_include_from_upstream): <p> Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
@@ -184,7 +184,7 @@ impl Client {
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_repository): <p> The name of the repository that contains the package versions to delete. </p>
     ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DeletePackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DeletePackageVersions::set_format): <p> The format of the package versions to delete. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_namespace): <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_package): <p> The name of the package with the versions to delete. </p>
     ///   - [`versions(Vec<String>)`](crate::client::fluent_builders::DeletePackageVersions::versions) / [`set_versions(Option<Vec<String>>)`](crate::client::fluent_builders::DeletePackageVersions::set_versions): <p> An array of strings that specify the versions of the package to delete. </p>
     ///   - [`expected_status(PackageVersionStatus)`](crate::client::fluent_builders::DeletePackageVersions::expected_status) / [`set_expected_status(Option<PackageVersionStatus>)`](crate::client::fluent_builders::DeletePackageVersions::set_expected_status): <p> The expected status of the package version to delete. </p>
@@ -233,6 +233,21 @@ impl Client {
     pub fn describe_domain(&self) -> fluent_builders::DescribeDomain {
         fluent_builders::DescribeDomain::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribePackage`](crate::client::fluent_builders::DescribePackage) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DescribePackage::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DescribePackage::set_domain): <p>The name of the domain that contains the repository that contains the package.</p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DescribePackage::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DescribePackage::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DescribePackage::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DescribePackage::set_repository): <p>The name of the repository that contains the requested package. </p>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DescribePackage::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DescribePackage::set_format): <p>A format that specifies the type of the requested package.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribePackage::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribePackage::set_namespace): <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::DescribePackage::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::DescribePackage::set_package): <p>The name of the requested package.</p>
+    /// - On success, responds with [`DescribePackageOutput`](crate::output::DescribePackageOutput) with field(s):
+    ///   - [`package(Option<PackageDescription>)`](crate::output::DescribePackageOutput::package): <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
+    /// - On failure, responds with [`SdkError<DescribePackageError>`](crate::error::DescribePackageError)
+    pub fn describe_package(&self) -> fluent_builders::DescribePackage {
+        fluent_builders::DescribePackage::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribePackageVersion`](crate::client::fluent_builders::DescribePackageVersion) operation.
     ///
     /// - The fluent builder is configurable:
@@ -240,7 +255,7 @@ impl Client {
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_repository): <p> The name of the repository that contains the package version. </p>
     ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DescribePackageVersion::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DescribePackageVersion::set_format): <p> A format that specifies the type of the requested package version. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_namespace): <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_package): <p> The name of the requested package version. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     /// - On success, responds with [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput) with field(s):
@@ -283,7 +298,7 @@ impl Client {
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_repository): <p> The name of the repository that contains the package versions you want to dispose. </p>
     ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DisposePackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DisposePackageVersions::set_format): <p> A format that specifies the type of package versions you want to dispose. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_namespace): <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_package): <p> The name of the package with the versions you want to dispose. </p>
     ///   - [`versions(Vec<String>)`](crate::client::fluent_builders::DisposePackageVersions::versions) / [`set_versions(Option<Vec<String>>)`](crate::client::fluent_builders::DisposePackageVersions::set_versions): <p> The versions of the package you want to dispose. </p>
     ///   - [`version_revisions(HashMap<String, String>)`](crate::client::fluent_builders::DisposePackageVersions::version_revisions) / [`set_version_revisions(Option<HashMap<String, String>>)`](crate::client::fluent_builders::DisposePackageVersions::set_version_revisions): <p> The revisions of the package versions you want to dispose. </p>
@@ -326,7 +341,7 @@ impl Client {
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_repository): <p> The repository that contains the package version with the requested asset. </p>
     ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetPackageVersionAsset::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_format): <p> A format that specifies the type of the package version with the requested asset file. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_namespace): <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_package): <p> The name of the package that contains the requested asset. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     ///   - [`asset(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::asset) / [`set_asset(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_asset): <p> The name of the requested asset. </p>
@@ -346,13 +361,13 @@ impl Client {
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_domain): <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_repository): <p> The repository that contains the package with the requested readme file. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetPackageVersionReadme::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_format): <p> A format that specifies the type of the package version with the requested readme file. </p> <note>   <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>  </note>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetPackageVersionReadme::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_format): <p> A format that specifies the type of the package version with the requested readme file. </p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_namespace): <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_package): <p> The name of the package version that contains the requested readme file. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     /// - On success, responds with [`GetPackageVersionReadmeOutput`](crate::output::GetPackageVersionReadmeOutput) with field(s):
     ///   - [`format(Option<PackageFormat>)`](crate::output::GetPackageVersionReadmeOutput::format): <p> The format of the package with the requested readme file. </p>
-    ///   - [`namespace(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::namespace): <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::package): <p> The name of the package that contains the returned readme file. </p>
     ///   - [`version(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::version): <p> The version of the package with the requested readme file. </p>
     ///   - [`version_revision(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::version_revision): <p> The current revision associated with the package version. </p>
@@ -405,14 +420,16 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPackages::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListPackages::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListPackages::set_domain): <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListPackages::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListPackages::set_domain): <p> The name of the domain that contains the repository that contains the requested packages. </p>
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackages::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackages::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackages::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackages::set_repository): <p> The name of the repository from which packages are to be listed. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackages::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackages::set_format): <p> The format of the packages. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackages::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackages::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
-    ///   - [`package_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPackages::package_prefix) / [`set_package_prefix(Option<String>)`](crate::client::fluent_builders::ListPackages::set_package_prefix): <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+    ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackages::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackages::set_repository): <p> The name of the repository that contains the requested packages. </p>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackages::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackages::set_format): <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackages::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackages::set_namespace): <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>  </ul>
+    ///   - [`package_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPackages::package_prefix) / [`set_package_prefix(Option<String>)`](crate::client::fluent_builders::ListPackages::set_package_prefix): <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPackages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPackages::set_max_results): <p> The maximum number of results to return per page. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPackages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPackages::set_next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    ///   - [`publish(AllowPublish)`](crate::client::fluent_builders::ListPackages::publish) / [`set_publish(Option<AllowPublish>)`](crate::client::fluent_builders::ListPackages::set_publish): <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+    ///   - [`upstream(AllowUpstream)`](crate::client::fluent_builders::ListPackages::upstream) / [`set_upstream(Option<AllowUpstream>)`](crate::client::fluent_builders::ListPackages::set_upstream): <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
     /// - On success, responds with [`ListPackagesOutput`](crate::output::ListPackagesOutput) with field(s):
     ///   - [`packages(Option<Vec<PackageSummary>>)`](crate::output::ListPackagesOutput::packages): <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPackagesOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
@@ -426,18 +443,18 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_domain): <p> The name of the domain that contains the repository associated with the package version assets. </p>
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_repository): <p> The name of the repository that contains the package that contains the returned package version assets. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersionAssets::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_format): <p> The format of the package that contains the returned package version assets. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
-    ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_package): <p> The name of the package that contains the returned package version assets. </p>
+    ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_repository): <p> The name of the repository that contains the package that contains the requested package version assets. </p>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersionAssets::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_format): <p> The format of the package that contains the requested package version assets. </p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_namespace): <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_package): <p> The name of the package that contains the requested package version assets. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPackageVersionAssets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_max_results): <p> The maximum number of results to return per page. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     /// - On success, responds with [`ListPackageVersionAssetsOutput`](crate::output::ListPackageVersionAssetsOutput) with field(s):
-    ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionAssetsOutput::format): <p> The format of the package that contains the returned package version assets. </p>
-    ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
-    ///   - [`package(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::package): <p> The name of the package that contains the returned package version assets. </p>
-    ///   - [`version(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::version): <p> The version of the package associated with the returned assets. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionAssetsOutput::format): <p> The format of the package that contains the requested package version assets. </p>
+    ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::namespace): <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::package): <p> The name of the package that contains the requested package version assets. </p>
+    ///   - [`version(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::version): <p> The version of the package associated with the requested assets. </p>
     ///   - [`version_revision(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::version_revision): <p> The current revision associated with the package version. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
     ///   - [`assets(Option<Vec<AssetSummary>>)`](crate::output::ListPackageVersionAssetsOutput::assets): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
@@ -452,13 +469,13 @@ impl Client {
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_repository): <p> The name of the repository that contains the requested package version. </p>
     ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersionDependencies::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_format): <p> The format of the package with the requested dependencies. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_namespace): <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_package): <p> The name of the package versions' package. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     /// - On success, responds with [`ListPackageVersionDependenciesOutput`](crate::output::ListPackageVersionDependenciesOutput) with field(s):
     ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionDependenciesOutput::format): <p> A format that specifies the type of the package that contains the returned dependencies. </p>
-    ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::namespace): <p>The namespace of the package version that contains the returned dependencies. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::package): <p> The name of the package that contains the returned package versions dependencies. </p>
     ///   - [`version(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::version): <p> The version of the package that is specified in the request. </p>
     ///   - [`version_revision(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::version_revision): <p> The current revision associated with the package version. </p>
@@ -474,20 +491,21 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPackageVersions::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_domain): <p> The name of the domain that contains the repository that contains the returned package versions. </p>
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_domain): <p> The name of the domain that contains the repository that contains the requested package versions. </p>
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_repository): <p> The name of the repository that contains the package. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersions::set_format): <p> The format of the returned packages. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
-    ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_package): <p> The name of the package for which you want to return a list of package versions. </p>
-    ///   - [`status(PackageVersionStatus)`](crate::client::fluent_builders::ListPackageVersions::status) / [`set_status(Option<PackageVersionStatus>)`](crate::client::fluent_builders::ListPackageVersions::set_status): <p> A string that specifies the status of the package versions to include in the returned list. </p>
-    ///   - [`sort_by(PackageVersionSortType)`](crate::client::fluent_builders::ListPackageVersions::sort_by) / [`set_sort_by(Option<PackageVersionSortType>)`](crate::client::fluent_builders::ListPackageVersions::set_sort_by): <p> How to sort the returned list of package versions. </p>
+    ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_repository): <p> The name of the repository that contains the requested package versions. </p>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersions::set_format): <p> The format of the returned package versions. </p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_namespace): <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_package): <p> The name of the package for which you want to request package versions. </p>
+    ///   - [`status(PackageVersionStatus)`](crate::client::fluent_builders::ListPackageVersions::status) / [`set_status(Option<PackageVersionStatus>)`](crate::client::fluent_builders::ListPackageVersions::set_status): <p> A string that filters the requested package versions by status. </p>
+    ///   - [`sort_by(PackageVersionSortType)`](crate::client::fluent_builders::ListPackageVersions::sort_by) / [`set_sort_by(Option<PackageVersionSortType>)`](crate::client::fluent_builders::ListPackageVersions::set_sort_by): <p> How to sort the requested list of package versions. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPackageVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPackageVersions::set_max_results): <p> The maximum number of results to return per page. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    ///   - [`origin_type(PackageVersionOriginType)`](crate::client::fluent_builders::ListPackageVersions::origin_type) / [`set_origin_type(Option<PackageVersionOriginType>)`](crate::client::fluent_builders::ListPackageVersions::set_origin_type): <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
     /// - On success, responds with [`ListPackageVersionsOutput`](crate::output::ListPackageVersionsOutput) with field(s):
     ///   - [`default_display_version(Option<String>)`](crate::output::ListPackageVersionsOutput::default_display_version): <p> The default package version to display. This depends on the package format: </p>  <ul>   <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>   <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>  </ul>
     ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionsOutput::format): <p> A format of the package. </p>
-    ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionsOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionsOutput::namespace): <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(Option<String>)`](crate::output::ListPackageVersionsOutput::package): <p> The name of the package. </p>
     ///   - [`versions(Option<Vec<PackageVersionSummary>>)`](crate::output::ListPackageVersionsOutput::versions): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPackageVersionsOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
@@ -549,6 +567,24 @@ impl Client {
     pub fn put_domain_permissions_policy(&self) -> fluent_builders::PutDomainPermissionsPolicy {
         fluent_builders::PutDomainPermissionsPolicy::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`PutPackageOriginConfiguration`](crate::client::fluent_builders::PutPackageOriginConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::set_domain): <p>The name of the domain that contains the repository that contains the package.</p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::set_repository): <p>The name of the repository that contains the package.</p>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::PutPackageOriginConfiguration::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::set_format): <p>A format that specifies the type of the package to be updated.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::set_namespace): <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::set_package): <p>The name of the package to be updated.</p>
+    ///   - [`restrictions(PackageOriginRestrictions)`](crate::client::fluent_builders::PutPackageOriginConfiguration::restrictions) / [`set_restrictions(Option<PackageOriginRestrictions>)`](crate::client::fluent_builders::PutPackageOriginConfiguration::set_restrictions): <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>  <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
+    /// - On success, responds with [`PutPackageOriginConfigurationOutput`](crate::output::PutPackageOriginConfigurationOutput) with field(s):
+    ///   - [`origin_configuration(Option<PackageOriginConfiguration>)`](crate::output::PutPackageOriginConfigurationOutput::origin_configuration): <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that describes the origin configuration set for the package. It contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that describes how new versions of the package can be introduced to the repository.</p>
+    /// - On failure, responds with [`SdkError<PutPackageOriginConfigurationError>`](crate::error::PutPackageOriginConfigurationError)
+    pub fn put_package_origin_configuration(
+        &self,
+    ) -> fluent_builders::PutPackageOriginConfiguration {
+        fluent_builders::PutPackageOriginConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PutRepositoryPermissionsPolicy`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy) operation.
     ///
     /// - The fluent builder is configurable:
@@ -594,7 +630,7 @@ impl Client {
     ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_repository): <p> The repository that contains the package versions with the status you want to update. </p>
     ///   - [`format(PackageFormat)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_format): <p> A format that specifies the type of the package with the statuses to update. </p>
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_namespace): <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>  <ul>   <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>   <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_package): <p> The name of the package with the version statuses to update. </p>
     ///   - [`versions(Vec<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::versions) / [`set_versions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_versions): <p> An array of strings that specify the versions of the package with the statuses to update. </p>
     ///   - [`version_revisions(HashMap<String, String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::version_revisions) / [`set_version_revisions(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_version_revisions): <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
@@ -706,7 +742,6 @@ pub mod fluent_builders {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
-        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -720,7 +755,6 @@ pub mod fluent_builders {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
-        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -799,12 +833,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p> The name of the repository that contains the package versions to copy. </p>
+        /// <p> The name of the repository that contains the package versions to be copied. </p>
         pub fn source_repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_repository(input.into());
             self
         }
-        /// <p> The name of the repository that contains the package versions to copy. </p>
+        /// <p> The name of the repository that contains the package versions to be copied. </p>
         pub fn set_source_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -825,12 +859,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_repository(input);
             self
         }
-        /// <p> The format of the package that is copied. </p>
+        /// <p> The format of the package versions to be copied. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the package that is copied. </p>
+        /// <p> The format of the package versions to be copied. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -838,32 +872,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p> The name of the package that is copied. </p>
+        /// <p> The name of the package that contains the versions to be copied. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.package(input.into());
             self
         }
-        /// <p> The name of the package that is copied. </p>
+        /// <p> The name of the package that contains the versions to be copied. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
@@ -872,14 +906,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p> The versions of the package to copy. </p> <note>
+        /// <p> The versions of the package to be copied. </p> <note>
         /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.versions(input.into());
             self
         }
-        /// <p> The versions of the package to copy. </p> <note>
+        /// <p> The versions of the package to be copied. </p> <note>
         /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
         pub fn set_versions(
@@ -1366,21 +1400,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
@@ -1651,6 +1685,122 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribePackage`.
+    ///
+    /// <p> Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribePackage {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_package_input::Builder,
+    }
+    impl DescribePackage {
+        /// Creates a new `DescribePackage`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribePackageOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribePackageError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the domain that contains the repository that contains the package.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
+            self
+        }
+        /// <p>The name of the domain that contains the repository that contains the package.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
+            self
+        }
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
+            self
+        }
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_owner(input);
+            self
+        }
+        /// <p>The name of the repository that contains the requested package. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
+            self
+        }
+        /// <p>The name of the repository that contains the requested package. </p>
+        pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_repository(input);
+            self
+        }
+        /// <p>A format that specifies the type of the requested package.</p>
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
+            self
+        }
+        /// <p>A format that specifies the type of the requested package.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.inner = self.inner.set_format(input);
+            self
+        }
+        /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
+            self
+        }
+        /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_namespace(input);
+            self
+        }
+        /// <p>The name of the requested package.</p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
+            self
+        }
+        /// <p>The name of the requested package.</p>
+        pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_package(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribePackageVersion`.
     ///
     /// <p> Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
@@ -1736,21 +1886,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
@@ -2026,21 +2176,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
@@ -2337,21 +2487,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
@@ -2406,7 +2556,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPackageVersionReadme`.
     ///
-    /// <p> Gets the readme file or descriptive text for a package version. </p>
+    /// <p> Gets the readme file or descriptive text for a package version. For packages that do not contain a readme file, CodeArtifact extracts a description from a metadata file. For example, from the <code>
+    /// <description></description></code> element in the <code>pom.xml</code> file of a Maven package. </p>
     /// <p> The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPackageVersionReadme {
@@ -2477,16 +2628,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-        /// </note>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-        /// </note>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -2494,21 +2641,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
@@ -2820,12 +2967,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListPackagesPaginator {
             crate::paginator::ListPackagesPaginator::new(self.handle, self.inner)
         }
-        /// <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
+        /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
+        /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -2840,22 +2987,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p> The name of the repository from which packages are to be listed. </p>
+        /// <p> The name of the repository that contains the requested packages. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p> The name of the repository from which packages are to be listed. </p>
+        /// <p> The name of the repository that contains the requested packages. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The format of the packages. </p>
+        /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the packages. </p>
+        /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -2863,32 +3010,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+        /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
         pub fn package_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.package_prefix(input.into());
             self
         }
-        /// <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+        /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
         pub fn set_package_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2914,6 +3061,32 @@ pub mod fluent_builders {
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+        pub fn publish(mut self, input: crate::model::AllowPublish) -> Self {
+            self.inner = self.inner.publish(input);
+            self
+        }
+        /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+        pub fn set_publish(
+            mut self,
+            input: std::option::Option<crate::model::AllowPublish>,
+        ) -> Self {
+            self.inner = self.inner.set_publish(input);
+            self
+        }
+        /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+        pub fn upstream(mut self, input: crate::model::AllowUpstream) -> Self {
+            self.inner = self.inner.upstream(input);
+            self
+        }
+        /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+        pub fn set_upstream(
+            mut self,
+            input: std::option::Option<crate::model::AllowUpstream>,
+        ) -> Self {
+            self.inner = self.inner.set_upstream(input);
             self
         }
     }
@@ -2985,22 +3158,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p> The name of the repository that contains the package that contains the returned package version assets. </p>
+        /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p> The name of the repository that contains the package that contains the returned package version assets. </p>
+        /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The format of the package that contains the returned package version assets. </p>
+        /// <p> The format of the package that contains the requested package version assets. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the package that contains the returned package version assets. </p>
+        /// <p> The format of the package that contains the requested package version assets. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3008,32 +3181,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p> The name of the package that contains the returned package version assets. </p>
+        /// <p> The name of the package that contains the requested package version assets. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.package(input.into());
             self
         }
-        /// <p> The name of the package that contains the returned package version assets. </p>
+        /// <p> The name of the package that contains the requested package version assets. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
@@ -3157,21 +3330,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
@@ -3259,12 +3432,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListPackageVersionsPaginator {
             crate::paginator::ListPackageVersionsPaginator::new(self.handle, self.inner)
         }
-        /// <p> The name of the domain that contains the repository that contains the returned package versions. </p>
+        /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p> The name of the domain that contains the repository that contains the returned package versions. </p>
+        /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -3279,22 +3452,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p> The name of the repository that contains the package. </p>
+        /// <p> The name of the repository that contains the requested package versions. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p> The name of the repository that contains the package. </p>
+        /// <p> The name of the repository that contains the requested package versions. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The format of the returned packages. </p>
+        /// <p> The format of the returned package versions. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the returned packages. </p>
+        /// <p> The format of the returned package versions. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3302,42 +3475,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p> The name of the package for which you want to return a list of package versions. </p>
+        /// <p> The name of the package for which you want to request package versions. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.package(input.into());
             self
         }
-        /// <p> The name of the package for which you want to return a list of package versions. </p>
+        /// <p> The name of the package for which you want to request package versions. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
         }
-        /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
+        /// <p> A string that filters the requested package versions by status. </p>
         pub fn status(mut self, input: crate::model::PackageVersionStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
+        /// <p> A string that filters the requested package versions by status. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -3345,12 +3518,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p> How to sort the returned list of package versions. </p>
+        /// <p> How to sort the requested list of package versions. </p>
         pub fn sort_by(mut self, input: crate::model::PackageVersionSortType) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p> How to sort the returned list of package versions. </p>
+        /// <p> How to sort the requested list of package versions. </p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::PackageVersionSortType>,
@@ -3376,6 +3549,19 @@ pub mod fluent_builders {
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
+        pub fn origin_type(mut self, input: crate::model::PackageVersionOriginType) -> Self {
+            self.inner = self.inner.origin_type(input);
+            self
+        }
+        /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
+        pub fn set_origin_type(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionOriginType>,
+        ) -> Self {
+            self.inner = self.inner.set_origin_type(input);
             self
         }
     }
@@ -3719,6 +3905,139 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutPackageOriginConfiguration`.
+    ///
+    /// <p>Sets the package origin configuration for a package.</p>
+    /// <p>The package origin configuration determines how new versions of a package can be added to a repository. You can allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from an external connection or upstream source. For more information about package origin controls and configuration, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing package origin controls</a> in the <i>CodeArtifact User Guide</i>.</p>
+    /// <p> <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't yet exist in the repository. When called on a package that does not exist, a package is created in the repository with no versions and the requested restrictions are set on the package. This can be used to preemptively block ingesting or retaining any versions from external connections or upstream repositories, or to block publishing any versions of the package into the repository before connecting any package managers or publishers to the repository.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutPackageOriginConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_package_origin_configuration_input::Builder,
+    }
+    impl PutPackageOriginConfiguration {
+        /// Creates a new `PutPackageOriginConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutPackageOriginConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutPackageOriginConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the domain that contains the repository that contains the package.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
+            self
+        }
+        /// <p>The name of the domain that contains the repository that contains the package.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain(input);
+            self
+        }
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
+            self
+        }
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_owner(input);
+            self
+        }
+        /// <p>The name of the repository that contains the package.</p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
+            self
+        }
+        /// <p>The name of the repository that contains the package.</p>
+        pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_repository(input);
+            self
+        }
+        /// <p>A format that specifies the type of the package to be updated.</p>
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
+            self
+        }
+        /// <p>A format that specifies the type of the package to be updated.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.inner = self.inner.set_format(input);
+            self
+        }
+        /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
+            self
+        }
+        /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_namespace(input);
+            self
+        }
+        /// <p>The name of the package to be updated.</p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
+            self
+        }
+        /// <p>The name of the package to be updated.</p>
+        pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_package(input);
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
+        /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
+        pub fn restrictions(mut self, input: crate::model::PackageOriginRestrictions) -> Self {
+            self.inner = self.inner.restrictions(input);
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
+        /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
+        pub fn set_restrictions(
+            mut self,
+            input: std::option::Option<crate::model::PackageOriginRestrictions>,
+        ) -> Self {
+            self.inner = self.inner.set_restrictions(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PutRepositoryPermissionsPolicy`.
     ///
     /// <p> Sets the resource policy on a repository that specifies permissions to access it. </p>
@@ -4044,21 +4363,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);

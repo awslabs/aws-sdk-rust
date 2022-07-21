@@ -133,6 +133,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlias {
     }
 }
 
+/// Operation shape for `CreateAvailabilityConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_availability_configuration`](crate::client::Client::create_availability_configuration).
+///
+/// See [`crate::client::fluent_builders::CreateAvailabilityConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateAvailabilityConfiguration {
+    _private: (),
+}
+impl CreateAvailabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateAvailabilityConfigurationInput`](crate::input::CreateAvailabilityConfigurationInput).
+    pub fn builder() -> crate::input::create_availability_configuration_input::Builder {
+        crate::input::create_availability_configuration_input::Builder::default()
+    }
+    /// Creates a new `CreateAvailabilityConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateAvailabilityConfiguration {
+    type Output = std::result::Result<
+        crate::output::CreateAvailabilityConfigurationOutput,
+        crate::error::CreateAvailabilityConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_availability_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_create_availability_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -359,6 +393,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlias {
             crate::operation_deser::parse_delete_alias_error(response)
         } else {
             crate::operation_deser::parse_delete_alias_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteAvailabilityConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_availability_configuration`](crate::client::Client::delete_availability_configuration).
+///
+/// See [`crate::client::fluent_builders::DeleteAvailabilityConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteAvailabilityConfiguration {
+    _private: (),
+}
+impl DeleteAvailabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteAvailabilityConfigurationInput`](crate::input::DeleteAvailabilityConfigurationInput).
+    pub fn builder() -> crate::input::delete_availability_configuration_input::Builder {
+        crate::input::delete_availability_configuration_input::Builder::default()
+    }
+    /// Creates a new `DeleteAvailabilityConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteAvailabilityConfiguration {
+    type Output = std::result::Result<
+        crate::output::DeleteAvailabilityConfigurationOutput,
+        crate::error::DeleteAvailabilityConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_availability_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_delete_availability_configuration_response(response)
         }
     }
 }
@@ -1301,6 +1369,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAliases {
     }
 }
 
+/// Operation shape for `ListAvailabilityConfigurations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_availability_configurations`](crate::client::Client::list_availability_configurations).
+///
+/// See [`crate::client::fluent_builders::ListAvailabilityConfigurations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAvailabilityConfigurations {
+    _private: (),
+}
+impl ListAvailabilityConfigurations {
+    /// Creates a new builder-style object to manufacture [`ListAvailabilityConfigurationsInput`](crate::input::ListAvailabilityConfigurationsInput).
+    pub fn builder() -> crate::input::list_availability_configurations_input::Builder {
+        crate::input::list_availability_configurations_input::Builder::default()
+    }
+    /// Creates a new `ListAvailabilityConfigurations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAvailabilityConfigurations {
+    type Output = std::result::Result<
+        crate::output::ListAvailabilityConfigurationsOutput,
+        crate::error::ListAvailabilityConfigurationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_availability_configurations_error(response)
+        } else {
+            crate::operation_deser::parse_list_availability_configurations_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListGroupMembers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2072,6 +2174,40 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     }
 }
 
+/// Operation shape for `TestAvailabilityConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`test_availability_configuration`](crate::client::Client::test_availability_configuration).
+///
+/// See [`crate::client::fluent_builders::TestAvailabilityConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct TestAvailabilityConfiguration {
+    _private: (),
+}
+impl TestAvailabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`TestAvailabilityConfigurationInput`](crate::input::TestAvailabilityConfigurationInput).
+    pub fn builder() -> crate::input::test_availability_configuration_input::Builder {
+        crate::input::test_availability_configuration_input::Builder::default()
+    }
+    /// Creates a new `TestAvailabilityConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for TestAvailabilityConfiguration {
+    type Output = std::result::Result<
+        crate::output::TestAvailabilityConfigurationOutput,
+        crate::error::TestAvailabilityConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_test_availability_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_test_availability_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2100,6 +2236,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateAvailabilityConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_availability_configuration`](crate::client::Client::update_availability_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateAvailabilityConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateAvailabilityConfiguration {
+    _private: (),
+}
+impl UpdateAvailabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateAvailabilityConfigurationInput`](crate::input::UpdateAvailabilityConfigurationInput).
+    pub fn builder() -> crate::input::update_availability_configuration_input::Builder {
+        crate::input::update_availability_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateAvailabilityConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateAvailabilityConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateAvailabilityConfigurationOutput,
+        crate::error::UpdateAvailabilityConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_availability_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_availability_configuration_response(response)
         }
     }
 }

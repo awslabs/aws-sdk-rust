@@ -83,7 +83,7 @@ impl AssociateApiInput {
                 }
                 write!(
                     output,
-                    "/domainnames/{domainName}/apiassociation",
+                    "/v1/domainnames/{domainName}/apiassociation",
                     domainName = domain_name
                 )
                 .expect("formatting should succeed");
@@ -995,7 +995,7 @@ impl CreateDomainNameInput {
                 _input: &crate::input::CreateDomainNameInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/domainnames").expect("formatting should succeed");
+                write!(output, "/v1/domainnames").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2658,7 +2658,7 @@ impl DeleteDomainNameInput {
                 }
                 write!(
                     output,
-                    "/domainnames/{domainName}",
+                    "/v1/domainnames/{domainName}",
                     domainName = domain_name
                 )
                 .expect("formatting should succeed");
@@ -3461,7 +3461,7 @@ impl DisassociateApiInput {
                 }
                 write!(
                     output,
-                    "/domainnames/{domainName}/apiassociation",
+                    "/v1/domainnames/{domainName}/apiassociation",
                     domainName = domain_name
                 )
                 .expect("formatting should succeed");
@@ -3737,7 +3737,7 @@ impl GetApiAssociationInput {
                 }
                 write!(
                     output,
-                    "/domainnames/{domainName}/apiassociation",
+                    "/v1/domainnames/{domainName}/apiassociation",
                     domainName = domain_name
                 )
                 .expect("formatting should succeed");
@@ -4180,7 +4180,7 @@ impl GetDomainNameInput {
                 }
                 write!(
                     output,
-                    "/domainnames/{domainName}",
+                    "/v1/domainnames/{domainName}",
                     domainName = domain_name
                 )
                 .expect("formatting should succeed");
@@ -5672,7 +5672,7 @@ impl ListDomainNamesInput {
                 _input: &crate::input::ListDomainNamesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/domainnames").expect("formatting should succeed");
+                write!(output, "/v1/domainnames").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -8199,7 +8199,7 @@ impl UpdateDomainNameInput {
                 }
                 write!(
                     output,
-                    "/domainnames/{domainName}",
+                    "/v1/domainnames/{domainName}",
                     domainName = domain_name
                 )
                 .expect("formatting should succeed");

@@ -8833,6 +8833,173 @@ impl GetTransitGatewayPrefixListReferencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTransitGatewayPolicyTableEntriesOutput {
+    /// <p>The entries for the transit gateway policy table.</p>
+    pub transit_gateway_policy_table_entries:
+        std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTableEntry>>,
+}
+impl GetTransitGatewayPolicyTableEntriesOutput {
+    /// <p>The entries for the transit gateway policy table.</p>
+    pub fn transit_gateway_policy_table_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayPolicyTableEntry]> {
+        self.transit_gateway_policy_table_entries.as_deref()
+    }
+}
+impl std::fmt::Debug for GetTransitGatewayPolicyTableEntriesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTransitGatewayPolicyTableEntriesOutput");
+        formatter.field(
+            "transit_gateway_policy_table_entries",
+            &self.transit_gateway_policy_table_entries,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetTransitGatewayPolicyTableEntriesOutput`](crate::output::GetTransitGatewayPolicyTableEntriesOutput).
+pub mod get_transit_gateway_policy_table_entries_output {
+
+    /// A builder for [`GetTransitGatewayPolicyTableEntriesOutput`](crate::output::GetTransitGatewayPolicyTableEntriesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_policy_table_entries:
+            std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTableEntry>>,
+    }
+    impl Builder {
+        /// Appends an item to `transit_gateway_policy_table_entries`.
+        ///
+        /// To override the contents of this collection use [`set_transit_gateway_policy_table_entries`](Self::set_transit_gateway_policy_table_entries).
+        ///
+        /// <p>The entries for the transit gateway policy table.</p>
+        pub fn transit_gateway_policy_table_entries(
+            mut self,
+            input: crate::model::TransitGatewayPolicyTableEntry,
+        ) -> Self {
+            let mut v = self
+                .transit_gateway_policy_table_entries
+                .unwrap_or_default();
+            v.push(input);
+            self.transit_gateway_policy_table_entries = Some(v);
+            self
+        }
+        /// <p>The entries for the transit gateway policy table.</p>
+        pub fn set_transit_gateway_policy_table_entries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTableEntry>>,
+        ) -> Self {
+            self.transit_gateway_policy_table_entries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTransitGatewayPolicyTableEntriesOutput`](crate::output::GetTransitGatewayPolicyTableEntriesOutput).
+        pub fn build(self) -> crate::output::GetTransitGatewayPolicyTableEntriesOutput {
+            crate::output::GetTransitGatewayPolicyTableEntriesOutput {
+                transit_gateway_policy_table_entries: self.transit_gateway_policy_table_entries,
+            }
+        }
+    }
+}
+impl GetTransitGatewayPolicyTableEntriesOutput {
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayPolicyTableEntriesOutput`](crate::output::GetTransitGatewayPolicyTableEntriesOutput).
+    pub fn builder() -> crate::output::get_transit_gateway_policy_table_entries_output::Builder {
+        crate::output::get_transit_gateway_policy_table_entries_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTransitGatewayPolicyTableAssociationsOutput {
+    /// <p>Returns details about the transit gateway policy table association.</p>
+    pub associations:
+        std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTableAssociation>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayPolicyTableAssociationsOutput {
+    /// <p>Returns details about the transit gateway policy table association.</p>
+    pub fn associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayPolicyTableAssociation]> {
+        self.associations.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetTransitGatewayPolicyTableAssociationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTransitGatewayPolicyTableAssociationsOutput");
+        formatter.field("associations", &self.associations);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetTransitGatewayPolicyTableAssociationsOutput`](crate::output::GetTransitGatewayPolicyTableAssociationsOutput).
+pub mod get_transit_gateway_policy_table_associations_output {
+
+    /// A builder for [`GetTransitGatewayPolicyTableAssociationsOutput`](crate::output::GetTransitGatewayPolicyTableAssociationsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) associations:
+            std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTableAssociation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `associations`.
+        ///
+        /// To override the contents of this collection use [`set_associations`](Self::set_associations).
+        ///
+        /// <p>Returns details about the transit gateway policy table association.</p>
+        pub fn associations(
+            mut self,
+            input: crate::model::TransitGatewayPolicyTableAssociation,
+        ) -> Self {
+            let mut v = self.associations.unwrap_or_default();
+            v.push(input);
+            self.associations = Some(v);
+            self
+        }
+        /// <p>Returns details about the transit gateway policy table association.</p>
+        pub fn set_associations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::TransitGatewayPolicyTableAssociation>,
+            >,
+        ) -> Self {
+            self.associations = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTransitGatewayPolicyTableAssociationsOutput`](crate::output::GetTransitGatewayPolicyTableAssociationsOutput).
+        pub fn build(self) -> crate::output::GetTransitGatewayPolicyTableAssociationsOutput {
+            crate::output::GetTransitGatewayPolicyTableAssociationsOutput {
+                associations: self.associations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetTransitGatewayPolicyTableAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayPolicyTableAssociationsOutput`](crate::output::GetTransitGatewayPolicyTableAssociationsOutput).
+    pub fn builder() -> crate::output::get_transit_gateway_policy_table_associations_output::Builder
+    {
+        crate::output::get_transit_gateway_policy_table_associations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Information about the multicast domain associations.</p>
     pub multicast_domain_associations:
@@ -13230,6 +13397,69 @@ impl DisassociateTransitGatewayRouteTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateTransitGatewayPolicyTableOutput {
+    /// <p>Returns details about the transit gateway policy table disassociation.</p>
+    pub association: std::option::Option<crate::model::TransitGatewayPolicyTableAssociation>,
+}
+impl DisassociateTransitGatewayPolicyTableOutput {
+    /// <p>Returns details about the transit gateway policy table disassociation.</p>
+    pub fn association(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPolicyTableAssociation> {
+        self.association.as_ref()
+    }
+}
+impl std::fmt::Debug for DisassociateTransitGatewayPolicyTableOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateTransitGatewayPolicyTableOutput");
+        formatter.field("association", &self.association);
+        formatter.finish()
+    }
+}
+/// See [`DisassociateTransitGatewayPolicyTableOutput`](crate::output::DisassociateTransitGatewayPolicyTableOutput).
+pub mod disassociate_transit_gateway_policy_table_output {
+
+    /// A builder for [`DisassociateTransitGatewayPolicyTableOutput`](crate::output::DisassociateTransitGatewayPolicyTableOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) association:
+            std::option::Option<crate::model::TransitGatewayPolicyTableAssociation>,
+    }
+    impl Builder {
+        /// <p>Returns details about the transit gateway policy table disassociation.</p>
+        pub fn association(
+            mut self,
+            input: crate::model::TransitGatewayPolicyTableAssociation,
+        ) -> Self {
+            self.association = Some(input);
+            self
+        }
+        /// <p>Returns details about the transit gateway policy table disassociation.</p>
+        pub fn set_association(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayPolicyTableAssociation>,
+        ) -> Self {
+            self.association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateTransitGatewayPolicyTableOutput`](crate::output::DisassociateTransitGatewayPolicyTableOutput).
+        pub fn build(self) -> crate::output::DisassociateTransitGatewayPolicyTableOutput {
+            crate::output::DisassociateTransitGatewayPolicyTableOutput {
+                association: self.association,
+            }
+        }
+    }
+}
+impl DisassociateTransitGatewayPolicyTableOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayPolicyTableOutput`](crate::output::DisassociateTransitGatewayPolicyTableOutput).
+    pub fn builder() -> crate::output::disassociate_transit_gateway_policy_table_output::Builder {
+        crate::output::disassociate_transit_gateway_policy_table_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTransitGatewayMulticastDomainOutput {
     /// <p>Information about the association.</p>
     pub associations: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
@@ -16549,6 +16779,196 @@ impl DescribeTransitGatewayRouteTablesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayRouteTablesOutput`](crate::output::DescribeTransitGatewayRouteTablesOutput).
     pub fn builder() -> crate::output::describe_transit_gateway_route_tables_output::Builder {
         crate::output::describe_transit_gateway_route_tables_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTransitGatewayRouteTableAnnouncementsOutput {
+    /// <p>Describes the transit gateway route table announcement.</p>
+    pub transit_gateway_route_table_announcements:
+        std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTableAnnouncement>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTransitGatewayRouteTableAnnouncementsOutput {
+    /// <p>Describes the transit gateway route table announcement.</p>
+    pub fn transit_gateway_route_table_announcements(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayRouteTableAnnouncement]> {
+        self.transit_gateway_route_table_announcements.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeTransitGatewayRouteTableAnnouncementsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeTransitGatewayRouteTableAnnouncementsOutput");
+        formatter.field(
+            "transit_gateway_route_table_announcements",
+            &self.transit_gateway_route_table_announcements,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput).
+pub mod describe_transit_gateway_route_table_announcements_output {
+
+    /// A builder for [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_route_table_announcements:
+            std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTableAnnouncement>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `transit_gateway_route_table_announcements`.
+        ///
+        /// To override the contents of this collection use [`set_transit_gateway_route_table_announcements`](Self::set_transit_gateway_route_table_announcements).
+        ///
+        /// <p>Describes the transit gateway route table announcement.</p>
+        pub fn transit_gateway_route_table_announcements(
+            mut self,
+            input: crate::model::TransitGatewayRouteTableAnnouncement,
+        ) -> Self {
+            let mut v = self
+                .transit_gateway_route_table_announcements
+                .unwrap_or_default();
+            v.push(input);
+            self.transit_gateway_route_table_announcements = Some(v);
+            self
+        }
+        /// <p>Describes the transit gateway route table announcement.</p>
+        pub fn set_transit_gateway_route_table_announcements(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::TransitGatewayRouteTableAnnouncement>,
+            >,
+        ) -> Self {
+            self.transit_gateway_route_table_announcements = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput).
+        pub fn build(self) -> crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput {
+            crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput {
+                transit_gateway_route_table_announcements: self
+                    .transit_gateway_route_table_announcements,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeTransitGatewayRouteTableAnnouncementsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput).
+    pub fn builder(
+    ) -> crate::output::describe_transit_gateway_route_table_announcements_output::Builder {
+        crate::output::describe_transit_gateway_route_table_announcements_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTransitGatewayPolicyTablesOutput {
+    /// <p>Describes the transit gateway policy tables.</p>
+    pub transit_gateway_policy_tables:
+        std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTable>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTransitGatewayPolicyTablesOutput {
+    /// <p>Describes the transit gateway policy tables.</p>
+    pub fn transit_gateway_policy_tables(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayPolicyTable]> {
+        self.transit_gateway_policy_tables.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeTransitGatewayPolicyTablesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeTransitGatewayPolicyTablesOutput");
+        formatter.field(
+            "transit_gateway_policy_tables",
+            &self.transit_gateway_policy_tables,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeTransitGatewayPolicyTablesOutput`](crate::output::DescribeTransitGatewayPolicyTablesOutput).
+pub mod describe_transit_gateway_policy_tables_output {
+
+    /// A builder for [`DescribeTransitGatewayPolicyTablesOutput`](crate::output::DescribeTransitGatewayPolicyTablesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_policy_tables:
+            std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTable>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `transit_gateway_policy_tables`.
+        ///
+        /// To override the contents of this collection use [`set_transit_gateway_policy_tables`](Self::set_transit_gateway_policy_tables).
+        ///
+        /// <p>Describes the transit gateway policy tables.</p>
+        pub fn transit_gateway_policy_tables(
+            mut self,
+            input: crate::model::TransitGatewayPolicyTable,
+        ) -> Self {
+            let mut v = self.transit_gateway_policy_tables.unwrap_or_default();
+            v.push(input);
+            self.transit_gateway_policy_tables = Some(v);
+            self
+        }
+        /// <p>Describes the transit gateway policy tables.</p>
+        pub fn set_transit_gateway_policy_tables(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayPolicyTable>>,
+        ) -> Self {
+            self.transit_gateway_policy_tables = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTransitGatewayPolicyTablesOutput`](crate::output::DescribeTransitGatewayPolicyTablesOutput).
+        pub fn build(self) -> crate::output::DescribeTransitGatewayPolicyTablesOutput {
+            crate::output::DescribeTransitGatewayPolicyTablesOutput {
+                transit_gateway_policy_tables: self.transit_gateway_policy_tables,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeTransitGatewayPolicyTablesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayPolicyTablesOutput`](crate::output::DescribeTransitGatewayPolicyTablesOutput).
+    pub fn builder() -> crate::output::describe_transit_gateway_policy_tables_output::Builder {
+        crate::output::describe_transit_gateway_policy_tables_output::Builder::default()
     }
 }
 
@@ -27570,6 +27990,75 @@ impl DeleteTransitGatewayVpcAttachmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteTransitGatewayRouteTableAnnouncementOutput {
+    /// <p>Provides details about a deleted transit gateway route table.</p>
+    pub transit_gateway_route_table_announcement:
+        std::option::Option<crate::model::TransitGatewayRouteTableAnnouncement>,
+}
+impl DeleteTransitGatewayRouteTableAnnouncementOutput {
+    /// <p>Provides details about a deleted transit gateway route table.</p>
+    pub fn transit_gateway_route_table_announcement(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayRouteTableAnnouncement> {
+        self.transit_gateway_route_table_announcement.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteTransitGatewayRouteTableAnnouncementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteTransitGatewayRouteTableAnnouncementOutput");
+        formatter.field(
+            "transit_gateway_route_table_announcement",
+            &self.transit_gateway_route_table_announcement,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteTransitGatewayRouteTableAnnouncementOutput`](crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput).
+pub mod delete_transit_gateway_route_table_announcement_output {
+
+    /// A builder for [`DeleteTransitGatewayRouteTableAnnouncementOutput`](crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_route_table_announcement:
+            std::option::Option<crate::model::TransitGatewayRouteTableAnnouncement>,
+    }
+    impl Builder {
+        /// <p>Provides details about a deleted transit gateway route table.</p>
+        pub fn transit_gateway_route_table_announcement(
+            mut self,
+            input: crate::model::TransitGatewayRouteTableAnnouncement,
+        ) -> Self {
+            self.transit_gateway_route_table_announcement = Some(input);
+            self
+        }
+        /// <p>Provides details about a deleted transit gateway route table.</p>
+        pub fn set_transit_gateway_route_table_announcement(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayRouteTableAnnouncement>,
+        ) -> Self {
+            self.transit_gateway_route_table_announcement = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteTransitGatewayRouteTableAnnouncementOutput`](crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput).
+        pub fn build(self) -> crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput {
+            crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput {
+                transit_gateway_route_table_announcement: self
+                    .transit_gateway_route_table_announcement,
+            }
+        }
+    }
+}
+impl DeleteTransitGatewayRouteTableAnnouncementOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayRouteTableAnnouncementOutput`](crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput).
+    pub fn builder(
+    ) -> crate::output::delete_transit_gateway_route_table_announcement_output::Builder {
+        crate::output::delete_transit_gateway_route_table_announcement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTransitGatewayRouteTableOutput {
     /// <p>Information about the deleted transit gateway route table.</p>
     pub transit_gateway_route_table: std::option::Option<crate::model::TransitGatewayRouteTable>,
@@ -27753,6 +28242,72 @@ impl DeleteTransitGatewayPrefixListReferenceOutput {
     pub fn builder() -> crate::output::delete_transit_gateway_prefix_list_reference_output::Builder
     {
         crate::output::delete_transit_gateway_prefix_list_reference_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteTransitGatewayPolicyTableOutput {
+    /// <p>Provides details about the deleted transit gateway policy table.</p>
+    pub transit_gateway_policy_table: std::option::Option<crate::model::TransitGatewayPolicyTable>,
+}
+impl DeleteTransitGatewayPolicyTableOutput {
+    /// <p>Provides details about the deleted transit gateway policy table.</p>
+    pub fn transit_gateway_policy_table(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPolicyTable> {
+        self.transit_gateway_policy_table.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteTransitGatewayPolicyTableOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteTransitGatewayPolicyTableOutput");
+        formatter.field(
+            "transit_gateway_policy_table",
+            &self.transit_gateway_policy_table,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteTransitGatewayPolicyTableOutput`](crate::output::DeleteTransitGatewayPolicyTableOutput).
+pub mod delete_transit_gateway_policy_table_output {
+
+    /// A builder for [`DeleteTransitGatewayPolicyTableOutput`](crate::output::DeleteTransitGatewayPolicyTableOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_policy_table:
+            std::option::Option<crate::model::TransitGatewayPolicyTable>,
+    }
+    impl Builder {
+        /// <p>Provides details about the deleted transit gateway policy table.</p>
+        pub fn transit_gateway_policy_table(
+            mut self,
+            input: crate::model::TransitGatewayPolicyTable,
+        ) -> Self {
+            self.transit_gateway_policy_table = Some(input);
+            self
+        }
+        /// <p>Provides details about the deleted transit gateway policy table.</p>
+        pub fn set_transit_gateway_policy_table(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayPolicyTable>,
+        ) -> Self {
+            self.transit_gateway_policy_table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteTransitGatewayPolicyTableOutput`](crate::output::DeleteTransitGatewayPolicyTableOutput).
+        pub fn build(self) -> crate::output::DeleteTransitGatewayPolicyTableOutput {
+            crate::output::DeleteTransitGatewayPolicyTableOutput {
+                transit_gateway_policy_table: self.transit_gateway_policy_table,
+            }
+        }
+    }
+}
+impl DeleteTransitGatewayPolicyTableOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayPolicyTableOutput`](crate::output::DeleteTransitGatewayPolicyTableOutput).
+    pub fn builder() -> crate::output::delete_transit_gateway_policy_table_output::Builder {
+        crate::output::delete_transit_gateway_policy_table_output::Builder::default()
     }
 }
 
@@ -31330,6 +31885,75 @@ impl CreateTransitGatewayVpcAttachmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateTransitGatewayRouteTableAnnouncementOutput {
+    /// <p>Provides details about the transit gateway route table announcement.</p>
+    pub transit_gateway_route_table_announcement:
+        std::option::Option<crate::model::TransitGatewayRouteTableAnnouncement>,
+}
+impl CreateTransitGatewayRouteTableAnnouncementOutput {
+    /// <p>Provides details about the transit gateway route table announcement.</p>
+    pub fn transit_gateway_route_table_announcement(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayRouteTableAnnouncement> {
+        self.transit_gateway_route_table_announcement.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateTransitGatewayRouteTableAnnouncementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateTransitGatewayRouteTableAnnouncementOutput");
+        formatter.field(
+            "transit_gateway_route_table_announcement",
+            &self.transit_gateway_route_table_announcement,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateTransitGatewayRouteTableAnnouncementOutput`](crate::output::CreateTransitGatewayRouteTableAnnouncementOutput).
+pub mod create_transit_gateway_route_table_announcement_output {
+
+    /// A builder for [`CreateTransitGatewayRouteTableAnnouncementOutput`](crate::output::CreateTransitGatewayRouteTableAnnouncementOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_route_table_announcement:
+            std::option::Option<crate::model::TransitGatewayRouteTableAnnouncement>,
+    }
+    impl Builder {
+        /// <p>Provides details about the transit gateway route table announcement.</p>
+        pub fn transit_gateway_route_table_announcement(
+            mut self,
+            input: crate::model::TransitGatewayRouteTableAnnouncement,
+        ) -> Self {
+            self.transit_gateway_route_table_announcement = Some(input);
+            self
+        }
+        /// <p>Provides details about the transit gateway route table announcement.</p>
+        pub fn set_transit_gateway_route_table_announcement(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayRouteTableAnnouncement>,
+        ) -> Self {
+            self.transit_gateway_route_table_announcement = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableAnnouncementOutput`](crate::output::CreateTransitGatewayRouteTableAnnouncementOutput).
+        pub fn build(self) -> crate::output::CreateTransitGatewayRouteTableAnnouncementOutput {
+            crate::output::CreateTransitGatewayRouteTableAnnouncementOutput {
+                transit_gateway_route_table_announcement: self
+                    .transit_gateway_route_table_announcement,
+            }
+        }
+    }
+}
+impl CreateTransitGatewayRouteTableAnnouncementOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAnnouncementOutput`](crate::output::CreateTransitGatewayRouteTableAnnouncementOutput).
+    pub fn builder(
+    ) -> crate::output::create_transit_gateway_route_table_announcement_output::Builder {
+        crate::output::create_transit_gateway_route_table_announcement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTransitGatewayRouteTableOutput {
     /// <p>Information about the transit gateway route table.</p>
     pub transit_gateway_route_table: std::option::Option<crate::model::TransitGatewayRouteTable>,
@@ -31513,6 +32137,72 @@ impl CreateTransitGatewayPrefixListReferenceOutput {
     pub fn builder() -> crate::output::create_transit_gateway_prefix_list_reference_output::Builder
     {
         crate::output::create_transit_gateway_prefix_list_reference_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateTransitGatewayPolicyTableOutput {
+    /// <p>Describes the created transit gateway policy table.</p>
+    pub transit_gateway_policy_table: std::option::Option<crate::model::TransitGatewayPolicyTable>,
+}
+impl CreateTransitGatewayPolicyTableOutput {
+    /// <p>Describes the created transit gateway policy table.</p>
+    pub fn transit_gateway_policy_table(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPolicyTable> {
+        self.transit_gateway_policy_table.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateTransitGatewayPolicyTableOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateTransitGatewayPolicyTableOutput");
+        formatter.field(
+            "transit_gateway_policy_table",
+            &self.transit_gateway_policy_table,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateTransitGatewayPolicyTableOutput`](crate::output::CreateTransitGatewayPolicyTableOutput).
+pub mod create_transit_gateway_policy_table_output {
+
+    /// A builder for [`CreateTransitGatewayPolicyTableOutput`](crate::output::CreateTransitGatewayPolicyTableOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_policy_table:
+            std::option::Option<crate::model::TransitGatewayPolicyTable>,
+    }
+    impl Builder {
+        /// <p>Describes the created transit gateway policy table.</p>
+        pub fn transit_gateway_policy_table(
+            mut self,
+            input: crate::model::TransitGatewayPolicyTable,
+        ) -> Self {
+            self.transit_gateway_policy_table = Some(input);
+            self
+        }
+        /// <p>Describes the created transit gateway policy table.</p>
+        pub fn set_transit_gateway_policy_table(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayPolicyTable>,
+        ) -> Self {
+            self.transit_gateway_policy_table = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateTransitGatewayPolicyTableOutput`](crate::output::CreateTransitGatewayPolicyTableOutput).
+        pub fn build(self) -> crate::output::CreateTransitGatewayPolicyTableOutput {
+            crate::output::CreateTransitGatewayPolicyTableOutput {
+                transit_gateway_policy_table: self.transit_gateway_policy_table,
+            }
+        }
+    }
+}
+impl CreateTransitGatewayPolicyTableOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPolicyTableOutput`](crate::output::CreateTransitGatewayPolicyTableOutput).
+    pub fn builder() -> crate::output::create_transit_gateway_policy_table_output::Builder {
+        crate::output::create_transit_gateway_policy_table_output::Builder::default()
     }
 }
 
@@ -37696,6 +38386,69 @@ impl AssociateTransitGatewayRouteTableOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayRouteTableOutput`](crate::output::AssociateTransitGatewayRouteTableOutput).
     pub fn builder() -> crate::output::associate_transit_gateway_route_table_output::Builder {
         crate::output::associate_transit_gateway_route_table_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateTransitGatewayPolicyTableOutput {
+    /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
+    pub association: std::option::Option<crate::model::TransitGatewayPolicyTableAssociation>,
+}
+impl AssociateTransitGatewayPolicyTableOutput {
+    /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
+    pub fn association(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayPolicyTableAssociation> {
+        self.association.as_ref()
+    }
+}
+impl std::fmt::Debug for AssociateTransitGatewayPolicyTableOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateTransitGatewayPolicyTableOutput");
+        formatter.field("association", &self.association);
+        formatter.finish()
+    }
+}
+/// See [`AssociateTransitGatewayPolicyTableOutput`](crate::output::AssociateTransitGatewayPolicyTableOutput).
+pub mod associate_transit_gateway_policy_table_output {
+
+    /// A builder for [`AssociateTransitGatewayPolicyTableOutput`](crate::output::AssociateTransitGatewayPolicyTableOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) association:
+            std::option::Option<crate::model::TransitGatewayPolicyTableAssociation>,
+    }
+    impl Builder {
+        /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
+        pub fn association(
+            mut self,
+            input: crate::model::TransitGatewayPolicyTableAssociation,
+        ) -> Self {
+            self.association = Some(input);
+            self
+        }
+        /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
+        pub fn set_association(
+            mut self,
+            input: std::option::Option<crate::model::TransitGatewayPolicyTableAssociation>,
+        ) -> Self {
+            self.association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateTransitGatewayPolicyTableOutput`](crate::output::AssociateTransitGatewayPolicyTableOutput).
+        pub fn build(self) -> crate::output::AssociateTransitGatewayPolicyTableOutput {
+            crate::output::AssociateTransitGatewayPolicyTableOutput {
+                association: self.association,
+            }
+        }
+    }
+}
+impl AssociateTransitGatewayPolicyTableOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayPolicyTableOutput`](crate::output::AssociateTransitGatewayPolicyTableOutput).
+    pub fn builder() -> crate::output::associate_transit_gateway_policy_table_output::Builder {
+        crate::output::associate_transit_gateway_policy_table_output::Builder::default()
     }
 }
 

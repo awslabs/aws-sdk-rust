@@ -3487,13 +3487,17 @@ impl RateIncreaseCriteria {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PresignedUrlConfig {
-    /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p>
+    /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p> <important>
+    /// <p>For information about addressing the confused deputy problem, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service confused deputy prevention</a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
+    /// </important>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600 seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
     pub expires_in_sec: std::option::Option<i64>,
 }
 impl PresignedUrlConfig {
-    /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p>
+    /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p> <important>
+    /// <p>For information about addressing the confused deputy problem, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service confused deputy prevention</a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
+    /// </important>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -3520,12 +3524,16 @@ pub mod presigned_url_config {
         pub(crate) expires_in_sec: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p>
+        /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p> <important>
+        /// <p>For information about addressing the confused deputy problem, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service confused deputy prevention</a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
+        /// </important>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p>
+        /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p> <important>
+        /// <p>For information about addressing the confused deputy problem, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service confused deputy prevention</a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
+        /// </important>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -12245,6 +12253,61 @@ impl AsRef<str> for DynamoKeyType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CertificateMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
+    SniOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CertificateMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULT" => CertificateMode::Default,
+            "SNI_ONLY" => CertificateMode::SniOnly,
+            other => CertificateMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CertificateMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CertificateMode::from(s))
+    }
+}
+impl CertificateMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CertificateMode::Default => "DEFAULT",
+            CertificateMode::SniOnly => "SNI_ONLY",
+            CertificateMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT", "SNI_ONLY"]
+    }
+}
+impl AsRef<str> for CertificateMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// _Note: `VerificationState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
@@ -15793,7 +15856,7 @@ pub struct JobSummary {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job completed.</p>
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     pub is_concurrent: std::option::Option<bool>,
 }
 impl JobSummary {
@@ -15831,7 +15894,7 @@ impl JobSummary {
     pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     pub fn is_concurrent(&self) -> std::option::Option<bool> {
         self.is_concurrent
     }
@@ -15967,12 +16030,12 @@ pub mod job_summary {
             self.completed_at = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
         pub fn is_concurrent(mut self, input: bool) -> Self {
             self.is_concurrent = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
         pub fn set_is_concurrent(mut self, input: std::option::Option<bool>) -> Self {
             self.is_concurrent = input;
             self
@@ -17612,6 +17675,8 @@ pub struct Certificate {
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub status: std::option::Option<crate::model::CertificateStatus>,
     /// <p>The mode of the certificate.</p>
+    /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
+    /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
     pub certificate_mode: std::option::Option<crate::model::CertificateMode>,
     /// <p>The date and time the certificate was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -17631,6 +17696,8 @@ impl Certificate {
         self.status.as_ref()
     }
     /// <p>The mode of the certificate.</p>
+    /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
+    /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
     pub fn certificate_mode(&self) -> std::option::Option<&crate::model::CertificateMode> {
         self.certificate_mode.as_ref()
     }
@@ -17705,11 +17772,15 @@ pub mod certificate {
             self
         }
         /// <p>The mode of the certificate.</p>
+        /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
+        /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
         pub fn certificate_mode(mut self, input: crate::model::CertificateMode) -> Self {
             self.certificate_mode = Some(input);
             self
         }
         /// <p>The mode of the certificate.</p>
+        /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
+        /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
         pub fn set_certificate_mode(
             mut self,
             input: std::option::Option<crate::model::CertificateMode>,
@@ -17746,61 +17817,6 @@ impl Certificate {
     /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
     pub fn builder() -> crate::model::certificate::Builder {
         crate::model::certificate::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum CertificateMode {
-    #[allow(missing_docs)] // documentation missing in model
-    Default,
-    #[allow(missing_docs)] // documentation missing in model
-    SniOnly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for CertificateMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEFAULT" => CertificateMode::Default,
-            "SNI_ONLY" => CertificateMode::SniOnly,
-            other => CertificateMode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for CertificateMode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CertificateMode::from(s))
-    }
-}
-impl CertificateMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CertificateMode::Default => "DEFAULT",
-            CertificateMode::SniOnly => "SNI_ONLY",
-            CertificateMode::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["DEFAULT", "SNI_ONLY"]
-    }
-}
-impl AsRef<str> for CertificateMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -24227,7 +24243,7 @@ pub struct Job {
     /// </note>
     pub document_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     pub is_concurrent: std::option::Option<bool>,
 }
 impl Job {
@@ -24330,7 +24346,7 @@ impl Job {
     {
         self.document_parameters.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
     pub fn is_concurrent(&self) -> std::option::Option<bool> {
         self.is_concurrent
     }
@@ -24692,12 +24708,12 @@ pub mod job {
             self.document_parameters = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
         pub fn is_concurrent(mut self, input: bool) -> Self {
             self.is_concurrent = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
         pub fn set_is_concurrent(mut self, input: std::option::Option<bool>) -> Self {
             self.is_concurrent = input;
             self
@@ -25546,6 +25562,9 @@ pub struct CertificateDescription {
     /// <p>When the certificate is valid.</p>
     pub validity: std::option::Option<crate::model::CertificateValidity>,
     /// <p>The mode of the certificate.</p>
+    /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
+    /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
+    /// <p>For more information about the value for SNI extension, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in IoT</a>.</p>
     pub certificate_mode: std::option::Option<crate::model::CertificateMode>,
 }
 impl CertificateDescription {
@@ -25602,6 +25621,9 @@ impl CertificateDescription {
         self.validity.as_ref()
     }
     /// <p>The mode of the certificate.</p>
+    /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
+    /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
+    /// <p>For more information about the value for SNI extension, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in IoT</a>.</p>
     pub fn certificate_mode(&self) -> std::option::Option<&crate::model::CertificateMode> {
         self.certificate_mode.as_ref()
     }
@@ -25812,11 +25834,17 @@ pub mod certificate_description {
             self
         }
         /// <p>The mode of the certificate.</p>
+        /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
+        /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
+        /// <p>For more information about the value for SNI extension, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in IoT</a>.</p>
         pub fn certificate_mode(mut self, input: crate::model::CertificateMode) -> Self {
             self.certificate_mode = Some(input);
             self
         }
         /// <p>The mode of the certificate.</p>
+        /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
+        /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
+        /// <p>For more information about the value for SNI extension, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in IoT</a>.</p>
         pub fn set_certificate_mode(
             mut self,
             input: std::option::Option<crate::model::CertificateMode>,
@@ -26102,6 +26130,9 @@ pub struct CaCertificateDescription {
     pub generation_id: std::option::Option<std::string::String>,
     /// <p>When the CA certificate is valid.</p>
     pub validity: std::option::Option<crate::model::CertificateValidity>,
+    /// <p>The mode of the CA. </p>
+    /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
+    pub certificate_mode: std::option::Option<crate::model::CertificateMode>,
 }
 impl CaCertificateDescription {
     /// <p>The CA certificate ARN.</p>
@@ -26150,6 +26181,11 @@ impl CaCertificateDescription {
     pub fn validity(&self) -> std::option::Option<&crate::model::CertificateValidity> {
         self.validity.as_ref()
     }
+    /// <p>The mode of the CA. </p>
+    /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
+    pub fn certificate_mode(&self) -> std::option::Option<&crate::model::CertificateMode> {
+        self.certificate_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for CaCertificateDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26165,6 +26201,7 @@ impl std::fmt::Debug for CaCertificateDescription {
         formatter.field("customer_version", &self.customer_version);
         formatter.field("generation_id", &self.generation_id);
         formatter.field("validity", &self.validity);
+        formatter.field("certificate_mode", &self.certificate_mode);
         formatter.finish()
     }
 }
@@ -26186,6 +26223,7 @@ pub mod ca_certificate_description {
         pub(crate) customer_version: std::option::Option<i32>,
         pub(crate) generation_id: std::option::Option<std::string::String>,
         pub(crate) validity: std::option::Option<crate::model::CertificateValidity>,
+        pub(crate) certificate_mode: std::option::Option<crate::model::CertificateMode>,
     }
     impl Builder {
         /// <p>The CA certificate ARN.</p>
@@ -26328,6 +26366,21 @@ pub mod ca_certificate_description {
             self.validity = input;
             self
         }
+        /// <p>The mode of the CA. </p>
+        /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
+        pub fn certificate_mode(mut self, input: crate::model::CertificateMode) -> Self {
+            self.certificate_mode = Some(input);
+            self
+        }
+        /// <p>The mode of the CA. </p>
+        /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
+        pub fn set_certificate_mode(
+            mut self,
+            input: std::option::Option<crate::model::CertificateMode>,
+        ) -> Self {
+            self.certificate_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CaCertificateDescription`](crate::model::CaCertificateDescription).
         pub fn build(self) -> crate::model::CaCertificateDescription {
             crate::model::CaCertificateDescription {
@@ -26342,6 +26395,7 @@ pub mod ca_certificate_description {
                 customer_version: self.customer_version,
                 generation_id: self.generation_id,
                 validity: self.validity,
+                certificate_mode: self.certificate_mode,
             }
         }
     }

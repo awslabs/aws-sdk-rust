@@ -67,6 +67,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccountCustomizati
     }
 }
 
+/// Operation shape for `CreateAccountSubscription`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_account_subscription`](crate::client::Client::create_account_subscription).
+///
+/// See [`crate::client::fluent_builders::CreateAccountSubscription`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateAccountSubscription {
+    _private: (),
+}
+impl CreateAccountSubscription {
+    /// Creates a new builder-style object to manufacture [`CreateAccountSubscriptionInput`](crate::input::CreateAccountSubscriptionInput).
+    pub fn builder() -> crate::input::create_account_subscription_input::Builder {
+        crate::input::create_account_subscription_input::Builder::default()
+    }
+    /// Creates a new `CreateAccountSubscription` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateAccountSubscription {
+    type Output = std::result::Result<
+        crate::output::CreateAccountSubscriptionOutput,
+        crate::error::CreateAccountSubscriptionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_account_subscription_error(response)
+        } else {
+            crate::operation_deser::parse_create_account_subscription_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1193,6 +1227,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountSettings 
             crate::operation_deser::parse_describe_account_settings_error(response)
         } else {
             crate::operation_deser::parse_describe_account_settings_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeAccountSubscription`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_account_subscription`](crate::client::Client::describe_account_subscription).
+///
+/// See [`crate::client::fluent_builders::DescribeAccountSubscription`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeAccountSubscription {
+    _private: (),
+}
+impl DescribeAccountSubscription {
+    /// Creates a new builder-style object to manufacture [`DescribeAccountSubscriptionInput`](crate::input::DescribeAccountSubscriptionInput).
+    pub fn builder() -> crate::input::describe_account_subscription_input::Builder {
+        crate::input::describe_account_subscription_input::Builder::default()
+    }
+    /// Creates a new `DescribeAccountSubscription` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountSubscription {
+    type Output = std::result::Result<
+        crate::output::DescribeAccountSubscriptionOutput,
+        crate::error::DescribeAccountSubscriptionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_account_subscription_error(response)
+        } else {
+            crate::operation_deser::parse_describe_account_subscription_response(response)
         }
     }
 }

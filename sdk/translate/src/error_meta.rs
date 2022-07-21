@@ -11,22 +11,24 @@ pub enum Error {
     DetectedLanguageLowConfidenceException(crate::error::DetectedLanguageLowConfidenceException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
+    /// <p>The filter specified for the operation is not valid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is not valid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
+    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your request.</p>
+    /// <p>The Amazon Translate service is temporarily unavailable. Wait a bit and then retry your request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>Requested display language code is not supported.</p>
+    UnsupportedDisplayLanguageCodeException(crate::error::UnsupportedDisplayLanguageCodeException),
     /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
     /// An unhandled error occurred.
@@ -47,6 +49,7 @@ impl std::fmt::Display for Error {
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TextSizeLimitExceededException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
+            Error::UnsupportedDisplayLanguageCodeException(inner) => inner.fmt(f),
             Error::UnsupportedLanguagePairException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -246,6 +249,31 @@ where
                 crate::error::ImportTerminologyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLanguagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLanguagesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListLanguagesErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListLanguagesErrorKind::InvalidParameterValueException(inner) => {
+                    Error::InvalidParameterValueException(inner)
+                }
+                crate::error::ListLanguagesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::ListLanguagesErrorKind::UnsupportedDisplayLanguageCodeException(
+                    inner,
+                ) => Error::UnsupportedDisplayLanguageCodeException(inner),
+                crate::error::ListLanguagesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

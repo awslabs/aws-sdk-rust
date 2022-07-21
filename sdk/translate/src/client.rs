@@ -143,9 +143,9 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetParallelData::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetParallelData::set_name): <p>The name of the parallel data resource that is being retrieved.</p>
     /// - On success, responds with [`GetParallelDataOutput`](crate::output::GetParallelDataOutput) with field(s):
     ///   - [`parallel_data_properties(Option<ParallelDataProperties>)`](crate::output::GetParallelDataOutput::parallel_data_properties): <p>The properties of the parallel data resource that is being retrieved.</p>
-    ///   - [`data_location(Option<ParallelDataDataLocation>)`](crate::output::GetParallelDataOutput::data_location): <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>   <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>   <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>   <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>  </important>
-    ///   - [`auxiliary_data_location(Option<ParallelDataDataLocation>)`](crate::output::GetParallelDataOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
-    ///   - [`latest_update_attempt_auxiliary_data_location(Option<ParallelDataDataLocation>)`](crate::output::GetParallelDataOutput::latest_update_attempt_auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    ///   - [`data_location(Option<ParallelDataDataLocation>)`](crate::output::GetParallelDataOutput::data_location): <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>   <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>   <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>   <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>  </important>
+    ///   - [`auxiliary_data_location(Option<ParallelDataDataLocation>)`](crate::output::GetParallelDataOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
+    ///   - [`latest_update_attempt_auxiliary_data_location(Option<ParallelDataDataLocation>)`](crate::output::GetParallelDataOutput::latest_update_attempt_auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     /// - On failure, responds with [`SdkError<GetParallelDataError>`](crate::error::GetParallelDataError)
     pub fn get_parallel_data(&self) -> fluent_builders::GetParallelData {
         fluent_builders::GetParallelData::new(self.handle.clone())
@@ -154,11 +154,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetTerminology::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetTerminology::set_name): <p>The name of the custom terminology being retrieved.</p>
-    ///   - [`terminology_data_format(TerminologyDataFormat)`](crate::client::fluent_builders::GetTerminology::terminology_data_format) / [`set_terminology_data_format(Option<TerminologyDataFormat>)`](crate::client::fluent_builders::GetTerminology::set_terminology_data_format): <p>The data format of the custom terminology being retrieved.</p>  <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>  <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+    ///   - [`terminology_data_format(TerminologyDataFormat)`](crate::client::fluent_builders::GetTerminology::terminology_data_format) / [`set_terminology_data_format(Option<TerminologyDataFormat>)`](crate::client::fluent_builders::GetTerminology::set_terminology_data_format): <p>The data format of the custom terminology being retrieved.</p>  <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>  <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     /// - On success, responds with [`GetTerminologyOutput`](crate::output::GetTerminologyOutput) with field(s):
     ///   - [`terminology_properties(Option<TerminologyProperties>)`](crate::output::GetTerminologyOutput::terminology_properties): <p>The properties of the custom terminology being retrieved.</p>
-    ///   - [`terminology_data_location(Option<TerminologyDataLocation>)`](crate::output::GetTerminologyOutput::terminology_data_location): <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>   <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>   <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>   <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>  </important>
-    ///   - [`auxiliary_data_location(Option<TerminologyDataLocation>)`](crate::output::GetTerminologyOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    ///   - [`terminology_data_location(Option<TerminologyDataLocation>)`](crate::output::GetTerminologyOutput::terminology_data_location): <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>   <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>   <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>   <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>  </important>
+    ///   - [`auxiliary_data_location(Option<TerminologyDataLocation>)`](crate::output::GetTerminologyOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     /// - On failure, responds with [`SdkError<GetTerminologyError>`](crate::error::GetTerminologyError)
     pub fn get_terminology(&self) -> fluent_builders::GetTerminology {
         fluent_builders::GetTerminology::new(self.handle.clone())
@@ -177,6 +177,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<ImportTerminologyError>`](crate::error::ImportTerminologyError)
     pub fn import_terminology(&self) -> fluent_builders::ImportTerminology {
         fluent_builders::ImportTerminology::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListLanguages`](crate::client::fluent_builders::ListLanguages) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLanguages::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`display_language_code(DisplayLanguageCode)`](crate::client::fluent_builders::ListLanguages::display_language_code) / [`set_display_language_code(Option<DisplayLanguageCode>)`](crate::client::fluent_builders::ListLanguages::set_display_language_code): <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLanguages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLanguages::set_next_token): <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLanguages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLanguages::set_max_results): <p>The maximum number of results to return in each response.</p>
+    /// - On success, responds with [`ListLanguagesOutput`](crate::output::ListLanguagesOutput) with field(s):
+    ///   - [`languages(Option<Vec<Language>>)`](crate::output::ListLanguagesOutput::languages): <p>The list of supported languages.</p>
+    ///   - [`display_language_code(Option<DisplayLanguageCode>)`](crate::output::ListLanguagesOutput::display_language_code): <p>The language code passed in with the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLanguagesOutput::next_token): <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    /// - On failure, responds with [`SdkError<ListLanguagesError>`](crate::error::ListLanguagesError)
+    pub fn list_languages(&self) -> fluent_builders::ListLanguages {
+        fluent_builders::ListLanguages::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListParallelData`](crate::client::fluent_builders::ListParallelData) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListParallelData::into_paginator).
@@ -222,15 +237,15 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_job_name): <p>The name of the batch translation job to be performed.</p>
-    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartTextTranslationJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartTextTranslationJob::set_input_data_config): <p>Specifies the format and S3 location of the input documents for the translation job.</p>
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartTextTranslationJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartTextTranslationJob::set_input_data_config): <p>Specifies the format and location of the input documents for the translation job.</p>
     ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartTextTranslationJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartTextTranslationJob::set_output_data_config): <p>Specifies the S3 folder to which your job output will be saved. </p>
     ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
     ///   - [`source_language_code(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::source_language_code) / [`set_source_language_code(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_source_language_code): <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>  <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
     ///   - [`target_language_codes(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::target_language_codes) / [`set_target_language_codes(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_target_language_codes): <p>The language code of the output language.</p>
     ///   - [`terminology_names(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::terminology_names) / [`set_terminology_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_terminology_names): <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>  <p>This parameter accepts only one custom terminology resource.</p>  <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>  <p>For more information, see <code>how-custom-terminology</code>.</p>
     ///   - [`parallel_data_names(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::parallel_data_names) / [`set_parallel_data_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_parallel_data_names): <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>  <p>This parameter accepts only one parallel data resource.</p> <note>   <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>  </note>  <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>  <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_client_token): <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
-    ///   - [`settings(TranslationSettings)`](crate::client::fluent_builders::StartTextTranslationJob::settings) / [`set_settings(Option<TranslationSettings>)`](crate::client::fluent_builders::StartTextTranslationJob::set_settings): <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_client_token): <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
+    ///   - [`settings(TranslationSettings)`](crate::client::fluent_builders::StartTextTranslationJob::settings) / [`set_settings(Option<TranslationSettings>)`](crate::client::fluent_builders::StartTextTranslationJob::set_settings): <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
     /// - On success, responds with [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartTextTranslationJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::output::StartTextTranslationJobOutput::job_status): <p>The status of the job. Possible values include:</p>  <ul>   <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>   <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>   <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>   <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>   <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>   <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>   <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>  </ul>
@@ -254,9 +269,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::TranslateText::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::TranslateText::set_text): <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
     ///   - [`terminology_names(Vec<String>)`](crate::client::fluent_builders::TranslateText::terminology_names) / [`set_terminology_names(Option<Vec<String>>)`](crate::client::fluent_builders::TranslateText::set_terminology_names): <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
-    ///   - [`source_language_code(impl Into<String>)`](crate::client::fluent_builders::TranslateText::source_language_code) / [`set_source_language_code(Option<String>)`](crate::client::fluent_builders::TranslateText::set_source_language_code): <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>  <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
+    ///   - [`source_language_code(impl Into<String>)`](crate::client::fluent_builders::TranslateText::source_language_code) / [`set_source_language_code(Option<String>)`](crate::client::fluent_builders::TranslateText::set_source_language_code): <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>  <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>   <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>  </note>
     ///   - [`target_language_code(impl Into<String>)`](crate::client::fluent_builders::TranslateText::target_language_code) / [`set_target_language_code(Option<String>)`](crate::client::fluent_builders::TranslateText::set_target_language_code): <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    ///   - [`settings(TranslationSettings)`](crate::client::fluent_builders::TranslateText::settings) / [`set_settings(Option<TranslationSettings>)`](crate::client::fluent_builders::TranslateText::set_settings): <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+    ///   - [`settings(TranslationSettings)`](crate::client::fluent_builders::TranslateText::settings) / [`set_settings(Option<TranslationSettings>)`](crate::client::fluent_builders::TranslateText::set_settings): <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     /// - On success, responds with [`TranslateTextOutput`](crate::output::TranslateTextOutput) with field(s):
     ///   - [`translated_text(Option<String>)`](crate::output::TranslateTextOutput::translated_text): <p>The translated text.</p>
     ///   - [`source_language_code(Option<String>)`](crate::output::TranslateTextOutput::source_language_code): <p>The language code for the language of the source text.</p>
@@ -655,8 +670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data format of the custom terminology being retrieved.</p>
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
         pub fn terminology_data_format(
             mut self,
             input: crate::model::TerminologyDataFormat,
@@ -665,8 +680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data format of the custom terminology being retrieved.</p>
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
         pub fn set_terminology_data_format(
             mut self,
             input: std::option::Option<crate::model::TerminologyDataFormat>,
@@ -677,8 +692,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportTerminology`.
     ///
-    /// <p>Creates or updates a custom terminology, depending on whether or not one already exists for the given terminology name. Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen merge strategy. Currently, the only supported merge strategy is OVERWRITE, and so the imported terminology will overwrite an existing terminology of the same name.</p>
-    /// <p>If you import a terminology that overwrites an existing one, the new terminology take up to 10 minutes to fully propagate and be available for use in a translation due to cache policies with the DataPlane service that performs the translations.</p>
+    /// <p>Creates or updates a custom terminology, depending on whether one already exists for the given terminology name. Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen merge strategy. The only supported merge strategy is OVERWRITE, where the imported terminology overwrites the existing terminology of the same name.</p>
+    /// <p>If you import a terminology that overwrites an existing one, the new terminology takes up to 10 minutes to fully propagate. After that, translations have access to the new terminology.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportTerminology {
         handle: std::sync::Arc<super::Handle>,
@@ -775,6 +790,88 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::EncryptionKey>,
         ) -> Self {
             self.inner = self.inner.set_encryption_key(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListLanguages`.
+    ///
+    /// <p>Provides a list of languages (RFC-5646 codes and names) that Amazon Translate supports.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListLanguages {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_languages_input::Builder,
+    }
+    impl ListLanguages {
+        /// Creates a new `ListLanguages`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListLanguagesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListLanguagesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLanguagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLanguagesPaginator {
+            crate::paginator::ListLanguagesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+        pub fn display_language_code(mut self, input: crate::model::DisplayLanguageCode) -> Self {
+            self.inner = self.inner.display_language_code(input);
+            self
+        }
+        /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+        pub fn set_display_language_code(
+            mut self,
+            input: std::option::Option<crate::model::DisplayLanguageCode>,
+        ) -> Self {
+            self.inner = self.inner.set_display_language_code(input);
+            self
+        }
+        /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in each response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in each response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -1053,12 +1150,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
+        /// <p>Specifies the format and location of the input documents for the translation job.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
+        /// <p>Specifies the format and location of the input documents for the translation job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1174,22 +1271,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parallel_data_names(input);
             self
         }
-        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
+        /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
+        /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
             self.inner = self.inner.settings(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases. <code>StartTextTranslationJob</code> does not support the formality setting.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::TranslationSettings>,
@@ -1323,13 +1420,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
+        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+        /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+        /// </note>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_language_code(input.into());
             self
         }
         /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
+        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+        /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
+        /// </note>
         pub fn set_source_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1350,12 +1451,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_language_code(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
             self.inner = self.inner.settings(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::TranslationSettings>,

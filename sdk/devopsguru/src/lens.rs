@@ -49,6 +49,16 @@ pub(crate) fn reflens_structure_crate_output_list_anomalies_for_insight_output_n
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_anomalous_log_groups_output_next_token(
+    input: &crate::output::ListAnomalousLogGroupsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_events_output_next_token(
     input: &crate::output::ListEventsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -61,6 +71,16 @@ pub(crate) fn reflens_structure_crate_output_list_events_output_next_token(
 
 pub(crate) fn reflens_structure_crate_output_list_insights_output_next_token(
     input: &crate::output::ListInsightsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_monitored_resources_output_next_token(
+    input: &crate::output::ListMonitoredResourcesOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,

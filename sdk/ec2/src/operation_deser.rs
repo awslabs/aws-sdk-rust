@@ -674,6 +674,35 @@ pub fn parse_associate_transit_gateway_multicast_domain_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_transit_gateway_policy_table_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateTransitGatewayPolicyTableOutput,
+    crate::error::AssociateTransitGatewayPolicyTableError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::AssociateTransitGatewayPolicyTableError::unhandled)?;
+    Err(crate::error::AssociateTransitGatewayPolicyTableError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_transit_gateway_policy_table_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateTransitGatewayPolicyTableOutput,
+    crate::error::AssociateTransitGatewayPolicyTableError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::associate_transit_gateway_policy_table_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_associate_transit_gateway_policy_table(response.body().as_ref(), output).map_err(crate::error::AssociateTransitGatewayPolicyTableError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_transit_gateway_route_table_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3184,6 +3213,42 @@ pub fn parse_create_transit_gateway_peering_attachment_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_transit_gateway_policy_table_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateTransitGatewayPolicyTableOutput,
+    crate::error::CreateTransitGatewayPolicyTableError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateTransitGatewayPolicyTableError::unhandled)?;
+    Err(crate::error::CreateTransitGatewayPolicyTableError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_transit_gateway_policy_table_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateTransitGatewayPolicyTableOutput,
+    crate::error::CreateTransitGatewayPolicyTableError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::create_transit_gateway_policy_table_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_policy_table(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateTransitGatewayPolicyTableError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_prefix_list_reference_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3278,6 +3343,36 @@ pub fn parse_create_transit_gateway_route_table_response(
                 output,
             )
             .map_err(crate::error::CreateTransitGatewayRouteTableError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_transit_gateway_route_table_announcement_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateTransitGatewayRouteTableAnnouncementOutput,
+    crate::error::CreateTransitGatewayRouteTableAnnouncementError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateTransitGatewayRouteTableAnnouncementError::unhandled)?;
+    Err(crate::error::CreateTransitGatewayRouteTableAnnouncementError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_transit_gateway_route_table_announcement_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateTransitGatewayRouteTableAnnouncementOutput,
+    crate::error::CreateTransitGatewayRouteTableAnnouncementError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::create_transit_gateway_route_table_announcement_output::Builder::default(
+            );
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_route_table_announcement(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayRouteTableAnnouncementError::unhandled)?;
         output.build()
     })
 }
@@ -5011,6 +5106,42 @@ pub fn parse_delete_transit_gateway_peering_attachment_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_transit_gateway_policy_table_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteTransitGatewayPolicyTableOutput,
+    crate::error::DeleteTransitGatewayPolicyTableError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteTransitGatewayPolicyTableError::unhandled)?;
+    Err(crate::error::DeleteTransitGatewayPolicyTableError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_transit_gateway_policy_table_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteTransitGatewayPolicyTableOutput,
+    crate::error::DeleteTransitGatewayPolicyTableError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_transit_gateway_policy_table_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_policy_table(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteTransitGatewayPolicyTableError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_prefix_list_reference_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5105,6 +5236,36 @@ pub fn parse_delete_transit_gateway_route_table_response(
                 output,
             )
             .map_err(crate::error::DeleteTransitGatewayRouteTableError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_transit_gateway_route_table_announcement_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput,
+    crate::error::DeleteTransitGatewayRouteTableAnnouncementError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteTransitGatewayRouteTableAnnouncementError::unhandled)?;
+    Err(crate::error::DeleteTransitGatewayRouteTableAnnouncementError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_transit_gateway_route_table_announcement_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput,
+    crate::error::DeleteTransitGatewayRouteTableAnnouncementError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_transit_gateway_route_table_announcement_output::Builder::default(
+            );
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_route_table_announcement(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayRouteTableAnnouncementError::unhandled)?;
         output.build()
     })
 }
@@ -9162,6 +9323,62 @@ pub fn parse_describe_transit_gateway_peering_attachments_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_transit_gateway_policy_tables_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTransitGatewayPolicyTablesOutput,
+    crate::error::DescribeTransitGatewayPolicyTablesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeTransitGatewayPolicyTablesError::unhandled)?;
+    Err(crate::error::DescribeTransitGatewayPolicyTablesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_transit_gateway_policy_tables_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTransitGatewayPolicyTablesOutput,
+    crate::error::DescribeTransitGatewayPolicyTablesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_transit_gateway_policy_tables_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_policy_tables(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayPolicyTablesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_transit_gateway_route_table_announcements_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput,
+    crate::error::DescribeTransitGatewayRouteTableAnnouncementsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeTransitGatewayRouteTableAnnouncementsError::unhandled)?;
+    Err(crate::error::DescribeTransitGatewayRouteTableAnnouncementsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_transit_gateway_route_table_announcements_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput,
+    crate::error::DescribeTransitGatewayRouteTableAnnouncementsError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::describe_transit_gateway_route_table_announcements_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_route_table_announcements(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayRouteTableAnnouncementsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_route_tables_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10510,6 +10727,35 @@ pub fn parse_disassociate_transit_gateway_multicast_domain_response(
             crate::output::disassociate_transit_gateway_multicast_domain_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disassociate_transit_gateway_multicast_domain(response.body().as_ref(), output).map_err(crate::error::DisassociateTransitGatewayMulticastDomainError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_transit_gateway_policy_table_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateTransitGatewayPolicyTableOutput,
+    crate::error::DisassociateTransitGatewayPolicyTableError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DisassociateTransitGatewayPolicyTableError::unhandled)?;
+    Err(crate::error::DisassociateTransitGatewayPolicyTableError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_transit_gateway_policy_table_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateTransitGatewayPolicyTableOutput,
+    crate::error::DisassociateTransitGatewayPolicyTableError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::disassociate_transit_gateway_policy_table_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_disassociate_transit_gateway_policy_table(response.body().as_ref(), output).map_err(crate::error::DisassociateTransitGatewayPolicyTableError::unhandled)?;
         output.build()
     })
 }
@@ -12003,6 +12249,64 @@ pub fn parse_get_transit_gateway_multicast_domain_associations_response(
         #[allow(unused_mut)]let mut output = crate::output::get_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayMulticastDomainAssociationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_transit_gateway_policy_table_associations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetTransitGatewayPolicyTableAssociationsOutput,
+    crate::error::GetTransitGatewayPolicyTableAssociationsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetTransitGatewayPolicyTableAssociationsError::unhandled)?;
+    Err(crate::error::GetTransitGatewayPolicyTableAssociationsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_transit_gateway_policy_table_associations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetTransitGatewayPolicyTableAssociationsOutput,
+    crate::error::GetTransitGatewayPolicyTableAssociationsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_transit_gateway_policy_table_associations_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_policy_table_associations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayPolicyTableAssociationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_transit_gateway_policy_table_entries_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetTransitGatewayPolicyTableEntriesOutput,
+    crate::error::GetTransitGatewayPolicyTableEntriesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetTransitGatewayPolicyTableEntriesError::unhandled)?;
+    Err(crate::error::GetTransitGatewayPolicyTableEntriesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_transit_gateway_policy_table_entries_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetTransitGatewayPolicyTableEntriesOutput,
+    crate::error::GetTransitGatewayPolicyTableEntriesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_transit_gateway_policy_table_entries_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_policy_table_entries(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayPolicyTableEntriesError::unhandled)?;
         output.build()
     })
 }

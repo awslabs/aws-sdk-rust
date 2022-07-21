@@ -2431,6 +2431,15 @@ where
                                     )?,
                                 );
                             }
+                            "ExecutionRoleArn" => {
+                                builder = builder.set_execution_role_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -8749,6 +8758,14 @@ where
                             }
                             "SizeInGB" => {
                                 builder = builder.set_size_in_gb(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "Throughput" => {
+                                builder = builder.set_throughput(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?

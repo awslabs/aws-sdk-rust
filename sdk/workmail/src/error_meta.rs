@@ -196,6 +196,31 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateAvailabilityConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateAvailabilityConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateAvailabilityConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::CreateAvailabilityConfigurationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::CreateAvailabilityConfigurationErrorKind::NameAvailabilityException(inner) => Error::NameAvailabilityException(inner),
+                crate::error::CreateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::CreateAvailabilityConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::CreateAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -359,6 +384,28 @@ where
                 }
                 crate::error::DeleteAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteAvailabilityConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteAvailabilityConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteAvailabilityConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::DeleteAvailabilityConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::DeleteAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1066,6 +1113,28 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListAvailabilityConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListAvailabilityConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListAvailabilityConfigurationsErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::ListAvailabilityConfigurationsErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::ListAvailabilityConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGroupMembersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1661,6 +1730,26 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TestAvailabilityConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::TestAvailabilityConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::TestAvailabilityConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::TestAvailabilityConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::TestAvailabilityConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::TestAvailabilityConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::TestAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1673,6 +1762,30 @@ where
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateAvailabilityConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateAvailabilityConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateAvailabilityConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::UpdateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::UpdateAvailabilityConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::UpdateAvailabilityConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

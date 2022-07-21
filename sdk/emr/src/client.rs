@@ -122,6 +122,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`job_flow_id(impl Into<String>)`](crate::client::fluent_builders::AddJobFlowSteps::job_flow_id) / [`set_job_flow_id(Option<String>)`](crate::client::fluent_builders::AddJobFlowSteps::set_job_flow_id): <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
     ///   - [`steps(Vec<StepConfig>)`](crate::client::fluent_builders::AddJobFlowSteps::steps) / [`set_steps(Option<Vec<StepConfig>>)`](crate::client::fluent_builders::AddJobFlowSteps::set_steps): <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
+    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::AddJobFlowSteps::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::AddJobFlowSteps::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>  <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
     /// - On success, responds with [`AddJobFlowStepsOutput`](crate::output::AddJobFlowStepsOutput) with field(s):
     ///   - [`step_ids(Option<Vec<String>>)`](crate::output::AddJobFlowStepsOutput::step_ids): <p>The identifiers of the list of steps added to the job flow.</p>
     /// - On failure, responds with [`SdkError<AddJobFlowStepsError>`](crate::error::AddJobFlowStepsError)
@@ -986,6 +987,21 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
         ) -> Self {
             self.inner = self.inner.set_steps(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+        /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+        /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+        pub fn set_execution_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_execution_role_arn(input);
             self
         }
     }

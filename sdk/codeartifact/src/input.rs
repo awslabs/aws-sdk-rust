@@ -46,7 +46,6 @@ pub mod associate_external_connection_input {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
-        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -60,7 +59,6 @@ pub mod associate_external_connection_input {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
-        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -250,12 +248,12 @@ pub mod copy_package_versions_input {
             self.domain_owner = input;
             self
         }
-        /// <p> The name of the repository that contains the package versions to copy. </p>
+        /// <p> The name of the repository that contains the package versions to be copied. </p>
         pub fn source_repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_repository = Some(input.into());
             self
         }
-        /// <p> The name of the repository that contains the package versions to copy. </p>
+        /// <p> The name of the repository that contains the package versions to be copied. </p>
         pub fn set_source_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -276,12 +274,12 @@ pub mod copy_package_versions_input {
             self.destination_repository = input;
             self
         }
-        /// <p> The format of the package that is copied. </p>
+        /// <p> The format of the package versions to be copied. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the package that is copied. </p>
+        /// <p> The format of the package versions to be copied. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -289,32 +287,32 @@ pub mod copy_package_versions_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p> The name of the package that is copied. </p>
+        /// <p> The name of the package that contains the versions to be copied. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.package = Some(input.into());
             self
         }
-        /// <p> The name of the package that is copied. </p>
+        /// <p> The name of the package that contains the versions to be copied. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package = input;
             self
@@ -323,7 +321,7 @@ pub mod copy_package_versions_input {
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p> The versions of the package to copy. </p> <note>
+        /// <p> The versions of the package to be copied. </p> <note>
         /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
@@ -332,7 +330,7 @@ pub mod copy_package_versions_input {
             self.versions = Some(v);
             self
         }
-        /// <p> The versions of the package to copy. </p> <note>
+        /// <p> The versions of the package to be copied. </p> <note>
         /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
         pub fn set_versions(
@@ -1358,21 +1356,21 @@ pub mod delete_package_versions_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -2080,6 +2078,229 @@ impl DescribeDomainInput {
     }
 }
 
+/// See [`DescribePackageInput`](crate::input::DescribePackageInput).
+pub mod describe_package_input {
+
+    /// A builder for [`DescribePackageInput`](crate::input::DescribePackageInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) domain_owner: std::option::Option<std::string::String>,
+        pub(crate) repository: std::option::Option<std::string::String>,
+        pub(crate) format: std::option::Option<crate::model::PackageFormat>,
+        pub(crate) namespace: std::option::Option<std::string::String>,
+        pub(crate) package: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the domain that contains the repository that contains the package.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        /// <p>The name of the domain that contains the repository that contains the package.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_owner = Some(input.into());
+            self
+        }
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_owner = input;
+            self
+        }
+        /// <p>The name of the repository that contains the requested package. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository = Some(input.into());
+            self
+        }
+        /// <p>The name of the repository that contains the requested package. </p>
+        pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository = input;
+            self
+        }
+        /// <p>A format that specifies the type of the requested package.</p>
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>A format that specifies the type of the requested package.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
+        }
+        /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// <p>The name of the requested package.</p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.package = Some(input.into());
+            self
+        }
+        /// <p>The name of the requested package.</p>
+        pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.package = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribePackageInput`](crate::input::DescribePackageInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribePackageInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribePackageInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribePackageInputOperationOutputAlias = crate::operation::DescribePackage;
+#[doc(hidden)]
+pub type DescribePackageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribePackageInput {
+    /// Consumes the builder and constructs an Operation<[`DescribePackage`](crate::operation::DescribePackage)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribePackage,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribePackageInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/package").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::DescribePackageInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_36) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_36));
+                }
+                if let Some(inner_37) = &_input.domain_owner {
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_37),
+                    );
+                }
+                if let Some(inner_38) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_38));
+                }
+                if let Some(inner_39) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_39));
+                }
+                if let Some(inner_40) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_40));
+                }
+                if let Some(inner_41) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_41));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribePackageInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribePackage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribePackage",
+            "codeartifact",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribePackageInput`](crate::input::DescribePackageInput).
+    pub fn builder() -> crate::input::describe_package_input::Builder {
+        crate::input::describe_package_input::Builder::default()
+    }
+}
+
 /// See [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
 pub mod describe_package_version_input {
 
@@ -2138,21 +2359,21 @@ pub mod describe_package_version_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -2230,29 +2451,29 @@ impl DescribePackageVersionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_36));
+                if let Some(inner_42) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_42));
                 }
-                if let Some(inner_37) = &_input.domain_owner {
+                if let Some(inner_43) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_37),
+                        &aws_smithy_http::query::fmt_string(&inner_43),
                     );
                 }
-                if let Some(inner_38) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_38));
+                if let Some(inner_44) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_44));
                 }
-                if let Some(inner_39) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_39));
+                if let Some(inner_45) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_45));
                 }
-                if let Some(inner_40) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_40));
+                if let Some(inner_46) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_46));
                 }
-                if let Some(inner_41) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_41));
+                if let Some(inner_47) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_47));
                 }
-                if let Some(inner_42) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_42));
+                if let Some(inner_48) = &_input.package_version {
+                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_48));
                 }
                 Ok(())
             }
@@ -2407,17 +2628,17 @@ impl DescribeRepositoryInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_43) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_43));
+                if let Some(inner_49) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_49));
                 }
-                if let Some(inner_44) = &_input.domain_owner {
+                if let Some(inner_50) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_44),
+                        &aws_smithy_http::query::fmt_string(&inner_50),
                     );
                 }
-                if let Some(inner_45) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_45));
+                if let Some(inner_51) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_51));
                 }
                 Ok(())
             }
@@ -2592,22 +2813,22 @@ impl DisassociateExternalConnectionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_46) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_46));
+                if let Some(inner_52) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_52));
                 }
-                if let Some(inner_47) = &_input.domain_owner {
+                if let Some(inner_53) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_47),
+                        &aws_smithy_http::query::fmt_string(&inner_53),
                     );
                 }
-                if let Some(inner_48) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_48));
+                if let Some(inner_54) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_54));
                 }
-                if let Some(inner_49) = &_input.external_connection {
+                if let Some(inner_55) = &_input.external_connection {
                     query.push_kv(
                         "external-connection",
-                        &aws_smithy_http::query::fmt_string(&inner_49),
+                        &aws_smithy_http::query::fmt_string(&inner_55),
                     );
                 }
                 Ok(())
@@ -2739,21 +2960,21 @@ pub mod dispose_package_versions_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -2877,26 +3098,26 @@ impl DisposePackageVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_50) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_50));
+                if let Some(inner_56) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_56));
                 }
-                if let Some(inner_51) = &_input.domain_owner {
+                if let Some(inner_57) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_51),
+                        &aws_smithy_http::query::fmt_string(&inner_57),
                     );
                 }
-                if let Some(inner_52) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_52));
+                if let Some(inner_58) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_58));
                 }
-                if let Some(inner_53) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_53));
+                if let Some(inner_59) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_59));
                 }
-                if let Some(inner_54) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_54));
+                if let Some(inner_60) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_60));
                 }
-                if let Some(inner_55) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_55));
+                if let Some(inner_61) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_61));
                 }
                 Ok(())
             }
@@ -3067,19 +3288,19 @@ impl GetAuthorizationTokenInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_56) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_56));
+                if let Some(inner_62) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_62));
                 }
-                if let Some(inner_57) = &_input.domain_owner {
+                if let Some(inner_63) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_57),
+                        &aws_smithy_http::query::fmt_string(&inner_63),
                     );
                 }
-                if let Some(inner_58) = &_input.duration_seconds {
+                if let Some(inner_64) = &_input.duration_seconds {
                     query.push_kv(
                         "duration",
-                        aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
                     );
                 }
                 Ok(())
@@ -3226,13 +3447,13 @@ impl GetDomainPermissionsPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_59) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_59));
+                if let Some(inner_65) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_65));
                 }
-                if let Some(inner_60) = &_input.domain_owner {
+                if let Some(inner_66) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_60),
+                        &aws_smithy_http::query::fmt_string(&inner_66),
                     );
                 }
                 Ok(())
@@ -3362,21 +3583,21 @@ pub mod get_package_version_asset_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -3479,35 +3700,35 @@ impl GetPackageVersionAssetInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_61) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_61));
+                if let Some(inner_67) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_67));
                 }
-                if let Some(inner_62) = &_input.domain_owner {
+                if let Some(inner_68) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_62),
+                        &aws_smithy_http::query::fmt_string(&inner_68),
                     );
                 }
-                if let Some(inner_63) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_63));
+                if let Some(inner_69) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_69));
                 }
-                if let Some(inner_64) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_64));
+                if let Some(inner_70) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_70));
                 }
-                if let Some(inner_65) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_65));
+                if let Some(inner_71) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_71));
                 }
-                if let Some(inner_66) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_66));
+                if let Some(inner_72) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_72));
                 }
-                if let Some(inner_67) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_67));
+                if let Some(inner_73) = &_input.package_version {
+                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_73));
                 }
-                if let Some(inner_68) = &_input.asset {
-                    query.push_kv("asset", &aws_smithy_http::query::fmt_string(&inner_68));
+                if let Some(inner_74) = &_input.asset {
+                    query.push_kv("asset", &aws_smithy_http::query::fmt_string(&inner_74));
                 }
-                if let Some(inner_69) = &_input.package_version_revision {
-                    query.push_kv("revision", &aws_smithy_http::query::fmt_string(&inner_69));
+                if let Some(inner_75) = &_input.package_version_revision {
+                    query.push_kv("revision", &aws_smithy_http::query::fmt_string(&inner_75));
                 }
                 Ok(())
             }
@@ -3621,16 +3842,12 @@ pub mod get_package_version_readme_input {
             self.repository = input;
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-        /// </note>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-        /// </note>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3638,21 +3855,21 @@ pub mod get_package_version_readme_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -3733,29 +3950,29 @@ impl GetPackageVersionReadmeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_70) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_70));
+                if let Some(inner_76) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_76));
                 }
-                if let Some(inner_71) = &_input.domain_owner {
+                if let Some(inner_77) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_71),
+                        &aws_smithy_http::query::fmt_string(&inner_77),
                     );
                 }
-                if let Some(inner_72) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_72));
+                if let Some(inner_78) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_78));
                 }
-                if let Some(inner_73) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_73));
+                if let Some(inner_79) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_79));
                 }
-                if let Some(inner_74) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_74));
+                if let Some(inner_80) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_80));
                 }
-                if let Some(inner_75) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_75));
+                if let Some(inner_81) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_81));
                 }
-                if let Some(inner_76) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_76));
+                if let Some(inner_82) = &_input.package_version {
+                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_82));
                 }
                 Ok(())
             }
@@ -3925,20 +4142,20 @@ impl GetRepositoryEndpointInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_77) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_77));
+                if let Some(inner_83) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_83));
                 }
-                if let Some(inner_78) = &_input.domain_owner {
+                if let Some(inner_84) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_78),
+                        &aws_smithy_http::query::fmt_string(&inner_84),
                     );
                 }
-                if let Some(inner_79) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_79));
+                if let Some(inner_85) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_85));
                 }
-                if let Some(inner_80) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_80));
+                if let Some(inner_86) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_86));
                 }
                 Ok(())
             }
@@ -4098,17 +4315,17 @@ impl GetRepositoryPermissionsPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_81) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_81));
+                if let Some(inner_87) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_87));
                 }
-                if let Some(inner_82) = &_input.domain_owner {
+                if let Some(inner_88) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_82),
+                        &aws_smithy_http::query::fmt_string(&inner_88),
                     );
                 }
-                if let Some(inner_83) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_83));
+                if let Some(inner_89) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_89));
                 }
                 Ok(())
             }
@@ -4338,14 +4555,16 @@ pub mod list_packages_input {
         pub(crate) package_prefix: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) publish: std::option::Option<crate::model::AllowPublish>,
+        pub(crate) upstream: std::option::Option<crate::model::AllowUpstream>,
     }
     impl Builder {
-        /// <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
+        /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
         }
-        /// <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
+        /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -4360,22 +4579,22 @@ pub mod list_packages_input {
             self.domain_owner = input;
             self
         }
-        /// <p> The name of the repository from which packages are to be listed. </p>
+        /// <p> The name of the repository that contains the requested packages. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository = Some(input.into());
             self
         }
-        /// <p> The name of the repository from which packages are to be listed. </p>
+        /// <p> The name of the repository that contains the requested packages. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.repository = input;
             self
         }
-        /// <p> The format of the packages. </p>
+        /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the packages. </p>
+        /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -4383,32 +4602,32 @@ pub mod list_packages_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+        /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
         pub fn package_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.package_prefix = Some(input.into());
             self
         }
-        /// <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+        /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
         pub fn set_package_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4436,6 +4655,32 @@ pub mod list_packages_input {
             self.next_token = input;
             self
         }
+        /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+        pub fn publish(mut self, input: crate::model::AllowPublish) -> Self {
+            self.publish = Some(input);
+            self
+        }
+        /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+        pub fn set_publish(
+            mut self,
+            input: std::option::Option<crate::model::AllowPublish>,
+        ) -> Self {
+            self.publish = input;
+            self
+        }
+        /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+        pub fn upstream(mut self, input: crate::model::AllowUpstream) -> Self {
+            self.upstream = Some(input);
+            self
+        }
+        /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+        pub fn set_upstream(
+            mut self,
+            input: std::option::Option<crate::model::AllowUpstream>,
+        ) -> Self {
+            self.upstream = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPackagesInput`](crate::input::ListPackagesInput).
         pub fn build(
             self,
@@ -4450,6 +4695,8 @@ pub mod list_packages_input {
                 package_prefix: self.package_prefix,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                publish: self.publish,
+                upstream: self.upstream,
             })
         }
     }
@@ -4486,38 +4733,44 @@ impl ListPackagesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_84) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_84));
+                if let Some(inner_90) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_90));
                 }
-                if let Some(inner_85) = &_input.domain_owner {
+                if let Some(inner_91) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_85),
+                        &aws_smithy_http::query::fmt_string(&inner_91),
                     );
                 }
-                if let Some(inner_86) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_86));
+                if let Some(inner_92) = &_input.repository {
+                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_92));
                 }
-                if let Some(inner_87) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_87));
+                if let Some(inner_93) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_93));
                 }
-                if let Some(inner_88) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_88));
+                if let Some(inner_94) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_94));
                 }
-                if let Some(inner_89) = &_input.package_prefix {
+                if let Some(inner_95) = &_input.package_prefix {
                     query.push_kv(
                         "package-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_89),
+                        &aws_smithy_http::query::fmt_string(&inner_95),
                     );
                 }
-                if let Some(inner_90) = &_input.max_results {
+                if let Some(inner_96) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_90).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_96).encode(),
                     );
                 }
-                if let Some(inner_91) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_91));
+                if let Some(inner_97) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_97));
+                }
+                if let Some(inner_98) = &_input.publish {
+                    query.push_kv("publish", &aws_smithy_http::query::fmt_string(&inner_98));
+                }
+                if let Some(inner_99) = &_input.upstream {
+                    query.push_kv("upstream", &aws_smithy_http::query::fmt_string(&inner_99));
                 }
                 Ok(())
             }
@@ -4623,22 +4876,22 @@ pub mod list_package_version_assets_input {
             self.domain_owner = input;
             self
         }
-        /// <p> The name of the repository that contains the package that contains the returned package version assets. </p>
+        /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository = Some(input.into());
             self
         }
-        /// <p> The name of the repository that contains the package that contains the returned package version assets. </p>
+        /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.repository = input;
             self
         }
-        /// <p> The format of the package that contains the returned package version assets. </p>
+        /// <p> The format of the package that contains the requested package version assets. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the package that contains the returned package version assets. </p>
+        /// <p> The format of the package that contains the requested package version assets. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -4646,32 +4899,32 @@ pub mod list_package_version_assets_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p> The name of the package that contains the returned package version assets. </p>
+        /// <p> The name of the package that contains the requested package version assets. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.package = Some(input.into());
             self
         }
-        /// <p> The name of the package that contains the returned package version assets. </p>
+        /// <p> The name of the package that contains the requested package version assets. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package = input;
             self
@@ -4763,40 +5016,43 @@ impl ListPackageVersionAssetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_92) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_92));
+                if let Some(inner_100) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_100));
                 }
-                if let Some(inner_93) = &_input.domain_owner {
+                if let Some(inner_101) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_93),
+                        &aws_smithy_http::query::fmt_string(&inner_101),
                     );
                 }
-                if let Some(inner_94) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_94));
+                if let Some(inner_102) = &_input.repository {
+                    query.push_kv(
+                        "repository",
+                        &aws_smithy_http::query::fmt_string(&inner_102),
+                    );
                 }
-                if let Some(inner_95) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_95));
+                if let Some(inner_103) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_103));
                 }
-                if let Some(inner_96) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_96));
+                if let Some(inner_104) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_104));
                 }
-                if let Some(inner_97) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_97));
+                if let Some(inner_105) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_105));
                 }
-                if let Some(inner_98) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_98));
+                if let Some(inner_106) = &_input.package_version {
+                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_106));
                 }
-                if let Some(inner_99) = &_input.max_results {
+                if let Some(inner_107) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_99).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_107).encode(),
                     );
                 }
-                if let Some(inner_100) = &_input.next_token {
+                if let Some(inner_108) = &_input.next_token {
                     query.push_kv(
                         "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_100),
+                        &aws_smithy_http::query::fmt_string(&inner_108),
                     );
                 }
                 Ok(())
@@ -4925,21 +5181,21 @@ pub mod list_package_version_dependencies_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -5033,37 +5289,37 @@ impl ListPackageVersionDependenciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_101) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_101));
+                if let Some(inner_109) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_109));
                 }
-                if let Some(inner_102) = &_input.domain_owner {
+                if let Some(inner_110) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_102),
+                        &aws_smithy_http::query::fmt_string(&inner_110),
                     );
                 }
-                if let Some(inner_103) = &_input.repository {
+                if let Some(inner_111) = &_input.repository {
                     query.push_kv(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_103),
+                        &aws_smithy_http::query::fmt_string(&inner_111),
                     );
                 }
-                if let Some(inner_104) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_104));
+                if let Some(inner_112) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_112));
                 }
-                if let Some(inner_105) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_105));
+                if let Some(inner_113) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_113));
                 }
-                if let Some(inner_106) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_106));
+                if let Some(inner_114) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_114));
                 }
-                if let Some(inner_107) = &_input.package_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_107));
+                if let Some(inner_115) = &_input.package_version {
+                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_115));
                 }
-                if let Some(inner_108) = &_input.next_token {
+                if let Some(inner_116) = &_input.next_token {
                     query.push_kv(
                         "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_108),
+                        &aws_smithy_http::query::fmt_string(&inner_116),
                     );
                 }
                 Ok(())
@@ -5149,14 +5405,15 @@ pub mod list_package_versions_input {
         pub(crate) sort_by: std::option::Option<crate::model::PackageVersionSortType>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) origin_type: std::option::Option<crate::model::PackageVersionOriginType>,
     }
     impl Builder {
-        /// <p> The name of the domain that contains the repository that contains the returned package versions. </p>
+        /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
         }
-        /// <p> The name of the domain that contains the repository that contains the returned package versions. </p>
+        /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -5171,22 +5428,22 @@ pub mod list_package_versions_input {
             self.domain_owner = input;
             self
         }
-        /// <p> The name of the repository that contains the package. </p>
+        /// <p> The name of the repository that contains the requested package versions. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository = Some(input.into());
             self
         }
-        /// <p> The name of the repository that contains the package. </p>
+        /// <p> The name of the repository that contains the requested package versions. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.repository = input;
             self
         }
-        /// <p> The format of the returned packages. </p>
+        /// <p> The format of the returned package versions. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the returned packages. </p>
+        /// <p> The format of the returned package versions. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -5194,42 +5451,42 @@ pub mod list_package_versions_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
         /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
         /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p> The name of the package for which you want to return a list of package versions. </p>
+        /// <p> The name of the package for which you want to request package versions. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.package = Some(input.into());
             self
         }
-        /// <p> The name of the package for which you want to return a list of package versions. </p>
+        /// <p> The name of the package for which you want to request package versions. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package = input;
             self
         }
-        /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
+        /// <p> A string that filters the requested package versions by status. </p>
         pub fn status(mut self, input: crate::model::PackageVersionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
+        /// <p> A string that filters the requested package versions by status. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -5237,12 +5494,12 @@ pub mod list_package_versions_input {
             self.status = input;
             self
         }
-        /// <p> How to sort the returned list of package versions. </p>
+        /// <p> How to sort the requested list of package versions. </p>
         pub fn sort_by(mut self, input: crate::model::PackageVersionSortType) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p> How to sort the returned list of package versions. </p>
+        /// <p> How to sort the requested list of package versions. </p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::PackageVersionSortType>,
@@ -5270,6 +5527,19 @@ pub mod list_package_versions_input {
             self.next_token = input;
             self
         }
+        /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
+        pub fn origin_type(mut self, input: crate::model::PackageVersionOriginType) -> Self {
+            self.origin_type = Some(input);
+            self
+        }
+        /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
+        pub fn set_origin_type(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionOriginType>,
+        ) -> Self {
+            self.origin_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput).
         pub fn build(
             self,
@@ -5286,6 +5556,7 @@ pub mod list_package_versions_input {
                 sort_by: self.sort_by,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                origin_type: self.origin_type,
             })
         }
     }
@@ -5322,46 +5593,52 @@ impl ListPackageVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_109) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_109));
+                if let Some(inner_117) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_117));
                 }
-                if let Some(inner_110) = &_input.domain_owner {
+                if let Some(inner_118) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_110),
+                        &aws_smithy_http::query::fmt_string(&inner_118),
                     );
                 }
-                if let Some(inner_111) = &_input.repository {
+                if let Some(inner_119) = &_input.repository {
                     query.push_kv(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_111),
+                        &aws_smithy_http::query::fmt_string(&inner_119),
                     );
                 }
-                if let Some(inner_112) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_112));
+                if let Some(inner_120) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_120));
                 }
-                if let Some(inner_113) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_113));
+                if let Some(inner_121) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_121));
                 }
-                if let Some(inner_114) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_114));
+                if let Some(inner_122) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_122));
                 }
-                if let Some(inner_115) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_115));
+                if let Some(inner_123) = &_input.status {
+                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_123));
                 }
-                if let Some(inner_116) = &_input.sort_by {
-                    query.push_kv("sortBy", &aws_smithy_http::query::fmt_string(&inner_116));
+                if let Some(inner_124) = &_input.sort_by {
+                    query.push_kv("sortBy", &aws_smithy_http::query::fmt_string(&inner_124));
                 }
-                if let Some(inner_117) = &_input.max_results {
+                if let Some(inner_125) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_117).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_125).encode(),
                     );
                 }
-                if let Some(inner_118) = &_input.next_token {
+                if let Some(inner_126) = &_input.next_token {
                     query.push_kv(
                         "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_118),
+                        &aws_smithy_http::query::fmt_string(&inner_126),
+                    );
+                }
+                if let Some(inner_127) = &_input.origin_type {
+                    query.push_kv(
+                        "originType",
+                        &aws_smithy_http::query::fmt_string(&inner_127),
                     );
                 }
                 Ok(())
@@ -5520,22 +5797,22 @@ impl ListRepositoriesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_119) = &_input.repository_prefix {
+                if let Some(inner_128) = &_input.repository_prefix {
                     query.push_kv(
                         "repository-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_119),
+                        &aws_smithy_http::query::fmt_string(&inner_128),
                     );
                 }
-                if let Some(inner_120) = &_input.max_results {
+                if let Some(inner_129) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_120).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_129).encode(),
                     );
                 }
-                if let Some(inner_121) = &_input.next_token {
+                if let Some(inner_130) = &_input.next_token {
                     query.push_kv(
                         "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_121),
+                        &aws_smithy_http::query::fmt_string(&inner_130),
                     );
                 }
                 Ok(())
@@ -5736,37 +6013,37 @@ impl ListRepositoriesInDomainInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_122) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_122));
+                if let Some(inner_131) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_131));
                 }
-                if let Some(inner_123) = &_input.domain_owner {
+                if let Some(inner_132) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_123),
+                        &aws_smithy_http::query::fmt_string(&inner_132),
                     );
                 }
-                if let Some(inner_124) = &_input.administrator_account {
+                if let Some(inner_133) = &_input.administrator_account {
                     query.push_kv(
                         "administrator-account",
-                        &aws_smithy_http::query::fmt_string(&inner_124),
+                        &aws_smithy_http::query::fmt_string(&inner_133),
                     );
                 }
-                if let Some(inner_125) = &_input.repository_prefix {
+                if let Some(inner_134) = &_input.repository_prefix {
                     query.push_kv(
                         "repository-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_125),
+                        &aws_smithy_http::query::fmt_string(&inner_134),
                     );
                 }
-                if let Some(inner_126) = &_input.max_results {
+                if let Some(inner_135) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_126).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
                     );
                 }
-                if let Some(inner_127) = &_input.next_token {
+                if let Some(inner_136) = &_input.next_token {
                     query.push_kv(
                         "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_127),
+                        &aws_smithy_http::query::fmt_string(&inner_136),
                     );
                 }
                 Ok(())
@@ -5898,10 +6175,10 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_128) = &_input.resource_arn {
+                if let Some(inner_137) = &_input.resource_arn {
                     query.push_kv(
                         "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_128),
+                        &aws_smithy_http::query::fmt_string(&inner_137),
                     );
                 }
                 Ok(())
@@ -6150,6 +6427,266 @@ impl PutDomainPermissionsPolicyInput {
     }
 }
 
+/// See [`PutPackageOriginConfigurationInput`](crate::input::PutPackageOriginConfigurationInput).
+pub mod put_package_origin_configuration_input {
+
+    /// A builder for [`PutPackageOriginConfigurationInput`](crate::input::PutPackageOriginConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) domain_owner: std::option::Option<std::string::String>,
+        pub(crate) repository: std::option::Option<std::string::String>,
+        pub(crate) format: std::option::Option<crate::model::PackageFormat>,
+        pub(crate) namespace: std::option::Option<std::string::String>,
+        pub(crate) package: std::option::Option<std::string::String>,
+        pub(crate) restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
+    }
+    impl Builder {
+        /// <p>The name of the domain that contains the repository that contains the package.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        /// <p>The name of the domain that contains the repository that contains the package.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_owner = Some(input.into());
+            self
+        }
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_owner = input;
+            self
+        }
+        /// <p>The name of the repository that contains the package.</p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository = Some(input.into());
+            self
+        }
+        /// <p>The name of the repository that contains the package.</p>
+        pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository = input;
+            self
+        }
+        /// <p>A format that specifies the type of the package to be updated.</p>
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>A format that specifies the type of the package to be updated.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
+        }
+        /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// </ul>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// <p>The name of the package to be updated.</p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.package = Some(input.into());
+            self
+        }
+        /// <p>The name of the package to be updated.</p>
+        pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.package = input;
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
+        /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
+        pub fn restrictions(mut self, input: crate::model::PackageOriginRestrictions) -> Self {
+            self.restrictions = Some(input);
+            self
+        }
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
+        /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
+        pub fn set_restrictions(
+            mut self,
+            input: std::option::Option<crate::model::PackageOriginRestrictions>,
+        ) -> Self {
+            self.restrictions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutPackageOriginConfigurationInput`](crate::input::PutPackageOriginConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PutPackageOriginConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutPackageOriginConfigurationInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                restrictions: self.restrictions,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutPackageOriginConfigurationInputOperationOutputAlias =
+    crate::operation::PutPackageOriginConfiguration;
+#[doc(hidden)]
+pub type PutPackageOriginConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl PutPackageOriginConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`PutPackageOriginConfiguration`](crate::operation::PutPackageOriginConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutPackageOriginConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutPackageOriginConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/package").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::PutPackageOriginConfigurationInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_138) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_138));
+                }
+                if let Some(inner_139) = &_input.domain_owner {
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_139),
+                    );
+                }
+                if let Some(inner_140) = &_input.repository {
+                    query.push_kv(
+                        "repository",
+                        &aws_smithy_http::query::fmt_string(&inner_140),
+                    );
+                }
+                if let Some(inner_141) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_141));
+                }
+                if let Some(inner_142) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_142));
+                }
+                if let Some(inner_143) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_143));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutPackageOriginConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_package_origin_configuration(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutPackageOriginConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutPackageOriginConfiguration",
+            "codeartifact",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`PutPackageOriginConfigurationInput`](crate::input::PutPackageOriginConfigurationInput).
+    pub fn builder() -> crate::input::put_package_origin_configuration_input::Builder {
+        crate::input::put_package_origin_configuration_input::Builder::default()
+    }
+}
+
 /// See [`PutRepositoryPermissionsPolicyInput`](crate::input::PutRepositoryPermissionsPolicyInput).
 pub mod put_repository_permissions_policy_input {
 
@@ -6271,19 +6808,19 @@ impl PutRepositoryPermissionsPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_129) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_129));
+                if let Some(inner_144) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_144));
                 }
-                if let Some(inner_130) = &_input.domain_owner {
+                if let Some(inner_145) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_130),
+                        &aws_smithy_http::query::fmt_string(&inner_145),
                     );
                 }
-                if let Some(inner_131) = &_input.repository {
+                if let Some(inner_146) = &_input.repository {
                     query.push_kv(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_131),
+                        &aws_smithy_http::query::fmt_string(&inner_146),
                     );
                 }
                 Ok(())
@@ -6449,10 +6986,10 @@ impl TagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_132) = &_input.resource_arn {
+                if let Some(inner_147) = &_input.resource_arn {
                     query.push_kv(
                         "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_132),
+                        &aws_smithy_http::query::fmt_string(&inner_147),
                     );
                 }
                 Ok(())
@@ -6619,10 +7156,10 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_133) = &_input.resource_arn {
+                if let Some(inner_148) = &_input.resource_arn {
                     query.push_kv(
                         "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_133),
+                        &aws_smithy_http::query::fmt_string(&inner_148),
                     );
                 }
                 Ok(())
@@ -6769,21 +7306,21 @@ pub mod update_package_versions_status_input {
             self.format = input;
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+        /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
         /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
@@ -6925,29 +7462,29 @@ impl UpdatePackageVersionsStatusInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_134) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_134));
+                if let Some(inner_149) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_149));
                 }
-                if let Some(inner_135) = &_input.domain_owner {
+                if let Some(inner_150) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_135),
+                        &aws_smithy_http::query::fmt_string(&inner_150),
                     );
                 }
-                if let Some(inner_136) = &_input.repository {
+                if let Some(inner_151) = &_input.repository {
                     query.push_kv(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_136),
+                        &aws_smithy_http::query::fmt_string(&inner_151),
                     );
                 }
-                if let Some(inner_137) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_137));
+                if let Some(inner_152) = &_input.format {
+                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_152));
                 }
-                if let Some(inner_138) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_138));
+                if let Some(inner_153) = &_input.namespace {
+                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_153));
                 }
-                if let Some(inner_139) = &_input.package {
-                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_139));
+                if let Some(inner_154) = &_input.package {
+                    query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_154));
                 }
                 Ok(())
             }
@@ -7148,19 +7685,19 @@ impl UpdateRepositoryInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_140) = &_input.domain {
-                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_140));
+                if let Some(inner_155) = &_input.domain {
+                    query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_155));
                 }
-                if let Some(inner_141) = &_input.domain_owner {
+                if let Some(inner_156) = &_input.domain_owner {
                     query.push_kv(
                         "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_141),
+                        &aws_smithy_http::query::fmt_string(&inner_156),
                     );
                 }
-                if let Some(inner_142) = &_input.repository {
+                if let Some(inner_157) = &_input.repository {
                     query.push_kv(
                         "repository",
-                        &aws_smithy_http::query::fmt_string(&inner_142),
+                        &aws_smithy_http::query::fmt_string(&inner_157),
                     );
                 }
                 Ok(())
@@ -7305,11 +7842,11 @@ pub struct UpdatePackageVersionsStatusInput {
     pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the package with the statuses to update. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package with the version statuses to update. </p>
@@ -7341,11 +7878,11 @@ impl UpdatePackageVersionsStatusInput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -7492,6 +8029,81 @@ impl std::fmt::Debug for PutRepositoryPermissionsPolicyInput {
         formatter.field("repository", &self.repository);
         formatter.field("policy_revision", &self.policy_revision);
         formatter.field("policy_document", &self.policy_document);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutPackageOriginConfigurationInput {
+    /// <p>The name of the domain that contains the repository that contains the package.</p>
+    pub domain: std::option::Option<std::string::String>,
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub domain_owner: std::option::Option<std::string::String>,
+    /// <p>The name of the repository that contains the package.</p>
+    pub repository: std::option::Option<std::string::String>,
+    /// <p>A format that specifies the type of the package to be updated.</p>
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// </ul>
+    pub namespace: std::option::Option<std::string::String>,
+    /// <p>The name of the package to be updated.</p>
+    pub package: std::option::Option<std::string::String>,
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
+    /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
+    pub restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
+}
+impl PutPackageOriginConfigurationInput {
+    /// <p>The name of the domain that contains the repository that contains the package.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
+        self.domain_owner.as_deref()
+    }
+    /// <p>The name of the repository that contains the package.</p>
+    pub fn repository(&self) -> std::option::Option<&str> {
+        self.repository.as_deref()
+    }
+    /// <p>A format that specifies the type of the package to be updated.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The name of the package to be updated.</p>
+    pub fn package(&self) -> std::option::Option<&str> {
+        self.package.as_deref()
+    }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
+    /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
+    pub fn restrictions(&self) -> std::option::Option<&crate::model::PackageOriginRestrictions> {
+        self.restrictions.as_ref()
+    }
+}
+impl std::fmt::Debug for PutPackageOriginConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutPackageOriginConfigurationInput");
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_owner", &self.domain_owner);
+        formatter.field("repository", &self.repository);
+        formatter.field("format", &self.format);
+        formatter.field("namespace", &self.namespace);
+        formatter.field("package", &self.package);
+        formatter.field("restrictions", &self.restrictions);
         formatter.finish()
     }
 }
@@ -7654,34 +8266,36 @@ impl std::fmt::Debug for ListRepositoriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionsInput {
-    /// <p> The name of the domain that contains the repository that contains the returned package versions. </p>
+    /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
-    /// <p> The name of the repository that contains the package. </p>
+    /// <p> The name of the repository that contains the requested package versions. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The format of the returned packages. </p>
+    /// <p> The format of the returned package versions. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p> The name of the package for which you want to return a list of package versions. </p>
+    /// <p> The name of the package for which you want to request package versions. </p>
     pub package: std::option::Option<std::string::String>,
-    /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
+    /// <p> A string that filters the requested package versions by status. </p>
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
-    /// <p> How to sort the returned list of package versions. </p>
+    /// <p> How to sort the requested list of package versions. </p>
     pub sort_by: std::option::Option<crate::model::PackageVersionSortType>,
     /// <p> The maximum number of results to return per page. </p>
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
+    pub origin_type: std::option::Option<crate::model::PackageVersionOriginType>,
 }
 impl ListPackageVersionsInput {
-    /// <p> The name of the domain that contains the repository that contains the returned package versions. </p>
+    /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
@@ -7689,32 +8303,32 @@ impl ListPackageVersionsInput {
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p> The name of the repository that contains the package. </p>
+    /// <p> The name of the repository that contains the requested package versions. </p>
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The format of the returned packages. </p>
+    /// <p> The format of the returned package versions. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p> The name of the package for which you want to return a list of package versions. </p>
+    /// <p> The name of the package for which you want to request package versions. </p>
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
+    /// <p> A string that filters the requested package versions by status. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.status.as_ref()
     }
-    /// <p> How to sort the returned list of package versions. </p>
+    /// <p> How to sort the requested list of package versions. </p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::PackageVersionSortType> {
         self.sort_by.as_ref()
     }
@@ -7725,6 +8339,10 @@ impl ListPackageVersionsInput {
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
+    pub fn origin_type(&self) -> std::option::Option<&crate::model::PackageVersionOriginType> {
+        self.origin_type.as_ref()
     }
 }
 impl std::fmt::Debug for ListPackageVersionsInput {
@@ -7740,6 +8358,7 @@ impl std::fmt::Debug for ListPackageVersionsInput {
         formatter.field("sort_by", &self.sort_by);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.field("origin_type", &self.origin_type);
         formatter.finish()
     }
 }
@@ -7756,11 +8375,11 @@ pub struct ListPackageVersionDependenciesInput {
     pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the package with the requested dependencies. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package versions' package. </p>
@@ -7787,11 +8406,11 @@ impl ListPackageVersionDependenciesInput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -7832,18 +8451,18 @@ pub struct ListPackageVersionAssetsInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
-    /// <p> The name of the repository that contains the package that contains the returned package version assets. </p>
+    /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The format of the package that contains the returned package version assets. </p>
+    /// <p> The format of the package that contains the requested package version assets. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p> The name of the package that contains the returned package version assets. </p>
+    /// <p> The name of the package that contains the requested package version assets. </p>
     pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     pub package_version: std::option::Option<std::string::String>,
@@ -7861,24 +8480,24 @@ impl ListPackageVersionAssetsInput {
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p> The name of the repository that contains the package that contains the returned package version assets. </p>
+    /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The format of the package that contains the returned package version assets. </p>
+    /// <p> The format of the package that contains the requested package version assets. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p> The name of the package that contains the returned package version assets. </p>
+    /// <p> The name of the package that contains the requested package version assets. </p>
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
@@ -7915,30 +8534,34 @@ impl std::fmt::Debug for ListPackageVersionAssetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesInput {
-    /// <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
+    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
-    /// <p> The name of the repository from which packages are to be listed. </p>
+    /// <p> The name of the repository that contains the requested packages. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The format of the packages. </p>
+    /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub package_prefix: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
     pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+    pub publish: std::option::Option<crate::model::AllowPublish>,
+    /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+    pub upstream: std::option::Option<crate::model::AllowUpstream>,
 }
 impl ListPackagesInput {
-    /// <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
+    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
@@ -7946,24 +8569,24 @@ impl ListPackagesInput {
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p> The name of the repository from which packages are to be listed. </p>
+    /// <p> The name of the repository that contains the requested packages. </p>
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The format of the packages. </p>
+    /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub fn package_prefix(&self) -> std::option::Option<&str> {
         self.package_prefix.as_deref()
     }
@@ -7974,6 +8597,14 @@ impl ListPackagesInput {
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+    pub fn publish(&self) -> std::option::Option<&crate::model::AllowPublish> {
+        self.publish.as_ref()
+    }
+    /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+    pub fn upstream(&self) -> std::option::Option<&crate::model::AllowUpstream> {
+        self.upstream.as_ref()
     }
 }
 impl std::fmt::Debug for ListPackagesInput {
@@ -7987,6 +8618,8 @@ impl std::fmt::Debug for ListPackagesInput {
         formatter.field("package_prefix", &self.package_prefix);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.field("publish", &self.publish);
+        formatter.field("upstream", &self.upstream);
         formatter.finish()
     }
 }
@@ -8106,15 +8739,13 @@ pub struct GetPackageVersionReadmeInput {
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package with the requested readme file. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-    /// </note>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package version that contains the requested readme file. </p>
@@ -8135,17 +8766,15 @@ impl GetPackageVersionReadmeInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
-    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
-    /// </note>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -8185,11 +8814,11 @@ pub struct GetPackageVersionAssetInput {
     pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the package version with the requested asset file. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the requested asset. </p>
@@ -8218,11 +8847,11 @@ impl GetPackageVersionAssetInput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -8335,11 +8964,11 @@ pub struct DisposePackageVersionsInput {
     pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of package versions you want to dispose. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package with the versions you want to dispose. </p>
@@ -8369,11 +8998,11 @@ impl DisposePackageVersionsInput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -8503,11 +9132,11 @@ pub struct DescribePackageVersionInput {
     pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the requested package version. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the requested package version. </p>
@@ -8532,11 +9161,11 @@ impl DescribePackageVersionInput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -8560,6 +9189,72 @@ impl std::fmt::Debug for DescribePackageVersionInput {
         formatter.field("namespace", &self.namespace);
         formatter.field("package", &self.package);
         formatter.field("package_version", &self.package_version);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePackageInput {
+    /// <p>The name of the domain that contains the repository that contains the package.</p>
+    pub domain: std::option::Option<std::string::String>,
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub domain_owner: std::option::Option<std::string::String>,
+    /// <p>The name of the repository that contains the requested package. </p>
+    pub repository: std::option::Option<std::string::String>,
+    /// <p>A format that specifies the type of the requested package.</p>
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// </ul>
+    pub namespace: std::option::Option<std::string::String>,
+    /// <p>The name of the requested package.</p>
+    pub package: std::option::Option<std::string::String>,
+}
+impl DescribePackageInput {
+    /// <p>The name of the domain that contains the repository that contains the package.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
+        self.domain_owner.as_deref()
+    }
+    /// <p>The name of the repository that contains the requested package. </p>
+    pub fn repository(&self) -> std::option::Option<&str> {
+        self.repository.as_deref()
+    }
+    /// <p>A format that specifies the type of the requested package.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The name of the requested package.</p>
+    pub fn package(&self) -> std::option::Option<&str> {
+        self.package.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribePackageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribePackageInput");
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_owner", &self.domain_owner);
+        formatter.field("repository", &self.repository);
+        formatter.field("format", &self.format);
+        formatter.field("namespace", &self.namespace);
+        formatter.field("package", &self.package);
         formatter.finish()
     }
 }
@@ -8681,11 +9376,11 @@ pub struct DeletePackageVersionsInput {
     pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the package versions to delete. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package with the versions to delete. </p>
@@ -8712,11 +9407,11 @@ impl DeletePackageVersionsInput {
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
@@ -8915,22 +9610,22 @@ pub struct CopyPackageVersionsInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
-    /// <p> The name of the repository that contains the package versions to copy. </p>
+    /// <p> The name of the repository that contains the package versions to be copied. </p>
     pub source_repository: std::option::Option<std::string::String>,
     /// <p> The name of the repository into which package versions are copied. </p>
     pub destination_repository: std::option::Option<std::string::String>,
-    /// <p> The format of the package that is copied. </p>
+    /// <p> The format of the package versions to be copied. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p> The name of the package that is copied. </p>
+    /// <p> The name of the package that contains the versions to be copied. </p>
     pub package: std::option::Option<std::string::String>,
-    /// <p> The versions of the package to copy. </p> <note>
+    /// <p> The versions of the package to be copied. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
     pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8953,7 +9648,7 @@ impl CopyPackageVersionsInput {
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p> The name of the repository that contains the package versions to copy. </p>
+    /// <p> The name of the repository that contains the package versions to be copied. </p>
     pub fn source_repository(&self) -> std::option::Option<&str> {
         self.source_repository.as_deref()
     }
@@ -8961,24 +9656,24 @@ impl CopyPackageVersionsInput {
     pub fn destination_repository(&self) -> std::option::Option<&str> {
         self.destination_repository.as_deref()
     }
-    /// <p> The format of the package that is copied. </p>
+    /// <p> The format of the package versions to be copied. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
+    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p> The name of the package that is copied. </p>
+    /// <p> The name of the package that contains the versions to be copied. </p>
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p> The versions of the package to copy. </p> <note>
+    /// <p> The versions of the package to be copied. </p> <note>
     /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
     pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
@@ -9033,7 +9728,6 @@ pub struct AssociateExternalConnectionInput {
     /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
     /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
-    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
     /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
     /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -9058,7 +9752,6 @@ impl AssociateExternalConnectionInput {
     /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
     /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
-    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
     /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
     /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>

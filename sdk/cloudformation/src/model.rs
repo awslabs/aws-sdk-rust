@@ -449,6 +449,15 @@ pub struct DeploymentTargets {
     pub accounts_url: std::option::Option<std::string::String>,
     /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
+    /// <p>The following is a list of possible values for the <code>AccountFilterType</code> operation.</p>
+    /// <ul>
+    /// <li> <p> <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter. </p> </li>
+    /// <li> <p> <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This enables user to avoid certain accounts within an OU such as suspended accounts.</p> </li>
+    /// <li> <p> <code>UNION</code>: (default value) StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
+    /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
+    /// </ul>
+    pub account_filter_type: std::option::Option<crate::model::AccountFilterType>,
 }
 impl DeploymentTargets {
     /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
@@ -463,6 +472,17 @@ impl DeploymentTargets {
     pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_ids.as_deref()
     }
+    /// <p>Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
+    /// <p>The following is a list of possible values for the <code>AccountFilterType</code> operation.</p>
+    /// <ul>
+    /// <li> <p> <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter. </p> </li>
+    /// <li> <p> <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This enables user to avoid certain accounts within an OU such as suspended accounts.</p> </li>
+    /// <li> <p> <code>UNION</code>: (default value) StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
+    /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
+    /// </ul>
+    pub fn account_filter_type(&self) -> std::option::Option<&crate::model::AccountFilterType> {
+        self.account_filter_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentTargets {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -470,6 +490,7 @@ impl std::fmt::Debug for DeploymentTargets {
         formatter.field("accounts", &self.accounts);
         formatter.field("accounts_url", &self.accounts_url);
         formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
+        formatter.field("account_filter_type", &self.account_filter_type);
         formatter.finish()
     }
 }
@@ -482,6 +503,7 @@ pub mod deployment_targets {
         pub(crate) accounts: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) accounts_url: std::option::Option<std::string::String>,
         pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) account_filter_type: std::option::Option<crate::model::AccountFilterType>,
     }
     impl Builder {
         /// Appends an item to `accounts`.
@@ -532,12 +554,40 @@ pub mod deployment_targets {
             self.organizational_unit_ids = input;
             self
         }
+        /// <p>Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
+        /// <p>The following is a list of possible values for the <code>AccountFilterType</code> operation.</p>
+        /// <ul>
+        /// <li> <p> <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter. </p> </li>
+        /// <li> <p> <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This enables user to avoid certain accounts within an OU such as suspended accounts.</p> </li>
+        /// <li> <p> <code>UNION</code>: (default value) StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
+        /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
+        /// </ul>
+        pub fn account_filter_type(mut self, input: crate::model::AccountFilterType) -> Self {
+            self.account_filter_type = Some(input);
+            self
+        }
+        /// <p>Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
+        /// <p>The following is a list of possible values for the <code>AccountFilterType</code> operation.</p>
+        /// <ul>
+        /// <li> <p> <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code> parameter. </p> </li>
+        /// <li> <p> <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code> parameter. This enables user to avoid certain accounts within an OU such as suspended accounts.</p> </li>
+        /// <li> <p> <code>UNION</code>: (default value) StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
+        /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
+        /// </ul>
+        pub fn set_account_filter_type(
+            mut self,
+            input: std::option::Option<crate::model::AccountFilterType>,
+        ) -> Self {
+            self.account_filter_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeploymentTargets`](crate::model::DeploymentTargets).
         pub fn build(self) -> crate::model::DeploymentTargets {
             crate::model::DeploymentTargets {
                 accounts: self.accounts,
                 accounts_url: self.accounts_url,
                 organizational_unit_ids: self.organizational_unit_ids,
+                account_filter_type: self.account_filter_type,
             }
         }
     }
@@ -546,6 +596,69 @@ impl DeploymentTargets {
     /// Creates a new builder-style object to manufacture [`DeploymentTargets`](crate::model::DeploymentTargets).
     pub fn builder() -> crate::model::deployment_targets::Builder {
         crate::model::deployment_targets::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AccountFilterType {
+    #[allow(missing_docs)] // documentation missing in model
+    Difference,
+    #[allow(missing_docs)] // documentation missing in model
+    Intersection,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Union,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AccountFilterType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DIFFERENCE" => AccountFilterType::Difference,
+            "INTERSECTION" => AccountFilterType::Intersection,
+            "NONE" => AccountFilterType::None,
+            "UNION" => AccountFilterType::Union,
+            other => AccountFilterType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AccountFilterType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AccountFilterType::from(s))
+    }
+}
+impl AccountFilterType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AccountFilterType::Difference => "DIFFERENCE",
+            AccountFilterType::Intersection => "INTERSECTION",
+            AccountFilterType::None => "NONE",
+            AccountFilterType::Union => "UNION",
+            AccountFilterType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DIFFERENCE", "INTERSECTION", "NONE", "UNION"]
+    }
+}
+impl AsRef<str> for AccountFilterType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

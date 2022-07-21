@@ -1568,6 +1568,72 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPartnerAccount {
     }
 }
 
+/// Operation shape for `GetPosition`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_position`](crate::client::Client::get_position).
+///
+/// See [`crate::client::fluent_builders::GetPosition`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetPosition {
+    _private: (),
+}
+impl GetPosition {
+    /// Creates a new builder-style object to manufacture [`GetPositionInput`](crate::input::GetPositionInput).
+    pub fn builder() -> crate::input::get_position_input::Builder {
+        crate::input::get_position_input::Builder::default()
+    }
+    /// Creates a new `GetPosition` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetPosition {
+    type Output =
+        std::result::Result<crate::output::GetPositionOutput, crate::error::GetPositionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_position_error(response)
+        } else {
+            crate::operation_deser::parse_get_position_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetPositionConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_position_configuration`](crate::client::Client::get_position_configuration).
+///
+/// See [`crate::client::fluent_builders::GetPositionConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetPositionConfiguration {
+    _private: (),
+}
+impl GetPositionConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetPositionConfigurationInput`](crate::input::GetPositionConfigurationInput).
+    pub fn builder() -> crate::input::get_position_configuration_input::Builder {
+        crate::input::get_position_configuration_input::Builder::default()
+    }
+    /// Creates a new `GetPositionConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetPositionConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetPositionConfigurationOutput,
+        crate::error::GetPositionConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_position_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_get_position_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetResourceEventConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2248,6 +2314,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPartnerAccounts {
     }
 }
 
+/// Operation shape for `ListPositionConfigurations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_position_configurations`](crate::client::Client::list_position_configurations).
+///
+/// See [`crate::client::fluent_builders::ListPositionConfigurations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListPositionConfigurations {
+    _private: (),
+}
+impl ListPositionConfigurations {
+    /// Creates a new builder-style object to manufacture [`ListPositionConfigurationsInput`](crate::input::ListPositionConfigurationsInput).
+    pub fn builder() -> crate::input::list_position_configurations_input::Builder {
+        crate::input::list_position_configurations_input::Builder::default()
+    }
+    /// Creates a new `ListPositionConfigurations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListPositionConfigurations {
+    type Output = std::result::Result<
+        crate::output::ListPositionConfigurationsOutput,
+        crate::error::ListPositionConfigurationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_position_configurations_error(response)
+        } else {
+            crate::operation_deser::parse_list_position_configurations_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListQueuedMessages`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2448,6 +2548,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWirelessGatewayTaskD
             crate::operation_deser::parse_list_wireless_gateway_task_definitions_error(response)
         } else {
             crate::operation_deser::parse_list_wireless_gateway_task_definitions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutPositionConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_position_configuration`](crate::client::Client::put_position_configuration).
+///
+/// See [`crate::client::fluent_builders::PutPositionConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutPositionConfiguration {
+    _private: (),
+}
+impl PutPositionConfiguration {
+    /// Creates a new builder-style object to manufacture [`PutPositionConfigurationInput`](crate::input::PutPositionConfigurationInput).
+    pub fn builder() -> crate::input::put_position_configuration_input::Builder {
+        crate::input::put_position_configuration_input::Builder::default()
+    }
+    /// Creates a new `PutPositionConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutPositionConfiguration {
+    type Output = std::result::Result<
+        crate::output::PutPositionConfigurationOutput,
+        crate::error::PutPositionConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_position_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_put_position_configuration_response(response)
         }
     }
 }
@@ -3100,6 +3234,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePartnerAccount {
             crate::operation_deser::parse_update_partner_account_error(response)
         } else {
             crate::operation_deser::parse_update_partner_account_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdatePosition`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_position`](crate::client::Client::update_position).
+///
+/// See [`crate::client::fluent_builders::UpdatePosition`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdatePosition {
+    _private: (),
+}
+impl UpdatePosition {
+    /// Creates a new builder-style object to manufacture [`UpdatePositionInput`](crate::input::UpdatePositionInput).
+    pub fn builder() -> crate::input::update_position_input::Builder {
+        crate::input::update_position_input::Builder::default()
+    }
+    /// Creates a new `UpdatePosition` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdatePosition {
+    type Output =
+        std::result::Result<crate::output::UpdatePositionOutput, crate::error::UpdatePositionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_update_position_error(response)
+        } else {
+            crate::operation_deser::parse_update_position_response(response)
         }
     }
 }

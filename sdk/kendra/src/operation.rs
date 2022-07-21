@@ -203,6 +203,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ClearQuerySuggestions {
     }
 }
 
+/// Operation shape for `CreateAccessControlConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_access_control_configuration`](crate::client::Client::create_access_control_configuration).
+///
+/// See [`crate::client::fluent_builders::CreateAccessControlConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateAccessControlConfiguration {
+    _private: (),
+}
+impl CreateAccessControlConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateAccessControlConfigurationInput`](crate::input::CreateAccessControlConfigurationInput).
+    pub fn builder() -> crate::input::create_access_control_configuration_input::Builder {
+        crate::input::create_access_control_configuration_input::Builder::default()
+    }
+    /// Creates a new `CreateAccessControlConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateAccessControlConfiguration {
+    type Output = std::result::Result<
+        crate::output::CreateAccessControlConfigurationOutput,
+        crate::error::CreateAccessControlConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_access_control_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_create_access_control_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateDataSource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -398,6 +432,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateThesaurus {
             crate::operation_deser::parse_create_thesaurus_error(response)
         } else {
             crate::operation_deser::parse_create_thesaurus_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteAccessControlConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_access_control_configuration`](crate::client::Client::delete_access_control_configuration).
+///
+/// See [`crate::client::fluent_builders::DeleteAccessControlConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteAccessControlConfiguration {
+    _private: (),
+}
+impl DeleteAccessControlConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteAccessControlConfigurationInput`](crate::input::DeleteAccessControlConfigurationInput).
+    pub fn builder() -> crate::input::delete_access_control_configuration_input::Builder {
+        crate::input::delete_access_control_configuration_input::Builder::default()
+    }
+    /// Creates a new `DeleteAccessControlConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessControlConfiguration {
+    type Output = std::result::Result<
+        crate::output::DeleteAccessControlConfigurationOutput,
+        crate::error::DeleteAccessControlConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_access_control_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_delete_access_control_configuration_response(response)
         }
     }
 }
@@ -631,6 +699,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteThesaurus {
             crate::operation_deser::parse_delete_thesaurus_error(response)
         } else {
             crate::operation_deser::parse_delete_thesaurus_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeAccessControlConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_access_control_configuration`](crate::client::Client::describe_access_control_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeAccessControlConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeAccessControlConfiguration {
+    _private: (),
+}
+impl DescribeAccessControlConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeAccessControlConfigurationInput`](crate::input::DescribeAccessControlConfigurationInput).
+    pub fn builder() -> crate::input::describe_access_control_configuration_input::Builder {
+        crate::input::describe_access_control_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeAccessControlConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeAccessControlConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeAccessControlConfigurationOutput,
+        crate::error::DescribeAccessControlConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_access_control_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_access_control_configuration_response(response)
         }
     }
 }
@@ -1033,6 +1135,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnapshots {
             crate::operation_deser::parse_get_snapshots_error(response)
         } else {
             crate::operation_deser::parse_get_snapshots_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListAccessControlConfigurations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_access_control_configurations`](crate::client::Client::list_access_control_configurations).
+///
+/// See [`crate::client::fluent_builders::ListAccessControlConfigurations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAccessControlConfigurations {
+    _private: (),
+}
+impl ListAccessControlConfigurations {
+    /// Creates a new builder-style object to manufacture [`ListAccessControlConfigurationsInput`](crate::input::ListAccessControlConfigurationsInput).
+    pub fn builder() -> crate::input::list_access_control_configurations_input::Builder {
+        crate::input::list_access_control_configurations_input::Builder::default()
+    }
+    /// Creates a new `ListAccessControlConfigurations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAccessControlConfigurations {
+    type Output = std::result::Result<
+        crate::output::ListAccessControlConfigurationsOutput,
+        crate::error::ListAccessControlConfigurationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_access_control_configurations_error(response)
+        } else {
+            crate::operation_deser::parse_list_access_control_configurations_response(response)
         }
     }
 }
@@ -1629,6 +1765,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateAccessControlConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_access_control_configuration`](crate::client::Client::update_access_control_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateAccessControlConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateAccessControlConfiguration {
+    _private: (),
+}
+impl UpdateAccessControlConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateAccessControlConfigurationInput`](crate::input::UpdateAccessControlConfigurationInput).
+    pub fn builder() -> crate::input::update_access_control_configuration_input::Builder {
+        crate::input::update_access_control_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateAccessControlConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateAccessControlConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateAccessControlConfigurationOutput,
+        crate::error::UpdateAccessControlConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_access_control_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_access_control_configuration_response(response)
         }
     }
 }

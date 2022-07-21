@@ -103,6 +103,110 @@ impl std::error::Error for BatchGetNamedQueryError {
     }
 }
 
+/// Error type for the `BatchGetPreparedStatement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetPreparedStatementError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetPreparedStatementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchGetPreparedStatement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetPreparedStatementErrorKind {
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchGetPreparedStatementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetPreparedStatementErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            BatchGetPreparedStatementErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            BatchGetPreparedStatementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetPreparedStatementError {
+    fn code(&self) -> Option<&str> {
+        BatchGetPreparedStatementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetPreparedStatementError {
+    /// Creates a new `BatchGetPreparedStatementError`.
+    pub fn new(kind: BatchGetPreparedStatementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetPreparedStatementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetPreparedStatementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetPreparedStatementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetPreparedStatementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetPreparedStatementErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetPreparedStatementErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetPreparedStatementErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetPreparedStatementErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetPreparedStatementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetPreparedStatementErrorKind::InternalServerException(_inner) => Some(_inner),
+            BatchGetPreparedStatementErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            BatchGetPreparedStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `BatchGetQueryExecution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3894,11 +3998,11 @@ impl InternalServerException {
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Amazon resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the Amazon resource.</p>
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
@@ -3947,12 +4051,12 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The name of the Amazon resource.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_name = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The name of the Amazon resource.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,

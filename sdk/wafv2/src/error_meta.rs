@@ -57,7 +57,7 @@ pub enum Error {
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),

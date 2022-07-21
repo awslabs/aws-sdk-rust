@@ -135,6 +135,74 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEnvironment {
     }
 }
 
+/// Operation shape for `CreateExtension`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_extension`](crate::client::Client::create_extension).
+///
+/// See [`crate::client::fluent_builders::CreateExtension`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateExtension {
+    _private: (),
+}
+impl CreateExtension {
+    /// Creates a new builder-style object to manufacture [`CreateExtensionInput`](crate::input::CreateExtensionInput).
+    pub fn builder() -> crate::input::create_extension_input::Builder {
+        crate::input::create_extension_input::Builder::default()
+    }
+    /// Creates a new `CreateExtension` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateExtension {
+    type Output = std::result::Result<
+        crate::output::CreateExtensionOutput,
+        crate::error::CreateExtensionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_extension_error(response)
+        } else {
+            crate::operation_deser::parse_create_extension_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateExtensionAssociation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_extension_association`](crate::client::Client::create_extension_association).
+///
+/// See [`crate::client::fluent_builders::CreateExtensionAssociation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateExtensionAssociation {
+    _private: (),
+}
+impl CreateExtensionAssociation {
+    /// Creates a new builder-style object to manufacture [`CreateExtensionAssociationInput`](crate::input::CreateExtensionAssociationInput).
+    pub fn builder() -> crate::input::create_extension_association_input::Builder {
+        crate::input::create_extension_association_input::Builder::default()
+    }
+    /// Creates a new `CreateExtensionAssociation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateExtensionAssociation {
+    type Output = std::result::Result<
+        crate::output::CreateExtensionAssociationOutput,
+        crate::error::CreateExtensionAssociationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_extension_association_error(response)
+        } else {
+            crate::operation_deser::parse_create_extension_association_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateHostedConfigurationVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -301,6 +369,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironment {
             crate::operation_deser::parse_delete_environment_error(response)
         } else {
             crate::operation_deser::parse_delete_environment_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteExtension`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_extension`](crate::client::Client::delete_extension).
+///
+/// See [`crate::client::fluent_builders::DeleteExtension`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteExtension {
+    _private: (),
+}
+impl DeleteExtension {
+    /// Creates a new builder-style object to manufacture [`DeleteExtensionInput`](crate::input::DeleteExtensionInput).
+    pub fn builder() -> crate::input::delete_extension_input::Builder {
+        crate::input::delete_extension_input::Builder::default()
+    }
+    /// Creates a new `DeleteExtension` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteExtension {
+    type Output = std::result::Result<
+        crate::output::DeleteExtensionOutput,
+        crate::error::DeleteExtensionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_extension_error(response)
+        } else {
+            crate::operation_deser::parse_delete_extension_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteExtensionAssociation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_extension_association`](crate::client::Client::delete_extension_association).
+///
+/// See [`crate::client::fluent_builders::DeleteExtensionAssociation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteExtensionAssociation {
+    _private: (),
+}
+impl DeleteExtensionAssociation {
+    /// Creates a new builder-style object to manufacture [`DeleteExtensionAssociationInput`](crate::input::DeleteExtensionAssociationInput).
+    pub fn builder() -> crate::input::delete_extension_association_input::Builder {
+        crate::input::delete_extension_association_input::Builder::default()
+    }
+    /// Creates a new `DeleteExtensionAssociation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteExtensionAssociation {
+    type Output = std::result::Result<
+        crate::output::DeleteExtensionAssociationOutput,
+        crate::error::DeleteExtensionAssociationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_extension_association_error(response)
+        } else {
+            crate::operation_deser::parse_delete_extension_association_response(response)
         }
     }
 }
@@ -537,6 +673,72 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnvironment {
     }
 }
 
+/// Operation shape for `GetExtension`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_extension`](crate::client::Client::get_extension).
+///
+/// See [`crate::client::fluent_builders::GetExtension`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetExtension {
+    _private: (),
+}
+impl GetExtension {
+    /// Creates a new builder-style object to manufacture [`GetExtensionInput`](crate::input::GetExtensionInput).
+    pub fn builder() -> crate::input::get_extension_input::Builder {
+        crate::input::get_extension_input::Builder::default()
+    }
+    /// Creates a new `GetExtension` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetExtension {
+    type Output =
+        std::result::Result<crate::output::GetExtensionOutput, crate::error::GetExtensionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_extension_error(response)
+        } else {
+            crate::operation_deser::parse_get_extension_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetExtensionAssociation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_extension_association`](crate::client::Client::get_extension_association).
+///
+/// See [`crate::client::fluent_builders::GetExtensionAssociation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetExtensionAssociation {
+    _private: (),
+}
+impl GetExtensionAssociation {
+    /// Creates a new builder-style object to manufacture [`GetExtensionAssociationInput`](crate::input::GetExtensionAssociationInput).
+    pub fn builder() -> crate::input::get_extension_association_input::Builder {
+        crate::input::get_extension_association_input::Builder::default()
+    }
+    /// Creates a new `GetExtensionAssociation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetExtensionAssociation {
+    type Output = std::result::Result<
+        crate::output::GetExtensionAssociationOutput,
+        crate::error::GetExtensionAssociationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_extension_association_error(response)
+        } else {
+            crate::operation_deser::parse_get_extension_association_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetHostedConfigurationVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -737,6 +939,72 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnvironments {
             crate::operation_deser::parse_list_environments_error(response)
         } else {
             crate::operation_deser::parse_list_environments_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListExtensionAssociations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_extension_associations`](crate::client::Client::list_extension_associations).
+///
+/// See [`crate::client::fluent_builders::ListExtensionAssociations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListExtensionAssociations {
+    _private: (),
+}
+impl ListExtensionAssociations {
+    /// Creates a new builder-style object to manufacture [`ListExtensionAssociationsInput`](crate::input::ListExtensionAssociationsInput).
+    pub fn builder() -> crate::input::list_extension_associations_input::Builder {
+        crate::input::list_extension_associations_input::Builder::default()
+    }
+    /// Creates a new `ListExtensionAssociations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListExtensionAssociations {
+    type Output = std::result::Result<
+        crate::output::ListExtensionAssociationsOutput,
+        crate::error::ListExtensionAssociationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_extension_associations_error(response)
+        } else {
+            crate::operation_deser::parse_list_extension_associations_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListExtensions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_extensions`](crate::client::Client::list_extensions).
+///
+/// See [`crate::client::fluent_builders::ListExtensions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListExtensions {
+    _private: (),
+}
+impl ListExtensions {
+    /// Creates a new builder-style object to manufacture [`ListExtensionsInput`](crate::input::ListExtensionsInput).
+    pub fn builder() -> crate::input::list_extensions_input::Builder {
+        crate::input::list_extensions_input::Builder::default()
+    }
+    /// Creates a new `ListExtensions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListExtensions {
+    type Output =
+        std::result::Result<crate::output::ListExtensionsOutput, crate::error::ListExtensionsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_extensions_error(response)
+        } else {
+            crate::operation_deser::parse_list_extensions_response(response)
         }
     }
 }
@@ -1071,6 +1339,74 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEnvironment {
             crate::operation_deser::parse_update_environment_error(response)
         } else {
             crate::operation_deser::parse_update_environment_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateExtension`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_extension`](crate::client::Client::update_extension).
+///
+/// See [`crate::client::fluent_builders::UpdateExtension`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateExtension {
+    _private: (),
+}
+impl UpdateExtension {
+    /// Creates a new builder-style object to manufacture [`UpdateExtensionInput`](crate::input::UpdateExtensionInput).
+    pub fn builder() -> crate::input::update_extension_input::Builder {
+        crate::input::update_extension_input::Builder::default()
+    }
+    /// Creates a new `UpdateExtension` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateExtension {
+    type Output = std::result::Result<
+        crate::output::UpdateExtensionOutput,
+        crate::error::UpdateExtensionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_extension_error(response)
+        } else {
+            crate::operation_deser::parse_update_extension_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateExtensionAssociation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_extension_association`](crate::client::Client::update_extension_association).
+///
+/// See [`crate::client::fluent_builders::UpdateExtensionAssociation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateExtensionAssociation {
+    _private: (),
+}
+impl UpdateExtensionAssociation {
+    /// Creates a new builder-style object to manufacture [`UpdateExtensionAssociationInput`](crate::input::UpdateExtensionAssociationInput).
+    pub fn builder() -> crate::input::update_extension_association_input::Builder {
+        crate::input::update_extension_association_input::Builder::default()
+    }
+    /// Creates a new `UpdateExtensionAssociation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateExtensionAssociation {
+    type Output = std::result::Result<
+        crate::output::UpdateExtensionAssociationOutput,
+        crate::error::UpdateExtensionAssociationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_extension_association_error(response)
+        } else {
+            crate::operation_deser::parse_update_extension_association_response(response)
         }
     }
 }

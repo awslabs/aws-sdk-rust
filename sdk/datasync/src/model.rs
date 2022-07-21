@@ -2538,6 +2538,7 @@ impl AsRef<str> for TaskStatus {
 }
 
 /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">filtering DataSync resources</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskFilter {
@@ -2545,7 +2546,7 @@ pub struct TaskFilter {
     pub name: std::option::Option<crate::model::TaskFilterName>,
     /// <p>The values that you want to filter for. For example, you might want to display only tasks for a specific destination location.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
+    /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
     pub operator: std::option::Option<crate::model::Operator>,
 }
 impl TaskFilter {
@@ -2557,7 +2558,7 @@ impl TaskFilter {
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
-    /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
+    /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
         self.operator.as_ref()
     }
@@ -2614,12 +2615,12 @@ pub mod task_filter {
             self.values = input;
             self
         }
-        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
+        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
         pub fn operator(mut self, input: crate::model::Operator) -> Self {
             self.operator = Some(input);
             self
         }
-        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
+        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
             self.operator = input;
             self
@@ -3049,7 +3050,8 @@ impl LocationListEntry {
     }
 }
 
-/// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all your Amazon S3 locations, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
+/// <p>Narrow down the list of resources returned by <code>ListLocations</code>. For example, to see all your Amazon S3 locations, create a filter using <code>"Name": "LocationType"</code>, <code>"Operator": "Equals"</code>, and <code>"Values": "S3"</code>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">filtering resources</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocationFilter {
@@ -3057,7 +3059,7 @@ pub struct LocationFilter {
     pub name: std::option::Option<crate::model::LocationFilterName>,
     /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
+    /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
     pub operator: std::option::Option<crate::model::Operator>,
 }
 impl LocationFilter {
@@ -3069,7 +3071,7 @@ impl LocationFilter {
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
-    /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
+    /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
         self.operator.as_ref()
     }
@@ -3126,12 +3128,12 @@ pub mod location_filter {
             self.values = input;
             self
         }
-        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
+        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
         pub fn operator(mut self, input: crate::model::Operator) -> Self {
             self.operator = Some(input);
             self
         }
-        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
+        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
             self.operator = input;
             self
@@ -3857,7 +3859,17 @@ pub struct FsxProtocolSmb {
     pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>Specifies a user who has permission to access your SVM.</p>
+    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
+    /// <p>If you provide a user in your Active Directory, note the following:</p>
+    /// <ul>
+    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li>
+    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li>
+    /// </ul>
+    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p>
+    /// <ul>
+    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
+    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
+    /// </ul>
     pub user: std::option::Option<std::string::String>,
 }
 impl FsxProtocolSmb {
@@ -3873,7 +3885,17 @@ impl FsxProtocolSmb {
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>Specifies a user who has permission to access your SVM.</p>
+    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
+    /// <p>If you provide a user in your Active Directory, note the following:</p>
+    /// <ul>
+    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li>
+    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li>
+    /// </ul>
+    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p>
+    /// <ul>
+    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
+    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
+    /// </ul>
     pub fn user(&self) -> std::option::Option<&str> {
         self.user.as_deref()
     }
@@ -3933,12 +3955,32 @@ pub mod fsx_protocol_smb {
             self.password = input;
             self
         }
-        /// <p>Specifies a user who has permission to access your SVM.</p>
+        /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
+        /// <p>If you provide a user in your Active Directory, note the following:</p>
+        /// <ul>
+        /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li>
+        /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li>
+        /// </ul>
+        /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p>
+        /// <ul>
+        /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
+        /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
+        /// </ul>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
             self.user = Some(input.into());
             self
         }
-        /// <p>Specifies a user who has permission to access your SVM.</p>
+        /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
+        /// <p>If you provide a user in your Active Directory, note the following:</p>
+        /// <ul>
+        /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li>
+        /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li>
+        /// </ul>
+        /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p>
+        /// <ul>
+        /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
+        /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
+        /// </ul>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user = input;
             self

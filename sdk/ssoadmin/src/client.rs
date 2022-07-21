@@ -91,12 +91,28 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`AttachCustomerManagedPolicyReferenceToPermissionSet`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. </p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
+    ///   - [`customer_managed_policy_reference(CustomerManagedPolicyReference)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::customer_managed_policy_reference) / [`set_customer_managed_policy_reference(Option<CustomerManagedPolicyReference>)`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::set_customer_managed_policy_reference): <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    /// - On success, responds with [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput)
+
+    /// - On failure, responds with [`SdkError<AttachCustomerManagedPolicyReferenceToPermissionSetError>`](crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError)
+    pub fn attach_customer_managed_policy_reference_to_permission_set(
+        &self,
+    ) -> fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet {
+        fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet::new(
+            self.handle.clone(),
+        )
+    }
     /// Constructs a fluent builder for the [`AttachManagedPolicyToPermissionSet`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
-    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_managed_policy_arn): <p>The IAM managed policy ARN to be attached to a permission set.</p>
+    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_managed_policy_arn): <p>The Amazon Web Services managed policy ARN to be attached to a permission set.</p>
     /// - On success, responds with [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<AttachManagedPolicyToPermissionSetError>`](crate::error::AttachManagedPolicyToPermissionSetError)
@@ -188,6 +204,19 @@ impl Client {
     ) -> fluent_builders::DeleteInstanceAccessControlAttributeConfiguration {
         fluent_builders::DeleteInstanceAccessControlAttributeConfiguration::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeletePermissionsBoundaryFromPermissionSet`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. </p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
+    /// - On success, responds with [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePermissionsBoundaryFromPermissionSetError>`](crate::error::DeletePermissionsBoundaryFromPermissionSetError)
+    pub fn delete_permissions_boundary_from_permission_set(
+        &self,
+    ) -> fluent_builders::DeletePermissionsBoundaryFromPermissionSet {
+        fluent_builders::DeletePermissionsBoundaryFromPermissionSet::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeletePermissionSet`](crate::client::fluent_builders::DeletePermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
@@ -265,12 +294,28 @@ impl Client {
     ) -> fluent_builders::DescribePermissionSetProvisioningStatus {
         fluent_builders::DescribePermissionSetProvisioningStatus::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DetachCustomerManagedPolicyReferenceFromPermissionSet`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. </p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
+    ///   - [`customer_managed_policy_reference(CustomerManagedPolicyReference)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::customer_managed_policy_reference) / [`set_customer_managed_policy_reference(Option<CustomerManagedPolicyReference>)`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::set_customer_managed_policy_reference): <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    /// - On success, responds with [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput)
+
+    /// - On failure, responds with [`SdkError<DetachCustomerManagedPolicyReferenceFromPermissionSetError>`](crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError)
+    pub fn detach_customer_managed_policy_reference_from_permission_set(
+        &self,
+    ) -> fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet {
+        fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet::new(
+            self.handle.clone(),
+        )
+    }
     /// Constructs a fluent builder for the [`DetachManagedPolicyFromPermissionSet`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
-    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_managed_policy_arn): <p>The IAM managed policy ARN to be attached to a permission set.</p>
+    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_managed_policy_arn): <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
     /// - On success, responds with [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<DetachManagedPolicyFromPermissionSetError>`](crate::error::DetachManagedPolicyFromPermissionSetError)
@@ -291,6 +336,19 @@ impl Client {
         &self,
     ) -> fluent_builders::GetInlinePolicyForPermissionSet {
         fluent_builders::GetInlinePolicyForPermissionSet::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetPermissionsBoundaryForPermissionSet`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. </p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
+    /// - On success, responds with [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput) with field(s):
+    ///   - [`permissions_boundary(Option<PermissionsBoundary>)`](crate::output::GetPermissionsBoundaryForPermissionSetOutput::permissions_boundary): <p>The permissions boundary attached to the specified permission set.</p>
+    /// - On failure, responds with [`SdkError<GetPermissionsBoundaryForPermissionSetError>`](crate::error::GetPermissionsBoundaryForPermissionSetError)
+    pub fn get_permissions_boundary_for_permission_set(
+        &self,
+    ) -> fluent_builders::GetPermissionsBoundaryForPermissionSet {
+        fluent_builders::GetPermissionsBoundaryForPermissionSet::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccountAssignmentCreationStatus`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::into_paginator).
@@ -359,6 +417,25 @@ impl Client {
         &self,
     ) -> fluent_builders::ListAccountsForProvisionedPermissionSet {
         fluent_builders::ListAccountsForProvisionedPermissionSet::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListCustomerManagedPolicyReferencesInPermissionSet`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. </p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::set_max_results): <p>The maximum number of results to display for the list call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    /// - On success, responds with [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput) with field(s):
+    ///   - [`customer_managed_policy_references(Option<Vec<CustomerManagedPolicyReference>>)`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput::customer_managed_policy_references): <p>Specifies the names and paths of the IAM customer managed policies that you have attached to your permission set.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    /// - On failure, responds with [`SdkError<ListCustomerManagedPolicyReferencesInPermissionSetError>`](crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError)
+    pub fn list_customer_managed_policy_references_in_permission_set(
+        &self,
+    ) -> fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet {
+        fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet::new(
+            self.handle.clone(),
+        )
     }
     /// Constructs a fluent builder for the [`ListInstances`](crate::client::fluent_builders::ListInstances) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
@@ -480,6 +557,20 @@ impl Client {
     ) -> fluent_builders::PutInlinePolicyToPermissionSet {
         fluent_builders::PutInlinePolicyToPermissionSet::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`PutPermissionsBoundaryToPermissionSet`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. </p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
+    ///   - [`permissions_boundary(PermissionsBoundary)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::permissions_boundary) / [`set_permissions_boundary(Option<PermissionsBoundary>)`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet::set_permissions_boundary): <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
+    /// - On success, responds with [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput)
+
+    /// - On failure, responds with [`SdkError<PutPermissionsBoundaryToPermissionSetError>`](crate::error::PutPermissionsBoundaryToPermissionSetError)
+    pub fn put_permissions_boundary_to_permission_set(
+        &self,
+    ) -> fluent_builders::PutPermissionsBoundaryToPermissionSet {
+        fluent_builders::PutPermissionsBoundaryToPermissionSet::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -539,9 +630,94 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `AttachCustomerManagedPolicyReferenceToPermissionSet`.
+    ///
+    /// <p>Attaches the specified IAM customer managed policy to the specified <code>PermissionSet</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AttachCustomerManagedPolicyReferenceToPermissionSet {
+        handle: std::sync::Arc<super::Handle>,
+        inner:
+            crate::input::attach_customer_managed_policy_reference_to_permission_set_input::Builder,
+    }
+    impl AttachCustomerManagedPolicyReferenceToPermissionSet {
+        /// Creates a new `AttachCustomerManagedPolicyReferenceToPermissionSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_arn(input);
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn set_permission_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_set_arn(input);
+            self
+        }
+        /// <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        pub fn customer_managed_policy_reference(
+            mut self,
+            input: crate::model::CustomerManagedPolicyReference,
+        ) -> Self {
+            self.inner = self.inner.customer_managed_policy_reference(input);
+            self
+        }
+        /// <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        pub fn set_customer_managed_policy_reference(
+            mut self,
+            input: std::option::Option<crate::model::CustomerManagedPolicyReference>,
+        ) -> Self {
+            self.inner = self.inner.set_customer_managed_policy_reference(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `AttachManagedPolicyToPermissionSet`.
     ///
-    /// <p>Attaches an IAM managed policy ARN to a permission set.</p> <note>
+    /// <p>Attaches an Amazon Web Services managed IAM policy ARN to a permission set.</p> <note>
     /// <p>If the permission set is already referenced by one or more account assignments, you will need to call <code> <code>ProvisionPermissionSet</code> </code> after this operation. Calling <code>ProvisionPermissionSet</code> applies the corresponding IAM policy updates to all assigned accounts.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -608,12 +784,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
+        /// <p>The Amazon Web Services managed policy ARN to be attached to a permission set.</p>
         pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.managed_policy_arn(input.into());
             self
         }
-        /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
+        /// <p>The Amazon Web Services managed policy ARN to be attached to a permission set.</p>
         pub fn set_managed_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1163,6 +1339,74 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeletePermissionsBoundaryFromPermissionSet`.
+    ///
+    /// <p>Deletes the permissions boundary from a specified <code>PermissionSet</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeletePermissionsBoundaryFromPermissionSet {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_permissions_boundary_from_permission_set_input::Builder,
+    }
+    impl DeletePermissionsBoundaryFromPermissionSet {
+        /// Creates a new `DeletePermissionsBoundaryFromPermissionSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeletePermissionsBoundaryFromPermissionSetOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DeletePermissionsBoundaryFromPermissionSetError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_arn(input);
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn set_permission_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_set_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeletePermissionSet`.
     ///
     /// <p>Deletes the specified permission set.</p>
@@ -1568,9 +1812,93 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DetachCustomerManagedPolicyReferenceFromPermissionSet`.
+    ///
+    /// <p>Detaches the specified IAM customer managed policy from the specified <code>PermissionSet</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DetachCustomerManagedPolicyReferenceFromPermissionSet {
+                            handle: std::sync::Arc<super::Handle>,
+                            inner: crate::input::detach_customer_managed_policy_reference_from_permission_set_input::Builder
+                        }
+    impl DetachCustomerManagedPolicyReferenceFromPermissionSet {
+        /// Creates a new `DetachCustomerManagedPolicyReferenceFromPermissionSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_arn(input);
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn set_permission_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_set_arn(input);
+            self
+        }
+        /// <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        pub fn customer_managed_policy_reference(
+            mut self,
+            input: crate::model::CustomerManagedPolicyReference,
+        ) -> Self {
+            self.inner = self.inner.customer_managed_policy_reference(input);
+            self
+        }
+        /// <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        pub fn set_customer_managed_policy_reference(
+            mut self,
+            input: std::option::Option<crate::model::CustomerManagedPolicyReference>,
+        ) -> Self {
+            self.inner = self.inner.set_customer_managed_policy_reference(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DetachManagedPolicyFromPermissionSet`.
     ///
-    /// <p>Detaches the attached IAM managed policy ARN from the specified permission set.</p>
+    /// <p>Detaches the attached Amazon Web Services managed IAM policy ARN from the specified permission set.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachManagedPolicyFromPermissionSet {
         handle: std::sync::Arc<super::Handle>,
@@ -1635,12 +1963,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
+        /// <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
         pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.managed_policy_arn(input.into());
             self
         }
-        /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
+        /// <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
         pub fn set_managed_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1707,6 +2035,74 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set.</p>
+        pub fn set_permission_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_set_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetPermissionsBoundaryForPermissionSet`.
+    ///
+    /// <p>Obtains the permissions boundary for a specified <code>PermissionSet</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetPermissionsBoundaryForPermissionSet {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_permissions_boundary_for_permission_set_input::Builder,
+    }
+    impl GetPermissionsBoundaryForPermissionSet {
+        /// Creates a new `GetPermissionsBoundaryForPermissionSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetPermissionsBoundaryForPermissionSetOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetPermissionsBoundaryForPermissionSetError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_arn(input);
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2127,6 +2523,106 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListCustomerManagedPolicyReferencesInPermissionSet`.
+    ///
+    /// <p>Lists all IAM customer managed policies attached to a specified <code>PermissionSet</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCustomerManagedPolicyReferencesInPermissionSet {
+        handle: std::sync::Arc<super::Handle>,
+        inner:
+            crate::input::list_customer_managed_policy_references_in_permission_set_input::Builder,
+    }
+    impl ListCustomerManagedPolicyReferencesInPermissionSet {
+        /// Creates a new `ListCustomerManagedPolicyReferencesInPermissionSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator {
+            crate::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_arn(input);
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn set_permission_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_set_arn(input);
+            self
+        }
+        /// <p>The maximum number of results to display for the list call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to display for the list call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListInstances`.
     ///
     /// <p>Lists the SSO instances that the caller has access to.</p>
@@ -2198,7 +2694,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListManagedPoliciesInPermissionSet`.
     ///
-    /// <p>Lists the IAM managed policy that is attached to a specified permission set.</p>
+    /// <p>Lists the Amazon Web Services managed IAM policy that is attached to a specified permission set.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedPoliciesInPermissionSet {
         handle: std::sync::Arc<super::Handle>,
@@ -2828,6 +3324,87 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_inline_policy(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutPermissionsBoundaryToPermissionSet`.
+    ///
+    /// <p>Attaches an Amazon Web Services managed or customer managed IAM policy to the specified <code>PermissionSet</code> as a permissions boundary.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutPermissionsBoundaryToPermissionSet {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_permissions_boundary_to_permission_set_input::Builder,
+    }
+    impl PutPermissionsBoundaryToPermissionSet {
+        /// Creates a new `PutPermissionsBoundaryToPermissionSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutPermissionsBoundaryToPermissionSetOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::PutPermissionsBoundaryToPermissionSetError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. </p>
+        pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_arn(input);
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>PermissionSet</code>.</p>
+        pub fn set_permission_set_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_set_arn(input);
+            self
+        }
+        /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
+        pub fn permissions_boundary(mut self, input: crate::model::PermissionsBoundary) -> Self {
+            self.inner = self.inner.permissions_boundary(input);
+            self
+        }
+        /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
+        pub fn set_permissions_boundary(
+            mut self,
+            input: std::option::Option<crate::model::PermissionsBoundary>,
+        ) -> Self {
+            self.inner = self.inner.set_permissions_boundary(input);
             self
         }
     }

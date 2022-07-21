@@ -164,6 +164,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Certificate,
     #[allow(missing_docs)] // documentation missing in model
+    AccessAnalyzerAnalyzer,
+    #[allow(missing_docs)] // documentation missing in model
     RestApi,
     #[allow(missing_docs)] // documentation missing in model
     Stage,
@@ -188,6 +190,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     BackupRecoveryPoint,
     #[allow(missing_docs)] // documentation missing in model
+    BatchComputeEnvironment,
+    #[allow(missing_docs)] // documentation missing in model
+    BatchJobQueue,
+    #[allow(missing_docs)] // documentation missing in model
     Stack,
     #[allow(missing_docs)] // documentation missing in model
     Distribution,
@@ -211,6 +217,10 @@ pub enum ResourceType {
     ConformancePackCompliance,
     #[allow(missing_docs)] // documentation missing in model
     ResourceCompliance,
+    #[allow(missing_docs)] // documentation missing in model
+    DmsEventSubscription,
+    #[allow(missing_docs)] // documentation missing in model
+    DmsReplicationSubnetGroup,
     #[allow(missing_docs)] // documentation missing in model
     Table,
     #[allow(missing_docs)] // documentation missing in model
@@ -286,6 +296,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     LoadBalancer,
     #[allow(missing_docs)] // documentation missing in model
+    ListenerV2,
+    #[allow(missing_docs)] // documentation missing in model
     LoadBalancerV2,
     #[allow(missing_docs)] // documentation missing in model
     Domain,
@@ -307,6 +319,8 @@ pub enum ResourceType {
     KinesisStreamConsumer,
     #[allow(missing_docs)] // documentation missing in model
     Function,
+    #[allow(missing_docs)] // documentation missing in model
+    MskCluster,
     #[allow(missing_docs)] // documentation missing in model
     NetworkFirewallFirewall,
     #[allow(missing_docs)] // documentation missing in model
@@ -344,6 +358,12 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RedshiftEventSubscription,
     #[allow(missing_docs)] // documentation missing in model
+    Route53ResolverResolverEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
+    Route53ResolverResolverRule,
+    #[allow(missing_docs)] // documentation missing in model
+    Route53ResolverResolverRuleAssociation,
+    #[allow(missing_docs)] // documentation missing in model
     AccountPublicAccessBlock,
     #[allow(missing_docs)] // documentation missing in model
     Bucket,
@@ -362,6 +382,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     SageMakerCodeRepository,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerModel,
+    #[allow(missing_docs)] // documentation missing in model
     Secret,
     #[allow(missing_docs)] // documentation missing in model
     CloudFormationProduct,
@@ -373,6 +395,10 @@ pub enum ResourceType {
     Protection,
     #[allow(missing_docs)] // documentation missing in model
     RegionalProtection,
+    #[allow(missing_docs)] // documentation missing in model
+    StepFunctionsActivity,
+    #[allow(missing_docs)] // documentation missing in model
+    StepFunctionsStateMachine,
     #[allow(missing_docs)] // documentation missing in model
     RateBasedRule,
     #[allow(missing_docs)] // documentation missing in model
@@ -400,6 +426,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     WebAclv2,
     #[allow(missing_docs)] // documentation missing in model
+    WorkSpacesConnectionAlias,
+    #[allow(missing_docs)] // documentation missing in model
+    WorkSpacesWorkspace,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionConfig,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -408,6 +438,7 @@ impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "AWS::ACM::Certificate" => ResourceType::Certificate,
+            "AWS::AccessAnalyzer::Analyzer" => ResourceType::AccessAnalyzerAnalyzer,
             "AWS::ApiGateway::RestApi" => ResourceType::RestApi,
             "AWS::ApiGateway::Stage" => ResourceType::Stage,
             "AWS::ApiGatewayV2::Api" => ResourceType::Api,
@@ -420,6 +451,8 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Backup::BackupSelection" => ResourceType::BackupSelection,
             "AWS::Backup::BackupVault" => ResourceType::BackupVault,
             "AWS::Backup::RecoveryPoint" => ResourceType::BackupRecoveryPoint,
+            "AWS::Batch::ComputeEnvironment" => ResourceType::BatchComputeEnvironment,
+            "AWS::Batch::JobQueue" => ResourceType::BatchJobQueue,
             "AWS::CloudFormation::Stack" => ResourceType::Stack,
             "AWS::CloudFront::Distribution" => ResourceType::Distribution,
             "AWS::CloudFront::StreamingDistribution" => ResourceType::StreamingDistribution,
@@ -432,6 +465,8 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
             "AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
             "AWS::Config::ResourceCompliance" => ResourceType::ResourceCompliance,
+            "AWS::DMS::EventSubscription" => ResourceType::DmsEventSubscription,
+            "AWS::DMS::ReplicationSubnetGroup" => ResourceType::DmsReplicationSubnetGroup,
             "AWS::DynamoDB::Table" => ResourceType::Table,
             "AWS::EC2::CustomerGateway" => ResourceType::CustomerGateway,
             "AWS::EC2::EIP" => ResourceType::Eip,
@@ -469,6 +504,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::ElasticBeanstalk::ApplicationVersion" => ResourceType::ApplicationVersion,
             "AWS::ElasticBeanstalk::Environment" => ResourceType::Environment,
             "AWS::ElasticLoadBalancing::LoadBalancer" => ResourceType::LoadBalancer,
+            "AWS::ElasticLoadBalancingV2::Listener" => ResourceType::ListenerV2,
             "AWS::ElasticLoadBalancingV2::LoadBalancer" => ResourceType::LoadBalancerV2,
             "AWS::Elasticsearch::Domain" => ResourceType::Domain,
             "AWS::GuardDuty::Detector" => ResourceType::GuardDutyDetector,
@@ -480,6 +516,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Kinesis::Stream" => ResourceType::KinesisStream,
             "AWS::Kinesis::StreamConsumer" => ResourceType::KinesisStreamConsumer,
             "AWS::Lambda::Function" => ResourceType::Function,
+            "AWS::MSK::Cluster" => ResourceType::MskCluster,
             "AWS::NetworkFirewall::Firewall" => ResourceType::NetworkFirewallFirewall,
             "AWS::NetworkFirewall::FirewallPolicy" => ResourceType::NetworkFirewallFirewallPolicy,
             "AWS::NetworkFirewall::RuleGroup" => ResourceType::NetworkFirewallRuleGroup,
@@ -498,6 +535,13 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Redshift::ClusterSnapshot" => ResourceType::ClusterSnapshot,
             "AWS::Redshift::ClusterSubnetGroup" => ResourceType::ClusterSubnetGroup,
             "AWS::Redshift::EventSubscription" => ResourceType::RedshiftEventSubscription,
+            "AWS::Route53Resolver::ResolverEndpoint" => {
+                ResourceType::Route53ResolverResolverEndpoint
+            }
+            "AWS::Route53Resolver::ResolverRule" => ResourceType::Route53ResolverResolverRule,
+            "AWS::Route53Resolver::ResolverRuleAssociation" => {
+                ResourceType::Route53ResolverResolverRuleAssociation
+            }
             "AWS::S3::AccountPublicAccessBlock" => ResourceType::AccountPublicAccessBlock,
             "AWS::S3::Bucket" => ResourceType::Bucket,
             "AWS::SNS::Topic" => ResourceType::Topic,
@@ -507,6 +551,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::SSM::ManagedInstanceInventory" => ResourceType::ManagedInstanceInventory,
             "AWS::SSM::PatchCompliance" => ResourceType::PatchCompliance,
             "AWS::SageMaker::CodeRepository" => ResourceType::SageMakerCodeRepository,
+            "AWS::SageMaker::Model" => ResourceType::SageMakerModel,
             "AWS::SecretsManager::Secret" => ResourceType::Secret,
             "AWS::ServiceCatalog::CloudFormationProduct" => ResourceType::CloudFormationProduct,
             "AWS::ServiceCatalog::CloudFormationProvisionedProduct" => {
@@ -515,6 +560,8 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::ServiceCatalog::Portfolio" => ResourceType::Portfolio,
             "AWS::Shield::Protection" => ResourceType::Protection,
             "AWS::ShieldRegional::Protection" => ResourceType::RegionalProtection,
+            "AWS::StepFunctions::Activity" => ResourceType::StepFunctionsActivity,
+            "AWS::StepFunctions::StateMachine" => ResourceType::StepFunctionsStateMachine,
             "AWS::WAF::RateBasedRule" => ResourceType::RateBasedRule,
             "AWS::WAF::Rule" => ResourceType::Rule,
             "AWS::WAF::RuleGroup" => ResourceType::RuleGroup,
@@ -528,6 +575,8 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::WAFv2::RegexPatternSet" => ResourceType::RegexPatternSetV2,
             "AWS::WAFv2::RuleGroup" => ResourceType::RuleGroupV2,
             "AWS::WAFv2::WebACL" => ResourceType::WebAclv2,
+            "AWS::WorkSpaces::ConnectionAlias" => ResourceType::WorkSpacesConnectionAlias,
+            "AWS::WorkSpaces::Workspace" => ResourceType::WorkSpacesWorkspace,
             "AWS::XRay::EncryptionConfig" => ResourceType::EncryptionConfig,
             other => ResourceType::Unknown(other.to_owned()),
         }
@@ -545,6 +594,7 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Certificate => "AWS::ACM::Certificate",
+            ResourceType::AccessAnalyzerAnalyzer => "AWS::AccessAnalyzer::Analyzer",
             ResourceType::RestApi => "AWS::ApiGateway::RestApi",
             ResourceType::Stage => "AWS::ApiGateway::Stage",
             ResourceType::Api => "AWS::ApiGatewayV2::Api",
@@ -557,6 +607,8 @@ impl ResourceType {
             ResourceType::BackupSelection => "AWS::Backup::BackupSelection",
             ResourceType::BackupVault => "AWS::Backup::BackupVault",
             ResourceType::BackupRecoveryPoint => "AWS::Backup::RecoveryPoint",
+            ResourceType::BatchComputeEnvironment => "AWS::Batch::ComputeEnvironment",
+            ResourceType::BatchJobQueue => "AWS::Batch::JobQueue",
             ResourceType::Stack => "AWS::CloudFormation::Stack",
             ResourceType::Distribution => "AWS::CloudFront::Distribution",
             ResourceType::StreamingDistribution => "AWS::CloudFront::StreamingDistribution",
@@ -569,6 +621,8 @@ impl ResourceType {
             ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
             ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
             ResourceType::ResourceCompliance => "AWS::Config::ResourceCompliance",
+            ResourceType::DmsEventSubscription => "AWS::DMS::EventSubscription",
+            ResourceType::DmsReplicationSubnetGroup => "AWS::DMS::ReplicationSubnetGroup",
             ResourceType::Table => "AWS::DynamoDB::Table",
             ResourceType::CustomerGateway => "AWS::EC2::CustomerGateway",
             ResourceType::Eip => "AWS::EC2::EIP",
@@ -606,6 +660,7 @@ impl ResourceType {
             ResourceType::ApplicationVersion => "AWS::ElasticBeanstalk::ApplicationVersion",
             ResourceType::Environment => "AWS::ElasticBeanstalk::Environment",
             ResourceType::LoadBalancer => "AWS::ElasticLoadBalancing::LoadBalancer",
+            ResourceType::ListenerV2 => "AWS::ElasticLoadBalancingV2::Listener",
             ResourceType::LoadBalancerV2 => "AWS::ElasticLoadBalancingV2::LoadBalancer",
             ResourceType::Domain => "AWS::Elasticsearch::Domain",
             ResourceType::GuardDutyDetector => "AWS::GuardDuty::Detector",
@@ -617,6 +672,7 @@ impl ResourceType {
             ResourceType::KinesisStream => "AWS::Kinesis::Stream",
             ResourceType::KinesisStreamConsumer => "AWS::Kinesis::StreamConsumer",
             ResourceType::Function => "AWS::Lambda::Function",
+            ResourceType::MskCluster => "AWS::MSK::Cluster",
             ResourceType::NetworkFirewallFirewall => "AWS::NetworkFirewall::Firewall",
             ResourceType::NetworkFirewallFirewallPolicy => "AWS::NetworkFirewall::FirewallPolicy",
             ResourceType::NetworkFirewallRuleGroup => "AWS::NetworkFirewall::RuleGroup",
@@ -635,6 +691,13 @@ impl ResourceType {
             ResourceType::ClusterSnapshot => "AWS::Redshift::ClusterSnapshot",
             ResourceType::ClusterSubnetGroup => "AWS::Redshift::ClusterSubnetGroup",
             ResourceType::RedshiftEventSubscription => "AWS::Redshift::EventSubscription",
+            ResourceType::Route53ResolverResolverEndpoint => {
+                "AWS::Route53Resolver::ResolverEndpoint"
+            }
+            ResourceType::Route53ResolverResolverRule => "AWS::Route53Resolver::ResolverRule",
+            ResourceType::Route53ResolverResolverRuleAssociation => {
+                "AWS::Route53Resolver::ResolverRuleAssociation"
+            }
             ResourceType::AccountPublicAccessBlock => "AWS::S3::AccountPublicAccessBlock",
             ResourceType::Bucket => "AWS::S3::Bucket",
             ResourceType::Topic => "AWS::SNS::Topic",
@@ -644,6 +707,7 @@ impl ResourceType {
             ResourceType::ManagedInstanceInventory => "AWS::SSM::ManagedInstanceInventory",
             ResourceType::PatchCompliance => "AWS::SSM::PatchCompliance",
             ResourceType::SageMakerCodeRepository => "AWS::SageMaker::CodeRepository",
+            ResourceType::SageMakerModel => "AWS::SageMaker::Model",
             ResourceType::Secret => "AWS::SecretsManager::Secret",
             ResourceType::CloudFormationProduct => "AWS::ServiceCatalog::CloudFormationProduct",
             ResourceType::CloudFormationProvisionedProduct => {
@@ -652,6 +716,8 @@ impl ResourceType {
             ResourceType::Portfolio => "AWS::ServiceCatalog::Portfolio",
             ResourceType::Protection => "AWS::Shield::Protection",
             ResourceType::RegionalProtection => "AWS::ShieldRegional::Protection",
+            ResourceType::StepFunctionsActivity => "AWS::StepFunctions::Activity",
+            ResourceType::StepFunctionsStateMachine => "AWS::StepFunctions::StateMachine",
             ResourceType::RateBasedRule => "AWS::WAF::RateBasedRule",
             ResourceType::Rule => "AWS::WAF::Rule",
             ResourceType::RuleGroup => "AWS::WAF::RuleGroup",
@@ -665,6 +731,8 @@ impl ResourceType {
             ResourceType::RegexPatternSetV2 => "AWS::WAFv2::RegexPatternSet",
             ResourceType::RuleGroupV2 => "AWS::WAFv2::RuleGroup",
             ResourceType::WebAclv2 => "AWS::WAFv2::WebACL",
+            ResourceType::WorkSpacesConnectionAlias => "AWS::WorkSpaces::ConnectionAlias",
+            ResourceType::WorkSpacesWorkspace => "AWS::WorkSpaces::Workspace",
             ResourceType::EncryptionConfig => "AWS::XRay::EncryptionConfig",
             ResourceType::Unknown(s) => s.as_ref(),
         }
@@ -673,6 +741,7 @@ impl ResourceType {
     pub fn values() -> &'static [&'static str] {
         &[
             "AWS::ACM::Certificate",
+            "AWS::AccessAnalyzer::Analyzer",
             "AWS::ApiGateway::RestApi",
             "AWS::ApiGateway::Stage",
             "AWS::ApiGatewayV2::Api",
@@ -685,6 +754,8 @@ impl ResourceType {
             "AWS::Backup::BackupSelection",
             "AWS::Backup::BackupVault",
             "AWS::Backup::RecoveryPoint",
+            "AWS::Batch::ComputeEnvironment",
+            "AWS::Batch::JobQueue",
             "AWS::CloudFormation::Stack",
             "AWS::CloudFront::Distribution",
             "AWS::CloudFront::StreamingDistribution",
@@ -697,6 +768,8 @@ impl ResourceType {
             "AWS::CodePipeline::Pipeline",
             "AWS::Config::ConformancePackCompliance",
             "AWS::Config::ResourceCompliance",
+            "AWS::DMS::EventSubscription",
+            "AWS::DMS::ReplicationSubnetGroup",
             "AWS::DynamoDB::Table",
             "AWS::EC2::CustomerGateway",
             "AWS::EC2::EIP",
@@ -734,6 +807,7 @@ impl ResourceType {
             "AWS::ElasticBeanstalk::ApplicationVersion",
             "AWS::ElasticBeanstalk::Environment",
             "AWS::ElasticLoadBalancing::LoadBalancer",
+            "AWS::ElasticLoadBalancingV2::Listener",
             "AWS::ElasticLoadBalancingV2::LoadBalancer",
             "AWS::Elasticsearch::Domain",
             "AWS::GuardDuty::Detector",
@@ -745,6 +819,7 @@ impl ResourceType {
             "AWS::Kinesis::Stream",
             "AWS::Kinesis::StreamConsumer",
             "AWS::Lambda::Function",
+            "AWS::MSK::Cluster",
             "AWS::NetworkFirewall::Firewall",
             "AWS::NetworkFirewall::FirewallPolicy",
             "AWS::NetworkFirewall::RuleGroup",
@@ -763,6 +838,9 @@ impl ResourceType {
             "AWS::Redshift::ClusterSnapshot",
             "AWS::Redshift::ClusterSubnetGroup",
             "AWS::Redshift::EventSubscription",
+            "AWS::Route53Resolver::ResolverEndpoint",
+            "AWS::Route53Resolver::ResolverRule",
+            "AWS::Route53Resolver::ResolverRuleAssociation",
             "AWS::S3::AccountPublicAccessBlock",
             "AWS::S3::Bucket",
             "AWS::SNS::Topic",
@@ -772,12 +850,15 @@ impl ResourceType {
             "AWS::SSM::ManagedInstanceInventory",
             "AWS::SSM::PatchCompliance",
             "AWS::SageMaker::CodeRepository",
+            "AWS::SageMaker::Model",
             "AWS::SecretsManager::Secret",
             "AWS::ServiceCatalog::CloudFormationProduct",
             "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
             "AWS::ServiceCatalog::Portfolio",
             "AWS::Shield::Protection",
             "AWS::ShieldRegional::Protection",
+            "AWS::StepFunctions::Activity",
+            "AWS::StepFunctions::StateMachine",
             "AWS::WAF::RateBasedRule",
             "AWS::WAF::Rule",
             "AWS::WAF::RuleGroup",
@@ -791,6 +872,8 @@ impl ResourceType {
             "AWS::WAFv2::RegexPatternSet",
             "AWS::WAFv2::RuleGroup",
             "AWS::WAFv2::WebACL",
+            "AWS::WorkSpaces::ConnectionAlias",
+            "AWS::WorkSpaces::Workspace",
             "AWS::XRay::EncryptionConfig",
         ]
     }
@@ -3202,7 +3285,7 @@ pub struct OrganizationManagedRuleMetadata {
     pub rule_identifier: std::option::Option<std::string::String>,
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub input_parameters: std::option::Option<std::string::String>,
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is triggered at a periodic frequency.</p> <note>
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     pub maximum_execution_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
@@ -3228,7 +3311,7 @@ impl OrganizationManagedRuleMetadata {
     pub fn input_parameters(&self) -> std::option::Option<&str> {
         self.input_parameters.as_deref()
     }
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is triggered at a periodic frequency.</p> <note>
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     pub fn maximum_execution_frequency(
@@ -3323,7 +3406,7 @@ pub mod organization_managed_rule_metadata {
             self.input_parameters = input;
             self
         }
-        /// <p>The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is triggered at a periodic frequency.</p> <note>
+        /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
         /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
         /// </note>
         pub fn maximum_execution_frequency(
@@ -3333,7 +3416,7 @@ pub mod organization_managed_rule_metadata {
             self.maximum_execution_frequency = Some(input);
             self
         }
-        /// <p>The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is triggered at a periodic frequency.</p> <note>
+        /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
         /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
         /// </note>
         pub fn set_maximum_execution_frequency(
@@ -4047,7 +4130,9 @@ impl ConfigSnapshotDeliveryProperties {
 pub struct ConfigurationRecorder {
     /// <p>The name of the recorder. By default, Config automatically assigns the name "default" when creating the configuration recorder. You cannot change the assigned name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p>
+    /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p> <note>
+    /// <p>While the API model does not require this field, the server will reject a request without a defined roleARN for the configuration recorder.</p>
+    /// </note>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the types of Amazon Web Services resources for which Config records configuration changes.</p>
     pub recording_group: std::option::Option<crate::model::RecordingGroup>,
@@ -4057,7 +4142,9 @@ impl ConfigurationRecorder {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p>
+    /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p> <note>
+    /// <p>While the API model does not require this field, the server will reject a request without a defined roleARN for the configuration recorder.</p>
+    /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -4096,12 +4183,16 @@ pub mod configuration_recorder {
             self.name = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p>
+        /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p> <note>
+        /// <p>While the API model does not require this field, the server will reject a request without a defined roleARN for the configuration recorder.</p>
+        /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p>
+        /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p> <note>
+        /// <p>While the API model does not require this field, the server will reject a request without a defined roleARN for the configuration recorder.</p>
+        /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4745,7 +4836,7 @@ pub struct ConfigRule {
     pub input_parameters: std::option::Option<std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
-    /// <li> <p>You are using an Config managed rule that is triggered at a periodic frequency.</p> </li>
+    /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
     /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
@@ -4794,7 +4885,7 @@ impl ConfigRule {
     }
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
-    /// <li> <p>You are using an Config managed rule that is triggered at a periodic frequency.</p> </li>
+    /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
     /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
@@ -4944,7 +5035,7 @@ pub mod config_rule {
         }
         /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
         /// <ul>
-        /// <li> <p>You are using an Config managed rule that is triggered at a periodic frequency.</p> </li>
+        /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
         /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
         /// </ul> <note>
         /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
@@ -4958,7 +5049,7 @@ pub mod config_rule {
         }
         /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
         /// <ul>
-        /// <li> <p>You are using an Config managed rule that is triggered at a periodic frequency.</p> </li>
+        /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
         /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
         /// </ul> <note>
         /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>

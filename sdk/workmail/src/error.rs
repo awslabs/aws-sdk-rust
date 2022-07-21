@@ -620,6 +620,166 @@ impl std::error::Error for CreateAliasError {
     }
 }
 
+/// Error type for the `CreateAvailabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateAvailabilityConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: CreateAvailabilityConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateAvailabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateAvailabilityConfigurationErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request exceeds the limit of the resource.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
+    NameAvailabilityException(crate::error::NameAvailabilityException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateAvailabilityConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateAvailabilityConfigurationErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateAvailabilityConfigurationErrorKind::LimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateAvailabilityConfigurationErrorKind::NameAvailabilityException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateAvailabilityConfigurationErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateAvailabilityConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateAvailabilityConfigurationError {
+    fn code(&self) -> Option<&str> {
+        CreateAvailabilityConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateAvailabilityConfigurationError {
+    /// Creates a new `CreateAvailabilityConfigurationError`.
+    pub fn new(
+        kind: CreateAvailabilityConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateAvailabilityConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateAvailabilityConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateAvailabilityConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateAvailabilityConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateAvailabilityConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAvailabilityConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAvailabilityConfigurationErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAvailabilityConfigurationErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAvailabilityConfigurationErrorKind::NameAvailabilityException`.
+    pub fn is_name_availability_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAvailabilityConfigurationErrorKind::NameAvailabilityException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAvailabilityConfigurationErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAvailabilityConfigurationErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAvailabilityConfigurationErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for CreateAvailabilityConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateAvailabilityConfigurationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            CreateAvailabilityConfigurationErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateAvailabilityConfigurationErrorKind::NameAvailabilityException(_inner) => {
+                Some(_inner)
+            }
+            CreateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            CreateAvailabilityConfigurationErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            CreateAvailabilityConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1647,6 +1807,121 @@ impl std::error::Error for DeleteAliasError {
             DeleteAliasErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
             DeleteAliasErrorKind::OrganizationStateException(_inner) => Some(_inner),
             DeleteAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteAvailabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteAvailabilityConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteAvailabilityConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteAvailabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteAvailabilityConfigurationErrorKind {
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteAvailabilityConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteAvailabilityConfigurationErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteAvailabilityConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteAvailabilityConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DeleteAvailabilityConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteAvailabilityConfigurationError {
+    /// Creates a new `DeleteAvailabilityConfigurationError`.
+    pub fn new(
+        kind: DeleteAvailabilityConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteAvailabilityConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteAvailabilityConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteAvailabilityConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteAvailabilityConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteAvailabilityConfigurationErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAvailabilityConfigurationErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAvailabilityConfigurationErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteAvailabilityConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteAvailabilityConfigurationErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            DeleteAvailabilityConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5387,6 +5662,121 @@ impl std::error::Error for ListAliasesError {
     }
 }
 
+/// Error type for the `ListAvailabilityConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAvailabilityConfigurationsError {
+    /// Kind of error that occurred.
+    pub kind: ListAvailabilityConfigurationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListAvailabilityConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAvailabilityConfigurationsErrorKind {
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAvailabilityConfigurationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAvailabilityConfigurationsErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAvailabilityConfigurationsErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAvailabilityConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListAvailabilityConfigurationsError {
+    fn code(&self) -> Option<&str> {
+        ListAvailabilityConfigurationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAvailabilityConfigurationsError {
+    /// Creates a new `ListAvailabilityConfigurationsError`.
+    pub fn new(
+        kind: ListAvailabilityConfigurationsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAvailabilityConfigurationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAvailabilityConfigurationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAvailabilityConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAvailabilityConfigurationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAvailabilityConfigurationsErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailabilityConfigurationsErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAvailabilityConfigurationsErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailabilityConfigurationsErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for ListAvailabilityConfigurationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAvailabilityConfigurationsErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListAvailabilityConfigurationsErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            ListAvailabilityConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListGroupMembers` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8407,6 +8797,151 @@ impl std::error::Error for TagResourceError {
     }
 }
 
+/// Error type for the `TestAvailabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TestAvailabilityConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: TestAvailabilityConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `TestAvailabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TestAvailabilityConfigurationErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TestAvailabilityConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TestAvailabilityConfigurationErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            TestAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            TestAvailabilityConfigurationErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            TestAvailabilityConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            TestAvailabilityConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for TestAvailabilityConfigurationError {
+    fn code(&self) -> Option<&str> {
+        TestAvailabilityConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl TestAvailabilityConfigurationError {
+    /// Creates a new `TestAvailabilityConfigurationError`.
+    pub fn new(
+        kind: TestAvailabilityConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `TestAvailabilityConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TestAvailabilityConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `TestAvailabilityConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TestAvailabilityConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `TestAvailabilityConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestAvailabilityConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TestAvailabilityConfigurationErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TestAvailabilityConfigurationErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestAvailabilityConfigurationErrorKind::OrganizationStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TestAvailabilityConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestAvailabilityConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for TestAvailabilityConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TestAvailabilityConfigurationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            TestAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            TestAvailabilityConfigurationErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            TestAvailabilityConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            TestAvailabilityConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UntagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8496,6 +9031,151 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateAvailabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateAvailabilityConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateAvailabilityConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateAvailabilityConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateAvailabilityConfigurationErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateAvailabilityConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateAvailabilityConfigurationErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateAvailabilityConfigurationErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateAvailabilityConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateAvailabilityConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateAvailabilityConfigurationError {
+    fn code(&self) -> Option<&str> {
+        UpdateAvailabilityConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateAvailabilityConfigurationError {
+    /// Creates a new `UpdateAvailabilityConfigurationError`.
+    pub fn new(
+        kind: UpdateAvailabilityConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateAvailabilityConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateAvailabilityConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateAvailabilityConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateAvailabilityConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateAvailabilityConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAvailabilityConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAvailabilityConfigurationErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAvailabilityConfigurationErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAvailabilityConfigurationErrorKind::OrganizationStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAvailabilityConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAvailabilityConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateAvailabilityConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateAvailabilityConfigurationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            UpdateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateAvailabilityConfigurationErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            UpdateAvailabilityConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateAvailabilityConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

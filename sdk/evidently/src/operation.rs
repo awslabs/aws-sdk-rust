@@ -163,6 +163,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
     }
 }
 
+/// Operation shape for `CreateSegment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_segment`](crate::client::Client::create_segment).
+///
+/// See [`crate::client::fluent_builders::CreateSegment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateSegment {
+    _private: (),
+}
+impl CreateSegment {
+    /// Creates a new builder-style object to manufacture [`CreateSegmentInput`](crate::input::CreateSegmentInput).
+    pub fn builder() -> crate::input::create_segment_input::Builder {
+        crate::input::create_segment_input::Builder::default()
+    }
+    /// Creates a new `CreateSegment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateSegment {
+    type Output =
+        std::result::Result<crate::output::CreateSegmentOutput, crate::error::CreateSegmentError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_segment_error(response)
+        } else {
+            crate::operation_deser::parse_create_segment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -289,6 +321,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
             crate::operation_deser::parse_delete_project_error(response)
         } else {
             crate::operation_deser::parse_delete_project_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteSegment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_segment`](crate::client::Client::delete_segment).
+///
+/// See [`crate::client::fluent_builders::DeleteSegment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteSegment {
+    _private: (),
+}
+impl DeleteSegment {
+    /// Creates a new builder-style object to manufacture [`DeleteSegmentInput`](crate::input::DeleteSegmentInput).
+    pub fn builder() -> crate::input::delete_segment_input::Builder {
+        crate::input::delete_segment_input::Builder::default()
+    }
+    /// Creates a new `DeleteSegment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteSegment {
+    type Output =
+        std::result::Result<crate::output::DeleteSegmentOutput, crate::error::DeleteSegmentError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_segment_error(response)
+        } else {
+            crate::operation_deser::parse_delete_segment_response(response)
         }
     }
 }
@@ -488,6 +552,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProject {
     }
 }
 
+/// Operation shape for `GetSegment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_segment`](crate::client::Client::get_segment).
+///
+/// See [`crate::client::fluent_builders::GetSegment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetSegment {
+    _private: (),
+}
+impl GetSegment {
+    /// Creates a new builder-style object to manufacture [`GetSegmentInput`](crate::input::GetSegmentInput).
+    pub fn builder() -> crate::input::get_segment_input::Builder {
+        crate::input::get_segment_input::Builder::default()
+    }
+    /// Creates a new `GetSegment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetSegment {
+    type Output =
+        std::result::Result<crate::output::GetSegmentOutput, crate::error::GetSegmentError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_segment_error(response)
+        } else {
+            crate::operation_deser::parse_get_segment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListExperiments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -614,6 +710,72 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
             crate::operation_deser::parse_list_projects_error(response)
         } else {
             crate::operation_deser::parse_list_projects_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSegmentReferences`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_segment_references`](crate::client::Client::list_segment_references).
+///
+/// See [`crate::client::fluent_builders::ListSegmentReferences`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSegmentReferences {
+    _private: (),
+}
+impl ListSegmentReferences {
+    /// Creates a new builder-style object to manufacture [`ListSegmentReferencesInput`](crate::input::ListSegmentReferencesInput).
+    pub fn builder() -> crate::input::list_segment_references_input::Builder {
+        crate::input::list_segment_references_input::Builder::default()
+    }
+    /// Creates a new `ListSegmentReferences` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSegmentReferences {
+    type Output = std::result::Result<
+        crate::output::ListSegmentReferencesOutput,
+        crate::error::ListSegmentReferencesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_segment_references_error(response)
+        } else {
+            crate::operation_deser::parse_list_segment_references_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSegments`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_segments`](crate::client::Client::list_segments).
+///
+/// See [`crate::client::fluent_builders::ListSegments`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSegments {
+    _private: (),
+}
+impl ListSegments {
+    /// Creates a new builder-style object to manufacture [`ListSegmentsInput`](crate::input::ListSegmentsInput).
+    pub fn builder() -> crate::input::list_segments_input::Builder {
+        crate::input::list_segments_input::Builder::default()
+    }
+    /// Creates a new `ListSegments` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSegments {
+    type Output =
+        std::result::Result<crate::output::ListSegmentsOutput, crate::error::ListSegmentsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_segments_error(response)
+        } else {
+            crate::operation_deser::parse_list_segments_response(response)
         }
     }
 }
@@ -844,6 +1006,40 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
             crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `TestSegmentPattern`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`test_segment_pattern`](crate::client::Client::test_segment_pattern).
+///
+/// See [`crate::client::fluent_builders::TestSegmentPattern`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct TestSegmentPattern {
+    _private: (),
+}
+impl TestSegmentPattern {
+    /// Creates a new builder-style object to manufacture [`TestSegmentPatternInput`](crate::input::TestSegmentPatternInput).
+    pub fn builder() -> crate::input::test_segment_pattern_input::Builder {
+        crate::input::test_segment_pattern_input::Builder::default()
+    }
+    /// Creates a new `TestSegmentPattern` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for TestSegmentPattern {
+    type Output = std::result::Result<
+        crate::output::TestSegmentPatternOutput,
+        crate::error::TestSegmentPatternError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_test_segment_pattern_error(response)
+        } else {
+            crate::operation_deser::parse_test_segment_pattern_response(response)
         }
     }
 }

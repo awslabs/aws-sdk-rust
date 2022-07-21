@@ -7576,6 +7576,19 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_wafv2_text_transformations(tokens)?
                                 );
                             }
+                            "SensitivityLevel" => {
+                                builder = builder.set_sensitivity_level(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::SensitivityLevel::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -1840,6 +1840,122 @@ impl AsRef<str> for FilterAction {
     }
 }
 
+/// <p>Details about the ECR automated re-scan duration setting for your environment</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EcrConfiguration {
+    /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+    pub rescan_duration: std::option::Option<crate::model::EcrRescanDuration>,
+}
+impl EcrConfiguration {
+    /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+    pub fn rescan_duration(&self) -> std::option::Option<&crate::model::EcrRescanDuration> {
+        self.rescan_duration.as_ref()
+    }
+}
+impl std::fmt::Debug for EcrConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EcrConfiguration");
+        formatter.field("rescan_duration", &self.rescan_duration);
+        formatter.finish()
+    }
+}
+/// See [`EcrConfiguration`](crate::model::EcrConfiguration).
+pub mod ecr_configuration {
+
+    /// A builder for [`EcrConfiguration`](crate::model::EcrConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rescan_duration: std::option::Option<crate::model::EcrRescanDuration>,
+    }
+    impl Builder {
+        /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+        pub fn rescan_duration(mut self, input: crate::model::EcrRescanDuration) -> Self {
+            self.rescan_duration = Some(input);
+            self
+        }
+        /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+        pub fn set_rescan_duration(
+            mut self,
+            input: std::option::Option<crate::model::EcrRescanDuration>,
+        ) -> Self {
+            self.rescan_duration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcrConfiguration`](crate::model::EcrConfiguration).
+        pub fn build(self) -> crate::model::EcrConfiguration {
+            crate::model::EcrConfiguration {
+                rescan_duration: self.rescan_duration,
+            }
+        }
+    }
+}
+impl EcrConfiguration {
+    /// Creates a new builder-style object to manufacture [`EcrConfiguration`](crate::model::EcrConfiguration).
+    pub fn builder() -> crate::model::ecr_configuration::Builder {
+        crate::model::ecr_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EcrRescanDuration {
+    #[allow(missing_docs)] // documentation missing in model
+    Days180,
+    #[allow(missing_docs)] // documentation missing in model
+    Days30,
+    #[allow(missing_docs)] // documentation missing in model
+    Lifetime,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EcrRescanDuration {
+    fn from(s: &str) -> Self {
+        match s {
+            "DAYS_180" => EcrRescanDuration::Days180,
+            "DAYS_30" => EcrRescanDuration::Days30,
+            "LIFETIME" => EcrRescanDuration::Lifetime,
+            other => EcrRescanDuration::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EcrRescanDuration {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EcrRescanDuration::from(s))
+    }
+}
+impl EcrRescanDuration {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EcrRescanDuration::Days180 => "DAYS_180",
+            EcrRescanDuration::Days30 => "DAYS_30",
+            EcrRescanDuration::Lifetime => "LIFETIME",
+            EcrRescanDuration::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DAYS_180", "DAYS_30", "LIFETIME"]
+    }
+}
+impl AsRef<str> for EcrRescanDuration {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The total of usage for an account ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3406,15 +3522,23 @@ pub enum PackageManager {
     #[allow(missing_docs)] // documentation missing in model
     Jar,
     #[allow(missing_docs)] // documentation missing in model
+    Nodepkg,
+    #[allow(missing_docs)] // documentation missing in model
     Npm,
     #[allow(missing_docs)] // documentation missing in model
     Nuget,
     #[allow(missing_docs)] // documentation missing in model
     Os,
     #[allow(missing_docs)] // documentation missing in model
+    Pip,
+    #[allow(missing_docs)] // documentation missing in model
     Pipenv,
     #[allow(missing_docs)] // documentation missing in model
     Poetry,
+    #[allow(missing_docs)] // documentation missing in model
+    Pom,
+    #[allow(missing_docs)] // documentation missing in model
+    Pythonpkg,
     #[allow(missing_docs)] // documentation missing in model
     Yarn,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -3429,11 +3553,15 @@ impl std::convert::From<&str> for PackageManager {
             "GOBINARY" => PackageManager::Gobinary,
             "GOMOD" => PackageManager::Gomod,
             "JAR" => PackageManager::Jar,
+            "NODEPKG" => PackageManager::Nodepkg,
             "NPM" => PackageManager::Npm,
             "NUGET" => PackageManager::Nuget,
             "OS" => PackageManager::Os,
+            "PIP" => PackageManager::Pip,
             "PIPENV" => PackageManager::Pipenv,
             "POETRY" => PackageManager::Poetry,
+            "POM" => PackageManager::Pom,
+            "PYTHONPKG" => PackageManager::Pythonpkg,
             "YARN" => PackageManager::Yarn,
             other => PackageManager::Unknown(other.to_owned()),
         }
@@ -3456,11 +3584,15 @@ impl PackageManager {
             PackageManager::Gobinary => "GOBINARY",
             PackageManager::Gomod => "GOMOD",
             PackageManager::Jar => "JAR",
+            PackageManager::Nodepkg => "NODEPKG",
             PackageManager::Npm => "NPM",
             PackageManager::Nuget => "NUGET",
             PackageManager::Os => "OS",
+            PackageManager::Pip => "PIP",
             PackageManager::Pipenv => "PIPENV",
             PackageManager::Poetry => "POETRY",
+            PackageManager::Pom => "POM",
+            PackageManager::Pythonpkg => "PYTHONPKG",
             PackageManager::Yarn => "YARN",
             PackageManager::Unknown(s) => s.as_ref(),
         }
@@ -3468,8 +3600,22 @@ impl PackageManager {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
-            "BUNDLER", "CARGO", "COMPOSER", "GOBINARY", "GOMOD", "JAR", "NPM", "NUGET", "OS",
-            "PIPENV", "POETRY", "YARN",
+            "BUNDLER",
+            "CARGO",
+            "COMPOSER",
+            "GOBINARY",
+            "GOMOD",
+            "JAR",
+            "NODEPKG",
+            "NPM",
+            "NUGET",
+            "OS",
+            "PIP",
+            "PIPENV",
+            "POETRY",
+            "POM",
+            "PYTHONPKG",
+            "YARN",
         ]
     }
 }
@@ -9636,7 +9782,7 @@ pub struct CoverageFilterCriteria {
     pub account_id: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
     pub resource_id: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
     pub resource_type: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
     /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
     pub scan_type: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
@@ -9664,7 +9810,7 @@ impl CoverageFilterCriteria {
     pub fn resource_id(&self) -> std::option::Option<&[crate::model::CoverageStringFilter]> {
         self.resource_id.as_deref()
     }
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
     pub fn resource_type(&self) -> std::option::Option<&[crate::model::CoverageStringFilter]> {
         self.resource_type.as_deref()
     }
@@ -9808,14 +9954,14 @@ pub mod coverage_filter_criteria {
         ///
         /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
         ///
-        /// <p>An array of Amazon Web Services resource types to return coverage statistics for.</p>
+        /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
         pub fn resource_type(mut self, input: crate::model::CoverageStringFilter) -> Self {
             let mut v = self.resource_type.unwrap_or_default();
             v.push(input);
             self.resource_type = Some(v);
             self
         }
-        /// <p>An array of Amazon Web Services resource types to return coverage statistics for.</p>
+        /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
@@ -10928,6 +11074,8 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     NoResourcesFound,
     #[allow(missing_docs)] // documentation missing in model
+    PendingDisable,
+    #[allow(missing_docs)] // documentation missing in model
     PendingInitialScan,
     #[allow(missing_docs)] // documentation missing in model
     ResourceTerminated,
@@ -10954,6 +11102,7 @@ impl std::convert::From<&str> for ScanStatusReason {
             "IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
             "INTERNAL_ERROR" => ScanStatusReason::InternalError,
             "NO_RESOURCES_FOUND" => ScanStatusReason::NoResourcesFound,
+            "PENDING_DISABLE" => ScanStatusReason::PendingDisable,
             "PENDING_INITIAL_SCAN" => ScanStatusReason::PendingInitialScan,
             "RESOURCE_TERMINATED" => ScanStatusReason::ResourceTerminated,
             "SCAN_ELIGIBILITY_EXPIRED" => ScanStatusReason::ScanEligibilityExpired,
@@ -10982,6 +11131,7 @@ impl ScanStatusReason {
             ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
             ScanStatusReason::InternalError => "INTERNAL_ERROR",
             ScanStatusReason::NoResourcesFound => "NO_RESOURCES_FOUND",
+            ScanStatusReason::PendingDisable => "PENDING_DISABLE",
             ScanStatusReason::PendingInitialScan => "PENDING_INITIAL_SCAN",
             ScanStatusReason::ResourceTerminated => "RESOURCE_TERMINATED",
             ScanStatusReason::ScanEligibilityExpired => "SCAN_ELIGIBILITY_EXPIRED",
@@ -11001,6 +11151,7 @@ impl ScanStatusReason {
             "IMAGE_SIZE_EXCEEDED",
             "INTERNAL_ERROR",
             "NO_RESOURCES_FOUND",
+            "PENDING_DISABLE",
             "PENDING_INITIAL_SCAN",
             "RESOURCE_TERMINATED",
             "SCAN_ELIGIBILITY_EXPIRED",
@@ -11495,17 +11646,29 @@ impl Destination {
 )]
 pub enum ReportingErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    BucketNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    IncompatibleBucketRegion,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
     InvalidPermissions,
+    #[allow(missing_docs)] // documentation missing in model
+    MalformedKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
+    NoFindingsFound,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReportingErrorCode {
     fn from(s: &str) -> Self {
         match s {
+            "BUCKET_NOT_FOUND" => ReportingErrorCode::BucketNotFound,
+            "INCOMPATIBLE_BUCKET_REGION" => ReportingErrorCode::IncompatibleBucketRegion,
             "INTERNAL_ERROR" => ReportingErrorCode::InternalError,
             "INVALID_PERMISSIONS" => ReportingErrorCode::InvalidPermissions,
+            "MALFORMED_KMS_KEY" => ReportingErrorCode::MalformedKmsKey,
+            "NO_FINDINGS_FOUND" => ReportingErrorCode::NoFindingsFound,
             other => ReportingErrorCode::Unknown(other.to_owned()),
         }
     }
@@ -11521,14 +11684,25 @@ impl ReportingErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ReportingErrorCode::BucketNotFound => "BUCKET_NOT_FOUND",
+            ReportingErrorCode::IncompatibleBucketRegion => "INCOMPATIBLE_BUCKET_REGION",
             ReportingErrorCode::InternalError => "INTERNAL_ERROR",
             ReportingErrorCode::InvalidPermissions => "INVALID_PERMISSIONS",
+            ReportingErrorCode::MalformedKmsKey => "MALFORMED_KMS_KEY",
+            ReportingErrorCode::NoFindingsFound => "NO_FINDINGS_FOUND",
             ReportingErrorCode::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["INTERNAL_ERROR", "INVALID_PERMISSIONS"]
+        &[
+            "BUCKET_NOT_FOUND",
+            "INCOMPATIBLE_BUCKET_REGION",
+            "INTERNAL_ERROR",
+            "INVALID_PERMISSIONS",
+            "MALFORMED_KMS_KEY",
+            "NO_FINDINGS_FOUND",
+        ]
     }
 }
 impl AsRef<str> for ReportingErrorCode {
@@ -11673,6 +11847,228 @@ impl DelegatedAdmin {
     /// Creates a new builder-style object to manufacture [`DelegatedAdmin`](crate::model::DelegatedAdmin).
     pub fn builder() -> crate::model::delegated_admin::Builder {
         crate::model::delegated_admin::Builder::default()
+    }
+}
+
+/// <p>Details about the state of the ECR scans for your environment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EcrConfigurationState {
+    /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+    pub rescan_duration_state: std::option::Option<crate::model::EcrRescanDurationState>,
+}
+impl EcrConfigurationState {
+    /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+    pub fn rescan_duration_state(
+        &self,
+    ) -> std::option::Option<&crate::model::EcrRescanDurationState> {
+        self.rescan_duration_state.as_ref()
+    }
+}
+impl std::fmt::Debug for EcrConfigurationState {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EcrConfigurationState");
+        formatter.field("rescan_duration_state", &self.rescan_duration_state);
+        formatter.finish()
+    }
+}
+/// See [`EcrConfigurationState`](crate::model::EcrConfigurationState).
+pub mod ecr_configuration_state {
+
+    /// A builder for [`EcrConfigurationState`](crate::model::EcrConfigurationState).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rescan_duration_state: std::option::Option<crate::model::EcrRescanDurationState>,
+    }
+    impl Builder {
+        /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+        pub fn rescan_duration_state(
+            mut self,
+            input: crate::model::EcrRescanDurationState,
+        ) -> Self {
+            self.rescan_duration_state = Some(input);
+            self
+        }
+        /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+        pub fn set_rescan_duration_state(
+            mut self,
+            input: std::option::Option<crate::model::EcrRescanDurationState>,
+        ) -> Self {
+            self.rescan_duration_state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcrConfigurationState`](crate::model::EcrConfigurationState).
+        pub fn build(self) -> crate::model::EcrConfigurationState {
+            crate::model::EcrConfigurationState {
+                rescan_duration_state: self.rescan_duration_state,
+            }
+        }
+    }
+}
+impl EcrConfigurationState {
+    /// Creates a new builder-style object to manufacture [`EcrConfigurationState`](crate::model::EcrConfigurationState).
+    pub fn builder() -> crate::model::ecr_configuration_state::Builder {
+        crate::model::ecr_configuration_state::Builder::default()
+    }
+}
+
+/// <p>Details about the state of any changes to the ECR automated re-scan duration setting.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EcrRescanDurationState {
+    /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+    pub rescan_duration: std::option::Option<crate::model::EcrRescanDuration>,
+    /// <p>The status of changes to the ECR automated re-scan duration.</p>
+    pub status: std::option::Option<crate::model::EcrRescanDurationStatus>,
+    /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl EcrRescanDurationState {
+    /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+    pub fn rescan_duration(&self) -> std::option::Option<&crate::model::EcrRescanDuration> {
+        self.rescan_duration.as_ref()
+    }
+    /// <p>The status of changes to the ECR automated re-scan duration.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EcrRescanDurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+}
+impl std::fmt::Debug for EcrRescanDurationState {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EcrRescanDurationState");
+        formatter.field("rescan_duration", &self.rescan_duration);
+        formatter.field("status", &self.status);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.finish()
+    }
+}
+/// See [`EcrRescanDurationState`](crate::model::EcrRescanDurationState).
+pub mod ecr_rescan_duration_state {
+
+    /// A builder for [`EcrRescanDurationState`](crate::model::EcrRescanDurationState).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rescan_duration: std::option::Option<crate::model::EcrRescanDuration>,
+        pub(crate) status: std::option::Option<crate::model::EcrRescanDurationStatus>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+        pub fn rescan_duration(mut self, input: crate::model::EcrRescanDuration) -> Self {
+            self.rescan_duration = Some(input);
+            self
+        }
+        /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+        pub fn set_rescan_duration(
+            mut self,
+            input: std::option::Option<crate::model::EcrRescanDuration>,
+        ) -> Self {
+            self.rescan_duration = input;
+            self
+        }
+        /// <p>The status of changes to the ECR automated re-scan duration.</p>
+        pub fn status(mut self, input: crate::model::EcrRescanDurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of changes to the ECR automated re-scan duration.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::EcrRescanDurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        /// <p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcrRescanDurationState`](crate::model::EcrRescanDurationState).
+        pub fn build(self) -> crate::model::EcrRescanDurationState {
+            crate::model::EcrRescanDurationState {
+                rescan_duration: self.rescan_duration,
+                status: self.status,
+                updated_at: self.updated_at,
+            }
+        }
+    }
+}
+impl EcrRescanDurationState {
+    /// Creates a new builder-style object to manufacture [`EcrRescanDurationState`](crate::model::EcrRescanDurationState).
+    pub fn builder() -> crate::model::ecr_rescan_duration_state::Builder {
+        crate::model::ecr_rescan_duration_state::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EcrRescanDurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Success,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EcrRescanDurationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => EcrRescanDurationStatus::Failed,
+            "PENDING" => EcrRescanDurationStatus::Pending,
+            "SUCCESS" => EcrRescanDurationStatus::Success,
+            other => EcrRescanDurationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EcrRescanDurationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EcrRescanDurationStatus::from(s))
+    }
+}
+impl EcrRescanDurationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EcrRescanDurationStatus::Failed => "FAILED",
+            EcrRescanDurationStatus::Pending => "PENDING",
+            EcrRescanDurationStatus::Success => "SUCCESS",
+            EcrRescanDurationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "PENDING", "SUCCESS"]
+    }
+}
+impl AsRef<str> for EcrRescanDurationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -11830,6 +12226,8 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
     #[allow(missing_docs)] // documentation missing in model
+    AccountIsIsolated,
+    #[allow(missing_docs)] // documentation missing in model
     AlreadyEnabled,
     #[allow(missing_docs)] // documentation missing in model
     DisableInProgress,
@@ -11860,6 +12258,7 @@ impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => ErrorCode::AccessDenied,
+            "ACCOUNT_IS_ISOLATED" => ErrorCode::AccountIsIsolated,
             "ALREADY_ENABLED" => ErrorCode::AlreadyEnabled,
             "DISABLE_IN_PROGRESS" => ErrorCode::DisableInProgress,
             "DISASSOCIATE_ALL_MEMBERS" => ErrorCode::DisassociateAllMembers,
@@ -11888,6 +12287,7 @@ impl ErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCode::AccessDenied => "ACCESS_DENIED",
+            ErrorCode::AccountIsIsolated => "ACCOUNT_IS_ISOLATED",
             ErrorCode::AlreadyEnabled => "ALREADY_ENABLED",
             ErrorCode::DisableInProgress => "DISABLE_IN_PROGRESS",
             ErrorCode::DisassociateAllMembers => "DISASSOCIATE_ALL_MEMBERS",
@@ -11907,6 +12307,7 @@ impl ErrorCode {
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
+            "ACCOUNT_IS_ISOLATED",
             "ALREADY_ENABLED",
             "DISABLE_IN_PROGRESS",
             "DISASSOCIATE_ALL_MEMBERS",

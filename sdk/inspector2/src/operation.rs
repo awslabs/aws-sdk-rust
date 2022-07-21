@@ -431,6 +431,40 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDelegatedAdminAcco
     }
 }
 
+/// Operation shape for `GetConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_configuration`](crate::client::Client::get_configuration).
+///
+/// See [`crate::client::fluent_builders::GetConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetConfiguration {
+    _private: (),
+}
+impl GetConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetConfigurationInput`](crate::input::GetConfigurationInput).
+    pub fn builder() -> crate::input::get_configuration_input::Builder {
+        crate::input::get_configuration_input::Builder::default()
+    }
+    /// Creates a new `GetConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetConfigurationOutput,
+        crate::error::GetConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_get_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetDelegatedAdminAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -922,6 +956,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_configuration`](crate::client::Client::update_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateConfiguration {
+    _private: (),
+}
+impl UpdateConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
+    pub fn builder() -> crate::input::update_configuration_input::Builder {
+        crate::input::update_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateConfigurationOutput,
+        crate::error::UpdateConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_configuration_response(response)
         }
     }
 }

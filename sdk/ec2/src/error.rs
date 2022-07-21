@@ -1845,6 +1845,91 @@ impl std::error::Error for AssociateTransitGatewayMulticastDomainError {
     }
 }
 
+/// Error type for the `AssociateTransitGatewayPolicyTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateTransitGatewayPolicyTableError {
+    /// Kind of error that occurred.
+    pub kind: AssociateTransitGatewayPolicyTableErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssociateTransitGatewayPolicyTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateTransitGatewayPolicyTableErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateTransitGatewayPolicyTableError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateTransitGatewayPolicyTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateTransitGatewayPolicyTableError {
+    fn code(&self) -> Option<&str> {
+        AssociateTransitGatewayPolicyTableError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateTransitGatewayPolicyTableError {
+    /// Creates a new `AssociateTransitGatewayPolicyTableError`.
+    pub fn new(
+        kind: AssociateTransitGatewayPolicyTableErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateTransitGatewayPolicyTableError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateTransitGatewayPolicyTableErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateTransitGatewayPolicyTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateTransitGatewayPolicyTableErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for AssociateTransitGatewayPolicyTableError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateTransitGatewayPolicyTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `AssociateTransitGatewayRouteTable` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8620,6 +8705,91 @@ impl std::error::Error for CreateTransitGatewayPeeringAttachmentError {
     }
 }
 
+/// Error type for the `CreateTransitGatewayPolicyTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateTransitGatewayPolicyTableError {
+    /// Kind of error that occurred.
+    pub kind: CreateTransitGatewayPolicyTableErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateTransitGatewayPolicyTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateTransitGatewayPolicyTableErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateTransitGatewayPolicyTableError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateTransitGatewayPolicyTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateTransitGatewayPolicyTableError {
+    fn code(&self) -> Option<&str> {
+        CreateTransitGatewayPolicyTableError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateTransitGatewayPolicyTableError {
+    /// Creates a new `CreateTransitGatewayPolicyTableError`.
+    pub fn new(
+        kind: CreateTransitGatewayPolicyTableErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateTransitGatewayPolicyTableError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateTransitGatewayPolicyTableErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateTransitGatewayPolicyTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateTransitGatewayPolicyTableErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for CreateTransitGatewayPolicyTableError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateTransitGatewayPolicyTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateTransitGatewayPrefixListReference` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8870,6 +9040,93 @@ impl std::error::Error for CreateTransitGatewayRouteTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateTransitGatewayRouteTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateTransitGatewayRouteTableAnnouncement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateTransitGatewayRouteTableAnnouncementError {
+    /// Kind of error that occurred.
+    pub kind: CreateTransitGatewayRouteTableAnnouncementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateTransitGatewayRouteTableAnnouncement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateTransitGatewayRouteTableAnnouncementErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateTransitGatewayRouteTableAnnouncementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateTransitGatewayRouteTableAnnouncementError {
+    fn code(&self) -> Option<&str> {
+        CreateTransitGatewayRouteTableAnnouncementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateTransitGatewayRouteTableAnnouncementError {
+    /// Creates a new `CreateTransitGatewayRouteTableAnnouncementError`.
+    pub fn new(
+        kind: CreateTransitGatewayRouteTableAnnouncementErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateTransitGatewayRouteTableAnnouncementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateTransitGatewayRouteTableAnnouncementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for CreateTransitGatewayRouteTableAnnouncementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -13769,6 +14026,91 @@ impl std::error::Error for DeleteTransitGatewayPeeringAttachmentError {
     }
 }
 
+/// Error type for the `DeleteTransitGatewayPolicyTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteTransitGatewayPolicyTableError {
+    /// Kind of error that occurred.
+    pub kind: DeleteTransitGatewayPolicyTableErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteTransitGatewayPolicyTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteTransitGatewayPolicyTableErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteTransitGatewayPolicyTableError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteTransitGatewayPolicyTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteTransitGatewayPolicyTableError {
+    fn code(&self) -> Option<&str> {
+        DeleteTransitGatewayPolicyTableError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteTransitGatewayPolicyTableError {
+    /// Creates a new `DeleteTransitGatewayPolicyTableError`.
+    pub fn new(
+        kind: DeleteTransitGatewayPolicyTableErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteTransitGatewayPolicyTableError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteTransitGatewayPolicyTableErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteTransitGatewayPolicyTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteTransitGatewayPolicyTableErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DeleteTransitGatewayPolicyTableError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteTransitGatewayPolicyTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteTransitGatewayPrefixListReference` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14019,6 +14361,93 @@ impl std::error::Error for DeleteTransitGatewayRouteTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteTransitGatewayRouteTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteTransitGatewayRouteTableAnnouncement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteTransitGatewayRouteTableAnnouncementError {
+    /// Kind of error that occurred.
+    pub kind: DeleteTransitGatewayRouteTableAnnouncementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteTransitGatewayRouteTableAnnouncement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteTransitGatewayRouteTableAnnouncementErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteTransitGatewayRouteTableAnnouncementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteTransitGatewayRouteTableAnnouncementError {
+    fn code(&self) -> Option<&str> {
+        DeleteTransitGatewayRouteTableAnnouncementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteTransitGatewayRouteTableAnnouncementError {
+    /// Creates a new `DeleteTransitGatewayRouteTableAnnouncementError`.
+    pub fn new(
+        kind: DeleteTransitGatewayRouteTableAnnouncementErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteTransitGatewayRouteTableAnnouncementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteTransitGatewayRouteTableAnnouncementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DeleteTransitGatewayRouteTableAnnouncementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -24794,6 +25223,182 @@ impl std::error::Error for DescribeTransitGatewayPeeringAttachmentsError {
     }
 }
 
+/// Error type for the `DescribeTransitGatewayPolicyTables` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeTransitGatewayPolicyTablesError {
+    /// Kind of error that occurred.
+    pub kind: DescribeTransitGatewayPolicyTablesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeTransitGatewayPolicyTables` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeTransitGatewayPolicyTablesErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeTransitGatewayPolicyTablesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeTransitGatewayPolicyTablesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeTransitGatewayPolicyTablesError {
+    fn code(&self) -> Option<&str> {
+        DescribeTransitGatewayPolicyTablesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeTransitGatewayPolicyTablesError {
+    /// Creates a new `DescribeTransitGatewayPolicyTablesError`.
+    pub fn new(
+        kind: DescribeTransitGatewayPolicyTablesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeTransitGatewayPolicyTablesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeTransitGatewayPolicyTablesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeTransitGatewayPolicyTablesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeTransitGatewayPolicyTablesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DescribeTransitGatewayPolicyTablesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeTransitGatewayPolicyTablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeTransitGatewayRouteTableAnnouncements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeTransitGatewayRouteTableAnnouncementsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeTransitGatewayRouteTableAnnouncementsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeTransitGatewayRouteTableAnnouncements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeTransitGatewayRouteTableAnnouncementsErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeTransitGatewayRouteTableAnnouncementsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeTransitGatewayRouteTableAnnouncementsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for DescribeTransitGatewayRouteTableAnnouncementsError
+{
+    fn code(&self) -> Option<&str> {
+        DescribeTransitGatewayRouteTableAnnouncementsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeTransitGatewayRouteTableAnnouncementsError {
+    /// Creates a new `DescribeTransitGatewayRouteTableAnnouncementsError`.
+    pub fn new(
+        kind: DescribeTransitGatewayRouteTableAnnouncementsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeTransitGatewayRouteTableAnnouncementsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeTransitGatewayRouteTableAnnouncementsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeTransitGatewayRouteTableAnnouncementsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeTransitGatewayRouteTableAnnouncementsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DescribeTransitGatewayRouteTableAnnouncementsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeTransitGatewayRouteTableAnnouncementsErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `DescribeTransitGatewayRouteTables` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -28466,6 +29071,93 @@ impl std::error::Error for DisassociateTransitGatewayMulticastDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DisassociateTransitGatewayMulticastDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `DisassociateTransitGatewayPolicyTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateTransitGatewayPolicyTableError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateTransitGatewayPolicyTableErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisassociateTransitGatewayPolicyTable` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateTransitGatewayPolicyTableErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociateTransitGatewayPolicyTableError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateTransitGatewayPolicyTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociateTransitGatewayPolicyTableError {
+    fn code(&self) -> Option<&str> {
+        DisassociateTransitGatewayPolicyTableError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateTransitGatewayPolicyTableError {
+    /// Creates a new `DisassociateTransitGatewayPolicyTableError`.
+    pub fn new(
+        kind: DisassociateTransitGatewayPolicyTableErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateTransitGatewayPolicyTableError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateTransitGatewayPolicyTableErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateTransitGatewayPolicyTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateTransitGatewayPolicyTableErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DisassociateTransitGatewayPolicyTableError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateTransitGatewayPolicyTableErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
         }
@@ -32486,6 +33178,180 @@ impl std::error::Error for GetTransitGatewayMulticastDomainAssociationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetTransitGatewayMulticastDomainAssociationsErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `GetTransitGatewayPolicyTableAssociations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetTransitGatewayPolicyTableAssociationsError {
+    /// Kind of error that occurred.
+    pub kind: GetTransitGatewayPolicyTableAssociationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetTransitGatewayPolicyTableAssociations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetTransitGatewayPolicyTableAssociationsErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetTransitGatewayPolicyTableAssociationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetTransitGatewayPolicyTableAssociationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetTransitGatewayPolicyTableAssociationsError {
+    fn code(&self) -> Option<&str> {
+        GetTransitGatewayPolicyTableAssociationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetTransitGatewayPolicyTableAssociationsError {
+    /// Creates a new `GetTransitGatewayPolicyTableAssociationsError`.
+    pub fn new(
+        kind: GetTransitGatewayPolicyTableAssociationsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetTransitGatewayPolicyTableAssociationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetTransitGatewayPolicyTableAssociationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetTransitGatewayPolicyTableAssociationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetTransitGatewayPolicyTableAssociationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for GetTransitGatewayPolicyTableAssociationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetTransitGatewayPolicyTableAssociationsErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `GetTransitGatewayPolicyTableEntries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetTransitGatewayPolicyTableEntriesError {
+    /// Kind of error that occurred.
+    pub kind: GetTransitGatewayPolicyTableEntriesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetTransitGatewayPolicyTableEntries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetTransitGatewayPolicyTableEntriesErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetTransitGatewayPolicyTableEntriesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetTransitGatewayPolicyTableEntriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetTransitGatewayPolicyTableEntriesError {
+    fn code(&self) -> Option<&str> {
+        GetTransitGatewayPolicyTableEntriesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetTransitGatewayPolicyTableEntriesError {
+    /// Creates a new `GetTransitGatewayPolicyTableEntriesError`.
+    pub fn new(
+        kind: GetTransitGatewayPolicyTableEntriesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetTransitGatewayPolicyTableEntriesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetTransitGatewayPolicyTableEntriesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetTransitGatewayPolicyTableEntriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetTransitGatewayPolicyTableEntriesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for GetTransitGatewayPolicyTableEntriesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetTransitGatewayPolicyTableEntriesErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
         }

@@ -2068,6 +2068,13 @@ where
                                     )?,
                                 );
                             }
+                            "includeIframeOnlyStream" => {
+                                builder = builder.set_include_iframe_only_stream(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             "manifestLayout" => {
                                 builder = builder.set_manifest_layout(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(

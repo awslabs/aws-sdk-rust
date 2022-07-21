@@ -113,6 +113,7 @@ impl Client {
     ///   - [`randomization_salt(impl Into<String>)`](crate::client::fluent_builders::CreateExperiment::randomization_salt) / [`set_randomization_salt(Option<String>)`](crate::client::fluent_builders::CreateExperiment::set_randomization_salt): <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     ///   - [`sampling_rate(i64)`](crate::client::fluent_builders::CreateExperiment::sampling_rate) / [`set_sampling_rate(Option<i64>)`](crate::client::fluent_builders::CreateExperiment::set_sampling_rate): <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>  <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
     ///   - [`online_ab_config(OnlineAbConfig)`](crate::client::fluent_builders::CreateExperiment::online_ab_config) / [`set_online_ab_config(Option<OnlineAbConfig>)`](crate::client::fluent_builders::CreateExperiment::set_online_ab_config): <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+    ///   - [`segment(impl Into<String>)`](crate::client::fluent_builders::CreateExperiment::segment) / [`set_segment(Option<String>)`](crate::client::fluent_builders::CreateExperiment::set_segment): <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateExperiment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateExperiment::set_tags): <p>Assigns one or more tags (key-value pairs) to the experiment.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with an experiment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     /// - On success, responds with [`CreateExperimentOutput`](crate::output::CreateExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::output::CreateExperimentOutput::experiment): <p>A structure containing the configuration details of the experiment that you created.</p>
@@ -146,7 +147,7 @@ impl Client {
     ///   - [`scheduled_splits_config(ScheduledSplitsLaunchConfig)`](crate::client::fluent_builders::CreateLaunch::scheduled_splits_config) / [`set_scheduled_splits_config(Option<ScheduledSplitsLaunchConfig>)`](crate::client::fluent_builders::CreateLaunch::set_scheduled_splits_config): <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     ///   - [`metric_monitors(Vec<MetricMonitorConfig>)`](crate::client::fluent_builders::CreateLaunch::metric_monitors) / [`set_metric_monitors(Option<Vec<MetricMonitorConfig>>)`](crate::client::fluent_builders::CreateLaunch::set_metric_monitors): <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
     ///   - [`groups(Vec<LaunchGroupConfig>)`](crate::client::fluent_builders::CreateLaunch::groups) / [`set_groups(Option<Vec<LaunchGroupConfig>>)`](crate::client::fluent_builders::CreateLaunch::set_groups): <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    ///   - [`randomization_salt(impl Into<String>)`](crate::client::fluent_builders::CreateLaunch::randomization_salt) / [`set_randomization_salt(Option<String>)`](crate::client::fluent_builders::CreateLaunch::set_randomization_salt): <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+    ///   - [`randomization_salt(impl Into<String>)`](crate::client::fluent_builders::CreateLaunch::randomization_salt) / [`set_randomization_salt(Option<String>)`](crate::client::fluent_builders::CreateLaunch::set_randomization_salt): <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLaunch::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLaunch::set_tags): <p>Assigns one or more tags (key-value pairs) to the launch.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a launch.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     /// - On success, responds with [`CreateLaunchOutput`](crate::output::CreateLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::output::CreateLaunchOutput::launch): <p>A structure that contains the configuration of the launch that was created.</p>
@@ -166,6 +167,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
     pub fn create_project(&self) -> fluent_builders::CreateProject {
         fluent_builders::CreateProject::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateSegment`](crate::client::fluent_builders::CreateSegment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSegment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSegment::set_name): <p>A name for the segment.</p>
+    ///   - [`pattern(impl Into<String>)`](crate::client::fluent_builders::CreateSegment::pattern) / [`set_pattern(Option<String>)`](crate::client::fluent_builders::CreateSegment::set_pattern): <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSegment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSegment::set_description): <p>An optional description for this segment.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSegment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSegment::set_tags): <p>Assigns one or more tags (key-value pairs) to the segment.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a segment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    /// - On success, responds with [`CreateSegmentOutput`](crate::output::CreateSegmentOutput) with field(s):
+    ///   - [`segment(Option<Segment>)`](crate::output::CreateSegmentOutput::segment): <p>A structure that contains the complete information about the segment that was just created.</p>
+    /// - On failure, responds with [`SdkError<CreateSegmentError>`](crate::error::CreateSegmentError)
+    pub fn create_segment(&self) -> fluent_builders::CreateSegment {
+        fluent_builders::CreateSegment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteExperiment`](crate::client::fluent_builders::DeleteExperiment) operation.
     ///
@@ -210,13 +224,23 @@ impl Client {
     pub fn delete_project(&self) -> fluent_builders::DeleteProject {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteSegment`](crate::client::fluent_builders::DeleteSegment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`segment(impl Into<String>)`](crate::client::fluent_builders::DeleteSegment::segment) / [`set_segment(Option<String>)`](crate::client::fluent_builders::DeleteSegment::set_segment): <p>Specifies the segment to delete.</p>
+    /// - On success, responds with [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSegmentError>`](crate::error::DeleteSegmentError)
+    pub fn delete_segment(&self) -> fluent_builders::DeleteSegment {
+        fluent_builders::DeleteSegment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`EvaluateFeature`](crate::client::fluent_builders::EvaluateFeature) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::EvaluateFeature::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::EvaluateFeature::set_project): <p>The name or ARN of the project that contains this feature.</p>
     ///   - [`feature(impl Into<String>)`](crate::client::fluent_builders::EvaluateFeature::feature) / [`set_feature(Option<String>)`](crate::client::fluent_builders::EvaluateFeature::set_feature): <p>The name of the feature being evaluated.</p>
     ///   - [`entity_id(impl Into<String>)`](crate::client::fluent_builders::EvaluateFeature::entity_id) / [`set_entity_id(Option<String>)`](crate::client::fluent_builders::EvaluateFeature::set_entity_id): <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    ///   - [`evaluation_context(impl Into<String>)`](crate::client::fluent_builders::EvaluateFeature::evaluation_context) / [`set_evaluation_context(Option<String>)`](crate::client::fluent_builders::EvaluateFeature::set_evaluation_context): <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    ///   - [`evaluation_context(impl Into<String>)`](crate::client::fluent_builders::EvaluateFeature::evaluation_context) / [`set_evaluation_context(Option<String>)`](crate::client::fluent_builders::EvaluateFeature::set_evaluation_context): <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>  <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
     /// - On success, responds with [`EvaluateFeatureOutput`](crate::output::EvaluateFeatureOutput) with field(s):
     ///   - [`variation(Option<String>)`](crate::output::EvaluateFeatureOutput::variation): <p>The name of the variation that was served to the user session.</p>
     ///   - [`value(Option<VariableValue>)`](crate::output::EvaluateFeatureOutput::value): <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
@@ -291,6 +315,16 @@ impl Client {
     pub fn get_project(&self) -> fluent_builders::GetProject {
         fluent_builders::GetProject::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetSegment`](crate::client::fluent_builders::GetSegment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`segment(impl Into<String>)`](crate::client::fluent_builders::GetSegment::segment) / [`set_segment(Option<String>)`](crate::client::fluent_builders::GetSegment::set_segment): <p>The ARN of the segment to return information for.</p>
+    /// - On success, responds with [`GetSegmentOutput`](crate::output::GetSegmentOutput) with field(s):
+    ///   - [`segment(Option<Segment>)`](crate::output::GetSegmentOutput::segment): <p>A structure that contains the complete information about the segment.</p>
+    /// - On failure, responds with [`SdkError<GetSegmentError>`](crate::error::GetSegmentError)
+    pub fn get_segment(&self) -> fluent_builders::GetSegment {
+        fluent_builders::GetSegment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListExperiments`](crate::client::fluent_builders::ListExperiments) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExperiments::into_paginator).
     ///
@@ -347,6 +381,34 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
     pub fn list_projects(&self) -> fluent_builders::ListProjects {
         fluent_builders::ListProjects::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListSegmentReferences`](crate::client::fluent_builders::ListSegmentReferences) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSegmentReferences::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`segment(impl Into<String>)`](crate::client::fluent_builders::ListSegmentReferences::segment) / [`set_segment(Option<String>)`](crate::client::fluent_builders::ListSegmentReferences::set_segment): <p>The ARN of the segment that you want to view information for.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSegmentReferences::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSegmentReferences::set_max_results): <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSegmentReferences::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSegmentReferences::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+    ///   - [`r#type(SegmentReferenceResourceType)`](crate::client::fluent_builders::ListSegmentReferences::type) / [`set_type(Option<SegmentReferenceResourceType>)`](crate::client::fluent_builders::ListSegmentReferences::set_type): <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+    /// - On success, responds with [`ListSegmentReferencesOutput`](crate::output::ListSegmentReferencesOutput) with field(s):
+    ///   - [`referenced_by(Option<Vec<RefResource>>)`](crate::output::ListSegmentReferencesOutput::referenced_by): <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSegmentReferencesOutput::next_token): <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListSegmentReferencesError>`](crate::error::ListSegmentReferencesError)
+    pub fn list_segment_references(&self) -> fluent_builders::ListSegmentReferences {
+        fluent_builders::ListSegmentReferences::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListSegments`](crate::client::fluent_builders::ListSegments) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSegments::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSegments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSegments::set_max_results): <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSegments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSegments::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
+    /// - On success, responds with [`ListSegmentsOutput`](crate::output::ListSegmentsOutput) with field(s):
+    ///   - [`segments(Option<Vec<Segment>>)`](crate::output::ListSegmentsOutput::segments): <p>An array of structures that contain information about the segments in this Region.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSegmentsOutput::next_token): <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListSegmentsError>`](crate::error::ListSegmentsError)
+    pub fn list_segments(&self) -> fluent_builders::ListSegments {
+        fluent_builders::ListSegments::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -430,6 +492,17 @@ impl Client {
     pub fn tag_resource(&self) -> fluent_builders::TagResource {
         fluent_builders::TagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`TestSegmentPattern`](crate::client::fluent_builders::TestSegmentPattern) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`pattern(impl Into<String>)`](crate::client::fluent_builders::TestSegmentPattern::pattern) / [`set_pattern(Option<String>)`](crate::client::fluent_builders::TestSegmentPattern::set_pattern): <p>The pattern to test.</p>
+    ///   - [`payload(impl Into<String>)`](crate::client::fluent_builders::TestSegmentPattern::payload) / [`set_payload(Option<String>)`](crate::client::fluent_builders::TestSegmentPattern::set_payload): <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+    /// - On success, responds with [`TestSegmentPatternOutput`](crate::output::TestSegmentPatternOutput) with field(s):
+    ///   - [`r#match(Option<bool>)`](crate::output::TestSegmentPatternOutput::match): <p>Returns <code>true</code> if the pattern matches the payload.</p>
+    /// - On failure, responds with [`SdkError<TestSegmentPatternError>`](crate::error::TestSegmentPatternError)
+    pub fn test_segment_pattern(&self) -> fluent_builders::TestSegmentPattern {
+        fluent_builders::TestSegmentPattern::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -451,6 +524,8 @@ impl Client {
     ///   - [`metric_goals(Vec<MetricGoalConfig>)`](crate::client::fluent_builders::UpdateExperiment::metric_goals) / [`set_metric_goals(Option<Vec<MetricGoalConfig>>)`](crate::client::fluent_builders::UpdateExperiment::set_metric_goals): <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     ///   - [`randomization_salt(impl Into<String>)`](crate::client::fluent_builders::UpdateExperiment::randomization_salt) / [`set_randomization_salt(Option<String>)`](crate::client::fluent_builders::UpdateExperiment::set_randomization_salt): <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     ///   - [`sampling_rate(i64)`](crate::client::fluent_builders::UpdateExperiment::sampling_rate) / [`set_sampling_rate(Option<i64>)`](crate::client::fluent_builders::UpdateExperiment::set_sampling_rate): <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>  <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
+    ///   - [`segment(impl Into<String>)`](crate::client::fluent_builders::UpdateExperiment::segment) / [`set_segment(Option<String>)`](crate::client::fluent_builders::UpdateExperiment::set_segment): <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
+    ///   - [`remove_segment(bool)`](crate::client::fluent_builders::UpdateExperiment::remove_segment) / [`set_remove_segment(bool)`](crate::client::fluent_builders::UpdateExperiment::set_remove_segment): <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
     ///   - [`online_ab_config(OnlineAbConfig)`](crate::client::fluent_builders::UpdateExperiment::online_ab_config) / [`set_online_ab_config(Option<OnlineAbConfig>)`](crate::client::fluent_builders::UpdateExperiment::set_online_ab_config): <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     /// - On success, responds with [`UpdateExperimentOutput`](crate::output::UpdateExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::output::UpdateExperimentOutput::experiment): <p>A structure containing the configuration details of the experiment that was updated.</p>
@@ -600,6 +675,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an Evidently <i>experiment</i>. Before you create an experiment, you must create the feature to use for the experiment.</p>
     /// <p>An experiment helps you make feature design decisions based on evidence and data. An experiment can test as many as five variations at once. Evidently collects experiment data and analyzes it by statistical methods, and provides clear recommendations about which variations perform better.</p>
+    /// <p>You can optionally specify a <code>segment</code> to have the experiment consider only certain audience types in the experiment, such as using only user sessions from a certain location or who use a certain internet browser.</p>
     /// <p>Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExperiment {
@@ -740,6 +816,16 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::OnlineAbConfig>,
         ) -> Self {
             self.inner = self.inner.set_online_ab_config(input);
+            self
+        }
+        /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment(input.into());
+            self
+        }
+        /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_segment(input);
             self
         }
         /// Adds a key-value pair to `tags`.
@@ -1076,12 +1162,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_groups(input);
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
         pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.randomization_salt(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1218,6 +1304,113 @@ pub mod fluent_builders {
         /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
         /// <p>You can associate as many as 50 tags with a project.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateSegment`.
+    ///
+    /// <p>Use this operation to define a <i>segment</i> of your audience. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
+    /// <p>Using a segment in an experiment limits that experiment to evaluate only the users who match the segment criteria. Using one or more segments in a launch allow you to define different traffic splits for the different audience segments.</p>
+    /// <p>For more information about segment pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    /// <p>The pattern that you define for a segment is matched against the value of <code>evaluationContext</code>, which is passed into Evidently in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation, when Evidently assigns a feature variation to a user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateSegment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_segment_input::Builder,
+    }
+    impl CreateSegment {
+        /// Creates a new `CreateSegment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateSegmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateSegmentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A name for the segment.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A name for the segment.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern(input.into());
+            self
+        }
+        /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+        pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pattern(input);
+            self
+        }
+        /// <p>An optional description for this segment.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>An optional description for this segment.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Assigns one or more tags (key-value pairs) to the segment.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+        /// <p>You can associate as many as 50 tags with a segment.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Assigns one or more tags (key-value pairs) to the segment.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+        /// <p>You can associate as many as 50 tags with a segment.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
             mut self,
@@ -1473,12 +1666,68 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteSegment`.
+    ///
+    /// <p>Deletes a segment. You can't delete a segment that is being used in a launch or experiment, even if that launch or experiment is not currently running.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteSegment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_segment_input::Builder,
+    }
+    impl DeleteSegment {
+        /// Creates a new `DeleteSegment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteSegmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteSegmentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies the segment to delete.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment(input.into());
+            self
+        }
+        /// <p>Specifies the segment to delete.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_segment(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `EvaluateFeature`.
     ///
     /// <p>This operation assigns a feature variation to one given user session. You pass in an <code>entityID</code> that represents the user. Evidently then checks the evaluation rules and assigns the variation.</p>
     /// <p>The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an override rule, the user is served the variation specified by that rule.</p>
-    /// <p>Next, if there is a launch of the feature, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p>
-    /// <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. </p>
+    /// <p>If there is a current launch with this feature that uses segment overrides, and if the user session's <code>evaluationContext</code> matches a segment rule defined in a segment override, the configuration in the segment overrides is used. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
+    /// <p>If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p>
+    /// <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment.</p>
+    /// <p>If the experiment uses a segment, then only user sessions with <code>evaluationContext</code> values that match the segment rule are used in the experiment.</p>
+    /// <p>If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. </p>
     /// <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EvaluateFeature {
@@ -1549,12 +1798,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+        /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
+        /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
         pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evaluation_context(input.into());
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+        /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
+        /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
         pub fn set_evaluation_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1998,6 +2249,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetSegment`.
+    ///
+    /// <p>Returns information about the specified segment. Specify the segment you want to view by specifying its ARN.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetSegment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_segment_input::Builder,
+    }
+    impl GetSegment {
+        /// Creates a new `GetSegment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSegmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSegmentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the segment to return information for.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment(input.into());
+            self
+        }
+        /// <p>The ARN of the segment to return information for.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_segment(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListExperiments`.
     ///
     /// <p>Returns configuration details about all the experiments in the specified project.</p>
@@ -2325,6 +2629,167 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListSegmentReferences`.
+    ///
+    /// <p>Use this operation to find which experiments or launches are using a specified segment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSegmentReferences {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_segment_references_input::Builder,
+    }
+    impl ListSegmentReferences {
+        /// Creates a new `ListSegmentReferences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSegmentReferencesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSegmentReferencesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSegmentReferencesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSegmentReferencesPaginator {
+            crate::paginator::ListSegmentReferencesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of the segment that you want to view information for.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment(input.into());
+            self
+        }
+        /// <p>The ARN of the segment that you want to view information for.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_segment(input);
+            self
+        }
+        /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+        pub fn r#type(mut self, input: crate::model::SegmentReferenceResourceType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::SegmentReferenceResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListSegments`.
+    ///
+    /// <p>Returns a list of audience segments that you have created in your account in this Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListSegments {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_segments_input::Builder,
+    }
+    impl ListSegments {
+        /// Creates a new `ListSegments`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSegmentsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSegmentsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSegmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSegmentsPaginator {
+            crate::paginator::ListSegmentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2845,6 +3310,69 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `TestSegmentPattern`.
+    ///
+    /// <p>Use this operation to test a rules pattern that you plan to use to create an audience segment. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TestSegmentPattern {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::test_segment_pattern_input::Builder,
+    }
+    impl TestSegmentPattern {
+        /// Creates a new `TestSegmentPattern`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TestSegmentPatternOutput,
+            aws_smithy_http::result::SdkError<crate::error::TestSegmentPatternError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The pattern to test.</p>
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern(input.into());
+            self
+        }
+        /// <p>The pattern to test.</p>
+        pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pattern(input);
+            self
+        }
+        /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+        pub fn payload(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload(input.into());
+            self
+        }
+        /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+        pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_payload(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
@@ -3045,6 +3573,26 @@ pub mod fluent_builders {
         /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_sampling_rate(input);
+            self
+        }
+        /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment(input.into());
+            self
+        }
+        /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_segment(input);
+            self
+        }
+        /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
+        pub fn remove_segment(mut self, input: bool) -> Self {
+            self.inner = self.inner.remove_segment(input);
+            self
+        }
+        /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
+        pub fn set_remove_segment(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_remove_segment(input);
             self
         }
         /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>

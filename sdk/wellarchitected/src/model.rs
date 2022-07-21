@@ -334,7 +334,13 @@ pub enum ShareStatus {
     #[allow(missing_docs)] // documentation missing in model
     Accepted,
     #[allow(missing_docs)] // documentation missing in model
+    Associated,
+    #[allow(missing_docs)] // documentation missing in model
+    Associating,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
@@ -348,7 +354,10 @@ impl std::convert::From<&str> for ShareStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACCEPTED" => ShareStatus::Accepted,
+            "ASSOCIATED" => ShareStatus::Associated,
+            "ASSOCIATING" => ShareStatus::Associating,
             "EXPIRED" => ShareStatus::Expired,
+            "FAILED" => ShareStatus::Failed,
             "PENDING" => ShareStatus::Pending,
             "REJECTED" => ShareStatus::Rejected,
             "REVOKED" => ShareStatus::Revoked,
@@ -368,7 +377,10 @@ impl ShareStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ShareStatus::Accepted => "ACCEPTED",
+            ShareStatus::Associated => "ASSOCIATED",
+            ShareStatus::Associating => "ASSOCIATING",
             ShareStatus::Expired => "EXPIRED",
+            ShareStatus::Failed => "FAILED",
             ShareStatus::Pending => "PENDING",
             ShareStatus::Rejected => "REJECTED",
             ShareStatus::Revoked => "REVOKED",
@@ -377,7 +389,16 @@ impl ShareStatus {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ACCEPTED", "EXPIRED", "PENDING", "REJECTED", "REVOKED"]
+        &[
+            "ACCEPTED",
+            "ASSOCIATED",
+            "ASSOCIATING",
+            "EXPIRED",
+            "FAILED",
+            "PENDING",
+            "REJECTED",
+            "REVOKED",
+        ]
     }
 }
 impl AsRef<str> for ShareStatus {
@@ -2077,6 +2098,61 @@ impl AsRef<str> for LensStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OrganizationSharingStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OrganizationSharingStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => OrganizationSharingStatus::Disabled,
+            "ENABLED" => OrganizationSharingStatus::Enabled,
+            other => OrganizationSharingStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OrganizationSharingStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OrganizationSharingStatus::from(s))
+    }
+}
+impl OrganizationSharingStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OrganizationSharingStatus::Disabled => "DISABLED",
+            OrganizationSharingStatus::Enabled => "ENABLED",
+            OrganizationSharingStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for OrganizationSharingStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>An answer of the question.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3253,6 +3329,8 @@ pub struct WorkloadShareSummary {
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>The status of a workload share.</p>
     pub status: std::option::Option<crate::model::ShareStatus>,
+    /// <p>Optional message to compliment the Status field.</p>
+    pub status_message: std::option::Option<std::string::String>,
 }
 impl WorkloadShareSummary {
     /// <p>The ID associated with the workload share.</p>
@@ -3271,6 +3349,10 @@ impl WorkloadShareSummary {
     pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
         self.status.as_ref()
     }
+    /// <p>Optional message to compliment the Status field.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for WorkloadShareSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3279,6 +3361,7 @@ impl std::fmt::Debug for WorkloadShareSummary {
         formatter.field("shared_with", &self.shared_with);
         formatter.field("permission_type", &self.permission_type);
         formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
         formatter.finish()
     }
 }
@@ -3292,6 +3375,7 @@ pub mod workload_share_summary {
         pub(crate) shared_with: std::option::Option<std::string::String>,
         pub(crate) permission_type: std::option::Option<crate::model::PermissionType>,
         pub(crate) status: std::option::Option<crate::model::ShareStatus>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID associated with the workload share.</p>
@@ -3337,6 +3421,19 @@ pub mod workload_share_summary {
             self.status = input;
             self
         }
+        /// <p>Optional message to compliment the Status field.</p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p>Optional message to compliment the Status field.</p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
         pub fn build(self) -> crate::model::WorkloadShareSummary {
             crate::model::WorkloadShareSummary {
@@ -3344,6 +3441,7 @@ pub mod workload_share_summary {
                 shared_with: self.shared_with,
                 permission_type: self.permission_type,
                 status: self.status,
+                status_message: self.status_message,
             }
         }
     }
@@ -4249,6 +4347,8 @@ pub struct LensShareSummary {
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>The status of a workload share.</p>
     pub status: std::option::Option<crate::model::ShareStatus>,
+    /// <p>Optional message to compliment the Status field.</p>
+    pub status_message: std::option::Option<std::string::String>,
 }
 impl LensShareSummary {
     /// <p>The ID associated with the workload share.</p>
@@ -4263,6 +4363,10 @@ impl LensShareSummary {
     pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
         self.status.as_ref()
     }
+    /// <p>Optional message to compliment the Status field.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for LensShareSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4270,6 +4374,7 @@ impl std::fmt::Debug for LensShareSummary {
         formatter.field("share_id", &self.share_id);
         formatter.field("shared_with", &self.shared_with);
         formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
         formatter.finish()
     }
 }
@@ -4282,6 +4387,7 @@ pub mod lens_share_summary {
         pub(crate) share_id: std::option::Option<std::string::String>,
         pub(crate) shared_with: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ShareStatus>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID associated with the workload share.</p>
@@ -4314,12 +4420,26 @@ pub mod lens_share_summary {
             self.status = input;
             self
         }
+        /// <p>Optional message to compliment the Status field.</p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p>Optional message to compliment the Status field.</p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LensShareSummary`](crate::model::LensShareSummary).
         pub fn build(self) -> crate::model::LensShareSummary {
             crate::model::LensShareSummary {
                 share_id: self.share_id,
                 shared_with: self.shared_with,
                 status: self.status,
+                status_message: self.status_message,
             }
         }
     }

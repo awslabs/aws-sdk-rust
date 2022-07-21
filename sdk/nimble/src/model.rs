@@ -1069,6 +1069,10 @@ pub struct StudioComponent {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    pub secure_initialization_role_arn: std::option::Option<std::string::String>,
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    pub runtime_role_arn: std::option::Option<std::string::String>,
 }
 impl StudioComponent {
     /// <p>The ARN of the resource.</p>
@@ -1152,6 +1156,14 @@ impl StudioComponent {
     pub fn updated_by(&self) -> std::option::Option<&str> {
         self.updated_by.as_deref()
     }
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
+        self.secure_initialization_role_arn.as_deref()
+    }
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
+        self.runtime_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StudioComponent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1174,6 +1186,11 @@ impl std::fmt::Debug for StudioComponent {
         formatter.field("r#type", &self.r#type);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field(
+            "secure_initialization_role_arn",
+            &self.secure_initialization_role_arn,
+        );
+        formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }
 }
@@ -1205,6 +1222,8 @@ pub mod studio_component {
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
+        pub(crate) secure_initialization_role_arn: std::option::Option<std::string::String>,
+        pub(crate) runtime_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the resource.</p>
@@ -1461,6 +1480,35 @@ pub mod studio_component {
             self.updated_by = input;
             self
         }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn secure_initialization_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.secure_initialization_role_arn = Some(input.into());
+            self
+        }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn set_secure_initialization_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secure_initialization_role_arn = input;
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_role_arn = Some(input.into());
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn set_runtime_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StudioComponent`](crate::model::StudioComponent).
         pub fn build(self) -> crate::model::StudioComponent {
             crate::model::StudioComponent {
@@ -1482,6 +1530,8 @@ pub mod studio_component {
                 r#type: self.r#type,
                 updated_at: self.updated_at,
                 updated_by: self.updated_by,
+                secure_initialization_role_arn: self.secure_initialization_role_arn,
+                runtime_role_arn: self.runtime_role_arn,
             }
         }
     }
@@ -5104,6 +5154,10 @@ pub struct LaunchProfileInitializationScript {
     pub studio_component_id: std::option::Option<std::string::String>,
     /// <p>The name for the studio component.</p>
     pub studio_component_name: std::option::Option<std::string::String>,
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    pub secure_initialization_role_arn: std::option::Option<std::string::String>,
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    pub runtime_role_arn: std::option::Option<std::string::String>,
 }
 impl LaunchProfileInitializationScript {
     /// <p>The initialization script.</p>
@@ -5118,6 +5172,14 @@ impl LaunchProfileInitializationScript {
     pub fn studio_component_name(&self) -> std::option::Option<&str> {
         self.studio_component_name.as_deref()
     }
+    /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
+        self.secure_initialization_role_arn.as_deref()
+    }
+    /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
+        self.runtime_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchProfileInitializationScript {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5125,6 +5187,11 @@ impl std::fmt::Debug for LaunchProfileInitializationScript {
         formatter.field("script", &"*** Sensitive Data Redacted ***");
         formatter.field("studio_component_id", &self.studio_component_id);
         formatter.field("studio_component_name", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "secure_initialization_role_arn",
+            &self.secure_initialization_role_arn,
+        );
+        formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }
 }
@@ -5137,6 +5204,8 @@ pub mod launch_profile_initialization_script {
         pub(crate) script: std::option::Option<std::string::String>,
         pub(crate) studio_component_id: std::option::Option<std::string::String>,
         pub(crate) studio_component_name: std::option::Option<std::string::String>,
+        pub(crate) secure_initialization_role_arn: std::option::Option<std::string::String>,
+        pub(crate) runtime_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The initialization script.</p>
@@ -5175,12 +5244,43 @@ pub mod launch_profile_initialization_script {
             self.studio_component_name = input;
             self
         }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn secure_initialization_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.secure_initialization_role_arn = Some(input.into());
+            self
+        }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn set_secure_initialization_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secure_initialization_role_arn = input;
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.runtime_role_arn = Some(input.into());
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn set_runtime_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.runtime_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LaunchProfileInitializationScript`](crate::model::LaunchProfileInitializationScript).
         pub fn build(self) -> crate::model::LaunchProfileInitializationScript {
             crate::model::LaunchProfileInitializationScript {
                 script: self.script,
                 studio_component_id: self.studio_component_id,
                 studio_component_name: self.studio_component_name,
+                secure_initialization_role_arn: self.secure_initialization_role_arn,
+                runtime_role_arn: self.runtime_role_arn,
             }
         }
     }
@@ -6463,8 +6563,8 @@ pub struct StreamConfiguration {
     /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
     pub streaming_image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
+    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
     pub max_stopped_session_length_in_minutes: i32,
     /// <p>(Optional) The upload storage for a streaming session.</p>
     pub session_storage: std::option::Option<crate::model::StreamConfigurationSessionStorage>,
@@ -6489,8 +6589,8 @@ impl StreamConfiguration {
         self.streaming_image_ids.as_deref()
     }
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
+    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
     pub fn max_stopped_session_length_in_minutes(&self) -> i32 {
         self.max_stopped_session_length_in_minutes
     }
@@ -6600,15 +6700,15 @@ pub mod stream_configuration {
             self
         }
         /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
+        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
         pub fn max_stopped_session_length_in_minutes(mut self, input: i32) -> Self {
             self.max_stopped_session_length_in_minutes = Some(input);
             self
         }
         /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
+        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
         pub fn set_max_stopped_session_length_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -7151,8 +7251,8 @@ pub struct StreamConfigurationCreate {
     /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
     pub streaming_image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
+    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
     pub max_stopped_session_length_in_minutes: i32,
     /// <p>(Optional) The upload storage for a streaming workstation that is created using this launch profile.</p>
     pub session_storage: std::option::Option<crate::model::StreamConfigurationSessionStorage>,
@@ -7177,8 +7277,8 @@ impl StreamConfigurationCreate {
         self.streaming_image_ids.as_deref()
     }
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
+    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
     pub fn max_stopped_session_length_in_minutes(&self) -> i32 {
         self.max_stopped_session_length_in_minutes
     }
@@ -7288,15 +7388,15 @@ pub mod stream_configuration_create {
             self
         }
         /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
+        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
         pub fn max_stopped_session_length_in_minutes(mut self, input: i32) -> Self {
             self.max_stopped_session_length_in_minutes = Some(input);
             self
         }
         /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
+        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of stopped).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
         pub fn set_max_stopped_session_length_in_minutes(
             mut self,
             input: std::option::Option<i32>,

@@ -150,6 +150,173 @@ impl BatchGetNamedQueryInput {
     }
 }
 
+/// See [`BatchGetPreparedStatementInput`](crate::input::BatchGetPreparedStatementInput).
+pub mod batch_get_prepared_statement_input {
+
+    /// A builder for [`BatchGetPreparedStatementInput`](crate::input::BatchGetPreparedStatementInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) prepared_statement_names:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) work_group: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `prepared_statement_names`.
+        ///
+        /// To override the contents of this collection use [`set_prepared_statement_names`](Self::set_prepared_statement_names).
+        ///
+        /// <p>A list of prepared statement names to return.</p>
+        pub fn prepared_statement_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.prepared_statement_names.unwrap_or_default();
+            v.push(input.into());
+            self.prepared_statement_names = Some(v);
+            self
+        }
+        /// <p>A list of prepared statement names to return.</p>
+        pub fn set_prepared_statement_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.prepared_statement_names = input;
+            self
+        }
+        /// <p>The name of the workgroup to which the prepared statements belong.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_group = Some(input.into());
+            self
+        }
+        /// <p>The name of the workgroup to which the prepared statements belong.</p>
+        pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.work_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetPreparedStatementInput`](crate::input::BatchGetPreparedStatementInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::BatchGetPreparedStatementInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchGetPreparedStatementInput {
+                prepared_statement_names: self.prepared_statement_names,
+                work_group: self.work_group,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type BatchGetPreparedStatementInputOperationOutputAlias =
+    crate::operation::BatchGetPreparedStatement;
+#[doc(hidden)]
+pub type BatchGetPreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl BatchGetPreparedStatementInput {
+    /// Consumes the builder and constructs an Operation<[`BatchGetPreparedStatement`](crate::operation::BatchGetPreparedStatement)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchGetPreparedStatement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchGetPreparedStatementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchGetPreparedStatementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.BatchGetPreparedStatement",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_prepared_statement(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetPreparedStatement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetPreparedStatement",
+            "athena",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchGetPreparedStatementInput`](crate::input::BatchGetPreparedStatementInput).
+    pub fn builder() -> crate::input::batch_get_prepared_statement_input::Builder {
+        crate::input::batch_get_prepared_statement_input::Builder::default()
+    }
+}
+
 /// See [`BatchGetQueryExecutionInput`](crate::input::BatchGetQueryExecutionInput).
 pub mod batch_get_query_execution_input {
 
@@ -4420,6 +4587,7 @@ pub mod start_query_execution_input {
             std::option::Option<crate::model::QueryExecutionContext>,
         pub(crate) result_configuration: std::option::Option<crate::model::ResultConfiguration>,
         pub(crate) work_group: std::option::Option<std::string::String>,
+        pub(crate) execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The SQL query statements to be executed.</p>
@@ -4488,6 +4656,25 @@ pub mod start_query_execution_input {
             self.work_group = input;
             self
         }
+        /// Appends an item to `execution_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_execution_parameters`](Self::set_execution_parameters).
+        ///
+        /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+        pub fn execution_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.execution_parameters.unwrap_or_default();
+            v.push(input.into());
+            self.execution_parameters = Some(v);
+            self
+        }
+        /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+        pub fn set_execution_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.execution_parameters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartQueryExecutionInput`](crate::input::StartQueryExecutionInput).
         pub fn build(
             self,
@@ -4499,6 +4686,7 @@ pub mod start_query_execution_input {
                 query_execution_context: self.query_execution_context,
                 result_configuration: self.result_configuration,
                 work_group: self.work_group,
+                execution_parameters: self.execution_parameters,
             })
         }
     }
@@ -6131,6 +6319,8 @@ pub struct StartQueryExecutionInput {
     pub result_configuration: std::option::Option<crate::model::ResultConfiguration>,
     /// <p>The name of the workgroup in which the query is being started.</p>
     pub work_group: std::option::Option<std::string::String>,
+    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    pub execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartQueryExecutionInput {
     /// <p>The SQL query statements to be executed.</p>
@@ -6157,6 +6347,10 @@ impl StartQueryExecutionInput {
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
+    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    pub fn execution_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.execution_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for StartQueryExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6166,6 +6360,7 @@ impl std::fmt::Debug for StartQueryExecutionInput {
         formatter.field("query_execution_context", &self.query_execution_context);
         formatter.field("result_configuration", &self.result_configuration);
         formatter.field("work_group", &self.work_group);
+        formatter.field("execution_parameters", &self.execution_parameters);
         formatter.finish()
     }
 }
@@ -7011,7 +7206,7 @@ impl std::fmt::Debug for CreateDataCatalogInput {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>Contains an array of query execution IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetQueryExecutionInput {
@@ -7033,6 +7228,34 @@ impl std::fmt::Debug for BatchGetQueryExecutionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetPreparedStatementInput {
+    /// <p>A list of prepared statement names to return.</p>
+    pub prepared_statement_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of the workgroup to which the prepared statements belong.</p>
+    pub work_group: std::option::Option<std::string::String>,
+}
+impl BatchGetPreparedStatementInput {
+    /// <p>A list of prepared statement names to return.</p>
+    pub fn prepared_statement_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.prepared_statement_names.as_deref()
+    }
+    /// <p>The name of the workgroup to which the prepared statements belong.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetPreparedStatementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetPreparedStatementInput");
+        formatter.field("prepared_statement_names", &self.prepared_statement_names);
+        formatter.field("work_group", &self.work_group);
+        formatter.finish()
+    }
+}
+
+/// <p>Contains an array of named query IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetNamedQueryInput {

@@ -357,7 +357,7 @@ pub enum CreateIPSetErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -533,7 +533,7 @@ pub enum CreateRegexPatternSetErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -717,7 +717,7 @@ pub enum CreateRuleGroupErrorKind {
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
@@ -934,7 +934,7 @@ pub enum CreateWebACLErrorKind {
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
@@ -1324,7 +1324,7 @@ pub enum DeleteIPSetErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1779,7 +1779,7 @@ pub enum DeleteRegexPatternSetErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1960,7 +1960,7 @@ pub enum DeleteRuleGroupErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2139,7 +2139,7 @@ pub enum DeleteWebACLErrorKind {
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5362,7 +5362,7 @@ pub enum ListTagsForResourceErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6127,7 +6127,7 @@ pub enum TagResourceErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6290,7 +6290,7 @@ pub enum UntagResourceErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8200,7 +8200,7 @@ impl WafConfigurationWarningException {
     }
 }
 
-/// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour request.</p>
+/// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafTagOperationInternalErrorException {

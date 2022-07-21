@@ -731,6 +731,93 @@ impl UpdateImageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFeatureMetadataOutput {}
+impl std::fmt::Debug for UpdateFeatureMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFeatureMetadataOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateFeatureMetadataOutput`](crate::output::UpdateFeatureMetadataOutput).
+pub mod update_feature_metadata_output {
+
+    /// A builder for [`UpdateFeatureMetadataOutput`](crate::output::UpdateFeatureMetadataOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateFeatureMetadataOutput`](crate::output::UpdateFeatureMetadataOutput).
+        pub fn build(self) -> crate::output::UpdateFeatureMetadataOutput {
+            crate::output::UpdateFeatureMetadataOutput {}
+        }
+    }
+}
+impl UpdateFeatureMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFeatureMetadataOutput`](crate::output::UpdateFeatureMetadataOutput).
+    pub fn builder() -> crate::output::update_feature_metadata_output::Builder {
+        crate::output::update_feature_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFeatureGroupOutput {
+    /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
+    pub feature_group_arn: std::option::Option<std::string::String>,
+}
+impl UpdateFeatureGroupOutput {
+    /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
+    pub fn feature_group_arn(&self) -> std::option::Option<&str> {
+        self.feature_group_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateFeatureGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFeatureGroupOutput");
+        formatter.field("feature_group_arn", &self.feature_group_arn);
+        formatter.finish()
+    }
+}
+/// See [`UpdateFeatureGroupOutput`](crate::output::UpdateFeatureGroupOutput).
+pub mod update_feature_group_output {
+
+    /// A builder for [`UpdateFeatureGroupOutput`](crate::output::UpdateFeatureGroupOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) feature_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
+        pub fn feature_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
+        pub fn set_feature_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFeatureGroupOutput`](crate::output::UpdateFeatureGroupOutput).
+        pub fn build(self) -> crate::output::UpdateFeatureGroupOutput {
+            crate::output::UpdateFeatureGroupOutput {
+                feature_group_arn: self.feature_group_arn,
+            }
+        }
+    }
+}
+impl UpdateFeatureGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFeatureGroupOutput`](crate::output::UpdateFeatureGroupOutput).
+    pub fn builder() -> crate::output::update_feature_group_output::Builder {
+        crate::output::update_feature_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentOutput {
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
     pub experiment_arn: std::option::Option<std::string::String>,
@@ -1613,6 +1700,36 @@ impl StopEdgePackagingJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopEdgeDeploymentStageOutput {}
+impl std::fmt::Debug for StopEdgeDeploymentStageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopEdgeDeploymentStageOutput");
+        formatter.finish()
+    }
+}
+/// See [`StopEdgeDeploymentStageOutput`](crate::output::StopEdgeDeploymentStageOutput).
+pub mod stop_edge_deployment_stage_output {
+
+    /// A builder for [`StopEdgeDeploymentStageOutput`](crate::output::StopEdgeDeploymentStageOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StopEdgeDeploymentStageOutput`](crate::output::StopEdgeDeploymentStageOutput).
+        pub fn build(self) -> crate::output::StopEdgeDeploymentStageOutput {
+            crate::output::StopEdgeDeploymentStageOutput {}
+        }
+    }
+}
+impl StopEdgeDeploymentStageOutput {
+    /// Creates a new builder-style object to manufacture [`StopEdgeDeploymentStageOutput`](crate::output::StopEdgeDeploymentStageOutput).
+    pub fn builder() -> crate::output::stop_edge_deployment_stage_output::Builder {
+        crate::output::stop_edge_deployment_stage_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCompilationJobOutput {}
 impl std::fmt::Debug for StopCompilationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1784,6 +1901,36 @@ impl StartMonitoringScheduleOutput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringScheduleOutput`](crate::output::StartMonitoringScheduleOutput).
     pub fn builder() -> crate::output::start_monitoring_schedule_output::Builder {
         crate::output::start_monitoring_schedule_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartEdgeDeploymentStageOutput {}
+impl std::fmt::Debug for StartEdgeDeploymentStageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartEdgeDeploymentStageOutput");
+        formatter.finish()
+    }
+}
+/// See [`StartEdgeDeploymentStageOutput`](crate::output::StartEdgeDeploymentStageOutput).
+pub mod start_edge_deployment_stage_output {
+
+    /// A builder for [`StartEdgeDeploymentStageOutput`](crate::output::StartEdgeDeploymentStageOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StartEdgeDeploymentStageOutput`](crate::output::StartEdgeDeploymentStageOutput).
+        pub fn build(self) -> crate::output::StartEdgeDeploymentStageOutput {
+            crate::output::StartEdgeDeploymentStageOutput {}
+        }
+    }
+}
+impl StartEdgeDeploymentStageOutput {
+    /// Creates a new builder-style object to manufacture [`StartEdgeDeploymentStageOutput`](crate::output::StartEdgeDeploymentStageOutput).
+    pub fn builder() -> crate::output::start_edge_deployment_stage_output::Builder {
+        crate::output::start_edge_deployment_stage_output::Builder::default()
     }
 }
 
@@ -3255,6 +3402,98 @@ impl ListStudioLifecycleConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListStudioLifecycleConfigsOutput`](crate::output::ListStudioLifecycleConfigsOutput).
     pub fn builder() -> crate::output::list_studio_lifecycle_configs_output::Builder {
         crate::output::list_studio_lifecycle_configs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStageDevicesOutput {
+    /// <p>List of summaries of devices allocated to the stage.</p>
+    pub device_deployment_summaries:
+        std::option::Option<std::vec::Vec<crate::model::DeviceDeploymentSummary>>,
+    /// <p>The token to use when calling the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStageDevicesOutput {
+    /// <p>List of summaries of devices allocated to the stage.</p>
+    pub fn device_deployment_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeviceDeploymentSummary]> {
+        self.device_deployment_summaries.as_deref()
+    }
+    /// <p>The token to use when calling the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListStageDevicesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListStageDevicesOutput");
+        formatter.field(
+            "device_deployment_summaries",
+            &self.device_deployment_summaries,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListStageDevicesOutput`](crate::output::ListStageDevicesOutput).
+pub mod list_stage_devices_output {
+
+    /// A builder for [`ListStageDevicesOutput`](crate::output::ListStageDevicesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) device_deployment_summaries:
+            std::option::Option<std::vec::Vec<crate::model::DeviceDeploymentSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `device_deployment_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_device_deployment_summaries`](Self::set_device_deployment_summaries).
+        ///
+        /// <p>List of summaries of devices allocated to the stage.</p>
+        pub fn device_deployment_summaries(
+            mut self,
+            input: crate::model::DeviceDeploymentSummary,
+        ) -> Self {
+            let mut v = self.device_deployment_summaries.unwrap_or_default();
+            v.push(input);
+            self.device_deployment_summaries = Some(v);
+            self
+        }
+        /// <p>List of summaries of devices allocated to the stage.</p>
+        pub fn set_device_deployment_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeviceDeploymentSummary>>,
+        ) -> Self {
+            self.device_deployment_summaries = input;
+            self
+        }
+        /// <p>The token to use when calling the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use when calling the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStageDevicesOutput`](crate::output::ListStageDevicesOutput).
+        pub fn build(self) -> crate::output::ListStageDevicesOutput {
+            crate::output::ListStageDevicesOutput {
+                device_deployment_summaries: self.device_deployment_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListStageDevicesOutput {
+    /// Creates a new builder-style object to manufacture [`ListStageDevicesOutput`](crate::output::ListStageDevicesOutput).
+    pub fn builder() -> crate::output::list_stage_devices_output::Builder {
+        crate::output::list_stage_devices_output::Builder::default()
     }
 }
 
@@ -5975,6 +6214,98 @@ impl ListEdgePackagingJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEdgePackagingJobsOutput`](crate::output::ListEdgePackagingJobsOutput).
     pub fn builder() -> crate::output::list_edge_packaging_jobs_output::Builder {
         crate::output::list_edge_packaging_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEdgeDeploymentPlansOutput {
+    /// <p>List of summaries of edge deployment plans.</p>
+    pub edge_deployment_plan_summaries:
+        std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentPlanSummary>>,
+    /// <p>The token to use when calling the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEdgeDeploymentPlansOutput {
+    /// <p>List of summaries of edge deployment plans.</p>
+    pub fn edge_deployment_plan_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::EdgeDeploymentPlanSummary]> {
+        self.edge_deployment_plan_summaries.as_deref()
+    }
+    /// <p>The token to use when calling the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListEdgeDeploymentPlansOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEdgeDeploymentPlansOutput");
+        formatter.field(
+            "edge_deployment_plan_summaries",
+            &self.edge_deployment_plan_summaries,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEdgeDeploymentPlansOutput`](crate::output::ListEdgeDeploymentPlansOutput).
+pub mod list_edge_deployment_plans_output {
+
+    /// A builder for [`ListEdgeDeploymentPlansOutput`](crate::output::ListEdgeDeploymentPlansOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_summaries:
+            std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentPlanSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `edge_deployment_plan_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_edge_deployment_plan_summaries`](Self::set_edge_deployment_plan_summaries).
+        ///
+        /// <p>List of summaries of edge deployment plans.</p>
+        pub fn edge_deployment_plan_summaries(
+            mut self,
+            input: crate::model::EdgeDeploymentPlanSummary,
+        ) -> Self {
+            let mut v = self.edge_deployment_plan_summaries.unwrap_or_default();
+            v.push(input);
+            self.edge_deployment_plan_summaries = Some(v);
+            self
+        }
+        /// <p>List of summaries of edge deployment plans.</p>
+        pub fn set_edge_deployment_plan_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentPlanSummary>>,
+        ) -> Self {
+            self.edge_deployment_plan_summaries = input;
+            self
+        }
+        /// <p>The token to use when calling the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use when calling the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEdgeDeploymentPlansOutput`](crate::output::ListEdgeDeploymentPlansOutput).
+        pub fn build(self) -> crate::output::ListEdgeDeploymentPlansOutput {
+            crate::output::ListEdgeDeploymentPlansOutput {
+                edge_deployment_plan_summaries: self.edge_deployment_plan_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEdgeDeploymentPlansOutput {
+    /// Creates a new builder-style object to manufacture [`ListEdgeDeploymentPlansOutput`](crate::output::ListEdgeDeploymentPlansOutput).
+    pub fn builder() -> crate::output::list_edge_deployment_plans_output::Builder {
+        crate::output::list_edge_deployment_plans_output::Builder::default()
     }
 }
 
@@ -18167,6 +18498,217 @@ impl DescribeFlowDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFeatureMetadataOutput {
+    /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
+    pub feature_group_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the feature group that you've specified.</p>
+    pub feature_group_name: std::option::Option<std::string::String>,
+    /// <p>The name of the feature that you've specified.</p>
+    pub feature_name: std::option::Option<std::string::String>,
+    /// <p>The data type of the feature.</p>
+    pub feature_type: std::option::Option<crate::model::FeatureType>,
+    /// <p>A timestamp indicating when the feature was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The description you added to describe the feature.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The key-value pairs that you added to describe the feature.</p>
+    pub parameters: std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
+}
+impl DescribeFeatureMetadataOutput {
+    /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
+    pub fn feature_group_arn(&self) -> std::option::Option<&str> {
+        self.feature_group_arn.as_deref()
+    }
+    /// <p>The name of the feature group that you've specified.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The name of the feature that you've specified.</p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
+    /// <p>The data type of the feature.</p>
+    pub fn feature_type(&self) -> std::option::Option<&crate::model::FeatureType> {
+        self.feature_type.as_ref()
+    }
+    /// <p>A timestamp indicating when the feature was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The description you added to describe the feature.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The key-value pairs that you added to describe the feature.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::FeatureParameter]> {
+        self.parameters.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFeatureMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFeatureMetadataOutput");
+        formatter.field("feature_group_arn", &self.feature_group_arn);
+        formatter.field("feature_group_name", &self.feature_group_name);
+        formatter.field("feature_name", &self.feature_name);
+        formatter.field("feature_type", &self.feature_type);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("description", &self.description);
+        formatter.field("parameters", &self.parameters);
+        formatter.finish()
+    }
+}
+/// See [`DescribeFeatureMetadataOutput`](crate::output::DescribeFeatureMetadataOutput).
+pub mod describe_feature_metadata_output {
+
+    /// A builder for [`DescribeFeatureMetadataOutput`](crate::output::DescribeFeatureMetadataOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) feature_group_arn: std::option::Option<std::string::String>,
+        pub(crate) feature_group_name: std::option::Option<std::string::String>,
+        pub(crate) feature_name: std::option::Option<std::string::String>,
+        pub(crate) feature_type: std::option::Option<crate::model::FeatureType>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
+        pub fn feature_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
+        pub fn set_feature_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_arn = input;
+            self
+        }
+        /// <p>The name of the feature group that you've specified.</p>
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the feature group that you've specified.</p>
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_name = input;
+            self
+        }
+        /// <p>The name of the feature that you've specified.</p>
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the feature that you've specified.</p>
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
+            self
+        }
+        /// <p>The data type of the feature.</p>
+        pub fn feature_type(mut self, input: crate::model::FeatureType) -> Self {
+            self.feature_type = Some(input);
+            self
+        }
+        /// <p>The data type of the feature.</p>
+        pub fn set_feature_type(
+            mut self,
+            input: std::option::Option<crate::model::FeatureType>,
+        ) -> Self {
+            self.feature_type = input;
+            self
+        }
+        /// <p>A timestamp indicating when the feature was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>A timestamp indicating when the feature was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The description you added to describe the feature.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description you added to describe the feature.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The key-value pairs that you added to describe the feature.</p>
+        pub fn parameters(mut self, input: crate::model::FeatureParameter) -> Self {
+            let mut v = self.parameters.unwrap_or_default();
+            v.push(input);
+            self.parameters = Some(v);
+            self
+        }
+        /// <p>The key-value pairs that you added to describe the feature.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFeatureMetadataOutput`](crate::output::DescribeFeatureMetadataOutput).
+        pub fn build(self) -> crate::output::DescribeFeatureMetadataOutput {
+            crate::output::DescribeFeatureMetadataOutput {
+                feature_group_arn: self.feature_group_arn,
+                feature_group_name: self.feature_group_name,
+                feature_name: self.feature_name,
+                feature_type: self.feature_type,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+                description: self.description,
+                parameters: self.parameters,
+            }
+        }
+    }
+}
+impl DescribeFeatureMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFeatureMetadataOutput`](crate::output::DescribeFeatureMetadataOutput).
+    pub fn builder() -> crate::output::describe_feature_metadata_output::Builder {
+        crate::output::describe_feature_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFeatureGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
     pub feature_group_arn: std::option::Option<std::string::String>,
@@ -18181,6 +18723,8 @@ pub struct DescribeFeatureGroupOutput {
     pub feature_definitions: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp indicating when the feature group was last updated.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
     pub online_store_config: std::option::Option<crate::model::OnlineStoreConfig>,
     /// <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security configuration.</p>
@@ -18191,6 +18735,8 @@ pub struct DescribeFeatureGroupOutput {
     pub feature_group_status: std::option::Option<crate::model::FeatureGroupStatus>,
     /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
     pub offline_store_status: std::option::Option<crate::model::OfflineStoreStatus>,
+    /// <p>A value indicating whether the update made to the feature group was successful.</p>
+    pub last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
     /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
@@ -18201,6 +18747,8 @@ pub struct DescribeFeatureGroupOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>).</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The size of the <code>OnlineStore</code> in bytes.</p>
+    pub online_store_total_size_bytes: std::option::Option<i64>,
 }
 impl DescribeFeatureGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
@@ -18228,6 +18776,10 @@ impl DescribeFeatureGroupOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>A timestamp indicating when the feature group was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
     pub fn online_store_config(&self) -> std::option::Option<&crate::model::OnlineStoreConfig> {
         self.online_store_config.as_ref()
@@ -18248,6 +18800,10 @@ impl DescribeFeatureGroupOutput {
     pub fn offline_store_status(&self) -> std::option::Option<&crate::model::OfflineStoreStatus> {
         self.offline_store_status.as_ref()
     }
+    /// <p>A value indicating whether the update made to the feature group was successful.</p>
+    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+        self.last_update_status.as_ref()
+    }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
     /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
@@ -18264,6 +18820,10 @@ impl DescribeFeatureGroupOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The size of the <code>OnlineStore</code> in bytes.</p>
+    pub fn online_store_total_size_bytes(&self) -> std::option::Option<i64> {
+        self.online_store_total_size_bytes
+    }
 }
 impl std::fmt::Debug for DescribeFeatureGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18277,14 +18837,20 @@ impl std::fmt::Debug for DescribeFeatureGroupOutput {
         formatter.field("event_time_feature_name", &self.event_time_feature_name);
         formatter.field("feature_definitions", &self.feature_definitions);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("online_store_config", &self.online_store_config);
         formatter.field("offline_store_config", &self.offline_store_config);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("feature_group_status", &self.feature_group_status);
         formatter.field("offline_store_status", &self.offline_store_status);
+        formatter.field("last_update_status", &self.last_update_status);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("description", &self.description);
         formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "online_store_total_size_bytes",
+            &self.online_store_total_size_bytes,
+        );
         formatter.finish()
     }
 }
@@ -18301,14 +18867,17 @@ pub mod describe_feature_group_output {
         pub(crate) feature_definitions:
             std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) online_store_config: std::option::Option<crate::model::OnlineStoreConfig>,
         pub(crate) offline_store_config: std::option::Option<crate::model::OfflineStoreConfig>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) feature_group_status: std::option::Option<crate::model::FeatureGroupStatus>,
         pub(crate) offline_store_status: std::option::Option<crate::model::OfflineStoreStatus>,
+        pub(crate) last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) online_store_total_size_bytes: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
@@ -18400,6 +18969,19 @@ pub mod describe_feature_group_output {
             self.creation_time = input;
             self
         }
+        /// <p>A timestamp indicating when the feature group was last updated.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>A timestamp indicating when the feature group was last updated.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
         /// <p>The configuration for the <code>OnlineStore</code>.</p>
         pub fn online_store_config(mut self, input: crate::model::OnlineStoreConfig) -> Self {
             self.online_store_config = Some(input);
@@ -18462,6 +19044,19 @@ pub mod describe_feature_group_output {
             self.offline_store_status = input;
             self
         }
+        /// <p>A value indicating whether the update made to the feature group was successful.</p>
+        pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
+            self.last_update_status = Some(input);
+            self
+        }
+        /// <p>A value indicating whether the update made to the feature group was successful.</p>
+        pub fn set_last_update_status(
+            mut self,
+            input: std::option::Option<crate::model::LastUpdateStatus>,
+        ) -> Self {
+            self.last_update_status = input;
+            self
+        }
         /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
         /// <ul>
         /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
@@ -18503,6 +19098,19 @@ pub mod describe_feature_group_output {
             self.next_token = input;
             self
         }
+        /// <p>The size of the <code>OnlineStore</code> in bytes.</p>
+        pub fn online_store_total_size_bytes(mut self, input: i64) -> Self {
+            self.online_store_total_size_bytes = Some(input);
+            self
+        }
+        /// <p>The size of the <code>OnlineStore</code> in bytes.</p>
+        pub fn set_online_store_total_size_bytes(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.online_store_total_size_bytes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeFeatureGroupOutput`](crate::output::DescribeFeatureGroupOutput).
         pub fn build(self) -> crate::output::DescribeFeatureGroupOutput {
             crate::output::DescribeFeatureGroupOutput {
@@ -18512,14 +19120,17 @@ pub mod describe_feature_group_output {
                 event_time_feature_name: self.event_time_feature_name,
                 feature_definitions: self.feature_definitions,
                 creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
                 online_store_config: self.online_store_config,
                 offline_store_config: self.offline_store_config,
                 role_arn: self.role_arn,
                 feature_group_status: self.feature_group_status,
                 offline_store_status: self.offline_store_status,
+                last_update_status: self.last_update_status,
                 failure_reason: self.failure_reason,
                 description: self.description,
                 next_token: self.next_token,
+                online_store_total_size_bytes: self.online_store_total_size_bytes,
             }
         }
     }
@@ -19689,6 +20300,285 @@ impl DescribeEdgePackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEdgePackagingJobOutput`](crate::output::DescribeEdgePackagingJobOutput).
     pub fn builder() -> crate::output::describe_edge_packaging_job_output::Builder {
         crate::output::describe_edge_packaging_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEdgeDeploymentPlanOutput {
+    /// <p>The ARN of edge deployment plan.</p>
+    pub edge_deployment_plan_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the edge deployment plan.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>List of models associated with the edge deployment plan.</p>
+    pub model_configs: std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentModelConfig>>,
+    /// <p>The device fleet used for this edge deployment plan.</p>
+    pub device_fleet_name: std::option::Option<std::string::String>,
+    /// <p>The number of edge devices with the successful deployment.</p>
+    pub edge_deployment_success: i32,
+    /// <p>The number of edge devices yet to pick up deployment, or in progress.</p>
+    pub edge_deployment_pending: i32,
+    /// <p>The number of edge devices that failed the deployment.</p>
+    pub edge_deployment_failed: i32,
+    /// <p>List of stages in the edge deployment plan.</p>
+    pub stages: std::option::Option<std::vec::Vec<crate::model::DeploymentStageStatusSummary>>,
+    /// <p>Token to use when calling the next set of stages in the edge deployment plan.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The time when the edge deployment plan was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when the edge deployment plan was last updated.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DescribeEdgeDeploymentPlanOutput {
+    /// <p>The ARN of edge deployment plan.</p>
+    pub fn edge_deployment_plan_arn(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_arn.as_deref()
+    }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>List of models associated with the edge deployment plan.</p>
+    pub fn model_configs(&self) -> std::option::Option<&[crate::model::EdgeDeploymentModelConfig]> {
+        self.model_configs.as_deref()
+    }
+    /// <p>The device fleet used for this edge deployment plan.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>The number of edge devices with the successful deployment.</p>
+    pub fn edge_deployment_success(&self) -> i32 {
+        self.edge_deployment_success
+    }
+    /// <p>The number of edge devices yet to pick up deployment, or in progress.</p>
+    pub fn edge_deployment_pending(&self) -> i32 {
+        self.edge_deployment_pending
+    }
+    /// <p>The number of edge devices that failed the deployment.</p>
+    pub fn edge_deployment_failed(&self) -> i32 {
+        self.edge_deployment_failed
+    }
+    /// <p>List of stages in the edge deployment plan.</p>
+    pub fn stages(&self) -> std::option::Option<&[crate::model::DeploymentStageStatusSummary]> {
+        self.stages.as_deref()
+    }
+    /// <p>Token to use when calling the next set of stages in the edge deployment plan.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The time when the edge deployment plan was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time when the edge deployment plan was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeEdgeDeploymentPlanOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeEdgeDeploymentPlanOutput");
+        formatter.field("edge_deployment_plan_arn", &self.edge_deployment_plan_arn);
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field("model_configs", &self.model_configs);
+        formatter.field("device_fleet_name", &self.device_fleet_name);
+        formatter.field("edge_deployment_success", &self.edge_deployment_success);
+        formatter.field("edge_deployment_pending", &self.edge_deployment_pending);
+        formatter.field("edge_deployment_failed", &self.edge_deployment_failed);
+        formatter.field("stages", &self.stages);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.finish()
+    }
+}
+/// See [`DescribeEdgeDeploymentPlanOutput`](crate::output::DescribeEdgeDeploymentPlanOutput).
+pub mod describe_edge_deployment_plan_output {
+
+    /// A builder for [`DescribeEdgeDeploymentPlanOutput`](crate::output::DescribeEdgeDeploymentPlanOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_arn: std::option::Option<std::string::String>,
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) model_configs:
+            std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentModelConfig>>,
+        pub(crate) device_fleet_name: std::option::Option<std::string::String>,
+        pub(crate) edge_deployment_success: std::option::Option<i32>,
+        pub(crate) edge_deployment_pending: std::option::Option<i32>,
+        pub(crate) edge_deployment_failed: std::option::Option<i32>,
+        pub(crate) stages:
+            std::option::Option<std::vec::Vec<crate::model::DeploymentStageStatusSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ARN of edge deployment plan.</p>
+        pub fn edge_deployment_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_arn = input;
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// Appends an item to `model_configs`.
+        ///
+        /// To override the contents of this collection use [`set_model_configs`](Self::set_model_configs).
+        ///
+        /// <p>List of models associated with the edge deployment plan.</p>
+        pub fn model_configs(mut self, input: crate::model::EdgeDeploymentModelConfig) -> Self {
+            let mut v = self.model_configs.unwrap_or_default();
+            v.push(input);
+            self.model_configs = Some(v);
+            self
+        }
+        /// <p>List of models associated with the edge deployment plan.</p>
+        pub fn set_model_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentModelConfig>>,
+        ) -> Self {
+            self.model_configs = input;
+            self
+        }
+        /// <p>The device fleet used for this edge deployment plan.</p>
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_fleet_name = Some(input.into());
+            self
+        }
+        /// <p>The device fleet used for this edge deployment plan.</p>
+        pub fn set_device_fleet_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.device_fleet_name = input;
+            self
+        }
+        /// <p>The number of edge devices with the successful deployment.</p>
+        pub fn edge_deployment_success(mut self, input: i32) -> Self {
+            self.edge_deployment_success = Some(input);
+            self
+        }
+        /// <p>The number of edge devices with the successful deployment.</p>
+        pub fn set_edge_deployment_success(mut self, input: std::option::Option<i32>) -> Self {
+            self.edge_deployment_success = input;
+            self
+        }
+        /// <p>The number of edge devices yet to pick up deployment, or in progress.</p>
+        pub fn edge_deployment_pending(mut self, input: i32) -> Self {
+            self.edge_deployment_pending = Some(input);
+            self
+        }
+        /// <p>The number of edge devices yet to pick up deployment, or in progress.</p>
+        pub fn set_edge_deployment_pending(mut self, input: std::option::Option<i32>) -> Self {
+            self.edge_deployment_pending = input;
+            self
+        }
+        /// <p>The number of edge devices that failed the deployment.</p>
+        pub fn edge_deployment_failed(mut self, input: i32) -> Self {
+            self.edge_deployment_failed = Some(input);
+            self
+        }
+        /// <p>The number of edge devices that failed the deployment.</p>
+        pub fn set_edge_deployment_failed(mut self, input: std::option::Option<i32>) -> Self {
+            self.edge_deployment_failed = input;
+            self
+        }
+        /// Appends an item to `stages`.
+        ///
+        /// To override the contents of this collection use [`set_stages`](Self::set_stages).
+        ///
+        /// <p>List of stages in the edge deployment plan.</p>
+        pub fn stages(mut self, input: crate::model::DeploymentStageStatusSummary) -> Self {
+            let mut v = self.stages.unwrap_or_default();
+            v.push(input);
+            self.stages = Some(v);
+            self
+        }
+        /// <p>List of stages in the edge deployment plan.</p>
+        pub fn set_stages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeploymentStageStatusSummary>>,
+        ) -> Self {
+            self.stages = input;
+            self
+        }
+        /// <p>Token to use when calling the next set of stages in the edge deployment plan.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Token to use when calling the next set of stages in the edge deployment plan.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The time when the edge deployment plan was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time when the edge deployment plan was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The time when the edge deployment plan was last updated.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The time when the edge deployment plan was last updated.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEdgeDeploymentPlanOutput`](crate::output::DescribeEdgeDeploymentPlanOutput).
+        pub fn build(self) -> crate::output::DescribeEdgeDeploymentPlanOutput {
+            crate::output::DescribeEdgeDeploymentPlanOutput {
+                edge_deployment_plan_arn: self.edge_deployment_plan_arn,
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                model_configs: self.model_configs,
+                device_fleet_name: self.device_fleet_name,
+                edge_deployment_success: self.edge_deployment_success.unwrap_or_default(),
+                edge_deployment_pending: self.edge_deployment_pending.unwrap_or_default(),
+                edge_deployment_failed: self.edge_deployment_failed.unwrap_or_default(),
+                stages: self.stages,
+                next_token: self.next_token,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl DescribeEdgeDeploymentPlanOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEdgeDeploymentPlanOutput`](crate::output::DescribeEdgeDeploymentPlanOutput).
+    pub fn builder() -> crate::output::describe_edge_deployment_plan_output::Builder {
+        crate::output::describe_edge_deployment_plan_output::Builder::default()
     }
 }
 
@@ -24660,6 +25550,66 @@ impl DeleteEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEdgeDeploymentStageOutput {}
+impl std::fmt::Debug for DeleteEdgeDeploymentStageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEdgeDeploymentStageOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteEdgeDeploymentStageOutput`](crate::output::DeleteEdgeDeploymentStageOutput).
+pub mod delete_edge_deployment_stage_output {
+
+    /// A builder for [`DeleteEdgeDeploymentStageOutput`](crate::output::DeleteEdgeDeploymentStageOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteEdgeDeploymentStageOutput`](crate::output::DeleteEdgeDeploymentStageOutput).
+        pub fn build(self) -> crate::output::DeleteEdgeDeploymentStageOutput {
+            crate::output::DeleteEdgeDeploymentStageOutput {}
+        }
+    }
+}
+impl DeleteEdgeDeploymentStageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentStageOutput`](crate::output::DeleteEdgeDeploymentStageOutput).
+    pub fn builder() -> crate::output::delete_edge_deployment_stage_output::Builder {
+        crate::output::delete_edge_deployment_stage_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEdgeDeploymentPlanOutput {}
+impl std::fmt::Debug for DeleteEdgeDeploymentPlanOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEdgeDeploymentPlanOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteEdgeDeploymentPlanOutput`](crate::output::DeleteEdgeDeploymentPlanOutput).
+pub mod delete_edge_deployment_plan_output {
+
+    /// A builder for [`DeleteEdgeDeploymentPlanOutput`](crate::output::DeleteEdgeDeploymentPlanOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteEdgeDeploymentPlanOutput`](crate::output::DeleteEdgeDeploymentPlanOutput).
+        pub fn build(self) -> crate::output::DeleteEdgeDeploymentPlanOutput {
+            crate::output::DeleteEdgeDeploymentPlanOutput {}
+        }
+    }
+}
+impl DeleteEdgeDeploymentPlanOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentPlanOutput`](crate::output::DeleteEdgeDeploymentPlanOutput).
+    pub fn builder() -> crate::output::delete_edge_deployment_plan_output::Builder {
+        crate::output::delete_edge_deployment_plan_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainOutput {}
 impl std::fmt::Debug for DeleteDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27026,6 +27976,93 @@ impl CreateEdgePackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateEdgePackagingJobOutput`](crate::output::CreateEdgePackagingJobOutput).
     pub fn builder() -> crate::output::create_edge_packaging_job_output::Builder {
         crate::output::create_edge_packaging_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEdgeDeploymentStageOutput {}
+impl std::fmt::Debug for CreateEdgeDeploymentStageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEdgeDeploymentStageOutput");
+        formatter.finish()
+    }
+}
+/// See [`CreateEdgeDeploymentStageOutput`](crate::output::CreateEdgeDeploymentStageOutput).
+pub mod create_edge_deployment_stage_output {
+
+    /// A builder for [`CreateEdgeDeploymentStageOutput`](crate::output::CreateEdgeDeploymentStageOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CreateEdgeDeploymentStageOutput`](crate::output::CreateEdgeDeploymentStageOutput).
+        pub fn build(self) -> crate::output::CreateEdgeDeploymentStageOutput {
+            crate::output::CreateEdgeDeploymentStageOutput {}
+        }
+    }
+}
+impl CreateEdgeDeploymentStageOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentStageOutput`](crate::output::CreateEdgeDeploymentStageOutput).
+    pub fn builder() -> crate::output::create_edge_deployment_stage_output::Builder {
+        crate::output::create_edge_deployment_stage_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEdgeDeploymentPlanOutput {
+    /// <p>The ARN of the edge deployment plan.</p>
+    pub edge_deployment_plan_arn: std::option::Option<std::string::String>,
+}
+impl CreateEdgeDeploymentPlanOutput {
+    /// <p>The ARN of the edge deployment plan.</p>
+    pub fn edge_deployment_plan_arn(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateEdgeDeploymentPlanOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEdgeDeploymentPlanOutput");
+        formatter.field("edge_deployment_plan_arn", &self.edge_deployment_plan_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateEdgeDeploymentPlanOutput`](crate::output::CreateEdgeDeploymentPlanOutput).
+pub mod create_edge_deployment_plan_output {
+
+    /// A builder for [`CreateEdgeDeploymentPlanOutput`](crate::output::CreateEdgeDeploymentPlanOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the edge deployment plan.</p>
+        pub fn edge_deployment_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEdgeDeploymentPlanOutput`](crate::output::CreateEdgeDeploymentPlanOutput).
+        pub fn build(self) -> crate::output::CreateEdgeDeploymentPlanOutput {
+            crate::output::CreateEdgeDeploymentPlanOutput {
+                edge_deployment_plan_arn: self.edge_deployment_plan_arn,
+            }
+        }
+    }
+}
+impl CreateEdgeDeploymentPlanOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentPlanOutput`](crate::output::CreateEdgeDeploymentPlanOutput).
+    pub fn builder() -> crate::output::create_edge_deployment_plan_output::Builder {
+        crate::output::create_edge_deployment_plan_output::Builder::default()
     }
 }
 

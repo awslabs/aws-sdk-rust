@@ -182,6 +182,36 @@ impl UpdateDataSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAccessControlConfigurationOutput {}
+impl std::fmt::Debug for UpdateAccessControlConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAccessControlConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateAccessControlConfigurationOutput`](crate::output::UpdateAccessControlConfigurationOutput).
+pub mod update_access_control_configuration_output {
+
+    /// A builder for [`UpdateAccessControlConfigurationOutput`](crate::output::UpdateAccessControlConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateAccessControlConfigurationOutput`](crate::output::UpdateAccessControlConfigurationOutput).
+        pub fn build(self) -> crate::output::UpdateAccessControlConfigurationOutput {
+            crate::output::UpdateAccessControlConfigurationOutput {}
+        }
+    }
+}
+impl UpdateAccessControlConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAccessControlConfigurationOutput`](crate::output::UpdateAccessControlConfigurationOutput).
+    pub fn builder() -> crate::output::update_access_control_configuration_output::Builder {
+        crate::output::update_access_control_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1493,6 +1523,100 @@ impl ListDataSourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAccessControlConfigurationsOutput {
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The details of your access control configurations.</p>
+    pub access_control_configurations:
+        std::option::Option<std::vec::Vec<crate::model::AccessControlConfigurationSummary>>,
+}
+impl ListAccessControlConfigurationsOutput {
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The details of your access control configurations.</p>
+    pub fn access_control_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccessControlConfigurationSummary]> {
+        self.access_control_configurations.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAccessControlConfigurationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAccessControlConfigurationsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "access_control_configurations",
+            &self.access_control_configurations,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ListAccessControlConfigurationsOutput`](crate::output::ListAccessControlConfigurationsOutput).
+pub mod list_access_control_configurations_output {
+
+    /// A builder for [`ListAccessControlConfigurationsOutput`](crate::output::ListAccessControlConfigurationsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) access_control_configurations:
+            std::option::Option<std::vec::Vec<crate::model::AccessControlConfigurationSummary>>,
+    }
+    impl Builder {
+        /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `access_control_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_access_control_configurations`](Self::set_access_control_configurations).
+        ///
+        /// <p>The details of your access control configurations.</p>
+        pub fn access_control_configurations(
+            mut self,
+            input: crate::model::AccessControlConfigurationSummary,
+        ) -> Self {
+            let mut v = self.access_control_configurations.unwrap_or_default();
+            v.push(input);
+            self.access_control_configurations = Some(v);
+            self
+        }
+        /// <p>The details of your access control configurations.</p>
+        pub fn set_access_control_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AccessControlConfigurationSummary>,
+            >,
+        ) -> Self {
+            self.access_control_configurations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAccessControlConfigurationsOutput`](crate::output::ListAccessControlConfigurationsOutput).
+        pub fn build(self) -> crate::output::ListAccessControlConfigurationsOutput {
+            crate::output::ListAccessControlConfigurationsOutput {
+                next_token: self.next_token,
+                access_control_configurations: self.access_control_configurations,
+            }
+        }
+    }
+}
+impl ListAccessControlConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccessControlConfigurationsOutput`](crate::output::ListAccessControlConfigurationsOutput).
+    pub fn builder() -> crate::output::list_access_control_configurations_output::Builder {
+        crate::output::list_access_control_configurations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotsOutput {
     /// <p>The date-time for the beginning and end of the time window for the search metrics data.</p>
     pub snap_shot_time_filter: std::option::Option<crate::model::TimeRange>,
@@ -1842,7 +1966,7 @@ impl DisassociateEntitiesFromExperienceOutput {
 pub struct DescribeThesaurusOutput {
     /// <p>The identifier of the thesaurus.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+    /// <p>The identifier of the index for the thesaurus.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The thesaurus name.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1873,7 +1997,7 @@ impl DescribeThesaurusOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+    /// <p>The identifier of the index for the thesaurus.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -1973,12 +2097,12 @@ pub mod describe_thesaurus_output {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index associated with the thesaurus to describe.</p>
+        /// <p>The identifier of the index for the thesaurus.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -2141,66 +2265,66 @@ impl DescribeThesaurusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuerySuggestionsConfigOutput {
-    /// <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
+    /// <p>Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
     /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
     pub mode: std::option::Option<crate::model::Mode>,
-    /// <p>Shows whether the status of query suggestions settings is currently Active or Updating.</p>
+    /// <p>Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
     pub status: std::option::Option<crate::model::QuerySuggestionsStatus>,
-    /// <p>Shows how recent your queries are in your query log time window (in days).</p>
+    /// <p>How recent your queries are in your query log time window (in days).</p>
     pub query_log_look_back_window_in_days: std::option::Option<i32>,
-    /// <p>Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query suggestions.</p>
+    /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
     pub include_queries_without_user_information: std::option::Option<bool>,
-    /// <p>Shows the minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+    /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
     pub minimum_number_of_querying_users: std::option::Option<i32>,
-    /// <p>Shows the minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
+    /// <p>The minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
     pub minimum_query_count: std::option::Option<i32>,
-    /// <p>Shows the date-time query suggestions for an index was last updated.</p>
+    /// <p>The date-time query suggestions for an index was last updated.</p>
     pub last_suggestions_build_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Shows the date-time query suggestions for an index was last cleared.</p>
+    /// <p>The date-time query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
     pub last_clear_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Shows the current total count of query suggestions for an index.</p>
+    /// <p>The current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
     pub total_suggestions_count: std::option::Option<i32>,
 }
 impl DescribeQuerySuggestionsConfigOutput {
-    /// <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
+    /// <p>Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
     /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
         self.mode.as_ref()
     }
-    /// <p>Shows whether the status of query suggestions settings is currently Active or Updating.</p>
+    /// <p>Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::QuerySuggestionsStatus> {
         self.status.as_ref()
     }
-    /// <p>Shows how recent your queries are in your query log time window (in days).</p>
+    /// <p>How recent your queries are in your query log time window (in days).</p>
     pub fn query_log_look_back_window_in_days(&self) -> std::option::Option<i32> {
         self.query_log_look_back_window_in_days
     }
-    /// <p>Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query suggestions.</p>
+    /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
     pub fn include_queries_without_user_information(&self) -> std::option::Option<bool> {
         self.include_queries_without_user_information
     }
-    /// <p>Shows the minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+    /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
     pub fn minimum_number_of_querying_users(&self) -> std::option::Option<i32> {
         self.minimum_number_of_querying_users
     }
-    /// <p>Shows the minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
+    /// <p>The minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
     pub fn minimum_query_count(&self) -> std::option::Option<i32> {
         self.minimum_query_count
     }
-    /// <p>Shows the date-time query suggestions for an index was last updated.</p>
+    /// <p>The date-time query suggestions for an index was last updated.</p>
     pub fn last_suggestions_build_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_suggestions_build_time.as_ref()
     }
-    /// <p>Shows the date-time query suggestions for an index was last cleared.</p>
+    /// <p>The date-time query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
     pub fn last_clear_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_clear_time.as_ref()
     }
-    /// <p>Shows the current total count of query suggestions for an index.</p>
+    /// <p>The current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
     pub fn total_suggestions_count(&self) -> std::option::Option<i32> {
         self.total_suggestions_count
@@ -2250,25 +2374,25 @@ pub mod describe_query_suggestions_config_output {
         pub(crate) total_suggestions_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
+        /// <p>Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
         /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
         pub fn mode(mut self, input: crate::model::Mode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
+        /// <p>Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
         /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::Mode>) -> Self {
             self.mode = input;
             self
         }
-        /// <p>Shows whether the status of query suggestions settings is currently Active or Updating.</p>
+        /// <p>Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.</p>
         /// <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
         pub fn status(mut self, input: crate::model::QuerySuggestionsStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Shows whether the status of query suggestions settings is currently Active or Updating.</p>
+        /// <p>Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.</p>
         /// <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
         pub fn set_status(
             mut self,
@@ -2277,12 +2401,12 @@ pub mod describe_query_suggestions_config_output {
             self.status = input;
             self
         }
-        /// <p>Shows how recent your queries are in your query log time window (in days).</p>
+        /// <p>How recent your queries are in your query log time window (in days).</p>
         pub fn query_log_look_back_window_in_days(mut self, input: i32) -> Self {
             self.query_log_look_back_window_in_days = Some(input);
             self
         }
-        /// <p>Shows how recent your queries are in your query log time window (in days).</p>
+        /// <p>How recent your queries are in your query log time window (in days).</p>
         pub fn set_query_log_look_back_window_in_days(
             mut self,
             input: std::option::Option<i32>,
@@ -2290,12 +2414,12 @@ pub mod describe_query_suggestions_config_output {
             self.query_log_look_back_window_in_days = input;
             self
         }
-        /// <p>Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query suggestions.</p>
+        /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
         pub fn include_queries_without_user_information(mut self, input: bool) -> Self {
             self.include_queries_without_user_information = Some(input);
             self
         }
-        /// <p>Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query suggestions.</p>
+        /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
         pub fn set_include_queries_without_user_information(
             mut self,
             input: std::option::Option<bool>,
@@ -2303,12 +2427,12 @@ pub mod describe_query_suggestions_config_output {
             self.include_queries_without_user_information = input;
             self
         }
-        /// <p>Shows the minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+        /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
         pub fn minimum_number_of_querying_users(mut self, input: i32) -> Self {
             self.minimum_number_of_querying_users = Some(input);
             self
         }
-        /// <p>Shows the minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
+        /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
         pub fn set_minimum_number_of_querying_users(
             mut self,
             input: std::option::Option<i32>,
@@ -2316,22 +2440,22 @@ pub mod describe_query_suggestions_config_output {
             self.minimum_number_of_querying_users = input;
             self
         }
-        /// <p>Shows the minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
+        /// <p>The minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
         pub fn minimum_query_count(mut self, input: i32) -> Self {
             self.minimum_query_count = Some(input);
             self
         }
-        /// <p>Shows the minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
+        /// <p>The minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
         pub fn set_minimum_query_count(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_query_count = input;
             self
         }
-        /// <p>Shows the date-time query suggestions for an index was last updated.</p>
+        /// <p>The date-time query suggestions for an index was last updated.</p>
         pub fn last_suggestions_build_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_suggestions_build_time = Some(input);
             self
         }
-        /// <p>Shows the date-time query suggestions for an index was last updated.</p>
+        /// <p>The date-time query suggestions for an index was last updated.</p>
         pub fn set_last_suggestions_build_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2339,13 +2463,13 @@ pub mod describe_query_suggestions_config_output {
             self.last_suggestions_build_time = input;
             self
         }
-        /// <p>Shows the date-time query suggestions for an index was last cleared.</p>
+        /// <p>The date-time query suggestions for an index was last cleared.</p>
         /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
         pub fn last_clear_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_clear_time = Some(input);
             self
         }
-        /// <p>Shows the date-time query suggestions for an index was last cleared.</p>
+        /// <p>The date-time query suggestions for an index was last cleared.</p>
         /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
         pub fn set_last_clear_time(
             mut self,
@@ -2354,13 +2478,13 @@ pub mod describe_query_suggestions_config_output {
             self.last_clear_time = input;
             self
         }
-        /// <p>Shows the current total count of query suggestions for an index.</p>
+        /// <p>The current total count of query suggestions for an index.</p>
         /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
         pub fn total_suggestions_count(mut self, input: i32) -> Self {
             self.total_suggestions_count = Some(input);
             self
         }
-        /// <p>Shows the current total count of query suggestions for an index.</p>
+        /// <p>The current total count of query suggestions for an index.</p>
         /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
         pub fn set_total_suggestions_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_suggestions_count = input;
@@ -2394,64 +2518,64 @@ impl DescribeQuerySuggestionsConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuerySuggestionsBlockListOutput {
-    /// <p>Shows the identifier of the index for the block list.</p>
+    /// <p>The identifier of the index for the block list.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>Shows the unique identifier of the block list.</p>
+    /// <p>The identifier of the block list.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>Shows the name of the block list.</p>
+    /// <p>The name of the block list.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Shows the description for the block list.</p>
+    /// <p>The description for the block list.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
     pub status: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
-    /// <p>Shows the error message with details when there are issues in processing the block list.</p>
+    /// <p>The error message containing details if there are issues processing the block list.</p>
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>Shows the date-time a block list for query suggestions was created.</p>
+    /// <p>The date-time a block list for query suggestions was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
+    /// <p>The date-time a block list for query suggestions was last updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
-    /// <p>Shows the current number of valid, non-empty words or phrases in the block list text file.</p>
+    /// <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
     pub item_count: std::option::Option<i32>,
-    /// <p>Shows the current size of the block list text file in S3.</p>
+    /// <p>The current size of the block list text file in S3.</p>
     pub file_size_bytes: std::option::Option<i64>,
-    /// <p>Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
+    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
     /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl DescribeQuerySuggestionsBlockListOutput {
-    /// <p>Shows the identifier of the index for the block list.</p>
+    /// <p>The identifier of the index for the block list.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>Shows the unique identifier of the block list.</p>
+    /// <p>The identifier of the block list.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Shows the name of the block list.</p>
+    /// <p>The name of the block list.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Shows the description for the block list.</p>
+    /// <p>The description for the block list.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::QuerySuggestionsBlockListStatus> {
         self.status.as_ref()
     }
-    /// <p>Shows the error message with details when there are issues in processing the block list.</p>
+    /// <p>The error message containing details if there are issues processing the block list.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>Shows the date-time a block list for query suggestions was created.</p>
+    /// <p>The date-time a block list for query suggestions was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
+    /// <p>The date-time a block list for query suggestions was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -2461,15 +2585,15 @@ impl DescribeQuerySuggestionsBlockListOutput {
     pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.source_s3_path.as_ref()
     }
-    /// <p>Shows the current number of valid, non-empty words or phrases in the block list text file.</p>
+    /// <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
     pub fn item_count(&self) -> std::option::Option<i32> {
         self.item_count
     }
-    /// <p>Shows the current size of the block list text file in S3.</p>
+    /// <p>The current size of the block list text file in S3.</p>
     pub fn file_size_bytes(&self) -> std::option::Option<i64> {
         self.file_size_bytes
     }
-    /// <p>Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
+    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
     /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -2513,52 +2637,52 @@ pub mod describe_query_suggestions_block_list_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Shows the identifier of the index for the block list.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>Shows the identifier of the index for the block list.</p>
+        /// <p>The identifier of the index for the block list.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>Shows the unique identifier of the block list.</p>
+        /// <p>The identifier of the block list.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>Shows the unique identifier of the block list.</p>
+        /// <p>The identifier of the block list.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>Shows the name of the block list.</p>
+        /// <p>The name of the block list.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Shows the name of the block list.</p>
+        /// <p>The name of the block list.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Shows the description for the block list.</p>
+        /// <p>The description for the block list.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>Shows the description for the block list.</p>
+        /// <p>The description for the block list.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+        /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
         pub fn status(mut self, input: crate::model::QuerySuggestionsBlockListStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Shows whether the current status of the block list is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+        /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
@@ -2566,12 +2690,12 @@ pub mod describe_query_suggestions_block_list_output {
             self.status = input;
             self
         }
-        /// <p>Shows the error message with details when there are issues in processing the block list.</p>
+        /// <p>The error message containing details if there are issues processing the block list.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>Shows the error message with details when there are issues in processing the block list.</p>
+        /// <p>The error message containing details if there are issues processing the block list.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2579,12 +2703,12 @@ pub mod describe_query_suggestions_block_list_output {
             self.error_message = input;
             self
         }
-        /// <p>Shows the date-time a block list for query suggestions was created.</p>
+        /// <p>The date-time a block list for query suggestions was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>Shows the date-time a block list for query suggestions was created.</p>
+        /// <p>The date-time a block list for query suggestions was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2592,12 +2716,12 @@ pub mod describe_query_suggestions_block_list_output {
             self.created_at = input;
             self
         }
-        /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
+        /// <p>The date-time a block list for query suggestions was last updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
+        /// <p>The date-time a block list for query suggestions was last updated.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2622,33 +2746,33 @@ pub mod describe_query_suggestions_block_list_output {
             self.source_s3_path = input;
             self
         }
-        /// <p>Shows the current number of valid, non-empty words or phrases in the block list text file.</p>
+        /// <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
         pub fn item_count(mut self, input: i32) -> Self {
             self.item_count = Some(input);
             self
         }
-        /// <p>Shows the current number of valid, non-empty words or phrases in the block list text file.</p>
+        /// <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
         pub fn set_item_count(mut self, input: std::option::Option<i32>) -> Self {
             self.item_count = input;
             self
         }
-        /// <p>Shows the current size of the block list text file in S3.</p>
+        /// <p>The current size of the block list text file in S3.</p>
         pub fn file_size_bytes(mut self, input: i64) -> Self {
             self.file_size_bytes = Some(input);
             self
         }
-        /// <p>Shows the current size of the block list text file in S3.</p>
+        /// <p>The current size of the block list text file in S3.</p>
         pub fn set_file_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.file_size_bytes = input;
             self
         }
-        /// <p>Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
+        /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
         /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>Shows the current IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
+        /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
         /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
@@ -2864,7 +2988,7 @@ pub struct DescribeIndexOutput {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix datetime that the index was last updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Configuration settings for any metadata applied to the documents in the index.</p>
+    /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
     pub document_metadata_configurations:
         std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
@@ -2878,7 +3002,7 @@ pub struct DescribeIndexOutput {
         std::option::Option<std::vec::Vec<crate::model::UserTokenConfiguration>>,
     /// <p>The user context policy for the Amazon Kendra index.</p>
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
-    /// <p>Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
     pub user_group_resolution_configuration:
         std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
@@ -2921,7 +3045,7 @@ impl DescribeIndexOutput {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>Configuration settings for any metadata applied to the documents in the index.</p>
+    /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
     pub fn document_metadata_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::DocumentMetadataConfiguration]> {
@@ -2949,7 +3073,7 @@ impl DescribeIndexOutput {
     pub fn user_context_policy(&self) -> std::option::Option<&crate::model::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
-    /// <p>Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
     pub fn user_group_resolution_configuration(
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionConfiguration> {
@@ -3124,7 +3248,7 @@ pub mod describe_index_output {
         ///
         /// To override the contents of this collection use [`set_document_metadata_configurations`](Self::set_document_metadata_configurations).
         ///
-        /// <p>Configuration settings for any metadata applied to the documents in the index.</p>
+        /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
         pub fn document_metadata_configurations(
             mut self,
             input: crate::model::DocumentMetadataConfiguration,
@@ -3134,7 +3258,7 @@ pub mod describe_index_output {
             self.document_metadata_configurations = Some(v);
             self
         }
-        /// <p>Configuration settings for any metadata applied to the documents in the index.</p>
+        /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
         pub fn set_document_metadata_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
@@ -3216,7 +3340,7 @@ pub mod describe_index_output {
             self.user_context_policy = input;
             self
         }
-        /// <p>Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+        /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
         pub fn user_group_resolution_configuration(
             mut self,
             input: crate::model::UserGroupResolutionConfiguration,
@@ -3224,7 +3348,7 @@ pub mod describe_index_output {
             self.user_group_resolution_configuration = Some(input);
             self
         }
-        /// <p>Shows whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
+        /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an Amazon Web Services Single Sign On identity source.</p>
         pub fn set_user_group_resolution_configuration(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
@@ -3268,7 +3392,7 @@ impl DescribeIndexOutput {
 pub struct DescribeFaqOutput {
     /// <p>The identifier of the FAQ.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index that contains the FAQ.</p>
+    /// <p>The identifier of the index for the FAQ.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The name that you gave the FAQ when it was created.</p>
     pub name: std::option::Option<std::string::String>,
@@ -3296,7 +3420,7 @@ impl DescribeFaqOutput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the index that contains the FAQ.</p>
+    /// <p>The identifier of the index for the FAQ.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -3389,12 +3513,12 @@ pub mod describe_faq_output {
             self.id = input;
             self
         }
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index that contains the FAQ.</p>
+        /// <p>The identifier of the index for the FAQ.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -3820,13 +3944,13 @@ pub struct DescribeDataSourceOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the data source.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
+    /// <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>The Unix timestamp of when the data source was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp of when the data source was last updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The description of the data source.</p>
+    /// <p>The description for the data source.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
     pub status: std::option::Option<crate::model::DataSourceStatus>,
@@ -3860,7 +3984,7 @@ impl DescribeDataSourceOutput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
+    /// <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.configuration.as_ref()
     }
@@ -3872,7 +3996,7 @@ impl DescribeDataSourceOutput {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The description of the data source.</p>
+    /// <p>The description for the data source.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -3993,12 +4117,12 @@ pub mod describe_data_source_output {
             self.r#type = input;
             self
         }
-        /// <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
+        /// <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
+        /// <p>Configuration details for the data source. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -4032,12 +4156,12 @@ pub mod describe_data_source_output {
             self.updated_at = input;
             self
         }
-        /// <p>The description of the data source.</p>
+        /// <p>The description for the data source.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the data source.</p>
+        /// <p>The description for the data source.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4145,6 +4269,167 @@ impl DescribeDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput).
     pub fn builder() -> crate::output::describe_data_source_output::Builder {
         crate::output::describe_data_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAccessControlConfigurationOutput {
+    /// <p>The name for the access control configuration.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description for the access control configuration.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The error message containing details if there are issues processing the access control configuration.</p>
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+    /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub hierarchical_access_control_list:
+        std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+}
+impl DescribeAccessControlConfigurationOutput {
+    /// <p>The name for the access control configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description for the access control configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The error message containing details if there are issues processing the access control configuration.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub fn access_control_list(&self) -> std::option::Option<&[crate::model::Principal]> {
+        self.access_control_list.as_deref()
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub fn hierarchical_access_control_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::HierarchicalPrincipal]> {
+        self.hierarchical_access_control_list.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeAccessControlConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAccessControlConfigurationOutput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("error_message", &self.error_message);
+        formatter.field("access_control_list", &self.access_control_list);
+        formatter.field(
+            "hierarchical_access_control_list",
+            &self.hierarchical_access_control_list,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeAccessControlConfigurationOutput`](crate::output::DescribeAccessControlConfigurationOutput).
+pub mod describe_access_control_configuration_output {
+
+    /// A builder for [`DescribeAccessControlConfigurationOutput`](crate::output::DescribeAccessControlConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        pub(crate) hierarchical_access_control_list:
+            std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+    }
+    impl Builder {
+        /// <p>The name for the access control configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name for the access control configuration.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description for the access control configuration.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description for the access control configuration.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The error message containing details if there are issues processing the access control configuration.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The error message containing details if there are issues processing the access control configuration.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Appends an item to `access_control_list`.
+        ///
+        /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
+        ///
+        /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn access_control_list(mut self, input: crate::model::Principal) -> Self {
+            let mut v = self.access_control_list.unwrap_or_default();
+            v.push(input);
+            self.access_control_list = Some(v);
+            self
+        }
+        /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+        pub fn set_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        ) -> Self {
+            self.access_control_list = input;
+            self
+        }
+        /// Appends an item to `hierarchical_access_control_list`.
+        ///
+        /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).
+        ///
+        /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn hierarchical_access_control_list(
+            mut self,
+            input: crate::model::HierarchicalPrincipal,
+        ) -> Self {
+            let mut v = self.hierarchical_access_control_list.unwrap_or_default();
+            v.push(input);
+            self.hierarchical_access_control_list = Some(v);
+            self
+        }
+        /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+        pub fn set_hierarchical_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+        ) -> Self {
+            self.hierarchical_access_control_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAccessControlConfigurationOutput`](crate::output::DescribeAccessControlConfigurationOutput).
+        pub fn build(self) -> crate::output::DescribeAccessControlConfigurationOutput {
+            crate::output::DescribeAccessControlConfigurationOutput {
+                name: self.name,
+                description: self.description,
+                error_message: self.error_message,
+                access_control_list: self.access_control_list,
+                hierarchical_access_control_list: self.hierarchical_access_control_list,
+            }
+        }
+    }
+}
+impl DescribeAccessControlConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAccessControlConfigurationOutput`](crate::output::DescribeAccessControlConfigurationOutput).
+    pub fn builder() -> crate::output::describe_access_control_configuration_output::Builder {
+        crate::output::describe_access_control_configuration_output::Builder::default()
     }
 }
 
@@ -4355,6 +4640,36 @@ impl DeleteDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
     pub fn builder() -> crate::output::delete_data_source_output::Builder {
         crate::output::delete_data_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAccessControlConfigurationOutput {}
+impl std::fmt::Debug for DeleteAccessControlConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAccessControlConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteAccessControlConfigurationOutput`](crate::output::DeleteAccessControlConfigurationOutput).
+pub mod delete_access_control_configuration_output {
+
+    /// A builder for [`DeleteAccessControlConfigurationOutput`](crate::output::DeleteAccessControlConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteAccessControlConfigurationOutput`](crate::output::DeleteAccessControlConfigurationOutput).
+        pub fn build(self) -> crate::output::DeleteAccessControlConfigurationOutput {
+            crate::output::DeleteAccessControlConfigurationOutput {}
+        }
+    }
+}
+impl DeleteAccessControlConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAccessControlConfigurationOutput`](crate::output::DeleteAccessControlConfigurationOutput).
+    pub fn builder() -> crate::output::delete_access_control_configuration_output::Builder {
+        crate::output::delete_access_control_configuration_output::Builder::default()
     }
 }
 
@@ -4622,11 +4937,11 @@ impl CreateExperienceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceOutput {
-    /// <p>A unique identifier for the data source.</p>
+    /// <p>The identifier of the data source connector.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateDataSourceOutput {
-    /// <p>A unique identifier for the data source.</p>
+    /// <p>The identifier of the data source connector.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4647,12 +4962,12 @@ pub mod create_data_source_output {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the data source.</p>
+        /// <p>The identifier of the data source connector.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4667,6 +4982,58 @@ impl CreateDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput).
     pub fn builder() -> crate::output::create_data_source_output::Builder {
         crate::output::create_data_source_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAccessControlConfigurationOutput {
+    /// <p>The identifier of the access control configuration for your documents in an index.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl CreateAccessControlConfigurationOutput {
+    /// <p>The identifier of the access control configuration for your documents in an index.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateAccessControlConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAccessControlConfigurationOutput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`CreateAccessControlConfigurationOutput`](crate::output::CreateAccessControlConfigurationOutput).
+pub mod create_access_control_configuration_output {
+
+    /// A builder for [`CreateAccessControlConfigurationOutput`](crate::output::CreateAccessControlConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the access control configuration for your documents in an index.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the access control configuration for your documents in an index.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAccessControlConfigurationOutput`](crate::output::CreateAccessControlConfigurationOutput).
+        pub fn build(self) -> crate::output::CreateAccessControlConfigurationOutput {
+            crate::output::CreateAccessControlConfigurationOutput { id: self.id }
+        }
+    }
+}
+impl CreateAccessControlConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAccessControlConfigurationOutput`](crate::output::CreateAccessControlConfigurationOutput).
+    pub fn builder() -> crate::output::create_access_control_configuration_output::Builder {
+        crate::output::create_access_control_configuration_output::Builder::default()
     }
 }
 

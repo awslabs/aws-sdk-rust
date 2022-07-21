@@ -12,6 +12,8 @@ pub struct LoRaWanUpdateDevice {
     pub abp_v1_1: std::option::Option<crate::model::UpdateAbpV11>,
     /// <p>ABP device object for update APIs for v1.0.x</p>
     pub abp_v1_0_x: std::option::Option<crate::model::UpdateAbpV10X>,
+    /// <p>FPorts object for the positioning information of the device.</p>
+    pub f_ports: std::option::Option<crate::model::UpdateFPorts>,
 }
 impl LoRaWanUpdateDevice {
     /// <p>The ID of the device profile for the wireless device.</p>
@@ -30,6 +32,10 @@ impl LoRaWanUpdateDevice {
     pub fn abp_v1_0_x(&self) -> std::option::Option<&crate::model::UpdateAbpV10X> {
         self.abp_v1_0_x.as_ref()
     }
+    /// <p>FPorts object for the positioning information of the device.</p>
+    pub fn f_ports(&self) -> std::option::Option<&crate::model::UpdateFPorts> {
+        self.f_ports.as_ref()
+    }
 }
 impl std::fmt::Debug for LoRaWanUpdateDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38,6 +44,7 @@ impl std::fmt::Debug for LoRaWanUpdateDevice {
         formatter.field("service_profile_id", &self.service_profile_id);
         formatter.field("abp_v1_1", &self.abp_v1_1);
         formatter.field("abp_v1_0_x", &self.abp_v1_0_x);
+        formatter.field("f_ports", &self.f_ports);
         formatter.finish()
     }
 }
@@ -51,6 +58,7 @@ pub mod lo_ra_wan_update_device {
         pub(crate) service_profile_id: std::option::Option<std::string::String>,
         pub(crate) abp_v1_1: std::option::Option<crate::model::UpdateAbpV11>,
         pub(crate) abp_v1_0_x: std::option::Option<crate::model::UpdateAbpV10X>,
+        pub(crate) f_ports: std::option::Option<crate::model::UpdateFPorts>,
     }
     impl Builder {
         /// <p>The ID of the device profile for the wireless device.</p>
@@ -105,6 +113,19 @@ pub mod lo_ra_wan_update_device {
             self.abp_v1_0_x = input;
             self
         }
+        /// <p>FPorts object for the positioning information of the device.</p>
+        pub fn f_ports(mut self, input: crate::model::UpdateFPorts) -> Self {
+            self.f_ports = Some(input);
+            self
+        }
+        /// <p>FPorts object for the positioning information of the device.</p>
+        pub fn set_f_ports(
+            mut self,
+            input: std::option::Option<crate::model::UpdateFPorts>,
+        ) -> Self {
+            self.f_ports = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
         pub fn build(self) -> crate::model::LoRaWanUpdateDevice {
             crate::model::LoRaWanUpdateDevice {
@@ -112,6 +133,7 @@ pub mod lo_ra_wan_update_device {
                 service_profile_id: self.service_profile_id,
                 abp_v1_1: self.abp_v1_1,
                 abp_v1_0_x: self.abp_v1_0_x,
+                f_ports: self.f_ports,
             }
         }
     }
@@ -120,6 +142,155 @@ impl LoRaWanUpdateDevice {
     /// Creates a new builder-style object to manufacture [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
     pub fn builder() -> crate::model::lo_ra_wan_update_device::Builder {
         crate::model::lo_ra_wan_update_device::Builder::default()
+    }
+}
+
+/// <p>Object for updating the FPorts information.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFPorts {
+    /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
+    pub positioning: std::option::Option<crate::model::Positioning>,
+}
+impl UpdateFPorts {
+    /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
+    pub fn positioning(&self) -> std::option::Option<&crate::model::Positioning> {
+        self.positioning.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateFPorts {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFPorts");
+        formatter.field("positioning", &self.positioning);
+        formatter.finish()
+    }
+}
+/// See [`UpdateFPorts`](crate::model::UpdateFPorts).
+pub mod update_f_ports {
+
+    /// A builder for [`UpdateFPorts`](crate::model::UpdateFPorts).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) positioning: std::option::Option<crate::model::Positioning>,
+    }
+    impl Builder {
+        /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
+        pub fn positioning(mut self, input: crate::model::Positioning) -> Self {
+            self.positioning = Some(input);
+            self
+        }
+        /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
+        pub fn set_positioning(
+            mut self,
+            input: std::option::Option<crate::model::Positioning>,
+        ) -> Self {
+            self.positioning = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFPorts`](crate::model::UpdateFPorts).
+        pub fn build(self) -> crate::model::UpdateFPorts {
+            crate::model::UpdateFPorts {
+                positioning: self.positioning,
+            }
+        }
+    }
+}
+impl UpdateFPorts {
+    /// Creates a new builder-style object to manufacture [`UpdateFPorts`](crate::model::UpdateFPorts).
+    pub fn builder() -> crate::model::update_f_ports::Builder {
+        crate::model::update_f_ports::Builder::default()
+    }
+}
+
+/// <p>The FPorts for the position information.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Positioning {
+    /// <p>The Fport value.</p>
+    pub clock_sync: std::option::Option<i32>,
+    /// <p>The Fport value.</p>
+    pub stream: std::option::Option<i32>,
+    /// <p>The Fport value.</p>
+    pub gnss: std::option::Option<i32>,
+}
+impl Positioning {
+    /// <p>The Fport value.</p>
+    pub fn clock_sync(&self) -> std::option::Option<i32> {
+        self.clock_sync
+    }
+    /// <p>The Fport value.</p>
+    pub fn stream(&self) -> std::option::Option<i32> {
+        self.stream
+    }
+    /// <p>The Fport value.</p>
+    pub fn gnss(&self) -> std::option::Option<i32> {
+        self.gnss
+    }
+}
+impl std::fmt::Debug for Positioning {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Positioning");
+        formatter.field("clock_sync", &self.clock_sync);
+        formatter.field("stream", &self.stream);
+        formatter.field("gnss", &self.gnss);
+        formatter.finish()
+    }
+}
+/// See [`Positioning`](crate::model::Positioning).
+pub mod positioning {
+
+    /// A builder for [`Positioning`](crate::model::Positioning).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) clock_sync: std::option::Option<i32>,
+        pub(crate) stream: std::option::Option<i32>,
+        pub(crate) gnss: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Fport value.</p>
+        pub fn clock_sync(mut self, input: i32) -> Self {
+            self.clock_sync = Some(input);
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn set_clock_sync(mut self, input: std::option::Option<i32>) -> Self {
+            self.clock_sync = input;
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn stream(mut self, input: i32) -> Self {
+            self.stream = Some(input);
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn set_stream(mut self, input: std::option::Option<i32>) -> Self {
+            self.stream = input;
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn gnss(mut self, input: i32) -> Self {
+            self.gnss = Some(input);
+            self
+        }
+        /// <p>The Fport value.</p>
+        pub fn set_gnss(mut self, input: std::option::Option<i32>) -> Self {
+            self.gnss = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Positioning`](crate::model::Positioning).
+        pub fn build(self) -> crate::model::Positioning {
+            crate::model::Positioning {
+                clock_sync: self.clock_sync,
+                stream: self.stream,
+                gnss: self.gnss,
+            }
+        }
+    }
+}
+impl Positioning {
+    /// Creates a new builder-style object to manufacture [`Positioning`](crate::model::Positioning).
+    pub fn builder() -> crate::model::positioning::Builder {
+        crate::model::positioning::Builder::default()
     }
 }
 
@@ -238,7 +409,7 @@ pub struct ConnectionStatusEventConfiguration {
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     pub lo_ra_wan:
         std::option::Option<crate::model::LoRaWanConnectionStatusEventNotificationConfigurations>,
-    /// <p>Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .</p>
+    /// <p>Enum to denote whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
     pub wireless_gateway_id_event_topic:
         std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
@@ -250,7 +421,7 @@ impl ConnectionStatusEventConfiguration {
     {
         self.lo_ra_wan.as_ref()
     }
-    /// <p>Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .</p>
+    /// <p>Enum to denote whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
     pub fn wireless_gateway_id_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -299,7 +470,7 @@ pub mod connection_status_event_configuration {
             self.lo_ra_wan = input;
             self
         }
-        /// <p>Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .</p>
+        /// <p>Enum to denote whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
         pub fn wireless_gateway_id_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -307,7 +478,7 @@ pub mod connection_status_event_configuration {
             self.wireless_gateway_id_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the wireless gateway id connection status event topic is enabled or disabled .</p>
+        /// <p>Enum to denote whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
         pub fn set_wireless_gateway_id_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -390,11 +561,11 @@ impl AsRef<str> for EventNotificationTopicStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanConnectionStatusEventNotificationConfigurations {
-    /// <p>Enum to denote whether the gateway eui connection status event topic is enabled or disabled.</p>
+    /// <p>Enum to denote whether the gateway EUI connection status event topic is enabled or disabled.</p>
     pub gateway_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusEventNotificationConfigurations {
-    /// <p>Enum to denote whether the gateway eui connection status event topic is enabled or disabled.</p>
+    /// <p>Enum to denote whether the gateway EUI connection status event topic is enabled or disabled.</p>
     pub fn gateway_eui_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -419,7 +590,7 @@ pub mod lo_ra_wan_connection_status_event_notification_configurations {
             std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
-        /// <p>Enum to denote whether the gateway eui connection status event topic is enabled or disabled.</p>
+        /// <p>Enum to denote whether the gateway EUI connection status event topic is enabled or disabled.</p>
         pub fn gateway_eui_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -427,7 +598,7 @@ pub mod lo_ra_wan_connection_status_event_notification_configurations {
             self.gateway_eui_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the gateway eui connection status event topic is enabled or disabled.</p>
+        /// <p>Enum to denote whether the gateway EUI connection status event topic is enabled or disabled.</p>
         pub fn set_gateway_eui_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -550,11 +721,11 @@ impl JoinEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoRaWanJoinEventNotificationConfigurations {
-    /// <p>Enum to denote whether the dev eui join event topic is enabled or disabled.</p>
+    /// <p>Enum to denote whether the Dev EUI join event topic is enabled or disabled.</p>
     pub dev_eui_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
 }
 impl LoRaWanJoinEventNotificationConfigurations {
-    /// <p>Enum to denote whether the dev eui join event topic is enabled or disabled.</p>
+    /// <p>Enum to denote whether the Dev EUI join event topic is enabled or disabled.</p>
     pub fn dev_eui_event_topic(
         &self,
     ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
@@ -578,7 +749,7 @@ pub mod lo_ra_wan_join_event_notification_configurations {
             std::option::Option<crate::model::EventNotificationTopicStatus>,
     }
     impl Builder {
-        /// <p>Enum to denote whether the dev eui join event topic is enabled or disabled.</p>
+        /// <p>Enum to denote whether the Dev EUI join event topic is enabled or disabled.</p>
         pub fn dev_eui_event_topic(
             mut self,
             input: crate::model::EventNotificationTopicStatus,
@@ -586,7 +757,7 @@ pub mod lo_ra_wan_join_event_notification_configurations {
             self.dev_eui_event_topic = Some(input);
             self
         }
-        /// <p>Enum to denote whether the dev eui join event topic is enabled or disabled.</p>
+        /// <p>Enum to denote whether the Dev EUI join event topic is enabled or disabled.</p>
         pub fn set_dev_eui_event_topic(
             mut self,
             input: std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -704,7 +875,7 @@ impl ProximityEventConfiguration {
     }
 }
 
-/// <p> SidewalkEventNotificationConfigurations object Event configuration object for Sidewalk related event topics.</p>
+/// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkEventNotificationConfigurations {
@@ -997,6 +1168,61 @@ impl AsRef<str> for IdentifierType {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum PositionResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    WirelessDevice,
+    #[allow(missing_docs)] // documentation missing in model
+    WirelessGateway,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PositionResourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "WirelessDevice" => PositionResourceType::WirelessDevice,
+            "WirelessGateway" => PositionResourceType::WirelessGateway,
+            other => PositionResourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PositionResourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PositionResourceType::from(s))
+    }
+}
+impl PositionResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PositionResourceType::WirelessDevice => "WirelessDevice",
+            PositionResourceType::WirelessGateway => "WirelessGateway",
+            PositionResourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["WirelessDevice", "WirelessGateway"]
+    }
+}
+impl AsRef<str> for PositionResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PartnerType {
     #[allow(missing_docs)] // documentation missing in model
     Sidewalk,
@@ -1098,13 +1324,13 @@ impl SidewalkUpdateAccount {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TraceContent {
-    /// <p>FrameInfo of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
+    /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
     pub wireless_device_frame_info: std::option::Option<crate::model::WirelessDeviceFrameInfo>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl TraceContent {
-    /// <p>FrameInfo of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
+    /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
     pub fn wireless_device_frame_info(
         &self,
     ) -> std::option::Option<&crate::model::WirelessDeviceFrameInfo> {
@@ -1137,7 +1363,7 @@ pub mod trace_content {
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
     }
     impl Builder {
-        /// <p>FrameInfo of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
+        /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
         pub fn wireless_device_frame_info(
             mut self,
             input: crate::model::WirelessDeviceFrameInfo,
@@ -1145,7 +1371,7 @@ pub mod trace_content {
             self.wireless_device_frame_info = Some(input);
             self
         }
-        /// <p>FrameInfo of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
+        /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
         pub fn set_wireless_device_frame_info(
             mut self,
             input: std::option::Option<crate::model::WirelessDeviceFrameInfo>,
@@ -1239,7 +1465,8 @@ impl AsRef<str> for LogLevel {
     }
 }
 
-/// <p>FrameInfo of your wireless device resources for the trace content. Use FrameInfo to debug
+/// <p>
+/// <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug
 /// the communication between your LoRaWAN end devices and the network server.</p>
 #[non_exhaustive]
 #[derive(
@@ -3292,6 +3519,252 @@ impl LoRaWanMulticastMetadata {
     }
 }
 
+/// <p>The wrapper for position solver configurations.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PositionSolverConfigurations {
+    /// <p>The Semtech GNSS solver configuration object.</p>
+    pub semtech_gnss: std::option::Option<crate::model::SemtechGnssConfiguration>,
+}
+impl PositionSolverConfigurations {
+    /// <p>The Semtech GNSS solver configuration object.</p>
+    pub fn semtech_gnss(&self) -> std::option::Option<&crate::model::SemtechGnssConfiguration> {
+        self.semtech_gnss.as_ref()
+    }
+}
+impl std::fmt::Debug for PositionSolverConfigurations {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PositionSolverConfigurations");
+        formatter.field("semtech_gnss", &self.semtech_gnss);
+        formatter.finish()
+    }
+}
+/// See [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
+pub mod position_solver_configurations {
+
+    /// A builder for [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) semtech_gnss: std::option::Option<crate::model::SemtechGnssConfiguration>,
+    }
+    impl Builder {
+        /// <p>The Semtech GNSS solver configuration object.</p>
+        pub fn semtech_gnss(mut self, input: crate::model::SemtechGnssConfiguration) -> Self {
+            self.semtech_gnss = Some(input);
+            self
+        }
+        /// <p>The Semtech GNSS solver configuration object.</p>
+        pub fn set_semtech_gnss(
+            mut self,
+            input: std::option::Option<crate::model::SemtechGnssConfiguration>,
+        ) -> Self {
+            self.semtech_gnss = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
+        pub fn build(self) -> crate::model::PositionSolverConfigurations {
+            crate::model::PositionSolverConfigurations {
+                semtech_gnss: self.semtech_gnss,
+            }
+        }
+    }
+}
+impl PositionSolverConfigurations {
+    /// Creates a new builder-style object to manufacture [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
+    pub fn builder() -> crate::model::position_solver_configurations::Builder {
+        crate::model::position_solver_configurations::Builder::default()
+    }
+}
+
+/// <p>Information about the Semtech GNSS solver configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SemtechGnssConfiguration {
+    /// <p>The status indicating whether the solver is enabled.</p>
+    pub status: std::option::Option<crate::model::PositionConfigurationStatus>,
+    /// <p>Whether forward error correction is enabled.</p>
+    pub fec: std::option::Option<crate::model::PositionConfigurationFec>,
+}
+impl SemtechGnssConfiguration {
+    /// <p>The status indicating whether the solver is enabled.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PositionConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Whether forward error correction is enabled.</p>
+    pub fn fec(&self) -> std::option::Option<&crate::model::PositionConfigurationFec> {
+        self.fec.as_ref()
+    }
+}
+impl std::fmt::Debug for SemtechGnssConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SemtechGnssConfiguration");
+        formatter.field("status", &self.status);
+        formatter.field("fec", &self.fec);
+        formatter.finish()
+    }
+}
+/// See [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
+pub mod semtech_gnss_configuration {
+
+    /// A builder for [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::PositionConfigurationStatus>,
+        pub(crate) fec: std::option::Option<crate::model::PositionConfigurationFec>,
+    }
+    impl Builder {
+        /// <p>The status indicating whether the solver is enabled.</p>
+        pub fn status(mut self, input: crate::model::PositionConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status indicating whether the solver is enabled.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::PositionConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Whether forward error correction is enabled.</p>
+        pub fn fec(mut self, input: crate::model::PositionConfigurationFec) -> Self {
+            self.fec = Some(input);
+            self
+        }
+        /// <p>Whether forward error correction is enabled.</p>
+        pub fn set_fec(
+            mut self,
+            input: std::option::Option<crate::model::PositionConfigurationFec>,
+        ) -> Self {
+            self.fec = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
+        pub fn build(self) -> crate::model::SemtechGnssConfiguration {
+            crate::model::SemtechGnssConfiguration {
+                status: self.status,
+                fec: self.fec,
+            }
+        }
+    }
+}
+impl SemtechGnssConfiguration {
+    /// Creates a new builder-style object to manufacture [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
+    pub fn builder() -> crate::model::semtech_gnss_configuration::Builder {
+        crate::model::semtech_gnss_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PositionConfigurationFec {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Rose,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PositionConfigurationFec {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => PositionConfigurationFec::None,
+            "ROSE" => PositionConfigurationFec::Rose,
+            other => PositionConfigurationFec::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PositionConfigurationFec {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PositionConfigurationFec::from(s))
+    }
+}
+impl PositionConfigurationFec {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PositionConfigurationFec::None => "NONE",
+            PositionConfigurationFec::Rose => "ROSE",
+            PositionConfigurationFec::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "ROSE"]
+    }
+}
+impl AsRef<str> for PositionConfigurationFec {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PositionConfigurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PositionConfigurationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Disabled" => PositionConfigurationStatus::Disabled,
+            "Enabled" => PositionConfigurationStatus::Enabled,
+            other => PositionConfigurationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PositionConfigurationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PositionConfigurationStatus::from(s))
+    }
+}
+impl PositionConfigurationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PositionConfigurationStatus::Disabled => "Disabled",
+            PositionConfigurationStatus::Enabled => "Enabled",
+            PositionConfigurationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
+}
+impl AsRef<str> for PositionConfigurationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>UpdateWirelessGatewayTaskEntry object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4802,6 +5275,408 @@ impl DownlinkQueueMessage {
     /// Creates a new builder-style object to manufacture [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
     pub fn builder() -> crate::model::downlink_queue_message::Builder {
         crate::model::downlink_queue_message::Builder::default()
+    }
+}
+
+/// <p>The wrapper for a position configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PositionConfigurationItem {
+    /// <p>Resource identifier for the position configuration.</p>
+    pub resource_identifier: std::option::Option<std::string::String>,
+    /// <p>Resource type of the resource for the position configuration.</p>
+    pub resource_type: std::option::Option<crate::model::PositionResourceType>,
+    /// <p>The details of the positioning solver object used to compute the location.</p>
+    pub solvers: std::option::Option<crate::model::PositionSolverDetails>,
+    /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    pub destination: std::option::Option<std::string::String>,
+}
+impl PositionConfigurationItem {
+    /// <p>Resource identifier for the position configuration.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>Resource type of the resource for the position configuration.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::PositionResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The details of the positioning solver object used to compute the location.</p>
+    pub fn solvers(&self) -> std::option::Option<&crate::model::PositionSolverDetails> {
+        self.solvers.as_ref()
+    }
+    /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+}
+impl std::fmt::Debug for PositionConfigurationItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PositionConfigurationItem");
+        formatter.field("resource_identifier", &self.resource_identifier);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("solvers", &self.solvers);
+        formatter.field("destination", &self.destination);
+        formatter.finish()
+    }
+}
+/// See [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
+pub mod position_configuration_item {
+
+    /// A builder for [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_identifier: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
+        pub(crate) solvers: std::option::Option<crate::model::PositionSolverDetails>,
+        pub(crate) destination: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Resource identifier for the position configuration.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_identifier = Some(input.into());
+            self
+        }
+        /// <p>Resource identifier for the position configuration.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_identifier = input;
+            self
+        }
+        /// <p>Resource type of the resource for the position configuration.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p>Resource type of the resource for the position configuration.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The details of the positioning solver object used to compute the location.</p>
+        pub fn solvers(mut self, input: crate::model::PositionSolverDetails) -> Self {
+            self.solvers = Some(input);
+            self
+        }
+        /// <p>The details of the positioning solver object used to compute the location.</p>
+        pub fn set_solvers(
+            mut self,
+            input: std::option::Option<crate::model::PositionSolverDetails>,
+        ) -> Self {
+            self.solvers = input;
+            self
+        }
+        /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination = Some(input.into());
+            self
+        }
+        /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
+        pub fn build(self) -> crate::model::PositionConfigurationItem {
+            crate::model::PositionConfigurationItem {
+                resource_identifier: self.resource_identifier,
+                resource_type: self.resource_type,
+                solvers: self.solvers,
+                destination: self.destination,
+            }
+        }
+    }
+}
+impl PositionConfigurationItem {
+    /// Creates a new builder-style object to manufacture [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
+    pub fn builder() -> crate::model::position_configuration_item::Builder {
+        crate::model::position_configuration_item::Builder::default()
+    }
+}
+
+/// <p>The wrapper for position solver details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PositionSolverDetails {
+    /// <p>The Semtech GNSS solver object details.</p>
+    pub semtech_gnss: std::option::Option<crate::model::SemtechGnssDetail>,
+}
+impl PositionSolverDetails {
+    /// <p>The Semtech GNSS solver object details.</p>
+    pub fn semtech_gnss(&self) -> std::option::Option<&crate::model::SemtechGnssDetail> {
+        self.semtech_gnss.as_ref()
+    }
+}
+impl std::fmt::Debug for PositionSolverDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PositionSolverDetails");
+        formatter.field("semtech_gnss", &self.semtech_gnss);
+        formatter.finish()
+    }
+}
+/// See [`PositionSolverDetails`](crate::model::PositionSolverDetails).
+pub mod position_solver_details {
+
+    /// A builder for [`PositionSolverDetails`](crate::model::PositionSolverDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) semtech_gnss: std::option::Option<crate::model::SemtechGnssDetail>,
+    }
+    impl Builder {
+        /// <p>The Semtech GNSS solver object details.</p>
+        pub fn semtech_gnss(mut self, input: crate::model::SemtechGnssDetail) -> Self {
+            self.semtech_gnss = Some(input);
+            self
+        }
+        /// <p>The Semtech GNSS solver object details.</p>
+        pub fn set_semtech_gnss(
+            mut self,
+            input: std::option::Option<crate::model::SemtechGnssDetail>,
+        ) -> Self {
+            self.semtech_gnss = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PositionSolverDetails`](crate::model::PositionSolverDetails).
+        pub fn build(self) -> crate::model::PositionSolverDetails {
+            crate::model::PositionSolverDetails {
+                semtech_gnss: self.semtech_gnss,
+            }
+        }
+    }
+}
+impl PositionSolverDetails {
+    /// Creates a new builder-style object to manufacture [`PositionSolverDetails`](crate::model::PositionSolverDetails).
+    pub fn builder() -> crate::model::position_solver_details::Builder {
+        crate::model::position_solver_details::Builder::default()
+    }
+}
+
+/// <p>Details of the Semtech GNSS solver object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SemtechGnssDetail {
+    /// <p>The vendor of the solver object.</p>
+    pub provider: std::option::Option<crate::model::PositionSolverProvider>,
+    /// <p>The type of positioning solver used.</p>
+    pub r#type: std::option::Option<crate::model::PositionSolverType>,
+    /// <p>The status indicating whether the solver is enabled.</p>
+    pub status: std::option::Option<crate::model::PositionConfigurationStatus>,
+    /// <p>Whether forward error correction is enabled.</p>
+    pub fec: std::option::Option<crate::model::PositionConfigurationFec>,
+}
+impl SemtechGnssDetail {
+    /// <p>The vendor of the solver object.</p>
+    pub fn provider(&self) -> std::option::Option<&crate::model::PositionSolverProvider> {
+        self.provider.as_ref()
+    }
+    /// <p>The type of positioning solver used.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PositionSolverType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The status indicating whether the solver is enabled.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PositionConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Whether forward error correction is enabled.</p>
+    pub fn fec(&self) -> std::option::Option<&crate::model::PositionConfigurationFec> {
+        self.fec.as_ref()
+    }
+}
+impl std::fmt::Debug for SemtechGnssDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SemtechGnssDetail");
+        formatter.field("provider", &self.provider);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("status", &self.status);
+        formatter.field("fec", &self.fec);
+        formatter.finish()
+    }
+}
+/// See [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
+pub mod semtech_gnss_detail {
+
+    /// A builder for [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) provider: std::option::Option<crate::model::PositionSolverProvider>,
+        pub(crate) r#type: std::option::Option<crate::model::PositionSolverType>,
+        pub(crate) status: std::option::Option<crate::model::PositionConfigurationStatus>,
+        pub(crate) fec: std::option::Option<crate::model::PositionConfigurationFec>,
+    }
+    impl Builder {
+        /// <p>The vendor of the solver object.</p>
+        pub fn provider(mut self, input: crate::model::PositionSolverProvider) -> Self {
+            self.provider = Some(input);
+            self
+        }
+        /// <p>The vendor of the solver object.</p>
+        pub fn set_provider(
+            mut self,
+            input: std::option::Option<crate::model::PositionSolverProvider>,
+        ) -> Self {
+            self.provider = input;
+            self
+        }
+        /// <p>The type of positioning solver used.</p>
+        pub fn r#type(mut self, input: crate::model::PositionSolverType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of positioning solver used.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionSolverType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The status indicating whether the solver is enabled.</p>
+        pub fn status(mut self, input: crate::model::PositionConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status indicating whether the solver is enabled.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::PositionConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Whether forward error correction is enabled.</p>
+        pub fn fec(mut self, input: crate::model::PositionConfigurationFec) -> Self {
+            self.fec = Some(input);
+            self
+        }
+        /// <p>Whether forward error correction is enabled.</p>
+        pub fn set_fec(
+            mut self,
+            input: std::option::Option<crate::model::PositionConfigurationFec>,
+        ) -> Self {
+            self.fec = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
+        pub fn build(self) -> crate::model::SemtechGnssDetail {
+            crate::model::SemtechGnssDetail {
+                provider: self.provider,
+                r#type: self.r#type,
+                status: self.status,
+                fec: self.fec,
+            }
+        }
+    }
+}
+impl SemtechGnssDetail {
+    /// Creates a new builder-style object to manufacture [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
+    pub fn builder() -> crate::model::semtech_gnss_detail::Builder {
+        crate::model::semtech_gnss_detail::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PositionSolverType {
+    #[allow(missing_docs)] // documentation missing in model
+    Gnss,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PositionSolverType {
+    fn from(s: &str) -> Self {
+        match s {
+            "GNSS" => PositionSolverType::Gnss,
+            other => PositionSolverType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PositionSolverType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PositionSolverType::from(s))
+    }
+}
+impl PositionSolverType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PositionSolverType::Gnss => "GNSS",
+            PositionSolverType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["GNSS"]
+    }
+}
+impl AsRef<str> for PositionSolverType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PositionSolverProvider {
+    #[allow(missing_docs)] // documentation missing in model
+    Semtech,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PositionSolverProvider {
+    fn from(s: &str) -> Self {
+        match s {
+            "Semtech" => PositionSolverProvider::Semtech,
+            other => PositionSolverProvider::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PositionSolverProvider {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PositionSolverProvider::from(s))
+    }
+}
+impl PositionSolverProvider {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PositionSolverProvider::Semtech => "Semtech",
+            PositionSolverProvider::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Semtech"]
+    }
+}
+impl AsRef<str> for PositionSolverProvider {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7129,6 +8004,8 @@ pub struct FPorts {
     pub multicast: std::option::Option<i32>,
     /// <p>The Fport value.</p>
     pub clock_sync: std::option::Option<i32>,
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    pub positioning: std::option::Option<crate::model::Positioning>,
 }
 impl FPorts {
     /// <p>The Fport value.</p>
@@ -7143,6 +8020,10 @@ impl FPorts {
     pub fn clock_sync(&self) -> std::option::Option<i32> {
         self.clock_sync
     }
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    pub fn positioning(&self) -> std::option::Option<&crate::model::Positioning> {
+        self.positioning.as_ref()
+    }
 }
 impl std::fmt::Debug for FPorts {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7150,6 +8031,7 @@ impl std::fmt::Debug for FPorts {
         formatter.field("fuota", &self.fuota);
         formatter.field("multicast", &self.multicast);
         formatter.field("clock_sync", &self.clock_sync);
+        formatter.field("positioning", &self.positioning);
         formatter.finish()
     }
 }
@@ -7162,6 +8044,7 @@ pub mod f_ports {
         pub(crate) fuota: std::option::Option<i32>,
         pub(crate) multicast: std::option::Option<i32>,
         pub(crate) clock_sync: std::option::Option<i32>,
+        pub(crate) positioning: std::option::Option<crate::model::Positioning>,
     }
     impl Builder {
         /// <p>The Fport value.</p>
@@ -7194,12 +8077,26 @@ pub mod f_ports {
             self.clock_sync = input;
             self
         }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn positioning(mut self, input: crate::model::Positioning) -> Self {
+            self.positioning = Some(input);
+            self
+        }
+        /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+        pub fn set_positioning(
+            mut self,
+            input: std::option::Option<crate::model::Positioning>,
+        ) -> Self {
+            self.positioning = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FPorts`](crate::model::FPorts).
         pub fn build(self) -> crate::model::FPorts {
             crate::model::FPorts {
                 fuota: self.fuota,
                 multicast: self.multicast,
                 clock_sync: self.clock_sync,
+                positioning: self.positioning,
             }
         }
     }
@@ -8300,6 +9197,79 @@ impl WirelessGatewayServiceType {
 impl AsRef<str> for WirelessGatewayServiceType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Accuracy {
+    /// <p>The horizontal accuracy of the estimated position in meters.</p>
+    pub horizontal_accuracy: std::option::Option<f32>,
+    /// <p>The vertical accuracy of the estimated position in meters.</p>
+    pub vertical_accuracy: std::option::Option<f32>,
+}
+impl Accuracy {
+    /// <p>The horizontal accuracy of the estimated position in meters.</p>
+    pub fn horizontal_accuracy(&self) -> std::option::Option<f32> {
+        self.horizontal_accuracy
+    }
+    /// <p>The vertical accuracy of the estimated position in meters.</p>
+    pub fn vertical_accuracy(&self) -> std::option::Option<f32> {
+        self.vertical_accuracy
+    }
+}
+impl std::fmt::Debug for Accuracy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Accuracy");
+        formatter.field("horizontal_accuracy", &self.horizontal_accuracy);
+        formatter.field("vertical_accuracy", &self.vertical_accuracy);
+        formatter.finish()
+    }
+}
+/// See [`Accuracy`](crate::model::Accuracy).
+pub mod accuracy {
+
+    /// A builder for [`Accuracy`](crate::model::Accuracy).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) horizontal_accuracy: std::option::Option<f32>,
+        pub(crate) vertical_accuracy: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The horizontal accuracy of the estimated position in meters.</p>
+        pub fn horizontal_accuracy(mut self, input: f32) -> Self {
+            self.horizontal_accuracy = Some(input);
+            self
+        }
+        /// <p>The horizontal accuracy of the estimated position in meters.</p>
+        pub fn set_horizontal_accuracy(mut self, input: std::option::Option<f32>) -> Self {
+            self.horizontal_accuracy = input;
+            self
+        }
+        /// <p>The vertical accuracy of the estimated position in meters.</p>
+        pub fn vertical_accuracy(mut self, input: f32) -> Self {
+            self.vertical_accuracy = Some(input);
+            self
+        }
+        /// <p>The vertical accuracy of the estimated position in meters.</p>
+        pub fn set_vertical_accuracy(mut self, input: std::option::Option<f32>) -> Self {
+            self.vertical_accuracy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Accuracy`](crate::model::Accuracy).
+        pub fn build(self) -> crate::model::Accuracy {
+            crate::model::Accuracy {
+                horizontal_accuracy: self.horizontal_accuracy,
+                vertical_accuracy: self.vertical_accuracy,
+            }
+        }
+    }
+}
+impl Accuracy {
+    /// Creates a new builder-style object to manufacture [`Accuracy`](crate::model::Accuracy).
+    pub fn builder() -> crate::model::accuracy::Builder {
+        crate::model::accuracy::Builder::default()
     }
 }
 

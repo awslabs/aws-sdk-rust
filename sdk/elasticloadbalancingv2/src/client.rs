@@ -134,8 +134,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateLoadBalancer::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateLoadBalancer::set_name): <p>The name of the load balancer.</p>  <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
-    ///   - [`subnets(Vec<String>)`](crate::client::fluent_builders::CreateLoadBalancer::subnets) / [`set_subnets(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_subnets): <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>  <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>  <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>  <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>  <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>  <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
-    ///   - [`subnet_mappings(Vec<SubnetMapping>)`](crate::client::fluent_builders::CreateLoadBalancer::subnet_mappings) / [`set_subnet_mappings(Option<Vec<SubnetMapping>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_subnet_mappings): <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>  <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>  <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>  <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>  <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>  <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+    ///   - [`subnets(Vec<String>)`](crate::client::fluent_builders::CreateLoadBalancer::subnets) / [`set_subnets(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_subnets): <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>  <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>  <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>  <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>  <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>  <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    ///   - [`subnet_mappings(Vec<SubnetMapping>)`](crate::client::fluent_builders::CreateLoadBalancer::subnet_mappings) / [`set_subnet_mappings(Option<Vec<SubnetMapping>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_subnet_mappings): <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>  <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>  <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>  <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>  <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>  <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     ///   - [`security_groups(Vec<String>)`](crate::client::fluent_builders::CreateLoadBalancer::security_groups) / [`set_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_security_groups): <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
     ///   - [`scheme(LoadBalancerSchemeEnum)`](crate::client::fluent_builders::CreateLoadBalancer::scheme) / [`set_scheme(Option<LoadBalancerSchemeEnum>)`](crate::client::fluent_builders::CreateLoadBalancer::set_scheme): <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>  <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>  <p>The default is an Internet-facing load balancer.</p>  <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateLoadBalancer::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_tags): <p>The tags to assign to the load balancer.</p>
@@ -174,7 +174,7 @@ impl Client {
     ///   - [`health_check_port(impl Into<String>)`](crate::client::fluent_builders::CreateTargetGroup::health_check_port) / [`set_health_check_port(Option<String>)`](crate::client::fluent_builders::CreateTargetGroup::set_health_check_port): <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
     ///   - [`health_check_enabled(bool)`](crate::client::fluent_builders::CreateTargetGroup::health_check_enabled) / [`set_health_check_enabled(Option<bool>)`](crate::client::fluent_builders::CreateTargetGroup::set_health_check_enabled): <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
     ///   - [`health_check_path(impl Into<String>)`](crate::client::fluent_builders::CreateTargetGroup::health_check_path) / [`set_health_check_path(Option<String>)`](crate::client::fluent_builders::CreateTargetGroup::set_health_check_path): <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>  <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>  <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    ///   - [`health_check_interval_seconds(i32)`](crate::client::fluent_builders::CreateTargetGroup::health_check_interval_seconds) / [`set_health_check_interval_seconds(Option<i32>)`](crate::client::fluent_builders::CreateTargetGroup::set_health_check_interval_seconds): <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    ///   - [`health_check_interval_seconds(i32)`](crate::client::fluent_builders::CreateTargetGroup::health_check_interval_seconds) / [`set_health_check_interval_seconds(Option<i32>)`](crate::client::fluent_builders::CreateTargetGroup::set_health_check_interval_seconds): <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     ///   - [`health_check_timeout_seconds(i32)`](crate::client::fluent_builders::CreateTargetGroup::health_check_timeout_seconds) / [`set_health_check_timeout_seconds(Option<i32>)`](crate::client::fluent_builders::CreateTargetGroup::set_health_check_timeout_seconds): <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
     ///   - [`healthy_threshold_count(i32)`](crate::client::fluent_builders::CreateTargetGroup::healthy_threshold_count) / [`set_healthy_threshold_count(Option<i32>)`](crate::client::fluent_builders::CreateTargetGroup::set_healthy_threshold_count): <p>The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
     ///   - [`unhealthy_threshold_count(i32)`](crate::client::fluent_builders::CreateTargetGroup::unhealthy_threshold_count) / [`set_unhealthy_threshold_count(Option<i32>)`](crate::client::fluent_builders::CreateTargetGroup::set_unhealthy_threshold_count): <p>The number of consecutive health check failures required before considering a target unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 2.</p>
@@ -426,15 +426,15 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`target_group_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyTargetGroup::target_group_arn) / [`set_target_group_arn(Option<String>)`](crate::client::fluent_builders::ModifyTargetGroup::set_target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
-    ///   - [`health_check_protocol(ProtocolEnum)`](crate::client::fluent_builders::ModifyTargetGroup::health_check_protocol) / [`set_health_check_protocol(Option<ProtocolEnum>)`](crate::client::fluent_builders::ModifyTargetGroup::set_health_check_protocol): <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>  <p>With Network Load Balancers, you can't modify this setting.</p>
+    ///   - [`health_check_protocol(ProtocolEnum)`](crate::client::fluent_builders::ModifyTargetGroup::health_check_protocol) / [`set_health_check_protocol(Option<ProtocolEnum>)`](crate::client::fluent_builders::ModifyTargetGroup::set_health_check_protocol): <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     ///   - [`health_check_port(impl Into<String>)`](crate::client::fluent_builders::ModifyTargetGroup::health_check_port) / [`set_health_check_port(Option<String>)`](crate::client::fluent_builders::ModifyTargetGroup::set_health_check_port): <p>The port the load balancer uses when performing health checks on targets.</p>
     ///   - [`health_check_path(impl Into<String>)`](crate::client::fluent_builders::ModifyTargetGroup::health_check_path) / [`set_health_check_path(Option<String>)`](crate::client::fluent_builders::ModifyTargetGroup::set_health_check_path): <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>  <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>  <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     ///   - [`health_check_enabled(bool)`](crate::client::fluent_builders::ModifyTargetGroup::health_check_enabled) / [`set_health_check_enabled(Option<bool>)`](crate::client::fluent_builders::ModifyTargetGroup::set_health_check_enabled): <p>Indicates whether health checks are enabled.</p>
-    ///   - [`health_check_interval_seconds(i32)`](crate::client::fluent_builders::ModifyTargetGroup::health_check_interval_seconds) / [`set_health_check_interval_seconds(Option<i32>)`](crate::client::fluent_builders::ModifyTargetGroup::set_health_check_interval_seconds): <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>  <p>With Network Load Balancers, you can't modify this setting.</p>
-    ///   - [`health_check_timeout_seconds(i32)`](crate::client::fluent_builders::ModifyTargetGroup::health_check_timeout_seconds) / [`set_health_check_timeout_seconds(Option<i32>)`](crate::client::fluent_builders::ModifyTargetGroup::set_health_check_timeout_seconds): <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>  <p>With Network Load Balancers, you can't modify this setting.</p>
+    ///   - [`health_check_interval_seconds(i32)`](crate::client::fluent_builders::ModifyTargetGroup::health_check_interval_seconds) / [`set_health_check_interval_seconds(Option<i32>)`](crate::client::fluent_builders::ModifyTargetGroup::set_health_check_interval_seconds): <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
+    ///   - [`health_check_timeout_seconds(i32)`](crate::client::fluent_builders::ModifyTargetGroup::health_check_timeout_seconds) / [`set_health_check_timeout_seconds(Option<i32>)`](crate::client::fluent_builders::ModifyTargetGroup::set_health_check_timeout_seconds): <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
     ///   - [`healthy_threshold_count(i32)`](crate::client::fluent_builders::ModifyTargetGroup::healthy_threshold_count) / [`set_healthy_threshold_count(Option<i32>)`](crate::client::fluent_builders::ModifyTargetGroup::set_healthy_threshold_count): <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     ///   - [`unhealthy_threshold_count(i32)`](crate::client::fluent_builders::ModifyTargetGroup::unhealthy_threshold_count) / [`set_unhealthy_threshold_count(Option<i32>)`](crate::client::fluent_builders::ModifyTargetGroup::set_unhealthy_threshold_count): <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
-    ///   - [`matcher(Matcher)`](crate::client::fluent_builders::ModifyTargetGroup::matcher) / [`set_matcher(Option<Matcher>)`](crate::client::fluent_builders::ModifyTargetGroup::set_matcher): <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>  <p>With Network Load Balancers, you can't modify this setting.</p>
+    ///   - [`matcher(Matcher)`](crate::client::fluent_builders::ModifyTargetGroup::matcher) / [`set_matcher(Option<Matcher>)`](crate::client::fluent_builders::ModifyTargetGroup::set_matcher): <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     /// - On success, responds with [`ModifyTargetGroupOutput`](crate::output::ModifyTargetGroupOutput) with field(s):
     ///   - [`target_groups(Option<Vec<TargetGroup>>)`](crate::output::ModifyTargetGroupOutput::target_groups): <p>Information about the modified target group.</p>
     /// - On failure, responds with [`SdkError<ModifyTargetGroupError>`](crate::error::ModifyTargetGroupError)
@@ -936,7 +936,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
         /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
         /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -946,7 +946,7 @@ pub mod fluent_builders {
             self.inner = self.inner.subnets(input.into());
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
         /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
         /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -963,7 +963,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
         /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
         /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -973,7 +973,7 @@ pub mod fluent_builders {
             self.inner = self.inner.subnet_mappings(input);
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
         /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
         /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
@@ -1354,12 +1354,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_path(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
         pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_interval_seconds(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -2987,6 +2987,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyTargetGroup`.
     ///
     /// <p>Modifies the health checks used when evaluating the health state of the targets in the specified target group.</p>
+    /// <p>If the protocol of the target group is TCP, TLS, UDP, or TCP_UDP, you can't modify the health check protocol, interval, timeout, or success codes.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTargetGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -3040,13 +3041,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.inner = self.inner.health_check_protocol(input);
             self
         }
         /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -3095,13 +3094,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_interval_seconds(input);
             self
         }
         /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -3110,13 +3107,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_timeout_seconds(input);
             self
         }
         /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_timeout_seconds(input);
             self
@@ -3142,13 +3137,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn matcher(mut self, input: crate::model::Matcher) -> Self {
             self.inner = self.inner.matcher(input);
             self
         }
         /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
-        /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_matcher(mut self, input: std::option::Option<crate::model::Matcher>) -> Self {
             self.inner = self.inner.set_matcher(input);
             self

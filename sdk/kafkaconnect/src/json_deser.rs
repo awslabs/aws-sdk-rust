@@ -690,7 +690,7 @@ pub fn deser_operation_crate_operation_describe_connector(
                     }
                     "connectorConfiguration" => {
                         builder = builder.set_connector_configuration(
-                            crate::json_deser::deser_map_com_amazonaws_kafkaconnect___map_of__string(tokens)?
+                            crate::json_deser::deser_map_com_amazonaws_kafkaconnect___sensitive__map_of__string(tokens)?
                         );
                     }
                     "connectorDescription" => {
@@ -1305,7 +1305,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_com_amazonaws_kafkaconnect___map_of__string<'a, I>(
+pub fn deser_map_com_amazonaws_kafkaconnect___sensitive__map_of__string<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,

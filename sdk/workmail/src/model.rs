@@ -163,6 +163,152 @@ impl AsRef<str> for MobileDeviceAccessRuleEffect {
     }
 }
 
+/// <p>Describes a Lambda based availability provider.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LambdaAvailabilityProvider {
+    /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
+    pub lambda_arn: std::option::Option<std::string::String>,
+}
+impl LambdaAvailabilityProvider {
+    /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for LambdaAvailabilityProvider {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LambdaAvailabilityProvider");
+        formatter.field("lambda_arn", &self.lambda_arn);
+        formatter.finish()
+    }
+}
+/// See [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
+pub mod lambda_availability_provider {
+
+    /// A builder for [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lambda_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
+        pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lambda_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
+        pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lambda_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
+        pub fn build(self) -> crate::model::LambdaAvailabilityProvider {
+            crate::model::LambdaAvailabilityProvider {
+                lambda_arn: self.lambda_arn,
+            }
+        }
+    }
+}
+impl LambdaAvailabilityProvider {
+    /// Creates a new builder-style object to manufacture [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
+    pub fn builder() -> crate::model::lambda_availability_provider::Builder {
+        crate::model::lambda_availability_provider::Builder::default()
+    }
+}
+
+/// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EwsAvailabilityProvider {
+    /// <p>The endpoint of the remote EWS server.</p>
+    pub ews_endpoint: std::option::Option<std::string::String>,
+    /// <p>The username used to authenticate the remote EWS server.</p>
+    pub ews_username: std::option::Option<std::string::String>,
+    /// <p>The password used to authenticate the remote EWS server.</p>
+    pub ews_password: std::option::Option<std::string::String>,
+}
+impl EwsAvailabilityProvider {
+    /// <p>The endpoint of the remote EWS server.</p>
+    pub fn ews_endpoint(&self) -> std::option::Option<&str> {
+        self.ews_endpoint.as_deref()
+    }
+    /// <p>The username used to authenticate the remote EWS server.</p>
+    pub fn ews_username(&self) -> std::option::Option<&str> {
+        self.ews_username.as_deref()
+    }
+    /// <p>The password used to authenticate the remote EWS server.</p>
+    pub fn ews_password(&self) -> std::option::Option<&str> {
+        self.ews_password.as_deref()
+    }
+}
+impl std::fmt::Debug for EwsAvailabilityProvider {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EwsAvailabilityProvider");
+        formatter.field("ews_endpoint", &self.ews_endpoint);
+        formatter.field("ews_username", &self.ews_username);
+        formatter.field("ews_password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
+pub mod ews_availability_provider {
+
+    /// A builder for [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ews_endpoint: std::option::Option<std::string::String>,
+        pub(crate) ews_username: std::option::Option<std::string::String>,
+        pub(crate) ews_password: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The endpoint of the remote EWS server.</p>
+        pub fn ews_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ews_endpoint = Some(input.into());
+            self
+        }
+        /// <p>The endpoint of the remote EWS server.</p>
+        pub fn set_ews_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ews_endpoint = input;
+            self
+        }
+        /// <p>The username used to authenticate the remote EWS server.</p>
+        pub fn ews_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ews_username = Some(input.into());
+            self
+        }
+        /// <p>The username used to authenticate the remote EWS server.</p>
+        pub fn set_ews_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ews_username = input;
+            self
+        }
+        /// <p>The password used to authenticate the remote EWS server.</p>
+        pub fn ews_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ews_password = Some(input.into());
+            self
+        }
+        /// <p>The password used to authenticate the remote EWS server.</p>
+        pub fn set_ews_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ews_password = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
+        pub fn build(self) -> crate::model::EwsAvailabilityProvider {
+            crate::model::EwsAvailabilityProvider {
+                ews_endpoint: self.ews_endpoint,
+                ews_username: self.ews_username,
+                ews_password: self.ews_password,
+            }
+        }
+    }
+}
+impl EwsAvailabilityProvider {
+    /// Creates a new builder-style object to manufacture [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
+    pub fn builder() -> crate::model::ews_availability_provider::Builder {
+        crate::model::ews_availability_provider::Builder::default()
+    }
+}
+
 /// <p>Describes a tag applied to a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2707,6 +2853,305 @@ impl Member {
     /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
     pub fn builder() -> crate::model::member::Builder {
         crate::model::member::Builder::default()
+    }
+}
+
+/// <p>List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AvailabilityConfiguration {
+    /// <p>Displays the domain to which the provider applies.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>Displays the provider type that applies to this domain.</p>
+    pub provider_type: std::option::Option<crate::model::AvailabilityProviderType>,
+    /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+    pub ews_provider: std::option::Option<crate::model::RedactedEwsAvailabilityProvider>,
+    /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
+    pub lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+    /// <p>The date and time at which the availability configuration was created.</p>
+    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time at which the availability configuration was last modified.</p>
+    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl AvailabilityConfiguration {
+    /// <p>Displays the domain to which the provider applies.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Displays the provider type that applies to this domain.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::AvailabilityProviderType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+    pub fn ews_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::RedactedEwsAvailabilityProvider> {
+        self.ews_provider.as_ref()
+    }
+    /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
+    pub fn lambda_provider(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaAvailabilityProvider> {
+        self.lambda_provider.as_ref()
+    }
+    /// <p>The date and time at which the availability configuration was created.</p>
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.date_created.as_ref()
+    }
+    /// <p>The date and time at which the availability configuration was last modified.</p>
+    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.date_modified.as_ref()
+    }
+}
+impl std::fmt::Debug for AvailabilityConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AvailabilityConfiguration");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("provider_type", &self.provider_type);
+        formatter.field("ews_provider", &self.ews_provider);
+        formatter.field("lambda_provider", &self.lambda_provider);
+        formatter.field("date_created", &self.date_created);
+        formatter.field("date_modified", &self.date_modified);
+        formatter.finish()
+    }
+}
+/// See [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
+pub mod availability_configuration {
+
+    /// A builder for [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) provider_type: std::option::Option<crate::model::AvailabilityProviderType>,
+        pub(crate) ews_provider: std::option::Option<crate::model::RedactedEwsAvailabilityProvider>,
+        pub(crate) lambda_provider: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Displays the domain to which the provider applies.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>Displays the domain to which the provider applies.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>Displays the provider type that applies to this domain.</p>
+        pub fn provider_type(mut self, input: crate::model::AvailabilityProviderType) -> Self {
+            self.provider_type = Some(input);
+            self
+        }
+        /// <p>Displays the provider type that applies to this domain.</p>
+        pub fn set_provider_type(
+            mut self,
+            input: std::option::Option<crate::model::AvailabilityProviderType>,
+        ) -> Self {
+            self.provider_type = input;
+            self
+        }
+        /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+        pub fn ews_provider(
+            mut self,
+            input: crate::model::RedactedEwsAvailabilityProvider,
+        ) -> Self {
+            self.ews_provider = Some(input);
+            self
+        }
+        /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+        pub fn set_ews_provider(
+            mut self,
+            input: std::option::Option<crate::model::RedactedEwsAvailabilityProvider>,
+        ) -> Self {
+            self.ews_provider = input;
+            self
+        }
+        /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
+        pub fn lambda_provider(mut self, input: crate::model::LambdaAvailabilityProvider) -> Self {
+            self.lambda_provider = Some(input);
+            self
+        }
+        /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
+        pub fn set_lambda_provider(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+        ) -> Self {
+            self.lambda_provider = input;
+            self
+        }
+        /// <p>The date and time at which the availability configuration was created.</p>
+        pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.date_created = Some(input);
+            self
+        }
+        /// <p>The date and time at which the availability configuration was created.</p>
+        pub fn set_date_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.date_created = input;
+            self
+        }
+        /// <p>The date and time at which the availability configuration was last modified.</p>
+        pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.date_modified = Some(input);
+            self
+        }
+        /// <p>The date and time at which the availability configuration was last modified.</p>
+        pub fn set_date_modified(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.date_modified = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
+        pub fn build(self) -> crate::model::AvailabilityConfiguration {
+            crate::model::AvailabilityConfiguration {
+                domain_name: self.domain_name,
+                provider_type: self.provider_type,
+                ews_provider: self.ews_provider,
+                lambda_provider: self.lambda_provider,
+                date_created: self.date_created,
+                date_modified: self.date_modified,
+            }
+        }
+    }
+}
+impl AvailabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
+    pub fn builder() -> crate::model::availability_configuration::Builder {
+        crate::model::availability_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes an EWS based availability provider when returned from the service. It does not contain the password of the endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RedactedEwsAvailabilityProvider {
+    /// <p>The endpoint of the remote EWS server.</p>
+    pub ews_endpoint: std::option::Option<std::string::String>,
+    /// <p>The username used to authenticate the remote EWS server.</p>
+    pub ews_username: std::option::Option<std::string::String>,
+}
+impl RedactedEwsAvailabilityProvider {
+    /// <p>The endpoint of the remote EWS server.</p>
+    pub fn ews_endpoint(&self) -> std::option::Option<&str> {
+        self.ews_endpoint.as_deref()
+    }
+    /// <p>The username used to authenticate the remote EWS server.</p>
+    pub fn ews_username(&self) -> std::option::Option<&str> {
+        self.ews_username.as_deref()
+    }
+}
+impl std::fmt::Debug for RedactedEwsAvailabilityProvider {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RedactedEwsAvailabilityProvider");
+        formatter.field("ews_endpoint", &self.ews_endpoint);
+        formatter.field("ews_username", &self.ews_username);
+        formatter.finish()
+    }
+}
+/// See [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
+pub mod redacted_ews_availability_provider {
+
+    /// A builder for [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ews_endpoint: std::option::Option<std::string::String>,
+        pub(crate) ews_username: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The endpoint of the remote EWS server.</p>
+        pub fn ews_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ews_endpoint = Some(input.into());
+            self
+        }
+        /// <p>The endpoint of the remote EWS server.</p>
+        pub fn set_ews_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ews_endpoint = input;
+            self
+        }
+        /// <p>The username used to authenticate the remote EWS server.</p>
+        pub fn ews_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ews_username = Some(input.into());
+            self
+        }
+        /// <p>The username used to authenticate the remote EWS server.</p>
+        pub fn set_ews_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ews_username = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
+        pub fn build(self) -> crate::model::RedactedEwsAvailabilityProvider {
+            crate::model::RedactedEwsAvailabilityProvider {
+                ews_endpoint: self.ews_endpoint,
+                ews_username: self.ews_username,
+            }
+        }
+    }
+}
+impl RedactedEwsAvailabilityProvider {
+    /// Creates a new builder-style object to manufacture [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
+    pub fn builder() -> crate::model::redacted_ews_availability_provider::Builder {
+        crate::model::redacted_ews_availability_provider::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AvailabilityProviderType {
+    #[allow(missing_docs)] // documentation missing in model
+    Ews,
+    #[allow(missing_docs)] // documentation missing in model
+    Lambda,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AvailabilityProviderType {
+    fn from(s: &str) -> Self {
+        match s {
+            "EWS" => AvailabilityProviderType::Ews,
+            "LAMBDA" => AvailabilityProviderType::Lambda,
+            other => AvailabilityProviderType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AvailabilityProviderType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AvailabilityProviderType::from(s))
+    }
+}
+impl AvailabilityProviderType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AvailabilityProviderType::Ews => "EWS",
+            AvailabilityProviderType::Lambda => "LAMBDA",
+            AvailabilityProviderType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EWS", "LAMBDA"]
+    }
+}
+impl AsRef<str> for AvailabilityProviderType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

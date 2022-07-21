@@ -761,6 +761,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTransitGatewayM
     }
 }
 
+/// Operation shape for `AssociateTransitGatewayPolicyTable`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_transit_gateway_policy_table`](crate::client::Client::associate_transit_gateway_policy_table).
+///
+/// See [`crate::client::fluent_builders::AssociateTransitGatewayPolicyTable`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateTransitGatewayPolicyTable {
+    _private: (),
+}
+impl AssociateTransitGatewayPolicyTable {
+    /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayPolicyTableInput`](crate::input::AssociateTransitGatewayPolicyTableInput).
+    pub fn builder() -> crate::input::associate_transit_gateway_policy_table_input::Builder {
+        crate::input::associate_transit_gateway_policy_table_input::Builder::default()
+    }
+    /// Creates a new `AssociateTransitGatewayPolicyTable` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateTransitGatewayPolicyTable {
+    type Output = std::result::Result<
+        crate::output::AssociateTransitGatewayPolicyTableOutput,
+        crate::error::AssociateTransitGatewayPolicyTableError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_transit_gateway_policy_table_error(response)
+        } else {
+            crate::operation_deser::parse_associate_transit_gateway_policy_table_response(response)
+        }
+    }
+}
+
 /// Operation shape for `AssociateTransitGatewayRouteTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3525,6 +3559,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayPeer
     }
 }
 
+/// Operation shape for `CreateTransitGatewayPolicyTable`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_transit_gateway_policy_table`](crate::client::Client::create_transit_gateway_policy_table).
+///
+/// See [`crate::client::fluent_builders::CreateTransitGatewayPolicyTable`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateTransitGatewayPolicyTable {
+    _private: (),
+}
+impl CreateTransitGatewayPolicyTable {
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPolicyTableInput`](crate::input::CreateTransitGatewayPolicyTableInput).
+    pub fn builder() -> crate::input::create_transit_gateway_policy_table_input::Builder {
+        crate::input::create_transit_gateway_policy_table_input::Builder::default()
+    }
+    /// Creates a new `CreateTransitGatewayPolicyTable` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayPolicyTable {
+    type Output = std::result::Result<
+        crate::output::CreateTransitGatewayPolicyTableOutput,
+        crate::error::CreateTransitGatewayPolicyTableError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_transit_gateway_policy_table_error(response)
+        } else {
+            crate::operation_deser::parse_create_transit_gateway_policy_table_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateTransitGatewayPrefixListReference`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3627,6 +3695,45 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayRout
             crate::operation_deser::parse_create_transit_gateway_route_table_error(response)
         } else {
             crate::operation_deser::parse_create_transit_gateway_route_table_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateTransitGatewayRouteTableAnnouncement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_transit_gateway_route_table_announcement`](crate::client::Client::create_transit_gateway_route_table_announcement).
+///
+/// See [`crate::client::fluent_builders::CreateTransitGatewayRouteTableAnnouncement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateTransitGatewayRouteTableAnnouncement {
+    _private: (),
+}
+impl CreateTransitGatewayRouteTableAnnouncement {
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAnnouncementInput`](crate::input::CreateTransitGatewayRouteTableAnnouncementInput).
+    pub fn builder() -> crate::input::create_transit_gateway_route_table_announcement_input::Builder
+    {
+        crate::input::create_transit_gateway_route_table_announcement_input::Builder::default()
+    }
+    /// Creates a new `CreateTransitGatewayRouteTableAnnouncement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayRouteTableAnnouncement {
+    type Output = std::result::Result<
+        crate::output::CreateTransitGatewayRouteTableAnnouncementOutput,
+        crate::error::CreateTransitGatewayRouteTableAnnouncementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_transit_gateway_route_table_announcement_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_create_transit_gateway_route_table_announcement_response(
+                response,
+            )
         }
     }
 }
@@ -5631,6 +5738,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayPeer
     }
 }
 
+/// Operation shape for `DeleteTransitGatewayPolicyTable`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_transit_gateway_policy_table`](crate::client::Client::delete_transit_gateway_policy_table).
+///
+/// See [`crate::client::fluent_builders::DeleteTransitGatewayPolicyTable`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteTransitGatewayPolicyTable {
+    _private: (),
+}
+impl DeleteTransitGatewayPolicyTable {
+    /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayPolicyTableInput`](crate::input::DeleteTransitGatewayPolicyTableInput).
+    pub fn builder() -> crate::input::delete_transit_gateway_policy_table_input::Builder {
+        crate::input::delete_transit_gateway_policy_table_input::Builder::default()
+    }
+    /// Creates a new `DeleteTransitGatewayPolicyTable` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayPolicyTable {
+    type Output = std::result::Result<
+        crate::output::DeleteTransitGatewayPolicyTableOutput,
+        crate::error::DeleteTransitGatewayPolicyTableError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_transit_gateway_policy_table_error(response)
+        } else {
+            crate::operation_deser::parse_delete_transit_gateway_policy_table_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteTransitGatewayPrefixListReference`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -5733,6 +5874,45 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayRout
             crate::operation_deser::parse_delete_transit_gateway_route_table_error(response)
         } else {
             crate::operation_deser::parse_delete_transit_gateway_route_table_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteTransitGatewayRouteTableAnnouncement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_transit_gateway_route_table_announcement`](crate::client::Client::delete_transit_gateway_route_table_announcement).
+///
+/// See [`crate::client::fluent_builders::DeleteTransitGatewayRouteTableAnnouncement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteTransitGatewayRouteTableAnnouncement {
+    _private: (),
+}
+impl DeleteTransitGatewayRouteTableAnnouncement {
+    /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayRouteTableAnnouncementInput`](crate::input::DeleteTransitGatewayRouteTableAnnouncementInput).
+    pub fn builder() -> crate::input::delete_transit_gateway_route_table_announcement_input::Builder
+    {
+        crate::input::delete_transit_gateway_route_table_announcement_input::Builder::default()
+    }
+    /// Creates a new `DeleteTransitGatewayRouteTableAnnouncement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayRouteTableAnnouncement {
+    type Output = std::result::Result<
+        crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput,
+        crate::error::DeleteTransitGatewayRouteTableAnnouncementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_transit_gateway_route_table_announcement_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_delete_transit_gateway_route_table_announcement_response(
+                response,
+            )
         }
     }
 }
@@ -10169,6 +10349,79 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayPe
     }
 }
 
+/// Operation shape for `DescribeTransitGatewayPolicyTables`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_transit_gateway_policy_tables`](crate::client::Client::describe_transit_gateway_policy_tables).
+///
+/// See [`crate::client::fluent_builders::DescribeTransitGatewayPolicyTables`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeTransitGatewayPolicyTables {
+    _private: (),
+}
+impl DescribeTransitGatewayPolicyTables {
+    /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayPolicyTablesInput`](crate::input::DescribeTransitGatewayPolicyTablesInput).
+    pub fn builder() -> crate::input::describe_transit_gateway_policy_tables_input::Builder {
+        crate::input::describe_transit_gateway_policy_tables_input::Builder::default()
+    }
+    /// Creates a new `DescribeTransitGatewayPolicyTables` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayPolicyTables {
+    type Output = std::result::Result<
+        crate::output::DescribeTransitGatewayPolicyTablesOutput,
+        crate::error::DescribeTransitGatewayPolicyTablesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_transit_gateway_policy_tables_error(response)
+        } else {
+            crate::operation_deser::parse_describe_transit_gateway_policy_tables_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeTransitGatewayRouteTableAnnouncements`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_transit_gateway_route_table_announcements`](crate::client::Client::describe_transit_gateway_route_table_announcements).
+///
+/// See [`crate::client::fluent_builders::DescribeTransitGatewayRouteTableAnnouncements`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeTransitGatewayRouteTableAnnouncements {
+    _private: (),
+}
+impl DescribeTransitGatewayRouteTableAnnouncements {
+    /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayRouteTableAnnouncementsInput`](crate::input::DescribeTransitGatewayRouteTableAnnouncementsInput).
+    pub fn builder(
+    ) -> crate::input::describe_transit_gateway_route_table_announcements_input::Builder {
+        crate::input::describe_transit_gateway_route_table_announcements_input::Builder::default()
+    }
+    /// Creates a new `DescribeTransitGatewayRouteTableAnnouncements` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for DescribeTransitGatewayRouteTableAnnouncements
+{
+    type Output = std::result::Result<
+        crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput,
+        crate::error::DescribeTransitGatewayRouteTableAnnouncementsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_transit_gateway_route_table_announcements_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_describe_transit_gateway_route_table_announcements_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeTransitGatewayRouteTables`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -11679,6 +11932,42 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTransitGatew
             )
         } else {
             crate::operation_deser::parse_disassociate_transit_gateway_multicast_domain_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `DisassociateTransitGatewayPolicyTable`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_transit_gateway_policy_table`](crate::client::Client::disassociate_transit_gateway_policy_table).
+///
+/// See [`crate::client::fluent_builders::DisassociateTransitGatewayPolicyTable`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateTransitGatewayPolicyTable {
+    _private: (),
+}
+impl DisassociateTransitGatewayPolicyTable {
+    /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayPolicyTableInput`](crate::input::DisassociateTransitGatewayPolicyTableInput).
+    pub fn builder() -> crate::input::disassociate_transit_gateway_policy_table_input::Builder {
+        crate::input::disassociate_transit_gateway_policy_table_input::Builder::default()
+    }
+    /// Creates a new `DisassociateTransitGatewayPolicyTable` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisassociateTransitGatewayPolicyTable {
+    type Output = std::result::Result<
+        crate::output::DisassociateTransitGatewayPolicyTableOutput,
+        crate::error::DisassociateTransitGatewayPolicyTableError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_transit_gateway_policy_table_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_transit_gateway_policy_table_response(
                 response,
             )
         }
@@ -13345,6 +13634,80 @@ impl aws_smithy_http::response::ParseStrictResponse
             )
         } else {
             crate::operation_deser::parse_get_transit_gateway_multicast_domain_associations_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `GetTransitGatewayPolicyTableAssociations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_transit_gateway_policy_table_associations`](crate::client::Client::get_transit_gateway_policy_table_associations).
+///
+/// See [`crate::client::fluent_builders::GetTransitGatewayPolicyTableAssociations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTransitGatewayPolicyTableAssociations {
+    _private: (),
+}
+impl GetTransitGatewayPolicyTableAssociations {
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayPolicyTableAssociationsInput`](crate::input::GetTransitGatewayPolicyTableAssociationsInput).
+    pub fn builder() -> crate::input::get_transit_gateway_policy_table_associations_input::Builder {
+        crate::input::get_transit_gateway_policy_table_associations_input::Builder::default()
+    }
+    /// Creates a new `GetTransitGatewayPolicyTableAssociations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayPolicyTableAssociations {
+    type Output = std::result::Result<
+        crate::output::GetTransitGatewayPolicyTableAssociationsOutput,
+        crate::error::GetTransitGatewayPolicyTableAssociationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_transit_gateway_policy_table_associations_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_transit_gateway_policy_table_associations_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `GetTransitGatewayPolicyTableEntries`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_transit_gateway_policy_table_entries`](crate::client::Client::get_transit_gateway_policy_table_entries).
+///
+/// See [`crate::client::fluent_builders::GetTransitGatewayPolicyTableEntries`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTransitGatewayPolicyTableEntries {
+    _private: (),
+}
+impl GetTransitGatewayPolicyTableEntries {
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayPolicyTableEntriesInput`](crate::input::GetTransitGatewayPolicyTableEntriesInput).
+    pub fn builder() -> crate::input::get_transit_gateway_policy_table_entries_input::Builder {
+        crate::input::get_transit_gateway_policy_table_entries_input::Builder::default()
+    }
+    /// Creates a new `GetTransitGatewayPolicyTableEntries` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayPolicyTableEntries {
+    type Output = std::result::Result<
+        crate::output::GetTransitGatewayPolicyTableEntriesOutput,
+        crate::error::GetTransitGatewayPolicyTableEntriesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_transit_gateway_policy_table_entries_error(response)
+        } else {
+            crate::operation_deser::parse_get_transit_gateway_policy_table_entries_response(
                 response,
             )
         }

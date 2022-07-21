@@ -1117,6 +1117,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAnswer {
     }
 }
 
+/// Operation shape for `UpdateGlobalSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_global_settings`](crate::client::Client::update_global_settings).
+///
+/// See [`crate::client::fluent_builders::UpdateGlobalSettings`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateGlobalSettings {
+    _private: (),
+}
+impl UpdateGlobalSettings {
+    /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsInput`](crate::input::UpdateGlobalSettingsInput).
+    pub fn builder() -> crate::input::update_global_settings_input::Builder {
+        crate::input::update_global_settings_input::Builder::default()
+    }
+    /// Creates a new `UpdateGlobalSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateGlobalSettings {
+    type Output = std::result::Result<
+        crate::output::UpdateGlobalSettingsOutput,
+        crate::error::UpdateGlobalSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_global_settings_error(response)
+        } else {
+            crate::operation_deser::parse_update_global_settings_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateLensReview`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

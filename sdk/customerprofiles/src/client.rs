@@ -95,7 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::AddProfileKey::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::AddProfileKey::set_profile_id): <p>The unique identifier of a customer profile.</p>
-    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::AddProfileKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::AddProfileKey::set_key_name): <p>A searchable identifier of a customer profile.</p>
+    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::AddProfileKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::AddProfileKey::set_key_name): <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     ///   - [`values(Vec<String>)`](crate::client::fluent_builders::AddProfileKey::values) / [`set_values(Option<Vec<String>>)`](crate::client::fluent_builders::AddProfileKey::set_values): <p>A list of key values.</p>
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AddProfileKey::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AddProfileKey::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`AddProfileKeyOutput`](crate::output::AddProfileKeyOutput) with field(s):
@@ -260,6 +260,7 @@ impl Client {
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetAutoMergingPreview::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetAutoMergingPreview::set_domain_name): <p>The unique name of the domain.</p>
     ///   - [`consolidation(Consolidation)`](crate::client::fluent_builders::GetAutoMergingPreview::consolidation) / [`set_consolidation(Option<Consolidation>)`](crate::client::fluent_builders::GetAutoMergingPreview::set_consolidation): <p>A list of matching attributes that represent matching criteria.</p>
     ///   - [`conflict_resolution(ConflictResolution)`](crate::client::fluent_builders::GetAutoMergingPreview::conflict_resolution) / [`set_conflict_resolution(Option<ConflictResolution>)`](crate::client::fluent_builders::GetAutoMergingPreview::set_conflict_resolution): <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+    ///   - [`min_allowed_confidence_score_for_merging(f64)`](crate::client::fluent_builders::GetAutoMergingPreview::min_allowed_confidence_score_for_merging) / [`set_min_allowed_confidence_score_for_merging(Option<f64>)`](crate::client::fluent_builders::GetAutoMergingPreview::set_min_allowed_confidence_score_for_merging): <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
     /// - On success, responds with [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::output::GetAutoMergingPreviewOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`number_of_matches_in_sample(i64)`](crate::output::GetAutoMergingPreviewOutput::number_of_matches_in_sample): <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
@@ -591,7 +592,7 @@ impl Client {
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_domain_name): <p>The unique name of the domain.</p>
     ///   - [`object_type_name(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::object_type_name) / [`set_object_type_name(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_object_type_name): <p>The name of the profile object type.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_description): <p>Description of the profile object type.</p>
-    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_template_id): <p>A unique identifier for the object template.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_template_id): <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
     ///   - [`expiration_days(i32)`](crate::client::fluent_builders::PutProfileObjectType::expiration_days) / [`set_expiration_days(Option<i32>)`](crate::client::fluent_builders::PutProfileObjectType::set_expiration_days): <p>The number of days until the data in the object expires.</p>
     ///   - [`encryption_key(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::encryption_key) / [`set_encryption_key(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_encryption_key): <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     ///   - [`allow_profile_creation(bool)`](crate::client::fluent_builders::PutProfileObjectType::allow_profile_creation) / [`set_allow_profile_creation(bool)`](crate::client::fluent_builders::PutProfileObjectType::set_allow_profile_creation): <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
@@ -768,12 +769,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_id(input);
             self
         }
-        /// <p>A searchable identifier of a customer profile.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_name(input.into());
             self
         }
-        /// <p>A searchable identifier of a customer profile.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_name(input);
             self
@@ -1943,6 +1944,21 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ConflictResolution>,
         ) -> Self {
             self.inner = self.inner.set_conflict_resolution(input);
+            self
+        }
+        /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
+        pub fn min_allowed_confidence_score_for_merging(mut self, input: f64) -> Self {
+            self.inner = self.inner.min_allowed_confidence_score_for_merging(input);
+            self
+        }
+        /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
+        pub fn set_min_allowed_confidence_score_for_merging(
+            mut self,
+            input: std::option::Option<f64>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_min_allowed_confidence_score_for_merging(input);
             self
         }
     }
@@ -3608,12 +3624,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique identifier for the object template.</p>
+        /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_id(input.into());
             self
         }
-        /// <p>A unique identifier for the object template.</p>
+        /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_template_id(input);
             self

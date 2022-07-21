@@ -8658,7 +8658,7 @@ impl AsRef<str> for DashboardBehavior {
     }
 }
 
-/// <p>Ad hoc (one-time) filtering option.</p>
+/// <p>An ad hoc (one-time) filtering option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdHocFilteringOption {
@@ -14344,7 +14344,7 @@ pub struct RegisteredUserEmbeddingExperienceConfiguration {
     pub quick_sight_console:
         std::option::Option<crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration>,
     /// <p>The configuration details for embedding the Q search bar.</p>
-    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub q_search_bar:
         std::option::Option<crate::model::RegisteredUserQSearchBarEmbeddingConfiguration>,
 }
@@ -14369,7 +14369,7 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
         self.quick_sight_console.as_ref()
     }
     /// <p>The configuration details for embedding the Q search bar.</p>
-    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn q_search_bar(
         &self,
     ) -> std::option::Option<&crate::model::RegisteredUserQSearchBarEmbeddingConfiguration> {
@@ -14447,7 +14447,7 @@ pub mod registered_user_embedding_experience_configuration {
             self
         }
         /// <p>The configuration details for embedding the Q search bar.</p>
-        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
         pub fn q_search_bar(
             mut self,
             input: crate::model::RegisteredUserQSearchBarEmbeddingConfiguration,
@@ -14456,7 +14456,7 @@ pub mod registered_user_embedding_experience_configuration {
             self
         }
         /// <p>The configuration details for embedding the Q search bar.</p>
-        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
         pub fn set_q_search_bar(
             mut self,
             input: std::option::Option<
@@ -18457,6 +18457,217 @@ impl AsRef<str> for AnalysisErrorType {
     }
 }
 
+/// <p>A structure that contains the following account information elements:</p>
+/// <ul>
+/// <li> <p>Your Amazon QuickSight account name.</p> </li>
+/// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
+/// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
+/// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
+/// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccountInfo {
+    /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    pub account_name: std::option::Option<std::string::String>,
+    /// <p>The edition of your Amazon QuickSight account.</p>
+    pub edition: std::option::Option<crate::model::Edition>,
+    /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+    pub notification_email: std::option::Option<std::string::String>,
+    /// <p>The way that your Amazon QuickSight account is authenticated.</p>
+    pub authentication_type: std::option::Option<std::string::String>,
+    /// <p>The status of your account subscription.</p>
+    pub account_subscription_status: std::option::Option<std::string::String>,
+}
+impl AccountInfo {
+    /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    pub fn account_name(&self) -> std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p>The edition of your Amazon QuickSight account.</p>
+    pub fn edition(&self) -> std::option::Option<&crate::model::Edition> {
+        self.edition.as_ref()
+    }
+    /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+    pub fn notification_email(&self) -> std::option::Option<&str> {
+        self.notification_email.as_deref()
+    }
+    /// <p>The way that your Amazon QuickSight account is authenticated.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&str> {
+        self.authentication_type.as_deref()
+    }
+    /// <p>The status of your account subscription.</p>
+    pub fn account_subscription_status(&self) -> std::option::Option<&str> {
+        self.account_subscription_status.as_deref()
+    }
+}
+impl std::fmt::Debug for AccountInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccountInfo");
+        formatter.field("account_name", &self.account_name);
+        formatter.field("edition", &self.edition);
+        formatter.field("notification_email", &self.notification_email);
+        formatter.field("authentication_type", &self.authentication_type);
+        formatter.field(
+            "account_subscription_status",
+            &self.account_subscription_status,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AccountInfo`](crate::model::AccountInfo).
+pub mod account_info {
+
+    /// A builder for [`AccountInfo`](crate::model::AccountInfo).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_name: std::option::Option<std::string::String>,
+        pub(crate) edition: std::option::Option<crate::model::Edition>,
+        pub(crate) notification_email: std::option::Option<std::string::String>,
+        pub(crate) authentication_type: std::option::Option<std::string::String>,
+        pub(crate) account_subscription_status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+        pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_name = Some(input.into());
+            self
+        }
+        /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+        pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_name = input;
+            self
+        }
+        /// <p>The edition of your Amazon QuickSight account.</p>
+        pub fn edition(mut self, input: crate::model::Edition) -> Self {
+            self.edition = Some(input);
+            self
+        }
+        /// <p>The edition of your Amazon QuickSight account.</p>
+        pub fn set_edition(mut self, input: std::option::Option<crate::model::Edition>) -> Self {
+            self.edition = input;
+            self
+        }
+        /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+        pub fn notification_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.notification_email = Some(input.into());
+            self
+        }
+        /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+        pub fn set_notification_email(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.notification_email = input;
+            self
+        }
+        /// <p>The way that your Amazon QuickSight account is authenticated.</p>
+        pub fn authentication_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authentication_type = Some(input.into());
+            self
+        }
+        /// <p>The way that your Amazon QuickSight account is authenticated.</p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
+        /// <p>The status of your account subscription.</p>
+        pub fn account_subscription_status(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.account_subscription_status = Some(input.into());
+            self
+        }
+        /// <p>The status of your account subscription.</p>
+        pub fn set_account_subscription_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.account_subscription_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccountInfo`](crate::model::AccountInfo).
+        pub fn build(self) -> crate::model::AccountInfo {
+            crate::model::AccountInfo {
+                account_name: self.account_name,
+                edition: self.edition,
+                notification_email: self.notification_email,
+                authentication_type: self.authentication_type,
+                account_subscription_status: self.account_subscription_status,
+            }
+        }
+    }
+}
+impl AccountInfo {
+    /// Creates a new builder-style object to manufacture [`AccountInfo`](crate::model::AccountInfo).
+    pub fn builder() -> crate::model::account_info::Builder {
+        crate::model::account_info::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Edition {
+    #[allow(missing_docs)] // documentation missing in model
+    Enterprise,
+    #[allow(missing_docs)] // documentation missing in model
+    EnterpriseAndQ,
+    #[allow(missing_docs)] // documentation missing in model
+    Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Edition {
+    fn from(s: &str) -> Self {
+        match s {
+            "ENTERPRISE" => Edition::Enterprise,
+            "ENTERPRISE_AND_Q" => Edition::EnterpriseAndQ,
+            "STANDARD" => Edition::Standard,
+            other => Edition::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Edition {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Edition::from(s))
+    }
+}
+impl Edition {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Edition::Enterprise => "ENTERPRISE",
+            Edition::EnterpriseAndQ => "ENTERPRISE_AND_Q",
+            Edition::Standard => "STANDARD",
+            Edition::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ENTERPRISE", "ENTERPRISE_AND_Q", "STANDARD"]
+    }
+}
+impl AsRef<str> for Edition {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The Amazon QuickSight settings associated with your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -18469,7 +18680,7 @@ pub struct AccountSettings {
     pub default_namespace: std::option::Option<std::string::String>,
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
     pub notification_email: std::option::Option<std::string::String>,
-    /// <p>A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more information about enabling public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub public_sharing_enabled: bool,
 }
 impl AccountSettings {
@@ -18489,7 +18700,7 @@ impl AccountSettings {
     pub fn notification_email(&self) -> std::option::Option<&str> {
         self.notification_email.as_deref()
     }
-    /// <p>A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more information about enabling public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub fn public_sharing_enabled(&self) -> bool {
         self.public_sharing_enabled
     }
@@ -18564,12 +18775,12 @@ pub mod account_settings {
             self.notification_email = input;
             self
         }
-        /// <p>A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more information about enabling public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+        /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
         pub fn public_sharing_enabled(mut self, input: bool) -> Self {
             self.public_sharing_enabled = Some(input);
             self
         }
-        /// <p>A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more information about enabling public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+        /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
         pub fn set_public_sharing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.public_sharing_enabled = input;
             self
@@ -18590,61 +18801,6 @@ impl AccountSettings {
     /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
     pub fn builder() -> crate::model::account_settings::Builder {
         crate::model::account_settings::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum Edition {
-    #[allow(missing_docs)] // documentation missing in model
-    Enterprise,
-    #[allow(missing_docs)] // documentation missing in model
-    Standard,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for Edition {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENTERPRISE" => Edition::Enterprise,
-            "STANDARD" => Edition::Standard,
-            other => Edition::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for Edition {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Edition::from(s))
-    }
-}
-impl Edition {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Edition::Enterprise => "ENTERPRISE",
-            Edition::Standard => "STANDARD",
-            Edition::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["ENTERPRISE", "STANDARD"]
-    }
-}
-impl AsRef<str> for Edition {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -18835,5 +18991,181 @@ impl FolderMember {
     /// Creates a new builder-style object to manufacture [`FolderMember`](crate::model::FolderMember).
     pub fn builder() -> crate::model::folder_member::Builder {
         crate::model::folder_member::Builder::default()
+    }
+}
+
+/// <p>A <code>SignupResponse</code> object that contains a summary of a newly created account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SignupResponse {
+    /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
+    pub iam_user: bool,
+    /// <p>The user login name for your Amazon QuickSight account.</p>
+    pub user_login_name: std::option::Option<std::string::String>,
+    /// <p>The name of your Amazon QuickSight account.</p>
+    pub account_name: std::option::Option<std::string::String>,
+    /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
+    pub directory_type: std::option::Option<std::string::String>,
+}
+impl SignupResponse {
+    /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
+    pub fn iam_user(&self) -> bool {
+        self.iam_user
+    }
+    /// <p>The user login name for your Amazon QuickSight account.</p>
+    pub fn user_login_name(&self) -> std::option::Option<&str> {
+        self.user_login_name.as_deref()
+    }
+    /// <p>The name of your Amazon QuickSight account.</p>
+    pub fn account_name(&self) -> std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
+    pub fn directory_type(&self) -> std::option::Option<&str> {
+        self.directory_type.as_deref()
+    }
+}
+impl std::fmt::Debug for SignupResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SignupResponse");
+        formatter.field("iam_user", &self.iam_user);
+        formatter.field("user_login_name", &self.user_login_name);
+        formatter.field("account_name", &self.account_name);
+        formatter.field("directory_type", &self.directory_type);
+        formatter.finish()
+    }
+}
+/// See [`SignupResponse`](crate::model::SignupResponse).
+pub mod signup_response {
+
+    /// A builder for [`SignupResponse`](crate::model::SignupResponse).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) iam_user: std::option::Option<bool>,
+        pub(crate) user_login_name: std::option::Option<std::string::String>,
+        pub(crate) account_name: std::option::Option<std::string::String>,
+        pub(crate) directory_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
+        pub fn iam_user(mut self, input: bool) -> Self {
+            self.iam_user = Some(input);
+            self
+        }
+        /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
+        pub fn set_iam_user(mut self, input: std::option::Option<bool>) -> Self {
+            self.iam_user = input;
+            self
+        }
+        /// <p>The user login name for your Amazon QuickSight account.</p>
+        pub fn user_login_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_login_name = Some(input.into());
+            self
+        }
+        /// <p>The user login name for your Amazon QuickSight account.</p>
+        pub fn set_user_login_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_login_name = input;
+            self
+        }
+        /// <p>The name of your Amazon QuickSight account.</p>
+        pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_name = Some(input.into());
+            self
+        }
+        /// <p>The name of your Amazon QuickSight account.</p>
+        pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_name = input;
+            self
+        }
+        /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
+        pub fn directory_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_type = Some(input.into());
+            self
+        }
+        /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
+        pub fn set_directory_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.directory_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SignupResponse`](crate::model::SignupResponse).
+        pub fn build(self) -> crate::model::SignupResponse {
+            crate::model::SignupResponse {
+                iam_user: self.iam_user.unwrap_or_default(),
+                user_login_name: self.user_login_name,
+                account_name: self.account_name,
+                directory_type: self.directory_type,
+            }
+        }
+    }
+}
+impl SignupResponse {
+    /// Creates a new builder-style object to manufacture [`SignupResponse`](crate::model::SignupResponse).
+    pub fn builder() -> crate::model::signup_response::Builder {
+        crate::model::signup_response::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AuthenticationMethodOption {
+    #[allow(missing_docs)] // documentation missing in model
+    ActiveDirectory,
+    #[allow(missing_docs)] // documentation missing in model
+    IamAndQuicksight,
+    #[allow(missing_docs)] // documentation missing in model
+    IamOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AuthenticationMethodOption {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE_DIRECTORY" => AuthenticationMethodOption::ActiveDirectory,
+            "IAM_AND_QUICKSIGHT" => AuthenticationMethodOption::IamAndQuicksight,
+            "IAM_ONLY" => AuthenticationMethodOption::IamOnly,
+            other => AuthenticationMethodOption::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AuthenticationMethodOption {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AuthenticationMethodOption::from(s))
+    }
+}
+impl AuthenticationMethodOption {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AuthenticationMethodOption::ActiveDirectory => "ACTIVE_DIRECTORY",
+            AuthenticationMethodOption::IamAndQuicksight => "IAM_AND_QUICKSIGHT",
+            AuthenticationMethodOption::IamOnly => "IAM_ONLY",
+            AuthenticationMethodOption::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE_DIRECTORY", "IAM_AND_QUICKSIGHT", "IAM_ONLY"]
+    }
+}
+impl AsRef<str> for AuthenticationMethodOption {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }

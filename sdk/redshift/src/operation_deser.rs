@@ -726,6 +726,20 @@ pub fn parse_authorize_snapshot_access_error(
                                                     }
             tmp
         })},
+        "UnsupportedOperation" => crate::error::AuthorizeSnapshotAccessError { meta: generic, kind: crate::error::AuthorizeSnapshotAccessErrorKind::UnsupportedOperationFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeSnapshotAccessError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         _ => crate::error::AuthorizeSnapshotAccessError::generic(generic)
     })
 }
@@ -5332,6 +5346,23 @@ pub fn parse_describe_cluster_snapshots_error(
                 }),
             }
         }
+        "UnsupportedOperation" => crate::error::DescribeClusterSnapshotsError {
+            meta: generic,
+            kind: crate::error::DescribeClusterSnapshotsErrorKind::UnsupportedOperationFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeClusterSnapshotsError::generic(generic),
     })
 }
@@ -6354,6 +6385,20 @@ pub fn parse_describe_node_configuration_options_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cluster_snapshot_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperation" => crate::error::DescribeNodeConfigurationOptionsError { meta: generic, kind: crate::error::DescribeNodeConfigurationOptionsErrorKind::UnsupportedOperationFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -11951,6 +11996,23 @@ pub fn parse_revoke_snapshot_access_error(
                         crate::error::cluster_snapshot_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeSnapshotAccessError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperation" => crate::error::RevokeSnapshotAccessError {
+            meta: generic,
+            kind: crate::error::RevokeSnapshotAccessErrorKind::UnsupportedOperationFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeSnapshotAccessError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

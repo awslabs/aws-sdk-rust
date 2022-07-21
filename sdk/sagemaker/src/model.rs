@@ -7612,6 +7612,24 @@ pub enum ProductionVariantInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlC5DXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlC6I12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6ILarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6IXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlG4Dn12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlG4Dn16Xlarge,
@@ -7623,6 +7641,22 @@ pub enum ProductionVariantInstanceType {
     MlG4Dn8Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlG4DnXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG512Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG516Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG524Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG548Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG58Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG5Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlInf124Xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -7678,6 +7712,8 @@ pub enum ProductionVariantInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP38Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP4D24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlR512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR524Xlarge,
@@ -7732,12 +7768,29 @@ impl std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.c5d.9xlarge" => ProductionVariantInstanceType::MlC5D9Xlarge,
             "ml.c5d.large" => ProductionVariantInstanceType::MlC5DLarge,
             "ml.c5d.xlarge" => ProductionVariantInstanceType::MlC5DXlarge,
+            "ml.c6i.12xlarge" => ProductionVariantInstanceType::MlC6I12Xlarge,
+            "ml.c6i.16xlarge" => ProductionVariantInstanceType::MlC6I16Xlarge,
+            "ml.c6i.24xlarge" => ProductionVariantInstanceType::MlC6I24Xlarge,
+            "ml.c6i.2xlarge" => ProductionVariantInstanceType::MlC6I2Xlarge,
+            "ml.c6i.32xlarge" => ProductionVariantInstanceType::MlC6I32Xlarge,
+            "ml.c6i.4xlarge" => ProductionVariantInstanceType::MlC6I4Xlarge,
+            "ml.c6i.8xlarge" => ProductionVariantInstanceType::MlC6I8Xlarge,
+            "ml.c6i.large" => ProductionVariantInstanceType::MlC6ILarge,
+            "ml.c6i.xlarge" => ProductionVariantInstanceType::MlC6IXlarge,
             "ml.g4dn.12xlarge" => ProductionVariantInstanceType::MlG4Dn12Xlarge,
             "ml.g4dn.16xlarge" => ProductionVariantInstanceType::MlG4Dn16Xlarge,
             "ml.g4dn.2xlarge" => ProductionVariantInstanceType::MlG4Dn2Xlarge,
             "ml.g4dn.4xlarge" => ProductionVariantInstanceType::MlG4Dn4Xlarge,
             "ml.g4dn.8xlarge" => ProductionVariantInstanceType::MlG4Dn8Xlarge,
             "ml.g4dn.xlarge" => ProductionVariantInstanceType::MlG4DnXlarge,
+            "ml.g5.12xlarge" => ProductionVariantInstanceType::MlG512Xlarge,
+            "ml.g5.16xlarge" => ProductionVariantInstanceType::MlG516Xlarge,
+            "ml.g5.24xlarge" => ProductionVariantInstanceType::MlG524Xlarge,
+            "ml.g5.2xlarge" => ProductionVariantInstanceType::MlG52Xlarge,
+            "ml.g5.48xlarge" => ProductionVariantInstanceType::MlG548Xlarge,
+            "ml.g5.4xlarge" => ProductionVariantInstanceType::MlG54Xlarge,
+            "ml.g5.8xlarge" => ProductionVariantInstanceType::MlG58Xlarge,
+            "ml.g5.xlarge" => ProductionVariantInstanceType::MlG5Xlarge,
             "ml.inf1.24xlarge" => ProductionVariantInstanceType::MlInf124Xlarge,
             "ml.inf1.2xlarge" => ProductionVariantInstanceType::MlInf12Xlarge,
             "ml.inf1.6xlarge" => ProductionVariantInstanceType::MlInf16Xlarge,
@@ -7765,6 +7818,7 @@ impl std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.p3.16xlarge" => ProductionVariantInstanceType::MlP316Xlarge,
             "ml.p3.2xlarge" => ProductionVariantInstanceType::MlP32Xlarge,
             "ml.p3.8xlarge" => ProductionVariantInstanceType::MlP38Xlarge,
+            "ml.p4d.24xlarge" => ProductionVariantInstanceType::MlP4D24Xlarge,
             "ml.r5.12xlarge" => ProductionVariantInstanceType::MlR512Xlarge,
             "ml.r5.24xlarge" => ProductionVariantInstanceType::MlR524Xlarge,
             "ml.r5.2xlarge" => ProductionVariantInstanceType::MlR52Xlarge,
@@ -7813,12 +7867,29 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlC5D9Xlarge => "ml.c5d.9xlarge",
             ProductionVariantInstanceType::MlC5DLarge => "ml.c5d.large",
             ProductionVariantInstanceType::MlC5DXlarge => "ml.c5d.xlarge",
+            ProductionVariantInstanceType::MlC6I12Xlarge => "ml.c6i.12xlarge",
+            ProductionVariantInstanceType::MlC6I16Xlarge => "ml.c6i.16xlarge",
+            ProductionVariantInstanceType::MlC6I24Xlarge => "ml.c6i.24xlarge",
+            ProductionVariantInstanceType::MlC6I2Xlarge => "ml.c6i.2xlarge",
+            ProductionVariantInstanceType::MlC6I32Xlarge => "ml.c6i.32xlarge",
+            ProductionVariantInstanceType::MlC6I4Xlarge => "ml.c6i.4xlarge",
+            ProductionVariantInstanceType::MlC6I8Xlarge => "ml.c6i.8xlarge",
+            ProductionVariantInstanceType::MlC6ILarge => "ml.c6i.large",
+            ProductionVariantInstanceType::MlC6IXlarge => "ml.c6i.xlarge",
             ProductionVariantInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
             ProductionVariantInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
             ProductionVariantInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
             ProductionVariantInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
             ProductionVariantInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
             ProductionVariantInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            ProductionVariantInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
+            ProductionVariantInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
+            ProductionVariantInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
+            ProductionVariantInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
+            ProductionVariantInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
+            ProductionVariantInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
+            ProductionVariantInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
+            ProductionVariantInstanceType::MlG5Xlarge => "ml.g5.xlarge",
             ProductionVariantInstanceType::MlInf124Xlarge => "ml.inf1.24xlarge",
             ProductionVariantInstanceType::MlInf12Xlarge => "ml.inf1.2xlarge",
             ProductionVariantInstanceType::MlInf16Xlarge => "ml.inf1.6xlarge",
@@ -7846,6 +7917,7 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
             ProductionVariantInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
             ProductionVariantInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            ProductionVariantInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
             ProductionVariantInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
             ProductionVariantInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
             ProductionVariantInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
@@ -7885,12 +7957,29 @@ impl ProductionVariantInstanceType {
             "ml.c5d.9xlarge",
             "ml.c5d.large",
             "ml.c5d.xlarge",
+            "ml.c6i.12xlarge",
+            "ml.c6i.16xlarge",
+            "ml.c6i.24xlarge",
+            "ml.c6i.2xlarge",
+            "ml.c6i.32xlarge",
+            "ml.c6i.4xlarge",
+            "ml.c6i.8xlarge",
+            "ml.c6i.large",
+            "ml.c6i.xlarge",
             "ml.g4dn.12xlarge",
             "ml.g4dn.16xlarge",
             "ml.g4dn.2xlarge",
             "ml.g4dn.4xlarge",
             "ml.g4dn.8xlarge",
             "ml.g4dn.xlarge",
+            "ml.g5.12xlarge",
+            "ml.g5.16xlarge",
+            "ml.g5.24xlarge",
+            "ml.g5.2xlarge",
+            "ml.g5.48xlarge",
+            "ml.g5.4xlarge",
+            "ml.g5.8xlarge",
+            "ml.g5.xlarge",
             "ml.inf1.24xlarge",
             "ml.inf1.2xlarge",
             "ml.inf1.6xlarge",
@@ -7918,6 +8007,7 @@ impl ProductionVariantInstanceType {
             "ml.p3.16xlarge",
             "ml.p3.2xlarge",
             "ml.p3.8xlarge",
+            "ml.p4d.24xlarge",
             "ml.r5.12xlarge",
             "ml.r5.24xlarge",
             "ml.r5.2xlarge",
@@ -8535,6 +8625,214 @@ impl ModelApprovalStatus {
     }
 }
 impl AsRef<str> for ModelApprovalStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A key-value pair that you specify to describe the feature.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FeatureParameter {
+    /// <p>A key that must contain a value to describe the feature.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The value that belongs to a key.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl FeatureParameter {
+    /// <p>A key that must contain a value to describe the feature.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value that belongs to a key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for FeatureParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FeatureParameter");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`FeatureParameter`](crate::model::FeatureParameter).
+pub mod feature_parameter {
+
+    /// A builder for [`FeatureParameter`](crate::model::FeatureParameter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A key that must contain a value to describe the feature.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>A key that must contain a value to describe the feature.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The value that belongs to a key.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value that belongs to a key.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FeatureParameter`](crate::model::FeatureParameter).
+        pub fn build(self) -> crate::model::FeatureParameter {
+            crate::model::FeatureParameter {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl FeatureParameter {
+    /// Creates a new builder-style object to manufacture [`FeatureParameter`](crate::model::FeatureParameter).
+    pub fn builder() -> crate::model::feature_parameter::Builder {
+        crate::model::feature_parameter::Builder::default()
+    }
+}
+
+/// <p>A list of features. You must include <code>FeatureName</code> and <code>FeatureType</code>. Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FeatureDefinition {
+    /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+    pub feature_name: std::option::Option<std::string::String>,
+    /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
+    pub feature_type: std::option::Option<crate::model::FeatureType>,
+}
+impl FeatureDefinition {
+    /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
+    /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
+    pub fn feature_type(&self) -> std::option::Option<&crate::model::FeatureType> {
+        self.feature_type.as_ref()
+    }
+}
+impl std::fmt::Debug for FeatureDefinition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FeatureDefinition");
+        formatter.field("feature_name", &self.feature_name);
+        formatter.field("feature_type", &self.feature_type);
+        formatter.finish()
+    }
+}
+/// See [`FeatureDefinition`](crate::model::FeatureDefinition).
+pub mod feature_definition {
+
+    /// A builder for [`FeatureDefinition`](crate::model::FeatureDefinition).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) feature_name: std::option::Option<std::string::String>,
+        pub(crate) feature_type: std::option::Option<crate::model::FeatureType>,
+    }
+    impl Builder {
+        /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
+            self
+        }
+        /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
+        pub fn feature_type(mut self, input: crate::model::FeatureType) -> Self {
+            self.feature_type = Some(input);
+            self
+        }
+        /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
+        pub fn set_feature_type(
+            mut self,
+            input: std::option::Option<crate::model::FeatureType>,
+        ) -> Self {
+            self.feature_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FeatureDefinition`](crate::model::FeatureDefinition).
+        pub fn build(self) -> crate::model::FeatureDefinition {
+            crate::model::FeatureDefinition {
+                feature_name: self.feature_name,
+                feature_type: self.feature_type,
+            }
+        }
+    }
+}
+impl FeatureDefinition {
+    /// Creates a new builder-style object to manufacture [`FeatureDefinition`](crate::model::FeatureDefinition).
+    pub fn builder() -> crate::model::feature_definition::Builder {
+        crate::model::feature_definition::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FeatureType {
+    #[allow(missing_docs)] // documentation missing in model
+    Fractional,
+    #[allow(missing_docs)] // documentation missing in model
+    Integral,
+    #[allow(missing_docs)] // documentation missing in model
+    String,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FeatureType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Fractional" => FeatureType::Fractional,
+            "Integral" => FeatureType::Integral,
+            "String" => FeatureType::String,
+            other => FeatureType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FeatureType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FeatureType::from(s))
+    }
+}
+impl FeatureType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FeatureType::Fractional => "Fractional",
+            FeatureType::Integral => "Integral",
+            FeatureType::String => "String",
+            FeatureType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Fractional", "Integral", "String"]
+    }
+}
+impl AsRef<str> for FeatureType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -10452,6 +10750,8 @@ pub struct SearchRecord {
     pub feature_group: std::option::Option<crate::model::FeatureGroup>,
     /// <p>The properties of a project.</p>
     pub project: std::option::Option<crate::model::Project>,
+    /// <p>The feature metadata used to search through the features.</p>
+    pub feature_metadata: std::option::Option<crate::model::FeatureMetadata>,
 }
 impl SearchRecord {
     /// <p>The properties of a training job.</p>
@@ -10498,6 +10798,10 @@ impl SearchRecord {
     pub fn project(&self) -> std::option::Option<&crate::model::Project> {
         self.project.as_ref()
     }
+    /// <p>The feature metadata used to search through the features.</p>
+    pub fn feature_metadata(&self) -> std::option::Option<&crate::model::FeatureMetadata> {
+        self.feature_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for SearchRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10513,6 +10817,7 @@ impl std::fmt::Debug for SearchRecord {
         formatter.field("pipeline_execution", &self.pipeline_execution);
         formatter.field("feature_group", &self.feature_group);
         formatter.field("project", &self.project);
+        formatter.field("feature_metadata", &self.feature_metadata);
         formatter.finish()
     }
 }
@@ -10533,6 +10838,7 @@ pub mod search_record {
         pub(crate) pipeline_execution: std::option::Option<crate::model::PipelineExecution>,
         pub(crate) feature_group: std::option::Option<crate::model::FeatureGroup>,
         pub(crate) project: std::option::Option<crate::model::Project>,
+        pub(crate) feature_metadata: std::option::Option<crate::model::FeatureMetadata>,
     }
     impl Builder {
         /// <p>The properties of a training job.</p>
@@ -10666,6 +10972,19 @@ pub mod search_record {
             self.project = input;
             self
         }
+        /// <p>The feature metadata used to search through the features.</p>
+        pub fn feature_metadata(mut self, input: crate::model::FeatureMetadata) -> Self {
+            self.feature_metadata = Some(input);
+            self
+        }
+        /// <p>The feature metadata used to search through the features.</p>
+        pub fn set_feature_metadata(
+            mut self,
+            input: std::option::Option<crate::model::FeatureMetadata>,
+        ) -> Self {
+            self.feature_metadata = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchRecord`](crate::model::SearchRecord).
         pub fn build(self) -> crate::model::SearchRecord {
             crate::model::SearchRecord {
@@ -10680,6 +10999,7 @@ pub mod search_record {
                 pipeline_execution: self.pipeline_execution,
                 feature_group: self.feature_group,
                 project: self.project,
+                feature_metadata: self.feature_metadata,
             }
         }
     }
@@ -10688,6 +11008,217 @@ impl SearchRecord {
     /// Creates a new builder-style object to manufacture [`SearchRecord`](crate::model::SearchRecord).
     pub fn builder() -> crate::model::search_record::Builder {
         crate::model::search_record::Builder::default()
+    }
+}
+
+/// <p>The metadata for a feature. It can either be metadata that you specify, or metadata that is updated automatically.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FeatureMetadata {
+    /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
+    pub feature_group_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the feature group containing the feature.</p>
+    pub feature_group_name: std::option::Option<std::string::String>,
+    /// <p>The name of feature.</p>
+    pub feature_name: std::option::Option<std::string::String>,
+    /// <p>The data type of the feature.</p>
+    pub feature_type: std::option::Option<crate::model::FeatureType>,
+    /// <p>A timestamp indicating when the feature was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp indicating when the feature was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An optional description that you specify to better describe the feature.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
+    pub parameters: std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
+}
+impl FeatureMetadata {
+    /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
+    pub fn feature_group_arn(&self) -> std::option::Option<&str> {
+        self.feature_group_arn.as_deref()
+    }
+    /// <p>The name of the feature group containing the feature.</p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The name of feature.</p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
+    /// <p>The data type of the feature.</p>
+    pub fn feature_type(&self) -> std::option::Option<&crate::model::FeatureType> {
+        self.feature_type.as_ref()
+    }
+    /// <p>A timestamp indicating when the feature was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp indicating when the feature was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>An optional description that you specify to better describe the feature.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::FeatureParameter]> {
+        self.parameters.as_deref()
+    }
+}
+impl std::fmt::Debug for FeatureMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FeatureMetadata");
+        formatter.field("feature_group_arn", &self.feature_group_arn);
+        formatter.field("feature_group_name", &self.feature_group_name);
+        formatter.field("feature_name", &self.feature_name);
+        formatter.field("feature_type", &self.feature_type);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("description", &self.description);
+        formatter.field("parameters", &self.parameters);
+        formatter.finish()
+    }
+}
+/// See [`FeatureMetadata`](crate::model::FeatureMetadata).
+pub mod feature_metadata {
+
+    /// A builder for [`FeatureMetadata`](crate::model::FeatureMetadata).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) feature_group_arn: std::option::Option<std::string::String>,
+        pub(crate) feature_group_name: std::option::Option<std::string::String>,
+        pub(crate) feature_name: std::option::Option<std::string::String>,
+        pub(crate) feature_type: std::option::Option<crate::model::FeatureType>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
+        pub fn feature_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
+        pub fn set_feature_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_arn = input;
+            self
+        }
+        /// <p>The name of the feature group containing the feature.</p>
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the feature group containing the feature.</p>
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_name = input;
+            self
+        }
+        /// <p>The name of feature.</p>
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
+            self
+        }
+        /// <p>The name of feature.</p>
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
+            self
+        }
+        /// <p>The data type of the feature.</p>
+        pub fn feature_type(mut self, input: crate::model::FeatureType) -> Self {
+            self.feature_type = Some(input);
+            self
+        }
+        /// <p>The data type of the feature.</p>
+        pub fn set_feature_type(
+            mut self,
+            input: std::option::Option<crate::model::FeatureType>,
+        ) -> Self {
+            self.feature_type = input;
+            self
+        }
+        /// <p>A timestamp indicating when the feature was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>A timestamp indicating when the feature was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>A timestamp indicating when the feature was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>A timestamp indicating when the feature was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>An optional description that you specify to better describe the feature.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>An optional description that you specify to better describe the feature.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
+        pub fn parameters(mut self, input: crate::model::FeatureParameter) -> Self {
+            let mut v = self.parameters.unwrap_or_default();
+            v.push(input);
+            self.parameters = Some(v);
+            self
+        }
+        /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FeatureParameter>>,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FeatureMetadata`](crate::model::FeatureMetadata).
+        pub fn build(self) -> crate::model::FeatureMetadata {
+            crate::model::FeatureMetadata {
+                feature_group_arn: self.feature_group_arn,
+                feature_group_name: self.feature_group_name,
+                feature_name: self.feature_name,
+                feature_type: self.feature_type,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+                description: self.description,
+                parameters: self.parameters,
+            }
+        }
+    }
+}
+impl FeatureMetadata {
+    /// Creates a new builder-style object to manufacture [`FeatureMetadata`](crate::model::FeatureMetadata).
+    pub fn builder() -> crate::model::feature_metadata::Builder {
+        crate::model::feature_metadata::Builder::default()
     }
 }
 
@@ -11467,6 +11998,8 @@ pub struct FeatureGroup {
     pub feature_definitions: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
     /// <p>The time a <code>FeatureGroup</code> was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp indicating the last time you updated the feature group.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or <code>KMSKeyId</code>, for at rest data encryption. You can turn <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag at General Assembly; the default value is <code>False</code>.</p>
     pub online_store_config: std::option::Option<crate::model::OnlineStoreConfig>,
     /// <p>The configuration of an <code>OfflineStore</code>.</p>
@@ -11479,6 +12012,8 @@ pub struct FeatureGroup {
     pub feature_group_status: std::option::Option<crate::model::FeatureGroupStatus>,
     /// <p>The status of <code>OfflineStore</code>.</p>
     pub offline_store_status: std::option::Option<crate::model::OfflineStoreStatus>,
+    /// <p>A value that indicates whether the feature group was updated successfully.</p>
+    pub last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure may be due to a failure to create a <code>FeatureGroup</code> in or delete a <code>FeatureGroup</code> from the <code>OfflineStore</code>.</p>
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>A free form description of a <code>FeatureGroup</code>.</p>
@@ -11515,6 +12050,10 @@ impl FeatureGroup {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>A timestamp indicating the last time you updated the feature group.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
     /// <p>Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or <code>KMSKeyId</code>, for at rest data encryption. You can turn <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag at General Assembly; the default value is <code>False</code>.</p>
     pub fn online_store_config(&self) -> std::option::Option<&crate::model::OnlineStoreConfig> {
         self.online_store_config.as_ref()
@@ -11536,6 +12075,10 @@ impl FeatureGroup {
     /// <p>The status of <code>OfflineStore</code>.</p>
     pub fn offline_store_status(&self) -> std::option::Option<&crate::model::OfflineStoreStatus> {
         self.offline_store_status.as_ref()
+    }
+    /// <p>A value that indicates whether the feature group was updated successfully.</p>
+    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+        self.last_update_status.as_ref()
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure may be due to a failure to create a <code>FeatureGroup</code> in or delete a <code>FeatureGroup</code> from the <code>OfflineStore</code>.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
@@ -11562,11 +12105,13 @@ impl std::fmt::Debug for FeatureGroup {
         formatter.field("event_time_feature_name", &self.event_time_feature_name);
         formatter.field("feature_definitions", &self.feature_definitions);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("online_store_config", &self.online_store_config);
         formatter.field("offline_store_config", &self.offline_store_config);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("feature_group_status", &self.feature_group_status);
         formatter.field("offline_store_status", &self.offline_store_status);
+        formatter.field("last_update_status", &self.last_update_status);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("description", &self.description);
         formatter.field("tags", &self.tags);
@@ -11586,11 +12131,13 @@ pub mod feature_group {
         pub(crate) feature_definitions:
             std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) online_store_config: std::option::Option<crate::model::OnlineStoreConfig>,
         pub(crate) offline_store_config: std::option::Option<crate::model::OfflineStoreConfig>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) feature_group_status: std::option::Option<crate::model::FeatureGroupStatus>,
         pub(crate) offline_store_status: std::option::Option<crate::model::OfflineStoreStatus>,
+        pub(crate) last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11691,6 +12238,19 @@ pub mod feature_group {
             self.creation_time = input;
             self
         }
+        /// <p>A timestamp indicating the last time you updated the feature group.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>A timestamp indicating the last time you updated the feature group.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
         /// <p>Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or <code>KMSKeyId</code>, for at rest data encryption. You can turn <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag at General Assembly; the default value is <code>False</code>.</p>
         pub fn online_store_config(mut self, input: crate::model::OnlineStoreConfig) -> Self {
             self.online_store_config = Some(input);
@@ -11757,6 +12317,19 @@ pub mod feature_group {
             self.offline_store_status = input;
             self
         }
+        /// <p>A value that indicates whether the feature group was updated successfully.</p>
+        pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
+            self.last_update_status = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the feature group was updated successfully.</p>
+        pub fn set_last_update_status(
+            mut self,
+            input: std::option::Option<crate::model::LastUpdateStatus>,
+        ) -> Self {
+            self.last_update_status = input;
+            self
+        }
         /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure may be due to a failure to create a <code>FeatureGroup</code> in or delete a <code>FeatureGroup</code> from the <code>OfflineStore</code>.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_reason = Some(input.into());
@@ -11808,11 +12381,13 @@ pub mod feature_group {
                 event_time_feature_name: self.event_time_feature_name,
                 feature_definitions: self.feature_definitions,
                 creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
                 online_store_config: self.online_store_config,
                 offline_store_config: self.offline_store_config,
                 role_arn: self.role_arn,
                 feature_group_status: self.feature_group_status,
                 offline_store_status: self.offline_store_status,
+                last_update_status: self.last_update_status,
                 failure_reason: self.failure_reason,
                 description: self.description,
                 tags: self.tags,
@@ -11824,6 +12399,144 @@ impl FeatureGroup {
     /// Creates a new builder-style object to manufacture [`FeatureGroup`](crate::model::FeatureGroup).
     pub fn builder() -> crate::model::feature_group::Builder {
         crate::model::feature_group::Builder::default()
+    }
+}
+
+/// <p>A value that indicates whether the update was successful.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LastUpdateStatus {
+    /// <p>A value that indicates whether the update was made successful.</p>
+    pub status: std::option::Option<crate::model::LastUpdateStatusValue>,
+    /// <p>If the update wasn't successful, indicates the reason why it failed.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl LastUpdateStatus {
+    /// <p>A value that indicates whether the update was made successful.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LastUpdateStatusValue> {
+        self.status.as_ref()
+    }
+    /// <p>If the update wasn't successful, indicates the reason why it failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
+impl std::fmt::Debug for LastUpdateStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LastUpdateStatus");
+        formatter.field("status", &self.status);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.finish()
+    }
+}
+/// See [`LastUpdateStatus`](crate::model::LastUpdateStatus).
+pub mod last_update_status {
+
+    /// A builder for [`LastUpdateStatus`](crate::model::LastUpdateStatus).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::LastUpdateStatusValue>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A value that indicates whether the update was made successful.</p>
+        pub fn status(mut self, input: crate::model::LastUpdateStatusValue) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the update was made successful.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::LastUpdateStatusValue>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>If the update wasn't successful, indicates the reason why it failed.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>If the update wasn't successful, indicates the reason why it failed.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LastUpdateStatus`](crate::model::LastUpdateStatus).
+        pub fn build(self) -> crate::model::LastUpdateStatus {
+            crate::model::LastUpdateStatus {
+                status: self.status,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl LastUpdateStatus {
+    /// Creates a new builder-style object to manufacture [`LastUpdateStatus`](crate::model::LastUpdateStatus).
+    pub fn builder() -> crate::model::last_update_status::Builder {
+        crate::model::last_update_status::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LastUpdateStatusValue {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Successful,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LastUpdateStatusValue {
+    fn from(s: &str) -> Self {
+        match s {
+            "Failed" => LastUpdateStatusValue::Failed,
+            "InProgress" => LastUpdateStatusValue::InProgress,
+            "Successful" => LastUpdateStatusValue::Successful,
+            other => LastUpdateStatusValue::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LastUpdateStatusValue {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LastUpdateStatusValue::from(s))
+    }
+}
+impl LastUpdateStatusValue {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LastUpdateStatusValue::Failed => "Failed",
+            LastUpdateStatusValue::InProgress => "InProgress",
+            LastUpdateStatusValue::Successful => "Successful",
+            LastUpdateStatusValue::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Failed", "InProgress", "Successful"]
+    }
+}
+impl AsRef<str> for LastUpdateStatusValue {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -12551,141 +13264,6 @@ impl OnlineStoreSecurityConfig {
     /// Creates a new builder-style object to manufacture [`OnlineStoreSecurityConfig`](crate::model::OnlineStoreSecurityConfig).
     pub fn builder() -> crate::model::online_store_security_config::Builder {
         crate::model::online_store_security_config::Builder::default()
-    }
-}
-
-/// <p>A list of features. You must include <code>FeatureName</code> and <code>FeatureType</code>. Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FeatureDefinition {
-    /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
-    pub feature_name: std::option::Option<std::string::String>,
-    /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
-    pub feature_type: std::option::Option<crate::model::FeatureType>,
-}
-impl FeatureDefinition {
-    /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
-    pub fn feature_name(&self) -> std::option::Option<&str> {
-        self.feature_name.as_deref()
-    }
-    /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
-    pub fn feature_type(&self) -> std::option::Option<&crate::model::FeatureType> {
-        self.feature_type.as_ref()
-    }
-}
-impl std::fmt::Debug for FeatureDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeatureDefinition");
-        formatter.field("feature_name", &self.feature_name);
-        formatter.field("feature_type", &self.feature_type);
-        formatter.finish()
-    }
-}
-/// See [`FeatureDefinition`](crate::model::FeatureDefinition).
-pub mod feature_definition {
-
-    /// A builder for [`FeatureDefinition`](crate::model::FeatureDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) feature_name: std::option::Option<std::string::String>,
-        pub(crate) feature_type: std::option::Option<crate::model::FeatureType>,
-    }
-    impl Builder {
-        /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
-        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.feature_name = Some(input.into());
-            self
-        }
-        /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
-        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.feature_name = input;
-            self
-        }
-        /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
-        pub fn feature_type(mut self, input: crate::model::FeatureType) -> Self {
-            self.feature_type = Some(input);
-            self
-        }
-        /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
-        pub fn set_feature_type(
-            mut self,
-            input: std::option::Option<crate::model::FeatureType>,
-        ) -> Self {
-            self.feature_type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`FeatureDefinition`](crate::model::FeatureDefinition).
-        pub fn build(self) -> crate::model::FeatureDefinition {
-            crate::model::FeatureDefinition {
-                feature_name: self.feature_name,
-                feature_type: self.feature_type,
-            }
-        }
-    }
-}
-impl FeatureDefinition {
-    /// Creates a new builder-style object to manufacture [`FeatureDefinition`](crate::model::FeatureDefinition).
-    pub fn builder() -> crate::model::feature_definition::Builder {
-        crate::model::feature_definition::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum FeatureType {
-    #[allow(missing_docs)] // documentation missing in model
-    Fractional,
-    #[allow(missing_docs)] // documentation missing in model
-    Integral,
-    #[allow(missing_docs)] // documentation missing in model
-    String,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for FeatureType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Fractional" => FeatureType::Fractional,
-            "Integral" => FeatureType::Integral,
-            "String" => FeatureType::String,
-            other => FeatureType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for FeatureType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FeatureType::from(s))
-    }
-}
-impl FeatureType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FeatureType::Fractional => "Fractional",
-            FeatureType::Integral => "Integral",
-            FeatureType::String => "String",
-            FeatureType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Fractional", "Integral", "String"]
-    }
-}
-impl AsRef<str> for FeatureType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -14742,17 +15320,17 @@ impl DriftCheckBaselines {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DriftCheckModelDataQuality {
-    /// <p></p>
+    /// <p>The drift check model data quality statistics.</p>
     pub statistics: std::option::Option<crate::model::MetricsSource>,
-    /// <p></p>
+    /// <p>The drift check model data quality constraints.</p>
     pub constraints: std::option::Option<crate::model::MetricsSource>,
 }
 impl DriftCheckModelDataQuality {
-    /// <p></p>
+    /// <p>The drift check model data quality statistics.</p>
     pub fn statistics(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.statistics.as_ref()
     }
-    /// <p></p>
+    /// <p>The drift check model data quality constraints.</p>
     pub fn constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.constraints.as_ref()
     }
@@ -14775,12 +15353,12 @@ pub mod drift_check_model_data_quality {
         pub(crate) constraints: std::option::Option<crate::model::MetricsSource>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The drift check model data quality statistics.</p>
         pub fn statistics(mut self, input: crate::model::MetricsSource) -> Self {
             self.statistics = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The drift check model data quality statistics.</p>
         pub fn set_statistics(
             mut self,
             input: std::option::Option<crate::model::MetricsSource>,
@@ -14788,12 +15366,12 @@ pub mod drift_check_model_data_quality {
             self.statistics = input;
             self
         }
-        /// <p></p>
+        /// <p>The drift check model data quality constraints.</p>
         pub fn constraints(mut self, input: crate::model::MetricsSource) -> Self {
             self.constraints = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The drift check model data quality constraints.</p>
         pub fn set_constraints(
             mut self,
             input: std::option::Option<crate::model::MetricsSource>,
@@ -14817,27 +15395,27 @@ impl DriftCheckModelDataQuality {
     }
 }
 
-/// <p></p>
+/// <p>Details about the metrics source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricsSource {
-    /// <p></p>
+    /// <p>The metric source content type.</p>
     pub content_type: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The hash key used for the metrics source.</p>
     pub content_digest: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The S3 URI for the metrics source.</p>
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl MetricsSource {
-    /// <p></p>
+    /// <p>The metric source content type.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p></p>
+    /// <p>The hash key used for the metrics source.</p>
     pub fn content_digest(&self) -> std::option::Option<&str> {
         self.content_digest.as_deref()
     }
-    /// <p></p>
+    /// <p>The S3 URI for the metrics source.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -14862,22 +15440,22 @@ pub mod metrics_source {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The metric source content type.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The metric source content type.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
         }
-        /// <p></p>
+        /// <p>The hash key used for the metrics source.</p>
         pub fn content_digest(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_digest = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The hash key used for the metrics source.</p>
         pub fn set_content_digest(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14885,12 +15463,12 @@ pub mod metrics_source {
             self.content_digest = input;
             self
         }
-        /// <p></p>
+        /// <p>The S3 URI for the metrics source.</p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>The S3 URI for the metrics source.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -14916,17 +15494,17 @@ impl MetricsSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DriftCheckModelQuality {
-    /// <p></p>
+    /// <p>The drift check model quality statistics.</p>
     pub statistics: std::option::Option<crate::model::MetricsSource>,
-    /// <p></p>
+    /// <p>The drift check model quality constraints.</p>
     pub constraints: std::option::Option<crate::model::MetricsSource>,
 }
 impl DriftCheckModelQuality {
-    /// <p></p>
+    /// <p>The drift check model quality statistics.</p>
     pub fn statistics(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.statistics.as_ref()
     }
-    /// <p></p>
+    /// <p>The drift check model quality constraints.</p>
     pub fn constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.constraints.as_ref()
     }
@@ -14949,12 +15527,12 @@ pub mod drift_check_model_quality {
         pub(crate) constraints: std::option::Option<crate::model::MetricsSource>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The drift check model quality statistics.</p>
         pub fn statistics(mut self, input: crate::model::MetricsSource) -> Self {
             self.statistics = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The drift check model quality statistics.</p>
         pub fn set_statistics(
             mut self,
             input: std::option::Option<crate::model::MetricsSource>,
@@ -14962,12 +15540,12 @@ pub mod drift_check_model_quality {
             self.statistics = input;
             self
         }
-        /// <p></p>
+        /// <p>The drift check model quality constraints.</p>
         pub fn constraints(mut self, input: crate::model::MetricsSource) -> Self {
             self.constraints = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The drift check model quality constraints.</p>
         pub fn set_constraints(
             mut self,
             input: std::option::Option<crate::model::MetricsSource>,
@@ -14995,13 +15573,13 @@ impl DriftCheckModelQuality {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DriftCheckExplainability {
-    /// <p></p>
+    /// <p>The drift check explainability constraints.</p>
     pub constraints: std::option::Option<crate::model::MetricsSource>,
     /// <p>The explainability config file for the model.</p>
     pub config_file: std::option::Option<crate::model::FileSource>,
 }
 impl DriftCheckExplainability {
-    /// <p></p>
+    /// <p>The drift check explainability constraints.</p>
     pub fn constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.constraints.as_ref()
     }
@@ -15028,12 +15606,12 @@ pub mod drift_check_explainability {
         pub(crate) config_file: std::option::Option<crate::model::FileSource>,
     }
     impl Builder {
-        /// <p></p>
+        /// <p>The drift check explainability constraints.</p>
         pub fn constraints(mut self, input: crate::model::MetricsSource) -> Self {
             self.constraints = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The drift check explainability constraints.</p>
         pub fn set_constraints(
             mut self,
             input: std::option::Option<crate::model::MetricsSource>,
@@ -15171,9 +15749,9 @@ impl FileSource {
 pub struct DriftCheckBias {
     /// <p>The bias config file for a model.</p>
     pub config_file: std::option::Option<crate::model::FileSource>,
-    /// <p></p>
+    /// <p>The pre-training constraints.</p>
     pub pre_training_constraints: std::option::Option<crate::model::MetricsSource>,
-    /// <p></p>
+    /// <p>The post-training constraints.</p>
     pub post_training_constraints: std::option::Option<crate::model::MetricsSource>,
 }
 impl DriftCheckBias {
@@ -15181,11 +15759,11 @@ impl DriftCheckBias {
     pub fn config_file(&self) -> std::option::Option<&crate::model::FileSource> {
         self.config_file.as_ref()
     }
-    /// <p></p>
+    /// <p>The pre-training constraints.</p>
     pub fn pre_training_constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.pre_training_constraints.as_ref()
     }
-    /// <p></p>
+    /// <p>The post-training constraints.</p>
     pub fn post_training_constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.post_training_constraints.as_ref()
     }
@@ -15223,12 +15801,12 @@ pub mod drift_check_bias {
             self.config_file = input;
             self
         }
-        /// <p></p>
+        /// <p>The pre-training constraints.</p>
         pub fn pre_training_constraints(mut self, input: crate::model::MetricsSource) -> Self {
             self.pre_training_constraints = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The pre-training constraints.</p>
         pub fn set_pre_training_constraints(
             mut self,
             input: std::option::Option<crate::model::MetricsSource>,
@@ -15236,12 +15814,12 @@ pub mod drift_check_bias {
             self.pre_training_constraints = input;
             self
         }
-        /// <p></p>
+        /// <p>The post-training constraints.</p>
         pub fn post_training_constraints(mut self, input: crate::model::MetricsSource) -> Self {
             self.post_training_constraints = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The post-training constraints.</p>
         pub fn set_post_training_constraints(
             mut self,
             input: std::option::Option<crate::model::MetricsSource>,
@@ -15449,9 +16027,9 @@ impl Explainability {
 pub struct Bias {
     /// <p>The bias report for a model</p>
     pub report: std::option::Option<crate::model::MetricsSource>,
-    /// <p></p>
+    /// <p>The pre-training bias report for a model.</p>
     pub pre_training_report: std::option::Option<crate::model::MetricsSource>,
-    /// <p></p>
+    /// <p>The post-training bias report for a model.</p>
     pub post_training_report: std::option::Option<crate::model::MetricsSource>,
 }
 impl Bias {
@@ -15459,11 +16037,11 @@ impl Bias {
     pub fn report(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.report.as_ref()
     }
-    /// <p></p>
+    /// <p>The pre-training bias report for a model.</p>
     pub fn pre_training_report(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.pre_training_report.as_ref()
     }
-    /// <p></p>
+    /// <p>The post-training bias report for a model.</p>
     pub fn post_training_report(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.post_training_report.as_ref()
     }
@@ -15501,12 +16079,12 @@ pub mod bias {
             self.report = input;
             self
         }
-        /// <p></p>
+        /// <p>The pre-training bias report for a model.</p>
         pub fn pre_training_report(mut self, input: crate::model::MetricsSource) -> Self {
             self.pre_training_report = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The pre-training bias report for a model.</p>
         pub fn set_pre_training_report(
             mut self,
             input: std::option::Option<crate::model::MetricsSource>,
@@ -15514,12 +16092,12 @@ pub mod bias {
             self.pre_training_report = input;
             self
         }
-        /// <p></p>
+        /// <p>The post-training bias report for a model.</p>
         pub fn post_training_report(mut self, input: crate::model::MetricsSource) -> Self {
             self.post_training_report = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The post-training bias report for a model.</p>
         pub fn set_post_training_report(
             mut self,
             input: std::option::Option<crate::model::MetricsSource>,
@@ -27117,6 +27695,8 @@ pub struct ResourceConfig {
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
+    pub instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
 }
 impl ResourceConfig {
     /// <p>The ML compute instance type. </p>
@@ -27151,6 +27731,10 @@ impl ResourceConfig {
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
+    /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
+    pub fn instance_groups(&self) -> std::option::Option<&[crate::model::InstanceGroup]> {
+        self.instance_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27159,6 +27743,7 @@ impl std::fmt::Debug for ResourceConfig {
         formatter.field("instance_count", &self.instance_count);
         formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
         formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+        formatter.field("instance_groups", &self.instance_groups);
         formatter.finish()
     }
 }
@@ -27172,6 +27757,7 @@ pub mod resource_config {
         pub(crate) instance_count: std::option::Option<i32>,
         pub(crate) volume_size_in_gb: std::option::Option<i32>,
         pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
     }
     impl Builder {
         /// <p>The ML compute instance type. </p>
@@ -27252,6 +27838,25 @@ pub mod resource_config {
             self.volume_kms_key_id = input;
             self
         }
+        /// Appends an item to `instance_groups`.
+        ///
+        /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
+        ///
+        /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroup) -> Self {
+            let mut v = self.instance_groups.unwrap_or_default();
+            v.push(input);
+            self.instance_groups = Some(v);
+            self
+        }
+        /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
+        pub fn set_instance_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceGroup>>,
+        ) -> Self {
+            self.instance_groups = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceConfig`](crate::model::ResourceConfig).
         pub fn build(self) -> crate::model::ResourceConfig {
             crate::model::ResourceConfig {
@@ -27259,6 +27864,7 @@ pub mod resource_config {
                 instance_count: self.instance_count.unwrap_or_default(),
                 volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
                 volume_kms_key_id: self.volume_kms_key_id,
+                instance_groups: self.instance_groups,
             }
         }
     }
@@ -27267,6 +27873,104 @@ impl ResourceConfig {
     /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::model::ResourceConfig).
     pub fn builder() -> crate::model::resource_config::Builder {
         crate::model::resource_config::Builder::default()
+    }
+}
+
+/// <p>Defines an instance group for heterogeneous cluster training. When requesting a training job using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API, you can configure multiple instance groups .</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceGroup {
+    /// <p>Specifies the instance type of the instance group.</p>
+    pub instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+    /// <p>Specifies the number of instances of the instance group.</p>
+    pub instance_count: i32,
+    /// <p>Specifies the name of the instance group.</p>
+    pub instance_group_name: std::option::Option<std::string::String>,
+}
+impl InstanceGroup {
+    /// <p>Specifies the instance type of the instance group.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::TrainingInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>Specifies the number of instances of the instance group.</p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
+    /// <p>Specifies the name of the instance group.</p>
+    pub fn instance_group_name(&self) -> std::option::Option<&str> {
+        self.instance_group_name.as_deref()
+    }
+}
+impl std::fmt::Debug for InstanceGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceGroup");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("instance_group_name", &self.instance_group_name);
+        formatter.finish()
+    }
+}
+/// See [`InstanceGroup`](crate::model::InstanceGroup).
+pub mod instance_group {
+
+    /// A builder for [`InstanceGroup`](crate::model::InstanceGroup).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::TrainingInstanceType>,
+        pub(crate) instance_count: std::option::Option<i32>,
+        pub(crate) instance_group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the instance type of the instance group.</p>
+        pub fn instance_type(mut self, input: crate::model::TrainingInstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>Specifies the instance type of the instance group.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::TrainingInstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>Specifies the number of instances of the instance group.</p>
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.instance_count = Some(input);
+            self
+        }
+        /// <p>Specifies the number of instances of the instance group.</p>
+        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_count = input;
+            self
+        }
+        /// <p>Specifies the name of the instance group.</p>
+        pub fn instance_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_group_name = Some(input.into());
+            self
+        }
+        /// <p>Specifies the name of the instance group.</p>
+        pub fn set_instance_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceGroup`](crate::model::InstanceGroup).
+        pub fn build(self) -> crate::model::InstanceGroup {
+            crate::model::InstanceGroup {
+                instance_type: self.instance_type,
+                instance_count: self.instance_count.unwrap_or_default(),
+                instance_group_name: self.instance_group_name,
+            }
+        }
+    }
+}
+impl InstanceGroup {
+    /// Creates a new builder-style object to manufacture [`InstanceGroup`](crate::model::InstanceGroup).
+    pub fn builder() -> crate::model::instance_group::Builder {
+        crate::model::instance_group::Builder::default()
     }
 }
 
@@ -28408,6 +29112,8 @@ pub struct S3DataSource {
     pub s3_data_distribution_type: std::option::Option<crate::model::S3DataDistribution>,
     /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of names of instance groups that get data from the S3 data source.</p>
+    pub instance_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl S3DataSource {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
@@ -28437,6 +29143,10 @@ impl S3DataSource {
     pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.attribute_names.as_deref()
     }
+    /// <p>A list of names of instance groups that get data from the S3 data source.</p>
+    pub fn instance_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_group_names.as_deref()
+    }
 }
 impl std::fmt::Debug for S3DataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28445,6 +29155,7 @@ impl std::fmt::Debug for S3DataSource {
         formatter.field("s3_uri", &self.s3_uri);
         formatter.field("s3_data_distribution_type", &self.s3_data_distribution_type);
         formatter.field("attribute_names", &self.attribute_names);
+        formatter.field("instance_group_names", &self.instance_group_names);
         formatter.finish()
     }
 }
@@ -28458,6 +29169,7 @@ pub mod s3_data_source {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) s3_data_distribution_type: std::option::Option<crate::model::S3DataDistribution>,
         pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) instance_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
@@ -28536,6 +29248,25 @@ pub mod s3_data_source {
             self.attribute_names = input;
             self
         }
+        /// Appends an item to `instance_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_instance_group_names`](Self::set_instance_group_names).
+        ///
+        /// <p>A list of names of instance groups that get data from the S3 data source.</p>
+        pub fn instance_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.instance_group_names.unwrap_or_default();
+            v.push(input.into());
+            self.instance_group_names = Some(v);
+            self
+        }
+        /// <p>A list of names of instance groups that get data from the S3 data source.</p>
+        pub fn set_instance_group_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.instance_group_names = input;
+            self
+        }
         /// Consumes the builder and constructs a [`S3DataSource`](crate::model::S3DataSource).
         pub fn build(self) -> crate::model::S3DataSource {
             crate::model::S3DataSource {
@@ -28543,6 +29274,7 @@ pub mod s3_data_source {
                 s3_uri: self.s3_uri,
                 s3_data_distribution_type: self.s3_data_distribution_type,
                 attribute_names: self.attribute_names,
+                instance_group_names: self.instance_group_names,
             }
         }
     }
@@ -31115,6 +31847,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     FeatureGroup,
     #[allow(missing_docs)] // documentation missing in model
+    FeatureMetadata,
+    #[allow(missing_docs)] // documentation missing in model
     ModelPackage,
     #[allow(missing_docs)] // documentation missing in model
     ModelPackageGroup,
@@ -31137,6 +31871,7 @@ impl std::convert::From<&str> for ResourceType {
             "ExperimentTrial" => ResourceType::ExperimentTrial,
             "ExperimentTrialComponent" => ResourceType::ExperimentTrialComponent,
             "FeatureGroup" => ResourceType::FeatureGroup,
+            "FeatureMetadata" => ResourceType::FeatureMetadata,
             "ModelPackage" => ResourceType::ModelPackage,
             "ModelPackageGroup" => ResourceType::ModelPackageGroup,
             "Pipeline" => ResourceType::Pipeline,
@@ -31163,6 +31898,7 @@ impl ResourceType {
             ResourceType::ExperimentTrial => "ExperimentTrial",
             ResourceType::ExperimentTrialComponent => "ExperimentTrialComponent",
             ResourceType::FeatureGroup => "FeatureGroup",
+            ResourceType::FeatureMetadata => "FeatureMetadata",
             ResourceType::ModelPackage => "ModelPackage",
             ResourceType::ModelPackageGroup => "ModelPackageGroup",
             ResourceType::Pipeline => "Pipeline",
@@ -31180,6 +31916,7 @@ impl ResourceType {
             "ExperimentTrial",
             "ExperimentTrialComponent",
             "FeatureGroup",
+            "FeatureMetadata",
             "ModelPackage",
             "ModelPackageGroup",
             "Pipeline",
@@ -34457,6 +35194,361 @@ impl StudioLifecycleConfigSortKey {
     }
 }
 impl AsRef<str> for StudioLifecycleConfigSortKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains information summarizing device details and deployment status.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeviceDeploymentSummary {
+    /// <p>The ARN of the edge deployment plan.</p>
+    pub edge_deployment_plan_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the edge deployment plan.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>The name of the stage in the edge deployment plan.</p>
+    pub stage_name: std::option::Option<std::string::String>,
+    /// <p>The name of the deployed stage.</p>
+    pub deployed_stage_name: std::option::Option<std::string::String>,
+    /// <p>The name of the fleet to which the device belongs to.</p>
+    pub device_fleet_name: std::option::Option<std::string::String>,
+    /// <p>The name of the device.</p>
+    pub device_name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the device.</p>
+    pub device_arn: std::option::Option<std::string::String>,
+    /// <p>The deployment status of the device.</p>
+    pub device_deployment_status: std::option::Option<crate::model::DeviceDeploymentStatus>,
+    /// <p>The detailed error message for the deployoment status result.</p>
+    pub device_deployment_status_message: std::option::Option<std::string::String>,
+    /// <p>The description of the device.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The time when the deployment on the device started.</p>
+    pub deployment_start_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DeviceDeploymentSummary {
+    /// <p>The ARN of the edge deployment plan.</p>
+    pub fn edge_deployment_plan_arn(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_arn.as_deref()
+    }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>The name of the stage in the edge deployment plan.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>The name of the deployed stage.</p>
+    pub fn deployed_stage_name(&self) -> std::option::Option<&str> {
+        self.deployed_stage_name.as_deref()
+    }
+    /// <p>The name of the fleet to which the device belongs to.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>The name of the device.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The ARN of the device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The deployment status of the device.</p>
+    pub fn device_deployment_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceDeploymentStatus> {
+        self.device_deployment_status.as_ref()
+    }
+    /// <p>The detailed error message for the deployoment status result.</p>
+    pub fn device_deployment_status_message(&self) -> std::option::Option<&str> {
+        self.device_deployment_status_message.as_deref()
+    }
+    /// <p>The description of the device.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time when the deployment on the device started.</p>
+    pub fn deployment_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.deployment_start_time.as_ref()
+    }
+}
+impl std::fmt::Debug for DeviceDeploymentSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeviceDeploymentSummary");
+        formatter.field("edge_deployment_plan_arn", &self.edge_deployment_plan_arn);
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field("stage_name", &self.stage_name);
+        formatter.field("deployed_stage_name", &self.deployed_stage_name);
+        formatter.field("device_fleet_name", &self.device_fleet_name);
+        formatter.field("device_name", &self.device_name);
+        formatter.field("device_arn", &self.device_arn);
+        formatter.field("device_deployment_status", &self.device_deployment_status);
+        formatter.field(
+            "device_deployment_status_message",
+            &self.device_deployment_status_message,
+        );
+        formatter.field("description", &self.description);
+        formatter.field("deployment_start_time", &self.deployment_start_time);
+        formatter.finish()
+    }
+}
+/// See [`DeviceDeploymentSummary`](crate::model::DeviceDeploymentSummary).
+pub mod device_deployment_summary {
+
+    /// A builder for [`DeviceDeploymentSummary`](crate::model::DeviceDeploymentSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_arn: std::option::Option<std::string::String>,
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) deployed_stage_name: std::option::Option<std::string::String>,
+        pub(crate) device_fleet_name: std::option::Option<std::string::String>,
+        pub(crate) device_name: std::option::Option<std::string::String>,
+        pub(crate) device_arn: std::option::Option<std::string::String>,
+        pub(crate) device_deployment_status:
+            std::option::Option<crate::model::DeviceDeploymentStatus>,
+        pub(crate) device_deployment_status_message: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) deployment_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ARN of the edge deployment plan.</p>
+        pub fn edge_deployment_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_arn = input;
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// <p>The name of the stage in the edge deployment plan.</p>
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stage in the edge deployment plan.</p>
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
+            self
+        }
+        /// <p>The name of the deployed stage.</p>
+        pub fn deployed_stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployed_stage_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the deployed stage.</p>
+        pub fn set_deployed_stage_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployed_stage_name = input;
+            self
+        }
+        /// <p>The name of the fleet to which the device belongs to.</p>
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_fleet_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the fleet to which the device belongs to.</p>
+        pub fn set_device_fleet_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.device_fleet_name = input;
+            self
+        }
+        /// <p>The name of the device.</p>
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the device.</p>
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_name = input;
+            self
+        }
+        /// <p>The ARN of the device.</p>
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the device.</p>
+        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_arn = input;
+            self
+        }
+        /// <p>The deployment status of the device.</p>
+        pub fn device_deployment_status(
+            mut self,
+            input: crate::model::DeviceDeploymentStatus,
+        ) -> Self {
+            self.device_deployment_status = Some(input);
+            self
+        }
+        /// <p>The deployment status of the device.</p>
+        pub fn set_device_deployment_status(
+            mut self,
+            input: std::option::Option<crate::model::DeviceDeploymentStatus>,
+        ) -> Self {
+            self.device_deployment_status = input;
+            self
+        }
+        /// <p>The detailed error message for the deployoment status result.</p>
+        pub fn device_deployment_status_message(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.device_deployment_status_message = Some(input.into());
+            self
+        }
+        /// <p>The detailed error message for the deployoment status result.</p>
+        pub fn set_device_deployment_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.device_deployment_status_message = input;
+            self
+        }
+        /// <p>The description of the device.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the device.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The time when the deployment on the device started.</p>
+        pub fn deployment_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.deployment_start_time = Some(input);
+            self
+        }
+        /// <p>The time when the deployment on the device started.</p>
+        pub fn set_deployment_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.deployment_start_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeviceDeploymentSummary`](crate::model::DeviceDeploymentSummary).
+        pub fn build(self) -> crate::model::DeviceDeploymentSummary {
+            crate::model::DeviceDeploymentSummary {
+                edge_deployment_plan_arn: self.edge_deployment_plan_arn,
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                stage_name: self.stage_name,
+                deployed_stage_name: self.deployed_stage_name,
+                device_fleet_name: self.device_fleet_name,
+                device_name: self.device_name,
+                device_arn: self.device_arn,
+                device_deployment_status: self.device_deployment_status,
+                device_deployment_status_message: self.device_deployment_status_message,
+                description: self.description,
+                deployment_start_time: self.deployment_start_time,
+            }
+        }
+    }
+}
+impl DeviceDeploymentSummary {
+    /// Creates a new builder-style object to manufacture [`DeviceDeploymentSummary`](crate::model::DeviceDeploymentSummary).
+    pub fn builder() -> crate::model::device_deployment_summary::Builder {
+        crate::model::device_deployment_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeviceDeploymentStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Deployed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    ReadyToDeploy,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DeviceDeploymentStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEPLOYED" => DeviceDeploymentStatus::Deployed,
+            "FAILED" => DeviceDeploymentStatus::Failed,
+            "INPROGRESS" => DeviceDeploymentStatus::InProgress,
+            "READYTODEPLOY" => DeviceDeploymentStatus::ReadyToDeploy,
+            "STOPPED" => DeviceDeploymentStatus::Stopped,
+            "STOPPING" => DeviceDeploymentStatus::Stopping,
+            other => DeviceDeploymentStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DeviceDeploymentStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeviceDeploymentStatus::from(s))
+    }
+}
+impl DeviceDeploymentStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeviceDeploymentStatus::Deployed => "DEPLOYED",
+            DeviceDeploymentStatus::Failed => "FAILED",
+            DeviceDeploymentStatus::InProgress => "INPROGRESS",
+            DeviceDeploymentStatus::ReadyToDeploy => "READYTODEPLOY",
+            DeviceDeploymentStatus::Stopped => "STOPPED",
+            DeviceDeploymentStatus::Stopping => "STOPPING",
+            DeviceDeploymentStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DEPLOYED",
+            "FAILED",
+            "INPROGRESS",
+            "READYTODEPLOY",
+            "STOPPED",
+            "STOPPING",
+        ]
+    }
+}
+impl AsRef<str> for DeviceDeploymentStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -44956,6 +46048,276 @@ impl ListEdgePackagingJobsSortBy {
     }
 }
 impl AsRef<str> for ListEdgePackagingJobsSortBy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains information summarizing an edge deployment plan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EdgeDeploymentPlanSummary {
+    /// <p>The ARN of the edge deployment plan.</p>
+    pub edge_deployment_plan_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the edge deployment plan.</p>
+    pub edge_deployment_plan_name: std::option::Option<std::string::String>,
+    /// <p>The name of the device fleet used for the deployment. </p>
+    pub device_fleet_name: std::option::Option<std::string::String>,
+    /// <p>The number of edge devices with the successful deployment.</p>
+    pub edge_deployment_success: i32,
+    /// <p>The number of edge devices yet to pick up the deployment, or in progress.</p>
+    pub edge_deployment_pending: i32,
+    /// <p>The number of edge devices that failed the deployment.</p>
+    pub edge_deployment_failed: i32,
+    /// <p>The time when the edge deployment plan was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when the edge deployment plan was last updated.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl EdgeDeploymentPlanSummary {
+    /// <p>The ARN of the edge deployment plan.</p>
+    pub fn edge_deployment_plan_arn(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_arn.as_deref()
+    }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+        self.edge_deployment_plan_name.as_deref()
+    }
+    /// <p>The name of the device fleet used for the deployment. </p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>The number of edge devices with the successful deployment.</p>
+    pub fn edge_deployment_success(&self) -> i32 {
+        self.edge_deployment_success
+    }
+    /// <p>The number of edge devices yet to pick up the deployment, or in progress.</p>
+    pub fn edge_deployment_pending(&self) -> i32 {
+        self.edge_deployment_pending
+    }
+    /// <p>The number of edge devices that failed the deployment.</p>
+    pub fn edge_deployment_failed(&self) -> i32 {
+        self.edge_deployment_failed
+    }
+    /// <p>The time when the edge deployment plan was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time when the edge deployment plan was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+}
+impl std::fmt::Debug for EdgeDeploymentPlanSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EdgeDeploymentPlanSummary");
+        formatter.field("edge_deployment_plan_arn", &self.edge_deployment_plan_arn);
+        formatter.field("edge_deployment_plan_name", &self.edge_deployment_plan_name);
+        formatter.field("device_fleet_name", &self.device_fleet_name);
+        formatter.field("edge_deployment_success", &self.edge_deployment_success);
+        formatter.field("edge_deployment_pending", &self.edge_deployment_pending);
+        formatter.field("edge_deployment_failed", &self.edge_deployment_failed);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.finish()
+    }
+}
+/// See [`EdgeDeploymentPlanSummary`](crate::model::EdgeDeploymentPlanSummary).
+pub mod edge_deployment_plan_summary {
+
+    /// A builder for [`EdgeDeploymentPlanSummary`](crate::model::EdgeDeploymentPlanSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edge_deployment_plan_arn: std::option::Option<std::string::String>,
+        pub(crate) edge_deployment_plan_name: std::option::Option<std::string::String>,
+        pub(crate) device_fleet_name: std::option::Option<std::string::String>,
+        pub(crate) edge_deployment_success: std::option::Option<i32>,
+        pub(crate) edge_deployment_pending: std::option::Option<i32>,
+        pub(crate) edge_deployment_failed: std::option::Option<i32>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ARN of the edge deployment plan.</p>
+        pub fn edge_deployment_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_arn = input;
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_deployment_plan_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the edge deployment plan.</p>
+        pub fn set_edge_deployment_plan_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_plan_name = input;
+            self
+        }
+        /// <p>The name of the device fleet used for the deployment. </p>
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_fleet_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the device fleet used for the deployment. </p>
+        pub fn set_device_fleet_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.device_fleet_name = input;
+            self
+        }
+        /// <p>The number of edge devices with the successful deployment.</p>
+        pub fn edge_deployment_success(mut self, input: i32) -> Self {
+            self.edge_deployment_success = Some(input);
+            self
+        }
+        /// <p>The number of edge devices with the successful deployment.</p>
+        pub fn set_edge_deployment_success(mut self, input: std::option::Option<i32>) -> Self {
+            self.edge_deployment_success = input;
+            self
+        }
+        /// <p>The number of edge devices yet to pick up the deployment, or in progress.</p>
+        pub fn edge_deployment_pending(mut self, input: i32) -> Self {
+            self.edge_deployment_pending = Some(input);
+            self
+        }
+        /// <p>The number of edge devices yet to pick up the deployment, or in progress.</p>
+        pub fn set_edge_deployment_pending(mut self, input: std::option::Option<i32>) -> Self {
+            self.edge_deployment_pending = input;
+            self
+        }
+        /// <p>The number of edge devices that failed the deployment.</p>
+        pub fn edge_deployment_failed(mut self, input: i32) -> Self {
+            self.edge_deployment_failed = Some(input);
+            self
+        }
+        /// <p>The number of edge devices that failed the deployment.</p>
+        pub fn set_edge_deployment_failed(mut self, input: std::option::Option<i32>) -> Self {
+            self.edge_deployment_failed = input;
+            self
+        }
+        /// <p>The time when the edge deployment plan was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time when the edge deployment plan was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The time when the edge deployment plan was last updated.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The time when the edge deployment plan was last updated.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EdgeDeploymentPlanSummary`](crate::model::EdgeDeploymentPlanSummary).
+        pub fn build(self) -> crate::model::EdgeDeploymentPlanSummary {
+            crate::model::EdgeDeploymentPlanSummary {
+                edge_deployment_plan_arn: self.edge_deployment_plan_arn,
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                device_fleet_name: self.device_fleet_name,
+                edge_deployment_success: self.edge_deployment_success.unwrap_or_default(),
+                edge_deployment_pending: self.edge_deployment_pending.unwrap_or_default(),
+                edge_deployment_failed: self.edge_deployment_failed.unwrap_or_default(),
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl EdgeDeploymentPlanSummary {
+    /// Creates a new builder-style object to manufacture [`EdgeDeploymentPlanSummary`](crate::model::EdgeDeploymentPlanSummary).
+    pub fn builder() -> crate::model::edge_deployment_plan_summary::Builder {
+        crate::model::edge_deployment_plan_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListEdgeDeploymentPlansSortBy {
+    #[allow(missing_docs)] // documentation missing in model
+    CreationTime,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceFleetName,
+    #[allow(missing_docs)] // documentation missing in model
+    LastModifiedTime,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ListEdgeDeploymentPlansSortBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATION_TIME" => ListEdgeDeploymentPlansSortBy::CreationTime,
+            "DEVICE_FLEET_NAME" => ListEdgeDeploymentPlansSortBy::DeviceFleetName,
+            "LAST_MODIFIED_TIME" => ListEdgeDeploymentPlansSortBy::LastModifiedTime,
+            "NAME" => ListEdgeDeploymentPlansSortBy::Name,
+            other => ListEdgeDeploymentPlansSortBy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ListEdgeDeploymentPlansSortBy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListEdgeDeploymentPlansSortBy::from(s))
+    }
+}
+impl ListEdgeDeploymentPlansSortBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListEdgeDeploymentPlansSortBy::CreationTime => "CREATION_TIME",
+            ListEdgeDeploymentPlansSortBy::DeviceFleetName => "DEVICE_FLEET_NAME",
+            ListEdgeDeploymentPlansSortBy::LastModifiedTime => "LAST_MODIFIED_TIME",
+            ListEdgeDeploymentPlansSortBy::Name => "NAME",
+            ListEdgeDeploymentPlansSortBy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATION_TIME",
+            "DEVICE_FLEET_NAME",
+            "LAST_MODIFIED_TIME",
+            "NAME",
+        ]
+    }
+}
+impl AsRef<str> for ListEdgeDeploymentPlansSortBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -59838,7 +61200,7 @@ pub struct HyperParameterTrainingJobDefinition {
     /// <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
     pub tuning_objective: std::option::Option<crate::model::HyperParameterTuningJobObjective>,
     /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-    /// <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p>
+    /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
     /// </note>
     pub hyper_parameter_ranges: std::option::Option<crate::model::ParameterRanges>,
     /// <p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
@@ -59883,7 +61245,7 @@ impl HyperParameterTrainingJobDefinition {
         self.tuning_objective.as_ref()
     }
     /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-    /// <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p>
+    /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
     /// </note>
     pub fn hyper_parameter_ranges(&self) -> std::option::Option<&crate::model::ParameterRanges> {
         self.hyper_parameter_ranges.as_ref()
@@ -60033,14 +61395,14 @@ pub mod hyper_parameter_training_job_definition {
             self
         }
         /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-        /// <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p>
+        /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
         /// </note>
         pub fn hyper_parameter_ranges(mut self, input: crate::model::ParameterRanges) -> Self {
             self.hyper_parameter_ranges = Some(input);
             self
         }
         /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-        /// <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p>
+        /// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
         /// </note>
         pub fn set_hyper_parameter_ranges(
             mut self,
@@ -60434,7 +61796,7 @@ impl HyperParameterAlgorithmSpecification {
 }
 
 /// <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note>
-/// <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p>
+/// <p>The maximum number of items specified for <code>Array Members</code> refers to the maximum number of hyperparameters for each range and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of hyperparameters for all the ranges can't exceed the maximum number specified.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -64491,6 +65853,796 @@ impl EdgePresetDeploymentStatus {
 impl AsRef<str> for EdgePresetDeploymentStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Contains information summarizing the deployment stage results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeploymentStageStatusSummary {
+    /// <p>The name of the stage.</p>
+    pub stage_name: std::option::Option<std::string::String>,
+    /// <p>Configuration of the devices in the stage.</p>
+    pub device_selection_config: std::option::Option<crate::model::DeviceSelectionConfig>,
+    /// <p>Configuration of the deployment details.</p>
+    pub deployment_config: std::option::Option<crate::model::EdgeDeploymentConfig>,
+    /// <p>General status of the current state.</p>
+    pub deployment_status: std::option::Option<crate::model::EdgeDeploymentStatus>,
+}
+impl DeploymentStageStatusSummary {
+    /// <p>The name of the stage.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>Configuration of the devices in the stage.</p>
+    pub fn device_selection_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceSelectionConfig> {
+        self.device_selection_config.as_ref()
+    }
+    /// <p>Configuration of the deployment details.</p>
+    pub fn deployment_config(&self) -> std::option::Option<&crate::model::EdgeDeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
+    /// <p>General status of the current state.</p>
+    pub fn deployment_status(&self) -> std::option::Option<&crate::model::EdgeDeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+}
+impl std::fmt::Debug for DeploymentStageStatusSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeploymentStageStatusSummary");
+        formatter.field("stage_name", &self.stage_name);
+        formatter.field("device_selection_config", &self.device_selection_config);
+        formatter.field("deployment_config", &self.deployment_config);
+        formatter.field("deployment_status", &self.deployment_status);
+        formatter.finish()
+    }
+}
+/// See [`DeploymentStageStatusSummary`](crate::model::DeploymentStageStatusSummary).
+pub mod deployment_stage_status_summary {
+
+    /// A builder for [`DeploymentStageStatusSummary`](crate::model::DeploymentStageStatusSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) device_selection_config:
+            std::option::Option<crate::model::DeviceSelectionConfig>,
+        pub(crate) deployment_config: std::option::Option<crate::model::EdgeDeploymentConfig>,
+        pub(crate) deployment_status: std::option::Option<crate::model::EdgeDeploymentStatus>,
+    }
+    impl Builder {
+        /// <p>The name of the stage.</p>
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stage.</p>
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
+            self
+        }
+        /// <p>Configuration of the devices in the stage.</p>
+        pub fn device_selection_config(
+            mut self,
+            input: crate::model::DeviceSelectionConfig,
+        ) -> Self {
+            self.device_selection_config = Some(input);
+            self
+        }
+        /// <p>Configuration of the devices in the stage.</p>
+        pub fn set_device_selection_config(
+            mut self,
+            input: std::option::Option<crate::model::DeviceSelectionConfig>,
+        ) -> Self {
+            self.device_selection_config = input;
+            self
+        }
+        /// <p>Configuration of the deployment details.</p>
+        pub fn deployment_config(mut self, input: crate::model::EdgeDeploymentConfig) -> Self {
+            self.deployment_config = Some(input);
+            self
+        }
+        /// <p>Configuration of the deployment details.</p>
+        pub fn set_deployment_config(
+            mut self,
+            input: std::option::Option<crate::model::EdgeDeploymentConfig>,
+        ) -> Self {
+            self.deployment_config = input;
+            self
+        }
+        /// <p>General status of the current state.</p>
+        pub fn deployment_status(mut self, input: crate::model::EdgeDeploymentStatus) -> Self {
+            self.deployment_status = Some(input);
+            self
+        }
+        /// <p>General status of the current state.</p>
+        pub fn set_deployment_status(
+            mut self,
+            input: std::option::Option<crate::model::EdgeDeploymentStatus>,
+        ) -> Self {
+            self.deployment_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeploymentStageStatusSummary`](crate::model::DeploymentStageStatusSummary).
+        pub fn build(self) -> crate::model::DeploymentStageStatusSummary {
+            crate::model::DeploymentStageStatusSummary {
+                stage_name: self.stage_name,
+                device_selection_config: self.device_selection_config,
+                deployment_config: self.deployment_config,
+                deployment_status: self.deployment_status,
+            }
+        }
+    }
+}
+impl DeploymentStageStatusSummary {
+    /// Creates a new builder-style object to manufacture [`DeploymentStageStatusSummary`](crate::model::DeploymentStageStatusSummary).
+    pub fn builder() -> crate::model::deployment_stage_status_summary::Builder {
+        crate::model::deployment_stage_status_summary::Builder::default()
+    }
+}
+
+/// <p>Contains information summarizing the deployment stage results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EdgeDeploymentStatus {
+    /// <p>The general status of the current stage.</p>
+    pub stage_status: std::option::Option<crate::model::StageStatus>,
+    /// <p>The number of edge devices with the successful deployment in the current stage.</p>
+    pub edge_deployment_success_in_stage: i32,
+    /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
+    pub edge_deployment_pending_in_stage: i32,
+    /// <p>The number of edge devices that failed the deployment in current stage.</p>
+    pub edge_deployment_failed_in_stage: i32,
+    /// <p>A detailed message about deployment status in current stage.</p>
+    pub edge_deployment_status_message: std::option::Option<std::string::String>,
+    /// <p>The time when the deployment API started.</p>
+    pub edge_deployment_stage_start_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl EdgeDeploymentStatus {
+    /// <p>The general status of the current stage.</p>
+    pub fn stage_status(&self) -> std::option::Option<&crate::model::StageStatus> {
+        self.stage_status.as_ref()
+    }
+    /// <p>The number of edge devices with the successful deployment in the current stage.</p>
+    pub fn edge_deployment_success_in_stage(&self) -> i32 {
+        self.edge_deployment_success_in_stage
+    }
+    /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
+    pub fn edge_deployment_pending_in_stage(&self) -> i32 {
+        self.edge_deployment_pending_in_stage
+    }
+    /// <p>The number of edge devices that failed the deployment in current stage.</p>
+    pub fn edge_deployment_failed_in_stage(&self) -> i32 {
+        self.edge_deployment_failed_in_stage
+    }
+    /// <p>A detailed message about deployment status in current stage.</p>
+    pub fn edge_deployment_status_message(&self) -> std::option::Option<&str> {
+        self.edge_deployment_status_message.as_deref()
+    }
+    /// <p>The time when the deployment API started.</p>
+    pub fn edge_deployment_stage_start_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.edge_deployment_stage_start_time.as_ref()
+    }
+}
+impl std::fmt::Debug for EdgeDeploymentStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EdgeDeploymentStatus");
+        formatter.field("stage_status", &self.stage_status);
+        formatter.field(
+            "edge_deployment_success_in_stage",
+            &self.edge_deployment_success_in_stage,
+        );
+        formatter.field(
+            "edge_deployment_pending_in_stage",
+            &self.edge_deployment_pending_in_stage,
+        );
+        formatter.field(
+            "edge_deployment_failed_in_stage",
+            &self.edge_deployment_failed_in_stage,
+        );
+        formatter.field(
+            "edge_deployment_status_message",
+            &self.edge_deployment_status_message,
+        );
+        formatter.field(
+            "edge_deployment_stage_start_time",
+            &self.edge_deployment_stage_start_time,
+        );
+        formatter.finish()
+    }
+}
+/// See [`EdgeDeploymentStatus`](crate::model::EdgeDeploymentStatus).
+pub mod edge_deployment_status {
+
+    /// A builder for [`EdgeDeploymentStatus`](crate::model::EdgeDeploymentStatus).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stage_status: std::option::Option<crate::model::StageStatus>,
+        pub(crate) edge_deployment_success_in_stage: std::option::Option<i32>,
+        pub(crate) edge_deployment_pending_in_stage: std::option::Option<i32>,
+        pub(crate) edge_deployment_failed_in_stage: std::option::Option<i32>,
+        pub(crate) edge_deployment_status_message: std::option::Option<std::string::String>,
+        pub(crate) edge_deployment_stage_start_time:
+            std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The general status of the current stage.</p>
+        pub fn stage_status(mut self, input: crate::model::StageStatus) -> Self {
+            self.stage_status = Some(input);
+            self
+        }
+        /// <p>The general status of the current stage.</p>
+        pub fn set_stage_status(
+            mut self,
+            input: std::option::Option<crate::model::StageStatus>,
+        ) -> Self {
+            self.stage_status = input;
+            self
+        }
+        /// <p>The number of edge devices with the successful deployment in the current stage.</p>
+        pub fn edge_deployment_success_in_stage(mut self, input: i32) -> Self {
+            self.edge_deployment_success_in_stage = Some(input);
+            self
+        }
+        /// <p>The number of edge devices with the successful deployment in the current stage.</p>
+        pub fn set_edge_deployment_success_in_stage(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.edge_deployment_success_in_stage = input;
+            self
+        }
+        /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
+        pub fn edge_deployment_pending_in_stage(mut self, input: i32) -> Self {
+            self.edge_deployment_pending_in_stage = Some(input);
+            self
+        }
+        /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
+        pub fn set_edge_deployment_pending_in_stage(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.edge_deployment_pending_in_stage = input;
+            self
+        }
+        /// <p>The number of edge devices that failed the deployment in current stage.</p>
+        pub fn edge_deployment_failed_in_stage(mut self, input: i32) -> Self {
+            self.edge_deployment_failed_in_stage = Some(input);
+            self
+        }
+        /// <p>The number of edge devices that failed the deployment in current stage.</p>
+        pub fn set_edge_deployment_failed_in_stage(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.edge_deployment_failed_in_stage = input;
+            self
+        }
+        /// <p>A detailed message about deployment status in current stage.</p>
+        pub fn edge_deployment_status_message(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_status_message = Some(input.into());
+            self
+        }
+        /// <p>A detailed message about deployment status in current stage.</p>
+        pub fn set_edge_deployment_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_deployment_status_message = input;
+            self
+        }
+        /// <p>The time when the deployment API started.</p>
+        pub fn edge_deployment_stage_start_time(
+            mut self,
+            input: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.edge_deployment_stage_start_time = Some(input);
+            self
+        }
+        /// <p>The time when the deployment API started.</p>
+        pub fn set_edge_deployment_stage_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.edge_deployment_stage_start_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EdgeDeploymentStatus`](crate::model::EdgeDeploymentStatus).
+        pub fn build(self) -> crate::model::EdgeDeploymentStatus {
+            crate::model::EdgeDeploymentStatus {
+                stage_status: self.stage_status,
+                edge_deployment_success_in_stage: self
+                    .edge_deployment_success_in_stage
+                    .unwrap_or_default(),
+                edge_deployment_pending_in_stage: self
+                    .edge_deployment_pending_in_stage
+                    .unwrap_or_default(),
+                edge_deployment_failed_in_stage: self
+                    .edge_deployment_failed_in_stage
+                    .unwrap_or_default(),
+                edge_deployment_status_message: self.edge_deployment_status_message,
+                edge_deployment_stage_start_time: self.edge_deployment_stage_start_time,
+            }
+        }
+    }
+}
+impl EdgeDeploymentStatus {
+    /// Creates a new builder-style object to manufacture [`EdgeDeploymentStatus`](crate::model::EdgeDeploymentStatus).
+    pub fn builder() -> crate::model::edge_deployment_status::Builder {
+        crate::model::edge_deployment_status::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StageStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Deployed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    ReadyToDeploy,
+    #[allow(missing_docs)] // documentation missing in model
+    Starting,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StageStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATING" => StageStatus::Creating,
+            "DEPLOYED" => StageStatus::Deployed,
+            "FAILED" => StageStatus::Failed,
+            "INPROGRESS" => StageStatus::InProgress,
+            "READYTODEPLOY" => StageStatus::ReadyToDeploy,
+            "STARTING" => StageStatus::Starting,
+            "STOPPED" => StageStatus::Stopped,
+            "STOPPING" => StageStatus::Stopping,
+            other => StageStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StageStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StageStatus::from(s))
+    }
+}
+impl StageStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StageStatus::Creating => "CREATING",
+            StageStatus::Deployed => "DEPLOYED",
+            StageStatus::Failed => "FAILED",
+            StageStatus::InProgress => "INPROGRESS",
+            StageStatus::ReadyToDeploy => "READYTODEPLOY",
+            StageStatus::Starting => "STARTING",
+            StageStatus::Stopped => "STOPPED",
+            StageStatus::Stopping => "STOPPING",
+            StageStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATING",
+            "DEPLOYED",
+            "FAILED",
+            "INPROGRESS",
+            "READYTODEPLOY",
+            "STARTING",
+            "STOPPED",
+            "STOPPING",
+        ]
+    }
+}
+impl AsRef<str> for StageStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains information about the configuration of a deployment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EdgeDeploymentConfig {
+    /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
+    pub failure_handling_policy: std::option::Option<crate::model::FailureHandlingPolicy>,
+}
+impl EdgeDeploymentConfig {
+    /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
+    pub fn failure_handling_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::FailureHandlingPolicy> {
+        self.failure_handling_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for EdgeDeploymentConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EdgeDeploymentConfig");
+        formatter.field("failure_handling_policy", &self.failure_handling_policy);
+        formatter.finish()
+    }
+}
+/// See [`EdgeDeploymentConfig`](crate::model::EdgeDeploymentConfig).
+pub mod edge_deployment_config {
+
+    /// A builder for [`EdgeDeploymentConfig`](crate::model::EdgeDeploymentConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failure_handling_policy:
+            std::option::Option<crate::model::FailureHandlingPolicy>,
+    }
+    impl Builder {
+        /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
+        pub fn failure_handling_policy(
+            mut self,
+            input: crate::model::FailureHandlingPolicy,
+        ) -> Self {
+            self.failure_handling_policy = Some(input);
+            self
+        }
+        /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
+        pub fn set_failure_handling_policy(
+            mut self,
+            input: std::option::Option<crate::model::FailureHandlingPolicy>,
+        ) -> Self {
+            self.failure_handling_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EdgeDeploymentConfig`](crate::model::EdgeDeploymentConfig).
+        pub fn build(self) -> crate::model::EdgeDeploymentConfig {
+            crate::model::EdgeDeploymentConfig {
+                failure_handling_policy: self.failure_handling_policy,
+            }
+        }
+    }
+}
+impl EdgeDeploymentConfig {
+    /// Creates a new builder-style object to manufacture [`EdgeDeploymentConfig`](crate::model::EdgeDeploymentConfig).
+    pub fn builder() -> crate::model::edge_deployment_config::Builder {
+        crate::model::edge_deployment_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FailureHandlingPolicy {
+    #[allow(missing_docs)] // documentation missing in model
+    DoNothing,
+    #[allow(missing_docs)] // documentation missing in model
+    RollbackOnFailure,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FailureHandlingPolicy {
+    fn from(s: &str) -> Self {
+        match s {
+            "DO_NOTHING" => FailureHandlingPolicy::DoNothing,
+            "ROLLBACK_ON_FAILURE" => FailureHandlingPolicy::RollbackOnFailure,
+            other => FailureHandlingPolicy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FailureHandlingPolicy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FailureHandlingPolicy::from(s))
+    }
+}
+impl FailureHandlingPolicy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FailureHandlingPolicy::DoNothing => "DO_NOTHING",
+            FailureHandlingPolicy::RollbackOnFailure => "ROLLBACK_ON_FAILURE",
+            FailureHandlingPolicy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DO_NOTHING", "ROLLBACK_ON_FAILURE"]
+    }
+}
+impl AsRef<str> for FailureHandlingPolicy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains information about the configurations of selected devices.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeviceSelectionConfig {
+    /// <p>Type of device subsets to deploy to the current stage.</p>
+    pub device_subset_type: std::option::Option<crate::model::DeviceSubsetType>,
+    /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
+    pub percentage: i32,
+    /// <p>List of devices chosen to deploy.</p>
+    pub device_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A filter to select devices with names containing this name.</p>
+    pub device_name_contains: std::option::Option<std::string::String>,
+}
+impl DeviceSelectionConfig {
+    /// <p>Type of device subsets to deploy to the current stage.</p>
+    pub fn device_subset_type(&self) -> std::option::Option<&crate::model::DeviceSubsetType> {
+        self.device_subset_type.as_ref()
+    }
+    /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
+    pub fn percentage(&self) -> i32 {
+        self.percentage
+    }
+    /// <p>List of devices chosen to deploy.</p>
+    pub fn device_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_names.as_deref()
+    }
+    /// <p>A filter to select devices with names containing this name.</p>
+    pub fn device_name_contains(&self) -> std::option::Option<&str> {
+        self.device_name_contains.as_deref()
+    }
+}
+impl std::fmt::Debug for DeviceSelectionConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeviceSelectionConfig");
+        formatter.field("device_subset_type", &self.device_subset_type);
+        formatter.field("percentage", &self.percentage);
+        formatter.field("device_names", &self.device_names);
+        formatter.field("device_name_contains", &self.device_name_contains);
+        formatter.finish()
+    }
+}
+/// See [`DeviceSelectionConfig`](crate::model::DeviceSelectionConfig).
+pub mod device_selection_config {
+
+    /// A builder for [`DeviceSelectionConfig`](crate::model::DeviceSelectionConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) device_subset_type: std::option::Option<crate::model::DeviceSubsetType>,
+        pub(crate) percentage: std::option::Option<i32>,
+        pub(crate) device_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) device_name_contains: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Type of device subsets to deploy to the current stage.</p>
+        pub fn device_subset_type(mut self, input: crate::model::DeviceSubsetType) -> Self {
+            self.device_subset_type = Some(input);
+            self
+        }
+        /// <p>Type of device subsets to deploy to the current stage.</p>
+        pub fn set_device_subset_type(
+            mut self,
+            input: std::option::Option<crate::model::DeviceSubsetType>,
+        ) -> Self {
+            self.device_subset_type = input;
+            self
+        }
+        /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
+        pub fn percentage(mut self, input: i32) -> Self {
+            self.percentage = Some(input);
+            self
+        }
+        /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
+        pub fn set_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.percentage = input;
+            self
+        }
+        /// Appends an item to `device_names`.
+        ///
+        /// To override the contents of this collection use [`set_device_names`](Self::set_device_names).
+        ///
+        /// <p>List of devices chosen to deploy.</p>
+        pub fn device_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.device_names.unwrap_or_default();
+            v.push(input.into());
+            self.device_names = Some(v);
+            self
+        }
+        /// <p>List of devices chosen to deploy.</p>
+        pub fn set_device_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.device_names = input;
+            self
+        }
+        /// <p>A filter to select devices with names containing this name.</p>
+        pub fn device_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_name_contains = Some(input.into());
+            self
+        }
+        /// <p>A filter to select devices with names containing this name.</p>
+        pub fn set_device_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.device_name_contains = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeviceSelectionConfig`](crate::model::DeviceSelectionConfig).
+        pub fn build(self) -> crate::model::DeviceSelectionConfig {
+            crate::model::DeviceSelectionConfig {
+                device_subset_type: self.device_subset_type,
+                percentage: self.percentage.unwrap_or_default(),
+                device_names: self.device_names,
+                device_name_contains: self.device_name_contains,
+            }
+        }
+    }
+}
+impl DeviceSelectionConfig {
+    /// Creates a new builder-style object to manufacture [`DeviceSelectionConfig`](crate::model::DeviceSelectionConfig).
+    pub fn builder() -> crate::model::device_selection_config::Builder {
+        crate::model::device_selection_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeviceSubsetType {
+    #[allow(missing_docs)] // documentation missing in model
+    NameContains,
+    #[allow(missing_docs)] // documentation missing in model
+    Percentage,
+    #[allow(missing_docs)] // documentation missing in model
+    Selection,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DeviceSubsetType {
+    fn from(s: &str) -> Self {
+        match s {
+            "NAMECONTAINS" => DeviceSubsetType::NameContains,
+            "PERCENTAGE" => DeviceSubsetType::Percentage,
+            "SELECTION" => DeviceSubsetType::Selection,
+            other => DeviceSubsetType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DeviceSubsetType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeviceSubsetType::from(s))
+    }
+}
+impl DeviceSubsetType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeviceSubsetType::NameContains => "NAMECONTAINS",
+            DeviceSubsetType::Percentage => "PERCENTAGE",
+            DeviceSubsetType::Selection => "SELECTION",
+            DeviceSubsetType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NAMECONTAINS", "PERCENTAGE", "SELECTION"]
+    }
+}
+impl AsRef<str> for DeviceSubsetType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains information about the configuration of a model in a deployment.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EdgeDeploymentModelConfig {
+    /// <p>The name the device application uses to reference this model.</p>
+    pub model_handle: std::option::Option<std::string::String>,
+    /// <p>The edge packaging job associated with this deployment.</p>
+    pub edge_packaging_job_name: std::option::Option<std::string::String>,
+}
+impl EdgeDeploymentModelConfig {
+    /// <p>The name the device application uses to reference this model.</p>
+    pub fn model_handle(&self) -> std::option::Option<&str> {
+        self.model_handle.as_deref()
+    }
+    /// <p>The edge packaging job associated with this deployment.</p>
+    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
+        self.edge_packaging_job_name.as_deref()
+    }
+}
+impl std::fmt::Debug for EdgeDeploymentModelConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EdgeDeploymentModelConfig");
+        formatter.field("model_handle", &self.model_handle);
+        formatter.field("edge_packaging_job_name", &self.edge_packaging_job_name);
+        formatter.finish()
+    }
+}
+/// See [`EdgeDeploymentModelConfig`](crate::model::EdgeDeploymentModelConfig).
+pub mod edge_deployment_model_config {
+
+    /// A builder for [`EdgeDeploymentModelConfig`](crate::model::EdgeDeploymentModelConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_handle: std::option::Option<std::string::String>,
+        pub(crate) edge_packaging_job_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name the device application uses to reference this model.</p>
+        pub fn model_handle(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_handle = Some(input.into());
+            self
+        }
+        /// <p>The name the device application uses to reference this model.</p>
+        pub fn set_model_handle(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_handle = input;
+            self
+        }
+        /// <p>The edge packaging job associated with this deployment.</p>
+        pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edge_packaging_job_name = Some(input.into());
+            self
+        }
+        /// <p>The edge packaging job associated with this deployment.</p>
+        pub fn set_edge_packaging_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.edge_packaging_job_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EdgeDeploymentModelConfig`](crate::model::EdgeDeploymentModelConfig).
+        pub fn build(self) -> crate::model::EdgeDeploymentModelConfig {
+            crate::model::EdgeDeploymentModelConfig {
+                model_handle: self.model_handle,
+                edge_packaging_job_name: self.edge_packaging_job_name,
+            }
+        }
+    }
+}
+impl EdgeDeploymentModelConfig {
+    /// Creates a new builder-style object to manufacture [`EdgeDeploymentModelConfig`](crate::model::EdgeDeploymentModelConfig).
+    pub fn builder() -> crate::model::edge_deployment_model_config::Builder {
+        crate::model::edge_deployment_model_config::Builder::default()
     }
 }
 
@@ -70286,6 +72438,110 @@ impl RecommendationJobCompiledOutputConfig {
     /// Creates a new builder-style object to manufacture [`RecommendationJobCompiledOutputConfig`](crate::model::RecommendationJobCompiledOutputConfig).
     pub fn builder() -> crate::model::recommendation_job_compiled_output_config::Builder {
         crate::model::recommendation_job_compiled_output_config::Builder::default()
+    }
+}
+
+/// <p>Contains information about a stage in an edge deployment plan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeploymentStage {
+    /// <p>The name of the stage.</p>
+    pub stage_name: std::option::Option<std::string::String>,
+    /// <p>Configuration of the devices in the stage.</p>
+    pub device_selection_config: std::option::Option<crate::model::DeviceSelectionConfig>,
+    /// <p>Configuration of the deployment details.</p>
+    pub deployment_config: std::option::Option<crate::model::EdgeDeploymentConfig>,
+}
+impl DeploymentStage {
+    /// <p>The name of the stage.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>Configuration of the devices in the stage.</p>
+    pub fn device_selection_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceSelectionConfig> {
+        self.device_selection_config.as_ref()
+    }
+    /// <p>Configuration of the deployment details.</p>
+    pub fn deployment_config(&self) -> std::option::Option<&crate::model::EdgeDeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
+}
+impl std::fmt::Debug for DeploymentStage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeploymentStage");
+        formatter.field("stage_name", &self.stage_name);
+        formatter.field("device_selection_config", &self.device_selection_config);
+        formatter.field("deployment_config", &self.deployment_config);
+        formatter.finish()
+    }
+}
+/// See [`DeploymentStage`](crate::model::DeploymentStage).
+pub mod deployment_stage {
+
+    /// A builder for [`DeploymentStage`](crate::model::DeploymentStage).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) device_selection_config:
+            std::option::Option<crate::model::DeviceSelectionConfig>,
+        pub(crate) deployment_config: std::option::Option<crate::model::EdgeDeploymentConfig>,
+    }
+    impl Builder {
+        /// <p>The name of the stage.</p>
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stage.</p>
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
+            self
+        }
+        /// <p>Configuration of the devices in the stage.</p>
+        pub fn device_selection_config(
+            mut self,
+            input: crate::model::DeviceSelectionConfig,
+        ) -> Self {
+            self.device_selection_config = Some(input);
+            self
+        }
+        /// <p>Configuration of the devices in the stage.</p>
+        pub fn set_device_selection_config(
+            mut self,
+            input: std::option::Option<crate::model::DeviceSelectionConfig>,
+        ) -> Self {
+            self.device_selection_config = input;
+            self
+        }
+        /// <p>Configuration of the deployment details.</p>
+        pub fn deployment_config(mut self, input: crate::model::EdgeDeploymentConfig) -> Self {
+            self.deployment_config = Some(input);
+            self
+        }
+        /// <p>Configuration of the deployment details.</p>
+        pub fn set_deployment_config(
+            mut self,
+            input: std::option::Option<crate::model::EdgeDeploymentConfig>,
+        ) -> Self {
+            self.deployment_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeploymentStage`](crate::model::DeploymentStage).
+        pub fn build(self) -> crate::model::DeploymentStage {
+            crate::model::DeploymentStage {
+                stage_name: self.stage_name,
+                device_selection_config: self.device_selection_config,
+                deployment_config: self.deployment_config,
+            }
+        }
+    }
+}
+impl DeploymentStage {
+    /// Creates a new builder-style object to manufacture [`DeploymentStage`](crate::model::DeploymentStage).
+    pub fn builder() -> crate::model::deployment_stage::Builder {
+        crate::model::deployment_stage::Builder::default()
     }
 }
 

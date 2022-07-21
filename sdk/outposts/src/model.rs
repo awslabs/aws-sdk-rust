@@ -3484,6 +3484,11 @@ pub struct LineItem {
     pub quantity: i32,
     /// <p>The status of the line item.</p>
     pub status: std::option::Option<crate::model::LineItemStatus>,
+    /// <p> Information about a line item shipment. </p>
+    pub shipment_information: std::option::Option<crate::model::ShipmentInformation>,
+    /// <p> Information about assets. </p>
+    pub asset_information_list:
+        std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>,
 }
 impl LineItem {
     /// <p> The ID of the catalog item. </p>
@@ -3502,6 +3507,16 @@ impl LineItem {
     pub fn status(&self) -> std::option::Option<&crate::model::LineItemStatus> {
         self.status.as_ref()
     }
+    /// <p> Information about a line item shipment. </p>
+    pub fn shipment_information(&self) -> std::option::Option<&crate::model::ShipmentInformation> {
+        self.shipment_information.as_ref()
+    }
+    /// <p> Information about assets. </p>
+    pub fn asset_information_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::LineItemAssetInformation]> {
+        self.asset_information_list.as_deref()
+    }
 }
 impl std::fmt::Debug for LineItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3510,6 +3525,8 @@ impl std::fmt::Debug for LineItem {
         formatter.field("line_item_id", &self.line_item_id);
         formatter.field("quantity", &self.quantity);
         formatter.field("status", &self.status);
+        formatter.field("shipment_information", &self.shipment_information);
+        formatter.field("asset_information_list", &self.asset_information_list);
         formatter.finish()
     }
 }
@@ -3523,6 +3540,9 @@ pub mod line_item {
         pub(crate) line_item_id: std::option::Option<std::string::String>,
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) status: std::option::Option<crate::model::LineItemStatus>,
+        pub(crate) shipment_information: std::option::Option<crate::model::ShipmentInformation>,
+        pub(crate) asset_information_list:
+            std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>,
     }
     impl Builder {
         /// <p> The ID of the catalog item. </p>
@@ -3571,6 +3591,41 @@ pub mod line_item {
             self.status = input;
             self
         }
+        /// <p> Information about a line item shipment. </p>
+        pub fn shipment_information(mut self, input: crate::model::ShipmentInformation) -> Self {
+            self.shipment_information = Some(input);
+            self
+        }
+        /// <p> Information about a line item shipment. </p>
+        pub fn set_shipment_information(
+            mut self,
+            input: std::option::Option<crate::model::ShipmentInformation>,
+        ) -> Self {
+            self.shipment_information = input;
+            self
+        }
+        /// Appends an item to `asset_information_list`.
+        ///
+        /// To override the contents of this collection use [`set_asset_information_list`](Self::set_asset_information_list).
+        ///
+        /// <p> Information about assets. </p>
+        pub fn asset_information_list(
+            mut self,
+            input: crate::model::LineItemAssetInformation,
+        ) -> Self {
+            let mut v = self.asset_information_list.unwrap_or_default();
+            v.push(input);
+            self.asset_information_list = Some(v);
+            self
+        }
+        /// <p> Information about assets. </p>
+        pub fn set_asset_information_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LineItemAssetInformation>>,
+        ) -> Self {
+            self.asset_information_list = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LineItem`](crate::model::LineItem).
         pub fn build(self) -> crate::model::LineItem {
             crate::model::LineItem {
@@ -3578,6 +3633,8 @@ pub mod line_item {
                 line_item_id: self.line_item_id,
                 quantity: self.quantity.unwrap_or_default(),
                 status: self.status,
+                shipment_information: self.shipment_information,
+                asset_information_list: self.asset_information_list,
             }
         }
     }
@@ -3586,6 +3643,230 @@ impl LineItem {
     /// Creates a new builder-style object to manufacture [`LineItem`](crate::model::LineItem).
     pub fn builder() -> crate::model::line_item::Builder {
         crate::model::line_item::Builder::default()
+    }
+}
+
+/// <p> Information about a line item asset. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LineItemAssetInformation {
+    /// <p> The ID of the asset. </p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p> MAC addresses of the asset. </p>
+    pub mac_address_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl LineItemAssetInformation {
+    /// <p> The ID of the asset. </p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p> MAC addresses of the asset. </p>
+    pub fn mac_address_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.mac_address_list.as_deref()
+    }
+}
+impl std::fmt::Debug for LineItemAssetInformation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LineItemAssetInformation");
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("mac_address_list", &self.mac_address_list);
+        formatter.finish()
+    }
+}
+/// See [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
+pub mod line_item_asset_information {
+
+    /// A builder for [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) mac_address_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p> The ID of the asset. </p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the asset. </p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// Appends an item to `mac_address_list`.
+        ///
+        /// To override the contents of this collection use [`set_mac_address_list`](Self::set_mac_address_list).
+        ///
+        /// <p> MAC addresses of the asset. </p>
+        pub fn mac_address_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.mac_address_list.unwrap_or_default();
+            v.push(input.into());
+            self.mac_address_list = Some(v);
+            self
+        }
+        /// <p> MAC addresses of the asset. </p>
+        pub fn set_mac_address_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.mac_address_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
+        pub fn build(self) -> crate::model::LineItemAssetInformation {
+            crate::model::LineItemAssetInformation {
+                asset_id: self.asset_id,
+                mac_address_list: self.mac_address_list,
+            }
+        }
+    }
+}
+impl LineItemAssetInformation {
+    /// Creates a new builder-style object to manufacture [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
+    pub fn builder() -> crate::model::line_item_asset_information::Builder {
+        crate::model::line_item_asset_information::Builder::default()
+    }
+}
+
+/// <p> Information about a line item shipment. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ShipmentInformation {
+    /// <p> The tracking number of the shipment. </p>
+    pub shipment_tracking_number: std::option::Option<std::string::String>,
+    /// <p> The carrier of the shipment. </p>
+    pub shipment_carrier: std::option::Option<crate::model::ShipmentCarrier>,
+}
+impl ShipmentInformation {
+    /// <p> The tracking number of the shipment. </p>
+    pub fn shipment_tracking_number(&self) -> std::option::Option<&str> {
+        self.shipment_tracking_number.as_deref()
+    }
+    /// <p> The carrier of the shipment. </p>
+    pub fn shipment_carrier(&self) -> std::option::Option<&crate::model::ShipmentCarrier> {
+        self.shipment_carrier.as_ref()
+    }
+}
+impl std::fmt::Debug for ShipmentInformation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ShipmentInformation");
+        formatter.field("shipment_tracking_number", &self.shipment_tracking_number);
+        formatter.field("shipment_carrier", &self.shipment_carrier);
+        formatter.finish()
+    }
+}
+/// See [`ShipmentInformation`](crate::model::ShipmentInformation).
+pub mod shipment_information {
+
+    /// A builder for [`ShipmentInformation`](crate::model::ShipmentInformation).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) shipment_tracking_number: std::option::Option<std::string::String>,
+        pub(crate) shipment_carrier: std::option::Option<crate::model::ShipmentCarrier>,
+    }
+    impl Builder {
+        /// <p> The tracking number of the shipment. </p>
+        pub fn shipment_tracking_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shipment_tracking_number = Some(input.into());
+            self
+        }
+        /// <p> The tracking number of the shipment. </p>
+        pub fn set_shipment_tracking_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.shipment_tracking_number = input;
+            self
+        }
+        /// <p> The carrier of the shipment. </p>
+        pub fn shipment_carrier(mut self, input: crate::model::ShipmentCarrier) -> Self {
+            self.shipment_carrier = Some(input);
+            self
+        }
+        /// <p> The carrier of the shipment. </p>
+        pub fn set_shipment_carrier(
+            mut self,
+            input: std::option::Option<crate::model::ShipmentCarrier>,
+        ) -> Self {
+            self.shipment_carrier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ShipmentInformation`](crate::model::ShipmentInformation).
+        pub fn build(self) -> crate::model::ShipmentInformation {
+            crate::model::ShipmentInformation {
+                shipment_tracking_number: self.shipment_tracking_number,
+                shipment_carrier: self.shipment_carrier,
+            }
+        }
+    }
+}
+impl ShipmentInformation {
+    /// Creates a new builder-style object to manufacture [`ShipmentInformation`](crate::model::ShipmentInformation).
+    pub fn builder() -> crate::model::shipment_information::Builder {
+        crate::model::shipment_information::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ShipmentCarrier {
+    #[allow(missing_docs)] // documentation missing in model
+    Dbs,
+    #[allow(missing_docs)] // documentation missing in model
+    Dhl,
+    #[allow(missing_docs)] // documentation missing in model
+    Fedex,
+    #[allow(missing_docs)] // documentation missing in model
+    Ups,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ShipmentCarrier {
+    fn from(s: &str) -> Self {
+        match s {
+            "DBS" => ShipmentCarrier::Dbs,
+            "DHL" => ShipmentCarrier::Dhl,
+            "FEDEX" => ShipmentCarrier::Fedex,
+            "UPS" => ShipmentCarrier::Ups,
+            other => ShipmentCarrier::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ShipmentCarrier {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ShipmentCarrier::from(s))
+    }
+}
+impl ShipmentCarrier {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ShipmentCarrier::Dbs => "DBS",
+            ShipmentCarrier::Dhl => "DHL",
+            ShipmentCarrier::Fedex => "FEDEX",
+            ShipmentCarrier::Ups => "UPS",
+            ShipmentCarrier::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DBS", "DHL", "FEDEX", "UPS"]
+    }
+}
+impl AsRef<str> for ShipmentCarrier {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

@@ -873,5 +873,10 @@ pub fn serialize_structure_crate_model_replication_configuration_replicated_disk
             aws_smithy_types::Number::NegInt((input.throughput).into()),
         );
     }
+    if let Some(var_173) = &input.optimized_staging_disk_type {
+        object
+            .key("optimizedStagingDiskType")
+            .string(var_173.as_str());
+    }
     Ok(())
 }

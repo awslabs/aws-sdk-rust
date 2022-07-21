@@ -118,13 +118,13 @@ impl Client {
     ///   - [`environment_class(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::environment_class) / [`set_environment_class(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_environment_class): <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
     ///   - [`max_workers(i32)`](crate::client::fluent_builders::CreateEnvironment::max_workers) / [`set_max_workers(Option<i32>)`](crate::client::fluent_builders::CreateEnvironment::set_max_workers): <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
     ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_kms_key): <p>The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA environment</a>.</p>
-    ///   - [`airflow_version(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::airflow_version) / [`set_airflow_version(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_airflow_version): <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+    ///   - [`airflow_version(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::airflow_version) / [`set_airflow_version(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_airflow_version): <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
     ///   - [`logging_configuration(LoggingConfigurationInput)`](crate::client::fluent_builders::CreateEnvironment::logging_configuration) / [`set_logging_configuration(Option<LoggingConfigurationInput>)`](crate::client::fluent_builders::CreateEnvironment::set_logging_configuration): <p>Defines the Apache Airflow logs to send to CloudWatch Logs.</p>
     ///   - [`weekly_maintenance_window_start(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::weekly_maintenance_window_start) / [`set_weekly_maintenance_window_start(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_weekly_maintenance_window_start): <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>The key-value tag pairs you want to associate to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     ///   - [`webserver_access_mode(WebserverAccessMode)`](crate::client::fluent_builders::CreateEnvironment::webserver_access_mode) / [`set_webserver_access_mode(Option<WebserverAccessMode>)`](crate::client::fluent_builders::CreateEnvironment::set_webserver_access_mode): <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
     ///   - [`min_workers(i32)`](crate::client::fluent_builders::CreateEnvironment::min_workers) / [`set_min_workers(Option<i32>)`](crate::client::fluent_builders::CreateEnvironment::set_min_workers): <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
-    ///   - [`schedulers(i32)`](crate::client::fluent_builders::CreateEnvironment::schedulers) / [`set_schedulers(Option<i32>)`](crate::client::fluent_builders::CreateEnvironment::set_schedulers): <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>  <ul>   <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p> </li>   <li> <p>v1.10.12 - Accepts 1.</p> </li>  </ul>
+    ///   - [`schedulers(i32)`](crate::client::fluent_builders::CreateEnvironment::schedulers) / [`set_schedulers(Option<i32>)`](crate::client::fluent_builders::CreateEnvironment::set_schedulers): <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>  <ul>   <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>   <li> <p>v1 - Accepts 1.</p> </li>  </ul>
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) returned in the response for the environment.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
@@ -223,7 +223,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_name): <p>The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
-    ///   - [`airflow_version(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::airflow_version) / [`set_airflow_version(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_airflow_version): <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
+    ///   - [`airflow_version(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::airflow_version) / [`set_airflow_version(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_airflow_version): <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
     ///   - [`source_bucket_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::source_bucket_arn) / [`set_source_bucket_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_source_bucket_arn): <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
     ///   - [`dag_s3_path(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::dag_s3_path) / [`set_dag_s3_path(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_dag_s3_path): <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
     ///   - [`plugins_s3_path(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::plugins_s3_path) / [`set_plugins_s3_path(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_plugins_s3_path): <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
@@ -518,12 +518,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key(input);
             self
         }
-        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+        /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
         pub fn airflow_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.airflow_version(input.into());
             self
         }
-        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+        /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
         pub fn set_airflow_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -611,8 +611,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
         /// <ul>
-        /// <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
-        /// <li> <p>v1.10.12 - Accepts 1.</p> </li>
+        /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+        /// <li> <p>v1 - Accepts 1.</p> </li>
         /// </ul>
         pub fn schedulers(mut self, input: i32) -> Self {
             self.inner = self.inner.schedulers(input);
@@ -620,8 +620,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
         /// <ul>
-        /// <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
-        /// <li> <p>v1.10.12 - Accepts 1.</p> </li>
+        /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+        /// <li> <p>v1 - Accepts 1.</p> </li>
         /// </ul>
         pub fn set_schedulers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_schedulers(input);
@@ -1193,12 +1193,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
+        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
         pub fn airflow_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.airflow_version(input.into());
             self
         }
-        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
+        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
         pub fn set_airflow_version(
             mut self,
             input: std::option::Option<std::string::String>,

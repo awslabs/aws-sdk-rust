@@ -1661,6 +1661,11 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_ssmincidents_notification_target_set(tokens)?
                                 );
                             }
+                            "incidentTags" => {
+                                builder = builder.set_incident_tags(
+                                    crate::json_deser::deser_map_com_amazonaws_ssmincidents_tag_map(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

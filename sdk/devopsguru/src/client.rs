@@ -303,6 +303,21 @@ impl Client {
     pub fn list_anomalies_for_insight(&self) -> fluent_builders::ListAnomaliesForInsight {
         fluent_builders::ListAnomaliesForInsight::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListAnomalousLogGroups`](crate::client::fluent_builders::ListAnomalousLogGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomalousLogGroups::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`insight_id(impl Into<String>)`](crate::client::fluent_builders::ListAnomalousLogGroups::insight_id) / [`set_insight_id(Option<String>)`](crate::client::fluent_builders::ListAnomalousLogGroups::set_insight_id): <p> The ID of the insight containing the log groups. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnomalousLogGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnomalousLogGroups::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnomalousLogGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnomalousLogGroups::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - On success, responds with [`ListAnomalousLogGroupsOutput`](crate::output::ListAnomalousLogGroupsOutput) with field(s):
+    ///   - [`insight_id(Option<String>)`](crate::output::ListAnomalousLogGroupsOutput::insight_id): <p> The ID of the insight containing the log groups. </p>
+    ///   - [`anomalous_log_groups(Option<Vec<AnomalousLogGroup>>)`](crate::output::ListAnomalousLogGroupsOutput::anomalous_log_groups): <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAnomalousLogGroupsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// - On failure, responds with [`SdkError<ListAnomalousLogGroupsError>`](crate::error::ListAnomalousLogGroupsError)
+    pub fn list_anomalous_log_groups(&self) -> fluent_builders::ListAnomalousLogGroups {
+        fluent_builders::ListAnomalousLogGroups::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListEvents`](crate::client::fluent_builders::ListEvents) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEvents::into_paginator).
     ///
@@ -332,6 +347,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListInsightsError>`](crate::error::ListInsightsError)
     pub fn list_insights(&self) -> fluent_builders::ListInsights {
         fluent_builders::ListInsights::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListMonitoredResources`](crate::client::fluent_builders::ListMonitoredResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMonitoredResources::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(ListMonitoredResourcesFilters)`](crate::client::fluent_builders::ListMonitoredResources::filters) / [`set_filters(Option<ListMonitoredResourcesFilters>)`](crate::client::fluent_builders::ListMonitoredResources::set_filters): <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMonitoredResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMonitoredResources::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMonitoredResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMonitoredResources::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - On success, responds with [`ListMonitoredResourcesOutput`](crate::output::ListMonitoredResourcesOutput) with field(s):
+    ///   - [`monitored_resource_identifiers(Option<Vec<MonitoredResourceIdentifier>>)`](crate::output::ListMonitoredResourcesOutput::monitored_resource_identifiers): <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMonitoredResourcesOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// - On failure, responds with [`SdkError<ListMonitoredResourcesError>`](crate::error::ListMonitoredResourcesError)
+    pub fn list_monitored_resources(&self) -> fluent_builders::ListMonitoredResources {
+        fluent_builders::ListMonitoredResources::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListNotificationChannels`](crate::client::fluent_builders::ListNotificationChannels) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNotificationChannels::into_paginator).
@@ -1591,6 +1620,85 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListAnomalousLogGroups`.
+    ///
+    /// <p> Returns the list of log groups that contain log anomalies. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAnomalousLogGroups {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_anomalous_log_groups_input::Builder,
+    }
+    impl ListAnomalousLogGroups {
+        /// Creates a new `ListAnomalousLogGroups`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAnomalousLogGroupsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAnomalousLogGroupsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomalousLogGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAnomalousLogGroupsPaginator {
+            crate::paginator::ListAnomalousLogGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The ID of the insight containing the log groups. </p>
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
+            self
+        }
+        /// <p> The ID of the insight containing the log groups. </p>
+        pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_insight_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListEvents`.
     ///
     /// <p> Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned. </p>
@@ -1742,6 +1850,88 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ListInsightsStatusFilter>,
         ) -> Self {
             self.inner = self.inner.set_status_filter(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListMonitoredResources`.
+    ///
+    /// <p> Returns the list of all log groups that are being monitored and tagged by DevOps Guru. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListMonitoredResources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_monitored_resources_input::Builder,
+    }
+    impl ListMonitoredResources {
+        /// Creates a new `ListMonitoredResources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMonitoredResourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListMonitoredResourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMonitoredResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMonitoredResourcesPaginator {
+            crate::paginator::ListMonitoredResourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+        pub fn filters(mut self, input: crate::model::ListMonitoredResourcesFilters) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ListMonitoredResourcesFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>

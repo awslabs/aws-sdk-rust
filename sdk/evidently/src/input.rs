@@ -190,6 +190,7 @@ pub mod create_experiment_input {
         pub(crate) randomization_salt: std::option::Option<std::string::String>,
         pub(crate) sampling_rate: std::option::Option<i64>,
         pub(crate) online_ab_config: std::option::Option<crate::model::OnlineAbConfig>,
+        pub(crate) segment: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -301,6 +302,16 @@ pub mod create_experiment_input {
             self.online_ab_config = input;
             self
         }
+        /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment = Some(input.into());
+            self
+        }
+        /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.segment = input;
+            self
+        }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -348,6 +359,7 @@ pub mod create_experiment_input {
                 randomization_salt: self.randomization_salt,
                 sampling_rate: self.sampling_rate,
                 online_ab_config: self.online_ab_config,
+                segment: self.segment,
                 tags: self.tags,
             })
         }
@@ -876,12 +888,12 @@ pub mod create_launch_input {
             self.groups = input;
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
         pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
             self.randomization_salt = Some(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1256,6 +1268,202 @@ impl CreateProjectInput {
     /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput).
     pub fn builder() -> crate::input::create_project_input::Builder {
         crate::input::create_project_input::Builder::default()
+    }
+}
+
+/// See [`CreateSegmentInput`](crate::input::CreateSegmentInput).
+pub mod create_segment_input {
+
+    /// A builder for [`CreateSegmentInput`](crate::input::CreateSegmentInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) pattern: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>A name for the segment.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name for the segment.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pattern = Some(input.into());
+            self
+        }
+        /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+        pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pattern = input;
+            self
+        }
+        /// <p>An optional description for this segment.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>An optional description for this segment.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Assigns one or more tags (key-value pairs) to the segment.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+        /// <p>You can associate as many as 50 tags with a segment.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Assigns one or more tags (key-value pairs) to the segment.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+        /// <p>You can associate as many as 50 tags with a segment.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSegmentInput`](crate::input::CreateSegmentInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateSegmentInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateSegmentInput {
+                name: self.name,
+                pattern: self.pattern,
+                description: self.description,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateSegmentInputOperationOutputAlias = crate::operation::CreateSegment;
+#[doc(hidden)]
+pub type CreateSegmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateSegmentInput {
+    /// Consumes the builder and constructs an Operation<[`CreateSegment`](crate::operation::CreateSegment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateSegment,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateSegmentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/segments").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateSegmentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_segment(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSegment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSegment",
+            "evidently",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateSegmentInput`](crate::input::CreateSegmentInput).
+    pub fn builder() -> crate::input::create_segment_input::Builder {
+        crate::input::create_segment_input::Builder::default()
     }
 }
 
@@ -1896,6 +2104,142 @@ impl DeleteProjectInput {
     }
 }
 
+/// See [`DeleteSegmentInput`](crate::input::DeleteSegmentInput).
+pub mod delete_segment_input {
+
+    /// A builder for [`DeleteSegmentInput`](crate::input::DeleteSegmentInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) segment: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the segment to delete.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment = Some(input.into());
+            self
+        }
+        /// <p>Specifies the segment to delete.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.segment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSegmentInput`](crate::input::DeleteSegmentInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteSegmentInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteSegmentInput {
+                segment: self.segment,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteSegmentInputOperationOutputAlias = crate::operation::DeleteSegment;
+#[doc(hidden)]
+pub type DeleteSegmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteSegmentInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteSegment`](crate::operation::DeleteSegment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteSegment,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteSegmentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_12 = &_input.segment;
+                let input_12 = input_12.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "segment",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let segment = aws_smithy_http::label::fmt_string(input_12, false);
+                if segment.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "segment",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/segments/{segment}", segment = segment)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteSegmentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteSegment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteSegment",
+            "evidently",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteSegmentInput`](crate::input::DeleteSegmentInput).
+    pub fn builder() -> crate::input::delete_segment_input::Builder {
+        crate::input::delete_segment_input::Builder::default()
+    }
+}
+
 /// See [`EvaluateFeatureInput`](crate::input::EvaluateFeatureInput).
 pub mod evaluate_feature_input {
 
@@ -1938,12 +2282,14 @@ pub mod evaluate_feature_input {
             self.entity_id = input;
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+        /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
+        /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
         pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.evaluation_context = Some(input.into());
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+        /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
+        /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
         pub fn set_evaluation_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1989,28 +2335,28 @@ impl EvaluateFeatureInput {
                 _input: &crate::input::EvaluateFeatureInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_12 = &_input.project;
-                let input_12 = input_12.as_ref().ok_or(
+                let input_13 = &_input.project;
+                let input_13 = input_13.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_12, false);
+                let project = aws_smithy_http::label::fmt_string(input_13, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_13 = &_input.feature;
-                let input_13 = input_13.as_ref().ok_or(
+                let input_14 = &_input.feature;
+                let input_14 = input_14.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "feature",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let feature = aws_smithy_http::label::fmt_string(input_13, false);
+                let feature = aws_smithy_http::label::fmt_string(input_14, false);
                 if feature.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "feature",
@@ -2172,28 +2518,28 @@ impl GetExperimentInput {
                 _input: &crate::input::GetExperimentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_14 = &_input.project;
-                let input_14 = input_14.as_ref().ok_or(
+                let input_15 = &_input.project;
+                let input_15 = input_15.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_14, false);
+                let project = aws_smithy_http::label::fmt_string(input_15, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_15 = &_input.experiment;
-                let input_15 = input_15.as_ref().ok_or(
+                let input_16 = &_input.experiment;
+                let input_16 = input_16.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let experiment = aws_smithy_http::label::fmt_string(input_15, false);
+                let experiment = aws_smithy_http::label::fmt_string(input_16, false);
                 if experiment.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
@@ -2494,28 +2840,28 @@ impl GetExperimentResultsInput {
                 _input: &crate::input::GetExperimentResultsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.project;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_17 = &_input.project;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_16, false);
+                let project = aws_smithy_http::label::fmt_string(input_17, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_17 = &_input.experiment;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_18 = &_input.experiment;
+                let input_18 = input_18.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let experiment = aws_smithy_http::label::fmt_string(input_17, false);
+                let experiment = aws_smithy_http::label::fmt_string(input_18, false);
                 if experiment.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
@@ -2676,28 +3022,28 @@ impl GetFeatureInput {
                 _input: &crate::input::GetFeatureInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_18 = &_input.project;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_19 = &_input.project;
+                let input_19 = input_19.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_18, false);
+                let project = aws_smithy_http::label::fmt_string(input_19, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_19 = &_input.feature;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_20 = &_input.feature;
+                let input_20 = input_20.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "feature",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let feature = aws_smithy_http::label::fmt_string(input_19, false);
+                let feature = aws_smithy_http::label::fmt_string(input_20, false);
                 if feature.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "feature",
@@ -2842,28 +3188,28 @@ impl GetLaunchInput {
                 _input: &crate::input::GetLaunchInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_20 = &_input.project;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_21 = &_input.project;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_20, false);
+                let project = aws_smithy_http::label::fmt_string(input_21, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_21 = &_input.launch;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_22 = &_input.launch;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let launch = aws_smithy_http::label::fmt_string(input_21, false);
+                let launch = aws_smithy_http::label::fmt_string(input_22, false);
                 if launch.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch",
@@ -2994,14 +3340,14 @@ impl GetProjectInput {
                 _input: &crate::input::GetProjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.project;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_23 = &_input.project;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_22, false);
+                let project = aws_smithy_http::label::fmt_string(input_23, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
@@ -3073,6 +3419,141 @@ impl GetProjectInput {
     /// Creates a new builder-style object to manufacture [`GetProjectInput`](crate::input::GetProjectInput).
     pub fn builder() -> crate::input::get_project_input::Builder {
         crate::input::get_project_input::Builder::default()
+    }
+}
+
+/// See [`GetSegmentInput`](crate::input::GetSegmentInput).
+pub mod get_segment_input {
+
+    /// A builder for [`GetSegmentInput`](crate::input::GetSegmentInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) segment: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the segment to return information for.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the segment to return information for.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.segment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSegmentInput`](crate::input::GetSegmentInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetSegmentInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::GetSegmentInput {
+                segment: self.segment,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetSegmentInputOperationOutputAlias = crate::operation::GetSegment;
+#[doc(hidden)]
+pub type GetSegmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetSegmentInput {
+    /// Consumes the builder and constructs an Operation<[`GetSegment`](crate::operation::GetSegment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetSegment,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetSegmentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_24 = &_input.segment;
+                let input_24 = input_24.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "segment",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let segment = aws_smithy_http::label::fmt_string(input_24, false);
+                if segment.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "segment",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/segments/{segment}", segment = segment)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetSegmentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetSegment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetSegment",
+            "evidently",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetSegmentInput`](crate::input::GetSegmentInput).
+    pub fn builder() -> crate::input::get_segment_input::Builder {
+        crate::input::get_segment_input::Builder::default()
     }
 }
 
@@ -3169,14 +3650,14 @@ impl ListExperimentsInput {
                 _input: &crate::input::ListExperimentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.project;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_25 = &_input.project;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_23, false);
+                let project = aws_smithy_http::label::fmt_string(input_25, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
@@ -3192,17 +3673,17 @@ impl ListExperimentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_24) = &_input.max_results {
+                if let Some(inner_26) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_26).encode(),
                     );
                 }
-                if let Some(inner_25) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                if let Some(inner_27) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
                 }
-                if let Some(inner_26) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_26));
+                if let Some(inner_28) = &_input.status {
+                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_28));
                 }
                 Ok(())
             }
@@ -3349,14 +3830,14 @@ impl ListFeaturesInput {
                 _input: &crate::input::ListFeaturesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_27 = &_input.project;
-                let input_27 = input_27.as_ref().ok_or(
+                let input_29 = &_input.project;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_27, false);
+                let project = aws_smithy_http::label::fmt_string(input_29, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
@@ -3372,14 +3853,14 @@ impl ListFeaturesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_28) = &_input.max_results {
+                if let Some(inner_30) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
                     );
                 }
-                if let Some(inner_29) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+                if let Some(inner_31) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
                 Ok(())
             }
@@ -3541,14 +4022,14 @@ impl ListLaunchesInput {
                 _input: &crate::input::ListLaunchesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_30 = &_input.project;
-                let input_30 = input_30.as_ref().ok_or(
+                let input_32 = &_input.project;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_30, false);
+                let project = aws_smithy_http::label::fmt_string(input_32, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
@@ -3564,17 +4045,17 @@ impl ListLaunchesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_31) = &_input.max_results {
+                if let Some(inner_33) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
                     );
                 }
-                if let Some(inner_32) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                if let Some(inner_34) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
-                if let Some(inner_33) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_33));
+                if let Some(inner_35) = &_input.status {
+                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_35));
                 }
                 Ok(())
             }
@@ -3717,14 +4198,14 @@ impl ListProjectsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.max_results {
+                if let Some(inner_36) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
                     );
                 }
-                if let Some(inner_35) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                if let Some(inner_37) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 Ok(())
             }
@@ -3793,6 +4274,351 @@ impl ListProjectsInput {
     }
 }
 
+/// See [`ListSegmentReferencesInput`](crate::input::ListSegmentReferencesInput).
+pub mod list_segment_references_input {
+
+    /// A builder for [`ListSegmentReferencesInput`](crate::input::ListSegmentReferencesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) segment: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::SegmentReferenceResourceType>,
+    }
+    impl Builder {
+        /// <p>The ARN of the segment that you want to view information for.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the segment that you want to view information for.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.segment = input;
+            self
+        }
+        /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+        pub fn r#type(mut self, input: crate::model::SegmentReferenceResourceType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::SegmentReferenceResourceType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSegmentReferencesInput`](crate::input::ListSegmentReferencesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListSegmentReferencesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListSegmentReferencesInput {
+                segment: self.segment,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                r#type: self.r#type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListSegmentReferencesInputOperationOutputAlias = crate::operation::ListSegmentReferences;
+#[doc(hidden)]
+pub type ListSegmentReferencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListSegmentReferencesInput {
+    /// Consumes the builder and constructs an Operation<[`ListSegmentReferences`](crate::operation::ListSegmentReferences)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSegmentReferences,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListSegmentReferencesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_38 = &_input.segment;
+                let input_38 = input_38.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "segment",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let segment = aws_smithy_http::label::fmt_string(input_38, false);
+                if segment.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "segment",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/segments/{segment}/references", segment = segment)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListSegmentReferencesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_39) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
+                    );
+                }
+                if let Some(inner_40) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                }
+                if let Some(inner_41) = &_input.r#type {
+                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_41));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSegmentReferencesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSegmentReferences::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSegmentReferences",
+            "evidently",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListSegmentReferencesInput`](crate::input::ListSegmentReferencesInput).
+    pub fn builder() -> crate::input::list_segment_references_input::Builder {
+        crate::input::list_segment_references_input::Builder::default()
+    }
+}
+
+/// See [`ListSegmentsInput`](crate::input::ListSegmentsInput).
+pub mod list_segments_input {
+
+    /// A builder for [`ListSegmentsInput`](crate::input::ListSegmentsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSegmentsInput`](crate::input::ListSegmentsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListSegmentsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListSegmentsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListSegmentsInputOperationOutputAlias = crate::operation::ListSegments;
+#[doc(hidden)]
+pub type ListSegmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListSegmentsInput {
+    /// Consumes the builder and constructs an Operation<[`ListSegments`](crate::operation::ListSegments)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSegments,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListSegmentsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/segments").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListSegmentsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_42) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
+                    );
+                }
+                if let Some(inner_43) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSegmentsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSegments::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSegments",
+            "evidently",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListSegmentsInput`](crate::input::ListSegmentsInput).
+    pub fn builder() -> crate::input::list_segments_input::Builder {
+        crate::input::list_segments_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
 
@@ -3847,14 +4673,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.resource_arn;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_44 = &_input.resource_arn;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_36, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4004,14 +4830,14 @@ impl PutProjectEventsInput {
                 _input: &crate::input::PutProjectEventsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_37 = &_input.project;
-                let input_37 = input_37.as_ref().ok_or(
+                let input_45 = &_input.project;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_37, false);
+                let project = aws_smithy_http::label::fmt_string(input_45, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
@@ -4183,28 +5009,28 @@ impl StartExperimentInput {
                 _input: &crate::input::StartExperimentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.project;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_46 = &_input.project;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_38, false);
+                let project = aws_smithy_http::label::fmt_string(input_46, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_39 = &_input.experiment;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_47 = &_input.experiment;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let experiment = aws_smithy_http::label::fmt_string(input_39, false);
+                let experiment = aws_smithy_http::label::fmt_string(input_47, false);
                 if experiment.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
@@ -4364,28 +5190,28 @@ impl StartLaunchInput {
                 _input: &crate::input::StartLaunchInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.project;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_48 = &_input.project;
+                let input_48 = input_48.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_40, false);
+                let project = aws_smithy_http::label::fmt_string(input_48, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_41 = &_input.launch;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_49 = &_input.launch;
+                let input_49 = input_49.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let launch = aws_smithy_http::label::fmt_string(input_41, false);
+                let launch = aws_smithy_http::label::fmt_string(input_49, false);
                 if launch.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch",
@@ -4558,28 +5384,28 @@ impl StopExperimentInput {
                 _input: &crate::input::StopExperimentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.project;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_50 = &_input.project;
+                let input_50 = input_50.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_42, false);
+                let project = aws_smithy_http::label::fmt_string(input_50, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_43 = &_input.experiment;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_51 = &_input.experiment;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let experiment = aws_smithy_http::label::fmt_string(input_43, false);
+                let experiment = aws_smithy_http::label::fmt_string(input_51, false);
                 if experiment.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
@@ -4765,28 +5591,28 @@ impl StopLaunchInput {
                 _input: &crate::input::StopLaunchInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_44 = &_input.project;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_52 = &_input.project;
+                let input_52 = input_52.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_44, false);
+                let project = aws_smithy_http::label::fmt_string(input_52, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_45 = &_input.launch;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_53 = &_input.launch;
+                let input_53 = input_53.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let launch = aws_smithy_http::label::fmt_string(input_45, false);
+                let launch = aws_smithy_http::label::fmt_string(input_53, false);
                 if launch.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch",
@@ -4963,14 +5789,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_46 = &_input.resource_arn;
-                let input_46 = input_46.as_ref().ok_or(
+                let input_54 = &_input.resource_arn;
+                let input_54 = input_54.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_54, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5059,6 +5885,153 @@ impl TagResourceInput {
     }
 }
 
+/// See [`TestSegmentPatternInput`](crate::input::TestSegmentPatternInput).
+pub mod test_segment_pattern_input {
+
+    /// A builder for [`TestSegmentPatternInput`](crate::input::TestSegmentPatternInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pattern: std::option::Option<std::string::String>,
+        pub(crate) payload: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The pattern to test.</p>
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pattern = Some(input.into());
+            self
+        }
+        /// <p>The pattern to test.</p>
+        pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pattern = input;
+            self
+        }
+        /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+        pub fn payload(mut self, input: impl Into<std::string::String>) -> Self {
+            self.payload = Some(input.into());
+            self
+        }
+        /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+        pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.payload = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TestSegmentPatternInput`](crate::input::TestSegmentPatternInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TestSegmentPatternInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TestSegmentPatternInput {
+                pattern: self.pattern,
+                payload: self.payload,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type TestSegmentPatternInputOperationOutputAlias = crate::operation::TestSegmentPattern;
+#[doc(hidden)]
+pub type TestSegmentPatternInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl TestSegmentPatternInput {
+    /// Consumes the builder and constructs an Operation<[`TestSegmentPattern`](crate::operation::TestSegmentPattern)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TestSegmentPattern,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::TestSegmentPatternInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/test-segment-pattern").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TestSegmentPatternInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_test_segment_pattern(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TestSegmentPattern::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TestSegmentPattern",
+            "evidently",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`TestSegmentPatternInput`](crate::input::TestSegmentPatternInput).
+    pub fn builder() -> crate::input::test_segment_pattern_input::Builder {
+        crate::input::test_segment_pattern_input::Builder::default()
+    }
+}
+
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
 
@@ -5134,14 +6107,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_47 = &_input.resource_arn;
-                let input_47 = input_47.as_ref().ok_or(
+                let input_55 = &_input.resource_arn;
+                let input_55 = input_55.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_47, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_55, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5157,9 +6130,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_48) = &_input.tag_keys {
-                    for inner_49 in inner_48 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_49));
+                if let Some(inner_56) = &_input.tag_keys {
+                    for inner_57 in inner_56 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_57));
                     }
                 }
                 Ok(())
@@ -5242,6 +6215,8 @@ pub mod update_experiment_input {
         pub(crate) metric_goals: std::option::Option<std::vec::Vec<crate::model::MetricGoalConfig>>,
         pub(crate) randomization_salt: std::option::Option<std::string::String>,
         pub(crate) sampling_rate: std::option::Option<i64>,
+        pub(crate) segment: std::option::Option<std::string::String>,
+        pub(crate) remove_segment: std::option::Option<bool>,
         pub(crate) online_ab_config: std::option::Option<crate::model::OnlineAbConfig>,
     }
     impl Builder {
@@ -5338,6 +6313,26 @@ pub mod update_experiment_input {
             self.sampling_rate = input;
             self
         }
+        /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
+        pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.segment = Some(input.into());
+            self
+        }
+        /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
+        pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.segment = input;
+            self
+        }
+        /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
+        pub fn remove_segment(mut self, input: bool) -> Self {
+            self.remove_segment = Some(input);
+            self
+        }
+        /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
+        pub fn set_remove_segment(mut self, input: std::option::Option<bool>) -> Self {
+            self.remove_segment = input;
+            self
+        }
         /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
         pub fn online_ab_config(mut self, input: crate::model::OnlineAbConfig) -> Self {
             self.online_ab_config = Some(input);
@@ -5364,6 +6359,8 @@ pub mod update_experiment_input {
                 metric_goals: self.metric_goals,
                 randomization_salt: self.randomization_salt,
                 sampling_rate: self.sampling_rate,
+                segment: self.segment,
+                remove_segment: self.remove_segment.unwrap_or_default(),
                 online_ab_config: self.online_ab_config,
             })
         }
@@ -5393,28 +6390,28 @@ impl UpdateExperimentInput {
                 _input: &crate::input::UpdateExperimentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_50 = &_input.project;
-                let input_50 = input_50.as_ref().ok_or(
+                let input_58 = &_input.project;
+                let input_58 = input_58.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_50, false);
+                let project = aws_smithy_http::label::fmt_string(input_58, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_51 = &_input.experiment;
-                let input_51 = input_51.as_ref().ok_or(
+                let input_59 = &_input.experiment;
+                let input_59 = input_59.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let experiment = aws_smithy_http::label::fmt_string(input_51, false);
+                let experiment = aws_smithy_http::label::fmt_string(input_59, false);
                 if experiment.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "experiment",
@@ -5694,28 +6691,28 @@ impl UpdateFeatureInput {
                 _input: &crate::input::UpdateFeatureInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_52 = &_input.project;
-                let input_52 = input_52.as_ref().ok_or(
+                let input_60 = &_input.project;
+                let input_60 = input_60.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_52, false);
+                let project = aws_smithy_http::label::fmt_string(input_60, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_53 = &_input.feature;
-                let input_53 = input_53.as_ref().ok_or(
+                let input_61 = &_input.feature;
+                let input_61 = input_61.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "feature",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let feature = aws_smithy_http::label::fmt_string(input_53, false);
+                let feature = aws_smithy_http::label::fmt_string(input_61, false);
                 if feature.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "feature",
@@ -5964,28 +6961,28 @@ impl UpdateLaunchInput {
                 _input: &crate::input::UpdateLaunchInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_54 = &_input.project;
-                let input_54 = input_54.as_ref().ok_or(
+                let input_62 = &_input.project;
+                let input_62 = input_62.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_54, false);
+                let project = aws_smithy_http::label::fmt_string(input_62, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_55 = &_input.launch;
-                let input_55 = input_55.as_ref().ok_or(
+                let input_63 = &_input.launch;
+                let input_63 = input_63.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let launch = aws_smithy_http::label::fmt_string(input_55, false);
+                let launch = aws_smithy_http::label::fmt_string(input_63, false);
                 if launch.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "launch",
@@ -6145,14 +7142,14 @@ impl UpdateProjectInput {
                 _input: &crate::input::UpdateProjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_56 = &_input.project;
-                let input_56 = input_56.as_ref().ok_or(
+                let input_64 = &_input.project;
+                let input_64 = input_64.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_56, false);
+                let project = aws_smithy_http::label::fmt_string(input_64, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
@@ -6332,14 +7329,14 @@ impl UpdateProjectDataDeliveryInput {
                 _input: &crate::input::UpdateProjectDataDeliveryInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_57 = &_input.project;
-                let input_57 = input_57.as_ref().ok_or(
+                let input_65 = &_input.project;
+                let input_65 = input_65.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let project = aws_smithy_http::label::fmt_string(input_57, false);
+                let project = aws_smithy_http::label::fmt_string(input_65, false);
                 if project.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project",
@@ -6431,6 +7428,172 @@ impl UpdateProjectDataDeliveryInput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectDataDeliveryInput`](crate::input::UpdateProjectDataDeliveryInput).
     pub fn builder() -> crate::input::update_project_data_delivery_input::Builder {
         crate::input::update_project_data_delivery_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSegmentReferencesInput {
+    /// <p>The ARN of the segment that you want to view information for.</p>
+    pub segment: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+    pub r#type: std::option::Option<crate::model::SegmentReferenceResourceType>,
+}
+impl ListSegmentReferencesInput {
+    /// <p>The ARN of the segment that you want to view information for.</p>
+    pub fn segment(&self) -> std::option::Option<&str> {
+        self.segment.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SegmentReferenceResourceType> {
+        self.r#type.as_ref()
+    }
+}
+impl std::fmt::Debug for ListSegmentReferencesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSegmentReferencesInput");
+        formatter.field("segment", &self.segment);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSegmentsInput {
+    /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSegmentsInput {
+    /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSegmentsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSegmentsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSegmentInput {
+    /// <p>A name for the segment.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    pub pattern: std::option::Option<std::string::String>,
+    /// <p>An optional description for this segment.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Assigns one or more tags (key-value pairs) to the segment.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can associate as many as 50 tags with a segment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSegmentInput {
+    /// <p>A name for the segment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
+    /// <p>An optional description for this segment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Assigns one or more tags (key-value pairs) to the segment.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can associate as many as 50 tags with a segment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateSegmentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSegmentInput");
+        formatter.field("name", &self.name);
+        formatter.field("pattern", &self.pattern);
+        formatter.field("description", &self.description);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSegmentInput {
+    /// <p>Specifies the segment to delete.</p>
+    pub segment: std::option::Option<std::string::String>,
+}
+impl DeleteSegmentInput {
+    /// <p>Specifies the segment to delete.</p>
+    pub fn segment(&self) -> std::option::Option<&str> {
+        self.segment.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteSegmentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSegmentInput");
+        formatter.field("segment", &self.segment);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSegmentInput {
+    /// <p>The ARN of the segment to return information for.</p>
+    pub segment: std::option::Option<std::string::String>,
+}
+impl GetSegmentInput {
+    /// <p>The ARN of the segment to return information for.</p>
+    pub fn segment(&self) -> std::option::Option<&str> {
+        self.segment.as_deref()
+    }
+}
+impl std::fmt::Debug for GetSegmentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSegmentInput");
+        formatter.field("segment", &self.segment);
+        formatter.finish()
     }
 }
 
@@ -6537,7 +7700,8 @@ pub struct EvaluateFeatureInput {
     pub feature: std::option::Option<std::string::String>,
     /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
+    /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
     pub evaluation_context: std::option::Option<std::string::String>,
 }
 impl EvaluateFeatureInput {
@@ -6553,7 +7717,8 @@ impl EvaluateFeatureInput {
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
+    /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
     pub fn evaluation_context(&self) -> std::option::Option<&str> {
         self.evaluation_context.as_deref()
     }
@@ -6849,7 +8014,7 @@ pub struct CreateLaunchInput {
     pub metric_monitors: std::option::Option<std::vec::Vec<crate::model::MetricMonitorConfig>>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
     pub groups: std::option::Option<std::vec::Vec<crate::model::LaunchGroupConfig>>,
-    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub randomization_salt: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
@@ -6886,7 +8051,7 @@ impl CreateLaunchInput {
     pub fn groups(&self) -> std::option::Option<&[crate::model::LaunchGroupConfig]> {
         self.groups.as_deref()
     }
-    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> std::option::Option<&str> {
         self.randomization_salt.as_deref()
     }
@@ -7539,6 +8704,8 @@ pub struct CreateExperimentInput {
     pub sampling_rate: std::option::Option<i64>,
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub online_ab_config: std::option::Option<crate::model::OnlineAbConfig>,
+    /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
+    pub segment: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
@@ -7581,6 +8748,10 @@ impl CreateExperimentInput {
     pub fn online_ab_config(&self) -> std::option::Option<&crate::model::OnlineAbConfig> {
         self.online_ab_config.as_ref()
     }
+    /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
+    pub fn segment(&self) -> std::option::Option<&str> {
+        self.segment.as_deref()
+    }
     /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
@@ -7604,6 +8775,7 @@ impl std::fmt::Debug for CreateExperimentInput {
         formatter.field("randomization_salt", &self.randomization_salt);
         formatter.field("sampling_rate", &self.sampling_rate);
         formatter.field("online_ab_config", &self.online_ab_config);
+        formatter.field("segment", &self.segment);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -7656,6 +8828,10 @@ pub struct UpdateExperimentInput {
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
     pub sampling_rate: std::option::Option<i64>,
+    /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
+    pub segment: std::option::Option<std::string::String>,
+    /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
+    pub remove_segment: bool,
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub online_ab_config: std::option::Option<crate::model::OnlineAbConfig>,
 }
@@ -7689,6 +8865,14 @@ impl UpdateExperimentInput {
     pub fn sampling_rate(&self) -> std::option::Option<i64> {
         self.sampling_rate
     }
+    /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
+    pub fn segment(&self) -> std::option::Option<&str> {
+        self.segment.as_deref()
+    }
+    /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
+    pub fn remove_segment(&self) -> bool {
+        self.remove_segment
+    }
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn online_ab_config(&self) -> std::option::Option<&crate::model::OnlineAbConfig> {
         self.online_ab_config.as_ref()
@@ -7704,6 +8888,8 @@ impl std::fmt::Debug for UpdateExperimentInput {
         formatter.field("metric_goals", &self.metric_goals);
         formatter.field("randomization_salt", &self.randomization_salt);
         formatter.field("sampling_rate", &self.sampling_rate);
+        formatter.field("segment", &self.segment);
+        formatter.field("remove_segment", &self.remove_segment);
         formatter.field("online_ab_config", &self.online_ab_config);
         formatter.finish()
     }
@@ -7761,6 +8947,34 @@ impl std::fmt::Debug for UntagResourceInput {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TestSegmentPatternInput {
+    /// <p>The pattern to test.</p>
+    pub pattern: std::option::Option<std::string::String>,
+    /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+    pub payload: std::option::Option<std::string::String>,
+}
+impl TestSegmentPatternInput {
+    /// <p>The pattern to test.</p>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
+    /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+    pub fn payload(&self) -> std::option::Option<&str> {
+        self.payload.as_deref()
+    }
+}
+impl std::fmt::Debug for TestSegmentPatternInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TestSegmentPatternInput");
+        formatter.field("pattern", &self.pattern);
+        formatter.field("payload", &self.payload);
         formatter.finish()
     }
 }

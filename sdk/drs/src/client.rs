@@ -155,7 +155,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteRecoveryInstance`](crate::client::fluent_builders::DeleteRecoveryInstance) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`recovery_instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRecoveryInstance::recovery_instance_id) / [`set_recovery_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteRecoveryInstance::set_recovery_instance_id): <p>RThe ID of the Recovery Instance to be deleted.</p>
+    ///   - [`recovery_instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRecoveryInstance::recovery_instance_id) / [`set_recovery_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteRecoveryInstance::set_recovery_instance_id): <p>The ID of the Recovery Instance to be deleted.</p>
     /// - On success, responds with [`DeleteRecoveryInstanceOutput`](crate::output::DeleteRecoveryInstanceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRecoveryInstanceError>`](crate::error::DeleteRecoveryInstanceError)
@@ -1060,12 +1060,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>RThe ID of the Recovery Instance to be deleted.</p>
+        /// <p>The ID of the Recovery Instance to be deleted.</p>
         pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
-        /// <p>RThe ID of the Recovery Instance to be deleted.</p>
+        /// <p>The ID of the Recovery Instance to be deleted.</p>
         pub fn set_recovery_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,

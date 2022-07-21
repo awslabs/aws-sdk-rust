@@ -126,6 +126,36 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutPermissionsBoundaryToPermissionSetOutput {}
+impl std::fmt::Debug for PutPermissionsBoundaryToPermissionSetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutPermissionsBoundaryToPermissionSetOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
+pub mod put_permissions_boundary_to_permission_set_output {
+
+    /// A builder for [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
+        pub fn build(self) -> crate::output::PutPermissionsBoundaryToPermissionSetOutput {
+            crate::output::PutPermissionsBoundaryToPermissionSetOutput {}
+        }
+    }
+}
+impl PutPermissionsBoundaryToPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
+    pub fn builder() -> crate::output::put_permissions_boundary_to_permission_set_output::Builder {
+        crate::output::put_permissions_boundary_to_permission_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInlinePolicyToPermissionSetOutput {}
 impl std::fmt::Debug for PutInlinePolicyToPermissionSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -735,6 +765,103 @@ impl ListInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutput {
+    /// <p>Specifies the names and paths of the IAM customer managed policies that you have attached to your permission set.</p>
+    pub customer_managed_policy_references:
+        std::option::Option<std::vec::Vec<crate::model::CustomerManagedPolicyReference>>,
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
+    /// <p>Specifies the names and paths of the IAM customer managed policies that you have attached to your permission set.</p>
+    pub fn customer_managed_policy_references(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomerManagedPolicyReference]> {
+        self.customer_managed_policy_references.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCustomerManagedPolicyReferencesInPermissionSetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("ListCustomerManagedPolicyReferencesInPermissionSetOutput");
+        formatter.field(
+            "customer_managed_policy_references",
+            &self.customer_managed_policy_references,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
+pub mod list_customer_managed_policy_references_in_permission_set_output {
+
+    /// A builder for [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) customer_managed_policy_references:
+            std::option::Option<std::vec::Vec<crate::model::CustomerManagedPolicyReference>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `customer_managed_policy_references`.
+        ///
+        /// To override the contents of this collection use [`set_customer_managed_policy_references`](Self::set_customer_managed_policy_references).
+        ///
+        /// <p>Specifies the names and paths of the IAM customer managed policies that you have attached to your permission set.</p>
+        pub fn customer_managed_policy_references(
+            mut self,
+            input: crate::model::CustomerManagedPolicyReference,
+        ) -> Self {
+            let mut v = self.customer_managed_policy_references.unwrap_or_default();
+            v.push(input);
+            self.customer_managed_policy_references = Some(v);
+            self
+        }
+        /// <p>Specifies the names and paths of the IAM customer managed policies that you have attached to your permission set.</p>
+        pub fn set_customer_managed_policy_references(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomerManagedPolicyReference>>,
+        ) -> Self {
+            self.customer_managed_policy_references = input;
+            self
+        }
+        /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput {
+            crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput {
+                customer_managed_policy_references: self.customer_managed_policy_references,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
+    pub fn builder(
+    ) -> crate::output::list_customer_managed_policy_references_in_permission_set_output::Builder
+    {
+        crate::output::list_customer_managed_policy_references_in_permission_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsForProvisionedPermissionSetOutput {
     /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1091,6 +1218,63 @@ impl ListAccountAssignmentCreationStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPermissionsBoundaryForPermissionSetOutput {
+    /// <p>The permissions boundary attached to the specified permission set.</p>
+    pub permissions_boundary: std::option::Option<crate::model::PermissionsBoundary>,
+}
+impl GetPermissionsBoundaryForPermissionSetOutput {
+    /// <p>The permissions boundary attached to the specified permission set.</p>
+    pub fn permissions_boundary(&self) -> std::option::Option<&crate::model::PermissionsBoundary> {
+        self.permissions_boundary.as_ref()
+    }
+}
+impl std::fmt::Debug for GetPermissionsBoundaryForPermissionSetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetPermissionsBoundaryForPermissionSetOutput");
+        formatter.field("permissions_boundary", &self.permissions_boundary);
+        formatter.finish()
+    }
+}
+/// See [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput).
+pub mod get_permissions_boundary_for_permission_set_output {
+
+    /// A builder for [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) permissions_boundary: std::option::Option<crate::model::PermissionsBoundary>,
+    }
+    impl Builder {
+        /// <p>The permissions boundary attached to the specified permission set.</p>
+        pub fn permissions_boundary(mut self, input: crate::model::PermissionsBoundary) -> Self {
+            self.permissions_boundary = Some(input);
+            self
+        }
+        /// <p>The permissions boundary attached to the specified permission set.</p>
+        pub fn set_permissions_boundary(
+            mut self,
+            input: std::option::Option<crate::model::PermissionsBoundary>,
+        ) -> Self {
+            self.permissions_boundary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput).
+        pub fn build(self) -> crate::output::GetPermissionsBoundaryForPermissionSetOutput {
+            crate::output::GetPermissionsBoundaryForPermissionSetOutput {
+                permissions_boundary: self.permissions_boundary,
+            }
+        }
+    }
+}
+impl GetPermissionsBoundaryForPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput).
+    pub fn builder() -> crate::output::get_permissions_boundary_for_permission_set_output::Builder {
+        crate::output::get_permissions_boundary_for_permission_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInlinePolicyForPermissionSetOutput {
     /// <p>The IAM inline policy that is attached to the permission set.</p>
     pub inline_policy: std::option::Option<std::string::String>,
@@ -1104,7 +1288,7 @@ impl GetInlinePolicyForPermissionSetOutput {
 impl std::fmt::Debug for GetInlinePolicyForPermissionSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInlinePolicyForPermissionSetOutput");
-        formatter.field("inline_policy", &"*** Sensitive Data Redacted ***");
+        formatter.field("inline_policy", &self.inline_policy);
         formatter.finish()
     }
 }
@@ -1172,6 +1356,41 @@ impl DetachManagedPolicyFromPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput).
     pub fn builder() -> crate::output::detach_managed_policy_from_permission_set_output::Builder {
         crate::output::detach_managed_policy_from_permission_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {}
+impl std::fmt::Debug for DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("DetachCustomerManagedPolicyReferenceFromPermissionSetOutput");
+        formatter.finish()
+    }
+}
+/// See [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
+pub mod detach_customer_managed_policy_reference_from_permission_set_output {
+
+    /// A builder for [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
+            crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {}
+        }
+    }
+}
+impl DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
+    pub fn builder(
+    ) -> crate::output::detach_customer_managed_policy_reference_from_permission_set_output::Builder
+    {
+        crate::output::detach_customer_managed_policy_reference_from_permission_set_output::Builder::default()
     }
 }
 
@@ -1593,6 +1812,37 @@ impl DeletePermissionSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePermissionsBoundaryFromPermissionSetOutput {}
+impl std::fmt::Debug for DeletePermissionsBoundaryFromPermissionSetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePermissionsBoundaryFromPermissionSetOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
+pub mod delete_permissions_boundary_from_permission_set_output {
+
+    /// A builder for [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
+        pub fn build(self) -> crate::output::DeletePermissionsBoundaryFromPermissionSetOutput {
+            crate::output::DeletePermissionsBoundaryFromPermissionSetOutput {}
+        }
+    }
+}
+impl DeletePermissionsBoundaryFromPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
+    pub fn builder(
+    ) -> crate::output::delete_permissions_boundary_from_permission_set_output::Builder {
+        crate::output::delete_permissions_boundary_from_permission_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceAccessControlAttributeConfigurationOutput {}
 impl std::fmt::Debug for DeleteInstanceAccessControlAttributeConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1906,5 +2156,40 @@ impl AttachManagedPolicyToPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput).
     pub fn builder() -> crate::output::attach_managed_policy_to_permission_set_output::Builder {
         crate::output::attach_managed_policy_to_permission_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AttachCustomerManagedPolicyReferenceToPermissionSetOutput {}
+impl std::fmt::Debug for AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("AttachCustomerManagedPolicyReferenceToPermissionSetOutput");
+        formatter.finish()
+    }
+}
+/// See [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
+pub mod attach_customer_managed_policy_reference_to_permission_set_output {
+
+    /// A builder for [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
+        pub fn build(
+            self,
+        ) -> crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
+            crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput {}
+        }
+    }
+}
+impl AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
+    pub fn builder(
+    ) -> crate::output::attach_customer_managed_policy_reference_to_permission_set_output::Builder
+    {
+        crate::output::attach_customer_managed_policy_reference_to_permission_set_output::Builder::default()
     }
 }

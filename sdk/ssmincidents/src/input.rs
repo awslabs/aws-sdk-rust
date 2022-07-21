@@ -4556,6 +4556,9 @@ pub mod update_response_plan_input {
         pub(crate) chat_channel: std::option::Option<crate::model::ChatChannel>,
         pub(crate) engagements: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
+        pub(crate) incident_template_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -4727,6 +4730,31 @@ pub mod update_response_plan_input {
             self.actions = input;
             self
         }
+        /// Adds a key-value pair to `incident_template_tags`.
+        ///
+        /// To override the contents of this collection use [`set_incident_template_tags`](Self::set_incident_template_tags).
+        ///
+        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+        pub fn incident_template_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.incident_template_tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.incident_template_tags = Some(hash_map);
+            self
+        }
+        /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+        pub fn set_incident_template_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.incident_template_tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateResponsePlanInput`](crate::input::UpdateResponsePlanInput).
         pub fn build(
             self,
@@ -4744,6 +4772,7 @@ pub mod update_response_plan_input {
                 chat_channel: self.chat_channel,
                 engagements: self.engagements,
                 actions: self.actions,
+                incident_template_tags: self.incident_template_tags,
             })
         }
     }
@@ -5152,6 +5181,9 @@ pub struct UpdateResponsePlanInput {
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
+    /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+    pub incident_template_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateResponsePlanInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -5209,6 +5241,13 @@ impl UpdateResponsePlanInput {
     pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.actions.as_deref()
     }
+    /// <p>Tags to apply to an incident when calling the <code>StartIncident</code> API action. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
+    pub fn incident_template_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.incident_template_tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateResponsePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5230,6 +5269,7 @@ impl std::fmt::Debug for UpdateResponsePlanInput {
         formatter.field("chat_channel", &self.chat_channel);
         formatter.field("engagements", &self.engagements);
         formatter.field("actions", &self.actions);
+        formatter.field("incident_template_tags", &self.incident_template_tags);
         formatter.finish()
     }
 }

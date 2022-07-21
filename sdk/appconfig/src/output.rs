@@ -32,6 +32,398 @@ impl ValidateConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateExtensionAssociationOutput {
+    /// <p>The system-generated ID for the association.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the extension defined in the association.</p>
+    pub extension_arn: std::option::Option<std::string::String>,
+    /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The parameter names and values defined in the association.</p>
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The version number for the extension defined in the association.</p>
+    pub extension_version_number: i32,
+}
+impl UpdateExtensionAssociationOutput {
+    /// <p>The system-generated ID for the association.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the extension defined in the association.</p>
+    pub fn extension_arn(&self) -> std::option::Option<&str> {
+        self.extension_arn.as_deref()
+    }
+    /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The parameter names and values defined in the association.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The version number for the extension defined in the association.</p>
+    pub fn extension_version_number(&self) -> i32 {
+        self.extension_version_number
+    }
+}
+impl std::fmt::Debug for UpdateExtensionAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateExtensionAssociationOutput");
+        formatter.field("id", &self.id);
+        formatter.field("extension_arn", &self.extension_arn);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("arn", &self.arn);
+        formatter.field("parameters", &self.parameters);
+        formatter.field("extension_version_number", &self.extension_version_number);
+        formatter.finish()
+    }
+}
+/// See [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput).
+pub mod update_extension_association_output {
+
+    /// A builder for [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) extension_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) extension_version_number: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The system-generated ID for the association.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The system-generated ID for the association.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The ARN of the extension defined in the association.</p>
+        pub fn extension_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.extension_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the extension defined in the association.</p>
+        pub fn set_extension_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.extension_arn = input;
+            self
+        }
+        /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameter names and values defined in the association.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The parameter names and values defined in the association.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// <p>The version number for the extension defined in the association.</p>
+        pub fn extension_version_number(mut self, input: i32) -> Self {
+            self.extension_version_number = Some(input);
+            self
+        }
+        /// <p>The version number for the extension defined in the association.</p>
+        pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.extension_version_number = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput).
+        pub fn build(self) -> crate::output::UpdateExtensionAssociationOutput {
+            crate::output::UpdateExtensionAssociationOutput {
+                id: self.id,
+                extension_arn: self.extension_arn,
+                resource_arn: self.resource_arn,
+                arn: self.arn,
+                parameters: self.parameters,
+                extension_version_number: self.extension_version_number.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl UpdateExtensionAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput).
+    pub fn builder() -> crate::output::update_extension_association_output::Builder {
+        crate::output::update_extension_association_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateExtensionOutput {
+    /// <p>The system-generated ID of the extension.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The extension name.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The extension version number.</p>
+    pub version_number: i32,
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Information about the extension.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The actions defined in the extension.</p>
+    pub actions: std::option::Option<
+        std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
+    >,
+    /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    pub parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::Parameter>,
+    >,
+}
+impl UpdateExtensionOutput {
+    /// <p>The system-generated ID of the extension.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The extension name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The extension version number.</p>
+    pub fn version_number(&self) -> i32 {
+        self.version_number
+    }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the extension.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The actions defined in the extension.</p>
+    pub fn actions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
+    > {
+        self.actions.as_ref()
+    }
+    /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Parameter>>
+    {
+        self.parameters.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateExtensionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateExtensionOutput");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("version_number", &self.version_number);
+        formatter.field("arn", &self.arn);
+        formatter.field("description", &self.description);
+        formatter.field("actions", &self.actions);
+        formatter.field("parameters", &self.parameters);
+        formatter.finish()
+    }
+}
+/// See [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput).
+pub mod update_extension_output {
+
+    /// A builder for [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version_number: std::option::Option<i32>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) actions: std::option::Option<
+            std::collections::HashMap<
+                crate::model::ActionPoint,
+                std::vec::Vec<crate::model::Action>,
+            >,
+        >,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::Parameter>,
+        >,
+    }
+    impl Builder {
+        /// <p>The system-generated ID of the extension.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The system-generated ID of the extension.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The extension name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The extension name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The extension version number.</p>
+        pub fn version_number(mut self, input: i32) -> Self {
+            self.version_number = Some(input);
+            self
+        }
+        /// <p>The extension version number.</p>
+        pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.version_number = input;
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Adds a key-value pair to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions defined in the extension.</p>
+        pub fn actions(
+            mut self,
+            k: crate::model::ActionPoint,
+            v: std::vec::Vec<crate::model::Action>,
+        ) -> Self {
+            let mut hash_map = self.actions.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.actions = Some(hash_map);
+            self
+        }
+        /// <p>The actions defined in the extension.</p>
+        pub fn set_actions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::ActionPoint,
+                    std::vec::Vec<crate::model::Action>,
+                >,
+            >,
+        ) -> Self {
+            self.actions = input;
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::Parameter,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::Parameter>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput).
+        pub fn build(self) -> crate::output::UpdateExtensionOutput {
+            crate::output::UpdateExtensionOutput {
+                id: self.id,
+                name: self.name,
+                version_number: self.version_number.unwrap_or_default(),
+                arn: self.arn,
+                description: self.description,
+                actions: self.actions,
+                parameters: self.parameters,
+            }
+        }
+    }
+}
+impl UpdateExtensionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput).
+    pub fn builder() -> crate::output::update_extension_output::Builder {
+        crate::output::update_extension_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEnvironmentOutput {
     /// <p>The application ID.</p>
     pub application_id: std::option::Option<std::string::String>,
@@ -799,6 +1191,8 @@ pub struct StopDeploymentOutput {
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the deployment completed. </p>
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+    pub applied_extensions: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
 }
 impl StopDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
@@ -873,6 +1267,10 @@ impl StopDeploymentOutput {
     pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
+    /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+    pub fn applied_extensions(&self) -> std::option::Option<&[crate::model::AppliedExtension]> {
+        self.applied_extensions.as_deref()
+    }
 }
 impl std::fmt::Debug for StopDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -904,6 +1302,7 @@ impl std::fmt::Debug for StopDeploymentOutput {
         formatter.field("percentage_complete", &self.percentage_complete);
         formatter.field("started_at", &self.started_at);
         formatter.field("completed_at", &self.completed_at);
+        formatter.field("applied_extensions", &self.applied_extensions);
         formatter.finish()
     }
 }
@@ -931,6 +1330,8 @@ pub mod stop_deployment_output {
         pub(crate) percentage_complete: std::option::Option<f32>,
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) applied_extensions:
+            std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
     }
     impl Builder {
         /// <p>The ID of the application that was deployed.</p>
@@ -1158,6 +1559,25 @@ pub mod stop_deployment_output {
             self.completed_at = input;
             self
         }
+        /// Appends an item to `applied_extensions`.
+        ///
+        /// To override the contents of this collection use [`set_applied_extensions`](Self::set_applied_extensions).
+        ///
+        /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+        pub fn applied_extensions(mut self, input: crate::model::AppliedExtension) -> Self {
+            let mut v = self.applied_extensions.unwrap_or_default();
+            v.push(input);
+            self.applied_extensions = Some(v);
+            self
+        }
+        /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+        pub fn set_applied_extensions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
+        ) -> Self {
+            self.applied_extensions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
         pub fn build(self) -> crate::output::StopDeploymentOutput {
             crate::output::StopDeploymentOutput {
@@ -1181,6 +1601,7 @@ pub mod stop_deployment_output {
                 percentage_complete: self.percentage_complete.unwrap_or_default(),
                 started_at: self.started_at,
                 completed_at: self.completed_at,
+                applied_extensions: self.applied_extensions,
             }
         }
     }
@@ -1232,6 +1653,8 @@ pub struct StartDeploymentOutput {
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the deployment completed. </p>
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+    pub applied_extensions: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
 }
 impl StartDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
@@ -1306,6 +1729,10 @@ impl StartDeploymentOutput {
     pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
+    /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+    pub fn applied_extensions(&self) -> std::option::Option<&[crate::model::AppliedExtension]> {
+        self.applied_extensions.as_deref()
+    }
 }
 impl std::fmt::Debug for StartDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1337,6 +1764,7 @@ impl std::fmt::Debug for StartDeploymentOutput {
         formatter.field("percentage_complete", &self.percentage_complete);
         formatter.field("started_at", &self.started_at);
         formatter.field("completed_at", &self.completed_at);
+        formatter.field("applied_extensions", &self.applied_extensions);
         formatter.finish()
     }
 }
@@ -1364,6 +1792,8 @@ pub mod start_deployment_output {
         pub(crate) percentage_complete: std::option::Option<f32>,
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) applied_extensions:
+            std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
     }
     impl Builder {
         /// <p>The ID of the application that was deployed.</p>
@@ -1591,6 +2021,25 @@ pub mod start_deployment_output {
             self.completed_at = input;
             self
         }
+        /// Appends an item to `applied_extensions`.
+        ///
+        /// To override the contents of this collection use [`set_applied_extensions`](Self::set_applied_extensions).
+        ///
+        /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+        pub fn applied_extensions(mut self, input: crate::model::AppliedExtension) -> Self {
+            let mut v = self.applied_extensions.unwrap_or_default();
+            v.push(input);
+            self.applied_extensions = Some(v);
+            self
+        }
+        /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+        pub fn set_applied_extensions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
+        ) -> Self {
+            self.applied_extensions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
         pub fn build(self) -> crate::output::StartDeploymentOutput {
             crate::output::StartDeploymentOutput {
@@ -1614,6 +2063,7 @@ pub mod start_deployment_output {
                 percentage_complete: self.percentage_complete.unwrap_or_default(),
                 started_at: self.started_at,
                 completed_at: self.completed_at,
+                applied_extensions: self.applied_extensions,
             }
         }
     }
@@ -1780,6 +2230,171 @@ impl ListHostedConfigurationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListHostedConfigurationVersionsOutput`](crate::output::ListHostedConfigurationVersionsOutput).
     pub fn builder() -> crate::output::list_hosted_configuration_versions_output::Builder {
         crate::output::list_hosted_configuration_versions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListExtensionsOutput {
+    /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::ExtensionSummary>>,
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExtensionsOutput {
+    /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ExtensionSummary]> {
+        self.items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListExtensionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListExtensionsOutput");
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
+pub mod list_extensions_output {
+
+    /// A builder for [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ExtensionSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
+        pub fn items(mut self, input: crate::model::ExtensionSummary) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExtensionSummary>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
+        pub fn build(self) -> crate::output::ListExtensionsOutput {
+            crate::output::ListExtensionsOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListExtensionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
+    pub fn builder() -> crate::output::list_extensions_output::Builder {
+        crate::output::list_extensions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListExtensionAssociationsOutput {
+    /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::ExtensionAssociationSummary>>,
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExtensionAssociationsOutput {
+    /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ExtensionAssociationSummary]> {
+        self.items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListExtensionAssociationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListExtensionAssociationsOutput");
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput).
+pub mod list_extension_associations_output {
+
+    /// A builder for [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items:
+            std::option::Option<std::vec::Vec<crate::model::ExtensionAssociationSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
+        pub fn items(mut self, input: crate::model::ExtensionAssociationSummary) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExtensionAssociationSummary>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput).
+        pub fn build(self) -> crate::output::ListExtensionAssociationsOutput {
+            crate::output::ListExtensionAssociationsOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListExtensionAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput).
+    pub fn builder() -> crate::output::list_extension_associations_output::Builder {
+        crate::output::list_extension_associations_output::Builder::default()
     }
 }
 
@@ -2352,6 +2967,398 @@ impl GetHostedConfigurationVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetExtensionAssociationOutput {
+    /// <p>The system-generated ID for the association.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the extension defined in the association.</p>
+    pub extension_arn: std::option::Option<std::string::String>,
+    /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The parameter names and values defined in the association.</p>
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The version number for the extension defined in the association.</p>
+    pub extension_version_number: i32,
+}
+impl GetExtensionAssociationOutput {
+    /// <p>The system-generated ID for the association.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the extension defined in the association.</p>
+    pub fn extension_arn(&self) -> std::option::Option<&str> {
+        self.extension_arn.as_deref()
+    }
+    /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The parameter names and values defined in the association.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The version number for the extension defined in the association.</p>
+    pub fn extension_version_number(&self) -> i32 {
+        self.extension_version_number
+    }
+}
+impl std::fmt::Debug for GetExtensionAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetExtensionAssociationOutput");
+        formatter.field("id", &self.id);
+        formatter.field("extension_arn", &self.extension_arn);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("arn", &self.arn);
+        formatter.field("parameters", &self.parameters);
+        formatter.field("extension_version_number", &self.extension_version_number);
+        formatter.finish()
+    }
+}
+/// See [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput).
+pub mod get_extension_association_output {
+
+    /// A builder for [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) extension_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) extension_version_number: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The system-generated ID for the association.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The system-generated ID for the association.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The ARN of the extension defined in the association.</p>
+        pub fn extension_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.extension_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the extension defined in the association.</p>
+        pub fn set_extension_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.extension_arn = input;
+            self
+        }
+        /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameter names and values defined in the association.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The parameter names and values defined in the association.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// <p>The version number for the extension defined in the association.</p>
+        pub fn extension_version_number(mut self, input: i32) -> Self {
+            self.extension_version_number = Some(input);
+            self
+        }
+        /// <p>The version number for the extension defined in the association.</p>
+        pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.extension_version_number = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput).
+        pub fn build(self) -> crate::output::GetExtensionAssociationOutput {
+            crate::output::GetExtensionAssociationOutput {
+                id: self.id,
+                extension_arn: self.extension_arn,
+                resource_arn: self.resource_arn,
+                arn: self.arn,
+                parameters: self.parameters,
+                extension_version_number: self.extension_version_number.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl GetExtensionAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput).
+    pub fn builder() -> crate::output::get_extension_association_output::Builder {
+        crate::output::get_extension_association_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetExtensionOutput {
+    /// <p>The system-generated ID of the extension.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The extension name.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The extension version number.</p>
+    pub version_number: i32,
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Information about the extension.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The actions defined in the extension.</p>
+    pub actions: std::option::Option<
+        std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
+    >,
+    /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    pub parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::Parameter>,
+    >,
+}
+impl GetExtensionOutput {
+    /// <p>The system-generated ID of the extension.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The extension name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The extension version number.</p>
+    pub fn version_number(&self) -> i32 {
+        self.version_number
+    }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the extension.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The actions defined in the extension.</p>
+    pub fn actions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
+    > {
+        self.actions.as_ref()
+    }
+    /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Parameter>>
+    {
+        self.parameters.as_ref()
+    }
+}
+impl std::fmt::Debug for GetExtensionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetExtensionOutput");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("version_number", &self.version_number);
+        formatter.field("arn", &self.arn);
+        formatter.field("description", &self.description);
+        formatter.field("actions", &self.actions);
+        formatter.field("parameters", &self.parameters);
+        formatter.finish()
+    }
+}
+/// See [`GetExtensionOutput`](crate::output::GetExtensionOutput).
+pub mod get_extension_output {
+
+    /// A builder for [`GetExtensionOutput`](crate::output::GetExtensionOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version_number: std::option::Option<i32>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) actions: std::option::Option<
+            std::collections::HashMap<
+                crate::model::ActionPoint,
+                std::vec::Vec<crate::model::Action>,
+            >,
+        >,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::Parameter>,
+        >,
+    }
+    impl Builder {
+        /// <p>The system-generated ID of the extension.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The system-generated ID of the extension.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The extension name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The extension name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The extension version number.</p>
+        pub fn version_number(mut self, input: i32) -> Self {
+            self.version_number = Some(input);
+            self
+        }
+        /// <p>The extension version number.</p>
+        pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.version_number = input;
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Adds a key-value pair to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions defined in the extension.</p>
+        pub fn actions(
+            mut self,
+            k: crate::model::ActionPoint,
+            v: std::vec::Vec<crate::model::Action>,
+        ) -> Self {
+            let mut hash_map = self.actions.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.actions = Some(hash_map);
+            self
+        }
+        /// <p>The actions defined in the extension.</p>
+        pub fn set_actions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::ActionPoint,
+                    std::vec::Vec<crate::model::Action>,
+                >,
+            >,
+        ) -> Self {
+            self.actions = input;
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::Parameter,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::Parameter>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetExtensionOutput`](crate::output::GetExtensionOutput).
+        pub fn build(self) -> crate::output::GetExtensionOutput {
+            crate::output::GetExtensionOutput {
+                id: self.id,
+                name: self.name,
+                version_number: self.version_number.unwrap_or_default(),
+                arn: self.arn,
+                description: self.description,
+                actions: self.actions,
+                parameters: self.parameters,
+            }
+        }
+    }
+}
+impl GetExtensionOutput {
+    /// Creates a new builder-style object to manufacture [`GetExtensionOutput`](crate::output::GetExtensionOutput).
+    pub fn builder() -> crate::output::get_extension_output::Builder {
+        crate::output::get_extension_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentOutput {
     /// <p>The application ID.</p>
     pub application_id: std::option::Option<std::string::String>,
@@ -2757,6 +3764,8 @@ pub struct GetDeploymentOutput {
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the deployment completed. </p>
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+    pub applied_extensions: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
 }
 impl GetDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
@@ -2831,6 +3840,10 @@ impl GetDeploymentOutput {
     pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
+    /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+    pub fn applied_extensions(&self) -> std::option::Option<&[crate::model::AppliedExtension]> {
+        self.applied_extensions.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2862,6 +3875,7 @@ impl std::fmt::Debug for GetDeploymentOutput {
         formatter.field("percentage_complete", &self.percentage_complete);
         formatter.field("started_at", &self.started_at);
         formatter.field("completed_at", &self.completed_at);
+        formatter.field("applied_extensions", &self.applied_extensions);
         formatter.finish()
     }
 }
@@ -2889,6 +3903,8 @@ pub mod get_deployment_output {
         pub(crate) percentage_complete: std::option::Option<f32>,
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) applied_extensions:
+            std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
     }
     impl Builder {
         /// <p>The ID of the application that was deployed.</p>
@@ -3116,6 +4132,25 @@ pub mod get_deployment_output {
             self.completed_at = input;
             self
         }
+        /// Appends an item to `applied_extensions`.
+        ///
+        /// To override the contents of this collection use [`set_applied_extensions`](Self::set_applied_extensions).
+        ///
+        /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+        pub fn applied_extensions(mut self, input: crate::model::AppliedExtension) -> Self {
+            let mut v = self.applied_extensions.unwrap_or_default();
+            v.push(input);
+            self.applied_extensions = Some(v);
+            self
+        }
+        /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
+        pub fn set_applied_extensions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
+        ) -> Self {
+            self.applied_extensions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
         pub fn build(self) -> crate::output::GetDeploymentOutput {
             crate::output::GetDeploymentOutput {
@@ -3139,6 +4174,7 @@ pub mod get_deployment_output {
                 percentage_complete: self.percentage_complete.unwrap_or_default(),
                 started_at: self.started_at,
                 completed_at: self.completed_at,
+                applied_extensions: self.applied_extensions,
             }
         }
     }
@@ -3588,6 +4624,66 @@ impl DeleteHostedConfigurationVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteExtensionAssociationOutput {}
+impl std::fmt::Debug for DeleteExtensionAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteExtensionAssociationOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput).
+pub mod delete_extension_association_output {
+
+    /// A builder for [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput).
+        pub fn build(self) -> crate::output::DeleteExtensionAssociationOutput {
+            crate::output::DeleteExtensionAssociationOutput {}
+        }
+    }
+}
+impl DeleteExtensionAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput).
+    pub fn builder() -> crate::output::delete_extension_association_output::Builder {
+        crate::output::delete_extension_association_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteExtensionOutput {}
+impl std::fmt::Debug for DeleteExtensionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteExtensionOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput).
+pub mod delete_extension_output {
+
+    /// A builder for [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput).
+        pub fn build(self) -> crate::output::DeleteExtensionOutput {
+            crate::output::DeleteExtensionOutput {}
+        }
+    }
+}
+impl DeleteExtensionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput).
+    pub fn builder() -> crate::output::delete_extension_output::Builder {
+        crate::output::delete_extension_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentOutput {}
 impl std::fmt::Debug for DeleteEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3857,6 +4953,398 @@ impl CreateHostedConfigurationVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateHostedConfigurationVersionOutput`](crate::output::CreateHostedConfigurationVersionOutput).
     pub fn builder() -> crate::output::create_hosted_configuration_version_output::Builder {
         crate::output::create_hosted_configuration_version_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateExtensionAssociationOutput {
+    /// <p>The system-generated ID for the association.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the extension defined in the association.</p>
+    pub extension_arn: std::option::Option<std::string::String>,
+    /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The parameter names and values defined in the association.</p>
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The version number for the extension defined in the association.</p>
+    pub extension_version_number: i32,
+}
+impl CreateExtensionAssociationOutput {
+    /// <p>The system-generated ID for the association.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the extension defined in the association.</p>
+    pub fn extension_arn(&self) -> std::option::Option<&str> {
+        self.extension_arn.as_deref()
+    }
+    /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The parameter names and values defined in the association.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The version number for the extension defined in the association.</p>
+    pub fn extension_version_number(&self) -> i32 {
+        self.extension_version_number
+    }
+}
+impl std::fmt::Debug for CreateExtensionAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateExtensionAssociationOutput");
+        formatter.field("id", &self.id);
+        formatter.field("extension_arn", &self.extension_arn);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("arn", &self.arn);
+        formatter.field("parameters", &self.parameters);
+        formatter.field("extension_version_number", &self.extension_version_number);
+        formatter.finish()
+    }
+}
+/// See [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput).
+pub mod create_extension_association_output {
+
+    /// A builder for [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) extension_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) extension_version_number: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The system-generated ID for the association.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The system-generated ID for the association.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The ARN of the extension defined in the association.</p>
+        pub fn extension_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.extension_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the extension defined in the association.</p>
+        pub fn set_extension_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.extension_arn = input;
+            self
+        }
+        /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameter names and values defined in the association.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The parameter names and values defined in the association.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// <p>The version number for the extension defined in the association.</p>
+        pub fn extension_version_number(mut self, input: i32) -> Self {
+            self.extension_version_number = Some(input);
+            self
+        }
+        /// <p>The version number for the extension defined in the association.</p>
+        pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.extension_version_number = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput).
+        pub fn build(self) -> crate::output::CreateExtensionAssociationOutput {
+            crate::output::CreateExtensionAssociationOutput {
+                id: self.id,
+                extension_arn: self.extension_arn,
+                resource_arn: self.resource_arn,
+                arn: self.arn,
+                parameters: self.parameters,
+                extension_version_number: self.extension_version_number.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CreateExtensionAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput).
+    pub fn builder() -> crate::output::create_extension_association_output::Builder {
+        crate::output::create_extension_association_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateExtensionOutput {
+    /// <p>The system-generated ID of the extension.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The extension name.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The extension version number.</p>
+    pub version_number: i32,
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Information about the extension.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The actions defined in the extension.</p>
+    pub actions: std::option::Option<
+        std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
+    >,
+    /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    pub parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::Parameter>,
+    >,
+}
+impl CreateExtensionOutput {
+    /// <p>The system-generated ID of the extension.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The extension name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The extension version number.</p>
+    pub fn version_number(&self) -> i32 {
+        self.version_number
+    }
+    /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the extension.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The actions defined in the extension.</p>
+    pub fn actions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
+    > {
+        self.actions.as_ref()
+    }
+    /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Parameter>>
+    {
+        self.parameters.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateExtensionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateExtensionOutput");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("version_number", &self.version_number);
+        formatter.field("arn", &self.arn);
+        formatter.field("description", &self.description);
+        formatter.field("actions", &self.actions);
+        formatter.field("parameters", &self.parameters);
+        formatter.finish()
+    }
+}
+/// See [`CreateExtensionOutput`](crate::output::CreateExtensionOutput).
+pub mod create_extension_output {
+
+    /// A builder for [`CreateExtensionOutput`](crate::output::CreateExtensionOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version_number: std::option::Option<i32>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) actions: std::option::Option<
+            std::collections::HashMap<
+                crate::model::ActionPoint,
+                std::vec::Vec<crate::model::Action>,
+            >,
+        >,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::Parameter>,
+        >,
+    }
+    impl Builder {
+        /// <p>The system-generated ID of the extension.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The system-generated ID of the extension.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The extension name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The extension name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The extension version number.</p>
+        pub fn version_number(mut self, input: i32) -> Self {
+            self.version_number = Some(input);
+            self
+        }
+        /// <p>The extension version number.</p>
+        pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.version_number = input;
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Information about the extension.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Adds a key-value pair to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions defined in the extension.</p>
+        pub fn actions(
+            mut self,
+            k: crate::model::ActionPoint,
+            v: std::vec::Vec<crate::model::Action>,
+        ) -> Self {
+            let mut hash_map = self.actions.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.actions = Some(hash_map);
+            self
+        }
+        /// <p>The actions defined in the extension.</p>
+        pub fn set_actions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::ActionPoint,
+                    std::vec::Vec<crate::model::Action>,
+                >,
+            >,
+        ) -> Self {
+            self.actions = input;
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::Parameter,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::Parameter>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateExtensionOutput`](crate::output::CreateExtensionOutput).
+        pub fn build(self) -> crate::output::CreateExtensionOutput {
+            crate::output::CreateExtensionOutput {
+                id: self.id,
+                name: self.name,
+                version_number: self.version_number.unwrap_or_default(),
+                arn: self.arn,
+                description: self.description,
+                actions: self.actions,
+                parameters: self.parameters,
+            }
+        }
+    }
+}
+impl CreateExtensionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateExtensionOutput`](crate::output::CreateExtensionOutput).
+    pub fn builder() -> crate::output::create_extension_output::Builder {
+        crate::output::create_extension_output::Builder::default()
     }
 }
 

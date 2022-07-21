@@ -3881,11 +3881,11 @@ impl CreateLocationHdfsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationFsxWindowsOutput {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
+    /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxWindowsOutput {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
+    /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
@@ -3906,12 +3906,12 @@ pub mod create_location_fsx_windows_output {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
+        /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location you created.</p>
+        /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input;
             self

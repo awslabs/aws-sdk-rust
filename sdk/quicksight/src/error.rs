@@ -322,6 +322,197 @@ impl std::error::Error for CreateAccountCustomizationError {
     }
 }
 
+/// Error type for the `CreateAccountSubscription` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateAccountSubscriptionError {
+    /// Kind of error that occurred.
+    pub kind: CreateAccountSubscriptionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateAccountSubscription` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateAccountSubscriptionErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>One or more preconditions aren't met.</p>
+    PreconditionNotMetException(crate::error::PreconditionNotMetException),
+    /// <p>The resource specified already exists. </p>
+    ResourceExistsException(crate::error::ResourceExistsException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>This resource is currently unavailable.</p>
+    ResourceUnavailableException(crate::error::ResourceUnavailableException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateAccountSubscriptionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateAccountSubscriptionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateAccountSubscriptionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateAccountSubscriptionErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            CreateAccountSubscriptionErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateAccountSubscriptionErrorKind::PreconditionNotMetException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateAccountSubscriptionErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            CreateAccountSubscriptionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateAccountSubscriptionErrorKind::ResourceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateAccountSubscriptionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateAccountSubscriptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateAccountSubscriptionError {
+    fn code(&self) -> Option<&str> {
+        CreateAccountSubscriptionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateAccountSubscriptionError {
+    /// Creates a new `CreateAccountSubscriptionError`.
+    pub fn new(kind: CreateAccountSubscriptionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateAccountSubscriptionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateAccountSubscriptionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateAccountSubscriptionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateAccountSubscriptionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateAccountSubscriptionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountSubscriptionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAccountSubscriptionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountSubscriptionErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAccountSubscriptionErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountSubscriptionErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAccountSubscriptionErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountSubscriptionErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAccountSubscriptionErrorKind::PreconditionNotMetException`.
+    pub fn is_precondition_not_met_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountSubscriptionErrorKind::PreconditionNotMetException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAccountSubscriptionErrorKind::ResourceExistsException`.
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountSubscriptionErrorKind::ResourceExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAccountSubscriptionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountSubscriptionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAccountSubscriptionErrorKind::ResourceUnavailableException`.
+    pub fn is_resource_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountSubscriptionErrorKind::ResourceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAccountSubscriptionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountSubscriptionErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for CreateAccountSubscriptionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateAccountSubscriptionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateAccountSubscriptionErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateAccountSubscriptionErrorKind::InternalFailureException(_inner) => Some(_inner),
+            CreateAccountSubscriptionErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            CreateAccountSubscriptionErrorKind::PreconditionNotMetException(_inner) => Some(_inner),
+            CreateAccountSubscriptionErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            CreateAccountSubscriptionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateAccountSubscriptionErrorKind::ResourceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            CreateAccountSubscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateAccountSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateAnalysis` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5681,6 +5872,164 @@ impl std::error::Error for DescribeAccountSettingsError {
             DescribeAccountSettingsErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DescribeAccountSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeAccountSubscription` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeAccountSubscriptionError {
+    /// Kind of error that occurred.
+    pub kind: DescribeAccountSubscriptionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeAccountSubscription` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeAccountSubscriptionErrorKind {
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure occurred.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>One or more parameters has a value that isn't valid.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>This resource is currently unavailable.</p>
+    ResourceUnavailableException(crate::error::ResourceUnavailableException),
+    /// <p>Access is throttled.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeAccountSubscriptionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeAccountSubscriptionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeAccountSubscriptionErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DescribeAccountSubscriptionErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeAccountSubscriptionErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeAccountSubscriptionErrorKind::ResourceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeAccountSubscriptionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeAccountSubscriptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeAccountSubscriptionError {
+    fn code(&self) -> Option<&str> {
+        DescribeAccountSubscriptionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeAccountSubscriptionError {
+    /// Creates a new `DescribeAccountSubscriptionError`.
+    pub fn new(kind: DescribeAccountSubscriptionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeAccountSubscriptionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeAccountSubscriptionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeAccountSubscriptionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeAccountSubscriptionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeAccountSubscriptionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAccountSubscriptionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAccountSubscriptionErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAccountSubscriptionErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAccountSubscriptionErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAccountSubscriptionErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAccountSubscriptionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAccountSubscriptionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAccountSubscriptionErrorKind::ResourceUnavailableException`.
+    pub fn is_resource_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAccountSubscriptionErrorKind::ResourceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAccountSubscriptionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAccountSubscriptionErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeAccountSubscriptionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeAccountSubscriptionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeAccountSubscriptionErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DescribeAccountSubscriptionErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DescribeAccountSubscriptionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeAccountSubscriptionErrorKind::ResourceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            DescribeAccountSubscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeAccountSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

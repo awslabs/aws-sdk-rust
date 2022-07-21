@@ -124,6 +124,32 @@ impl Client {
     pub fn create_account_customization(&self) -> fluent_builders::CreateAccountCustomization {
         fluent_builders::CreateAccountCustomization::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateAccountSubscription`](crate::client::fluent_builders::CreateAccountSubscription) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`edition(Edition)`](crate::client::fluent_builders::CreateAccountSubscription::edition) / [`set_edition(Option<Edition>)`](crate::client::fluent_builders::CreateAccountSubscription::set_edition): <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>  <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>  <ul>   <li> <p> <code>FirstName</code> </p> </li>   <li> <p> <code>LastName</code> </p> </li>   <li> <p> <code>EmailAddress</code> </p> </li>   <li> <p> <code>ContactNumber</code> </p> </li>  </ul>
+    ///   - [`authentication_method(AuthenticationMethodOption)`](crate::client::fluent_builders::CreateAccountSubscription::authentication_method) / [`set_authentication_method(Option<AuthenticationMethodOption>)`](crate::client::fluent_builders::CreateAccountSubscription::set_authentication_method): <p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p>  <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_aws_account_id): <p>The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.</p>
+    ///   - [`account_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::account_name) / [`set_account_name(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_account_name): <p>The name of your Amazon QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon QuickSight account is created.</p>
+    ///   - [`notification_email(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::notification_email) / [`set_notification_email(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_notification_email): <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon QuickSight account or Amazon QuickSight subscription.</p>
+    ///   - [`active_directory_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::active_directory_name) / [`set_active_directory_name(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_active_directory_name): <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
+    ///   - [`realm(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::realm) / [`set_realm(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_realm): <p>The realm of the Active Directory that is associated with your Amazon QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_directory_id): <p>The ID of the Active Directory that is associated with your Amazon QuickSight account.</p>
+    ///   - [`admin_group(Vec<String>)`](crate::client::fluent_builders::CreateAccountSubscription::admin_group) / [`set_admin_group(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAccountSubscription::set_admin_group): <p>The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
+    ///   - [`author_group(Vec<String>)`](crate::client::fluent_builders::CreateAccountSubscription::author_group) / [`set_author_group(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAccountSubscription::set_author_group): <p>The author group associated with your Active Directory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
+    ///   - [`reader_group(Vec<String>)`](crate::client::fluent_builders::CreateAccountSubscription::reader_group) / [`set_reader_group(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAccountSubscription::set_reader_group): <p>The reader group associated with your Active Direcrtory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    ///   - [`first_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::first_name) / [`set_first_name(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_first_name): <p>The first name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+    ///   - [`last_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::last_name) / [`set_last_name(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_last_name): <p>The last name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_email_address): <p>The email address of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+    ///   - [`contact_number(impl Into<String>)`](crate::client::fluent_builders::CreateAccountSubscription::contact_number) / [`set_contact_number(Option<String>)`](crate::client::fluent_builders::CreateAccountSubscription::set_contact_number): <p>A 10-digit phone number for the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+    /// - On success, responds with [`CreateAccountSubscriptionOutput`](crate::output::CreateAccountSubscriptionOutput) with field(s):
+    ///   - [`signup_response(Option<SignupResponse>)`](crate::output::CreateAccountSubscriptionOutput::signup_response): <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
+    ///   - [`status(i32)`](crate::output::CreateAccountSubscriptionOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`request_id(Option<String>)`](crate::output::CreateAccountSubscriptionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    /// - On failure, responds with [`SdkError<CreateAccountSubscriptionError>`](crate::error::CreateAccountSubscriptionError)
+    pub fn create_account_subscription(&self) -> fluent_builders::CreateAccountSubscription {
+        fluent_builders::CreateAccountSubscription::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateAnalysis`](crate::client::fluent_builders::CreateAnalysis) operation.
     ///
     /// - The fluent builder is configurable:
@@ -677,12 +703,24 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountSettings::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAccountSettings::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
     /// - On success, responds with [`DescribeAccountSettingsOutput`](crate::output::DescribeAccountSettingsOutput) with field(s):
-    ///   - [`account_settings(Option<AccountSettings>)`](crate::output::DescribeAccountSettingsOutput::account_settings): <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+    ///   - [`account_settings(Option<AccountSettings>)`](crate::output::DescribeAccountSettingsOutput::account_settings): <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>  <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeAccountSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::DescribeAccountSettingsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountSettingsError>`](crate::error::DescribeAccountSettingsError)
     pub fn describe_account_settings(&self) -> fluent_builders::DescribeAccountSettings {
         fluent_builders::DescribeAccountSettings::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeAccountSubscription`](crate::client::fluent_builders::DescribeAccountSubscription) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountSubscription::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAccountSubscription::set_aws_account_id): <p>The Amazon Web Services account ID associated with your Amazon QuickSight account.</p>
+    /// - On success, responds with [`DescribeAccountSubscriptionOutput`](crate::output::DescribeAccountSubscriptionOutput) with field(s):
+    ///   - [`account_info(Option<AccountInfo>)`](crate::output::DescribeAccountSubscriptionOutput::account_info): <p>A structure that contains the following elements:</p>  <ul>   <li> <p>Your Amazon QuickSight account name.</p> </li>   <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>   <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>   <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>   <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>  </ul>
+    ///   - [`status(i32)`](crate::output::DescribeAccountSubscriptionOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`request_id(Option<String>)`](crate::output::DescribeAccountSubscriptionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccountSubscriptionError>`](crate::error::DescribeAccountSubscriptionError)
+    pub fn describe_account_subscription(&self) -> fluent_builders::DescribeAccountSubscription {
+        fluent_builders::DescribeAccountSubscription::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeAnalysis`](crate::client::fluent_builders::DescribeAnalysis) operation.
     ///
@@ -1038,9 +1076,10 @@ impl Client {
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     ///   - [`session_lifetime_in_minutes(i64)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::session_lifetime_in_minutes) / [`set_session_lifetime_in_minutes(Option<i64>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_namespace): <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
-    ///   - [`session_tags(Vec<SessionTag>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::session_tags) / [`set_session_tags(Option<Vec<SessionTag>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_session_tags): <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>  <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
-    ///   - [`authorized_resource_arns(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::authorized_resource_arns) / [`set_authorized_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_authorized_resource_arns): <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
-    ///   - [`experience_configuration(AnonymousUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::experience_configuration) / [`set_experience_configuration(Option<AnonymousUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_experience_configuration): <p>The configuration of the experience you are embedding.</p>
+    ///   - [`session_tags(Vec<SessionTag>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::session_tags) / [`set_session_tags(Option<Vec<SessionTag>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_session_tags): <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>  <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
+    ///   - [`authorized_resource_arns(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::authorized_resource_arns) / [`set_authorized_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_authorized_resource_arns): <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    ///   - [`experience_configuration(AnonymousUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::experience_configuration) / [`set_experience_configuration(Option<AnonymousUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_experience_configuration): <p>The configuration of the experience that you are embedding.</p>
+    ///   - [`allowed_domains(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::allowed_domains) / [`set_allowed_domains(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_allowed_domains): <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>  <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     /// - On success, responds with [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::embed_url): <p>The embed URL for the dashboard.</p>
     ///   - [`status(i32)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::status): <p>The HTTP status of the request.</p>
@@ -1058,6 +1097,7 @@ impl Client {
     ///   - [`session_lifetime_in_minutes(i64)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::session_lifetime_in_minutes) / [`set_session_lifetime_in_minutes(Option<i64>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
     ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_user_arn): <p>The Amazon Resource Name for the registered user.</p>
     ///   - [`experience_configuration(RegisteredUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::experience_configuration) / [`set_experience_configuration(Option<RegisteredUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_experience_configuration): <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+    ///   - [`allowed_domains(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::allowed_domains) / [`set_allowed_domains(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_allowed_domains): <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>  <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     /// - On success, responds with [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::embed_url): <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
     ///   - [`status(i32)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::status): <p>The HTTP status of the request.</p>
@@ -1080,7 +1120,7 @@ impl Client {
     ///   - [`state_persistence_enabled(bool)`](crate::client::fluent_builders::GetDashboardEmbedUrl::state_persistence_enabled) / [`set_state_persistence_enabled(bool)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_state_persistence_enabled): <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_user_arn): <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>  <ul>   <li> <p>Active Directory (AD) users or group members</p> </li>   <li> <p>Invited nonfederated users</p> </li>   <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>  </ul>  <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_namespace): <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
-    ///   - [`additional_dashboard_ids(Vec<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::additional_dashboard_ids) / [`set_additional_dashboard_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_additional_dashboard_ids): <p>A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards. </p>
+    ///   - [`additional_dashboard_ids(Vec<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::additional_dashboard_ids) / [`set_additional_dashboard_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_additional_dashboard_ids): <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
     /// - On success, responds with [`GetDashboardEmbedUrlOutput`](crate::output::GetDashboardEmbedUrlOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GetDashboardEmbedUrlOutput::embed_url): <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     ///   - [`status(i32)`](crate::output::GetDashboardEmbedUrlOutput::status): <p>The HTTP status of the request.</p>
@@ -1613,7 +1653,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
-    ///   - [`default_namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::default_namespace) / [`set_default_namespace(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_default_namespace): <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email that becomes associated with the default namespace.</p>
+    ///   - [`default_namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::default_namespace) / [`set_default_namespace(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_default_namespace): <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
     ///   - [`notification_email(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::notification_email) / [`set_notification_email(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_notification_email): <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::UpdateAccountSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -1881,7 +1921,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePublicSharingSettings::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdatePublicSharingSettings::set_aws_account_id): <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
-    ///   - [`public_sharing_enabled(bool)`](crate::client::fluent_builders::UpdatePublicSharingSettings::public_sharing_enabled) / [`set_public_sharing_enabled(bool)`](crate::client::fluent_builders::UpdatePublicSharingSettings::set_public_sharing_enabled): <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+    ///   - [`public_sharing_enabled(bool)`](crate::client::fluent_builders::UpdatePublicSharingSettings::public_sharing_enabled) / [`set_public_sharing_enabled(bool)`](crate::client::fluent_builders::UpdatePublicSharingSettings::set_public_sharing_enabled): <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
     /// - On success, responds with [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::UpdatePublicSharingSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::UpdatePublicSharingSettingsOutput::status): <p>The HTTP status of the request.</p>
@@ -2099,7 +2139,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccountCustomization`.
     ///
-    /// <p>Creates Amazon QuickSight customizations the current Amazon Web Services Region. Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p>
+    /// <p>Creates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p>
     /// <p>You can create customizations for your Amazon Web Services account or, if you specify a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace always override customizations that apply to an Amazon Web Services account. To find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.</p>
     /// <p>Before you use the <code>CreateAccountCustomization</code> API operation to add a theme as the namespace default, make sure that you first share the theme with the namespace. If you don't share it with the namespace, the theme isn't visible to your users even if you make it the default theme. To check if the theme is shared, view the current permissions by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html">DescribeThemePermissions</a> </code> API operation. To share the theme, grant permissions by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a> </code> API operation. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2194,6 +2234,262 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateAccountSubscription`.
+    ///
+    /// <p>Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.</p>
+    /// <p>The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific (Singapore) Region. </p>
+    /// <p>Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you don't have an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The person who signs up for Amazon QuickSight needs to have the correct Identity and Access Management (IAM) permissions. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM Policy Examples for Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code> actions, make sure that both actions are set to <code>Allow</code>. If either action is set to <code>Deny</code>, the <code>Deny</code> action prevails and your API call fails.</p>
+    /// <p>You can't pass an existing IAM role to access other Amazon Web Services services using this API operation. To pass your existing IAM role to Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role">Passing IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>You can't set default resource access on the new account from the Amazon QuickSight API. Instead, add default resource access from the Amazon QuickSight console. For more information about setting default resource access to Amazon Web Services services, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting default resource access to Amazon Web Services services</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateAccountSubscription {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_account_subscription_input::Builder,
+    }
+    impl CreateAccountSubscription {
+        /// Creates a new `CreateAccountSubscription`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAccountSubscriptionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateAccountSubscriptionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
+        /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
+        /// <ul>
+        /// <li> <p> <code>FirstName</code> </p> </li>
+        /// <li> <p> <code>LastName</code> </p> </li>
+        /// <li> <p> <code>EmailAddress</code> </p> </li>
+        /// <li> <p> <code>ContactNumber</code> </p> </li>
+        /// </ul>
+        pub fn edition(mut self, input: crate::model::Edition) -> Self {
+            self.inner = self.inner.edition(input);
+            self
+        }
+        /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
+        /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
+        /// <ul>
+        /// <li> <p> <code>FirstName</code> </p> </li>
+        /// <li> <p> <code>LastName</code> </p> </li>
+        /// <li> <p> <code>EmailAddress</code> </p> </li>
+        /// <li> <p> <code>ContactNumber</code> </p> </li>
+        /// </ul>
+        pub fn set_edition(mut self, input: std::option::Option<crate::model::Edition>) -> Self {
+            self.inner = self.inner.set_edition(input);
+            self
+        }
+        /// <p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p>
+        /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
+        pub fn authentication_method(
+            mut self,
+            input: crate::model::AuthenticationMethodOption,
+        ) -> Self {
+            self.inner = self.inner.authentication_method(input);
+            self
+        }
+        /// <p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p>
+        /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
+        pub fn set_authentication_method(
+            mut self,
+            input: std::option::Option<crate::model::AuthenticationMethodOption>,
+        ) -> Self {
+            self.inner = self.inner.set_authentication_method(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// <p>The name of your Amazon QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon QuickSight account is created.</p>
+        pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_name(input.into());
+            self
+        }
+        /// <p>The name of your Amazon QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon QuickSight account is created.</p>
+        pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_name(input);
+            self
+        }
+        /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon QuickSight account or Amazon QuickSight subscription.</p>
+        pub fn notification_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_email(input.into());
+            self
+        }
+        /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon QuickSight account or Amazon QuickSight subscription.</p>
+        pub fn set_notification_email(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_notification_email(input);
+            self
+        }
+        /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
+        pub fn active_directory_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.active_directory_name(input.into());
+            self
+        }
+        /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
+        pub fn set_active_directory_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_active_directory_name(input);
+            self
+        }
+        /// <p>The realm of the Active Directory that is associated with your Amazon QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
+        pub fn realm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.realm(input.into());
+            self
+        }
+        /// <p>The realm of the Active Directory that is associated with your Amazon QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
+        pub fn set_realm(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_realm(input);
+            self
+        }
+        /// <p>The ID of the Active Directory that is associated with your Amazon QuickSight account.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
+            self
+        }
+        /// <p>The ID of the Active Directory that is associated with your Amazon QuickSight account.</p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_directory_id(input);
+            self
+        }
+        /// Appends an item to `AdminGroup`.
+        ///
+        /// To override the contents of this collection use [`set_admin_group`](Self::set_admin_group).
+        ///
+        /// <p>The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
+        pub fn admin_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_group(input.into());
+            self
+        }
+        /// <p>The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
+        pub fn set_admin_group(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_admin_group(input);
+            self
+        }
+        /// Appends an item to `AuthorGroup`.
+        ///
+        /// To override the contents of this collection use [`set_author_group`](Self::set_author_group).
+        ///
+        /// <p>The author group associated with your Active Directory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
+        pub fn author_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_group(input.into());
+            self
+        }
+        /// <p>The author group associated with your Active Directory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
+        pub fn set_author_group(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_author_group(input);
+            self
+        }
+        /// Appends an item to `ReaderGroup`.
+        ///
+        /// To override the contents of this collection use [`set_reader_group`](Self::set_reader_group).
+        ///
+        /// <p>The reader group associated with your Active Direcrtory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+        pub fn reader_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reader_group(input.into());
+            self
+        }
+        /// <p>The reader group associated with your Active Direcrtory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+        pub fn set_reader_group(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_reader_group(input);
+            self
+        }
+        /// <p>The first name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(input.into());
+            self
+        }
+        /// <p>The first name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_first_name(input);
+            self
+        }
+        /// <p>The last name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(input.into());
+            self
+        }
+        /// <p>The last name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_last_name(input);
+            self
+        }
+        /// <p>The email address of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
+            self
+        }
+        /// <p>The email address of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_email_address(input);
+            self
+        }
+        /// <p>A 10-digit phone number for the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+        pub fn contact_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_number(input.into());
+            self
+        }
+        /// <p>A 10-digit phone number for the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
+        pub fn set_contact_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_contact_number(input);
             self
         }
     }
@@ -5620,6 +5916,62 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeAccountSubscription`.
+    ///
+    /// <p>Use the DescribeAccountSubscription operation to receive a description of a Amazon QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name, subscription status, authentication type, edition, and notification email address.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeAccountSubscription {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_account_subscription_input::Builder,
+    }
+    impl DescribeAccountSubscription {
+        /// Creates a new `DescribeAccountSubscription`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAccountSubscriptionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeAccountSubscriptionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight account.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight account.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeAnalysis`.
     ///
     /// <p>Provides a summary of the metadata for an analysis.</p>
@@ -7350,7 +7702,7 @@ pub mod fluent_builders {
     /// <p>The following rules apply to the generated URL:</p>
     /// <ul>
     /// <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it is generated. Once redeemed within this period, it cannot be re-used again.</p> </li>
-    /// <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter.</p> <p>The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours. </p> </li>
+    /// <li> <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter. The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p> </li>
     /// <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p>
@@ -7432,13 +7784,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_session_tags`](Self::set_session_tags).
         ///
         /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-        /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
+        /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
         pub fn session_tags(mut self, input: crate::model::SessionTag) -> Self {
             self.inner = self.inner.session_tags(input);
             self
         }
         /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-        /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
+        /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
         pub fn set_session_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SessionTag>>,
@@ -7450,12 +7802,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_authorized_resource_arns`](Self::set_authorized_resource_arns).
         ///
-        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+        /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
         pub fn authorized_resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.authorized_resource_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+        /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
         pub fn set_authorized_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7463,7 +7815,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authorized_resource_arns(input);
             self
         }
-        /// <p>The configuration of the experience you are embedding.</p>
+        /// <p>The configuration of the experience that you are embedding.</p>
         pub fn experience_configuration(
             mut self,
             input: crate::model::AnonymousUserEmbeddingExperienceConfiguration,
@@ -7471,12 +7823,31 @@ pub mod fluent_builders {
             self.inner = self.inner.experience_configuration(input);
             self
         }
-        /// <p>The configuration of the experience you are embedding.</p>
+        /// <p>The configuration of the experience that you are embedding.</p>
         pub fn set_experience_configuration(
             mut self,
             input: std::option::Option<crate::model::AnonymousUserEmbeddingExperienceConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_experience_configuration(input);
+            self
+        }
+        /// Appends an item to `AllowedDomains`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).
+        ///
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        pub fn allowed_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.allowed_domains(input.into());
+            self
+        }
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        pub fn set_allowed_domains(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_allowed_domains(input);
             self
         }
     }
@@ -7581,16 +7952,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_experience_configuration(input);
             self
         }
+        /// Appends an item to `AllowedDomains`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).
+        ///
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        pub fn allowed_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.allowed_domains(input.into());
+            self
+        }
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        pub fn set_allowed_domains(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_allowed_domains(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetDashboardEmbedUrl`.
     ///
-    /// <p>Generates a session URL and authorization code that you can use to embed an Amazon Amazon QuickSight read-only dashboard in your web server code. Before you use this command, make sure that you have configured the dashboards and permissions. </p>
-    /// <p>Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The following rules apply to the combination of URL and authorization code:</p>
+    /// <p>Generates a temporary session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard in your website or application. Before you use this command, make sure that you have configured the dashboards and permissions. </p>
+    /// <p>Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The following rules apply to the generated URL:</p>
     /// <ul>
     /// <li> <p>They must be used together.</p> </li>
     /// <li> <p>They can be used one time only.</p> </li>
     /// <li> <p>They are valid for 5 minutes after you run this command.</p> </li>
-    /// <li> <p>The resulting user session is valid for 10 hours.</p> </li>
+    /// <li> <p>The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customi session duration.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
@@ -7745,12 +8135,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_dashboard_ids`](Self::set_additional_dashboard_ids).
         ///
-        /// <p>A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards. </p>
+        /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
         pub fn additional_dashboard_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.additional_dashboard_ids(input.into());
             self
         }
-        /// <p>A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards. </p>
+        /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
         pub fn set_additional_dashboard_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10646,7 +11036,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAccountCustomization`.
     ///
-    /// <p>Updates Amazon QuickSight customizations the current Amazon Web Services Region. Currently, the only customization you can use is a theme.</p>
+    /// <p>Updates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, the only customization that you can use is a theme.</p>
     /// <p>You can use customizations for your Amazon Web Services account or, if you specify a namespace, for a Amazon QuickSight namespace instead. Customizations that apply to a namespace override customizations that apply to an Amazon Web Services account. To find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccountCustomization {
@@ -10779,12 +11169,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email that becomes associated with the default namespace.</p>
+        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
         pub fn default_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_namespace(input.into());
             self
         }
-        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email that becomes associated with the default namespace.</p>
+        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
         pub fn set_default_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12452,9 +12842,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePublicSharingSettings`.
     ///
-    /// <p>Use the UpdatePublicSharingSettings operation to enable or disable the public sharing settings of an Amazon QuickSight dashboard.</p>
-    /// <p>To use this operation, enable session capacity pricing on your Amazon QuickSight account.</p>
-    /// <p>Before you can enable public sharing on your account, you need to allow public sharing permissions to an administrative user in the IAM console. For more information on using IAM with Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using Amazon QuickSight with IAM</a>.</p>
+    /// <p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off the public sharing settings of an Amazon QuickSight dashboard.</p>
+    /// <p>To use this operation, turn on session capacity pricing for your Amazon QuickSight account.</p>
+    /// <p>Before you can turn on public sharing on your account, make sure to give public sharing permissions to an administrative user in the Identity and Access Management (IAM) console. For more information on using IAM with Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using Amazon QuickSight with IAM</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePublicSharingSettings {
         handle: std::sync::Arc<super::Handle>,
@@ -12507,12 +12897,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+        /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
         pub fn public_sharing_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.public_sharing_enabled(input);
             self
         }
-        /// <p>A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.</p>
+        /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
         pub fn set_public_sharing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_public_sharing_enabled(input);
             self

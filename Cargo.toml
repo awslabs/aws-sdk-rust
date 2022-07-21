@@ -312,6 +312,7 @@ members = [
     "sdk/resourcegroups",
     "sdk/resourcegroupstagging",
     "sdk/robomaker",
+    "sdk/rolesanywhere",
     "sdk/route53",
     "sdk/route53domains",
     "sdk/route53recoverycluster",

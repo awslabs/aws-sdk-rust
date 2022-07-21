@@ -111,6 +111,36 @@ impl UpdateFilterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConfigurationOutput {}
+impl std::fmt::Debug for UpdateConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
+pub mod update_configuration_output {
+
+    /// A builder for [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
+        pub fn build(self) -> crate::output::UpdateConfigurationOutput {
+            crate::output::UpdateConfigurationOutput {}
+        }
+    }
+}
+impl UpdateConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
+    pub fn builder() -> crate::output::update_configuration_output::Builder {
+        crate::output::update_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1300,6 +1330,63 @@ impl GetDelegatedAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput).
     pub fn builder() -> crate::output::get_delegated_admin_account_output::Builder {
         crate::output::get_delegated_admin_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetConfigurationOutput {
+    /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
+    pub ecr_configuration: std::option::Option<crate::model::EcrConfigurationState>,
+}
+impl GetConfigurationOutput {
+    /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
+    pub fn ecr_configuration(&self) -> std::option::Option<&crate::model::EcrConfigurationState> {
+        self.ecr_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for GetConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetConfigurationOutput");
+        formatter.field("ecr_configuration", &self.ecr_configuration);
+        formatter.finish()
+    }
+}
+/// See [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+pub mod get_configuration_output {
+
+    /// A builder for [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ecr_configuration: std::option::Option<crate::model::EcrConfigurationState>,
+    }
+    impl Builder {
+        /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
+        pub fn ecr_configuration(mut self, input: crate::model::EcrConfigurationState) -> Self {
+            self.ecr_configuration = Some(input);
+            self
+        }
+        /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
+        pub fn set_ecr_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EcrConfigurationState>,
+        ) -> Self {
+            self.ecr_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+        pub fn build(self) -> crate::output::GetConfigurationOutput {
+            crate::output::GetConfigurationOutput {
+                ecr_configuration: self.ecr_configuration,
+            }
+        }
+    }
+}
+impl GetConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+    pub fn builder() -> crate::output::get_configuration_output::Builder {
+        crate::output::get_configuration_output::Builder::default()
     }
 }
 

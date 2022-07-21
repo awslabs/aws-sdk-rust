@@ -163,19 +163,29 @@ impl AsRef<str> for ValidationExceptionReason {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceIntegrationConfig {
-    /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
+    /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
     pub ops_center: std::option::Option<crate::model::OpsCenterIntegrationConfig>,
+    /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+    pub logs_anomaly_detection:
+        std::option::Option<crate::model::LogsAnomalyDetectionIntegrationConfig>,
 }
 impl UpdateServiceIntegrationConfig {
-    /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
+    /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
     pub fn ops_center(&self) -> std::option::Option<&crate::model::OpsCenterIntegrationConfig> {
         self.ops_center.as_ref()
+    }
+    /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+    pub fn logs_anomaly_detection(
+        &self,
+    ) -> std::option::Option<&crate::model::LogsAnomalyDetectionIntegrationConfig> {
+        self.logs_anomaly_detection.as_ref()
     }
 }
 impl std::fmt::Debug for UpdateServiceIntegrationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceIntegrationConfig");
         formatter.field("ops_center", &self.ops_center);
+        formatter.field("logs_anomaly_detection", &self.logs_anomaly_detection);
         formatter.finish()
     }
 }
@@ -186,14 +196,16 @@ pub mod update_service_integration_config {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_center: std::option::Option<crate::model::OpsCenterIntegrationConfig>,
+        pub(crate) logs_anomaly_detection:
+            std::option::Option<crate::model::LogsAnomalyDetectionIntegrationConfig>,
     }
     impl Builder {
-        /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
+        /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
         pub fn ops_center(mut self, input: crate::model::OpsCenterIntegrationConfig) -> Self {
             self.ops_center = Some(input);
             self
         }
-        /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
+        /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
         pub fn set_ops_center(
             mut self,
             input: std::option::Option<crate::model::OpsCenterIntegrationConfig>,
@@ -201,10 +213,27 @@ pub mod update_service_integration_config {
             self.ops_center = input;
             self
         }
+        /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+        pub fn logs_anomaly_detection(
+            mut self,
+            input: crate::model::LogsAnomalyDetectionIntegrationConfig,
+        ) -> Self {
+            self.logs_anomaly_detection = Some(input);
+            self
+        }
+        /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+        pub fn set_logs_anomaly_detection(
+            mut self,
+            input: std::option::Option<crate::model::LogsAnomalyDetectionIntegrationConfig>,
+        ) -> Self {
+            self.logs_anomaly_detection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateServiceIntegrationConfig`](crate::model::UpdateServiceIntegrationConfig).
         pub fn build(self) -> crate::model::UpdateServiceIntegrationConfig {
             crate::model::UpdateServiceIntegrationConfig {
                 ops_center: self.ops_center,
+                logs_anomaly_detection: self.logs_anomaly_detection,
             }
         }
     }
@@ -216,41 +245,41 @@ impl UpdateServiceIntegrationConfig {
     }
 }
 
-/// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
+/// <p> Information about the integration of DevOps Guru with CloudWatch log groups for log anomaly detection. You can use this to update the configuration. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OpsCenterIntegrationConfig {
-    /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+pub struct LogsAnomalyDetectionIntegrationConfig {
+    /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
     pub opt_in_status: std::option::Option<crate::model::OptInStatus>,
 }
-impl OpsCenterIntegrationConfig {
-    /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+impl LogsAnomalyDetectionIntegrationConfig {
+    /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
     pub fn opt_in_status(&self) -> std::option::Option<&crate::model::OptInStatus> {
         self.opt_in_status.as_ref()
     }
 }
-impl std::fmt::Debug for OpsCenterIntegrationConfig {
+impl std::fmt::Debug for LogsAnomalyDetectionIntegrationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpsCenterIntegrationConfig");
+        let mut formatter = f.debug_struct("LogsAnomalyDetectionIntegrationConfig");
         formatter.field("opt_in_status", &self.opt_in_status);
         formatter.finish()
     }
 }
-/// See [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
-pub mod ops_center_integration_config {
+/// See [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
+pub mod logs_anomaly_detection_integration_config {
 
-    /// A builder for [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
+    /// A builder for [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
     }
     impl Builder {
-        /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+        /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
         pub fn opt_in_status(mut self, input: crate::model::OptInStatus) -> Self {
             self.opt_in_status = Some(input);
             self
         }
-        /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+        /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
         pub fn set_opt_in_status(
             mut self,
             input: std::option::Option<crate::model::OptInStatus>,
@@ -258,18 +287,18 @@ pub mod ops_center_integration_config {
             self.opt_in_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
-        pub fn build(self) -> crate::model::OpsCenterIntegrationConfig {
-            crate::model::OpsCenterIntegrationConfig {
+        /// Consumes the builder and constructs a [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
+        pub fn build(self) -> crate::model::LogsAnomalyDetectionIntegrationConfig {
+            crate::model::LogsAnomalyDetectionIntegrationConfig {
                 opt_in_status: self.opt_in_status,
             }
         }
     }
 }
-impl OpsCenterIntegrationConfig {
-    /// Creates a new builder-style object to manufacture [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
-    pub fn builder() -> crate::model::ops_center_integration_config::Builder {
-        crate::model::ops_center_integration_config::Builder::default()
+impl LogsAnomalyDetectionIntegrationConfig {
+    /// Creates a new builder-style object to manufacture [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
+    pub fn builder() -> crate::model::logs_anomaly_detection_integration_config::Builder {
+        crate::model::logs_anomaly_detection_integration_config::Builder::default()
     }
 }
 
@@ -326,6 +355,63 @@ impl OptInStatus {
 impl AsRef<str> for OptInStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OpsCenterIntegrationConfig {
+    /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+    pub opt_in_status: std::option::Option<crate::model::OptInStatus>,
+}
+impl OpsCenterIntegrationConfig {
+    /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+    pub fn opt_in_status(&self) -> std::option::Option<&crate::model::OptInStatus> {
+        self.opt_in_status.as_ref()
+    }
+}
+impl std::fmt::Debug for OpsCenterIntegrationConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OpsCenterIntegrationConfig");
+        formatter.field("opt_in_status", &self.opt_in_status);
+        formatter.finish()
+    }
+}
+/// See [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
+pub mod ops_center_integration_config {
+
+    /// A builder for [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
+    }
+    impl Builder {
+        /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+        pub fn opt_in_status(mut self, input: crate::model::OptInStatus) -> Self {
+            self.opt_in_status = Some(input);
+            self
+        }
+        /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
+        pub fn set_opt_in_status(
+            mut self,
+            input: std::option::Option<crate::model::OptInStatus>,
+        ) -> Self {
+            self.opt_in_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
+        pub fn build(self) -> crate::model::OpsCenterIntegrationConfig {
+            crate::model::OpsCenterIntegrationConfig {
+                opt_in_status: self.opt_in_status,
+            }
+        }
+    }
+}
+impl OpsCenterIntegrationConfig {
+    /// Creates a new builder-style object to manufacture [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
+    pub fn builder() -> crate::model::ops_center_integration_config::Builder {
+        crate::model::ops_center_integration_config::Builder::default()
     }
 }
 
@@ -4812,6 +4898,298 @@ impl SnsChannelConfig {
     }
 }
 
+/// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MonitoredResourceIdentifier {
+    /// <p> The name of the resource being monitored. </p>
+    pub monitored_resource_name: std::option::Option<std::string::String>,
+    /// <p> The type of resource being monitored. </p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p> The permission status of a resource. </p>
+    pub resource_permission: std::option::Option<crate::model::ResourcePermission>,
+}
+impl MonitoredResourceIdentifier {
+    /// <p> The name of the resource being monitored. </p>
+    pub fn monitored_resource_name(&self) -> std::option::Option<&str> {
+        self.monitored_resource_name.as_deref()
+    }
+    /// <p> The type of resource being monitored. </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p> The permission status of a resource. </p>
+    pub fn resource_permission(&self) -> std::option::Option<&crate::model::ResourcePermission> {
+        self.resource_permission.as_ref()
+    }
+}
+impl std::fmt::Debug for MonitoredResourceIdentifier {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MonitoredResourceIdentifier");
+        formatter.field("monitored_resource_name", &self.monitored_resource_name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("resource_permission", &self.resource_permission);
+        formatter.finish()
+    }
+}
+/// See [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
+pub mod monitored_resource_identifier {
+
+    /// A builder for [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) monitored_resource_name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) resource_permission: std::option::Option<crate::model::ResourcePermission>,
+    }
+    impl Builder {
+        /// <p> The name of the resource being monitored. </p>
+        pub fn monitored_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitored_resource_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the resource being monitored. </p>
+        pub fn set_monitored_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitored_resource_name = input;
+            self
+        }
+        /// <p> The type of resource being monitored. </p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p> The type of resource being monitored. </p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p> The permission status of a resource. </p>
+        pub fn resource_permission(mut self, input: crate::model::ResourcePermission) -> Self {
+            self.resource_permission = Some(input);
+            self
+        }
+        /// <p> The permission status of a resource. </p>
+        pub fn set_resource_permission(
+            mut self,
+            input: std::option::Option<crate::model::ResourcePermission>,
+        ) -> Self {
+            self.resource_permission = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
+        pub fn build(self) -> crate::model::MonitoredResourceIdentifier {
+            crate::model::MonitoredResourceIdentifier {
+                monitored_resource_name: self.monitored_resource_name,
+                r#type: self.r#type,
+                resource_permission: self.resource_permission,
+            }
+        }
+    }
+}
+impl MonitoredResourceIdentifier {
+    /// Creates a new builder-style object to manufacture [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
+    pub fn builder() -> crate::model::monitored_resource_identifier::Builder {
+        crate::model::monitored_resource_identifier::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResourcePermission {
+    #[allow(missing_docs)] // documentation missing in model
+    FullPermission,
+    #[allow(missing_docs)] // documentation missing in model
+    MissingPermission,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ResourcePermission {
+    fn from(s: &str) -> Self {
+        match s {
+            "FULL_PERMISSION" => ResourcePermission::FullPermission,
+            "MISSING_PERMISSION" => ResourcePermission::MissingPermission,
+            other => ResourcePermission::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ResourcePermission {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourcePermission::from(s))
+    }
+}
+impl ResourcePermission {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourcePermission::FullPermission => "FULL_PERMISSION",
+            ResourcePermission::MissingPermission => "MISSING_PERMISSION",
+            ResourcePermission::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FULL_PERMISSION", "MISSING_PERMISSION"]
+    }
+}
+impl AsRef<str> for ResourcePermission {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMonitoredResourcesFilters {
+    /// <p> The permission status of a resource. </p>
+    pub resource_permission: std::option::Option<crate::model::ResourcePermission>,
+    /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
+    pub resource_type_filters: std::option::Option<std::vec::Vec<crate::model::ResourceTypeFilter>>,
+}
+impl ListMonitoredResourcesFilters {
+    /// <p> The permission status of a resource. </p>
+    pub fn resource_permission(&self) -> std::option::Option<&crate::model::ResourcePermission> {
+        self.resource_permission.as_ref()
+    }
+    /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
+    pub fn resource_type_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceTypeFilter]> {
+        self.resource_type_filters.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMonitoredResourcesFilters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMonitoredResourcesFilters");
+        formatter.field("resource_permission", &self.resource_permission);
+        formatter.field("resource_type_filters", &self.resource_type_filters);
+        formatter.finish()
+    }
+}
+/// See [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
+pub mod list_monitored_resources_filters {
+
+    /// A builder for [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_permission: std::option::Option<crate::model::ResourcePermission>,
+        pub(crate) resource_type_filters:
+            std::option::Option<std::vec::Vec<crate::model::ResourceTypeFilter>>,
+    }
+    impl Builder {
+        /// <p> The permission status of a resource. </p>
+        pub fn resource_permission(mut self, input: crate::model::ResourcePermission) -> Self {
+            self.resource_permission = Some(input);
+            self
+        }
+        /// <p> The permission status of a resource. </p>
+        pub fn set_resource_permission(
+            mut self,
+            input: std::option::Option<crate::model::ResourcePermission>,
+        ) -> Self {
+            self.resource_permission = input;
+            self
+        }
+        /// Appends an item to `resource_type_filters`.
+        ///
+        /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
+        ///
+        /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
+        pub fn resource_type_filters(mut self, input: crate::model::ResourceTypeFilter) -> Self {
+            let mut v = self.resource_type_filters.unwrap_or_default();
+            v.push(input);
+            self.resource_type_filters = Some(v);
+            self
+        }
+        /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
+        pub fn set_resource_type_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceTypeFilter>>,
+        ) -> Self {
+            self.resource_type_filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
+        pub fn build(self) -> crate::model::ListMonitoredResourcesFilters {
+            crate::model::ListMonitoredResourcesFilters {
+                resource_permission: self.resource_permission,
+                resource_type_filters: self.resource_type_filters,
+            }
+        }
+    }
+}
+impl ListMonitoredResourcesFilters {
+    /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
+    pub fn builder() -> crate::model::list_monitored_resources_filters::Builder {
+        crate::model::list_monitored_resources_filters::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResourceTypeFilter {
+    #[allow(missing_docs)] // documentation missing in model
+    LogGroups,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ResourceTypeFilter {
+    fn from(s: &str) -> Self {
+        match s {
+            "LOG_GROUPS" => ResourceTypeFilter::LogGroups,
+            other => ResourceTypeFilter::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ResourceTypeFilter {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceTypeFilter::from(s))
+    }
+}
+impl ResourceTypeFilter {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceTypeFilter::LogGroups => "LOG_GROUPS",
+            ResourceTypeFilter::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["LOG_GROUPS"]
+    }
+}
+impl AsRef<str> for ResourceTypeFilter {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p> An Amazon Web Services resource event. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5474,6 +5852,500 @@ impl EventTimeRange {
     /// Creates a new builder-style object to manufacture [`EventTimeRange`](crate::model::EventTimeRange).
     pub fn builder() -> crate::model::event_time_range::Builder {
         crate::model::event_time_range::Builder::default()
+    }
+}
+
+/// <p> An Amazon CloudWatch log group that contains log anomalies and is used to generate an insight. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnomalousLogGroup {
+    /// <p> The name of the CloudWatch log group. </p>
+    pub log_group_name: std::option::Option<std::string::String>,
+    /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
+    pub impact_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The time the anomalous log events stopped. </p>
+    pub impact_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The number of log lines that were scanned for anomalous log events. </p>
+    pub number_of_log_lines_scanned: i32,
+    /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
+    pub log_anomaly_showcases: std::option::Option<std::vec::Vec<crate::model::LogAnomalyShowcase>>,
+}
+impl AnomalousLogGroup {
+    /// <p> The name of the CloudWatch log group. </p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
+    pub fn impact_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.impact_start_time.as_ref()
+    }
+    /// <p> The time the anomalous log events stopped. </p>
+    pub fn impact_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.impact_end_time.as_ref()
+    }
+    /// <p> The number of log lines that were scanned for anomalous log events. </p>
+    pub fn number_of_log_lines_scanned(&self) -> i32 {
+        self.number_of_log_lines_scanned
+    }
+    /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
+    pub fn log_anomaly_showcases(
+        &self,
+    ) -> std::option::Option<&[crate::model::LogAnomalyShowcase]> {
+        self.log_anomaly_showcases.as_deref()
+    }
+}
+impl std::fmt::Debug for AnomalousLogGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnomalousLogGroup");
+        formatter.field("log_group_name", &self.log_group_name);
+        formatter.field("impact_start_time", &self.impact_start_time);
+        formatter.field("impact_end_time", &self.impact_end_time);
+        formatter.field(
+            "number_of_log_lines_scanned",
+            &self.number_of_log_lines_scanned,
+        );
+        formatter.field("log_anomaly_showcases", &self.log_anomaly_showcases);
+        formatter.finish()
+    }
+}
+/// See [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
+pub mod anomalous_log_group {
+
+    /// A builder for [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) log_group_name: std::option::Option<std::string::String>,
+        pub(crate) impact_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) impact_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) number_of_log_lines_scanned: std::option::Option<i32>,
+        pub(crate) log_anomaly_showcases:
+            std::option::Option<std::vec::Vec<crate::model::LogAnomalyShowcase>>,
+    }
+    impl Builder {
+        /// <p> The name of the CloudWatch log group. </p>
+        pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the CloudWatch log group. </p>
+        pub fn set_log_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_name = input;
+            self
+        }
+        /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
+        pub fn impact_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.impact_start_time = Some(input);
+            self
+        }
+        /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
+        pub fn set_impact_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.impact_start_time = input;
+            self
+        }
+        /// <p> The time the anomalous log events stopped. </p>
+        pub fn impact_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.impact_end_time = Some(input);
+            self
+        }
+        /// <p> The time the anomalous log events stopped. </p>
+        pub fn set_impact_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.impact_end_time = input;
+            self
+        }
+        /// <p> The number of log lines that were scanned for anomalous log events. </p>
+        pub fn number_of_log_lines_scanned(mut self, input: i32) -> Self {
+            self.number_of_log_lines_scanned = Some(input);
+            self
+        }
+        /// <p> The number of log lines that were scanned for anomalous log events. </p>
+        pub fn set_number_of_log_lines_scanned(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_log_lines_scanned = input;
+            self
+        }
+        /// Appends an item to `log_anomaly_showcases`.
+        ///
+        /// To override the contents of this collection use [`set_log_anomaly_showcases`](Self::set_log_anomaly_showcases).
+        ///
+        /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
+        pub fn log_anomaly_showcases(mut self, input: crate::model::LogAnomalyShowcase) -> Self {
+            let mut v = self.log_anomaly_showcases.unwrap_or_default();
+            v.push(input);
+            self.log_anomaly_showcases = Some(v);
+            self
+        }
+        /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
+        pub fn set_log_anomaly_showcases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LogAnomalyShowcase>>,
+        ) -> Self {
+            self.log_anomaly_showcases = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
+        pub fn build(self) -> crate::model::AnomalousLogGroup {
+            crate::model::AnomalousLogGroup {
+                log_group_name: self.log_group_name,
+                impact_start_time: self.impact_start_time,
+                impact_end_time: self.impact_end_time,
+                number_of_log_lines_scanned: self.number_of_log_lines_scanned.unwrap_or_default(),
+                log_anomaly_showcases: self.log_anomaly_showcases,
+            }
+        }
+    }
+}
+impl AnomalousLogGroup {
+    /// Creates a new builder-style object to manufacture [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
+    pub fn builder() -> crate::model::anomalous_log_group::Builder {
+        crate::model::anomalous_log_group::Builder::default()
+    }
+}
+
+/// <p> A cluster of similar anomalous log events found within a log group. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LogAnomalyShowcase {
+    /// <p> A list of anomalous log events that may be related. </p>
+    pub log_anomaly_classes: std::option::Option<std::vec::Vec<crate::model::LogAnomalyClass>>,
+}
+impl LogAnomalyShowcase {
+    /// <p> A list of anomalous log events that may be related. </p>
+    pub fn log_anomaly_classes(&self) -> std::option::Option<&[crate::model::LogAnomalyClass]> {
+        self.log_anomaly_classes.as_deref()
+    }
+}
+impl std::fmt::Debug for LogAnomalyShowcase {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LogAnomalyShowcase");
+        formatter.field("log_anomaly_classes", &self.log_anomaly_classes);
+        formatter.finish()
+    }
+}
+/// See [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
+pub mod log_anomaly_showcase {
+
+    /// A builder for [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) log_anomaly_classes:
+            std::option::Option<std::vec::Vec<crate::model::LogAnomalyClass>>,
+    }
+    impl Builder {
+        /// Appends an item to `log_anomaly_classes`.
+        ///
+        /// To override the contents of this collection use [`set_log_anomaly_classes`](Self::set_log_anomaly_classes).
+        ///
+        /// <p> A list of anomalous log events that may be related. </p>
+        pub fn log_anomaly_classes(mut self, input: crate::model::LogAnomalyClass) -> Self {
+            let mut v = self.log_anomaly_classes.unwrap_or_default();
+            v.push(input);
+            self.log_anomaly_classes = Some(v);
+            self
+        }
+        /// <p> A list of anomalous log events that may be related. </p>
+        pub fn set_log_anomaly_classes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LogAnomalyClass>>,
+        ) -> Self {
+            self.log_anomaly_classes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
+        pub fn build(self) -> crate::model::LogAnomalyShowcase {
+            crate::model::LogAnomalyShowcase {
+                log_anomaly_classes: self.log_anomaly_classes,
+            }
+        }
+    }
+}
+impl LogAnomalyShowcase {
+    /// Creates a new builder-style object to manufacture [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
+    pub fn builder() -> crate::model::log_anomaly_showcase::Builder {
+        crate::model::log_anomaly_showcase::Builder::default()
+    }
+}
+
+/// <p> Information about an anomalous log event found within a log group. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LogAnomalyClass {
+    /// <p> The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source. </p>
+    pub log_stream_name: std::option::Option<std::string::String>,
+    /// <p> The type of log anomaly that has been detected. </p>
+    pub log_anomaly_type: std::option::Option<crate::model::LogAnomalyType>,
+    /// <p> The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies. </p>
+    pub log_anomaly_token: std::option::Option<std::string::String>,
+    /// <p> The ID of the log event. </p>
+    pub log_event_id: std::option::Option<std::string::String>,
+    /// <p> The explanation for why the log event is considered an anomaly. </p>
+    pub explanation: std::option::Option<std::string::String>,
+    /// <p> The number of log lines where this anomalous log event occurs. </p>
+    pub number_of_log_lines_occurrences: i32,
+    /// <p> The time of the first occurrence of the anomalous log event. </p>
+    pub log_event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl LogAnomalyClass {
+    /// <p> The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source. </p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+    /// <p> The type of log anomaly that has been detected. </p>
+    pub fn log_anomaly_type(&self) -> std::option::Option<&crate::model::LogAnomalyType> {
+        self.log_anomaly_type.as_ref()
+    }
+    /// <p> The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies. </p>
+    pub fn log_anomaly_token(&self) -> std::option::Option<&str> {
+        self.log_anomaly_token.as_deref()
+    }
+    /// <p> The ID of the log event. </p>
+    pub fn log_event_id(&self) -> std::option::Option<&str> {
+        self.log_event_id.as_deref()
+    }
+    /// <p> The explanation for why the log event is considered an anomaly. </p>
+    pub fn explanation(&self) -> std::option::Option<&str> {
+        self.explanation.as_deref()
+    }
+    /// <p> The number of log lines where this anomalous log event occurs. </p>
+    pub fn number_of_log_lines_occurrences(&self) -> i32 {
+        self.number_of_log_lines_occurrences
+    }
+    /// <p> The time of the first occurrence of the anomalous log event. </p>
+    pub fn log_event_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.log_event_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for LogAnomalyClass {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LogAnomalyClass");
+        formatter.field("log_stream_name", &self.log_stream_name);
+        formatter.field("log_anomaly_type", &self.log_anomaly_type);
+        formatter.field("log_anomaly_token", &self.log_anomaly_token);
+        formatter.field("log_event_id", &self.log_event_id);
+        formatter.field("explanation", &self.explanation);
+        formatter.field(
+            "number_of_log_lines_occurrences",
+            &self.number_of_log_lines_occurrences,
+        );
+        formatter.field("log_event_timestamp", &self.log_event_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`LogAnomalyClass`](crate::model::LogAnomalyClass).
+pub mod log_anomaly_class {
+
+    /// A builder for [`LogAnomalyClass`](crate::model::LogAnomalyClass).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) log_stream_name: std::option::Option<std::string::String>,
+        pub(crate) log_anomaly_type: std::option::Option<crate::model::LogAnomalyType>,
+        pub(crate) log_anomaly_token: std::option::Option<std::string::String>,
+        pub(crate) log_event_id: std::option::Option<std::string::String>,
+        pub(crate) explanation: std::option::Option<std::string::String>,
+        pub(crate) number_of_log_lines_occurrences: std::option::Option<i32>,
+        pub(crate) log_event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source. </p>
+        pub fn log_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_stream_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source. </p>
+        pub fn set_log_stream_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_stream_name = input;
+            self
+        }
+        /// <p> The type of log anomaly that has been detected. </p>
+        pub fn log_anomaly_type(mut self, input: crate::model::LogAnomalyType) -> Self {
+            self.log_anomaly_type = Some(input);
+            self
+        }
+        /// <p> The type of log anomaly that has been detected. </p>
+        pub fn set_log_anomaly_type(
+            mut self,
+            input: std::option::Option<crate::model::LogAnomalyType>,
+        ) -> Self {
+            self.log_anomaly_type = input;
+            self
+        }
+        /// <p> The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies. </p>
+        pub fn log_anomaly_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_anomaly_token = Some(input.into());
+            self
+        }
+        /// <p> The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies. </p>
+        pub fn set_log_anomaly_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_anomaly_token = input;
+            self
+        }
+        /// <p> The ID of the log event. </p>
+        pub fn log_event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_event_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the log event. </p>
+        pub fn set_log_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_event_id = input;
+            self
+        }
+        /// <p> The explanation for why the log event is considered an anomaly. </p>
+        pub fn explanation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.explanation = Some(input.into());
+            self
+        }
+        /// <p> The explanation for why the log event is considered an anomaly. </p>
+        pub fn set_explanation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.explanation = input;
+            self
+        }
+        /// <p> The number of log lines where this anomalous log event occurs. </p>
+        pub fn number_of_log_lines_occurrences(mut self, input: i32) -> Self {
+            self.number_of_log_lines_occurrences = Some(input);
+            self
+        }
+        /// <p> The number of log lines where this anomalous log event occurs. </p>
+        pub fn set_number_of_log_lines_occurrences(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.number_of_log_lines_occurrences = input;
+            self
+        }
+        /// <p> The time of the first occurrence of the anomalous log event. </p>
+        pub fn log_event_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.log_event_timestamp = Some(input);
+            self
+        }
+        /// <p> The time of the first occurrence of the anomalous log event. </p>
+        pub fn set_log_event_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.log_event_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LogAnomalyClass`](crate::model::LogAnomalyClass).
+        pub fn build(self) -> crate::model::LogAnomalyClass {
+            crate::model::LogAnomalyClass {
+                log_stream_name: self.log_stream_name,
+                log_anomaly_type: self.log_anomaly_type,
+                log_anomaly_token: self.log_anomaly_token,
+                log_event_id: self.log_event_id,
+                explanation: self.explanation,
+                number_of_log_lines_occurrences: self
+                    .number_of_log_lines_occurrences
+                    .unwrap_or_default(),
+                log_event_timestamp: self.log_event_timestamp,
+            }
+        }
+    }
+}
+impl LogAnomalyClass {
+    /// Creates a new builder-style object to manufacture [`LogAnomalyClass`](crate::model::LogAnomalyClass).
+    pub fn builder() -> crate::model::log_anomaly_class::Builder {
+        crate::model::log_anomaly_class::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LogAnomalyType {
+    #[allow(missing_docs)] // documentation missing in model
+    BlockFormat,
+    #[allow(missing_docs)] // documentation missing in model
+    Format,
+    #[allow(missing_docs)] // documentation missing in model
+    HttpCode,
+    #[allow(missing_docs)] // documentation missing in model
+    Keyword,
+    #[allow(missing_docs)] // documentation missing in model
+    KeywordToken,
+    #[allow(missing_docs)] // documentation missing in model
+    NewFieldName,
+    #[allow(missing_docs)] // documentation missing in model
+    NumericalNan,
+    #[allow(missing_docs)] // documentation missing in model
+    NumericalPoint,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LogAnomalyType {
+    fn from(s: &str) -> Self {
+        match s {
+            "BLOCK_FORMAT" => LogAnomalyType::BlockFormat,
+            "FORMAT" => LogAnomalyType::Format,
+            "HTTP_CODE" => LogAnomalyType::HttpCode,
+            "KEYWORD" => LogAnomalyType::Keyword,
+            "KEYWORD_TOKEN" => LogAnomalyType::KeywordToken,
+            "NEW_FIELD_NAME" => LogAnomalyType::NewFieldName,
+            "NUMERICAL_NAN" => LogAnomalyType::NumericalNan,
+            "NUMERICAL_POINT" => LogAnomalyType::NumericalPoint,
+            other => LogAnomalyType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LogAnomalyType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LogAnomalyType::from(s))
+    }
+}
+impl LogAnomalyType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LogAnomalyType::BlockFormat => "BLOCK_FORMAT",
+            LogAnomalyType::Format => "FORMAT",
+            LogAnomalyType::HttpCode => "HTTP_CODE",
+            LogAnomalyType::Keyword => "KEYWORD",
+            LogAnomalyType::KeywordToken => "KEYWORD_TOKEN",
+            LogAnomalyType::NewFieldName => "NEW_FIELD_NAME",
+            LogAnomalyType::NumericalNan => "NUMERICAL_NAN",
+            LogAnomalyType::NumericalPoint => "NUMERICAL_POINT",
+            LogAnomalyType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BLOCK_FORMAT",
+            "FORMAT",
+            "HTTP_CODE",
+            "KEYWORD",
+            "KEYWORD_TOKEN",
+            "NEW_FIELD_NAME",
+            "NUMERICAL_NAN",
+            "NUMERICAL_POINT",
+        ]
+    }
+}
+impl AsRef<str> for LogAnomalyType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7525,7 +8397,7 @@ impl AsRef<str> for CloudWatchMetricsStat {
     }
 }
 
-/// <p> The dimension of am Amazon CloudWatch metric that is used when DevOps Guru analyzes the resources in your account for operational problems and anomalous behavior. A dimension is a name/value pair that is part of the identity of a metric. A metric can have up to 10 dimensions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension">Dimensions</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
+/// <p> The dimension of an Amazon CloudWatch metric that is used when DevOps Guru analyzes the resources in your account for operational problems and anomalous behavior. A dimension is a name/value pair that is part of the identity of a metric. A metric can have up to 10 dimensions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension">Dimensions</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchMetricsDimension {
@@ -8973,17 +9845,26 @@ impl AsRef<str> for CostEstimationStatus {
 pub struct ServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
     pub ops_center: std::option::Option<crate::model::OpsCenterIntegration>,
+    /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+    pub logs_anomaly_detection: std::option::Option<crate::model::LogsAnomalyDetectionIntegration>,
 }
 impl ServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
     pub fn ops_center(&self) -> std::option::Option<&crate::model::OpsCenterIntegration> {
         self.ops_center.as_ref()
     }
+    /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+    pub fn logs_anomaly_detection(
+        &self,
+    ) -> std::option::Option<&crate::model::LogsAnomalyDetectionIntegration> {
+        self.logs_anomaly_detection.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceIntegrationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceIntegrationConfig");
         formatter.field("ops_center", &self.ops_center);
+        formatter.field("logs_anomaly_detection", &self.logs_anomaly_detection);
         formatter.finish()
     }
 }
@@ -8994,6 +9875,8 @@ pub mod service_integration_config {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_center: std::option::Option<crate::model::OpsCenterIntegration>,
+        pub(crate) logs_anomaly_detection:
+            std::option::Option<crate::model::LogsAnomalyDetectionIntegration>,
     }
     impl Builder {
         /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
@@ -9009,10 +9892,27 @@ pub mod service_integration_config {
             self.ops_center = input;
             self
         }
+        /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+        pub fn logs_anomaly_detection(
+            mut self,
+            input: crate::model::LogsAnomalyDetectionIntegration,
+        ) -> Self {
+            self.logs_anomaly_detection = Some(input);
+            self
+        }
+        /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
+        pub fn set_logs_anomaly_detection(
+            mut self,
+            input: std::option::Option<crate::model::LogsAnomalyDetectionIntegration>,
+        ) -> Self {
+            self.logs_anomaly_detection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ServiceIntegrationConfig`](crate::model::ServiceIntegrationConfig).
         pub fn build(self) -> crate::model::ServiceIntegrationConfig {
             crate::model::ServiceIntegrationConfig {
                 ops_center: self.ops_center,
+                logs_anomaly_detection: self.logs_anomaly_detection,
             }
         }
     }
@@ -9021,6 +9921,63 @@ impl ServiceIntegrationConfig {
     /// Creates a new builder-style object to manufacture [`ServiceIntegrationConfig`](crate::model::ServiceIntegrationConfig).
     pub fn builder() -> crate::model::service_integration_config::Builder {
         crate::model::service_integration_config::Builder::default()
+    }
+}
+
+/// <p> Information about the integration of DevOps Guru with CloudWatch log groups for log anomaly detection. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LogsAnomalyDetectionIntegration {
+    /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
+    pub opt_in_status: std::option::Option<crate::model::OptInStatus>,
+}
+impl LogsAnomalyDetectionIntegration {
+    /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
+    pub fn opt_in_status(&self) -> std::option::Option<&crate::model::OptInStatus> {
+        self.opt_in_status.as_ref()
+    }
+}
+impl std::fmt::Debug for LogsAnomalyDetectionIntegration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LogsAnomalyDetectionIntegration");
+        formatter.field("opt_in_status", &self.opt_in_status);
+        formatter.finish()
+    }
+}
+/// See [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
+pub mod logs_anomaly_detection_integration {
+
+    /// A builder for [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
+    }
+    impl Builder {
+        /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
+        pub fn opt_in_status(mut self, input: crate::model::OptInStatus) -> Self {
+            self.opt_in_status = Some(input);
+            self
+        }
+        /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
+        pub fn set_opt_in_status(
+            mut self,
+            input: std::option::Option<crate::model::OptInStatus>,
+        ) -> Self {
+            self.opt_in_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
+        pub fn build(self) -> crate::model::LogsAnomalyDetectionIntegration {
+            crate::model::LogsAnomalyDetectionIntegration {
+                opt_in_status: self.opt_in_status,
+            }
+        }
+    }
+}
+impl LogsAnomalyDetectionIntegration {
+    /// Creates a new builder-style object to manufacture [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
+    pub fn builder() -> crate::model::logs_anomaly_detection_integration::Builder {
+        crate::model::logs_anomaly_detection_integration::Builder::default()
     }
 }
 

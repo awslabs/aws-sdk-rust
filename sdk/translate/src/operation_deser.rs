@@ -760,6 +760,111 @@ pub fn parse_import_terminology_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_languages_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListLanguagesOutput, crate::error::ListLanguagesError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListLanguagesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListLanguagesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListLanguagesError {
+            meta: generic,
+            kind: crate::error::ListLanguagesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLanguagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::ListLanguagesError {
+            meta: generic,
+            kind: crate::error::ListLanguagesErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLanguagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::ListLanguagesError {
+            meta: generic,
+            kind: crate::error::ListLanguagesErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLanguagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedDisplayLanguageCodeException" => crate::error::ListLanguagesError {
+            meta: generic,
+            kind: crate::error::ListLanguagesErrorKind::UnsupportedDisplayLanguageCodeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_display_language_code_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_display_language_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLanguagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListLanguagesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_languages_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListLanguagesOutput, crate::error::ListLanguagesError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_languages_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_languages(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListLanguagesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_parallel_data_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListParallelDataOutput, crate::error::ListParallelDataError>

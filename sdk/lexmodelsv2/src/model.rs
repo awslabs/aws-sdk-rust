@@ -2077,6 +2077,8 @@ pub struct PromptSpecification {
     pub max_retries: std::option::Option<i32>,
     /// <p>Indicates whether the user can interrupt a speech prompt from the bot.</p>
     pub allow_interrupt: std::option::Option<bool>,
+    /// <p>Indicates how a message is selected from a message group among retries.</p>
+    pub message_selection_strategy: std::option::Option<crate::model::MessageSelectionStrategy>,
 }
 impl PromptSpecification {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
@@ -2091,6 +2093,12 @@ impl PromptSpecification {
     pub fn allow_interrupt(&self) -> std::option::Option<bool> {
         self.allow_interrupt
     }
+    /// <p>Indicates how a message is selected from a message group among retries.</p>
+    pub fn message_selection_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageSelectionStrategy> {
+        self.message_selection_strategy.as_ref()
+    }
 }
 impl std::fmt::Debug for PromptSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2098,6 +2106,10 @@ impl std::fmt::Debug for PromptSpecification {
         formatter.field("message_groups", &self.message_groups);
         formatter.field("max_retries", &self.max_retries);
         formatter.field("allow_interrupt", &self.allow_interrupt);
+        formatter.field(
+            "message_selection_strategy",
+            &self.message_selection_strategy,
+        );
         formatter.finish()
     }
 }
@@ -2110,6 +2122,8 @@ pub mod prompt_specification {
         pub(crate) message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
         pub(crate) max_retries: std::option::Option<i32>,
         pub(crate) allow_interrupt: std::option::Option<bool>,
+        pub(crate) message_selection_strategy:
+            std::option::Option<crate::model::MessageSelectionStrategy>,
     }
     impl Builder {
         /// Appends an item to `message_groups`.
@@ -2151,12 +2165,29 @@ pub mod prompt_specification {
             self.allow_interrupt = input;
             self
         }
+        /// <p>Indicates how a message is selected from a message group among retries.</p>
+        pub fn message_selection_strategy(
+            mut self,
+            input: crate::model::MessageSelectionStrategy,
+        ) -> Self {
+            self.message_selection_strategy = Some(input);
+            self
+        }
+        /// <p>Indicates how a message is selected from a message group among retries.</p>
+        pub fn set_message_selection_strategy(
+            mut self,
+            input: std::option::Option<crate::model::MessageSelectionStrategy>,
+        ) -> Self {
+            self.message_selection_strategy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PromptSpecification`](crate::model::PromptSpecification).
         pub fn build(self) -> crate::model::PromptSpecification {
             crate::model::PromptSpecification {
                 message_groups: self.message_groups,
                 max_retries: self.max_retries,
                 allow_interrupt: self.allow_interrupt,
+                message_selection_strategy: self.message_selection_strategy,
             }
         }
     }
@@ -2165,6 +2196,61 @@ impl PromptSpecification {
     /// Creates a new builder-style object to manufacture [`PromptSpecification`](crate::model::PromptSpecification).
     pub fn builder() -> crate::model::prompt_specification::Builder {
         crate::model::prompt_specification::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MessageSelectionStrategy {
+    #[allow(missing_docs)] // documentation missing in model
+    Ordered,
+    #[allow(missing_docs)] // documentation missing in model
+    Random,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MessageSelectionStrategy {
+    fn from(s: &str) -> Self {
+        match s {
+            "Ordered" => MessageSelectionStrategy::Ordered,
+            "Random" => MessageSelectionStrategy::Random,
+            other => MessageSelectionStrategy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MessageSelectionStrategy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MessageSelectionStrategy::from(s))
+    }
+}
+impl MessageSelectionStrategy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MessageSelectionStrategy::Ordered => "Ordered",
+            MessageSelectionStrategy::Random => "Random",
+            MessageSelectionStrategy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Ordered", "Random"]
+    }
+}
+impl AsRef<str> for MessageSelectionStrategy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6606,11 +6692,11 @@ impl BotImportSpecification {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedTranscript {
-    /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
+    /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
     pub transcript: std::option::Option<std::string::String>,
 }
 impl AssociatedTranscript {
-    /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
+    /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
     pub fn transcript(&self) -> std::option::Option<&str> {
         self.transcript.as_deref()
     }
@@ -6631,12 +6717,12 @@ pub mod associated_transcript {
         pub(crate) transcript: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
+        /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
         pub fn transcript(mut self, input: impl Into<std::string::String>) -> Self {
             self.transcript = Some(input.into());
             self
         }
-        /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
+        /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
         pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transcript = input;
             self
@@ -12581,7 +12667,7 @@ impl AsRef<str> for CustomVocabularyStatus {
     }
 }
 
-/// <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
+/// <p>The object representing the URL of the bot definition, the URL of the associated transcript, and a statistical summary of the bot recommendation results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotRecommendationResults {

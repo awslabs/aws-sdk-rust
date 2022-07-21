@@ -23,12 +23,12 @@ pub mod add_profile_key_input {
             self.profile_id = input;
             self
         }
-        /// <p>A searchable identifier of a customer profile.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_name = Some(input.into());
             self
         }
-        /// <p>A searchable identifier of a customer profile.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
@@ -2357,6 +2357,7 @@ pub mod get_auto_merging_preview_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) consolidation: std::option::Option<crate::model::Consolidation>,
         pub(crate) conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+        pub(crate) min_allowed_confidence_score_for_merging: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -2395,6 +2396,19 @@ pub mod get_auto_merging_preview_input {
             self.conflict_resolution = input;
             self
         }
+        /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
+        pub fn min_allowed_confidence_score_for_merging(mut self, input: f64) -> Self {
+            self.min_allowed_confidence_score_for_merging = Some(input);
+            self
+        }
+        /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
+        pub fn set_min_allowed_confidence_score_for_merging(
+            mut self,
+            input: std::option::Option<f64>,
+        ) -> Self {
+            self.min_allowed_confidence_score_for_merging = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAutoMergingPreviewInput`](crate::input::GetAutoMergingPreviewInput).
         pub fn build(
             self,
@@ -2404,6 +2418,8 @@ pub mod get_auto_merging_preview_input {
                 domain_name: self.domain_name,
                 consolidation: self.consolidation,
                 conflict_resolution: self.conflict_resolution,
+                min_allowed_confidence_score_for_merging: self
+                    .min_allowed_confidence_score_for_merging,
             })
         }
     }
@@ -6266,12 +6282,12 @@ pub mod put_profile_object_type_input {
             self.description = input;
             self
         }
-        /// <p>A unique identifier for the object template.</p>
+        /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the object template.</p>
+        /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_id = input;
             self
@@ -8217,7 +8233,7 @@ pub struct PutProfileObjectTypeInput {
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>Description of the profile object type.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the object template.</p>
+    /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
     pub expiration_days: std::option::Option<i32>,
@@ -8252,7 +8268,7 @@ impl PutProfileObjectTypeInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique identifier for the object template.</p>
+    /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
     pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
@@ -9051,6 +9067,8 @@ pub struct GetAutoMergingPreviewInput {
     pub consolidation: std::option::Option<crate::model::Consolidation>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+    /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
+    pub min_allowed_confidence_score_for_merging: std::option::Option<f64>,
 }
 impl GetAutoMergingPreviewInput {
     /// <p>The unique name of the domain.</p>
@@ -9065,6 +9083,10 @@ impl GetAutoMergingPreviewInput {
     pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
         self.conflict_resolution.as_ref()
     }
+    /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
+    pub fn min_allowed_confidence_score_for_merging(&self) -> std::option::Option<f64> {
+        self.min_allowed_confidence_score_for_merging
+    }
 }
 impl std::fmt::Debug for GetAutoMergingPreviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9072,6 +9094,10 @@ impl std::fmt::Debug for GetAutoMergingPreviewInput {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("consolidation", &self.consolidation);
         formatter.field("conflict_resolution", &self.conflict_resolution);
+        formatter.field(
+            "min_allowed_confidence_score_for_merging",
+            &self.min_allowed_confidence_score_for_merging,
+        );
         formatter.finish()
     }
 }
@@ -9593,7 +9619,7 @@ impl std::fmt::Debug for CreateDomainInput {
 pub struct AddProfileKeyInput {
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: std::option::Option<std::string::String>,
-    /// <p>A searchable identifier of a customer profile.</p>
+    /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9605,7 +9631,7 @@ impl AddProfileKeyInput {
     pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
     }
-    /// <p>A searchable identifier of a customer profile.</p>
+    /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }

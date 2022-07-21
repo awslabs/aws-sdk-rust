@@ -7383,6 +7383,7 @@ pub mod purchase_offering_input {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) offering_id: std::option::Option<std::string::String>,
+        pub(crate) renewal_settings: std::option::Option<crate::model::RenewalSettings>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) start: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -7418,6 +7419,19 @@ pub mod purchase_offering_input {
         /// Offering to purchase, e.g. '87654321'
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn renewal_settings(mut self, input: crate::model::RenewalSettings) -> Self {
+            self.renewal_settings = Some(input);
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn set_renewal_settings(
+            mut self,
+            input: std::option::Option<crate::model::RenewalSettings>,
+        ) -> Self {
+            self.renewal_settings = input;
             self
         }
         /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
@@ -7474,6 +7488,7 @@ pub mod purchase_offering_input {
                 count: self.count.unwrap_or_default(),
                 name: self.name,
                 offering_id: self.offering_id,
+                renewal_settings: self.renewal_settings,
                 request_id: self.request_id,
                 start: self.start,
                 tags: self.tags,
@@ -10093,6 +10108,7 @@ pub mod update_reservation_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) renewal_settings: std::option::Option<crate::model::RenewalSettings>,
         pub(crate) reservation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10104,6 +10120,19 @@ pub mod update_reservation_input {
         /// Name of the reservation
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn renewal_settings(mut self, input: crate::model::RenewalSettings) -> Self {
+            self.renewal_settings = Some(input);
+            self
+        }
+        /// Renewal settings for the reservation
+        pub fn set_renewal_settings(
+            mut self,
+            input: std::option::Option<crate::model::RenewalSettings>,
+        ) -> Self {
+            self.renewal_settings = input;
             self
         }
         /// Unique reservation ID, e.g. '1234567'
@@ -10126,6 +10155,7 @@ pub mod update_reservation_input {
         {
             Ok(crate::input::UpdateReservationInput {
                 name: self.name,
+                renewal_settings: self.renewal_settings,
                 reservation_id: self.reservation_id,
             })
         }
@@ -10261,6 +10291,8 @@ impl UpdateReservationInput {
 pub struct UpdateReservationInput {
     /// Name of the reservation
     pub name: std::option::Option<std::string::String>,
+    /// Renewal settings for the reservation
+    pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: std::option::Option<std::string::String>,
 }
@@ -10268,6 +10300,10 @@ impl UpdateReservationInput {
     /// Name of the reservation
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// Renewal settings for the reservation
+    pub fn renewal_settings(&self) -> std::option::Option<&crate::model::RenewalSettings> {
+        self.renewal_settings.as_ref()
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn reservation_id(&self) -> std::option::Option<&str> {
@@ -10278,6 +10314,7 @@ impl std::fmt::Debug for UpdateReservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReservationInput");
         formatter.field("name", &self.name);
+        formatter.field("renewal_settings", &self.renewal_settings);
         formatter.field("reservation_id", &self.reservation_id);
         formatter.finish()
     }
@@ -10794,6 +10831,8 @@ pub struct PurchaseOfferingInput {
     pub name: std::option::Option<std::string::String>,
     /// Offering to purchase, e.g. '87654321'
     pub offering_id: std::option::Option<std::string::String>,
+    /// Renewal settings for the reservation
+    pub renewal_settings: std::option::Option<crate::model::RenewalSettings>,
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub request_id: std::option::Option<std::string::String>,
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
@@ -10814,6 +10853,10 @@ impl PurchaseOfferingInput {
     /// Offering to purchase, e.g. '87654321'
     pub fn offering_id(&self) -> std::option::Option<&str> {
         self.offering_id.as_deref()
+    }
+    /// Renewal settings for the reservation
+    pub fn renewal_settings(&self) -> std::option::Option<&crate::model::RenewalSettings> {
+        self.renewal_settings.as_ref()
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub fn request_id(&self) -> std::option::Option<&str> {
@@ -10837,6 +10880,7 @@ impl std::fmt::Debug for PurchaseOfferingInput {
         formatter.field("count", &self.count);
         formatter.field("name", &self.name);
         formatter.field("offering_id", &self.offering_id);
+        formatter.field("renewal_settings", &self.renewal_settings);
         formatter.field("request_id", &self.request_id);
         formatter.field("start", &self.start);
         formatter.field("tags", &self.tags);

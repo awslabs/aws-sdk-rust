@@ -333,6 +333,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
     }
 }
 
+/// Operation shape for `DescribePackage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_package`](crate::client::Client::describe_package).
+///
+/// See [`crate::client::fluent_builders::DescribePackage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribePackage {
+    _private: (),
+}
+impl DescribePackage {
+    /// Creates a new builder-style object to manufacture [`DescribePackageInput`](crate::input::DescribePackageInput).
+    pub fn builder() -> crate::input::describe_package_input::Builder {
+        crate::input::describe_package_input::Builder::default()
+    }
+    /// Creates a new `DescribePackage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribePackage {
+    type Output = std::result::Result<
+        crate::output::DescribePackageOutput,
+        crate::error::DescribePackageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_package_error(response)
+        } else {
+            crate::operation_deser::parse_describe_package_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribePackageVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -980,6 +1014,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDomainPermissionsPoli
             crate::operation_deser::parse_put_domain_permissions_policy_error(response)
         } else {
             crate::operation_deser::parse_put_domain_permissions_policy_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutPackageOriginConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_package_origin_configuration`](crate::client::Client::put_package_origin_configuration).
+///
+/// See [`crate::client::fluent_builders::PutPackageOriginConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutPackageOriginConfiguration {
+    _private: (),
+}
+impl PutPackageOriginConfiguration {
+    /// Creates a new builder-style object to manufacture [`PutPackageOriginConfigurationInput`](crate::input::PutPackageOriginConfigurationInput).
+    pub fn builder() -> crate::input::put_package_origin_configuration_input::Builder {
+        crate::input::put_package_origin_configuration_input::Builder::default()
+    }
+    /// Creates a new `PutPackageOriginConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutPackageOriginConfiguration {
+    type Output = std::result::Result<
+        crate::output::PutPackageOriginConfigurationOutput,
+        crate::error::PutPackageOriginConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_package_origin_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_put_package_origin_configuration_response(response)
         }
     }
 }

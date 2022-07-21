@@ -30,6 +30,9 @@ pub struct Stack {
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    pub streaming_experience_settings:
+        std::option::Option<crate::model::StreamingExperienceSettings>,
 }
 impl Stack {
     /// <p>The ARN of the stack.</p>
@@ -86,6 +89,12 @@ impl Stack {
     pub fn embed_host_domains(&self) -> std::option::Option<&[std::string::String]> {
         self.embed_host_domains.as_deref()
     }
+    /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+    pub fn streaming_experience_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingExperienceSettings> {
+        self.streaming_experience_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for Stack {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -103,6 +112,10 @@ impl std::fmt::Debug for Stack {
         formatter.field("application_settings", &self.application_settings);
         formatter.field("access_endpoints", &self.access_endpoints);
         formatter.field("embed_host_domains", &self.embed_host_domains);
+        formatter.field(
+            "streaming_experience_settings",
+            &self.streaming_experience_settings,
+        );
         formatter.finish()
     }
 }
@@ -128,6 +141,8 @@ pub mod stack {
         pub(crate) access_endpoints:
             std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
         pub(crate) embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) streaming_experience_settings:
+            std::option::Option<crate::model::StreamingExperienceSettings>,
     }
     impl Builder {
         /// <p>The ARN of the stack.</p>
@@ -314,6 +329,22 @@ pub mod stack {
             self.embed_host_domains = input;
             self
         }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn streaming_experience_settings(
+            mut self,
+            input: crate::model::StreamingExperienceSettings,
+        ) -> Self {
+            self.streaming_experience_settings = Some(input);
+            self
+        }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn set_streaming_experience_settings(
+            mut self,
+            input: std::option::Option<crate::model::StreamingExperienceSettings>,
+        ) -> Self {
+            self.streaming_experience_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Stack`](crate::model::Stack).
         pub fn build(self) -> crate::model::Stack {
             crate::model::Stack {
@@ -330,6 +361,7 @@ pub mod stack {
                 application_settings: self.application_settings,
                 access_endpoints: self.access_endpoints,
                 embed_host_domains: self.embed_host_domains,
+                streaming_experience_settings: self.streaming_experience_settings,
             }
         }
     }
@@ -338,6 +370,118 @@ impl Stack {
     /// Creates a new builder-style object to manufacture [`Stack`](crate::model::Stack).
     pub fn builder() -> crate::model::stack::Builder {
         crate::model::stack::Builder::default()
+    }
+}
+
+/// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StreamingExperienceSettings {
+    /// <p>The preferred protocol that you want to use while streaming your application.</p>
+    pub preferred_protocol: std::option::Option<crate::model::PreferredProtocol>,
+}
+impl StreamingExperienceSettings {
+    /// <p>The preferred protocol that you want to use while streaming your application.</p>
+    pub fn preferred_protocol(&self) -> std::option::Option<&crate::model::PreferredProtocol> {
+        self.preferred_protocol.as_ref()
+    }
+}
+impl std::fmt::Debug for StreamingExperienceSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StreamingExperienceSettings");
+        formatter.field("preferred_protocol", &self.preferred_protocol);
+        formatter.finish()
+    }
+}
+/// See [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
+pub mod streaming_experience_settings {
+
+    /// A builder for [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) preferred_protocol: std::option::Option<crate::model::PreferredProtocol>,
+    }
+    impl Builder {
+        /// <p>The preferred protocol that you want to use while streaming your application.</p>
+        pub fn preferred_protocol(mut self, input: crate::model::PreferredProtocol) -> Self {
+            self.preferred_protocol = Some(input);
+            self
+        }
+        /// <p>The preferred protocol that you want to use while streaming your application.</p>
+        pub fn set_preferred_protocol(
+            mut self,
+            input: std::option::Option<crate::model::PreferredProtocol>,
+        ) -> Self {
+            self.preferred_protocol = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
+        pub fn build(self) -> crate::model::StreamingExperienceSettings {
+            crate::model::StreamingExperienceSettings {
+                preferred_protocol: self.preferred_protocol,
+            }
+        }
+    }
+}
+impl StreamingExperienceSettings {
+    /// Creates a new builder-style object to manufacture [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
+    pub fn builder() -> crate::model::streaming_experience_settings::Builder {
+        crate::model::streaming_experience_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PreferredProtocol {
+    #[allow(missing_docs)] // documentation missing in model
+    Tcp,
+    #[allow(missing_docs)] // documentation missing in model
+    Udp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PreferredProtocol {
+    fn from(s: &str) -> Self {
+        match s {
+            "TCP" => PreferredProtocol::Tcp,
+            "UDP" => PreferredProtocol::Udp,
+            other => PreferredProtocol::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PreferredProtocol {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PreferredProtocol::from(s))
+    }
+}
+impl PreferredProtocol {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PreferredProtocol::Tcp => "TCP",
+            PreferredProtocol::Udp => "UDP",
+            PreferredProtocol::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["TCP", "UDP"]
+    }
+}
+impl AsRef<str> for PreferredProtocol {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1187,6 +1331,8 @@ pub enum StackAttribute {
     #[allow(missing_docs)] // documentation missing in model
     StorageConnectorOneDrive,
     #[allow(missing_docs)] // documentation missing in model
+    StreamingExperienceSettings,
+    #[allow(missing_docs)] // documentation missing in model
     ThemeName,
     #[allow(missing_docs)] // documentation missing in model
     UserSettings,
@@ -1205,6 +1351,7 @@ impl std::convert::From<&str> for StackAttribute {
             "STORAGE_CONNECTOR_GOOGLE_DRIVE" => StackAttribute::StorageConnectorGoogleDrive,
             "STORAGE_CONNECTOR_HOMEFOLDERS" => StackAttribute::StorageConnectorHomefolders,
             "STORAGE_CONNECTOR_ONE_DRIVE" => StackAttribute::StorageConnectorOneDrive,
+            "STREAMING_EXPERIENCE_SETTINGS" => StackAttribute::StreamingExperienceSettings,
             "THEME_NAME" => StackAttribute::ThemeName,
             "USER_SETTINGS" => StackAttribute::UserSettings,
             other => StackAttribute::Unknown(other.to_owned()),
@@ -1231,6 +1378,7 @@ impl StackAttribute {
             StackAttribute::StorageConnectorGoogleDrive => "STORAGE_CONNECTOR_GOOGLE_DRIVE",
             StackAttribute::StorageConnectorHomefolders => "STORAGE_CONNECTOR_HOMEFOLDERS",
             StackAttribute::StorageConnectorOneDrive => "STORAGE_CONNECTOR_ONE_DRIVE",
+            StackAttribute::StreamingExperienceSettings => "STREAMING_EXPERIENCE_SETTINGS",
             StackAttribute::ThemeName => "THEME_NAME",
             StackAttribute::UserSettings => "USER_SETTINGS",
             StackAttribute::Unknown(s) => s.as_ref(),
@@ -1248,6 +1396,7 @@ impl StackAttribute {
             "STORAGE_CONNECTOR_GOOGLE_DRIVE",
             "STORAGE_CONNECTOR_HOMEFOLDERS",
             "STORAGE_CONNECTOR_ONE_DRIVE",
+            "STREAMING_EXPERIENCE_SETTINGS",
             "THEME_NAME",
             "USER_SETTINGS",
         ]

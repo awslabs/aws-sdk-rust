@@ -836,6 +836,11 @@ pub fn deser_operation_crate_operation_get_discovery_summary(
                             crate::json_deser::deser_structure_crate_model_customer_me_collector_info(tokens)?
                         );
                     }
+                    "agentlessCollectorSummary" => {
+                        builder = builder.set_agentless_collector_summary(
+                            crate::json_deser::deser_structure_crate_model_customer_agentless_collector_info(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -1873,6 +1878,99 @@ where
                             }
                             "unknownMeCollectors" => {
                                 builder = builder.set_unknown_me_collectors(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_customer_agentless_collector_info<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::CustomerAgentlessCollectorInfo>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::CustomerAgentlessCollectorInfo::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "activeAgentlessCollectors" => {
+                                builder = builder.set_active_agentless_collectors(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "healthyAgentlessCollectors" => {
+                                builder = builder.set_healthy_agentless_collectors(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "denyListedAgentlessCollectors" => {
+                                builder = builder.set_deny_listed_agentless_collectors(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "shutdownAgentlessCollectors" => {
+                                builder = builder.set_shutdown_agentless_collectors(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "unhealthyAgentlessCollectors" => {
+                                builder = builder.set_unhealthy_agentless_collectors(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "totalAgentlessCollectors" => {
+                                builder = builder.set_total_agentless_collectors(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "unknownAgentlessCollectors" => {
+                                builder = builder.set_unknown_agentless_collectors(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?

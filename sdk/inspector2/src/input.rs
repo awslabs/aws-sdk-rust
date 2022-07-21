@@ -572,6 +572,7 @@ pub mod create_filter_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
@@ -645,6 +646,16 @@ pub mod create_filter_input {
             self.tags = input;
             self
         }
+        /// <p>The reason for creating the filter.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        /// <p>The reason for creating the filter.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFilterInput`](crate::input::CreateFilterInput).
         pub fn build(
             self,
@@ -656,6 +667,7 @@ pub mod create_filter_input {
                 filter_criteria: self.filter_criteria,
                 name: self.name,
                 tags: self.tags,
+                reason: self.reason,
             })
         }
     }
@@ -1939,6 +1951,113 @@ impl EnableDelegatedAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`EnableDelegatedAdminAccountInput`](crate::input::EnableDelegatedAdminAccountInput).
     pub fn builder() -> crate::input::enable_delegated_admin_account_input::Builder {
         crate::input::enable_delegated_admin_account_input::Builder::default()
+    }
+}
+
+/// See [`GetConfigurationInput`](crate::input::GetConfigurationInput).
+pub mod get_configuration_input {
+
+    /// A builder for [`GetConfigurationInput`](crate::input::GetConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`GetConfigurationInput`](crate::input::GetConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetConfigurationInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetConfigurationInput {})
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetConfigurationInputOperationOutputAlias = crate::operation::GetConfiguration;
+#[doc(hidden)]
+pub type GetConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`GetConfiguration`](crate::operation::GetConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/configuration/get").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetConfiguration",
+            "inspector2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetConfigurationInput`](crate::input::GetConfigurationInput).
+    pub fn builder() -> crate::input::get_configuration_input::Builder {
+        crate::input::get_configuration_input::Builder::default()
     }
 }
 
@@ -4335,6 +4454,144 @@ impl UntagResourceInput {
     }
 }
 
+/// See [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
+pub mod update_configuration_input {
+
+    /// A builder for [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ecr_configuration: std::option::Option<crate::model::EcrConfiguration>,
+    }
+    impl Builder {
+        /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+        pub fn ecr_configuration(mut self, input: crate::model::EcrConfiguration) -> Self {
+            self.ecr_configuration = Some(input);
+            self
+        }
+        /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+        pub fn set_ecr_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EcrConfiguration>,
+        ) -> Self {
+            self.ecr_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateConfigurationInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateConfigurationInput {
+                ecr_configuration: self.ecr_configuration,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateConfigurationInputOperationOutputAlias = crate::operation::UpdateConfiguration;
+#[doc(hidden)]
+pub type UpdateConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateConfiguration`](crate::operation::UpdateConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/configuration/update").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateConfiguration",
+            "inspector2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
+    pub fn builder() -> crate::input::update_configuration_input::Builder {
+        crate::input::update_configuration_input::Builder::default()
+    }
+}
+
 /// See [`UpdateFilterInput`](crate::input::UpdateFilterInput).
 pub mod update_filter_input {
 
@@ -4346,6 +4603,7 @@ pub mod update_filter_input {
         pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) filter_arn: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -4404,6 +4662,16 @@ pub mod update_filter_input {
             self.filter_arn = input;
             self
         }
+        /// <p>The reason the filter was updated.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        /// <p>The reason the filter was updated.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFilterInput`](crate::input::UpdateFilterInput).
         pub fn build(
             self,
@@ -4415,6 +4683,7 @@ pub mod update_filter_input {
                 filter_criteria: self.filter_criteria,
                 name: self.name,
                 filter_arn: self.filter_arn,
+                reason: self.reason,
             })
         }
     }
@@ -4701,6 +4970,8 @@ pub struct UpdateFilterInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
     pub filter_arn: std::option::Option<std::string::String>,
+    /// <p>The reason the filter was updated.</p>
+    pub reason: std::option::Option<std::string::String>,
 }
 impl UpdateFilterInput {
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -4723,6 +4994,10 @@ impl UpdateFilterInput {
     pub fn filter_arn(&self) -> std::option::Option<&str> {
         self.filter_arn.as_deref()
     }
+    /// <p>The reason the filter was updated.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4732,6 +5007,28 @@ impl std::fmt::Debug for UpdateFilterInput {
         formatter.field("filter_criteria", &self.filter_criteria);
         formatter.field("name", &self.name);
         formatter.field("filter_arn", &self.filter_arn);
+        formatter.field("reason", &self.reason);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConfigurationInput {
+    /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+    pub ecr_configuration: std::option::Option<crate::model::EcrConfiguration>,
+}
+impl UpdateConfigurationInput {
+    /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+    pub fn ecr_configuration(&self) -> std::option::Option<&crate::model::EcrConfiguration> {
+        self.ecr_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConfigurationInput");
+        formatter.field("ecr_configuration", &self.ecr_configuration);
         formatter.finish()
     }
 }
@@ -5209,6 +5506,17 @@ impl std::fmt::Debug for GetDelegatedAdminAccountInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetConfigurationInput {}
+impl std::fmt::Debug for GetConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetConfigurationInput");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableDelegatedAdminAccountInput {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
     pub delegated_admin_account_id: std::option::Option<std::string::String>,
@@ -5427,6 +5735,8 @@ pub struct CreateFilterInput {
     /// <p>A list of tags for the filter.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The reason for creating the filter.</p>
+    pub reason: std::option::Option<std::string::String>,
 }
 impl CreateFilterInput {
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
@@ -5452,6 +5762,10 @@ impl CreateFilterInput {
     {
         self.tags.as_ref()
     }
+    /// <p>The reason for creating the filter.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5461,6 +5775,7 @@ impl std::fmt::Debug for CreateFilterInput {
         formatter.field("filter_criteria", &self.filter_criteria);
         formatter.field("name", &self.name);
         formatter.field("tags", &self.tags);
+        formatter.field("reason", &self.reason);
         formatter.finish()
     }
 }

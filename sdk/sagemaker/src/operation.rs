@@ -527,6 +527,74 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomain {
     }
 }
 
+/// Operation shape for `CreateEdgeDeploymentPlan`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_edge_deployment_plan`](crate::client::Client::create_edge_deployment_plan).
+///
+/// See [`crate::client::fluent_builders::CreateEdgeDeploymentPlan`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateEdgeDeploymentPlan {
+    _private: (),
+}
+impl CreateEdgeDeploymentPlan {
+    /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentPlanInput`](crate::input::CreateEdgeDeploymentPlanInput).
+    pub fn builder() -> crate::input::create_edge_deployment_plan_input::Builder {
+        crate::input::create_edge_deployment_plan_input::Builder::default()
+    }
+    /// Creates a new `CreateEdgeDeploymentPlan` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateEdgeDeploymentPlan {
+    type Output = std::result::Result<
+        crate::output::CreateEdgeDeploymentPlanOutput,
+        crate::error::CreateEdgeDeploymentPlanError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_edge_deployment_plan_error(response)
+        } else {
+            crate::operation_deser::parse_create_edge_deployment_plan_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateEdgeDeploymentStage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_edge_deployment_stage`](crate::client::Client::create_edge_deployment_stage).
+///
+/// See [`crate::client::fluent_builders::CreateEdgeDeploymentStage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateEdgeDeploymentStage {
+    _private: (),
+}
+impl CreateEdgeDeploymentStage {
+    /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentStageInput`](crate::input::CreateEdgeDeploymentStageInput).
+    pub fn builder() -> crate::input::create_edge_deployment_stage_input::Builder {
+        crate::input::create_edge_deployment_stage_input::Builder::default()
+    }
+    /// Creates a new `CreateEdgeDeploymentStage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateEdgeDeploymentStage {
+    type Output = std::result::Result<
+        crate::output::CreateEdgeDeploymentStageOutput,
+        crate::error::CreateEdgeDeploymentStageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_edge_deployment_stage_error(response)
+        } else {
+            crate::operation_deser::parse_create_edge_deployment_stage_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateEdgePackagingJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2036,6 +2104,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
     }
 }
 
+/// Operation shape for `DeleteEdgeDeploymentPlan`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_edge_deployment_plan`](crate::client::Client::delete_edge_deployment_plan).
+///
+/// See [`crate::client::fluent_builders::DeleteEdgeDeploymentPlan`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteEdgeDeploymentPlan {
+    _private: (),
+}
+impl DeleteEdgeDeploymentPlan {
+    /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentPlanInput`](crate::input::DeleteEdgeDeploymentPlanInput).
+    pub fn builder() -> crate::input::delete_edge_deployment_plan_input::Builder {
+        crate::input::delete_edge_deployment_plan_input::Builder::default()
+    }
+    /// Creates a new `DeleteEdgeDeploymentPlan` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteEdgeDeploymentPlan {
+    type Output = std::result::Result<
+        crate::output::DeleteEdgeDeploymentPlanOutput,
+        crate::error::DeleteEdgeDeploymentPlanError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_edge_deployment_plan_error(response)
+        } else {
+            crate::operation_deser::parse_delete_edge_deployment_plan_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteEdgeDeploymentStage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_edge_deployment_stage`](crate::client::Client::delete_edge_deployment_stage).
+///
+/// See [`crate::client::fluent_builders::DeleteEdgeDeploymentStage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteEdgeDeploymentStage {
+    _private: (),
+}
+impl DeleteEdgeDeploymentStage {
+    /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentStageInput`](crate::input::DeleteEdgeDeploymentStageInput).
+    pub fn builder() -> crate::input::delete_edge_deployment_stage_input::Builder {
+        crate::input::delete_edge_deployment_stage_input::Builder::default()
+    }
+    /// Creates a new `DeleteEdgeDeploymentStage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteEdgeDeploymentStage {
+    type Output = std::result::Result<
+        crate::output::DeleteEdgeDeploymentStageOutput,
+        crate::error::DeleteEdgeDeploymentStageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_edge_deployment_stage_error(response)
+        } else {
+            crate::operation_deser::parse_delete_edge_deployment_stage_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3410,6 +3546,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
     }
 }
 
+/// Operation shape for `DescribeEdgeDeploymentPlan`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_edge_deployment_plan`](crate::client::Client::describe_edge_deployment_plan).
+///
+/// See [`crate::client::fluent_builders::DescribeEdgeDeploymentPlan`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeEdgeDeploymentPlan {
+    _private: (),
+}
+impl DescribeEdgeDeploymentPlan {
+    /// Creates a new builder-style object to manufacture [`DescribeEdgeDeploymentPlanInput`](crate::input::DescribeEdgeDeploymentPlanInput).
+    pub fn builder() -> crate::input::describe_edge_deployment_plan_input::Builder {
+        crate::input::describe_edge_deployment_plan_input::Builder::default()
+    }
+    /// Creates a new `DescribeEdgeDeploymentPlan` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeEdgeDeploymentPlan {
+    type Output = std::result::Result<
+        crate::output::DescribeEdgeDeploymentPlanOutput,
+        crate::error::DescribeEdgeDeploymentPlanError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_edge_deployment_plan_error(response)
+        } else {
+            crate::operation_deser::parse_describe_edge_deployment_plan_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeEdgePackagingJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3576,6 +3746,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFeatureGroup {
             crate::operation_deser::parse_describe_feature_group_error(response)
         } else {
             crate::operation_deser::parse_describe_feature_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeFeatureMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_feature_metadata`](crate::client::Client::describe_feature_metadata).
+///
+/// See [`crate::client::fluent_builders::DescribeFeatureMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeFeatureMetadata {
+    _private: (),
+}
+impl DescribeFeatureMetadata {
+    /// Creates a new builder-style object to manufacture [`DescribeFeatureMetadataInput`](crate::input::DescribeFeatureMetadataInput).
+    pub fn builder() -> crate::input::describe_feature_metadata_input::Builder {
+        crate::input::describe_feature_metadata_input::Builder::default()
+    }
+    /// Creates a new `DescribeFeatureMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeFeatureMetadata {
+    type Output = std::result::Result<
+        crate::output::DescribeFeatureMetadataOutput,
+        crate::error::DescribeFeatureMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_feature_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_describe_feature_metadata_response(response)
         }
     }
 }
@@ -5411,6 +5615,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
     }
 }
 
+/// Operation shape for `ListEdgeDeploymentPlans`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_edge_deployment_plans`](crate::client::Client::list_edge_deployment_plans).
+///
+/// See [`crate::client::fluent_builders::ListEdgeDeploymentPlans`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEdgeDeploymentPlans {
+    _private: (),
+}
+impl ListEdgeDeploymentPlans {
+    /// Creates a new builder-style object to manufacture [`ListEdgeDeploymentPlansInput`](crate::input::ListEdgeDeploymentPlansInput).
+    pub fn builder() -> crate::input::list_edge_deployment_plans_input::Builder {
+        crate::input::list_edge_deployment_plans_input::Builder::default()
+    }
+    /// Creates a new `ListEdgeDeploymentPlans` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListEdgeDeploymentPlans {
+    type Output = std::result::Result<
+        crate::output::ListEdgeDeploymentPlansOutput,
+        crate::error::ListEdgeDeploymentPlansError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_edge_deployment_plans_error(response)
+        } else {
+            crate::operation_deser::parse_list_edge_deployment_plans_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListEdgePackagingJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -6459,6 +6697,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
     }
 }
 
+/// Operation shape for `ListStageDevices`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_stage_devices`](crate::client::Client::list_stage_devices).
+///
+/// See [`crate::client::fluent_builders::ListStageDevices`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListStageDevices {
+    _private: (),
+}
+impl ListStageDevices {
+    /// Creates a new builder-style object to manufacture [`ListStageDevicesInput`](crate::input::ListStageDevicesInput).
+    pub fn builder() -> crate::input::list_stage_devices_input::Builder {
+        crate::input::list_stage_devices_input::Builder::default()
+    }
+    /// Creates a new `ListStageDevices` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListStageDevices {
+    type Output = std::result::Result<
+        crate::output::ListStageDevicesOutput,
+        crate::error::ListStageDevicesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_stage_devices_error(response)
+        } else {
+            crate::operation_deser::parse_list_stage_devices_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListStudioLifecycleConfigs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -7096,6 +7368,40 @@ impl aws_smithy_http::response::ParseStrictResponse for SendPipelineExecutionSte
     }
 }
 
+/// Operation shape for `StartEdgeDeploymentStage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_edge_deployment_stage`](crate::client::Client::start_edge_deployment_stage).
+///
+/// See [`crate::client::fluent_builders::StartEdgeDeploymentStage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartEdgeDeploymentStage {
+    _private: (),
+}
+impl StartEdgeDeploymentStage {
+    /// Creates a new builder-style object to manufacture [`StartEdgeDeploymentStageInput`](crate::input::StartEdgeDeploymentStageInput).
+    pub fn builder() -> crate::input::start_edge_deployment_stage_input::Builder {
+        crate::input::start_edge_deployment_stage_input::Builder::default()
+    }
+    /// Creates a new `StartEdgeDeploymentStage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartEdgeDeploymentStage {
+    type Output = std::result::Result<
+        crate::output::StartEdgeDeploymentStageOutput,
+        crate::error::StartEdgeDeploymentStageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_edge_deployment_stage_error(response)
+        } else {
+            crate::operation_deser::parse_start_edge_deployment_stage_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartMonitoringSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -7260,6 +7566,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCompilationJob {
             crate::operation_deser::parse_stop_compilation_job_error(response)
         } else {
             crate::operation_deser::parse_stop_compilation_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopEdgeDeploymentStage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_edge_deployment_stage`](crate::client::Client::stop_edge_deployment_stage).
+///
+/// See [`crate::client::fluent_builders::StopEdgeDeploymentStage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopEdgeDeploymentStage {
+    _private: (),
+}
+impl StopEdgeDeploymentStage {
+    /// Creates a new builder-style object to manufacture [`StopEdgeDeploymentStageInput`](crate::input::StopEdgeDeploymentStageInput).
+    pub fn builder() -> crate::input::stop_edge_deployment_stage_input::Builder {
+        crate::input::stop_edge_deployment_stage_input::Builder::default()
+    }
+    /// Creates a new `StopEdgeDeploymentStage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopEdgeDeploymentStage {
+    type Output = std::result::Result<
+        crate::output::StopEdgeDeploymentStageOutput,
+        crate::error::StopEdgeDeploymentStageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_edge_deployment_stage_error(response)
+        } else {
+            crate::operation_deser::parse_stop_edge_deployment_stage_response(response)
         }
     }
 }
@@ -7962,6 +8302,74 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateExperiment {
             crate::operation_deser::parse_update_experiment_error(response)
         } else {
             crate::operation_deser::parse_update_experiment_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateFeatureGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_feature_group`](crate::client::Client::update_feature_group).
+///
+/// See [`crate::client::fluent_builders::UpdateFeatureGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateFeatureGroup {
+    _private: (),
+}
+impl UpdateFeatureGroup {
+    /// Creates a new builder-style object to manufacture [`UpdateFeatureGroupInput`](crate::input::UpdateFeatureGroupInput).
+    pub fn builder() -> crate::input::update_feature_group_input::Builder {
+        crate::input::update_feature_group_input::Builder::default()
+    }
+    /// Creates a new `UpdateFeatureGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateFeatureGroup {
+    type Output = std::result::Result<
+        crate::output::UpdateFeatureGroupOutput,
+        crate::error::UpdateFeatureGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_feature_group_error(response)
+        } else {
+            crate::operation_deser::parse_update_feature_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateFeatureMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_feature_metadata`](crate::client::Client::update_feature_metadata).
+///
+/// See [`crate::client::fluent_builders::UpdateFeatureMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateFeatureMetadata {
+    _private: (),
+}
+impl UpdateFeatureMetadata {
+    /// Creates a new builder-style object to manufacture [`UpdateFeatureMetadataInput`](crate::input::UpdateFeatureMetadataInput).
+    pub fn builder() -> crate::input::update_feature_metadata_input::Builder {
+        crate::input::update_feature_metadata_input::Builder::default()
+    }
+    /// Creates a new `UpdateFeatureMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateFeatureMetadata {
+    type Output = std::result::Result<
+        crate::output::UpdateFeatureMetadataOutput,
+        crate::error::UpdateFeatureMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_feature_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_update_feature_metadata_response(response)
         }
     }
 }

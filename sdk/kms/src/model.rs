@@ -97,6 +97,8 @@ pub enum SigningAlgorithmSpec {
     RsassaPssSha384,
     #[allow(missing_docs)] // documentation missing in model
     RsassaPssSha512,
+    #[allow(missing_docs)] // documentation missing in model
+    Sm2Dsa,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -112,6 +114,7 @@ impl std::convert::From<&str> for SigningAlgorithmSpec {
             "RSASSA_PSS_SHA_256" => SigningAlgorithmSpec::RsassaPssSha256,
             "RSASSA_PSS_SHA_384" => SigningAlgorithmSpec::RsassaPssSha384,
             "RSASSA_PSS_SHA_512" => SigningAlgorithmSpec::RsassaPssSha512,
+            "SM2DSA" => SigningAlgorithmSpec::Sm2Dsa,
             other => SigningAlgorithmSpec::Unknown(other.to_owned()),
         }
     }
@@ -136,6 +139,7 @@ impl SigningAlgorithmSpec {
             SigningAlgorithmSpec::RsassaPssSha256 => "RSASSA_PSS_SHA_256",
             SigningAlgorithmSpec::RsassaPssSha384 => "RSASSA_PSS_SHA_384",
             SigningAlgorithmSpec::RsassaPssSha512 => "RSASSA_PSS_SHA_512",
+            SigningAlgorithmSpec::Sm2Dsa => "SM2DSA",
             SigningAlgorithmSpec::Unknown(s) => s.as_ref(),
         }
     }
@@ -151,6 +155,7 @@ impl SigningAlgorithmSpec {
             "RSASSA_PSS_SHA_256",
             "RSASSA_PSS_SHA_384",
             "RSASSA_PSS_SHA_512",
+            "SM2DSA",
         ]
     }
 }
@@ -1249,6 +1254,8 @@ pub enum EncryptionAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     RsaesOaepSha256,
     #[allow(missing_docs)] // documentation missing in model
+    Sm2Pke,
+    #[allow(missing_docs)] // documentation missing in model
     SymmetricDefault,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1258,6 +1265,7 @@ impl std::convert::From<&str> for EncryptionAlgorithmSpec {
         match s {
             "RSAES_OAEP_SHA_1" => EncryptionAlgorithmSpec::RsaesOaepSha1,
             "RSAES_OAEP_SHA_256" => EncryptionAlgorithmSpec::RsaesOaepSha256,
+            "SM2PKE" => EncryptionAlgorithmSpec::Sm2Pke,
             "SYMMETRIC_DEFAULT" => EncryptionAlgorithmSpec::SymmetricDefault,
             other => EncryptionAlgorithmSpec::Unknown(other.to_owned()),
         }
@@ -1276,6 +1284,7 @@ impl EncryptionAlgorithmSpec {
         match self {
             EncryptionAlgorithmSpec::RsaesOaepSha1 => "RSAES_OAEP_SHA_1",
             EncryptionAlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
+            EncryptionAlgorithmSpec::Sm2Pke => "SM2PKE",
             EncryptionAlgorithmSpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
             EncryptionAlgorithmSpec::Unknown(s) => s.as_ref(),
         }
@@ -1285,6 +1294,7 @@ impl EncryptionAlgorithmSpec {
         &[
             "RSAES_OAEP_SHA_1",
             "RSAES_OAEP_SHA_256",
+            "SM2PKE",
             "SYMMETRIC_DEFAULT",
         ]
     }
@@ -1330,6 +1340,8 @@ pub enum KeySpec {
     #[allow(missing_docs)] // documentation missing in model
     Rsa4096,
     #[allow(missing_docs)] // documentation missing in model
+    Sm2,
+    #[allow(missing_docs)] // documentation missing in model
     SymmetricDefault,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1348,6 +1360,7 @@ impl std::convert::From<&str> for KeySpec {
             "RSA_2048" => KeySpec::Rsa2048,
             "RSA_3072" => KeySpec::Rsa3072,
             "RSA_4096" => KeySpec::Rsa4096,
+            "SM2" => KeySpec::Sm2,
             "SYMMETRIC_DEFAULT" => KeySpec::SymmetricDefault,
             other => KeySpec::Unknown(other.to_owned()),
         }
@@ -1375,6 +1388,7 @@ impl KeySpec {
             KeySpec::Rsa2048 => "RSA_2048",
             KeySpec::Rsa3072 => "RSA_3072",
             KeySpec::Rsa4096 => "RSA_4096",
+            KeySpec::Sm2 => "SM2",
             KeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
             KeySpec::Unknown(s) => s.as_ref(),
         }
@@ -1393,6 +1407,7 @@ impl KeySpec {
             "RSA_2048",
             "RSA_3072",
             "RSA_4096",
+            "SM2",
             "SYMMETRIC_DEFAULT",
         ]
     }
@@ -1438,6 +1453,8 @@ pub enum CustomerMasterKeySpec {
     #[allow(missing_docs)] // documentation missing in model
     Rsa4096,
     #[allow(missing_docs)] // documentation missing in model
+    Sm2,
+    #[allow(missing_docs)] // documentation missing in model
     SymmetricDefault,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1456,6 +1473,7 @@ impl std::convert::From<&str> for CustomerMasterKeySpec {
             "RSA_2048" => CustomerMasterKeySpec::Rsa2048,
             "RSA_3072" => CustomerMasterKeySpec::Rsa3072,
             "RSA_4096" => CustomerMasterKeySpec::Rsa4096,
+            "SM2" => CustomerMasterKeySpec::Sm2,
             "SYMMETRIC_DEFAULT" => CustomerMasterKeySpec::SymmetricDefault,
             other => CustomerMasterKeySpec::Unknown(other.to_owned()),
         }
@@ -1483,6 +1501,7 @@ impl CustomerMasterKeySpec {
             CustomerMasterKeySpec::Rsa2048 => "RSA_2048",
             CustomerMasterKeySpec::Rsa3072 => "RSA_3072",
             CustomerMasterKeySpec::Rsa4096 => "RSA_4096",
+            CustomerMasterKeySpec::Sm2 => "SM2",
             CustomerMasterKeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
             CustomerMasterKeySpec::Unknown(s) => s.as_ref(),
         }
@@ -1501,6 +1520,7 @@ impl CustomerMasterKeySpec {
             "RSA_2048",
             "RSA_3072",
             "RSA_4096",
+            "SM2",
             "SYMMETRIC_DEFAULT",
         ]
     }
@@ -2628,6 +2648,8 @@ pub enum DataKeyPairSpec {
     Rsa3072,
     #[allow(missing_docs)] // documentation missing in model
     Rsa4096,
+    #[allow(missing_docs)] // documentation missing in model
+    Sm2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -2641,6 +2663,7 @@ impl std::convert::From<&str> for DataKeyPairSpec {
             "RSA_2048" => DataKeyPairSpec::Rsa2048,
             "RSA_3072" => DataKeyPairSpec::Rsa3072,
             "RSA_4096" => DataKeyPairSpec::Rsa4096,
+            "SM2" => DataKeyPairSpec::Sm2,
             other => DataKeyPairSpec::Unknown(other.to_owned()),
         }
     }
@@ -2663,6 +2686,7 @@ impl DataKeyPairSpec {
             DataKeyPairSpec::Rsa2048 => "RSA_2048",
             DataKeyPairSpec::Rsa3072 => "RSA_3072",
             DataKeyPairSpec::Rsa4096 => "RSA_4096",
+            DataKeyPairSpec::Sm2 => "SM2",
             DataKeyPairSpec::Unknown(s) => s.as_ref(),
         }
     }
@@ -2676,6 +2700,7 @@ impl DataKeyPairSpec {
             "RSA_2048",
             "RSA_3072",
             "RSA_4096",
+            "SM2",
         ]
     }
 }
@@ -2957,6 +2982,8 @@ pub enum ConnectionErrorCodeType {
     #[allow(missing_docs)] // documentation missing in model
     InsufficientCloudhsmHsms,
     #[allow(missing_docs)] // documentation missing in model
+    InsufficientFreeAddressesInSubnet,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
     InvalidCredentials,
@@ -2978,6 +3005,9 @@ impl std::convert::From<&str> for ConnectionErrorCodeType {
         match s {
             "CLUSTER_NOT_FOUND" => ConnectionErrorCodeType::ClusterNotFound,
             "INSUFFICIENT_CLOUDHSM_HSMS" => ConnectionErrorCodeType::InsufficientCloudhsmHsms,
+            "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET" => {
+                ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet
+            }
             "INTERNAL_ERROR" => ConnectionErrorCodeType::InternalError,
             "INVALID_CREDENTIALS" => ConnectionErrorCodeType::InvalidCredentials,
             "NETWORK_ERRORS" => ConnectionErrorCodeType::NetworkErrors,
@@ -3002,6 +3032,9 @@ impl ConnectionErrorCodeType {
         match self {
             ConnectionErrorCodeType::ClusterNotFound => "CLUSTER_NOT_FOUND",
             ConnectionErrorCodeType::InsufficientCloudhsmHsms => "INSUFFICIENT_CLOUDHSM_HSMS",
+            ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet => {
+                "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET"
+            }
             ConnectionErrorCodeType::InternalError => "INTERNAL_ERROR",
             ConnectionErrorCodeType::InvalidCredentials => "INVALID_CREDENTIALS",
             ConnectionErrorCodeType::NetworkErrors => "NETWORK_ERRORS",
@@ -3017,6 +3050,7 @@ impl ConnectionErrorCodeType {
         &[
             "CLUSTER_NOT_FOUND",
             "INSUFFICIENT_CLOUDHSM_HSMS",
+            "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET",
             "INTERNAL_ERROR",
             "INVALID_CREDENTIALS",
             "NETWORK_ERRORS",

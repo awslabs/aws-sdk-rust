@@ -467,6 +467,78 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSiteToSiteVpnAttac
     }
 }
 
+/// Operation shape for `CreateTransitGatewayPeering`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_transit_gateway_peering`](crate::client::Client::create_transit_gateway_peering).
+///
+/// See [`crate::client::fluent_builders::CreateTransitGatewayPeering`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateTransitGatewayPeering {
+    _private: (),
+}
+impl CreateTransitGatewayPeering {
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPeeringInput`](crate::input::CreateTransitGatewayPeeringInput).
+    pub fn builder() -> crate::input::create_transit_gateway_peering_input::Builder {
+        crate::input::create_transit_gateway_peering_input::Builder::default()
+    }
+    /// Creates a new `CreateTransitGatewayPeering` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayPeering {
+    type Output = std::result::Result<
+        crate::output::CreateTransitGatewayPeeringOutput,
+        crate::error::CreateTransitGatewayPeeringError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_transit_gateway_peering_error(response)
+        } else {
+            crate::operation_deser::parse_create_transit_gateway_peering_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateTransitGatewayRouteTableAttachment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_transit_gateway_route_table_attachment`](crate::client::Client::create_transit_gateway_route_table_attachment).
+///
+/// See [`crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateTransitGatewayRouteTableAttachment {
+    _private: (),
+}
+impl CreateTransitGatewayRouteTableAttachment {
+    /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAttachmentInput`](crate::input::CreateTransitGatewayRouteTableAttachmentInput).
+    pub fn builder() -> crate::input::create_transit_gateway_route_table_attachment_input::Builder {
+        crate::input::create_transit_gateway_route_table_attachment_input::Builder::default()
+    }
+    /// Creates a new `CreateTransitGatewayRouteTableAttachment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayRouteTableAttachment {
+    type Output = std::result::Result<
+        crate::output::CreateTransitGatewayRouteTableAttachmentOutput,
+        crate::error::CreateTransitGatewayRouteTableAttachmentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_transit_gateway_route_table_attachment_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_create_transit_gateway_route_table_attachment_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `CreateVpcAttachment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -765,6 +837,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLink {
             crate::operation_deser::parse_delete_link_error(response)
         } else {
             crate::operation_deser::parse_delete_link_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeletePeering`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_peering`](crate::client::Client::delete_peering).
+///
+/// See [`crate::client::fluent_builders::DeletePeering`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeletePeering {
+    _private: (),
+}
+impl DeletePeering {
+    /// Creates a new builder-style object to manufacture [`DeletePeeringInput`](crate::input::DeletePeeringInput).
+    pub fn builder() -> crate::input::delete_peering_input::Builder {
+        crate::input::delete_peering_input::Builder::default()
+    }
+    /// Creates a new `DeletePeering` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeletePeering {
+    type Output =
+        std::result::Result<crate::output::DeletePeeringOutput, crate::error::DeletePeeringError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_peering_error(response)
+        } else {
+            crate::operation_deser::parse_delete_peering_response(response)
         }
     }
 }
@@ -1235,6 +1339,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCoreNetwork {
             crate::operation_deser::parse_get_core_network_error(response)
         } else {
             crate::operation_deser::parse_get_core_network_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetCoreNetworkChangeEvents`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_core_network_change_events`](crate::client::Client::get_core_network_change_events).
+///
+/// See [`crate::client::fluent_builders::GetCoreNetworkChangeEvents`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetCoreNetworkChangeEvents {
+    _private: (),
+}
+impl GetCoreNetworkChangeEvents {
+    /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeEventsInput`](crate::input::GetCoreNetworkChangeEventsInput).
+    pub fn builder() -> crate::input::get_core_network_change_events_input::Builder {
+        crate::input::get_core_network_change_events_input::Builder::default()
+    }
+    /// Creates a new `GetCoreNetworkChangeEvents` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetCoreNetworkChangeEvents {
+    type Output = std::result::Result<
+        crate::output::GetCoreNetworkChangeEventsOutput,
+        crate::error::GetCoreNetworkChangeEventsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_core_network_change_events_error(response)
+        } else {
+            crate::operation_deser::parse_get_core_network_change_events_response(response)
         }
     }
 }
@@ -1779,6 +1917,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayConnect
     }
 }
 
+/// Operation shape for `GetTransitGatewayPeering`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_transit_gateway_peering`](crate::client::Client::get_transit_gateway_peering).
+///
+/// See [`crate::client::fluent_builders::GetTransitGatewayPeering`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTransitGatewayPeering {
+    _private: (),
+}
+impl GetTransitGatewayPeering {
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayPeeringInput`](crate::input::GetTransitGatewayPeeringInput).
+    pub fn builder() -> crate::input::get_transit_gateway_peering_input::Builder {
+        crate::input::get_transit_gateway_peering_input::Builder::default()
+    }
+    /// Creates a new `GetTransitGatewayPeering` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayPeering {
+    type Output = std::result::Result<
+        crate::output::GetTransitGatewayPeeringOutput,
+        crate::error::GetTransitGatewayPeeringError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_transit_gateway_peering_error(response)
+        } else {
+            crate::operation_deser::parse_get_transit_gateway_peering_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetTransitGatewayRegistrations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1809,6 +1981,42 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayRegistr
             crate::operation_deser::parse_get_transit_gateway_registrations_error(response)
         } else {
             crate::operation_deser::parse_get_transit_gateway_registrations_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetTransitGatewayRouteTableAttachment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_transit_gateway_route_table_attachment`](crate::client::Client::get_transit_gateway_route_table_attachment).
+///
+/// See [`crate::client::fluent_builders::GetTransitGatewayRouteTableAttachment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTransitGatewayRouteTableAttachment {
+    _private: (),
+}
+impl GetTransitGatewayRouteTableAttachment {
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayRouteTableAttachmentInput`](crate::input::GetTransitGatewayRouteTableAttachmentInput).
+    pub fn builder() -> crate::input::get_transit_gateway_route_table_attachment_input::Builder {
+        crate::input::get_transit_gateway_route_table_attachment_input::Builder::default()
+    }
+    /// Creates a new `GetTransitGatewayRouteTableAttachment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayRouteTableAttachment {
+    type Output = std::result::Result<
+        crate::output::GetTransitGatewayRouteTableAttachmentOutput,
+        crate::error::GetTransitGatewayRouteTableAttachmentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_transit_gateway_route_table_attachment_error(response)
+        } else {
+            crate::operation_deser::parse_get_transit_gateway_route_table_attachment_response(
+                response,
+            )
         }
     }
 }
@@ -2013,6 +2221,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrganizationServiceA
             crate::operation_deser::parse_list_organization_service_access_status_error(response)
         } else {
             crate::operation_deser::parse_list_organization_service_access_status_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListPeerings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_peerings`](crate::client::Client::list_peerings).
+///
+/// See [`crate::client::fluent_builders::ListPeerings`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListPeerings {
+    _private: (),
+}
+impl ListPeerings {
+    /// Creates a new builder-style object to manufacture [`ListPeeringsInput`](crate::input::ListPeeringsInput).
+    pub fn builder() -> crate::input::list_peerings_input::Builder {
+        crate::input::list_peerings_input::Builder::default()
+    }
+    /// Creates a new `ListPeerings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListPeerings {
+    type Output =
+        std::result::Result<crate::output::ListPeeringsOutput, crate::error::ListPeeringsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_peerings_error(response)
+        } else {
+            crate::operation_deser::parse_list_peerings_response(response)
         }
     }
 }

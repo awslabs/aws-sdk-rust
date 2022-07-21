@@ -588,10 +588,10 @@ impl Client {
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetEventConfigurationByResourceTypes::send) it.
 
     /// - On success, responds with [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput) with field(s):
-    ///   - [`device_registration_state(Option<DeviceRegistrationStateResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::device_registration_state): <p>Resource type event configuration for the device registration state event</p>
-    ///   - [`proximity(Option<ProximityResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::proximity): <p>Resource type event configuration for the proximity event</p>
-    ///   - [`join(Option<JoinResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::join): <p>Resource type event configuration for the join event</p>
-    ///   - [`connection_status(Option<ConnectionStatusResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::connection_status): <p>Resource type event configuration for the connection status event</p>
+    ///   - [`device_registration_state(Option<DeviceRegistrationStateResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::device_registration_state): <p>Resource type event configuration for the device registration state event.</p>
+    ///   - [`proximity(Option<ProximityResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::proximity): <p>Resource type event configuration for the proximity event.</p>
+    ///   - [`join(Option<JoinResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::join): <p>Resource type event configuration for the join event.</p>
+    ///   - [`connection_status(Option<ConnectionStatusResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::connection_status): <p>Resource type event configuration for the connection status event.</p>
     /// - On failure, responds with [`SdkError<GetEventConfigurationByResourceTypesError>`](crate::error::GetEventConfigurationByResourceTypesError)
     pub fn get_event_configuration_by_resource_types(
         &self,
@@ -683,15 +683,43 @@ impl Client {
     pub fn get_partner_account(&self) -> fluent_builders::GetPartnerAccount {
         fluent_builders::GetPartnerAccount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetPosition`](crate::client::fluent_builders::GetPosition) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::GetPosition::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::GetPosition::set_resource_identifier): <p>Resource identifier used to retrieve the position information.</p>
+    ///   - [`resource_type(PositionResourceType)`](crate::client::fluent_builders::GetPosition::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::client::fluent_builders::GetPosition::set_resource_type): <p>Resource type of the resource for which position information is retrieved.</p>
+    /// - On success, responds with [`GetPositionOutput`](crate::output::GetPositionOutput) with field(s):
+    ///   - [`position(Option<Vec<f32>>)`](crate::output::GetPositionOutput::position): <p>The position information of the resource.</p>
+    ///   - [`accuracy(Option<Accuracy>)`](crate::output::GetPositionOutput::accuracy): <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
+    ///   - [`solver_type(Option<PositionSolverType>)`](crate::output::GetPositionOutput::solver_type): <p>The type of solver used to identify the position of the resource.</p>
+    ///   - [`solver_provider(Option<PositionSolverProvider>)`](crate::output::GetPositionOutput::solver_provider): <p>The vendor of the positioning solver.</p>
+    ///   - [`solver_version(Option<String>)`](crate::output::GetPositionOutput::solver_version): <p>The version of the positioning solver.</p>
+    ///   - [`timestamp(Option<String>)`](crate::output::GetPositionOutput::timestamp): <p>The timestamp at which the device's position was determined.</p>
+    /// - On failure, responds with [`SdkError<GetPositionError>`](crate::error::GetPositionError)
+    pub fn get_position(&self) -> fluent_builders::GetPosition {
+        fluent_builders::GetPosition::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetPositionConfiguration`](crate::client::fluent_builders::GetPositionConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::GetPositionConfiguration::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::GetPositionConfiguration::set_resource_identifier): <p>Resource identifier used in a position configuration.</p>
+    ///   - [`resource_type(PositionResourceType)`](crate::client::fluent_builders::GetPositionConfiguration::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::client::fluent_builders::GetPositionConfiguration::set_resource_type): <p>Resource type of the resource for which position configuration is retrieved.</p>
+    /// - On success, responds with [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput) with field(s):
+    ///   - [`solvers(Option<PositionSolverDetails>)`](crate::output::GetPositionConfigurationOutput::solvers): <p>The wrapper for the solver configuration details object.</p>
+    ///   - [`destination(Option<String>)`](crate::output::GetPositionConfigurationOutput::destination): <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    /// - On failure, responds with [`SdkError<GetPositionConfigurationError>`](crate::error::GetPositionConfigurationError)
+    pub fn get_position_configuration(&self) -> fluent_builders::GetPositionConfiguration {
+        fluent_builders::GetPositionConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetResourceEventConfiguration`](crate::client::fluent_builders::GetResourceEventConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetResourceEventConfiguration::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetResourceEventConfiguration::set_identifier): <p>Resource identifier to opt in for event messaging.</p>
     ///   - [`identifier_type(IdentifierType)`](crate::client::fluent_builders::GetResourceEventConfiguration::identifier_type) / [`set_identifier_type(Option<IdentifierType>)`](crate::client::fluent_builders::GetResourceEventConfiguration::set_identifier_type): <p>Identifier type of the particular resource identifier for event configuration.</p>
-    ///   - [`partner_type(EventNotificationPartnerType)`](crate::client::fluent_builders::GetResourceEventConfiguration::partner_type) / [`set_partner_type(Option<EventNotificationPartnerType>)`](crate::client::fluent_builders::GetResourceEventConfiguration::set_partner_type): <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+    ///   - [`partner_type(EventNotificationPartnerType)`](crate::client::fluent_builders::GetResourceEventConfiguration::partner_type) / [`set_partner_type(Option<EventNotificationPartnerType>)`](crate::client::fluent_builders::GetResourceEventConfiguration::set_partner_type): <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
     /// - On success, responds with [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput) with field(s):
-    ///   - [`device_registration_state(Option<DeviceRegistrationStateEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::device_registration_state): <p>Event configuration for the device registration state event</p>
-    ///   - [`proximity(Option<ProximityEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::proximity): <p>Event configuration for the Proximity event</p>
+    ///   - [`device_registration_state(Option<DeviceRegistrationStateEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::device_registration_state): <p>Event configuration for the device registration state event.</p>
+    ///   - [`proximity(Option<ProximityEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::proximity): <p>Event configuration for the proximity event.</p>
     ///   - [`join(Option<JoinEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::join): <p>Event configuration for the join event.</p>
     ///   - [`connection_status(Option<ConnectionStatusEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::connection_status): <p>Event configuration for the connection status event.</p>
     /// - On failure, responds with [`SdkError<GetResourceEventConfigurationError>`](crate::error::GetResourceEventConfigurationError)
@@ -960,6 +988,20 @@ impl Client {
     pub fn list_partner_accounts(&self) -> fluent_builders::ListPartnerAccounts {
         fluent_builders::ListPartnerAccounts::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListPositionConfigurations`](crate::client::fluent_builders::ListPositionConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPositionConfigurations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(PositionResourceType)`](crate::client::fluent_builders::ListPositionConfigurations::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::client::fluent_builders::ListPositionConfigurations::set_resource_type): <p>Resource type for which position configurations are listed.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPositionConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPositionConfigurations::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPositionConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPositionConfigurations::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    /// - On success, responds with [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput) with field(s):
+    ///   - [`position_configuration_list(Option<Vec<PositionConfigurationItem>>)`](crate::output::ListPositionConfigurationsOutput::position_configuration_list): <p>A list of position configurations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPositionConfigurationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListPositionConfigurationsError>`](crate::error::ListPositionConfigurationsError)
+    pub fn list_position_configurations(&self) -> fluent_builders::ListPositionConfigurations {
+        fluent_builders::ListPositionConfigurations::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListQueuedMessages`](crate::client::fluent_builders::ListQueuedMessages) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQueuedMessages::into_paginator).
     ///
@@ -1044,6 +1086,19 @@ impl Client {
         &self,
     ) -> fluent_builders::ListWirelessGatewayTaskDefinitions {
         fluent_builders::ListWirelessGatewayTaskDefinitions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutPositionConfiguration`](crate::client::fluent_builders::PutPositionConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::PutPositionConfiguration::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::PutPositionConfiguration::set_resource_identifier): <p>Resource identifier used to update the position configuration.</p>
+    ///   - [`resource_type(PositionResourceType)`](crate::client::fluent_builders::PutPositionConfiguration::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::client::fluent_builders::PutPositionConfiguration::set_resource_type): <p>Resource type of the resource for which you want to update the position configuration.</p>
+    ///   - [`solvers(PositionSolverConfigurations)`](crate::client::fluent_builders::PutPositionConfiguration::solvers) / [`set_solvers(Option<PositionSolverConfigurations>)`](crate::client::fluent_builders::PutPositionConfiguration::set_solvers): <p>The positioning solvers used to update the position configuration of the resource.</p>
+    ///   - [`destination(impl Into<String>)`](crate::client::fluent_builders::PutPositionConfiguration::destination) / [`set_destination(Option<String>)`](crate::client::fluent_builders::PutPositionConfiguration::set_destination): <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    /// - On success, responds with [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutPositionConfigurationError>`](crate::error::PutPositionConfigurationError)
+    pub fn put_position_configuration(&self) -> fluent_builders::PutPositionConfiguration {
+        fluent_builders::PutPositionConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`PutResourceLogLevel`](crate::client::fluent_builders::PutResourceLogLevel) operation.
     ///
@@ -1290,16 +1345,28 @@ impl Client {
     pub fn update_partner_account(&self) -> fluent_builders::UpdatePartnerAccount {
         fluent_builders::UpdatePartnerAccount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdatePosition`](crate::client::fluent_builders::UpdatePosition) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdatePosition::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::UpdatePosition::set_resource_identifier): <p>Resource identifier of the resource for which position is updated.</p>
+    ///   - [`resource_type(PositionResourceType)`](crate::client::fluent_builders::UpdatePosition::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::client::fluent_builders::UpdatePosition::set_resource_type): <p>Resource type of the resource for which position is updated.</p>
+    ///   - [`position(Vec<f32>)`](crate::client::fluent_builders::UpdatePosition::position) / [`set_position(Option<Vec<f32>>)`](crate::client::fluent_builders::UpdatePosition::set_position): <p>The position information of the resource.</p>
+    /// - On success, responds with [`UpdatePositionOutput`](crate::output::UpdatePositionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdatePositionError>`](crate::error::UpdatePositionError)
+    pub fn update_position(&self) -> fluent_builders::UpdatePosition {
+        fluent_builders::UpdatePosition::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateResourceEventConfiguration`](crate::client::fluent_builders::UpdateResourceEventConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_identifier): <p>Resource identifier to opt in for event messaging.</p>
     ///   - [`identifier_type(IdentifierType)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::identifier_type) / [`set_identifier_type(Option<IdentifierType>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_identifier_type): <p>Identifier type of the particular resource identifier for event configuration.</p>
-    ///   - [`partner_type(EventNotificationPartnerType)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::partner_type) / [`set_partner_type(Option<EventNotificationPartnerType>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_partner_type): <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
-    ///   - [`device_registration_state(DeviceRegistrationStateEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::device_registration_state) / [`set_device_registration_state(Option<DeviceRegistrationStateEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_device_registration_state): <p>Event configuration for the device registration state event</p>
-    ///   - [`proximity(ProximityEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::proximity) / [`set_proximity(Option<ProximityEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_proximity): <p>Event configuration for the Proximity event</p>
-    ///   - [`join(JoinEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::join) / [`set_join(Option<JoinEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_join): <p>Event configuration for the join event</p>
-    ///   - [`connection_status(ConnectionStatusEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::connection_status) / [`set_connection_status(Option<ConnectionStatusEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_connection_status): <p>Event configuration for the connection status event</p>
+    ///   - [`partner_type(EventNotificationPartnerType)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::partner_type) / [`set_partner_type(Option<EventNotificationPartnerType>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_partner_type): <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
+    ///   - [`device_registration_state(DeviceRegistrationStateEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::device_registration_state) / [`set_device_registration_state(Option<DeviceRegistrationStateEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_device_registration_state): <p>Event configuration for the device registration state event.</p>
+    ///   - [`proximity(ProximityEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::proximity) / [`set_proximity(Option<ProximityEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_proximity): <p>Event configuration for the proximity event.</p>
+    ///   - [`join(JoinEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::join) / [`set_join(Option<JoinEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_join): <p>Event configuration for the join event.</p>
+    ///   - [`connection_status(ConnectionStatusEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::connection_status) / [`set_connection_status(Option<ConnectionStatusEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_connection_status): <p>Event configuration for the connection status event.</p>
     /// - On success, responds with [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateResourceEventConfigurationError>`](crate::error::UpdateResourceEventConfigurationError)
@@ -4157,7 +4224,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEventConfigurationByResourceTypes`.
     ///
-    /// <p>Get the event configuration by resource types.</p>
+    /// <p>Get the event configuration based on resource types.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventConfigurationByResourceTypes {
         handle: std::sync::Arc<super::Handle>,
@@ -4527,6 +4594,144 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetPosition`.
+    ///
+    /// <p>Get the position information for a given resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetPosition {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_position_input::Builder,
+    }
+    impl GetPosition {
+        /// Creates a new `GetPosition`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetPositionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetPositionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Resource identifier used to retrieve the position information.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
+            self
+        }
+        /// <p>Resource identifier used to retrieve the position information.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_identifier(input);
+            self
+        }
+        /// <p>Resource type of the resource for which position information is retrieved.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
+            self
+        }
+        /// <p>Resource type of the resource for which position information is retrieved.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetPositionConfiguration`.
+    ///
+    /// <p>Get position configuration for a given resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetPositionConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_position_configuration_input::Builder,
+    }
+    impl GetPositionConfiguration {
+        /// Creates a new `GetPositionConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetPositionConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetPositionConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Resource identifier used in a position configuration.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
+            self
+        }
+        /// <p>Resource identifier used in a position configuration.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_identifier(input);
+            self
+        }
+        /// <p>Resource type of the resource for which position configuration is retrieved.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
+            self
+        }
+        /// <p>Resource type of the resource for which position configuration is retrieved.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetResourceEventConfiguration`.
     ///
     /// <p>Get the event configuration for a particular resource identifier.</p>
@@ -4592,12 +4797,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identifier_type(input);
             self
         }
-        /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+        /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
         pub fn partner_type(mut self, input: crate::model::EventNotificationPartnerType) -> Self {
             self.inner = self.inner.partner_type(input);
             self
         }
-        /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+        /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
         pub fn set_partner_type(
             mut self,
             input: std::option::Option<crate::model::EventNotificationPartnerType>,
@@ -5810,6 +6015,88 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListPositionConfigurations`.
+    ///
+    /// <p>List position configurations for a given resource, such as positioning solvers.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListPositionConfigurations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_position_configurations_input::Builder,
+    }
+    impl ListPositionConfigurations {
+        /// Creates a new `ListPositionConfigurations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListPositionConfigurationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListPositionConfigurationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPositionConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPositionConfigurationsPaginator {
+            crate::paginator::ListPositionConfigurationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Resource type for which position configurations are listed.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
+            self
+        }
+        /// <p>Resource type for which position configurations are listed.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListQueuedMessages`.
     ///
     /// <p>List queued messages in the downlink queue.</p>
@@ -6318,6 +6605,98 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::WirelessGatewayTaskDefinitionType>,
         ) -> Self {
             self.inner = self.inner.set_task_definition_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutPositionConfiguration`.
+    ///
+    /// <p>Put position configuration for a given resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutPositionConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_position_configuration_input::Builder,
+    }
+    impl PutPositionConfiguration {
+        /// Creates a new `PutPositionConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutPositionConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutPositionConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Resource identifier used to update the position configuration.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
+            self
+        }
+        /// <p>Resource identifier used to update the position configuration.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_identifier(input);
+            self
+        }
+        /// <p>Resource type of the resource for which you want to update the position configuration.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
+            self
+        }
+        /// <p>Resource type of the resource for which you want to update the position configuration.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The positioning solvers used to update the position configuration of the resource.</p>
+        pub fn solvers(mut self, input: crate::model::PositionSolverConfigurations) -> Self {
+            self.inner = self.inner.solvers(input);
+            self
+        }
+        /// <p>The positioning solvers used to update the position configuration of the resource.</p>
+        pub fn set_solvers(
+            mut self,
+            input: std::option::Option<crate::model::PositionSolverConfigurations>,
+        ) -> Self {
+            self.inner = self.inner.set_solvers(input);
+            self
+        }
+        /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination(input.into());
+            self
+        }
+        /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_destination(input);
             self
         }
     }
@@ -7262,7 +7641,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEventConfigurationByResourceTypes`.
     ///
-    /// <p>Update the event configuration by resource types.</p>
+    /// <p>Update the event configuration based on resource types.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEventConfigurationByResourceTypes {
         handle: std::sync::Arc<super::Handle>,
@@ -7898,6 +8277,89 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdatePosition`.
+    ///
+    /// <p>Update the position information of a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdatePosition {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_position_input::Builder,
+    }
+    impl UpdatePosition {
+        /// Creates a new `UpdatePosition`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdatePositionOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdatePositionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Resource identifier of the resource for which position is updated.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
+            self
+        }
+        /// <p>Resource identifier of the resource for which position is updated.</p>
+        pub fn set_resource_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_identifier(input);
+            self
+        }
+        /// <p>Resource type of the resource for which position is updated.</p>
+        pub fn resource_type(mut self, input: crate::model::PositionResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
+            self
+        }
+        /// <p>Resource type of the resource for which position is updated.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::PositionResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// Appends an item to `Position`.
+        ///
+        /// To override the contents of this collection use [`set_position`](Self::set_position).
+        ///
+        /// <p>The position information of the resource.</p>
+        pub fn position(mut self, input: f32) -> Self {
+            self.inner = self.inner.position(input);
+            self
+        }
+        /// <p>The position information of the resource.</p>
+        pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f32>>) -> Self {
+            self.inner = self.inner.set_position(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateResourceEventConfiguration`.
     ///
     /// <p>Update the event configuration for a particular resource identifier.</p>
@@ -7963,12 +8425,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identifier_type(input);
             self
         }
-        /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+        /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
         pub fn partner_type(mut self, input: crate::model::EventNotificationPartnerType) -> Self {
             self.inner = self.inner.partner_type(input);
             self
         }
-        /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+        /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code> </p>
         pub fn set_partner_type(
             mut self,
             input: std::option::Option<crate::model::EventNotificationPartnerType>,
@@ -7976,7 +8438,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_partner_type(input);
             self
         }
-        /// <p>Event configuration for the device registration state event</p>
+        /// <p>Event configuration for the device registration state event.</p>
         pub fn device_registration_state(
             mut self,
             input: crate::model::DeviceRegistrationStateEventConfiguration,
@@ -7984,7 +8446,7 @@ pub mod fluent_builders {
             self.inner = self.inner.device_registration_state(input);
             self
         }
-        /// <p>Event configuration for the device registration state event</p>
+        /// <p>Event configuration for the device registration state event.</p>
         pub fn set_device_registration_state(
             mut self,
             input: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
@@ -7992,12 +8454,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_registration_state(input);
             self
         }
-        /// <p>Event configuration for the Proximity event</p>
+        /// <p>Event configuration for the proximity event.</p>
         pub fn proximity(mut self, input: crate::model::ProximityEventConfiguration) -> Self {
             self.inner = self.inner.proximity(input);
             self
         }
-        /// <p>Event configuration for the Proximity event</p>
+        /// <p>Event configuration for the proximity event.</p>
         pub fn set_proximity(
             mut self,
             input: std::option::Option<crate::model::ProximityEventConfiguration>,
@@ -8005,12 +8467,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_proximity(input);
             self
         }
-        /// <p>Event configuration for the join event</p>
+        /// <p>Event configuration for the join event.</p>
         pub fn join(mut self, input: crate::model::JoinEventConfiguration) -> Self {
             self.inner = self.inner.join(input);
             self
         }
-        /// <p>Event configuration for the join event</p>
+        /// <p>Event configuration for the join event.</p>
         pub fn set_join(
             mut self,
             input: std::option::Option<crate::model::JoinEventConfiguration>,
@@ -8018,7 +8480,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_join(input);
             self
         }
-        /// <p>Event configuration for the connection status event</p>
+        /// <p>Event configuration for the connection status event.</p>
         pub fn connection_status(
             mut self,
             input: crate::model::ConnectionStatusEventConfiguration,
@@ -8026,7 +8488,7 @@ pub mod fluent_builders {
             self.inner = self.inner.connection_status(input);
             self
         }
-        /// <p>Event configuration for the connection status event</p>
+        /// <p>Event configuration for the connection status event.</p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,

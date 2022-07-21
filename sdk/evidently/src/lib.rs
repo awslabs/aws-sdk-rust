@@ -8,7 +8,8 @@
 #![allow(clippy::type_complexity)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>You can use Amazon CloudWatch Evidently to safely validate new features by serving them to a specified percentage
+//! <p>You can use Amazon CloudWatch Evidently to safely validate new features by serving
+//! them to a specified percentage
 //! of your users while you roll out the feature. You can monitor the performance of the new feature
 //! to help you decide when to ramp up traffic to your users. This helps you
 //! reduce risk and identify unintended consequences before you fully launch the feature.</p>

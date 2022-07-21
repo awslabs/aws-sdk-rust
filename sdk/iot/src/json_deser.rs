@@ -11797,6 +11797,19 @@ where
                                     crate::json_deser::deser_structure_crate_model_certificate_validity(tokens)?
                                 );
                             }
+                            "certificateMode" => {
+                                builder = builder.set_certificate_mode(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CertificateMode::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -13561,7 +13561,9 @@ pub mod put_resource_config_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags associated with the resource.</p>
+        /// <p>Tags associated with the resource.</p> <note>
+        /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
+        /// </note>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -13572,7 +13574,9 @@ pub mod put_resource_config_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Tags associated with the resource.</p>
+        /// <p>Tags associated with the resource.</p> <note>
+        /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
+        /// </note>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -15647,7 +15651,9 @@ pub struct PutResourceConfigInput {
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     pub configuration: std::option::Option<std::string::String>,
-    /// <p>Tags associated with the resource.</p>
+    /// <p>Tags associated with the resource.</p> <note>
+    /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
+    /// </note>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -15676,7 +15682,9 @@ impl PutResourceConfigInput {
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
-    /// <p>Tags associated with the resource.</p>
+    /// <p>Tags associated with the resource.</p> <note>
+    /// <p>This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that you supply for the configuration items of your custom resources.</p>
+    /// </note>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

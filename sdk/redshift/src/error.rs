@@ -836,6 +836,8 @@ pub enum AuthorizeSnapshotAccessErrorKind {
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -856,6 +858,7 @@ impl std::fmt::Display for AuthorizeSnapshotAccessError {
                 _inner.fmt(f)
             }
             AuthorizeSnapshotAccessErrorKind::LimitExceededFault(_inner) => _inner.fmt(f),
+            AuthorizeSnapshotAccessErrorKind::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             AuthorizeSnapshotAccessErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -952,6 +955,13 @@ impl AuthorizeSnapshotAccessError {
             AuthorizeSnapshotAccessErrorKind::LimitExceededFault(_)
         )
     }
+    /// Returns `true` if the error kind is `AuthorizeSnapshotAccessErrorKind::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeSnapshotAccessErrorKind::UnsupportedOperationFault(_)
+        )
+    }
 }
 impl std::error::Error for AuthorizeSnapshotAccessError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -970,6 +980,7 @@ impl std::error::Error for AuthorizeSnapshotAccessError {
                 Some(_inner)
             }
             AuthorizeSnapshotAccessErrorKind::LimitExceededFault(_inner) => Some(_inner),
+            AuthorizeSnapshotAccessErrorKind::UnsupportedOperationFault(_inner) => Some(_inner),
             AuthorizeSnapshotAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6605,6 +6616,8 @@ pub enum DescribeClusterSnapshotsErrorKind {
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -6616,6 +6629,7 @@ impl std::fmt::Display for DescribeClusterSnapshotsError {
                 _inner.fmt(f)
             }
             DescribeClusterSnapshotsErrorKind::InvalidTagFault(_inner) => _inner.fmt(f),
+            DescribeClusterSnapshotsErrorKind::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             DescribeClusterSnapshotsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6691,6 +6705,13 @@ impl DescribeClusterSnapshotsError {
             DescribeClusterSnapshotsErrorKind::InvalidTagFault(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeClusterSnapshotsErrorKind::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClusterSnapshotsErrorKind::UnsupportedOperationFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeClusterSnapshotsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6698,6 +6719,7 @@ impl std::error::Error for DescribeClusterSnapshotsError {
             DescribeClusterSnapshotsErrorKind::ClusterNotFoundFault(_inner) => Some(_inner),
             DescribeClusterSnapshotsErrorKind::ClusterSnapshotNotFoundFault(_inner) => Some(_inner),
             DescribeClusterSnapshotsErrorKind::InvalidTagFault(_inner) => Some(_inner),
+            DescribeClusterSnapshotsErrorKind::UnsupportedOperationFault(_inner) => Some(_inner),
             DescribeClusterSnapshotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8194,6 +8216,8 @@ pub enum DescribeNodeConfigurationOptionsErrorKind {
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
     /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -8210,6 +8234,9 @@ impl std::fmt::Display for DescribeNodeConfigurationOptionsError {
                 _inner.fmt(f)
             }
             DescribeNodeConfigurationOptionsErrorKind::InvalidClusterSnapshotStateFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeNodeConfigurationOptionsErrorKind::UnsupportedOperationFault(_inner) => {
                 _inner.fmt(f)
             }
             DescribeNodeConfigurationOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -8297,6 +8324,13 @@ impl DescribeNodeConfigurationOptionsError {
             DescribeNodeConfigurationOptionsErrorKind::InvalidClusterSnapshotStateFault(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeNodeConfigurationOptionsErrorKind::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeNodeConfigurationOptionsErrorKind::UnsupportedOperationFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeNodeConfigurationOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8309,6 +8343,9 @@ impl std::error::Error for DescribeNodeConfigurationOptionsError {
                 Some(_inner)
             }
             DescribeNodeConfigurationOptionsErrorKind::InvalidClusterSnapshotStateFault(_inner) => {
+                Some(_inner)
+            }
+            DescribeNodeConfigurationOptionsErrorKind::UnsupportedOperationFault(_inner) => {
                 Some(_inner)
             }
             DescribeNodeConfigurationOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -15124,6 +15161,8 @@ pub enum RevokeSnapshotAccessErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -15133,6 +15172,7 @@ impl std::fmt::Display for RevokeSnapshotAccessError {
             RevokeSnapshotAccessErrorKind::AccessToSnapshotDeniedFault(_inner) => _inner.fmt(f),
             RevokeSnapshotAccessErrorKind::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
             RevokeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            RevokeSnapshotAccessErrorKind::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             RevokeSnapshotAccessErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -15208,6 +15248,13 @@ impl RevokeSnapshotAccessError {
             RevokeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault(_)
         )
     }
+    /// Returns `true` if the error kind is `RevokeSnapshotAccessErrorKind::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeSnapshotAccessErrorKind::UnsupportedOperationFault(_)
+        )
+    }
 }
 impl std::error::Error for RevokeSnapshotAccessError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -15215,6 +15262,7 @@ impl std::error::Error for RevokeSnapshotAccessError {
             RevokeSnapshotAccessErrorKind::AccessToSnapshotDeniedFault(_inner) => Some(_inner),
             RevokeSnapshotAccessErrorKind::AuthorizationNotFoundFault(_inner) => Some(_inner),
             RevokeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault(_inner) => Some(_inner),
+            RevokeSnapshotAccessErrorKind::UnsupportedOperationFault(_inner) => Some(_inner),
             RevokeSnapshotAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -15778,6 +15826,70 @@ impl DependentServiceRequestThrottlingFault {
     }
 }
 
+/// <p>The requested operation isn't supported.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedOperationFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UnsupportedOperationFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UnsupportedOperationFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl UnsupportedOperationFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedOperationFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedOperationFault")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedOperationFault {}
+/// See [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
+pub mod unsupported_operation_fault {
+
+    /// A builder for [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
+        pub fn build(self) -> crate::error::UnsupportedOperationFault {
+            crate::error::UnsupportedOperationFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl UnsupportedOperationFault {
+    /// Creates a new builder-style object to manufacture [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
+    pub fn builder() -> crate::error::unsupported_operation_fault::Builder {
+        crate::error::unsupported_operation_fault::Builder::default()
+    }
+}
+
 /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -15801,8 +15913,8 @@ impl ClusterSnapshotNotFoundFault {
 impl std::fmt::Display for ClusterSnapshotNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSnapshotNotFoundFault")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -15865,8 +15977,8 @@ impl AuthorizationNotFoundFault {
 impl std::fmt::Display for AuthorizationNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationNotFoundFault")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
@@ -15929,8 +16041,8 @@ impl AccessToSnapshotDeniedFault {
 impl std::fmt::Display for AccessToSnapshotDeniedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessToSnapshotDeniedFault")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -15993,8 +16105,8 @@ impl InvalidEndpointStateFault {
 impl std::fmt::Display for InvalidEndpointStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEndpointStateFault")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -16057,8 +16169,8 @@ impl InvalidClusterSecurityGroupStateFault {
 impl std::fmt::Display for InvalidClusterSecurityGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClusterSecurityGroupStateFault")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -16121,8 +16233,8 @@ impl InvalidAuthorizationStateFault {
 impl std::fmt::Display for InvalidAuthorizationStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAuthorizationStateFault")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -16185,8 +16297,8 @@ impl EndpointNotFoundFault {
 impl std::fmt::Display for EndpointNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointNotFoundFault")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -16249,8 +16361,8 @@ impl EndpointAuthorizationNotFoundFault {
 impl std::fmt::Display for EndpointAuthorizationNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointAuthorizationNotFoundFault")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -16313,8 +16425,8 @@ impl ClusterSecurityGroupNotFoundFault {
 impl std::fmt::Display for ClusterSecurityGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSecurityGroupNotFoundFault")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -16377,8 +16489,8 @@ impl InsufficientClusterCapacityFault {
 impl std::fmt::Display for InsufficientClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientClusterCapacityFault")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -16415,70 +16527,6 @@ impl InsufficientClusterCapacityFault {
     /// Creates a new builder-style object to manufacture [`InsufficientClusterCapacityFault`](crate::error::InsufficientClusterCapacityFault).
     pub fn builder() -> crate::error::insufficient_cluster_capacity_fault::Builder {
         crate::error::insufficient_cluster_capacity_fault::Builder::default()
-    }
-}
-
-/// <p>The requested operation isn't supported.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnsupportedOperationFault {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOperationFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperationFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl UnsupportedOperationFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedOperationFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedOperationFault")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedOperationFault {}
-/// See [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
-pub mod unsupported_operation_fault {
-
-    /// A builder for [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
-        pub fn build(self) -> crate::error::UnsupportedOperationFault {
-            crate::error::UnsupportedOperationFault {
-                message: self.message,
-            }
-        }
-    }
-}
-impl UnsupportedOperationFault {
-    /// Creates a new builder-style object to manufacture [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
-    pub fn builder() -> crate::error::unsupported_operation_fault::Builder {
-        crate::error::unsupported_operation_fault::Builder::default()
     }
 }
 

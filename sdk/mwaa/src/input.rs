@@ -341,12 +341,12 @@ pub mod create_environment_input {
             self.kms_key = input;
             self
         }
-        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+        /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
         pub fn airflow_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.airflow_version = Some(input.into());
             self
         }
-        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+        /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
         pub fn set_airflow_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -436,8 +436,8 @@ pub mod create_environment_input {
         }
         /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
         /// <ul>
-        /// <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
-        /// <li> <p>v1.10.12 - Accepts 1.</p> </li>
+        /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+        /// <li> <p>v1 - Accepts 1.</p> </li>
         /// </ul>
         pub fn schedulers(mut self, input: i32) -> Self {
             self.schedulers = Some(input);
@@ -445,8 +445,8 @@ pub mod create_environment_input {
         }
         /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
         /// <ul>
-        /// <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
-        /// <li> <p>v1.10.12 - Accepts 1.</p> </li>
+        /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+        /// <li> <p>v1 - Accepts 1.</p> </li>
         /// </ul>
         pub fn set_schedulers(mut self, input: std::option::Option<i32>) -> Self {
             self.schedulers = input;
@@ -1887,12 +1887,12 @@ pub mod update_environment_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
+        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
         pub fn airflow_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.airflow_version = Some(input.into());
             self
         }
-        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
+        /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
         pub fn set_airflow_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2265,7 +2265,7 @@ pub struct UpdateEnvironmentInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
+    /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
     pub airflow_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
     pub source_bucket_arn: std::option::Option<std::string::String>,
@@ -2308,7 +2308,7 @@ impl UpdateEnvironmentInput {
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
+    /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
     pub fn airflow_version(&self) -> std::option::Option<&str> {
         self.airflow_version.as_deref()
     }
@@ -2645,7 +2645,7 @@ pub struct CreateEnvironmentInput {
     pub max_workers: std::option::Option<i32>,
     /// <p>The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA environment</a>.</p>
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+    /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
     pub airflow_version: std::option::Option<std::string::String>,
     /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfigurationInput>,
@@ -2660,8 +2660,8 @@ pub struct CreateEnvironmentInput {
     pub min_workers: std::option::Option<i32>,
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
-    /// <li> <p>v1.10.12 - Accepts 1.</p> </li>
+    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+    /// <li> <p>v1 - Accepts 1.</p> </li>
     /// </ul>
     pub schedulers: std::option::Option<i32>,
 }
@@ -2723,7 +2723,7 @@ impl CreateEnvironmentInput {
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>The Apache Airflow version for your environment. If no value is specified, defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
+    /// <p>The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
     pub fn airflow_version(&self) -> std::option::Option<&str> {
         self.airflow_version.as_deref()
     }
@@ -2754,8 +2754,8 @@ impl CreateEnvironmentInput {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
-    /// <li> <p>v1.10.12 - Accepts 1.</p> </li>
+    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+    /// <li> <p>v1 - Accepts 1.</p> </li>
     /// </ul>
     pub fn schedulers(&self) -> std::option::Option<i32> {
         self.schedulers

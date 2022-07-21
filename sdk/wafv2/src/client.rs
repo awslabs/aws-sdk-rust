@@ -4687,7 +4687,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateManagedRuleSetVersionExpiryDate`.
     ///
-    /// <p>Updates the expiration information for your managed rule set. Use this to initiate the expiration of a managed rule group version. After you initiate expiration for a version, WAF excludes it from the reponse to <code>ListAvailableManagedRuleGroupVersions</code> for the managed rule group. </p> <note>
+    /// <p>Updates the expiration information for your managed rule set. Use this to initiate the expiration of a managed rule group version. After you initiate expiration for a version, WAF excludes it from the response to <code>ListAvailableManagedRuleGroupVersions</code> for the managed rule group. </p> <note>
     /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
     /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
     /// </note>
@@ -5102,7 +5102,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWebACL`.
     ///
-    /// <p>Updates the specified <code>WebACL</code>. While updating a web ACL, WAF provides continous coverage to the resources that you have associated with the web ACL. </p>
+    /// <p>Updates the specified <code>WebACL</code>. While updating a web ACL, WAF provides continuous coverage to the resources that you have associated with the web ACL. </p>
     /// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p> <note>
     /// <p>This operation completely replaces the mutable specifications that you already have for the web ACL with the ones that you provide to this call. To modify the web ACL, retrieve it by calling <code>GetWebACL</code>, update the settings as needed, and then provide the complete web ACL specification to this call.</p>
     /// </note>

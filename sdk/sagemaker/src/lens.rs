@@ -149,6 +149,16 @@ pub(crate) fn reflens_structure_crate_output_list_domains_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_edge_deployment_plans_output_next_token(
+    input: &crate::output::ListEdgeDeploymentPlansOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_edge_packaging_jobs_output_next_token(
     input: &crate::output::ListEdgePackagingJobsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -449,6 +459,16 @@ pub(crate) fn reflens_structure_crate_output_list_projects_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_stage_devices_output_next_token(
+    input: &crate::output::ListStageDevicesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_studio_lifecycle_configs_output_next_token(
     input: &crate::output::ListStudioLifecycleConfigsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -723,6 +743,16 @@ pub(crate) fn lens_structure_crate_output_list_domains_output_domains(
     input: crate::output::ListDomainsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::DomainDetails>> {
     let input = match input.domains {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_edge_deployment_plans_output_edge_deployment_plan_summaries(
+    input: crate::output::ListEdgeDeploymentPlansOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::EdgeDeploymentPlanSummary>> {
+    let input = match input.edge_deployment_plan_summaries {
         None => return None,
         Some(t) => t,
     };
@@ -1013,6 +1043,16 @@ pub(crate) fn lens_structure_crate_output_list_processing_jobs_output_processing
     input: crate::output::ListProcessingJobsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ProcessingJobSummary>> {
     let input = match input.processing_job_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_stage_devices_output_device_deployment_summaries(
+    input: crate::output::ListStageDevicesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DeviceDeploymentSummary>> {
+    let input = match input.device_deployment_summaries {
         None => return None,
         Some(t) => t,
     };

@@ -447,6 +447,29 @@ where
     }
 }
 impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::AssociateTransitGatewayPolicyTableError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::AssociateTransitGatewayPolicyTableError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AssociateTransitGatewayPolicyTableErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::AssociateTransitGatewayRouteTableError, R>>
     for Error
 where
@@ -1886,6 +1909,28 @@ where
     }
 }
 impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateTransitGatewayPolicyTableError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateTransitGatewayPolicyTableError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateTransitGatewayPolicyTableErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
     From<
         aws_smithy_http::result::SdkError<
             crate::error::CreateTransitGatewayPrefixListReferenceError,
@@ -1946,6 +1991,32 @@ where
                 crate::error::CreateTransitGatewayRouteTableErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::CreateTransitGatewayRouteTableAnnouncementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateTransitGatewayRouteTableAnnouncementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(
+                    inner,
+                ) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -3013,6 +3084,28 @@ where
     }
 }
 impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteTransitGatewayPolicyTableError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteTransitGatewayPolicyTableError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteTransitGatewayPolicyTableErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
     From<
         aws_smithy_http::result::SdkError<
             crate::error::DeleteTransitGatewayPrefixListReferenceError,
@@ -3073,6 +3166,32 @@ where
                 crate::error::DeleteTransitGatewayRouteTableErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DeleteTransitGatewayRouteTableAnnouncementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteTransitGatewayRouteTableAnnouncementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteTransitGatewayRouteTableAnnouncementErrorKind::Unhandled(
+                    inner,
+                ) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -5561,6 +5680,55 @@ where
     }
 }
 impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::DescribeTransitGatewayPolicyTablesError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeTransitGatewayPolicyTablesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeTransitGatewayPolicyTablesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeTransitGatewayRouteTableAnnouncementsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeTransitGatewayRouteTableAnnouncementsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeTransitGatewayRouteTableAnnouncementsErrorKind::Unhandled(
+                    inner,
+                ) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::DescribeTransitGatewayRouteTablesError, R>>
     for Error
 where
@@ -6426,6 +6594,32 @@ where
                 crate::error::DisassociateTransitGatewayMulticastDomainErrorKind::Unhandled(
                     inner,
                 ) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DisassociateTransitGatewayPolicyTableError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisassociateTransitGatewayPolicyTableError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DisassociateTransitGatewayPolicyTableErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -7374,6 +7568,58 @@ where
                 crate::error::GetTransitGatewayMulticastDomainAssociationsErrorKind::Unhandled(
                     inner,
                 ) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetTransitGatewayPolicyTableAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetTransitGatewayPolicyTableAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetTransitGatewayPolicyTableAssociationsErrorKind::Unhandled(
+                    inner,
+                ) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetTransitGatewayPolicyTableEntriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetTransitGatewayPolicyTableEntriesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetTransitGatewayPolicyTableEntriesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

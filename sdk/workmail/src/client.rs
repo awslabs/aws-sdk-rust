@@ -139,6 +139,22 @@ impl Client {
     pub fn create_alias(&self) -> fluent_builders::CreateAlias {
         fluent_builders::CreateAlias::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateAvailabilityConfiguration`](crate::client::fluent_builders::CreateAvailabilityConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_client_token): <p>An idempotent token that ensures that an API request is executed only once.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_organization_id): <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_domain_name): <p>The domain to which the provider applies.</p>
+    ///   - [`ews_provider(EwsAvailabilityProvider)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::ews_provider) / [`set_ews_provider(Option<EwsAvailabilityProvider>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_ews_provider): <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    ///   - [`lambda_provider(LambdaAvailabilityProvider)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::lambda_provider) / [`set_lambda_provider(Option<LambdaAvailabilityProvider>)`](crate::client::fluent_builders::CreateAvailabilityConfiguration::set_lambda_provider): <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    /// - On success, responds with [`CreateAvailabilityConfigurationOutput`](crate::output::CreateAvailabilityConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<CreateAvailabilityConfigurationError>`](crate::error::CreateAvailabilityConfigurationError)
+    pub fn create_availability_configuration(
+        &self,
+    ) -> fluent_builders::CreateAvailabilityConfiguration {
+        fluent_builders::CreateAvailabilityConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
     ///
     /// - The fluent builder is configurable:
@@ -236,6 +252,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteAliasError>`](crate::error::DeleteAliasError)
     pub fn delete_alias(&self) -> fluent_builders::DeleteAlias {
         fluent_builders::DeleteAlias::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteAvailabilityConfiguration`](crate::client::fluent_builders::DeleteAvailabilityConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::set_organization_id): <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteAvailabilityConfiguration::set_domain_name): <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    /// - On success, responds with [`DeleteAvailabilityConfigurationOutput`](crate::output::DeleteAvailabilityConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAvailabilityConfigurationError>`](crate::error::DeleteAvailabilityConfigurationError)
+    pub fn delete_availability_configuration(
+        &self,
+    ) -> fluent_builders::DeleteAvailabilityConfiguration {
+        fluent_builders::DeleteAvailabilityConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteEmailMonitoringConfiguration`](crate::client::fluent_builders::DeleteEmailMonitoringConfiguration) operation.
     ///
@@ -621,6 +650,22 @@ impl Client {
     pub fn list_aliases(&self) -> fluent_builders::ListAliases {
         fluent_builders::ListAliases::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListAvailabilityConfigurations`](crate::client::fluent_builders::ListAvailabilityConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAvailabilityConfigurations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::set_organization_id): <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAvailabilityConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::set_max_results): <p>The maximum number of results to return in a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAvailabilityConfigurations::set_next_token): <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    /// - On success, responds with [`ListAvailabilityConfigurationsOutput`](crate::output::ListAvailabilityConfigurationsOutput) with field(s):
+    ///   - [`availability_configurations(Option<Vec<AvailabilityConfiguration>>)`](crate::output::ListAvailabilityConfigurationsOutput::availability_configurations): <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAvailabilityConfigurationsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
+    /// - On failure, responds with [`SdkError<ListAvailabilityConfigurationsError>`](crate::error::ListAvailabilityConfigurationsError)
+    pub fn list_availability_configurations(
+        &self,
+    ) -> fluent_builders::ListAvailabilityConfigurations {
+        fluent_builders::ListAvailabilityConfigurations::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListGroupMembers`](crate::client::fluent_builders::ListGroupMembers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupMembers::into_paginator).
     ///
@@ -938,6 +983,22 @@ impl Client {
     pub fn tag_resource(&self) -> fluent_builders::TagResource {
         fluent_builders::TagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`TestAvailabilityConfiguration`](crate::client::fluent_builders::TestAvailabilityConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::set_organization_id): <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::set_domain_name): <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+    ///   - [`ews_provider(EwsAvailabilityProvider)`](crate::client::fluent_builders::TestAvailabilityConfiguration::ews_provider) / [`set_ews_provider(Option<EwsAvailabilityProvider>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::set_ews_provider): <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+    ///   - [`lambda_provider(LambdaAvailabilityProvider)`](crate::client::fluent_builders::TestAvailabilityConfiguration::lambda_provider) / [`set_lambda_provider(Option<LambdaAvailabilityProvider>)`](crate::client::fluent_builders::TestAvailabilityConfiguration::set_lambda_provider): <p>Describes a Lambda based availability provider.</p>
+    /// - On success, responds with [`TestAvailabilityConfigurationOutput`](crate::output::TestAvailabilityConfigurationOutput) with field(s):
+    ///   - [`test_passed(bool)`](crate::output::TestAvailabilityConfigurationOutput::test_passed): <p>Boolean indicating whether the test passed or failed.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::TestAvailabilityConfigurationOutput::failure_reason): <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
+    /// - On failure, responds with [`SdkError<TestAvailabilityConfigurationError>`](crate::error::TestAvailabilityConfigurationError)
+    pub fn test_availability_configuration(
+        &self,
+    ) -> fluent_builders::TestAvailabilityConfiguration {
+        fluent_builders::TestAvailabilityConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -948,6 +1009,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateAvailabilityConfiguration`](crate::client::fluent_builders::UpdateAvailabilityConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::set_organization_id): <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::set_domain_name): <p>The domain to which the provider applies the availability configuration.</p>
+    ///   - [`ews_provider(EwsAvailabilityProvider)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::ews_provider) / [`set_ews_provider(Option<EwsAvailabilityProvider>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::set_ews_provider): <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    ///   - [`lambda_provider(LambdaAvailabilityProvider)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::lambda_provider) / [`set_lambda_provider(Option<LambdaAvailabilityProvider>)`](crate::client::fluent_builders::UpdateAvailabilityConfiguration::set_lambda_provider): <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+    /// - On success, responds with [`UpdateAvailabilityConfigurationOutput`](crate::output::UpdateAvailabilityConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAvailabilityConfigurationError>`](crate::error::UpdateAvailabilityConfigurationError)
+    pub fn update_availability_configuration(
+        &self,
+    ) -> fluent_builders::UpdateAvailabilityConfiguration {
+        fluent_builders::UpdateAvailabilityConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateDefaultMailDomain`](crate::client::fluent_builders::UpdateDefaultMailDomain) operation.
     ///
@@ -1332,6 +1408,108 @@ pub mod fluent_builders {
         /// <p>The alias to add to the member set.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateAvailabilityConfiguration`.
+    ///
+    /// <p>Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateAvailabilityConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_availability_configuration_input::Builder,
+    }
+    impl CreateAvailabilityConfiguration {
+        /// Creates a new `CreateAvailabilityConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAvailabilityConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateAvailabilityConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>An idempotent token that ensures that an API request is executed only once.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>An idempotent token that ensures that an API request is executed only once.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The domain to which the provider applies.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The domain to which the provider applies.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+        pub fn ews_provider(mut self, input: crate::model::EwsAvailabilityProvider) -> Self {
+            self.inner = self.inner.ews_provider(input);
+            self
+        }
+        /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+        pub fn set_ews_provider(
+            mut self,
+            input: std::option::Option<crate::model::EwsAvailabilityProvider>,
+        ) -> Self {
+            self.inner = self.inner.set_ews_provider(input);
+            self
+        }
+        /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+        pub fn lambda_provider(mut self, input: crate::model::LambdaAvailabilityProvider) -> Self {
+            self.inner = self.inner.lambda_provider(input);
+            self
+        }
+        /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+        pub fn set_lambda_provider(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+        ) -> Self {
+            self.inner = self.inner.set_lambda_provider(input);
             self
         }
     }
@@ -2054,6 +2232,72 @@ pub mod fluent_builders {
         /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteAvailabilityConfiguration`.
+    ///
+    /// <p>Deletes the <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteAvailabilityConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_availability_configuration_input::Builder,
+    }
+    impl DeleteAvailabilityConfiguration {
+        /// Creates a new `DeleteAvailabilityConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAvailabilityConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAvailabilityConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
     }
@@ -4019,6 +4263,88 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAvailabilityConfigurations`.
+    ///
+    /// <p>List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAvailabilityConfigurations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_availability_configurations_input::Builder,
+    }
+    impl ListAvailabilityConfigurations {
+        /// Creates a new `ListAvailabilityConfigurations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAvailabilityConfigurationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAvailabilityConfigurationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAvailabilityConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAvailabilityConfigurationsPaginator {
+            crate::paginator::ListAvailabilityConfigurationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -6067,6 +6393,100 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `TestAvailabilityConfiguration`.
+    ///
+    /// <p>Performs a test on an availability provider to ensure that access is allowed. For EWS, it verifies the provided credentials can be used to successfully log in. For Lambda, it verifies that the Lambda function can be invoked and that the resource access policy was configured to deny anonymous access. An anonymous invocation is one done without providing either a <code>SourceArn</code> or <code>SourceAccount</code> header.</p> <note>
+    /// <p>The request must contain either one provider definition (<code>EwsProvider</code> or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code> parameter is provided, the configuration stored under the <code>DomainName</code> will be tested. </p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TestAvailabilityConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::test_availability_configuration_input::Builder,
+    }
+    impl TestAvailabilityConfiguration {
+        /// Creates a new `TestAvailabilityConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TestAvailabilityConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::TestAvailabilityConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization where the availability provider will be tested.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+        pub fn ews_provider(mut self, input: crate::model::EwsAvailabilityProvider) -> Self {
+            self.inner = self.inner.ews_provider(input);
+            self
+        }
+        /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+        pub fn set_ews_provider(
+            mut self,
+            input: std::option::Option<crate::model::EwsAvailabilityProvider>,
+        ) -> Self {
+            self.inner = self.inner.set_ews_provider(input);
+            self
+        }
+        /// <p>Describes a Lambda based availability provider.</p>
+        pub fn lambda_provider(mut self, input: crate::model::LambdaAvailabilityProvider) -> Self {
+            self.inner = self.inner.lambda_provider(input);
+            self
+        }
+        /// <p>Describes a Lambda based availability provider.</p>
+        pub fn set_lambda_provider(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+        ) -> Self {
+            self.inner = self.inner.set_lambda_provider(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Untags the specified tags from the specified Amazon WorkMail organization resource.</p>
@@ -6134,6 +6554,98 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateAvailabilityConfiguration`.
+    ///
+    /// <p>Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateAvailabilityConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_availability_configuration_input::Builder,
+    }
+    impl UpdateAvailabilityConfiguration {
+        /// Creates a new `UpdateAvailabilityConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateAvailabilityConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateAvailabilityConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The domain to which the provider applies the availability configuration.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The domain to which the provider applies the availability configuration.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+        pub fn ews_provider(mut self, input: crate::model::EwsAvailabilityProvider) -> Self {
+            self.inner = self.inner.ews_provider(input);
+            self
+        }
+        /// <p>The EWS availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+        pub fn set_ews_provider(
+            mut self,
+            input: std::option::Option<crate::model::EwsAvailabilityProvider>,
+        ) -> Self {
+            self.inner = self.inner.set_ews_provider(input);
+            self
+        }
+        /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+        pub fn lambda_provider(mut self, input: crate::model::LambdaAvailabilityProvider) -> Self {
+            self.inner = self.inner.lambda_provider(input);
+            self
+        }
+        /// <p>The Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously stored provider will be overridden by the one provided.</p>
+        pub fn set_lambda_provider(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAvailabilityProvider>,
+        ) -> Self {
+            self.inner = self.inner.set_lambda_provider(input);
             self
         }
     }

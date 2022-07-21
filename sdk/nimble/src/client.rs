@@ -195,6 +195,8 @@ impl Client {
     ///   - [`subtype(StudioComponentSubtype)`](crate::client::fluent_builders::CreateStudioComponent::subtype) / [`set_subtype(Option<StudioComponentSubtype>)`](crate::client::fluent_builders::CreateStudioComponent::set_subtype): <p>The specific subtype of a studio component.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStudioComponent::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStudioComponent::set_tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::CreateStudioComponent::type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::CreateStudioComponent::set_type): <p>The type of the studio component.</p>
+    ///   - [`secure_initialization_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::secure_initialization_role_arn) / [`set_secure_initialization_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_secure_initialization_role_arn): <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    ///   - [`runtime_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::runtime_role_arn) / [`set_runtime_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_runtime_role_arn): <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
     /// - On success, responds with [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::output::CreateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<CreateStudioComponentError>`](crate::error::CreateStudioComponentError)
@@ -712,6 +714,8 @@ impl Client {
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_studio_id): <p>The studio ID. </p>
     ///   - [`subtype(StudioComponentSubtype)`](crate::client::fluent_builders::UpdateStudioComponent::subtype) / [`set_subtype(Option<StudioComponentSubtype>)`](crate::client::fluent_builders::UpdateStudioComponent::set_subtype): <p>The specific subtype of a studio component.</p>
     ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::UpdateStudioComponent::type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::UpdateStudioComponent::set_type): <p>The type of the studio component.</p>
+    ///   - [`secure_initialization_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::secure_initialization_role_arn) / [`set_secure_initialization_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_secure_initialization_role_arn): <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+    ///   - [`runtime_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::runtime_role_arn) / [`set_runtime_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_runtime_role_arn): <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
     /// - On success, responds with [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::output::UpdateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<UpdateStudioComponentError>`](crate::error::UpdateStudioComponentError)
@@ -1662,6 +1666,35 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::StudioComponentType>,
         ) -> Self {
             self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn secure_initialization_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.secure_initialization_role_arn(input.into());
+            self
+        }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn set_secure_initialization_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_secure_initialization_role_arn(input);
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.runtime_role_arn(input.into());
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn set_runtime_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_runtime_role_arn(input);
             self
         }
     }
@@ -3389,7 +3422,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStreamingSessions`.
     ///
-    /// <p>Lists the streaming image resources in a studio.</p>
+    /// <p>Lists the streaming sessions in a studio.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamingSessions {
         handle: std::sync::Arc<super::Handle>,
@@ -4982,6 +5015,35 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::StudioComponentType>,
         ) -> Self {
             self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn secure_initialization_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.secure_initialization_role_arn(input.into());
+            self
+        }
+        /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to AWS resources when the system initialization script runs.</p>
+        pub fn set_secure_initialization_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_secure_initialization_role_arn(input);
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.runtime_role_arn(input.into());
+            self
+        }
+        /// <p>An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime while the instance is running. </p>
+        pub fn set_runtime_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_runtime_role_arn(input);
             self
         }
     }

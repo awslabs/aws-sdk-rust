@@ -301,6 +301,7 @@ impl Client {
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStack::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStack::set_tags): <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     ///   - [`access_endpoints(Vec<AccessEndpoint>)`](crate::client::fluent_builders::CreateStack::access_endpoints) / [`set_access_endpoints(Option<Vec<AccessEndpoint>>)`](crate::client::fluent_builders::CreateStack::set_access_endpoints): <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
     ///   - [`embed_host_domains(Vec<String>)`](crate::client::fluent_builders::CreateStack::embed_host_domains) / [`set_embed_host_domains(Option<Vec<String>>)`](crate::client::fluent_builders::CreateStack::set_embed_host_domains): <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    ///   - [`streaming_experience_settings(StreamingExperienceSettings)`](crate::client::fluent_builders::CreateStack::streaming_experience_settings) / [`set_streaming_experience_settings(Option<StreamingExperienceSettings>)`](crate::client::fluent_builders::CreateStack::set_streaming_experience_settings): <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     /// - On success, responds with [`CreateStackOutput`](crate::output::CreateStackOutput) with field(s):
     ///   - [`stack(Option<Stack>)`](crate::output::CreateStackOutput::stack): <p>Information about the stack.</p>
     /// - On failure, responds with [`SdkError<CreateStackError>`](crate::error::CreateStackError)
@@ -959,6 +960,7 @@ impl Client {
     ///   - [`application_settings(ApplicationSettings)`](crate::client::fluent_builders::UpdateStack::application_settings) / [`set_application_settings(Option<ApplicationSettings>)`](crate::client::fluent_builders::UpdateStack::set_application_settings): <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     ///   - [`access_endpoints(Vec<AccessEndpoint>)`](crate::client::fluent_builders::UpdateStack::access_endpoints) / [`set_access_endpoints(Option<Vec<AccessEndpoint>>)`](crate::client::fluent_builders::UpdateStack::set_access_endpoints): <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
     ///   - [`embed_host_domains(Vec<String>)`](crate::client::fluent_builders::UpdateStack::embed_host_domains) / [`set_embed_host_domains(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateStack::set_embed_host_domains): <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    ///   - [`streaming_experience_settings(StreamingExperienceSettings)`](crate::client::fluent_builders::UpdateStack::streaming_experience_settings) / [`set_streaming_experience_settings(Option<StreamingExperienceSettings>)`](crate::client::fluent_builders::UpdateStack::set_streaming_experience_settings): <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     /// - On success, responds with [`UpdateStackOutput`](crate::output::UpdateStackOutput) with field(s):
     ///   - [`stack(Option<Stack>)`](crate::output::UpdateStackOutput::stack): <p>Information about the stack.</p>
     /// - On failure, responds with [`SdkError<UpdateStackError>`](crate::error::UpdateStackError)
@@ -2912,6 +2914,22 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_embed_host_domains(input);
+            self
+        }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn streaming_experience_settings(
+            mut self,
+            input: crate::model::StreamingExperienceSettings,
+        ) -> Self {
+            self.inner = self.inner.streaming_experience_settings(input);
+            self
+        }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn set_streaming_experience_settings(
+            mut self,
+            input: std::option::Option<crate::model::StreamingExperienceSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_streaming_experience_settings(input);
             self
         }
     }
@@ -6529,7 +6547,7 @@ pub mod fluent_builders {
     /// <p>If the fleet is in the <code>RUNNING</code> state, you can update the following based on the fleet type:</p>
     /// <ul>
     /// <li> <p>Always-On and On-Demand fleet types</p> <p>You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code> attributes.</p> </li>
-    /// <li> <p>Elastic fleet type</p> <p>You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and <code>UsbDeviceFilterStrings</code> attributes.</p> </li>
+    /// <li> <p>Elastic fleet type</p> <p>You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, <code>SessionScriptS3Location</code> and <code>UsbDeviceFilterStrings</code> attributes.</p> </li>
     /// </ul>
     /// <p>If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7197,6 +7215,22 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_embed_host_domains(input);
+            self
+        }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn streaming_experience_settings(
+            mut self,
+            input: crate::model::StreamingExperienceSettings,
+        ) -> Self {
+            self.inner = self.inner.streaming_experience_settings(input);
+            self
+        }
+        /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
+        pub fn set_streaming_experience_settings(
+            mut self,
+            input: std::option::Option<crate::model::StreamingExperienceSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_streaming_experience_settings(input);
             self
         }
     }

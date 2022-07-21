@@ -289,6 +289,34 @@ impl Client {
     ) -> fluent_builders::CreateSiteToSiteVpnAttachment {
         fluent_builders::CreateSiteToSiteVpnAttachment::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateTransitGatewayPeering`](crate::client::fluent_builders::CreateTransitGatewayPeering) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`core_network_id(impl Into<String>)`](crate::client::fluent_builders::CreateTransitGatewayPeering::core_network_id) / [`set_core_network_id(Option<String>)`](crate::client::fluent_builders::CreateTransitGatewayPeering::set_core_network_id): <p>The ID of a core network.</p>
+    ///   - [`transit_gateway_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTransitGatewayPeering::transit_gateway_arn) / [`set_transit_gateway_arn(Option<String>)`](crate::client::fluent_builders::CreateTransitGatewayPeering::set_transit_gateway_arn): <p>The ARN of the transit gateway for the peering request.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTransitGatewayPeering::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTransitGatewayPeering::set_tags): <p>The list of key-value tags associated with the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateTransitGatewayPeering::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateTransitGatewayPeering::set_client_token): <p>The client token associated with the request.</p>
+    /// - On success, responds with [`CreateTransitGatewayPeeringOutput`](crate::output::CreateTransitGatewayPeeringOutput) with field(s):
+    ///   - [`transit_gateway_peering(Option<TransitGatewayPeering>)`](crate::output::CreateTransitGatewayPeeringOutput::transit_gateway_peering): <p>Returns information about the transit gateway peering connection request.</p>
+    /// - On failure, responds with [`SdkError<CreateTransitGatewayPeeringError>`](crate::error::CreateTransitGatewayPeeringError)
+    pub fn create_transit_gateway_peering(&self) -> fluent_builders::CreateTransitGatewayPeering {
+        fluent_builders::CreateTransitGatewayPeering::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateTransitGatewayRouteTableAttachment`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`peering_id(impl Into<String>)`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment::peering_id) / [`set_peering_id(Option<String>)`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment::set_peering_id): <p>The ID of the peer for the </p>
+    ///   - [`transit_gateway_route_table_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment::transit_gateway_route_table_arn) / [`set_transit_gateway_route_table_arn(Option<String>)`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment::set_transit_gateway_route_table_arn): <p>The ARN of the transit gateway route table for the attachment request.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment::set_tags): <p>The list of key-value tags associated with the request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAttachment::set_client_token): <p>The client token associated with the request.</p>
+    /// - On success, responds with [`CreateTransitGatewayRouteTableAttachmentOutput`](crate::output::CreateTransitGatewayRouteTableAttachmentOutput) with field(s):
+    ///   - [`transit_gateway_route_table_attachment(Option<TransitGatewayRouteTableAttachment>)`](crate::output::CreateTransitGatewayRouteTableAttachmentOutput::transit_gateway_route_table_attachment): <p>The route table associated with the create transit gateway route table attachment request.</p>
+    /// - On failure, responds with [`SdkError<CreateTransitGatewayRouteTableAttachmentError>`](crate::error::CreateTransitGatewayRouteTableAttachmentError)
+    pub fn create_transit_gateway_route_table_attachment(
+        &self,
+    ) -> fluent_builders::CreateTransitGatewayRouteTableAttachment {
+        fluent_builders::CreateTransitGatewayRouteTableAttachment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateVpcAttachment`](crate::client::fluent_builders::CreateVpcAttachment) operation.
     ///
     /// - The fluent builder is configurable:
@@ -389,6 +417,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteLinkError>`](crate::error::DeleteLinkError)
     pub fn delete_link(&self) -> fluent_builders::DeleteLink {
         fluent_builders::DeleteLink::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeletePeering`](crate::client::fluent_builders::DeletePeering) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`peering_id(impl Into<String>)`](crate::client::fluent_builders::DeletePeering::peering_id) / [`set_peering_id(Option<String>)`](crate::client::fluent_builders::DeletePeering::set_peering_id): <p>The ID of the peering connection to delete.</p>
+    /// - On success, responds with [`DeletePeeringOutput`](crate::output::DeletePeeringOutput) with field(s):
+    ///   - [`peering(Option<Peering>)`](crate::output::DeletePeeringOutput::peering): <p>Information about a deleted peering connection.</p>
+    /// - On failure, responds with [`SdkError<DeletePeeringError>`](crate::error::DeletePeeringError)
+    pub fn delete_peering(&self) -> fluent_builders::DeletePeering {
+        fluent_builders::DeletePeering::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
@@ -554,6 +592,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetCoreNetworkError>`](crate::error::GetCoreNetworkError)
     pub fn get_core_network(&self) -> fluent_builders::GetCoreNetwork {
         fluent_builders::GetCoreNetwork::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetCoreNetworkChangeEvents`](crate::client::fluent_builders::GetCoreNetworkChangeEvents) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetCoreNetworkChangeEvents::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`core_network_id(impl Into<String>)`](crate::client::fluent_builders::GetCoreNetworkChangeEvents::core_network_id) / [`set_core_network_id(Option<String>)`](crate::client::fluent_builders::GetCoreNetworkChangeEvents::set_core_network_id): <p>The ID of a core network.</p>
+    ///   - [`policy_version_id(i32)`](crate::client::fluent_builders::GetCoreNetworkChangeEvents::policy_version_id) / [`set_policy_version_id(Option<i32>)`](crate::client::fluent_builders::GetCoreNetworkChangeEvents::set_policy_version_id): <p>The ID of the policy version.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCoreNetworkChangeEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetCoreNetworkChangeEvents::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCoreNetworkChangeEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCoreNetworkChangeEvents::set_next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetCoreNetworkChangeEventsOutput`](crate::output::GetCoreNetworkChangeEventsOutput) with field(s):
+    ///   - [`core_network_change_events(Option<Vec<CoreNetworkChangeEvent>>)`](crate::output::GetCoreNetworkChangeEventsOutput::core_network_change_events): <p>The response to <code>GetCoreNetworkChangeEventsRequest</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCoreNetworkChangeEventsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetCoreNetworkChangeEventsError>`](crate::error::GetCoreNetworkChangeEventsError)
+    pub fn get_core_network_change_events(&self) -> fluent_builders::GetCoreNetworkChangeEvents {
+        fluent_builders::GetCoreNetworkChangeEvents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetCoreNetworkChangeSet`](crate::client::fluent_builders::GetCoreNetworkChangeSet) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetCoreNetworkChangeSet::into_paginator).
@@ -812,6 +865,16 @@ impl Client {
     ) -> fluent_builders::GetTransitGatewayConnectPeerAssociations {
         fluent_builders::GetTransitGatewayConnectPeerAssociations::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetTransitGatewayPeering`](crate::client::fluent_builders::GetTransitGatewayPeering) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`peering_id(impl Into<String>)`](crate::client::fluent_builders::GetTransitGatewayPeering::peering_id) / [`set_peering_id(Option<String>)`](crate::client::fluent_builders::GetTransitGatewayPeering::set_peering_id): <p>The ID of the peering request.</p>
+    /// - On success, responds with [`GetTransitGatewayPeeringOutput`](crate::output::GetTransitGatewayPeeringOutput) with field(s):
+    ///   - [`transit_gateway_peering(Option<TransitGatewayPeering>)`](crate::output::GetTransitGatewayPeeringOutput::transit_gateway_peering): <p>Returns information about a transit gateway peering. </p>
+    /// - On failure, responds with [`SdkError<GetTransitGatewayPeeringError>`](crate::error::GetTransitGatewayPeeringError)
+    pub fn get_transit_gateway_peering(&self) -> fluent_builders::GetTransitGatewayPeering {
+        fluent_builders::GetTransitGatewayPeering::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetTransitGatewayRegistrations`](crate::client::fluent_builders::GetTransitGatewayRegistrations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTransitGatewayRegistrations::into_paginator).
     ///
@@ -828,6 +891,18 @@ impl Client {
         &self,
     ) -> fluent_builders::GetTransitGatewayRegistrations {
         fluent_builders::GetTransitGatewayRegistrations::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetTransitGatewayRouteTableAttachment`](crate::client::fluent_builders::GetTransitGatewayRouteTableAttachment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`attachment_id(impl Into<String>)`](crate::client::fluent_builders::GetTransitGatewayRouteTableAttachment::attachment_id) / [`set_attachment_id(Option<String>)`](crate::client::fluent_builders::GetTransitGatewayRouteTableAttachment::set_attachment_id): <p>The ID of the transit gateway route table attachment.</p>
+    /// - On success, responds with [`GetTransitGatewayRouteTableAttachmentOutput`](crate::output::GetTransitGatewayRouteTableAttachmentOutput) with field(s):
+    ///   - [`transit_gateway_route_table_attachment(Option<TransitGatewayRouteTableAttachment>)`](crate::output::GetTransitGatewayRouteTableAttachmentOutput::transit_gateway_route_table_attachment): <p>Returns information about the transit gateway route table attachment.</p>
+    /// - On failure, responds with [`SdkError<GetTransitGatewayRouteTableAttachmentError>`](crate::error::GetTransitGatewayRouteTableAttachmentError)
+    pub fn get_transit_gateway_route_table_attachment(
+        &self,
+    ) -> fluent_builders::GetTransitGatewayRouteTableAttachment {
+        fluent_builders::GetTransitGatewayRouteTableAttachment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetVpcAttachment`](crate::client::fluent_builders::GetVpcAttachment) operation.
     ///
@@ -903,16 +978,33 @@ impl Client {
     /// Constructs a fluent builder for the [`ListOrganizationServiceAccessStatus`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::set_max_results): (undocumented)
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::set_next_token): (undocumented)
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationServiceAccessStatus::set_next_token): <p>The token for the next page of results.</p>
     /// - On success, responds with [`ListOrganizationServiceAccessStatusOutput`](crate::output::ListOrganizationServiceAccessStatusOutput) with field(s):
-    ///   - [`organization_status(Option<OrganizationStatus>)`](crate::output::ListOrganizationServiceAccessStatusOutput::organization_status): (undocumented)
-    ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationServiceAccessStatusOutput::next_token): (undocumented)
+    ///   - [`organization_status(Option<OrganizationStatus>)`](crate::output::ListOrganizationServiceAccessStatusOutput::organization_status): <p>Displays the status of an Amazon Web Services Organization.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationServiceAccessStatusOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationServiceAccessStatusError>`](crate::error::ListOrganizationServiceAccessStatusError)
     pub fn list_organization_service_access_status(
         &self,
     ) -> fluent_builders::ListOrganizationServiceAccessStatus {
         fluent_builders::ListOrganizationServiceAccessStatus::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListPeerings`](crate::client::fluent_builders::ListPeerings) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPeerings::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`core_network_id(impl Into<String>)`](crate::client::fluent_builders::ListPeerings::core_network_id) / [`set_core_network_id(Option<String>)`](crate::client::fluent_builders::ListPeerings::set_core_network_id): <p>The ID of a core network.</p>
+    ///   - [`peering_type(PeeringType)`](crate::client::fluent_builders::ListPeerings::peering_type) / [`set_peering_type(Option<PeeringType>)`](crate::client::fluent_builders::ListPeerings::set_peering_type): <p>Returns a list of a peering requests.</p>
+    ///   - [`edge_location(impl Into<String>)`](crate::client::fluent_builders::ListPeerings::edge_location) / [`set_edge_location(Option<String>)`](crate::client::fluent_builders::ListPeerings::set_edge_location): <p>Returns a list edge locations for the </p>
+    ///   - [`state(PeeringState)`](crate::client::fluent_builders::ListPeerings::state) / [`set_state(Option<PeeringState>)`](crate::client::fluent_builders::ListPeerings::set_state): <p>Returns a list of the peering request states.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPeerings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPeerings::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPeerings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPeerings::set_next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListPeeringsOutput`](crate::output::ListPeeringsOutput) with field(s):
+    ///   - [`peerings(Option<Vec<Peering>>)`](crate::output::ListPeeringsOutput::peerings): <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPeeringsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListPeeringsError>`](crate::error::ListPeeringsError)
+    pub fn list_peerings(&self) -> fluent_builders::ListPeerings {
+        fluent_builders::ListPeerings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -986,9 +1078,9 @@ impl Client {
     /// Constructs a fluent builder for the [`StartOrganizationServiceAccessUpdate`](crate::client::fluent_builders::StartOrganizationServiceAccessUpdate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`action(impl Into<String>)`](crate::client::fluent_builders::StartOrganizationServiceAccessUpdate::action) / [`set_action(Option<String>)`](crate::client::fluent_builders::StartOrganizationServiceAccessUpdate::set_action): (undocumented)
+    ///   - [`action(impl Into<String>)`](crate::client::fluent_builders::StartOrganizationServiceAccessUpdate::action) / [`set_action(Option<String>)`](crate::client::fluent_builders::StartOrganizationServiceAccessUpdate::set_action): <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
     /// - On success, responds with [`StartOrganizationServiceAccessUpdateOutput`](crate::output::StartOrganizationServiceAccessUpdateOutput) with field(s):
-    ///   - [`organization_status(Option<OrganizationStatus>)`](crate::output::StartOrganizationServiceAccessUpdateOutput::organization_status): (undocumented)
+    ///   - [`organization_status(Option<OrganizationStatus>)`](crate::output::StartOrganizationServiceAccessUpdateOutput::organization_status): <p>The status of the service access update request for an Amazon Web Services Organization.</p>
     /// - On failure, responds with [`SdkError<StartOrganizationServiceAccessUpdateError>`](crate::error::StartOrganizationServiceAccessUpdateError)
     pub fn start_organization_service_access_update(
         &self,
@@ -2628,6 +2720,200 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateTransitGatewayPeering`.
+    ///
+    /// <p>Creates a transit gateway peering connection.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateTransitGatewayPeering {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_transit_gateway_peering_input::Builder,
+    }
+    impl CreateTransitGatewayPeering {
+        /// Creates a new `CreateTransitGatewayPeering`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateTransitGatewayPeeringOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateTransitGatewayPeeringError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The ARN of the transit gateway for the peering request.</p>
+        pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transit_gateway_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway for the peering request.</p>
+        pub fn set_transit_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transit_gateway_arn(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateTransitGatewayRouteTableAttachment`.
+    ///
+    /// <p>Creates a transit gateway route table attachment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateTransitGatewayRouteTableAttachment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_transit_gateway_route_table_attachment_input::Builder,
+    }
+    impl CreateTransitGatewayRouteTableAttachment {
+        /// Creates a new `CreateTransitGatewayRouteTableAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateTransitGatewayRouteTableAttachmentOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::CreateTransitGatewayRouteTableAttachmentError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the peer for the </p>
+        pub fn peering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peering_id(input.into());
+            self
+        }
+        /// <p>The ID of the peer for the </p>
+        pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_peering_id(input);
+            self
+        }
+        /// <p>The ARN of the transit gateway route table for the attachment request.</p>
+        pub fn transit_gateway_route_table_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.transit_gateway_route_table_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway route table for the attachment request.</p>
+        pub fn set_transit_gateway_route_table_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transit_gateway_route_table_arn(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateVpcAttachment`.
     ///
     /// <p>Creates a VPC attachment on an edge location of a core network.</p>
@@ -3236,6 +3522,59 @@ pub mod fluent_builders {
         /// <p>The ID of the link.</p>
         pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_link_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeletePeering`.
+    ///
+    /// <p>Deletes an existing peering connection.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeletePeering {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_peering_input::Builder,
+    }
+    impl DeletePeering {
+        /// Creates a new `DeletePeering`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeletePeeringOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeletePeeringError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the peering connection to delete.</p>
+        pub fn peering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peering_id(input.into());
+            self
+        }
+        /// <p>The ID of the peering connection to delete.</p>
+        pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_peering_id(input);
             self
         }
     }
@@ -4243,6 +4582,98 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetCoreNetworkChangeEvents`.
+    ///
+    /// <p>Returns information about a core network change event.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetCoreNetworkChangeEvents {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_core_network_change_events_input::Builder,
+    }
+    impl GetCoreNetworkChangeEvents {
+        /// Creates a new `GetCoreNetworkChangeEvents`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCoreNetworkChangeEventsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCoreNetworkChangeEventsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCoreNetworkChangeEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetCoreNetworkChangeEventsPaginator {
+            crate::paginator::GetCoreNetworkChangeEventsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The ID of the policy version.</p>
+        pub fn policy_version_id(mut self, input: i32) -> Self {
+            self.inner = self.inner.policy_version_id(input);
+            self
+        }
+        /// <p>The ID of the policy version.</p>
+        pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_policy_version_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetCoreNetworkChangeSet`.
     ///
     /// <p>Returns a change set between the LIVE core network policy and a submitted policy.</p>
@@ -4337,7 +4768,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCoreNetworkPolicy`.
     ///
-    /// <p>Gets details about a core network policy. You can get details about your current live policy or any previous policy version.</p>
+    /// <p>Returns details about a core network policy. You can get details about your current live policy or any previous policy version.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCoreNetworkPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -6176,6 +6607,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetTransitGatewayPeering`.
+    ///
+    /// <p>Returns information about a transit gateway peer.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetTransitGatewayPeering {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_transit_gateway_peering_input::Builder,
+    }
+    impl GetTransitGatewayPeering {
+        /// Creates a new `GetTransitGatewayPeering`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetTransitGatewayPeeringOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetTransitGatewayPeeringError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the peering request.</p>
+        pub fn peering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peering_id(input.into());
+            self
+        }
+        /// <p>The ID of the peering request.</p>
+        pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_peering_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetTransitGatewayRegistrations`.
     ///
     /// <p>Gets information about the transit gateway registrations in a specified global network.</p>
@@ -6272,6 +6756,64 @@ pub mod fluent_builders {
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetTransitGatewayRouteTableAttachment`.
+    ///
+    /// <p>Returns information about a transit gateway route table attachment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetTransitGatewayRouteTableAttachment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_transit_gateway_route_table_attachment_input::Builder,
+    }
+    impl GetTransitGatewayRouteTableAttachment {
+        /// Creates a new `GetTransitGatewayRouteTableAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetTransitGatewayRouteTableAttachmentOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetTransitGatewayRouteTableAttachmentError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the transit gateway route table attachment.</p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the transit gateway route table attachment.</p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attachment_id(input);
             self
         }
     }
@@ -6700,6 +7242,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOrganizationServiceAccessStatus`.
     ///
+    /// <p>Gets the status of the Service Linked Role (SLR) deployment for the accounts in a given Amazon Web Services Organization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationServiceAccessStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -6741,22 +7284,140 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The maximum number of results to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The maximum number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListPeerings`.
+    ///
+    /// <p>Lists the peerings for a core network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListPeerings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_peerings_input::Builder,
+    }
+    impl ListPeerings {
+        /// Creates a new `ListPeerings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListPeeringsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListPeeringsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPeeringsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPeeringsPaginator {
+            crate::paginator::ListPeeringsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>Returns a list of a peering requests.</p>
+        pub fn peering_type(mut self, input: crate::model::PeeringType) -> Self {
+            self.inner = self.inner.peering_type(input);
+            self
+        }
+        /// <p>Returns a list of a peering requests.</p>
+        pub fn set_peering_type(
+            mut self,
+            input: std::option::Option<crate::model::PeeringType>,
+        ) -> Self {
+            self.inner = self.inner.set_peering_type(input);
+            self
+        }
+        /// <p>Returns a list edge locations for the </p>
+        pub fn edge_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edge_location(input.into());
+            self
+        }
+        /// <p>Returns a list edge locations for the </p>
+        pub fn set_edge_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_edge_location(input);
+            self
+        }
+        /// <p>Returns a list of the peering request states.</p>
+        pub fn state(mut self, input: crate::model::PeeringState) -> Self {
+            self.inner = self.inner.state(input);
+            self
+        }
+        /// <p>Returns a list of the peering request states.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::PeeringState>) -> Self {
+            self.inner = self.inner.set_state(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7173,6 +7834,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartOrganizationServiceAccessUpdate`.
     ///
+    /// <p>Enables for the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartOrganizationServiceAccessUpdate {
         handle: std::sync::Arc<super::Handle>,
@@ -7214,12 +7876,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action(input);
             self

@@ -751,6 +751,110 @@ impl ListParallelDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLanguagesOutput {
+    /// <p>The list of supported languages.</p>
+    pub languages: std::option::Option<std::vec::Vec<crate::model::Language>>,
+    /// <p>The language code passed in with the request.</p>
+    pub display_language_code: std::option::Option<crate::model::DisplayLanguageCode>,
+    /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLanguagesOutput {
+    /// <p>The list of supported languages.</p>
+    pub fn languages(&self) -> std::option::Option<&[crate::model::Language]> {
+        self.languages.as_deref()
+    }
+    /// <p>The language code passed in with the request.</p>
+    pub fn display_language_code(&self) -> std::option::Option<&crate::model::DisplayLanguageCode> {
+        self.display_language_code.as_ref()
+    }
+    /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListLanguagesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLanguagesOutput");
+        formatter.field("languages", &self.languages);
+        formatter.field("display_language_code", &self.display_language_code);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
+pub mod list_languages_output {
+
+    /// A builder for [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) languages: std::option::Option<std::vec::Vec<crate::model::Language>>,
+        pub(crate) display_language_code: std::option::Option<crate::model::DisplayLanguageCode>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `languages`.
+        ///
+        /// To override the contents of this collection use [`set_languages`](Self::set_languages).
+        ///
+        /// <p>The list of supported languages.</p>
+        pub fn languages(mut self, input: crate::model::Language) -> Self {
+            let mut v = self.languages.unwrap_or_default();
+            v.push(input);
+            self.languages = Some(v);
+            self
+        }
+        /// <p>The list of supported languages.</p>
+        pub fn set_languages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Language>>,
+        ) -> Self {
+            self.languages = input;
+            self
+        }
+        /// <p>The language code passed in with the request.</p>
+        pub fn display_language_code(mut self, input: crate::model::DisplayLanguageCode) -> Self {
+            self.display_language_code = Some(input);
+            self
+        }
+        /// <p>The language code passed in with the request.</p>
+        pub fn set_display_language_code(
+            mut self,
+            input: std::option::Option<crate::model::DisplayLanguageCode>,
+        ) -> Self {
+            self.display_language_code = input;
+            self
+        }
+        /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
+        pub fn build(self) -> crate::output::ListLanguagesOutput {
+            crate::output::ListLanguagesOutput {
+                languages: self.languages,
+                display_language_code: self.display_language_code,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListLanguagesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
+    pub fn builder() -> crate::output::list_languages_output::Builder {
+        crate::output::list_languages_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportTerminologyOutput {
     /// <p>The properties of the custom terminology being imported.</p>
     pub terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
@@ -844,13 +948,13 @@ impl ImportTerminologyOutput {
 pub struct GetTerminologyOutput {
     /// <p>The properties of the custom terminology being retrieved.</p>
     pub terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub terminology_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
-    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     pub auxiliary_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
 }
 impl GetTerminologyOutput {
@@ -860,7 +964,7 @@ impl GetTerminologyOutput {
     ) -> std::option::Option<&crate::model::TerminologyProperties> {
         self.terminology_properties.as_ref()
     }
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -870,7 +974,7 @@ impl GetTerminologyOutput {
     ) -> std::option::Option<&crate::model::TerminologyDataLocation> {
         self.terminology_data_location.as_ref()
     }
-    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     pub fn auxiliary_data_location(
         &self,
     ) -> std::option::Option<&crate::model::TerminologyDataLocation> {
@@ -915,7 +1019,7 @@ pub mod get_terminology_output {
             self.terminology_properties = input;
             self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
         /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -927,7 +1031,7 @@ pub mod get_terminology_output {
             self.terminology_data_location = Some(input);
             self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
         /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -939,7 +1043,7 @@ pub mod get_terminology_output {
             self.terminology_data_location = input;
             self
         }
-        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
         pub fn auxiliary_data_location(
             mut self,
             input: crate::model::TerminologyDataLocation,
@@ -947,7 +1051,7 @@ pub mod get_terminology_output {
             self.auxiliary_data_location = Some(input);
             self
         }
-        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
         pub fn set_auxiliary_data_location(
             mut self,
             input: std::option::Option<crate::model::TerminologyDataLocation>,
@@ -978,15 +1082,15 @@ impl GetTerminologyOutput {
 pub struct GetParallelDataOutput {
     /// <p>The properties of the parallel data resource that is being retrieved.</p>
     pub parallel_data_properties: std::option::Option<crate::model::ParallelDataProperties>,
-    /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+    /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
-    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     pub auxiliary_data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
-    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     pub latest_update_attempt_auxiliary_data_location:
         std::option::Option<crate::model::ParallelDataDataLocation>,
 }
@@ -997,7 +1101,7 @@ impl GetParallelDataOutput {
     ) -> std::option::Option<&crate::model::ParallelDataProperties> {
         self.parallel_data_properties.as_ref()
     }
-    /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+    /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -1005,13 +1109,13 @@ impl GetParallelDataOutput {
     pub fn data_location(&self) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
         self.data_location.as_ref()
     }
-    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     pub fn auxiliary_data_location(
         &self,
     ) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
         self.auxiliary_data_location.as_ref()
     }
-    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     pub fn latest_update_attempt_auxiliary_data_location(
         &self,
     ) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
@@ -1062,7 +1166,7 @@ pub mod get_parallel_data_output {
             self.parallel_data_properties = input;
             self
         }
-        /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+        /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
         /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -1071,7 +1175,7 @@ pub mod get_parallel_data_output {
             self.data_location = Some(input);
             self
         }
-        /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+        /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
         /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
@@ -1083,7 +1187,7 @@ pub mod get_parallel_data_output {
             self.data_location = input;
             self
         }
-        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
         pub fn auxiliary_data_location(
             mut self,
             input: crate::model::ParallelDataDataLocation,
@@ -1091,7 +1195,7 @@ pub mod get_parallel_data_output {
             self.auxiliary_data_location = Some(input);
             self
         }
-        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
         pub fn set_auxiliary_data_location(
             mut self,
             input: std::option::Option<crate::model::ParallelDataDataLocation>,
@@ -1099,7 +1203,7 @@ pub mod get_parallel_data_output {
             self.auxiliary_data_location = input;
             self
         }
-        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
         pub fn latest_update_attempt_auxiliary_data_location(
             mut self,
             input: crate::model::ParallelDataDataLocation,
@@ -1107,7 +1211,7 @@ pub mod get_parallel_data_output {
             self.latest_update_attempt_auxiliary_data_location = Some(input);
             self
         }
-        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
+        /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
         pub fn set_latest_update_attempt_auxiliary_data_location(
             mut self,
             input: std::option::Option<crate::model::ParallelDataDataLocation>,
