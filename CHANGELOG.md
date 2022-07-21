@@ -1,4 +1,65 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+July 21st, 2022
+===============
+**New this release:**
+- 🎉 ([smithy-rs#1457](https://github.com/awslabs/smithy-rs/issues/1457), @calavera) Re-export aws_types::SdkConfig in aws_config
+- 🎉 ([aws-sdk-rust#581](https://github.com/awslabs/aws-sdk-rust/issues/581)) Add `From<aws_smithy_client::erase::DynConnector>` impl for `aws_smithy_client::http_connector::HttpConnector`
+- 🎉 ([aws-sdk-rust#567](https://github.com/awslabs/aws-sdk-rust/issues/567)) Updated SDK Client retry behavior to allow for a configurable initial backoff. Previously, the initial backoff
+    (named `r` in the code) was set to 2 seconds. This is not an ideal default for services like DynamoDB that expect
+    clients to quickly retry failed request attempts. Now, users can set quicker (or slower) backoffs according to their
+    needs.
+
+    ```rust
+    #[tokio::main]
+    async fn main() -> Result<(), aws_sdk_dynamodb::Error> {
+        let retry_config = aws_smithy_types::retry::RetryConfigBuilder::new()
+            .max_attempts(4)
+            .initial_backoff(Duration::from_millis(20));
+
+        let shared_config = aws_config::from_env()
+            .retry_config(retry_config)
+            .load()
+            .await;
+
+        let client = aws_sdk_dynamodb::Client::new(&shared_config);
+
+        // Given the 20ms backoff multiplier, and assuming this request fails 3 times before succeeding,
+        // the first retry would take place between 0-20ms after the initial request,
+        // the second retry would take place between 0-40ms after the first retry,
+        // and the third retry would take place between 0-80ms after the second retry.
+        let request = client
+            .put_item()
+            .table_name("users")
+            .item("username", "Velfi")
+            .item("account_type", "Developer")
+            .send().await?;
+
+        Ok(())
+    }
+    ```
+- 🎉 ([smithy-rs#1557](https://github.com/awslabs/smithy-rs/issues/1557), [aws-sdk-rust#580](https://github.com/awslabs/aws-sdk-rust/issues/580)) The `imds::Client` in `aws-config` now implements `Clone`
+- 🐛 ([smithy-rs#1541](https://github.com/awslabs/smithy-rs/issues/1541), @joshtriplett) Fix compilation of `aws-config` with `rustls` and `native-tls` disabled. The
+    `ProviderConfig::with_tcp_connector` method uses
+    `aws_smithy_client::hyper_ext`, which only exists with the `client-hyper`
+    feature enabled. Add a feature enabling that, and enable it by default.
+- ([smithy-rs#1263](https://github.com/awslabs/smithy-rs/issues/1263)) Add support for aws-chunked content encoding. Only single-chunk encoding is supported. Multiple chunks and
+    chunk signing are not supported at this time.
+- ([smithy-rs#1540](https://github.com/awslabs/smithy-rs/issues/1540)) Until now, SDK crates have all shared the exact same version numbers.
+    This changes with this release. From now on, SDK crates will only version
+    bump if they have changes. Coincidentally, they may share the same version
+    number for some releases since changes to the code generator will cause
+    a version bump in all of them, but this should not be relied upon.
+- 🐛 ([smithy-rs#1559](https://github.com/awslabs/smithy-rs/issues/1559), [aws-sdk-rust#582](https://github.com/awslabs/aws-sdk-rust/issues/582)) Remove warning for valid IMDS provider use-case
+- 🐛 ([smithy-rs#1558](https://github.com/awslabs/smithy-rs/issues/1558), [aws-sdk-rust#583](https://github.com/awslabs/aws-sdk-rust/issues/583)) Only emit a warning about failing to expand a `~` to the home
+    directory in a profile file's path if that path was explicitly
+    set (don't emit it for the default paths)
+- ([smithy-rs#1556](https://github.com/awslabs/smithy-rs/issues/1556)) The `sleep_impl` methods on the `SdkConfig` builder are now exposed and documented.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @calavera ([smithy-rs#1457](https://github.com/awslabs/smithy-rs/issues/1457))
+- @joshtriplett ([smithy-rs#1541](https://github.com/awslabs/smithy-rs/issues/1541))
+
 v0.15.0 (June 29th, 2022)
 =========================
 **Breaking Changes:**
