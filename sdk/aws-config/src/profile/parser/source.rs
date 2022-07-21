@@ -8,7 +8,11 @@ use aws_types::os_shim_internal;
 use std::borrow::Cow;
 use std::io::ErrorKind;
 use std::path::{Component, Path, PathBuf};
-use tracing::Instrument;
+use tracing::{warn, Instrument};
+
+const HOME_EXPANSION_FAILURE_WARNING: &str =
+    "home directory expansion was requested (via `~` character) for the profile \
+     config file path, but no home directory could be determined";
 
 /// In-memory source of profile data
 pub(super) struct Source {
@@ -88,12 +92,12 @@ async fn load_config_file(
     fs: &os_shim_internal::Fs,
     environment: &os_shim_internal::Env,
 ) -> File {
-    let path = environment
+    let (path_is_default, path) = environment
         .get(kind.override_environment_variable())
-        .map(Cow::Owned)
+        .map(|p| (false, Cow::Owned(p)))
         .ok()
-        .unwrap_or_else(|| kind.default_path().into());
-    let expanded = expand_home(path.as_ref(), home_directory, environment);
+        .unwrap_or_else(|| (true, kind.default_path().into()));
+    let expanded = expand_home(path.as_ref(), path_is_default, home_directory);
     if path != expanded.to_string_lossy() {
         tracing::debug!(before = ?path, after = ?expanded, "home directory expanded");
     }
@@ -134,8 +138,8 @@ async fn load_config_file(
 
 fn expand_home(
     path: impl AsRef<Path>,
+    path_is_default: bool,
     home_dir: &Option<String>,
-    environment: &os_shim_internal::Env,
 ) -> PathBuf {
     let path = path.as_ref();
     let mut components = path.components();
@@ -150,15 +154,9 @@ fn expand_home(
                     dir.clone()
                 }
                 None => {
-                    // Lambdas don't have home directories and emitting this warning is not helpful
-                    // to users running the SDK from within a Lambda. This warning will be silenced
-                    // if we determine that that is the case.
-                    let is_likely_running_on_a_lambda =
-                        check_is_likely_running_on_a_lambda(environment);
-                    if !is_likely_running_on_a_lambda {
-                        tracing::warn!(
-                            "could not determine home directory but home expansion was requested"
-                        );
+                    // Only log a warning if the path was explicitly set by the customer.
+                    if !path_is_default {
+                        warn!(HOME_EXPANSION_FAILURE_WARNING);
                     }
                     // if we can't determine the home directory, just leave it as `~`
                     "~".into()
@@ -179,30 +177,25 @@ fn expand_home(
     }
 }
 
-/// Returns true or false based on whether or not this code is likely running inside an AWS Lambda.
-/// [Lambdas set many environment variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime)
-/// that we can check.
-fn check_is_likely_running_on_a_lambda(environment: &aws_types::os_shim_internal::Env) -> bool {
-    // AWS_LAMBDA_FUNCTION_NAME – The name of the running Lambda function. Available both in Functions and Extensions
-    environment.get("AWS_LAMBDA_FUNCTION_NAME").is_ok()
-}
-
 #[cfg(test)]
 mod tests {
-    use crate::profile::parser::source::{expand_home, load, load_config_file, FileKind};
+    use crate::profile::parser::source::{
+        expand_home, load, load_config_file, FileKind, HOME_EXPANSION_FAILURE_WARNING,
+    };
     use aws_types::os_shim_internal::{Env, Fs};
+    use futures_util::FutureExt;
     use serde::Deserialize;
     use std::collections::HashMap;
     use std::error::Error;
     use std::fs;
+    use tracing_test::traced_test;
 
     #[test]
     fn only_expand_home_prefix() {
         // ~ is only expanded as a single component (currently)
         let path = "~aws/config";
-        let environment = Env::from_slice(&[]);
         assert_eq!(
-            expand_home(&path, &None, &environment).to_str().unwrap(),
+            expand_home(&path, false, &None).to_str().unwrap(),
             "~aws/config"
         );
     }
@@ -238,9 +231,6 @@ mod tests {
         Ok(())
     }
 
-    use futures_util::FutureExt;
-    use tracing_test::traced_test;
-
     #[traced_test]
     #[test]
     fn logs_produced_default() {
@@ -260,14 +250,22 @@ mod tests {
 
     #[traced_test]
     #[test]
-    fn load_config_file_should_not_emit_warning_on_lambda() {
-        let env = Env::from_slice(&[("AWS_LAMBDA_FUNCTION_NAME", "someName")]);
+    fn load_config_file_should_not_emit_warning_when_path_not_explicitly_set() {
+        let env = Env::from_slice(&[]);
         let fs = Fs::from_slice(&[]);
 
         let _src = load_config_file(FileKind::Config, &None, &fs, &env).now_or_never();
-        assert!(!logs_contain(
-            "could not determine home directory but home expansion was requested"
-        ));
+        assert!(!logs_contain(HOME_EXPANSION_FAILURE_WARNING));
+    }
+
+    #[traced_test]
+    #[test]
+    fn load_config_file_should_emit_warning_when_path_explicitly_set() {
+        let env = Env::from_slice(&[("AWS_CONFIG_FILE", "~/some/path")]);
+        let fs = Fs::from_slice(&[]);
+
+        let _src = load_config_file(FileKind::Config, &None, &fs, &env).now_or_never();
+        assert!(logs_contain(HOME_EXPANSION_FAILURE_WARNING));
     }
 
     async fn check(test_case: TestCase) {
@@ -302,9 +300,8 @@ mod tests {
     #[cfg_attr(windows, ignore)]
     fn test_expand_home() {
         let path = "~/.aws/config";
-        let environment = Env::from_slice(&[]);
         assert_eq!(
-            expand_home(&path, &Some("/user/foo".to_string()), &environment)
+            expand_home(&path, false, &Some("/user/foo".to_string()))
                 .to_str()
                 .unwrap(),
             "/user/foo/.aws/config"
@@ -313,21 +310,16 @@ mod tests {
 
     #[test]
     fn expand_home_no_home() {
-        let environment = Env::from_slice(&[]);
         // there is an edge case around expansion when no home directory exists
         // if no home directory can be determined, leave the path as is
         if !cfg!(windows) {
             assert_eq!(
-                expand_home("~/config", &None, &environment)
-                    .to_str()
-                    .unwrap(),
+                expand_home("~/config", false, &None).to_str().unwrap(),
                 "~/config"
             )
         } else {
             assert_eq!(
-                expand_home("~/config", &None, &environment)
-                    .to_str()
-                    .unwrap(),
+                expand_home("~/config", false, &None).to_str().unwrap(),
                 "~\\config"
             )
         }
@@ -338,9 +330,8 @@ mod tests {
     #[cfg_attr(not(windows), ignore)]
     fn test_expand_home_windows() {
         let path = "~/.aws/config";
-        let environment = Env::from_slice(&[]);
         assert_eq!(
-            expand_home(&path, &Some("C:\\Users\\name".to_string()), &environment)
+            expand_home(&path, true, &Some("C:\\Users\\name".to_string()),)
                 .to_str()
                 .unwrap(),
             "C:\\Users\\name\\.aws\\config"
