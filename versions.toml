@@ -1,5 +1,9 @@
 smithy_rs_revision = '700cee65ca1695cedff04ea7aca0d60b8654433d'
 aws_doc_sdk_examples_revision = '00b3c7344ae0ff27dd0e515e5c36e4331c5cefa9'
+
+[manual_interventions]
+crates_to_remove = ['aws-sdk-redshiftserverless']
+
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.46.0'
