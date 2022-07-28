@@ -39,7 +39,7 @@ jobs:
     env:
       AWS_DEFAULT_REGION: us-west-2
       CARGO_INCREMENTAL: "0"
-      SDK_VERSION: ${{ matrix.sdk_version }}
+      SDK_RELEASE_TAG: ${{ matrix.sdk_release_tag }}
       LAMBDA_CODE_S3_BUCKET_NAME: ${{ secrets.CANARY_LAMBDA_CODE_S3_BUCKET }}
       LAMBDA_TEST_S3_BUCKET_NAME: ${{ secrets.CANARY_LAMBDA_TEST_S3_BUCKET }}
       LAMBDA_EXECUTION_ROLE_ARN: ${{ secrets.CANARY_LAMBDA_EXECUTION_ROLE_ARN }}
@@ -79,7 +79,7 @@ jobs:
         working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: |
           cargo run -- \
-            run --sdk-version ${SDK_VERSION} \
+            run --sdk-release-tag ${SDK_RELEASE_TAG} \
                 --lambda-code-s3-bucket-name ${LAMBDA_CODE_S3_BUCKET_NAME} \
                 --lambda-test-s3-bucket-name ${LAMBDA_TEST_S3_BUCKET_NAME} \
                 --lambda-execution-role-arn ${LAMBDA_EXECUTION_ROLE_ARN}
