@@ -371,6 +371,16 @@ impl Response {
         (self.inner, self.properties)
     }
 
+    /// Return mutable references to the response and property bag contained within this `operation::Response`
+    pub fn parts_mut(
+        &mut self,
+    ) -> (
+        &mut http::Response<SdkBody>,
+        impl DerefMut<Target = PropertyBag> + '_,
+    ) {
+        (&mut self.inner, self.properties.acquire_mut())
+    }
+
     /// Creates a new operation `Response` from an HTTP response and property bag.
     pub fn from_parts(inner: http::Response<SdkBody>, properties: SharedPropertyBag) -> Self {
         Response { inner, properties }

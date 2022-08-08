@@ -810,7 +810,8 @@ pub fn parse_synthesize_speech(
     op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError>
 {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::synthesize_speech_output::Builder::default();

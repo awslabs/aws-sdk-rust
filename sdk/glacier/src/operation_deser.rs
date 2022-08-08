@@ -1392,7 +1392,8 @@ pub fn parse_get_data_retrieval_policy_response(
 pub fn parse_get_job_output(
     op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetJobOutputOutput, crate::error::GetJobOutputError> {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_job_output_output::Builder::default();

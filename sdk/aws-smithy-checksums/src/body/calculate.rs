@@ -98,8 +98,7 @@ impl http_body::Body for ChecksumBody<SdkBody> {
 #[cfg(test)]
 mod tests {
     use super::ChecksumBody;
-    use crate::http::new_from_algorithm;
-    use crate::http::{CRC_32_HEADER_NAME, CRC_32_NAME};
+    use crate::{http::CRC_32_HEADER_NAME, ChecksumAlgorithm, CRC_32_NAME};
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_types::base64;
     use bytes::Buf;
@@ -121,7 +120,10 @@ mod tests {
     async fn test_checksum_body() {
         let input_text = "This is some test text for an SdkBody";
         let body = SdkBody::from(input_text);
-        let checksum = new_from_algorithm(CRC_32_NAME).unwrap();
+        let checksum = CRC_32_NAME
+            .parse::<ChecksumAlgorithm>()
+            .unwrap()
+            .into_impl();
         let mut body = ChecksumBody::new(body, checksum);
 
         let mut output = SegmentedBuf::new();

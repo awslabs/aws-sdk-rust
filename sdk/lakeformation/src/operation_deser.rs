@@ -2853,7 +2853,8 @@ pub fn parse_get_work_unit_results(
     crate::output::GetWorkUnitResultsOutput,
     crate::error::GetWorkUnitResultsError,
 > {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_work_unit_results_output::Builder::default();

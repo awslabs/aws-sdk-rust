@@ -72,8 +72,8 @@ version = "0.3"
 version = "1"
 [dev-dependencies.serde_json]
 version = "1"
-[dev-dependencies.temp-file]
-version = "0.1.6"
+[dev-dependencies.tempfile]
+version = "3.2.0"
 [dev-dependencies.tokio]
 version = "1"
 features = ["macros", "test-util", "rt"]

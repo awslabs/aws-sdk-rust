@@ -6,9 +6,102 @@
 //! Checksum calculation and verification callbacks.
 
 use bytes::Bytes;
+use std::str::FromStr;
 
 pub mod body;
 pub mod http;
+
+// Valid checksum algorithm names
+pub const CRC_32_NAME: &str = "crc32";
+pub const CRC_32_C_NAME: &str = "crc32c";
+pub const SHA_1_NAME: &str = "sha1";
+pub const SHA_256_NAME: &str = "sha256";
+pub const MD5_NAME: &str = "md5";
+
+/// We only support checksum calculation and validation for these checksum algorithms.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum ChecksumAlgorithm {
+    Crc32,
+    Crc32c,
+    Md5,
+    Sha1,
+    Sha256,
+}
+
+impl FromStr for ChecksumAlgorithm {
+    type Err = Error;
+
+    /// Create a new `ChecksumAlgorithm` from an algorithm name. Valid algorithm names are:
+    /// - "crc32"
+    /// - "crc32c"
+    /// - "sha1"
+    /// - "sha256"
+    /// - "md5"
+    ///
+    /// Passing an invalid name will return an error.
+    fn from_str(checksum_algorithm: &str) -> Result<Self, Self::Err> {
+        if checksum_algorithm.eq_ignore_ascii_case(CRC_32_NAME) {
+            Ok(Self::Crc32)
+        } else if checksum_algorithm.eq_ignore_ascii_case(CRC_32_C_NAME) {
+            Ok(Self::Crc32c)
+        } else if checksum_algorithm.eq_ignore_ascii_case(SHA_1_NAME) {
+            Ok(Self::Sha1)
+        } else if checksum_algorithm.eq_ignore_ascii_case(SHA_256_NAME) {
+            Ok(Self::Sha256)
+        } else if checksum_algorithm.eq_ignore_ascii_case(MD5_NAME) {
+            Ok(Self::Md5)
+        } else {
+            Err(Error::UnknownChecksumAlgorithm(
+                checksum_algorithm.to_owned(),
+            ))
+        }
+    }
+}
+
+impl ChecksumAlgorithm {
+    /// Return the `HttpChecksum` implementor for this algorithm
+    pub fn into_impl(self) -> Box<dyn http::HttpChecksum> {
+        match self {
+            Self::Crc32 => Box::new(Crc32::default()),
+            Self::Crc32c => Box::new(Crc32c::default()),
+            Self::Md5 => Box::new(Md5::default()),
+            Self::Sha1 => Box::new(Sha1::default()),
+            Self::Sha256 => Box::new(Sha256::default()),
+        }
+    }
+
+    /// Return the name of this algorithm in string form
+    pub fn as_str(&self) -> &'static str {
+        match self {
+            Self::Crc32 => CRC_32_NAME,
+            Self::Crc32c => CRC_32_C_NAME,
+            Self::Md5 => MD5_NAME,
+            Self::Sha1 => SHA_1_NAME,
+            Self::Sha256 => SHA_256_NAME,
+        }
+    }
+}
+
+#[derive(Debug, PartialEq)]
+pub enum Error {
+    UnknownChecksumAlgorithm(String),
+}
+
+impl std::fmt::Display for Error {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::UnknownChecksumAlgorithm(algorithm) => {
+                write!(
+                    f,
+                    r#"unknown checksum algorithm "{}", please pass a known algorithm name ("crc32", "crc32c", "sha1", "sha256", "md5")"#,
+                    algorithm
+                )
+            }
+        }
+    }
+}
+
+impl std::error::Error for Error {}
 
 /// Types implementing this trait can calculate checksums.
 ///
@@ -217,6 +310,7 @@ mod tests {
     };
 
     use crate::http::HttpChecksum;
+    use crate::ChecksumAlgorithm;
     use aws_smithy_types::base64;
     use http::HeaderValue;
     use pretty_assertions::assert_eq;
@@ -297,5 +391,13 @@ mod tests {
         let expected_checksum = "0xEB733A00C0C9D336E65691A37AB54293";
 
         assert_eq!(decoded_checksum, expected_checksum);
+    }
+
+    #[test]
+    #[should_panic = "called `Result::unwrap()` on an `Err` value: UnknownChecksumAlgorithm(\"some invalid checksum algorithm\")"]
+    fn test_checksum_algorithm_returns_error_for_unknown() {
+        "some invalid checksum algorithm"
+            .parse::<ChecksumAlgorithm>()
+            .unwrap();
     }
 }

@@ -3,7 +3,8 @@
 pub fn parse_get_media(
     op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetMediaOutput, crate::error::GetMediaError> {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_media_output::Builder::default();

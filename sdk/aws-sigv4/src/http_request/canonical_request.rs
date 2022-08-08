@@ -40,6 +40,7 @@ pub(crate) mod param {
 pub(crate) const HMAC_256: &str = "AWS4-HMAC-SHA256";
 
 const UNSIGNED_PAYLOAD: &str = "UNSIGNED-PAYLOAD";
+const STREAMING_UNSIGNED_PAYLOAD_TRAILER: &str = "STREAMING-UNSIGNED-PAYLOAD-TRAILER";
 
 #[derive(Debug, PartialEq)]
 pub(super) struct HeaderValues<'a> {
@@ -243,10 +244,15 @@ impl<'a> CanonicalRequest<'a> {
         // - compute a hash
         // - use the precomputed hash
         // - use `UnsignedPayload`
+        // - use `UnsignedPayload` for streaming requests
+        // - use `StreamingUnsignedPayloadTrailer` for streaming requests with trailers
         match body {
             SignableBody::Bytes(data) => Cow::Owned(sha256_hex_string(data)),
             SignableBody::Precomputed(digest) => Cow::Borrowed(digest.as_str()),
             SignableBody::UnsignedPayload => Cow::Borrowed(UNSIGNED_PAYLOAD),
+            SignableBody::StreamingUnsignedPayloadTrailer => {
+                Cow::Borrowed(STREAMING_UNSIGNED_PAYLOAD_TRAILER)
+            }
         }
     }
 

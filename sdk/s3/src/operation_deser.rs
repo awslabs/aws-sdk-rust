@@ -1477,7 +1477,8 @@ pub fn parse_get_bucket_website_response(
 pub fn parse_get_object(
     op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_output::Builder::default();
@@ -1787,6 +1788,29 @@ pub fn parse_get_object(
             crate::http_serde::deser_header_get_object_get_object_output_website_redirect_location(response.headers())
                                     .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse WebsiteRedirectLocation from header `x-amz-website-redirect-location"))?
         );
+        let response_algorithms = ["crc32", "crc32c", "sha256", "sha1"].as_slice();
+        let checksum_mode = properties.get::<crate::model::ChecksumMode>();
+        // Per [the spec](https://awslabs.github.io/smithy/1.0/spec/aws/aws-core.html#http-response-checksums),
+        // we check to see if it's the `ENABLED` variant
+        if matches!(checksum_mode, Some(&crate::model::ChecksumMode::Enabled)) {
+            if let Some((checksum_algorithm, precalculated_checksum)) =
+                crate::http_body_checksum::check_headers_for_precalculated_checksum(
+                    response.headers(),
+                    response_algorithms,
+                )
+            {
+                let bytestream = output.body.take().map(|bytestream| {
+                    bytestream.map(move |sdk_body| {
+                        crate::http_body_checksum::wrap_body_with_checksum_validator(
+                            sdk_body,
+                            checksum_algorithm,
+                            precalculated_checksum.clone(),
+                        )
+                    })
+                });
+                output = output.set_body(bytestream);
+            }
+        }
         output.build()
     })
 }
@@ -2119,7 +2143,8 @@ pub fn parse_get_object_torrent(
     op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError>
 {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_torrent_output::Builder::default();
@@ -3829,7 +3854,8 @@ pub fn parse_select_object_content(
     crate::output::SelectObjectContentOutput,
     crate::error::SelectObjectContentError,
 > {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::select_object_content_output::Builder::default();

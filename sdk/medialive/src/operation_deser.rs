@@ -4065,7 +4065,8 @@ pub fn parse_describe_input_device_thumbnail(
     crate::output::DescribeInputDeviceThumbnailOutput,
     crate::error::DescribeInputDeviceThumbnailError,
 > {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_input_device_thumbnail_output::Builder::default();

@@ -37,12 +37,12 @@ impl ChecksumBody<SdkBody> {
         body: SdkBody,
         checksum: Box<dyn HttpChecksum>,
         precalculated_checksum: Bytes,
-    ) -> Result<Self, Box<dyn std::error::Error>> {
-        Ok(Self {
+    ) -> Self {
+        Self {
             inner: body,
             checksum: Some(checksum),
             precalculated_checksum,
-        })
+        }
     }
 
     fn poll_inner(
@@ -154,7 +154,7 @@ impl http_body::Body for ChecksumBody<SdkBody> {
 #[cfg(test)]
 mod tests {
     use crate::body::validate::{ChecksumBody, Error};
-    use crate::http::new_from_algorithm;
+    use crate::ChecksumAlgorithm;
     use aws_smithy_http::body::SdkBody;
     use bytes::{Buf, Bytes};
     use bytes_utils::SegmentedBuf;
@@ -174,10 +174,9 @@ mod tests {
         let non_matching_checksum = Bytes::copy_from_slice(&[0x00, 0x00, 0x00, 0x00]);
         let mut body = ChecksumBody::new(
             body,
-            new_from_algorithm("crc32").unwrap(),
+            "crc32".parse::<ChecksumAlgorithm>().unwrap().into_impl(),
             non_matching_checksum.clone(),
-        )
-        .unwrap();
+        );
 
         while let Some(data) = body.data().await {
             match data {
@@ -203,8 +202,8 @@ mod tests {
         let input_text = "This is some test text for an SdkBody";
         let actual_checksum = calculate_crc32_checksum(input_text);
         let body = SdkBody::from(input_text);
-        let mut body =
-            ChecksumBody::new(body, new_from_algorithm("crc32").unwrap(), actual_checksum).unwrap();
+        let http_checksum = "crc32".parse::<ChecksumAlgorithm>().unwrap().into_impl();
+        let mut body = ChecksumBody::new(body, http_checksum, actual_checksum);
 
         let mut output = SegmentedBuf::new();
         while let Some(buf) = body.data().await {

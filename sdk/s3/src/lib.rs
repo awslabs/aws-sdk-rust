@@ -40,6 +40,7 @@ pub mod config;
 pub mod error;
 mod error_meta;
 mod event_stream_serde;
+pub mod http_body_checksum;
 mod http_serde;
 /// Input structures for operations.
 pub mod input;

@@ -3,7 +3,8 @@
 pub fn parse_get_clip(
     op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetClipOutput, crate::error::GetClipError> {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_clip_output::Builder::default();
@@ -622,7 +623,8 @@ pub fn parse_get_media_for_fragment_list(
     crate::output::GetMediaForFragmentListOutput,
     crate::error::GetMediaForFragmentListError,
 > {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_media_for_fragment_list_output::Builder::default();

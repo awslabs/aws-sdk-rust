@@ -6,7 +6,8 @@ pub fn parse_start_medical_stream_transcription(
     crate::output::StartMedicalStreamTranscriptionOutput,
     crate::error::StartMedicalStreamTranscriptionError,
 > {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output =
@@ -190,7 +191,8 @@ pub fn parse_start_stream_transcription(
     crate::output::StartStreamTranscriptionOutput,
     crate::error::StartStreamTranscriptionError,
 > {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::start_stream_transcription_output::Builder::default();

@@ -5080,6 +5080,7 @@ impl DeleteObjectsInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectsInput,
@@ -5156,6 +5157,29 @@ impl DeleteObjectsInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -9377,6 +9401,13 @@ impl GetObjectInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        if let Some(checksum_mode) = self.checksum_mode.as_ref() {
+            let checksum_mode = checksum_mode.clone();
+            // Place crate::model::ChecksumMode in the property bag so we can check
+            // it during response deserialization to see if we need to checksum validate
+            // the response body.
+            let _ = request.properties_mut().insert(checksum_mode);
+        }
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -9583,6 +9614,13 @@ impl GetObjectInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        if let Some(checksum_mode) = self.checksum_mode.as_ref() {
+            let checksum_mode = checksum_mode.clone();
+            // Place crate::model::ChecksumMode in the property bag so we can check
+            // it during response deserialization to see if we need to checksum validate
+            // the response body.
+            let _ = request.properties_mut().insert(checksum_mode);
+        }
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -14264,6 +14302,7 @@ impl PutBucketAccelerateConfigurationInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketAccelerateConfigurationInput,
@@ -14343,6 +14382,27 @@ impl PutBucketAccelerateConfigurationInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -14576,6 +14636,7 @@ impl PutBucketAclInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketAclInput,
@@ -14653,6 +14714,29 @@ impl PutBucketAclInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -15018,6 +15102,7 @@ impl PutBucketCorsInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketCorsInput,
@@ -15095,6 +15180,29 @@ impl PutBucketCorsInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -15246,6 +15354,7 @@ impl PutBucketEncryptionInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketEncryptionInput,
@@ -15323,6 +15432,29 @@ impl PutBucketEncryptionInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -15881,6 +16013,7 @@ impl PutBucketLifecycleConfigurationInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketLifecycleConfigurationInput,
@@ -15960,6 +16093,29 @@ impl PutBucketLifecycleConfigurationInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -16107,6 +16263,7 @@ impl PutBucketLoggingInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketLoggingInput,
@@ -16184,6 +16341,29 @@ impl PutBucketLoggingInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -16824,6 +17004,26 @@ impl PutBucketOwnershipControlsInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = Some("md5");
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -16985,6 +17185,7 @@ impl PutBucketPolicyInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketPolicyInput,
@@ -17060,6 +17261,29 @@ impl PutBucketPolicyInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -17223,6 +17447,7 @@ impl PutBucketReplicationInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketReplicationInput,
@@ -17301,6 +17526,29 @@ impl PutBucketReplicationInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -17455,6 +17703,7 @@ impl PutBucketRequestPaymentInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketRequestPaymentInput,
@@ -17533,6 +17782,29 @@ impl PutBucketRequestPaymentInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -17677,6 +17949,7 @@ impl PutBucketTaggingInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketTaggingInput,
@@ -17752,6 +18025,29 @@ impl PutBucketTaggingInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -17915,6 +18211,7 @@ impl PutBucketVersioningInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketVersioningInput,
@@ -17992,6 +18289,29 @@ impl PutBucketVersioningInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -18139,6 +18459,7 @@ impl PutBucketWebsiteInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketWebsiteInput,
@@ -18216,6 +18537,29 @@ impl PutBucketWebsiteInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -18866,6 +19210,7 @@ impl PutObjectInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectInput,
@@ -18944,6 +19289,27 @@ impl PutObjectInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -19026,6 +19392,7 @@ impl PutObjectInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectInput,
@@ -19116,6 +19483,27 @@ impl PutObjectInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -19397,6 +19785,7 @@ impl PutObjectAclInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectAclInput,
@@ -19492,6 +19881,29 @@ impl PutObjectAclInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -19680,6 +20092,7 @@ impl PutObjectLegalHoldInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectLegalHoldInput,
@@ -19773,6 +20186,29 @@ impl PutObjectLegalHoldInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -19954,6 +20390,7 @@ impl PutObjectLockConfigurationInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectLockConfigurationInput,
@@ -20032,6 +20469,29 @@ impl PutObjectLockConfigurationInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -20232,6 +20692,7 @@ impl PutObjectRetentionInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectRetentionInput,
@@ -20325,6 +20786,29 @@ impl PutObjectRetentionInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -20512,6 +20996,7 @@ impl PutObjectTaggingInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectTaggingInput,
@@ -20605,6 +21090,29 @@ impl PutObjectTaggingInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -20756,6 +21264,7 @@ impl PutPublicAccessBlockInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPublicAccessBlockInput,
@@ -20834,6 +21343,29 @@ impl PutPublicAccessBlockInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm
+                .map(|algorithm| algorithm.as_str())
+                .or(Some("md5"));
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -21010,6 +21542,7 @@ impl RestoreObjectInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestoreObjectInput,
@@ -21104,6 +21637,27 @@ impl RestoreObjectInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -21807,6 +22361,7 @@ impl UploadPartInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadPartInput,
@@ -21894,6 +22449,27 @@ impl UploadPartInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
@@ -21981,6 +22557,7 @@ impl UploadPartInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadPartInput,
@@ -22080,6 +22657,27 @@ impl UploadPartInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
+        request = request.augment(|mut req, properties| {
+            let checksum_algorithm = checksum_algorithm.as_ref();
+            let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
+            let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<aws_smithy_checksums::ChecksumAlgorithm>()
+                        .map_err(|err| {
+                            aws_smithy_http::operation::BuildError::Other(Box::new(err))
+                        })?,
+                ),
+                None => None,
+            };
+            if let Some(checksum_algorithm) = checksum_algorithm {
+                crate::http_body_checksum::add_checksum_calculation_to_request(
+                    &mut req,
+                    properties,
+                    checksum_algorithm,
+                )?;
+            }
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+        })?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;

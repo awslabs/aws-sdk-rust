@@ -28,6 +28,9 @@ version = "0.46.0"
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 version = "0.46.0"
+[dependencies.aws-smithy-checksums]
+path = "../aws-smithy-checksums"
+version = "0.46.0"
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
 version = "0.46.0"
@@ -52,12 +55,18 @@ path = "../aws-types"
 version = "0.46.0"
 [dependencies.bytes]
 version = "1"
+[dependencies.bytes-utils]
+version = "0.1.1"
 [dependencies.http]
 version = "0.2"
+[dependencies.http-body]
+version = "0.4.4"
 [dependencies.tokio-stream]
 version = "0.1.7"
 [dependencies.tower]
 version = "0.4"
+[dependencies.tracing]
+version = "0.1"
 [dev-dependencies.aws-config]
 path = "../aws-config"
 version = "0.46.0"
@@ -74,6 +83,8 @@ version = "0.3"
 version = "1"
 [dev-dependencies.serde_json]
 version = "1"
+[dev-dependencies.tempfile]
+version = "3.2.0"
 [dev-dependencies.tokio]
 version = "1"
 features = ["macros", "test-util", "rt"]

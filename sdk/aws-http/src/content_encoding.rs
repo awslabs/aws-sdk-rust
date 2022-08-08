@@ -44,7 +44,9 @@ impl AwsChunkedBodyOptions {
     }
 
     fn total_trailer_length(&self) -> u64 {
-        self.trailer_lengths.iter().sum()
+        self.trailer_lengths.iter().sum::<u64>()
+            // We need to account for a CRLF after each trailer name/value pair
+            + (self.trailer_lengths.len() * CRLF.len()) as u64
     }
 
     /// Set a trailer len
@@ -519,10 +521,12 @@ mod tests {
     }
 
     #[tokio::test]
-    #[should_panic = "called `Result::unwrap()` on an `Err` value: ReportedTrailerLengthMismatch { actual: 42, expected: 0 }"]
+    #[should_panic = "called `Result::unwrap()` on an `Err` value: ReportedTrailerLengthMismatch { actual: 44, expected: 0 }"]
     async fn test_aws_chunked_encoding_incorrect_trailer_length_panic() {
         let input_str = "Hello world";
         // Test body has no trailers, so this length is incorrect and will trigger an assert panic
+        // When the panic occurs, it will actually expect a length of 44. This is because, when using
+        // aws-chunked encoding, each trailer will end with a CRLF which is 2 bytes long.
         let wrong_trailer_len = 42;
         let opts = AwsChunkedBodyOptions::new(input_str.len() as u64, vec![wrong_trailer_len]);
         let mut body = AwsChunkedBody::new(SdkBody::from(input_str), opts);

@@ -6,7 +6,8 @@ pub fn parse_get_raw_message_content(
     crate::output::GetRawMessageContentOutput,
     crate::error::GetRawMessageContentError,
 > {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_raw_message_content_output::Builder::default();

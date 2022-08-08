@@ -143,7 +143,8 @@ pub fn parse_get_snapshot_block(
     op_response: &mut aws_smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetSnapshotBlockOutput, crate::error::GetSnapshotBlockError>
 {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_snapshot_block_output::Builder::default();

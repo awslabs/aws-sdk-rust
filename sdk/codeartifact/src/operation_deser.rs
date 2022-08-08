@@ -2511,7 +2511,8 @@ pub fn parse_get_package_version_asset(
     crate::output::GetPackageVersionAssetOutput,
     crate::error::GetPackageVersionAssetError,
 > {
-    let response = op_response.http_mut();
+    #[allow(unused_variables)]
+    let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_package_version_asset_output::Builder::default();

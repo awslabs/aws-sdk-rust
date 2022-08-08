@@ -201,7 +201,7 @@ mod test {
         while test_data.len() < total_size {
             test_data.extend_from_slice(base_seq)
         }
-        let target = temp_file::empty();
+        let target = tempfile::NamedTempFile::new().unwrap();
         tokio::fs::write(target.path(), test_data).await.unwrap();
         let body = ByteStream::from_path(target.path())
             .await
