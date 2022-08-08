@@ -12,6 +12,7 @@ allowed_external_types = [
    "aws_smithy_http::body::SdkBody",
    "aws_smithy_http::result::SdkError",
    "aws_smithy_types::retry::RetryConfig*",
+   "aws_smithy_types::timeout",
    "aws_smithy_types::timeout::config::Config",
    "aws_smithy_types::timeout::error::ConfigError",
    "aws_types::*",
