@@ -53,7 +53,7 @@ path = "../aws-smithy-types"
 version = "0.46.0"
 
 [dependencies.hyper]
-version = "0.14"
+version = "0.14.12"
 features = ["client", "http2", "http1"]
 optional = true
 

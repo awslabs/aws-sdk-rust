@@ -52,7 +52,7 @@ version = "1"
 [dependencies.http]
 version = "0.2"
 [dependencies.hyper]
-version = "0.14"
+version = "0.14.12"
 features = ["stream"]
 [dependencies.tower]
 version = "0.4"
