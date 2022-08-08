@@ -79,11 +79,11 @@ impl CredentialsProviderChain {
             let span = tracing::debug_span!("load_credentials", provider = %name);
             match provider.provide_credentials().instrument(span).await {
                 Ok(credentials) => {
-                    tracing::info!(provider = %name, "loaded credentials");
+                    tracing::debug!(provider = %name, "loaded credentials");
                     return Ok(credentials);
                 }
                 Err(CredentialsError::CredentialsNotLoaded { context, .. }) => {
-                    tracing::info!(provider = %name, context = %context, "provider in chain did not provide credentials");
+                    tracing::debug!(provider = %name, context = %context, "provider in chain did not provide credentials");
                 }
                 Err(e) => {
                     tracing::warn!(provider = %name, error = %e, "provider failed to provide credentials");
