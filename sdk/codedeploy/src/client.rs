@@ -982,6 +982,7 @@ pub mod fluent_builders {
     /// <p> This method works, but is deprecated. Use <code>BatchGetDeploymentTargets</code> instead. </p>
     /// </note>
     /// <p> Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms. The maximum number of instances that can be returned is 25.</p>
+    #[deprecated(note = "This operation is deprecated, use BatchGetDeploymentTargets instead.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeploymentInstances {
         handle: std::sync::Arc<super::Handle>,
@@ -2711,6 +2712,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentInstance`.
     ///
     /// <p>Gets information about an instance as part of a deployment.</p>
+    #[deprecated(note = "This operation is deprecated, use GetDeploymentTarget instead.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -3262,6 +3264,7 @@ pub mod fluent_builders {
     /// <p> The newer <code>BatchGetDeploymentTargets</code> should be used instead because it works with all compute types. <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than EC2/On-premises or AWS Lambda. </p>
     /// </note>
     /// <p> Lists the instance for a deployment associated with the IAM user or AWS account. </p>
+    #[deprecated(note = "This operation is deprecated, use ListDeploymentTargets instead.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentInstances {
         handle: std::sync::Arc<super::Handle>,
@@ -4165,6 +4168,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SkipWaitTimeForInstanceTermination`.
     ///
     /// <p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is complete.</p>
+    #[deprecated(
+        note = "This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SkipWaitTimeForInstanceTermination {
         handle: std::sync::Arc<super::Handle>,

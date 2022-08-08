@@ -2764,6 +2764,9 @@ impl PropertyValueHistory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyValue {
     /// <p>The timestamp of a value for a time series property.</p>
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use time instead."
+    )]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that specifies a value for a time series property.</p>
     pub value: std::option::Option<crate::model::DataValue>,
@@ -2785,6 +2788,9 @@ pub struct PropertyValue {
 }
 impl PropertyValue {
     /// <p>The timestamp of a value for a time series property.</p>
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use time instead."
+    )]
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
@@ -2831,11 +2837,17 @@ pub mod property_value {
     }
     impl Builder {
         /// <p>The timestamp of a value for a time series property.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use time instead."
+        )]
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>The timestamp of a value for a time series property.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use time instead."
+        )]
         pub fn set_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

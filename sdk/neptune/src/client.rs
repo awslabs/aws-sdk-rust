@@ -3198,11 +3198,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_publicly_accessible(input);
             self
@@ -8383,11 +8385,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_publicly_accessible(input);
             self

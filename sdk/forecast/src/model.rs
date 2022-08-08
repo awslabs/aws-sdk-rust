@@ -4098,6 +4098,9 @@ impl WindowSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metrics {
     /// <p>The root-mean-square error (RMSE).</p>
+    #[deprecated(
+        note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
+    )]
     pub rmse: std::option::Option<f64>,
     /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
     pub weighted_quantile_losses:
@@ -4109,6 +4112,9 @@ pub struct Metrics {
 }
 impl Metrics {
     /// <p>The root-mean-square error (RMSE).</p>
+    #[deprecated(
+        note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
+    )]
     pub fn rmse(&self) -> std::option::Option<f64> {
         self.rmse
     }
@@ -4154,11 +4160,17 @@ pub mod metrics {
     }
     impl Builder {
         /// <p>The root-mean-square error (RMSE).</p>
+        #[deprecated(
+            note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
+        )]
         pub fn rmse(mut self, input: f64) -> Self {
             self.rmse = Some(input);
             self
         }
         /// <p>The root-mean-square error (RMSE).</p>
+        #[deprecated(
+            note = "This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE"
+        )]
         pub fn set_rmse(mut self, input: std::option::Option<f64>) -> Self {
             self.rmse = input;
             self

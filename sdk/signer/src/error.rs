@@ -428,6 +428,7 @@ impl ValidationException {
 
 /// <p>The request was denied due to request throttling.</p>
 /// <p>Instead of this error, <code>TooManyRequestsException</code> should be used.</p>
+#[deprecated(note = "Instead of this error, TooManyRequestsException should be used.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -2735,6 +2736,7 @@ pub enum StartSigningJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     /// <p>Instead of this error, <code>TooManyRequestsException</code> should be used.</p>
+    #[deprecated(note = "Instead of this error, TooManyRequestsException should be used.")]
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The allowed number of job-signing requests has been exceeded.</p>
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>

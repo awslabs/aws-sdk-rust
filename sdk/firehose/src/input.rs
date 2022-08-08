@@ -97,6 +97,7 @@ pub mod create_delivery_stream_input {
             self
         }
         /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+        #[deprecated]
         pub fn s3_destination_configuration(
             mut self,
             input: crate::model::S3DestinationConfiguration,
@@ -105,6 +106,7 @@ pub mod create_delivery_stream_input {
             self
         }
         /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+        #[deprecated]
         pub fn set_s3_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfiguration>,
@@ -2081,11 +2083,13 @@ pub mod update_destination_input {
             self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+        #[deprecated]
         pub fn s3_destination_update(mut self, input: crate::model::S3DestinationUpdate) -> Self {
             self.s3_destination_update = Some(input);
             self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+        #[deprecated]
         pub fn set_s3_destination_update(
             mut self,
             input: std::option::Option<crate::model::S3DestinationUpdate>,
@@ -2331,6 +2335,7 @@ pub struct UpdateDestinationInput {
     /// <p>The ID of the destination.</p>
     pub destination_id: std::option::Option<std::string::String>,
     /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    #[deprecated]
     pub s3_destination_update: std::option::Option<crate::model::S3DestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub extended_s3_destination_update:
@@ -2363,6 +2368,7 @@ impl UpdateDestinationInput {
         self.destination_id.as_deref()
     }
     /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    #[deprecated]
     pub fn s3_destination_update(&self) -> std::option::Option<&crate::model::S3DestinationUpdate> {
         self.s3_destination_update.as_ref()
     }
@@ -2775,6 +2781,7 @@ pub struct CreateDeliveryStreamInput {
     pub delivery_stream_encryption_configuration_input:
         std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    #[deprecated]
     pub s3_destination_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
     pub extended_s3_destination_configuration:
@@ -2824,6 +2831,7 @@ impl CreateDeliveryStreamInput {
         self.delivery_stream_encryption_configuration_input.as_ref()
     }
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    #[deprecated]
     pub fn s3_destination_configuration(
         &self,
     ) -> std::option::Option<&crate::model::S3DestinationConfiguration> {

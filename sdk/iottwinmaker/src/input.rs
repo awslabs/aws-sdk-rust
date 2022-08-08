@@ -2575,11 +2575,17 @@ pub mod get_property_value_history_input {
             self
         }
         /// <p>The date and time of the earliest property value to return.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+        )]
         pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date_time = Some(input);
             self
         }
         /// <p>The date and time of the earliest property value to return.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+        )]
         pub fn set_start_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2588,11 +2594,17 @@ pub mod get_property_value_history_input {
             self
         }
         /// <p>The date and time of the latest property value to return.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+        )]
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_date_time = Some(input);
             self
         }
         /// <p>The date and time of the latest property value to return.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+        )]
         pub fn set_end_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5856,8 +5868,14 @@ pub struct GetPropertyValueHistoryInput {
     /// <p>A list of objects that filter the property value history request.</p>
     pub property_filters: std::option::Option<std::vec::Vec<crate::model::PropertyFilter>>,
     /// <p>The date and time of the earliest property value to return.</p>
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+    )]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the latest property value to return.</p>
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+    )]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
     pub interpolation: std::option::Option<crate::model::InterpolationParameters>,
@@ -5900,10 +5918,16 @@ impl GetPropertyValueHistoryInput {
         self.property_filters.as_deref()
     }
     /// <p>The date and time of the earliest property value to return.</p>
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+    )]
     pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time of the latest property value to return.</p>
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+    )]
     pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }

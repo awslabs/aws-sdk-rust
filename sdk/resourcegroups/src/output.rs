@@ -553,6 +553,7 @@ pub struct ListGroupsOutput {
     /// <important>
     /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
+    #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -565,6 +566,7 @@ impl ListGroupsOutput {
     /// <important>
     /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
+    #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
     pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
         self.groups.as_deref()
     }
@@ -620,6 +622,7 @@ pub mod list_groups_output {
         /// <important>
         /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
         /// </important>
+        #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
         pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input);
@@ -629,6 +632,7 @@ pub mod list_groups_output {
         /// <important>
         /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
         /// </important>
+        #[deprecated(note = "This field is deprecated, use GroupIdentifiers instead.")]
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -672,6 +676,7 @@ pub struct ListGroupResourcesOutput {
     /// <important>
     /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
+    #[deprecated(note = "This field is deprecated, use Resources instead.")]
     pub resource_identifiers: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -686,6 +691,7 @@ impl ListGroupResourcesOutput {
     /// <important>
     /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
+    #[deprecated(note = "This field is deprecated, use Resources instead.")]
     pub fn resource_identifiers(&self) -> std::option::Option<&[crate::model::ResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
@@ -748,6 +754,7 @@ pub mod list_group_resources_output {
         /// <important>
         /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
         /// </important>
+        #[deprecated(note = "This field is deprecated, use Resources instead.")]
         pub fn resource_identifiers(mut self, input: crate::model::ResourceIdentifier) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
             v.push(input);
@@ -757,6 +764,7 @@ pub mod list_group_resources_output {
         /// <important>
         /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
         /// </important>
+        #[deprecated(note = "This field is deprecated, use Resources instead.")]
         pub fn set_resource_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,

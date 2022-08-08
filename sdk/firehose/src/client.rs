@@ -385,6 +385,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+        #[deprecated]
         pub fn s3_destination_configuration(
             mut self,
             input: crate::model::S3DestinationConfiguration,
@@ -393,6 +394,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+        #[deprecated]
         pub fn set_s3_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfiguration>,
@@ -1394,11 +1396,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+        #[deprecated]
         pub fn s3_destination_update(mut self, input: crate::model::S3DestinationUpdate) -> Self {
             self.inner = self.inner.s3_destination_update(input);
             self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+        #[deprecated]
         pub fn set_s3_destination_update(
             mut self,
             input: std::option::Option<crate::model::S3DestinationUpdate>,

@@ -1052,8 +1052,13 @@ pub struct ListTrackersResponseEntry {
     /// <p>The description for the tracker resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
+    #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1070,10 +1075,15 @@ impl ListTrackersResponseEntry {
         self.description.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
+    #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -1133,11 +1143,19 @@ pub mod list_trackers_response_entry {
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -1146,11 +1164,13 @@ pub mod list_trackers_response_entry {
             self
         }
         /// <p>No longer used. Always returns an empty string.</p>
+        #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
         /// <p>No longer used. Always returns an empty string.</p>
+        #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2883,6 +2903,10 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
@@ -2914,6 +2938,10 @@ impl ListRouteCalculatorsResponseEntry {
         self.data_source.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -3002,11 +3030,19 @@ pub mod list_route_calculators_response_entry {
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -4362,6 +4398,10 @@ pub struct ListPlaceIndexesResponseEntry {
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4387,6 +4427,10 @@ impl ListPlaceIndexesResponseEntry {
         self.data_source.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -4466,11 +4510,19 @@ pub mod list_place_indexes_response_entry {
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -4654,6 +4706,10 @@ pub struct ListMapsResponseEntry {
     /// <p>Specifies the data provider for the associated map tiles.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4674,6 +4730,10 @@ impl ListMapsResponseEntry {
         self.data_source.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -4743,11 +4803,19 @@ pub mod list_maps_response_entry {
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5590,8 +5658,13 @@ pub struct ListGeofenceCollectionsResponseEntry {
     /// <p>The description for the geofence collection</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
+    #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5608,10 +5681,15 @@ impl ListGeofenceCollectionsResponseEntry {
         self.description.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
+    #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -5674,11 +5752,19 @@ pub mod list_geofence_collections_response_entry {
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5687,11 +5773,13 @@ pub mod list_geofence_collections_response_entry {
             self
         }
         /// <p>No longer used. Always returns an empty string.</p>
+        #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
         /// <p>No longer used. Always returns an empty string.</p>
+        #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,

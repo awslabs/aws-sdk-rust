@@ -844,6 +844,7 @@ pub struct DescribeUsersOutput {
     /// <p>The users.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>The total number of users included in the results.</p>
+    #[deprecated]
     pub total_number_of_users: std::option::Option<i64>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -854,6 +855,7 @@ impl DescribeUsersOutput {
         self.users.as_deref()
     }
     /// <p>The total number of users included in the results.</p>
+    #[deprecated]
     pub fn total_number_of_users(&self) -> std::option::Option<i64> {
         self.total_number_of_users
     }
@@ -902,11 +904,13 @@ pub mod describe_users_output {
             self
         }
         /// <p>The total number of users included in the results.</p>
+        #[deprecated]
         pub fn total_number_of_users(mut self, input: i64) -> Self {
             self.total_number_of_users = Some(input);
             self
         }
         /// <p>The total number of users included in the results.</p>
+        #[deprecated]
         pub fn set_total_number_of_users(mut self, input: std::option::Option<i64>) -> Self {
             self.total_number_of_users = input;
             self

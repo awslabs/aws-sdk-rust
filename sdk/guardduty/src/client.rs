@@ -1012,6 +1012,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptInvitation`.
     ///
     /// <p>Accepts the invitation to be monitored by a GuardDuty administrator account.</p>
+    #[deprecated(note = "This operation is deprecated, use AcceptAdministratorInvitation instead")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation {
         handle: std::sync::Arc<super::Handle>,
@@ -2864,6 +2865,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateFromMasterAccount`.
     ///
     /// <p>Disassociates the current GuardDuty member account from its administrator account.</p>
+    #[deprecated(
+        note = "This operation is deprecated, use DisassociateFromAdministratorAccount instead"
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromMasterAccount {
         handle: std::sync::Arc<super::Handle>,
@@ -3540,6 +3544,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMasterAccount`.
     ///
     /// <p>Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.</p>
+    #[deprecated(note = "This operation is deprecated, use GetAdministratorAccount instead")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMasterAccount {
         handle: std::sync::Arc<super::Handle>,

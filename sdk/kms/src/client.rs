@@ -1515,6 +1515,9 @@ pub mod fluent_builders {
         }
         /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
+        #[deprecated(
+            note = "This parameter has been deprecated. Instead, use the KeySpec parameter."
+        )]
         pub fn customer_master_key_spec(
             mut self,
             input: crate::model::CustomerMasterKeySpec,
@@ -1524,6 +1527,9 @@ pub mod fluent_builders {
         }
         /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
+        #[deprecated(
+            note = "This parameter has been deprecated. Instead, use the KeySpec parameter."
+        )]
         pub fn set_customer_master_key_spec(
             mut self,
             input: std::option::Option<crate::model::CustomerMasterKeySpec>,

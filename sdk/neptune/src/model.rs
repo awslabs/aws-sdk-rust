@@ -2418,6 +2418,7 @@ pub struct DbInstance {
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
     pub secondary_availability_zone: std::option::Option<std::string::String>,
     /// <p>This flag should no longer be used.</p>
+    #[deprecated]
     pub publicly_accessible: bool,
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
     pub status_infos: std::option::Option<std::vec::Vec<crate::model::DbInstanceStatusInfo>>,
@@ -2600,6 +2601,7 @@ impl DbInstance {
         self.secondary_availability_zone.as_deref()
     }
     /// <p>This flag should no longer be used.</p>
+    #[deprecated]
     pub fn publicly_accessible(&self) -> bool {
         self.publicly_accessible
     }
@@ -3288,11 +3290,13 @@ pub mod db_instance {
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.publicly_accessible = Some(input);
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.publicly_accessible = input;
             self

@@ -2088,8 +2088,10 @@ impl NodePropertyOverride {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerOverrides {
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub vcpus: std::option::Option<i32>,
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub memory: std::option::Option<i32>,
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2107,10 +2109,12 @@ pub struct ContainerOverrides {
 }
 impl ContainerOverrides {
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn vcpus(&self) -> std::option::Option<i32> {
         self.vcpus
     }
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
     }
@@ -2165,21 +2169,25 @@ pub mod container_overrides {
     }
     impl Builder {
         /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn vcpus(mut self, input: i32) -> Self {
             self.vcpus = Some(input);
             self
         }
         /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn set_vcpus(mut self, input: std::option::Option<i32>) -> Self {
             self.vcpus = input;
             self
         }
         /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn memory(mut self, input: i32) -> Self {
             self.memory = Some(input);
             self
         }
         /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
+        #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
             self
@@ -3380,8 +3388,10 @@ pub struct ContainerProperties {
     pub image: std::option::Option<std::string::String>,
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
     /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub vcpus: std::option::Option<i32>,
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub memory: std::option::Option<i32>,
     /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3456,10 +3466,12 @@ impl ContainerProperties {
     }
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
     /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn vcpus(&self) -> std::option::Option<i32> {
         self.vcpus
     }
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+    #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn memory(&self) -> std::option::Option<i32> {
         self.memory
     }
@@ -3651,22 +3663,26 @@ pub mod container_properties {
         }
         /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
         /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
+        #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn vcpus(mut self, input: i32) -> Self {
             self.vcpus = Some(input);
             self
         }
         /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
         /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
+        #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn set_vcpus(mut self, input: std::option::Option<i32>) -> Self {
             self.vcpus = input;
             self
         }
         /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+        #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn memory(mut self, input: i32) -> Self {
             self.memory = Some(input);
             self
         }
         /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+        #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
             self
@@ -9747,6 +9763,9 @@ pub struct ComputeResource {
     /// </note> <note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
+    #[deprecated(
+        note = "This field is deprecated, use ec2Configuration[].imageIdOverride instead."
+    )]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9856,6 +9875,9 @@ impl ComputeResource {
     /// </note> <note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
+    #[deprecated(
+        note = "This field is deprecated, use ec2Configuration[].imageIdOverride instead."
+    )]
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
@@ -10125,6 +10147,9 @@ pub mod compute_resource {
         /// </note> <note>
         /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
+        #[deprecated(
+            note = "This field is deprecated, use ec2Configuration[].imageIdOverride instead."
+        )]
         pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_id = Some(input.into());
             self
@@ -10134,6 +10159,9 @@ pub mod compute_resource {
         /// </note> <note>
         /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </note>
+        #[deprecated(
+            note = "This field is deprecated, use ec2Configuration[].imageIdOverride instead."
+        )]
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_id = input;
             self

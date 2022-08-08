@@ -2940,6 +2940,9 @@ pub struct SetTimerAction {
     /// <p>The name of the timer.</p>
     pub timer_name: std::option::Option<std::string::String>,
     /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+    #[deprecated(
+        note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
+    )]
     pub seconds: std::option::Option<i32>,
     /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
     /// <variable-name></variable-name></code>), and input values (<code>$input.
@@ -2955,6 +2958,9 @@ impl SetTimerAction {
         self.timer_name.as_deref()
     }
     /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+    #[deprecated(
+        note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
+    )]
     pub fn seconds(&self) -> std::option::Option<i32> {
         self.seconds
     }
@@ -2999,11 +3005,17 @@ pub mod set_timer_action {
             self
         }
         /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+        #[deprecated(
+            note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
+        )]
         pub fn seconds(mut self, input: i32) -> Self {
             self.seconds = Some(input);
             self
         }
         /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+        #[deprecated(
+            note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
+        )]
         pub fn set_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.seconds = input;
             self

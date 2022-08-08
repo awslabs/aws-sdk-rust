@@ -5263,6 +5263,7 @@ impl ListAliasesOutput {
 }
 
 /// <p>A success response (<code>202 Accepted</code>) indicates that the request is queued for invocation. </p>
+#[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeAsyncOutput {

@@ -4253,6 +4253,7 @@ pub mod create_instances_input {
         /// <p>(Deprecated) The name for your custom image.</p> <note>
         /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
         /// </note>
+        #[deprecated]
         pub fn custom_image_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_image_name = Some(input.into());
             self
@@ -4260,6 +4261,7 @@ pub mod create_instances_input {
         /// <p>(Deprecated) The name for your custom image.</p> <note>
         /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
         /// </note>
+        #[deprecated]
         pub fn set_custom_image_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31909,6 +31911,7 @@ pub struct CreateInstancesInput {
     /// <p>(Deprecated) The name for your custom image.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
+    #[deprecated]
     pub custom_image_name: std::option::Option<std::string::String>,
     /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
@@ -31944,6 +31947,7 @@ impl CreateInstancesInput {
     /// <p>(Deprecated) The name for your custom image.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
+    #[deprecated]
     pub fn custom_image_name(&self) -> std::option::Option<&str> {
         self.custom_image_name.as_deref()
     }

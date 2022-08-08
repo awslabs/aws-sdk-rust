@@ -4500,6 +4500,7 @@ pub struct JobOutput {
     /// <p>The album art to be associated with the output file, if any.</p>
     pub album_art: std::option::Option<crate::model::JobAlbumArt>,
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
+    #[deprecated]
     pub composition: std::option::Option<std::vec::Vec<crate::model::Clip>>,
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>
@@ -4612,6 +4613,7 @@ impl JobOutput {
         self.album_art.as_ref()
     }
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
+    #[deprecated]
     pub fn composition(&self) -> std::option::Option<&[crate::model::Clip]> {
         self.composition.as_deref()
     }
@@ -4945,6 +4947,7 @@ pub mod job_output {
         /// To override the contents of this collection use [`set_composition`](Self::set_composition).
         ///
         /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
+        #[deprecated]
         pub fn composition(mut self, input: crate::model::Clip) -> Self {
             let mut v = self.composition.unwrap_or_default();
             v.push(input);
@@ -4952,6 +4955,7 @@ pub mod job_output {
             self
         }
         /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
+        #[deprecated]
         pub fn set_composition(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Clip>>,
@@ -5244,8 +5248,10 @@ pub struct Captions {
     /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
     /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
+    #[deprecated]
     pub merge_policy: std::option::Option<std::string::String>,
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
+    #[deprecated]
     pub caption_sources: std::option::Option<std::vec::Vec<crate::model::CaptionSource>>,
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
     pub caption_formats: std::option::Option<std::vec::Vec<crate::model::CaptionFormat>>,
@@ -5258,10 +5264,12 @@ impl Captions {
     /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
     /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
+    #[deprecated]
     pub fn merge_policy(&self) -> std::option::Option<&str> {
         self.merge_policy.as_deref()
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
+    #[deprecated]
     pub fn caption_sources(&self) -> std::option::Option<&[crate::model::CaptionSource]> {
         self.caption_sources.as_deref()
     }
@@ -5297,6 +5305,7 @@ pub mod captions {
         /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
         /// </ul>
         /// <p> <code>MergePolicy</code> cannot be null.</p>
+        #[deprecated]
         pub fn merge_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.merge_policy = Some(input.into());
             self
@@ -5308,6 +5317,7 @@ pub mod captions {
         /// <li> <p> <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p> </li>
         /// </ul>
         /// <p> <code>MergePolicy</code> cannot be null.</p>
+        #[deprecated]
         pub fn set_merge_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.merge_policy = input;
             self
@@ -5317,6 +5327,7 @@ pub mod captions {
         /// To override the contents of this collection use [`set_caption_sources`](Self::set_caption_sources).
         ///
         /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
+        #[deprecated]
         pub fn caption_sources(mut self, input: crate::model::CaptionSource) -> Self {
             let mut v = self.caption_sources.unwrap_or_default();
             v.push(input);
@@ -5324,6 +5335,7 @@ pub mod captions {
             self
         }
         /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
+        #[deprecated]
         pub fn set_caption_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CaptionSource>>,
@@ -5708,6 +5720,7 @@ impl CaptionSource {
 }
 
 /// <p>Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.</p>
+#[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Clip {
@@ -7021,6 +7034,7 @@ pub struct CreateJobOutput {
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
     pub album_art: std::option::Option<crate::model::JobAlbumArt>,
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
+    #[deprecated]
     pub composition: std::option::Option<std::vec::Vec<crate::model::Clip>>,
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>
@@ -7085,6 +7099,7 @@ impl CreateJobOutput {
         self.album_art.as_ref()
     }
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
+    #[deprecated]
     pub fn composition(&self) -> std::option::Option<&[crate::model::Clip]> {
         self.composition.as_deref()
     }
@@ -7278,6 +7293,7 @@ pub mod create_job_output {
         /// To override the contents of this collection use [`set_composition`](Self::set_composition).
         ///
         /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
+        #[deprecated]
         pub fn composition(mut self, input: crate::model::Clip) -> Self {
             let mut v = self.composition.unwrap_or_default();
             v.push(input);
@@ -7285,6 +7301,7 @@ pub mod create_job_output {
             self
         }
         /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
+        #[deprecated]
         pub fn set_composition(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Clip>>,

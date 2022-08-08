@@ -3804,6 +3804,7 @@ pub mod fluent_builders {
     /// <p>Attaches the specified policy to the specified principal (certificate or other credential).</p>
     /// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>AttachPolicy</code> instead.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPrincipalPolicy</a> action.</p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachPrincipalPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -7305,6 +7306,7 @@ pub mod fluent_builders {
         ///
         /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -7314,6 +7316,7 @@ pub mod fluent_builders {
         }
         /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11858,6 +11861,7 @@ pub mod fluent_builders {
     /// <p>Removes the specified policy from the specified certificate.</p>
     /// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>DetachPolicy</code> instead.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a> action.</p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachPrincipalPolicy {
         handle: std::sync::Arc<super::Handle>,
@@ -16085,6 +16089,7 @@ pub mod fluent_builders {
     /// <p>Lists the principals associated with the specified policy.</p>
     /// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>ListTargetsForPolicy</code> instead.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyPrincipals</a> action.</p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPolicyPrincipals {
         handle: std::sync::Arc<super::Handle>,
@@ -16230,6 +16235,7 @@ pub mod fluent_builders {
     /// <p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito Identity format</a>.</p>
     /// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>ListAttachedPolicies</code> instead.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalPolicies</a> action.</p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrincipalPolicies {
         handle: std::sync::Arc<super::Handle>,
@@ -18720,12 +18726,14 @@ pub mod fluent_builders {
         }
         /// <p>A boolean value that specifies if the certificate is set to active.</p>
         /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+        #[deprecated]
         pub fn set_as_active(mut self, input: bool) -> Self {
             self.inner = self.inner.set_as_active(input);
             self
         }
         /// <p>A boolean value that specifies if the certificate is set to active.</p>
         /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+        #[deprecated]
         pub fn set_set_as_active(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_set_as_active(input);
             self
@@ -22487,6 +22495,7 @@ pub mod fluent_builders {
         ///
         /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -22496,6 +22505,7 @@ pub mod fluent_builders {
         }
         /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

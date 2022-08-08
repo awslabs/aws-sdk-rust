@@ -2375,6 +2375,7 @@ impl HostedZoneNotEmpty {
 }
 
 /// <p>This error code is not in use.</p>
+#[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthCheckInUse {
@@ -7025,6 +7026,7 @@ pub struct DeleteHealthCheckError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteHealthCheckErrorKind {
     /// <p>This error code is not in use.</p>
+    #[deprecated]
     HealthCheckInUse(crate::error::HealthCheckInUse),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::error::InvalidInput),

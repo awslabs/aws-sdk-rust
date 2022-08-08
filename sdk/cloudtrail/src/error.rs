@@ -577,6 +577,7 @@ impl KmsKeyNotFoundException {
 }
 
 /// <p>This exception is no longer in use.</p>
+#[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyDisabledException {
@@ -4456,6 +4457,7 @@ pub enum CreateTrailErrorKind {
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
     KmsException(crate::error::KmsException),
     /// <p>This exception is no longer in use.</p>
+    #[deprecated]
     KmsKeyDisabledException(crate::error::KmsKeyDisabledException),
     /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
     KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),
@@ -8941,6 +8943,7 @@ pub enum UpdateTrailErrorKind {
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
     KmsException(crate::error::KmsException),
     /// <p>This exception is no longer in use.</p>
+    #[deprecated]
     KmsKeyDisabledException(crate::error::KmsKeyDisabledException),
     /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
     KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),

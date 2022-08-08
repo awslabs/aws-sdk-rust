@@ -1718,11 +1718,13 @@ pub mod fluent_builders {
             self
         }
         /// Deprecated field that's only usable by whitelisted customers.
+        #[deprecated]
         pub fn reserved(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.reserved(input.into());
             self
         }
         /// Deprecated field that's only usable by whitelisted customers.
+        #[deprecated]
         pub fn set_reserved(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reserved(input);
             self

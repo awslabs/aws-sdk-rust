@@ -1044,6 +1044,9 @@ pub mod create_key_input {
         }
         /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
+        #[deprecated(
+            note = "This parameter has been deprecated. Instead, use the KeySpec parameter."
+        )]
         pub fn customer_master_key_spec(
             mut self,
             input: crate::model::CustomerMasterKeySpec,
@@ -1053,6 +1056,9 @@ pub mod create_key_input {
         }
         /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
+        #[deprecated(
+            note = "This parameter has been deprecated. Instead, use the KeySpec parameter."
+        )]
         pub fn set_customer_master_key_spec(
             mut self,
             input: std::option::Option<crate::model::CustomerMasterKeySpec>,
@@ -12242,6 +12248,7 @@ pub struct CreateKeyInput {
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
     /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
+    #[deprecated(note = "This parameter has been deprecated. Instead, use the KeySpec parameter.")]
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
     /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption, except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an asymmetric key pair. It also determines the cryptographic algorithms that the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created. To further restrict the algorithms that can be used with the KMS key, use a condition key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> <important>
@@ -12350,6 +12357,7 @@ impl CreateKeyInput {
     }
     /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
+    #[deprecated(note = "This parameter has been deprecated. Instead, use the KeySpec parameter.")]
     pub fn customer_master_key_spec(
         &self,
     ) -> std::option::Option<&crate::model::CustomerMasterKeySpec> {

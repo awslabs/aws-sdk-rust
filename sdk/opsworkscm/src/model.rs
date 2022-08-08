@@ -1143,8 +1143,10 @@ pub struct Backup {
     /// <p> The preferred maintenance period that is obtained from the server when the backup is created. </p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p> This field is deprecated and is no longer used. </p>
+    #[deprecated]
     pub s3_data_size: std::option::Option<i32>,
     /// <p> This field is deprecated and is no longer used. </p>
+    #[deprecated]
     pub s3_data_url: std::option::Option<std::string::String>,
     /// <p> The Amazon S3 URL of the backup's log file. </p>
     pub s3_log_url: std::option::Option<std::string::String>,
@@ -1219,10 +1221,12 @@ impl Backup {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p> This field is deprecated and is no longer used. </p>
+    #[deprecated]
     pub fn s3_data_size(&self) -> std::option::Option<i32> {
         self.s3_data_size
     }
     /// <p> This field is deprecated and is no longer used. </p>
+    #[deprecated]
     pub fn s3_data_url(&self) -> std::option::Option<&str> {
         self.s3_data_url.as_deref()
     }
@@ -1483,21 +1487,25 @@ pub mod backup {
             self
         }
         /// <p> This field is deprecated and is no longer used. </p>
+        #[deprecated]
         pub fn s3_data_size(mut self, input: i32) -> Self {
             self.s3_data_size = Some(input);
             self
         }
         /// <p> This field is deprecated and is no longer used. </p>
+        #[deprecated]
         pub fn set_s3_data_size(mut self, input: std::option::Option<i32>) -> Self {
             self.s3_data_size = input;
             self
         }
         /// <p> This field is deprecated and is no longer used. </p>
+        #[deprecated]
         pub fn s3_data_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_data_url = Some(input.into());
             self
         }
         /// <p> This field is deprecated and is no longer used. </p>
+        #[deprecated]
         pub fn set_s3_data_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_data_url = input;
             self

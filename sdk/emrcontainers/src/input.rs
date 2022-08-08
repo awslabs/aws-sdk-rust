@@ -251,11 +251,17 @@ pub mod create_managed_endpoint_input {
             self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+        #[deprecated(
+            note = "Customer provided certificate-arn is deprecated and would be removed in future."
+        )]
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+        #[deprecated(
+            note = "Customer provided certificate-arn is deprecated and would be removed in future."
+        )]
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3563,6 +3569,9 @@ pub struct CreateManagedEndpointInput {
     /// <p>The ARN of the execution role.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+    #[deprecated(
+        note = "Customer provided certificate-arn is deprecated and would be removed in future."
+    )]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The configuration settings that will be used to override existing configurations.</p>
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
@@ -3594,6 +3603,9 @@ impl CreateManagedEndpointInput {
         self.execution_role_arn.as_deref()
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+    #[deprecated(
+        note = "Customer provided certificate-arn is deprecated and would be removed in future."
+    )]
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }

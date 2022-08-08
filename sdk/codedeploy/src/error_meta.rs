@@ -74,8 +74,14 @@ pub enum Error {
     /// <p>An IAM user ARN was not specified.</p>
     IamUserArnRequiredException(crate::error::IamUserArnRequiredException),
     /// <p>The specified instance does not exist in the deployment group.</p>
+    #[deprecated(
+        note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead."
+    )]
     InstanceDoesNotExistException(crate::error::InstanceDoesNotExistException),
     /// <p>The instance ID was not specified.</p>
+    #[deprecated(
+        note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead."
+    )]
     InstanceIdRequiredException(crate::error::InstanceIdRequiredException),
     /// <p>The maximum number of allowed on-premises instances in a single call was exceeded.</p>
     InstanceLimitExceededException(crate::error::InstanceLimitExceededException),

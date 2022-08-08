@@ -1081,6 +1081,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Creates or overwrites tags associated with a file system. Each tag is a key-value pair. If a tag key specified in the request already exists on the file system, this operation overwrites its value with the value provided in the request. If you add the <code>Name</code> tag to your file system, Amazon EFS returns it in the response to the <code>DescribeFileSystems</code> operation. </p>
     /// <p>This operation requires permission for the <code>elasticfilesystem:CreateTags</code> action.</p>
+    #[deprecated(note = "Use TagResource.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags {
         handle: std::sync::Arc<super::Handle>,
@@ -1458,6 +1459,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Deletes the specified tags from a file system. If the <code>DeleteTags</code> request includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't cause an error. For more information about tags and related restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:DeleteTags</code> action.</p>
+    #[deprecated(note = "Use UntagResource.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags {
         handle: std::sync::Arc<super::Handle>,
@@ -2204,6 +2206,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Returns the tags associated with a file system. The order of tags returned in the response of one <code>DescribeTags</code> call and the order of tags returned across the responses of a multiple-call iteration (when using pagination) is unspecified. </p>
     /// <p> This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code> action. </p>
+    #[deprecated(note = "Use ListTagsForResource.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags {
         handle: std::sync::Arc<super::Handle>,

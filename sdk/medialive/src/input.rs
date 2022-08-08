@@ -1308,11 +1308,13 @@ pub mod create_channel_input {
             self
         }
         /// Deprecated field that's only usable by whitelisted customers.
+        #[deprecated]
         pub fn reserved(mut self, input: impl Into<std::string::String>) -> Self {
             self.reserved = Some(input.into());
             self
         }
         /// Deprecated field that's only usable by whitelisted customers.
+        #[deprecated]
         pub fn set_reserved(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reserved = input;
             self
@@ -12415,6 +12417,7 @@ pub struct CreateChannelInput {
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub request_id: std::option::Option<std::string::String>,
     /// Deprecated field that's only usable by whitelisted customers.
+    #[deprecated]
     pub reserved: std::option::Option<std::string::String>,
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.
     pub role_arn: std::option::Option<std::string::String>,
@@ -12468,6 +12471,7 @@ impl CreateChannelInput {
         self.request_id.as_deref()
     }
     /// Deprecated field that's only usable by whitelisted customers.
+    #[deprecated]
     pub fn reserved(&self) -> std::option::Option<&str> {
         self.reserved.as_deref()
     }

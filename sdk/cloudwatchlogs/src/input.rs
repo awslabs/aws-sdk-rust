@@ -3949,12 +3949,18 @@ pub mod filter_log_events_input {
         }
         /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
         /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
+        #[deprecated(
+            note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
+        )]
         pub fn interleaved(mut self, input: bool) -> Self {
             self.interleaved = Some(input);
             self
         }
         /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
         /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
+        #[deprecated(
+            note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
+        )]
         pub fn set_interleaved(mut self, input: std::option::Option<bool>) -> Self {
             self.interleaved = input;
             self
@@ -7903,6 +7909,9 @@ pub struct FilterLogEventsInput {
     pub limit: std::option::Option<i32>,
     /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
     /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
+    #[deprecated(
+        note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
+    )]
     pub interleaved: std::option::Option<bool>,
 }
 impl FilterLogEventsInput {
@@ -7943,6 +7952,9 @@ impl FilterLogEventsInput {
     }
     /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
     /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
+    #[deprecated(
+        note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
+    )]
     pub fn interleaved(&self) -> std::option::Option<bool> {
         self.interleaved
     }

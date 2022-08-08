@@ -5392,6 +5392,9 @@ impl DeploymentTargetDoesNotExistException {
 }
 
 /// <p>The instance ID was not specified.</p>
+#[deprecated(
+    note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIdRequiredException {
@@ -5456,6 +5459,9 @@ impl InstanceIdRequiredException {
 }
 
 /// <p>The specified instance does not exist in the deployment group.</p>
+#[deprecated(
+    note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceDoesNotExistException {
@@ -7681,6 +7687,9 @@ pub enum BatchGetDeploymentInstancesErrorKind {
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>The instance ID was not specified.</p>
+    #[deprecated(
+        note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead."
+    )]
     InstanceIdRequiredException(crate::error::InstanceIdRequiredException),
     /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
@@ -7991,6 +8000,9 @@ pub enum BatchGetDeploymentTargetsErrorKind {
         crate::error::DeploymentTargetListSizeExceededException,
     ),
     /// <p>The specified instance does not exist in the deployment group.</p>
+    #[deprecated(
+        note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead."
+    )]
     InstanceDoesNotExistException(crate::error::InstanceDoesNotExistException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
@@ -11222,8 +11234,14 @@ pub enum GetDeploymentInstanceErrorKind {
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>The specified instance does not exist in the deployment group.</p>
+    #[deprecated(
+        note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead."
+    )]
     InstanceDoesNotExistException(crate::error::InstanceDoesNotExistException),
     /// <p>The instance ID was not specified.</p>
+    #[deprecated(
+        note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead."
+    )]
     InstanceIdRequiredException(crate::error::InstanceIdRequiredException),
     /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),

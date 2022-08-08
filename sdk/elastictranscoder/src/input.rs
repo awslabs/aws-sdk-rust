@@ -3440,6 +3440,7 @@ impl std::fmt::Debug for UpdatePipelineInput {
 }
 
 /// <p> The <code>TestRoleRequest</code> structure. </p>
+#[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRoleInput {

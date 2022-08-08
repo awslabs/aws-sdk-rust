@@ -11698,11 +11698,13 @@ pub mod modify_replication_group_input {
             self
         }
         /// <p>Deprecated. This parameter is not used.</p>
+        #[deprecated]
         pub fn node_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.node_group_id = Some(input.into());
             self
         }
         /// <p>Deprecated. This parameter is not used.</p>
+        #[deprecated]
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14606,6 +14608,7 @@ pub struct ModifyReplicationGroupInput {
     /// <p>A flag to indicate MultiAZ is enabled.</p>
     pub multi_az_enabled: std::option::Option<bool>,
     /// <p>Deprecated. This parameter is not used.</p>
+    #[deprecated]
     pub node_group_id: std::option::Option<std::string::String>,
     /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
@@ -14707,6 +14710,7 @@ impl ModifyReplicationGroupInput {
         self.multi_az_enabled
     }
     /// <p>Deprecated. This parameter is not used.</p>
+    #[deprecated]
     pub fn node_group_id(&self) -> std::option::Option<&str> {
         self.node_group_id.as_deref()
     }

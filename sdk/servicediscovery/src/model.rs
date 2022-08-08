@@ -1794,6 +1794,9 @@ pub struct HealthCheckCustomConfig {
     /// </important>
     /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
     /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
+    #[deprecated(
+        note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
+    )]
     pub failure_threshold: std::option::Option<i32>,
 }
 impl HealthCheckCustomConfig {
@@ -1802,6 +1805,9 @@ impl HealthCheckCustomConfig {
     /// </important>
     /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
     /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
+    #[deprecated(
+        note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
+    )]
     pub fn failure_threshold(&self) -> std::option::Option<i32> {
         self.failure_threshold
     }
@@ -1827,6 +1833,9 @@ pub mod health_check_custom_config {
         /// </important>
         /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
         /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
+        #[deprecated(
+            note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
+        )]
         pub fn failure_threshold(mut self, input: i32) -> Self {
             self.failure_threshold = Some(input);
             self
@@ -1836,6 +1845,9 @@ pub mod health_check_custom_config {
         /// </important>
         /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
         /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
+        #[deprecated(
+            note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
+        )]
         pub fn set_failure_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.failure_threshold = input;
             self
@@ -1860,6 +1872,7 @@ impl HealthCheckCustomConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsConfig {
     /// <p>The ID of the namespace to use for DNS configuration.</p>
+    #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     pub namespace_id: std::option::Option<std::string::String>,
     /// <p>The routing policy that you want to apply to all Route 53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
     /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
@@ -1891,6 +1904,7 @@ pub struct DnsConfig {
 }
 impl DnsConfig {
     /// <p>The ID of the namespace to use for DNS configuration.</p>
+    #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     pub fn namespace_id(&self) -> std::option::Option<&str> {
         self.namespace_id.as_deref()
     }
@@ -1947,11 +1961,17 @@ pub mod dns_config {
     }
     impl Builder {
         /// <p>The ID of the namespace to use for DNS configuration.</p>
+        #[deprecated(
+            note = "Top level attribute in request should be used to reference namespace-id"
+        )]
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace_id = Some(input.into());
             self
         }
         /// <p>The ID of the namespace to use for DNS configuration.</p>
+        #[deprecated(
+            note = "Top level attribute in request should be used to reference namespace-id"
+        )]
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace_id = input;
             self

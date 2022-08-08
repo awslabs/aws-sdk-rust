@@ -853,6 +853,9 @@ pub mod fluent_builders {
     /// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from.</p>
     /// <p>This operation is only used by member accounts that are not added through Organizations.</p>
     /// <p>When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account.</p>
+    #[deprecated(
+        note = "This API has been deprecated, use AcceptAdministratorInvitation API instead."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation {
         handle: std::sync::Arc<super::Handle>,
@@ -2670,6 +2673,9 @@ pub mod fluent_builders {
     /// <p>The Security Hub console continues to use <code>DisassociateFromMasterAccount</code>. It will eventually change to use <code>DisassociateFromAdministratorAccount</code>. Any IAM policies that specifically control access to this function must continue to use <code>DisassociateFromMasterAccount</code>. You should also add <code>DisassociateFromAdministratorAccount</code> to your policies to ensure that the correct permissions are in place after the console begins to use <code>DisassociateFromAdministratorAccount</code>.</p>
     /// <p>Disassociates the current Security Hub member account from the associated administrator account.</p>
     /// <p>This operation is only used by accounts that are not part of an organization. For organization accounts, only the administrator account can disassociate a member account.</p>
+    #[deprecated(
+        note = "This API has been deprecated, use DisassociateFromAdministratorAccount API instead."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromMasterAccount {
         handle: std::sync::Arc<super::Handle>,
@@ -3454,6 +3460,7 @@ pub mod fluent_builders {
     /// <p>The Security Hub console continues to use <code>GetMasterAccount</code>. It will eventually change to use <code>GetAdministratorAccount</code>. Any IAM policies that specifically control access to this function must continue to use <code>GetMasterAccount</code>. You should also add <code>GetAdministratorAccount</code> to your policies to ensure that the correct permissions are in place after the console begins to use <code>GetAdministratorAccount</code>.</p>
     /// <p>Provides the details for the Security Hub administrator account for the current member account.</p>
     /// <p>Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.</p>
+    #[deprecated(note = "This API has been deprecated, use GetAdministratorAccount API instead.")]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMasterAccount {
         handle: std::sync::Arc<super::Handle>,

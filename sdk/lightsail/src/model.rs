@@ -1468,6 +1468,7 @@ pub struct DomainEntry {
     /// <p>(Deprecated) The options for the domain entry.</p> <note>
     /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
+    #[deprecated]
     pub options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1507,6 +1508,7 @@ impl DomainEntry {
     /// <p>(Deprecated) The options for the domain entry.</p> <note>
     /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
+    #[deprecated]
     pub fn options(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1623,6 +1625,7 @@ pub mod domain_entry {
         /// <p>(Deprecated) The options for the domain entry.</p> <note>
         /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
         /// </note>
+        #[deprecated]
         pub fn options(
             mut self,
             k: impl Into<std::string::String>,
@@ -1636,6 +1639,7 @@ pub mod domain_entry {
         /// <p>(Deprecated) The options for the domain entry.</p> <note>
         /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
         /// </note>
+        #[deprecated]
         pub fn set_options(
             mut self,
             input: std::option::Option<
@@ -13352,10 +13356,12 @@ pub struct Disk {
     /// <p>(Deprecated) The attachment state of the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
+    #[deprecated]
     pub attachment_state: std::option::Option<std::string::String>,
     /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
+    #[deprecated]
     pub gb_in_use: std::option::Option<i32>,
 }
 impl Disk {
@@ -13422,12 +13428,14 @@ impl Disk {
     /// <p>(Deprecated) The attachment state of the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
+    #[deprecated]
     pub fn attachment_state(&self) -> std::option::Option<&str> {
         self.attachment_state.as_deref()
     }
     /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
+    #[deprecated]
     pub fn gb_in_use(&self) -> std::option::Option<i32> {
         self.gb_in_use
     }
@@ -13660,6 +13668,7 @@ pub mod disk {
         /// <p>(Deprecated) The attachment state of the disk.</p> <note>
         /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
         /// </note>
+        #[deprecated]
         pub fn attachment_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.attachment_state = Some(input.into());
             self
@@ -13667,6 +13676,7 @@ pub mod disk {
         /// <p>(Deprecated) The attachment state of the disk.</p> <note>
         /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
         /// </note>
+        #[deprecated]
         pub fn set_attachment_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13677,6 +13687,7 @@ pub mod disk {
         /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
         /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
         /// </note>
+        #[deprecated]
         pub fn gb_in_use(mut self, input: i32) -> Self {
             self.gb_in_use = Some(input);
             self
@@ -13684,6 +13695,7 @@ pub mod disk {
         /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
         /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
         /// </note>
+        #[deprecated]
         pub fn set_gb_in_use(mut self, input: std::option::Option<i32>) -> Self {
             self.gb_in_use = input;
             self

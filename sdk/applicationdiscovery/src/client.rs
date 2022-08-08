@@ -1094,6 +1094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExportConfigurations`.
     ///
     /// <p> <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>, instead.</p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportConfigurations {
         handle: std::sync::Arc<super::Handle>,
@@ -1529,6 +1530,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deprecated. Use <code>StartExportTask</code> instead.</p>
     /// <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportConfigurations {
         handle: std::sync::Arc<super::Handle>,

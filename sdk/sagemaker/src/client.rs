@@ -6334,6 +6334,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use <code>KmsKeyId</code>.</p>
+        #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
         pub fn home_efs_file_system_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -6342,6 +6343,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use <code>KmsKeyId</code>.</p>
+        #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
         pub fn set_home_efs_file_system_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -12977,6 +12977,7 @@ impl std::fmt::Debug for GetMemberDetectorsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This input is deprecated, use GetAdministratorAccountRequest instead")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMasterAccountInput {
@@ -13250,6 +13251,9 @@ impl std::fmt::Debug for DisassociateMembersInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "This input is deprecated, use DisassociateFromAdministratorAccountRequest instead"
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFromMasterAccountInput {
@@ -14130,6 +14134,7 @@ impl std::fmt::Debug for ArchiveFindingsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This input is deprecated, use AcceptAdministratorInvitationRequest instead")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInvitationInput {

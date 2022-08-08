@@ -494,6 +494,7 @@ pub struct ResourceShareInvitation {
     /// <p>The current status of the invitation.</p>
     pub status: std::option::Option<crate::model::ResourceShareInvitationStatus>,
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
+    #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
     pub resource_share_associations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
@@ -529,6 +530,7 @@ impl ResourceShareInvitation {
         self.status.as_ref()
     }
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
+    #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
     pub fn resource_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceShareAssociation]> {
@@ -677,6 +679,7 @@ pub mod resource_share_invitation {
         /// To override the contents of this collection use [`set_resource_share_associations`](Self::set_resource_share_associations).
         ///
         /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
+        #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
         pub fn resource_share_associations(
             mut self,
             input: crate::model::ResourceShareAssociation,
@@ -687,6 +690,7 @@ pub mod resource_share_invitation {
             self
         }
         /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
+        #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
         pub fn set_resource_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,

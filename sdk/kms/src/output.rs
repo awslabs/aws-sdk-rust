@@ -1632,6 +1632,7 @@ pub struct GetPublicKeyOutput {
     pub public_key: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+    #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
     /// <p>The type of the of the public key that was downloaded.</p>
     pub key_spec: std::option::Option<crate::model::KeySpec>,
@@ -1660,6 +1661,7 @@ impl GetPublicKeyOutput {
     }
     /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+    #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
     pub fn customer_master_key_spec(
         &self,
     ) -> std::option::Option<&crate::model::CustomerMasterKeySpec> {
@@ -1748,6 +1750,7 @@ pub mod get_public_key_output {
         }
         /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+        #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
         pub fn customer_master_key_spec(
             mut self,
             input: crate::model::CustomerMasterKeySpec,
@@ -1757,6 +1760,7 @@ pub mod get_public_key_output {
         }
         /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+        #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
         pub fn set_customer_master_key_spec(
             mut self,
             input: std::option::Option<crate::model::CustomerMasterKeySpec>,

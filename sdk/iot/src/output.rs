@@ -355,6 +355,7 @@ pub struct UpdateSecurityProfileOutput {
     >,
     /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain_v2:
@@ -393,6 +394,7 @@ impl UpdateSecurityProfileOutput {
     }
     /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
@@ -554,6 +556,7 @@ pub mod update_security_profile_output {
         ///
         /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -565,6 +568,7 @@ pub mod update_security_profile_output {
         }
         /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10329,6 +10333,7 @@ pub struct DescribeSecurityProfileOutput {
     >,
     /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here.</p>
     pub additional_metrics_to_retain_v2:
@@ -10367,6 +10372,7 @@ impl DescribeSecurityProfileOutput {
     }
     /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
@@ -10528,6 +10534,7 @@ pub mod describe_security_profile_output {
         ///
         /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -10539,6 +10546,7 @@ pub mod describe_security_profile_output {
         }
         /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

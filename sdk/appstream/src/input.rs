@@ -11549,11 +11549,13 @@ pub mod update_fleet_input {
             self
         }
         /// <p>Deletes the VPC association for the specified fleet.</p>
+        #[deprecated]
         pub fn delete_vpc_config(mut self, input: bool) -> Self {
             self.delete_vpc_config = Some(input);
             self
         }
         /// <p>Deletes the VPC association for the specified fleet.</p>
+        #[deprecated]
         pub fn set_delete_vpc_config(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_vpc_config = input;
             self
@@ -12112,11 +12114,13 @@ pub mod update_stack_input {
             self
         }
         /// <p>Deletes the storage connectors currently enabled for the stack.</p>
+        #[deprecated]
         pub fn delete_storage_connectors(mut self, input: bool) -> Self {
             self.delete_storage_connectors = Some(input);
             self
         }
         /// <p>Deletes the storage connectors currently enabled for the stack.</p>
+        #[deprecated]
         pub fn set_delete_storage_connectors(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_storage_connectors = input;
             self
@@ -12392,6 +12396,7 @@ pub struct UpdateStackInput {
     /// <p>The storage connectors to enable.</p>
     pub storage_connectors: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
+    #[deprecated]
     pub delete_storage_connectors: bool,
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
     pub redirect_url: std::option::Option<std::string::String>,
@@ -12429,6 +12434,7 @@ impl UpdateStackInput {
         self.storage_connectors.as_deref()
     }
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
+    #[deprecated]
     pub fn delete_storage_connectors(&self) -> bool {
         self.delete_storage_connectors
     }
@@ -12588,6 +12594,7 @@ pub struct UpdateFleetInput {
     /// <p>Specify a value between 60 and 360000.</p>
     pub disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>Deletes the VPC association for the specified fleet.</p>
+    #[deprecated]
     pub delete_vpc_config: bool,
     /// <p>The description to display.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12695,6 +12702,7 @@ impl UpdateFleetInput {
         self.disconnect_timeout_in_seconds
     }
     /// <p>Deletes the VPC association for the specified fleet.</p>
+    #[deprecated]
     pub fn delete_vpc_config(&self) -> bool {
         self.delete_vpc_config
     }

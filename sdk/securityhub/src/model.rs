@@ -135,8 +135,14 @@ pub struct AwsSecurityFindingFilters {
     /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding record. </p>
     pub updated_at: std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
     /// <p>The native severity as defined by the security-findings provider's solution that generated the finding.</p>
+    #[deprecated(
+        note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal."
+    )]
     pub severity_product: std::option::Option<std::vec::Vec<crate::model::NumberFilter>>,
     /// <p>The normalized severity of a finding.</p>
+    #[deprecated(
+        note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
+    )]
     pub severity_normalized: std::option::Option<std::vec::Vec<crate::model::NumberFilter>>,
     /// <p>The label of a finding's severity.</p>
     pub severity_label: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -265,6 +271,9 @@ pub struct AwsSecurityFindingFilters {
     pub resource_aws_s3_bucket_owner_name:
         std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The user associated with the IAM access key related to a finding.</p>
+    #[deprecated(
+        note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName."
+    )]
     pub resource_aws_iam_access_key_user_name:
         std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The name of the principal that is associated with an IAM access key.</p>
@@ -332,6 +341,7 @@ pub struct AwsSecurityFindingFilters {
     /// <p>The principal that created a note.</p>
     pub note_updated_by: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>A keyword for a finding.</p>
+    #[deprecated(note = "The Keyword property is deprecated.")]
     pub keyword: std::option::Option<std::vec::Vec<crate::model::KeywordFilter>>,
     /// <p>The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
@@ -402,10 +412,14 @@ impl AwsSecurityFindingFilters {
         self.updated_at.as_deref()
     }
     /// <p>The native severity as defined by the security-findings provider's solution that generated the finding.</p>
+    #[deprecated(note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal.")]
     pub fn severity_product(&self) -> std::option::Option<&[crate::model::NumberFilter]> {
         self.severity_product.as_deref()
     }
     /// <p>The normalized severity of a finding.</p>
+    #[deprecated(
+        note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
+    )]
     pub fn severity_normalized(&self) -> std::option::Option<&[crate::model::NumberFilter]> {
         self.severity_normalized.as_deref()
     }
@@ -663,6 +677,9 @@ impl AwsSecurityFindingFilters {
         self.resource_aws_s3_bucket_owner_name.as_deref()
     }
     /// <p>The user associated with the IAM access key related to a finding.</p>
+    #[deprecated(
+        note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName."
+    )]
     pub fn resource_aws_iam_access_key_user_name(
         &self,
     ) -> std::option::Option<&[crate::model::StringFilter]> {
@@ -780,6 +797,7 @@ impl AwsSecurityFindingFilters {
         self.note_updated_by.as_deref()
     }
     /// <p>A keyword for a finding.</p>
+    #[deprecated(note = "The Keyword property is deprecated.")]
     pub fn keyword(&self) -> std::option::Option<&[crate::model::KeywordFilter]> {
         self.keyword.as_deref()
     }
@@ -1387,6 +1405,9 @@ pub mod aws_security_finding_filters {
         /// To override the contents of this collection use [`set_severity_product`](Self::set_severity_product).
         ///
         /// <p>The native severity as defined by the security-findings provider's solution that generated the finding.</p>
+        #[deprecated(
+            note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal."
+        )]
         pub fn severity_product(mut self, input: crate::model::NumberFilter) -> Self {
             let mut v = self.severity_product.unwrap_or_default();
             v.push(input);
@@ -1394,6 +1415,9 @@ pub mod aws_security_finding_filters {
             self
         }
         /// <p>The native severity as defined by the security-findings provider's solution that generated the finding.</p>
+        #[deprecated(
+            note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal."
+        )]
         pub fn set_severity_product(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NumberFilter>>,
@@ -1406,6 +1430,9 @@ pub mod aws_security_finding_filters {
         /// To override the contents of this collection use [`set_severity_normalized`](Self::set_severity_normalized).
         ///
         /// <p>The normalized severity of a finding.</p>
+        #[deprecated(
+            note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
+        )]
         pub fn severity_normalized(mut self, input: crate::model::NumberFilter) -> Self {
             let mut v = self.severity_normalized.unwrap_or_default();
             v.push(input);
@@ -1413,6 +1440,9 @@ pub mod aws_security_finding_filters {
             self
         }
         /// <p>The normalized severity of a finding.</p>
+        #[deprecated(
+            note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
+        )]
         pub fn set_severity_normalized(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NumberFilter>>,
@@ -2504,6 +2534,9 @@ pub mod aws_security_finding_filters {
         /// To override the contents of this collection use [`set_resource_aws_iam_access_key_user_name`](Self::set_resource_aws_iam_access_key_user_name).
         ///
         /// <p>The user associated with the IAM access key related to a finding.</p>
+        #[deprecated(
+            note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName."
+        )]
         pub fn resource_aws_iam_access_key_user_name(
             mut self,
             input: crate::model::StringFilter,
@@ -2516,6 +2549,9 @@ pub mod aws_security_finding_filters {
             self
         }
         /// <p>The user associated with the IAM access key related to a finding.</p>
+        #[deprecated(
+            note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName."
+        )]
         pub fn set_resource_aws_iam_access_key_user_name(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -2943,6 +2979,7 @@ pub mod aws_security_finding_filters {
         /// To override the contents of this collection use [`set_keyword`](Self::set_keyword).
         ///
         /// <p>A keyword for a finding.</p>
+        #[deprecated(note = "The Keyword property is deprecated.")]
         pub fn keyword(mut self, input: crate::model::KeywordFilter) -> Self {
             let mut v = self.keyword.unwrap_or_default();
             v.push(input);
@@ -2950,6 +2987,7 @@ pub mod aws_security_finding_filters {
             self
         }
         /// <p>A keyword for a finding.</p>
+        #[deprecated(note = "The Keyword property is deprecated.")]
         pub fn set_keyword(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeywordFilter>>,
@@ -4382,6 +4420,7 @@ pub struct Member {
     pub email: std::option::Option<std::string::String>,
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     pub master_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     pub administrator_id: std::option::Option<std::string::String>,
@@ -4413,6 +4452,7 @@ impl Member {
     }
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     pub fn master_id(&self) -> std::option::Option<&str> {
         self.master_id.as_deref()
     }
@@ -4493,12 +4533,14 @@ pub mod member {
         }
         /// <p>This is replaced by <code>AdministratorID</code>.</p>
         /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+        #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
         pub fn master_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_id = Some(input.into());
             self
         }
         /// <p>This is replaced by <code>AdministratorID</code>.</p>
         /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+        #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
         pub fn set_master_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_id = input;
             self
@@ -9360,6 +9402,9 @@ impl AsRef<str> for WorkflowStatus {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
+)]
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -54734,6 +54779,7 @@ impl AwsIamUserPolicy {
 pub struct AwsIamAccessKeyDetails {
     /// <p>The user associated with the IAM access key related to a finding.</p>
     /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
+    #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The status of the IAM access key related to a finding.</p>
     pub status: std::option::Option<crate::model::AwsIamAccessKeyStatus>,
@@ -54756,6 +54802,7 @@ pub struct AwsIamAccessKeyDetails {
 impl AwsIamAccessKeyDetails {
     /// <p>The user associated with the IAM access key related to a finding.</p>
     /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
+    #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -54830,12 +54877,14 @@ pub mod aws_iam_access_key_details {
     impl Builder {
         /// <p>The user associated with the IAM access key related to a finding.</p>
         /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
+        #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
         /// <p>The user associated with the IAM access key related to a finding.</p>
         /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
+        #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self

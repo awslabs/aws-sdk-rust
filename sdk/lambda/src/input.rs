@@ -14846,6 +14846,7 @@ impl std::fmt::Debug for ListAliasesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated]
 #[non_exhaustive]
 pub struct InvokeAsyncInput {
     /// <p>The name of the Lambda function.</p>

@@ -480,11 +480,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_name(input);
             self
@@ -548,11 +550,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_name(input);
             self
@@ -674,11 +678,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_name(input);
             self
@@ -886,6 +892,7 @@ pub mod fluent_builders {
         /// <important>
         /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
         /// </important>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_name(input.into());
             self
@@ -893,6 +900,7 @@ pub mod fluent_builders {
         /// <important>
         /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
         /// </important>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_name(input);
             self
@@ -1516,11 +1524,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_name(input);
             self
@@ -1594,11 +1604,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_name(input);
             self

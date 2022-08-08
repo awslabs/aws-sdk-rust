@@ -5711,6 +5711,7 @@ pub struct ReplicationRule {
     /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string. </p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[deprecated]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
     pub filter: std::option::Option<crate::model::ReplicationRuleFilter>,
@@ -5741,6 +5742,7 @@ impl ReplicationRule {
     /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string. </p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[deprecated]
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
@@ -5841,6 +5843,7 @@ pub mod replication_rule {
         /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string. </p> <important>
         /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
+        #[deprecated]
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
@@ -5848,6 +5851,7 @@ pub mod replication_rule {
         /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string. </p> <important>
         /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
+        #[deprecated]
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -9136,6 +9140,7 @@ pub struct LifecycleRule {
     /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[deprecated]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not contain a <code>Prefix</code> element.</p>
     pub filter: std::option::Option<crate::model::LifecycleRuleFilter>,
@@ -9165,6 +9170,7 @@ impl LifecycleRule {
     /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    #[deprecated]
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
@@ -9269,6 +9275,7 @@ pub mod lifecycle_rule {
         /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
         /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
+        #[deprecated]
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
@@ -9276,6 +9283,7 @@ pub mod lifecycle_rule {
         /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
         /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
+        #[deprecated]
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self

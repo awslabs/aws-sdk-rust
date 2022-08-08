@@ -1403,6 +1403,7 @@ pub mod fluent_builders {
     /// <p>Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the specified interconnect.</p> <note>
     /// <p>Intended for use by Direct Connect Partners only.</p>
     /// </note>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocateConnectionOnInterconnect {
         handle: std::sync::Arc<super::Handle>,
@@ -4068,6 +4069,7 @@ pub mod fluent_builders {
     /// <p>Deprecated. Use <code>DescribeLoa</code> instead.</p>
     /// <p>Gets the LOA-CFA for a connection.</p>
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that your APN partner or service provider uses when establishing your cross connect to Amazon Web Services at the colocation facility. For more information, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at Direct Connect Locations</a> in the <i>Direct Connect User Guide</i>.</p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectionLoa {
         handle: std::sync::Arc<super::Handle>,
@@ -4209,6 +4211,7 @@ pub mod fluent_builders {
     /// <p>Lists the connections that have been provisioned on the specified interconnect.</p> <note>
     /// <p>Intended for use by Direct Connect Partners only.</p>
     /// </note>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectionsOnInterconnect {
         handle: std::sync::Arc<super::Handle>,
@@ -4768,6 +4771,7 @@ pub mod fluent_builders {
     /// <p>Deprecated. Use <code>DescribeLoa</code> instead.</p>
     /// <p>Gets the LOA-CFA for the specified interconnect.</p>
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when establishing your cross connect to Amazon Web Services at the colocation facility. For more information, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at Direct Connect Locations</a> in the <i>Direct Connect User Guide</i>.</p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInterconnectLoa {
         handle: std::sync::Arc<super::Handle>,

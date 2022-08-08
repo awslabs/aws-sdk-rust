@@ -3431,11 +3431,13 @@ pub mod update_application_input {
             self
         }
         /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
+        #[deprecated(note = "Name update for application is deprecated.")]
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
+        #[deprecated(note = "Name update for application is deprecated.")]
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3613,11 +3615,13 @@ pub mod update_attribute_group_input {
             self
         }
         /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
+        #[deprecated(note = "Name update for attribute group is deprecated.")]
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
+        #[deprecated(note = "Name update for attribute group is deprecated.")]
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3789,6 +3793,7 @@ pub struct UpdateAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: std::option::Option<std::string::String>,
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
+    #[deprecated(note = "Name update for attribute group is deprecated.")]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the attribute group that the user provides.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3801,6 +3806,7 @@ impl UpdateAttributeGroupInput {
         self.attribute_group.as_deref()
     }
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
+    #[deprecated(note = "Name update for attribute group is deprecated.")]
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3831,6 +3837,7 @@ pub struct UpdateApplicationInput {
     /// <p>The name or ID of the application that will be updated.</p>
     pub application: std::option::Option<std::string::String>,
     /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
+    #[deprecated(note = "Name update for application is deprecated.")]
     pub name: std::option::Option<std::string::String>,
     /// <p>The new description of the application.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3841,6 +3848,7 @@ impl UpdateApplicationInput {
         self.application.as_deref()
     }
     /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
+    #[deprecated(note = "Name update for application is deprecated.")]
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }

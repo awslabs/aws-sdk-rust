@@ -195,6 +195,7 @@ impl UpdatePipelineOutput {
 }
 
 /// <p>The <code>TestRoleResponse</code> structure.</p>
+#[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRoleOutput {

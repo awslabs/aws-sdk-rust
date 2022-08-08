@@ -2709,11 +2709,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorization key for .fi domains</p>
+        #[deprecated]
         pub fn fi_auth_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fi_auth_key(input.into());
             self
         }
         /// <p>The authorization key for .fi domains</p>
+        #[deprecated]
         pub fn set_fi_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fi_auth_key(input);
             self

@@ -4913,12 +4913,14 @@ pub mod create_job_input {
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
@@ -27766,12 +27768,14 @@ pub mod start_job_run_input {
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
@@ -34485,6 +34489,7 @@ pub struct StartJobRunInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub allocated_capacity: i32,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
     /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
@@ -34538,6 +34543,7 @@ impl StartJobRunInput {
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }
@@ -39690,6 +39696,7 @@ pub struct CreateJobInput {
     pub max_retries: i32,
     /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub allocated_capacity: i32,
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub timeout: std::option::Option<i32>,
@@ -39785,6 +39792,7 @@ impl CreateJobInput {
     }
     /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }

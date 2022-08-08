@@ -3759,12 +3759,16 @@ impl InsightRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyDetector {
     /// <p>The namespace of the metric associated with the anomaly detection model.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.Namespace property.")]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the metric associated with the anomaly detection model.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.MetricName property.")]
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The metric dimensions associated with the anomaly detection model.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.Dimensions property.")]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The statistic associated with the anomaly detection model.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.Stat property.")]
     pub stat: std::option::Option<std::string::String>,
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
     pub configuration: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
@@ -3778,18 +3782,22 @@ pub struct AnomalyDetector {
 }
 impl AnomalyDetector {
     /// <p>The namespace of the metric associated with the anomaly detection model.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.Namespace property.")]
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the metric associated with the anomaly detection model.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.MetricName property.")]
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The metric dimensions associated with the anomaly detection model.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.Dimensions property.")]
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The statistic associated with the anomaly detection model.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.Stat property.")]
     pub fn stat(&self) -> std::option::Option<&str> {
         self.stat.as_deref()
     }
@@ -3855,21 +3863,25 @@ pub mod anomaly_detector {
     }
     impl Builder {
         /// <p>The namespace of the metric associated with the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.Namespace property.")]
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
         /// <p>The namespace of the metric associated with the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.Namespace property.")]
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
         /// <p>The name of the metric associated with the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.MetricName property.")]
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
         /// <p>The name of the metric associated with the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.MetricName property.")]
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -3879,6 +3891,7 @@ pub mod anomaly_detector {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions associated with the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.Dimensions property.")]
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input);
@@ -3886,6 +3899,7 @@ pub mod anomaly_detector {
             self
         }
         /// <p>The metric dimensions associated with the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.Dimensions property.")]
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -3894,11 +3908,13 @@ pub mod anomaly_detector {
             self
         }
         /// <p>The statistic associated with the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.Stat property.")]
         pub fn stat(mut self, input: impl Into<std::string::String>) -> Self {
             self.stat = Some(input.into());
             self
         }
         /// <p>The statistic associated with the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.Stat property.")]
         pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stat = input;
             self

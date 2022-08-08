@@ -11,6 +11,7 @@ pub enum Error {
     /// <p>The DB security group authorization quota has been reached.</p>
     AuthorizationQuotaExceededFault(crate::error::AuthorizationQuotaExceededFault),
     #[allow(missing_docs)] // documentation missing in model
+    #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),

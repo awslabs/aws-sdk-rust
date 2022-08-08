@@ -504,6 +504,10 @@ pub mod fluent_builders {
     /// <p>Runs one or more SQL statements.</p> <important>
     /// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.</p>
     /// </important>
+    #[deprecated(
+        note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.",
+        since = "2019-03-21"
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteSql {
         handle: std::sync::Arc<super::Handle>,

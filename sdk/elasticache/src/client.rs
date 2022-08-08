@@ -8021,11 +8021,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Deprecated. This parameter is not used.</p>
+        #[deprecated]
         pub fn node_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.node_group_id(input.into());
             self
         }
         /// <p>Deprecated. This parameter is not used.</p>
+        #[deprecated]
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,

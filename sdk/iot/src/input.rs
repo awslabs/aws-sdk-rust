@@ -7785,6 +7785,7 @@ pub mod create_security_profile_input {
         ///
         /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -7796,6 +7797,7 @@ pub mod create_security_profile_input {
         }
         /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -33248,12 +33250,14 @@ pub mod register_certificate_input {
         }
         /// <p>A boolean value that specifies if the certificate is set to active.</p>
         /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+        #[deprecated]
         pub fn set_as_active(mut self, input: bool) -> Self {
             self.set_as_active = Some(input);
             self
         }
         /// <p>A boolean value that specifies if the certificate is set to active.</p>
         /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+        #[deprecated]
         pub fn set_set_as_active(mut self, input: std::option::Option<bool>) -> Self {
             self.set_as_active = input;
             self
@@ -41137,6 +41141,7 @@ pub mod update_security_profile_input {
         ///
         /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -41148,6 +41153,7 @@ pub mod update_security_profile_input {
         }
         /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        #[deprecated(note = "Use additionalMetricsToRetainV2.")]
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -42808,6 +42814,7 @@ pub struct UpdateSecurityProfileInput {
     >,
     /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain_v2:
@@ -42844,6 +42851,7 @@ impl UpdateSecurityProfileInput {
     }
     /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
@@ -44600,6 +44608,7 @@ pub struct RegisterCertificateInput {
     pub ca_certificate_pem: std::option::Option<std::string::String>,
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    #[deprecated]
     pub set_as_active: std::option::Option<bool>,
     /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
     pub status: std::option::Option<crate::model::CertificateStatus>,
@@ -44615,6 +44624,7 @@ impl RegisterCertificateInput {
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    #[deprecated]
     pub fn set_as_active(&self) -> std::option::Option<bool> {
         self.set_as_active
     }
@@ -49487,6 +49497,7 @@ pub struct CreateSecurityProfileInput {
     >,
     /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain_v2:
@@ -49517,6 +49528,7 @@ impl CreateSecurityProfileInput {
     }
     /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }

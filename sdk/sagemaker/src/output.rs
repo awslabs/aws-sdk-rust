@@ -20615,6 +20615,7 @@ pub struct DescribeDomainOutput {
     /// </ul>
     pub app_network_access_type: std::option::Option<crate::model::AppNetworkAccessType>,
     /// <p>Use <code>KmsKeyId</code>.</p>
+    #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
     pub home_efs_file_system_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The VPC subnets that Studio uses for communication.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20689,6 +20690,7 @@ impl DescribeDomainOutput {
         self.app_network_access_type.as_ref()
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
+    #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
     pub fn home_efs_file_system_kms_key_id(&self) -> std::option::Option<&str> {
         self.home_efs_file_system_kms_key_id.as_deref()
     }
@@ -20950,6 +20952,7 @@ pub mod describe_domain_output {
             self
         }
         /// <p>Use <code>KmsKeyId</code>.</p>
+        #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
         pub fn home_efs_file_system_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -20958,6 +20961,7 @@ pub mod describe_domain_output {
             self
         }
         /// <p>Use <code>KmsKeyId</code>.</p>
+        #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
         pub fn set_home_efs_file_system_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,

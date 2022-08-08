@@ -9796,6 +9796,9 @@ impl std::fmt::Debug for TagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SyncDeploymentJobInput {
@@ -9897,6 +9900,9 @@ impl std::fmt::Debug for RestartSimulationJobInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterRobotInput {
@@ -10195,6 +10201,9 @@ impl std::fmt::Debug for ListSimulationApplicationsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRobotsInput {
@@ -10276,6 +10285,9 @@ impl std::fmt::Debug for ListRobotApplicationsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsInput {
@@ -10317,6 +10329,9 @@ impl std::fmt::Debug for ListFleetsInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentJobsInput {
@@ -10564,6 +10579,9 @@ impl std::fmt::Debug for DescribeRobotApplicationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRobotInput {
@@ -10585,6 +10603,9 @@ impl std::fmt::Debug for DescribeRobotInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetInput {
@@ -10606,6 +10627,9 @@ impl std::fmt::Debug for DescribeFleetInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeploymentJobInput {
@@ -10627,6 +10651,9 @@ impl std::fmt::Debug for DescribeDeploymentJobInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterRobotInput {
@@ -10732,6 +10759,9 @@ impl std::fmt::Debug for DeleteRobotApplicationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRobotInput {
@@ -10753,6 +10783,9 @@ impl std::fmt::Debug for DeleteRobotInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetInput {
@@ -11286,6 +11319,9 @@ impl std::fmt::Debug for CreateRobotApplicationInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRobotInput {
@@ -11332,6 +11368,9 @@ impl std::fmt::Debug for CreateRobotInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFleetInput {
@@ -11364,6 +11403,9 @@ impl std::fmt::Debug for CreateFleetInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentJobInput {
@@ -11507,6 +11549,9 @@ impl std::fmt::Debug for CancelSimulationJobInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDeploymentJobInput {

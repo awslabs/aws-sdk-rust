@@ -1938,6 +1938,7 @@ impl GetMemberDetectorsOutput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This output is deprecated, use GetAdministratorAccountResponse instead")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMasterAccountOutput {
@@ -2940,6 +2941,9 @@ impl DisassociateMembersOutput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(
+    note = "This output is deprecated, use DisassociateFromAdministratorAccountResponse instead"
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFromMasterAccountOutput {}
@@ -4114,6 +4118,7 @@ impl ArchiveFindingsOutput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This output is deprecated, use AcceptAdministratorInvitationResponse instead")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInvitationOutput {}

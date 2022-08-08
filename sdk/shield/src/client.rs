@@ -1166,6 +1166,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSubscription`.
     ///
     /// <p>Removes Shield Advanced from an account. Shield Advanced requires a 1-year subscription commitment. You cannot delete a subscription prior to the completion of that commitment. </p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubscription {
         handle: std::sync::Arc<super::Handle>,

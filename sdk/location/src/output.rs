@@ -1066,8 +1066,13 @@ pub struct DescribeTrackerOutput {
     /// <p>The optional description for the tracker resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
+    #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The tags associated with the tracker resource.</p>
     pub tags:
@@ -1098,10 +1103,15 @@ impl DescribeTrackerOutput {
         self.description.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
+    #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -1202,11 +1212,19 @@ pub mod describe_tracker_output {
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -1215,11 +1233,13 @@ pub mod describe_tracker_output {
             self
         }
         /// <p>No longer used. Always returns an empty string.</p>
+        #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
         /// <p>No longer used. Always returns an empty string.</p>
+        #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1988,6 +2008,10 @@ pub struct DescribeRouteCalculatorOutput {
     /// </ul>
     pub calculator_arn: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description of the route calculator resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -2025,6 +2049,10 @@ impl DescribeRouteCalculatorOutput {
         self.calculator_arn.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -2128,11 +2156,19 @@ pub mod describe_route_calculator_output {
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2863,6 +2899,10 @@ pub struct DescribePlaceIndexOutput {
     /// </ul>
     pub index_arn: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -2896,6 +2936,10 @@ impl DescribePlaceIndexOutput {
         self.index_arn.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -2996,11 +3040,19 @@ pub mod describe_place_index_output {
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -3758,6 +3810,10 @@ pub struct DescribeMapOutput {
     /// </ul>
     pub map_arn: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
     pub data_source: std::option::Option<std::string::String>,
@@ -3786,6 +3842,10 @@ impl DescribeMapOutput {
         self.map_arn.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -3878,11 +3938,19 @@ pub mod describe_map_output {
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -4926,8 +4994,13 @@ pub struct DescribeGeofenceCollectionOutput {
     /// <p>The optional description for the geofence collection.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
+    #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -4956,10 +5029,15 @@ impl DescribeGeofenceCollectionOutput {
         self.description.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
+    #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -5060,11 +5138,19 @@ pub mod describe_geofence_collection_output {
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. Always returns RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5073,11 +5159,13 @@ pub mod describe_geofence_collection_output {
             self
         }
         /// <p>No longer used. Always returns an empty string.</p>
+        #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
         /// <p>No longer used. Always returns an empty string.</p>
+        #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,

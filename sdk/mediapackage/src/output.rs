@@ -846,6 +846,7 @@ impl RotateIngestEndpointCredentialsOutput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateChannelCredentialsOutput {

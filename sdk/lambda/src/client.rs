@@ -4526,6 +4526,7 @@ pub mod fluent_builders {
     /// <p>For asynchronous function invocation, use <code>Invoke</code>.</p>
     /// </important>
     /// <p>Invokes a function asynchronously.</p>
+    #[deprecated]
     #[derive(std::fmt::Debug)]
     pub struct InvokeAsync {
         handle: std::sync::Arc<super::Handle>,

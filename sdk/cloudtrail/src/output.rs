@@ -11,6 +11,7 @@ pub struct UpdateTrailOutput {
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
+    #[deprecated]
     pub sns_topic_name: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
     /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
@@ -48,6 +49,7 @@ impl UpdateTrailOutput {
         self.s3_key_prefix.as_deref()
     }
     /// <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
+    #[deprecated]
     pub fn sns_topic_name(&self) -> std::option::Option<&str> {
         self.sns_topic_name.as_deref()
     }
@@ -177,11 +179,13 @@ pub mod update_trail_output {
             self
         }
         /// <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
+        #[deprecated]
         pub fn sns_topic_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_name = Some(input.into());
             self
         }
         /// <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
+        #[deprecated]
         pub fn set_sns_topic_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3125,6 +3129,7 @@ pub struct CreateTrailOutput {
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+    #[deprecated]
     pub sns_topic_name: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
     /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
@@ -3162,6 +3167,7 @@ impl CreateTrailOutput {
         self.s3_key_prefix.as_deref()
     }
     /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+    #[deprecated]
     pub fn sns_topic_name(&self) -> std::option::Option<&str> {
         self.sns_topic_name.as_deref()
     }
@@ -3291,11 +3297,13 @@ pub mod create_trail_output {
             self
         }
         /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+        #[deprecated]
         pub fn sns_topic_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_name = Some(input.into());
             self
         }
         /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+        #[deprecated]
         pub fn set_sns_topic_name(
             mut self,
             input: std::option::Option<std::string::String>,

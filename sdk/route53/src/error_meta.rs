@@ -41,6 +41,7 @@ pub enum Error {
     /// </ul>
     HealthCheckAlreadyExists(crate::error::HealthCheckAlreadyExists),
     /// <p>This error code is not in use.</p>
+    #[deprecated]
     HealthCheckInUse(crate::error::HealthCheckInUse),
     /// <p>The value of <code>HealthCheckVersion</code> in the request doesn't match the value of <code>HealthCheckVersion</code> in the health check.</p>
     HealthCheckVersionMismatch(crate::error::HealthCheckVersionMismatch),

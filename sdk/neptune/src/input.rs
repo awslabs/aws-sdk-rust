@@ -3069,11 +3069,13 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.publicly_accessible = Some(input);
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.publicly_accessible = input;
             self
@@ -11959,11 +11961,13 @@ pub mod modify_db_instance_input {
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.publicly_accessible = Some(input);
             self
         }
         /// <p>This flag should no longer be used.</p>
+        #[deprecated]
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.publicly_accessible = input;
             self
@@ -16545,6 +16549,7 @@ pub struct ModifyDbInstanceInput {
     /// <p> Default: <code>8182</code> </p>
     pub db_port_number: std::option::Option<i32>,
     /// <p>This flag should no longer be used.</p>
+    #[deprecated]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -16733,6 +16738,7 @@ impl ModifyDbInstanceInput {
         self.db_port_number
     }
     /// <p>This flag should no longer be used.</p>
+    #[deprecated]
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
         self.publicly_accessible
     }
@@ -19169,6 +19175,7 @@ pub struct CreateDbInstanceInput {
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub character_set_name: std::option::Option<std::string::String>,
     /// <p>This flag should no longer be used.</p>
+    #[deprecated]
     pub publicly_accessible: std::option::Option<bool>,
     /// <p>The tags to assign to the new instance.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -19355,6 +19362,7 @@ impl CreateDbInstanceInput {
         self.character_set_name.as_deref()
     }
     /// <p>This flag should no longer be used.</p>
+    #[deprecated]
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
         self.publicly_accessible
     }

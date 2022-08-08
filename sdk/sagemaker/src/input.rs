@@ -3444,6 +3444,7 @@ pub mod create_domain_input {
             self
         }
         /// <p>Use <code>KmsKeyId</code>.</p>
+        #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
         pub fn home_efs_file_system_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -3452,6 +3453,7 @@ pub mod create_domain_input {
             self
         }
         /// <p>Use <code>KmsKeyId</code>.</p>
+        #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
         pub fn set_home_efs_file_system_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -63009,6 +63011,7 @@ pub struct CreateDomainInput {
     /// </ul>
     pub app_network_access_type: std::option::Option<crate::model::AppNetworkAccessType>,
     /// <p>Use <code>KmsKeyId</code>.</p>
+    #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
     pub home_efs_file_system_kms_key_id: std::option::Option<std::string::String>,
     /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -63056,6 +63059,7 @@ impl CreateDomainInput {
         self.app_network_access_type.as_ref()
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
+    #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
     pub fn home_efs_file_system_kms_key_id(&self) -> std::option::Option<&str> {
         self.home_efs_file_system_kms_key_id.as_deref()
     }

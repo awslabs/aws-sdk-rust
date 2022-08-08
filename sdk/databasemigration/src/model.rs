@@ -2063,8 +2063,10 @@ pub struct ReplicationInstance {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>The public IP address of the replication instance.</p>
+    #[deprecated]
     pub replication_instance_public_ip_address: std::option::Option<std::string::String>,
     /// <p>The private IP address of the replication instance.</p>
+    #[deprecated]
     pub replication_instance_private_ip_address: std::option::Option<std::string::String>,
     /// <p>One or more public IP addresses for the replication instance.</p>
     pub replication_instance_public_ip_addresses:
@@ -2176,10 +2178,12 @@ impl ReplicationInstance {
         self.replication_instance_arn.as_deref()
     }
     /// <p>The public IP address of the replication instance.</p>
+    #[deprecated]
     pub fn replication_instance_public_ip_address(&self) -> std::option::Option<&str> {
         self.replication_instance_public_ip_address.as_deref()
     }
     /// <p>The private IP address of the replication instance.</p>
+    #[deprecated]
     pub fn replication_instance_private_ip_address(&self) -> std::option::Option<&str> {
         self.replication_instance_private_ip_address.as_deref()
     }
@@ -2570,6 +2574,7 @@ pub mod replication_instance {
             self
         }
         /// <p>The public IP address of the replication instance.</p>
+        #[deprecated]
         pub fn replication_instance_public_ip_address(
             mut self,
             input: impl Into<std::string::String>,
@@ -2578,6 +2583,7 @@ pub mod replication_instance {
             self
         }
         /// <p>The public IP address of the replication instance.</p>
+        #[deprecated]
         pub fn set_replication_instance_public_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2586,6 +2592,7 @@ pub mod replication_instance {
             self
         }
         /// <p>The private IP address of the replication instance.</p>
+        #[deprecated]
         pub fn replication_instance_private_ip_address(
             mut self,
             input: impl Into<std::string::String>,
@@ -2594,6 +2601,7 @@ pub mod replication_instance {
             self
         }
         /// <p>The private IP address of the replication instance.</p>
+        #[deprecated]
         pub fn set_replication_instance_private_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,

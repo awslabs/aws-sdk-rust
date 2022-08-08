@@ -1735,11 +1735,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the earliest property value to return.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+        )]
         pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_date_time(input);
             self
         }
         /// <p>The date and time of the earliest property value to return.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+        )]
         pub fn set_start_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1748,11 +1754,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the latest property value to return.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+        )]
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_date_time(input);
             self
         }
         /// <p>The date and time of the latest property value to return.</p>
+        #[deprecated(
+            note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+        )]
         pub fn set_end_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

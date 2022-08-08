@@ -1949,11 +1949,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -1962,11 +1970,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter is no longer used.</p>
+        #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
         /// <p>This parameter is no longer used.</p>
+        #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2118,11 +2128,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2281,11 +2299,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2460,11 +2486,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2597,11 +2631,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2620,11 +2662,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter is no longer used.</p>
+        #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
         /// <p>This parameter is no longer used.</p>
+        #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5349,11 +5393,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5362,11 +5414,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter is no longer used.</p>
+        #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
         /// <p>This parameter is no longer used.</p>
+        #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5438,11 +5492,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5514,11 +5576,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5609,11 +5679,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5685,11 +5763,19 @@ pub mod fluent_builders {
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+        #[deprecated(
+            note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+            since = "2022-02-01"
+        )]
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5698,11 +5784,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter is no longer used.</p>
+        #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
         /// <p>This parameter is no longer used.</p>
+        #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,

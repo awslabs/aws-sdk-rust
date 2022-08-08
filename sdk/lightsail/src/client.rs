@@ -4227,6 +4227,7 @@ pub mod fluent_builders {
         /// <p>(Deprecated) The name for your custom image.</p> <note>
         /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
         /// </note>
+        #[deprecated]
         pub fn custom_image_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.custom_image_name(input.into());
             self
@@ -4234,6 +4235,7 @@ pub mod fluent_builders {
         /// <p>(Deprecated) The name for your custom image.</p> <note>
         /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
         /// </note>
+        #[deprecated]
         pub fn set_custom_image_name(
             mut self,
             input: std::option::Option<std::string::String>,

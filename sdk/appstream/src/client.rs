@@ -6766,11 +6766,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Deletes the VPC association for the specified fleet.</p>
+        #[deprecated]
         pub fn delete_vpc_config(mut self, input: bool) -> Self {
             self.inner = self.inner.delete_vpc_config(input);
             self
         }
         /// <p>Deletes the VPC association for the specified fleet.</p>
+        #[deprecated]
         pub fn set_delete_vpc_config(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_vpc_config(input);
             self
@@ -7107,11 +7109,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Deletes the storage connectors currently enabled for the stack.</p>
+        #[deprecated]
         pub fn delete_storage_connectors(mut self, input: bool) -> Self {
             self.inner = self.inner.delete_storage_connectors(input);
             self
         }
         /// <p>Deletes the storage connectors currently enabled for the stack.</p>
+        #[deprecated]
         pub fn set_delete_storage_connectors(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_storage_connectors(input);
             self

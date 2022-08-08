@@ -2815,12 +2815,18 @@ pub struct SimulationApplicationConfig {
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the simulation application.</p>
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
     /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub use_default_tools: std::option::Option<bool>,
 }
 impl SimulationApplicationConfig {
@@ -2850,6 +2856,9 @@ impl SimulationApplicationConfig {
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
         self.use_default_upload_configurations
     }
@@ -2860,6 +2869,9 @@ impl SimulationApplicationConfig {
     /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
     }
@@ -2976,6 +2988,9 @@ pub mod simulation_application_config {
         /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn use_default_upload_configurations(mut self, input: bool) -> Self {
             self.use_default_upload_configurations = Some(input);
             self
@@ -2984,6 +2999,9 @@ pub mod simulation_application_config {
         /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn set_use_default_upload_configurations(
             mut self,
             input: std::option::Option<bool>,
@@ -3013,6 +3031,9 @@ pub mod simulation_application_config {
         /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
@@ -3020,6 +3041,9 @@ pub mod simulation_application_config {
         /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn set_use_default_tools(mut self, input: std::option::Option<bool>) -> Self {
             self.use_default_tools = input;
             self
@@ -3890,12 +3914,18 @@ pub struct RobotApplicationConfig {
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the robot application.</p>
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
     /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub use_default_tools: std::option::Option<bool>,
 }
 impl RobotApplicationConfig {
@@ -3921,6 +3951,9 @@ impl RobotApplicationConfig {
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
         self.use_default_upload_configurations
     }
@@ -3931,6 +3964,9 @@ impl RobotApplicationConfig {
     /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
     }
@@ -4026,6 +4062,9 @@ pub mod robot_application_config {
         /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn use_default_upload_configurations(mut self, input: bool) -> Self {
             self.use_default_upload_configurations = Some(input);
             self
@@ -4034,6 +4073,9 @@ pub mod robot_application_config {
         /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn set_use_default_upload_configurations(
             mut self,
             input: std::option::Option<bool>,
@@ -4063,6 +4105,9 @@ pub mod robot_application_config {
         /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
@@ -4070,6 +4115,9 @@ pub mod robot_application_config {
         /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn set_use_default_tools(mut self, input: std::option::Option<bool>) -> Self {
             self.use_default_tools = input;
             self
@@ -4157,12 +4205,18 @@ pub struct LoggingConfig {
     /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub record_all_ros_topics: std::option::Option<bool>,
 }
 impl LoggingConfig {
     /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+    )]
     pub fn record_all_ros_topics(&self) -> std::option::Option<bool> {
         self.record_all_ros_topics
     }
@@ -4186,6 +4240,9 @@ pub mod logging_config {
         /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn record_all_ros_topics(mut self, input: bool) -> Self {
             self.record_all_ros_topics = Some(input);
             self
@@ -4193,6 +4250,9 @@ pub mod logging_config {
         /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
         /// <p>This API is no longer supported and will throw an error if used.</p>
         /// </important>
+        #[deprecated(
+            note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        )]
         pub fn set_record_all_ros_topics(mut self, input: std::option::Option<bool>) -> Self {
             self.record_all_ros_topics = input;
             self

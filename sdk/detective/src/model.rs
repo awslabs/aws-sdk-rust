@@ -223,6 +223,7 @@ pub struct MemberDetail {
     /// <p>The ARN of the behavior graph.</p>
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
+    #[deprecated(note = "This property is deprecated. Use AdministratorId instead.")]
     pub master_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
     pub administrator_id: std::option::Option<std::string::String>,
@@ -248,14 +249,26 @@ pub struct MemberDetail {
     /// <p>The date and time that the member account was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data volume in bytes per day for the member account.</p>
+    #[deprecated(
+        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+    )]
     pub volume_usage_in_bytes: std::option::Option<i64>,
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[deprecated(
+        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+    )]
     pub volume_usage_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
     /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
+    #[deprecated(
+        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+    )]
     pub percent_of_graph_utilization: std::option::Option<f64>,
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[deprecated(
+        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+    )]
     pub percent_of_graph_utilization_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of behavior graph membership.</p>
     /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
@@ -290,6 +303,7 @@ impl MemberDetail {
         self.graph_arn.as_deref()
     }
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
+    #[deprecated(note = "This property is deprecated. Use AdministratorId instead.")]
     pub fn master_id(&self) -> std::option::Option<&str> {
         self.master_id.as_deref()
     }
@@ -327,20 +341,24 @@ impl MemberDetail {
         self.updated_time.as_ref()
     }
     /// <p>The data volume in bytes per day for the member account.</p>
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub fn volume_usage_in_bytes(&self) -> std::option::Option<i64> {
         self.volume_usage_in_bytes
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub fn volume_usage_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.volume_usage_updated_time.as_ref()
     }
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
     /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub fn percent_of_graph_utilization(&self) -> std::option::Option<f64> {
         self.percent_of_graph_utilization
     }
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub fn percent_of_graph_utilization_updated_time(
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -478,11 +496,13 @@ pub mod member_detail {
             self
         }
         /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
+        #[deprecated(note = "This property is deprecated. Use AdministratorId instead.")]
         pub fn master_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_id = Some(input.into());
             self
         }
         /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
+        #[deprecated(note = "This property is deprecated. Use AdministratorId instead.")]
         pub fn set_master_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_id = input;
             self
@@ -579,21 +599,33 @@ pub mod member_detail {
             self
         }
         /// <p>The data volume in bytes per day for the member account.</p>
+        #[deprecated(
+            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+        )]
         pub fn volume_usage_in_bytes(mut self, input: i64) -> Self {
             self.volume_usage_in_bytes = Some(input);
             self
         }
         /// <p>The data volume in bytes per day for the member account.</p>
+        #[deprecated(
+            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+        )]
         pub fn set_volume_usage_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.volume_usage_in_bytes = input;
             self
         }
         /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+        #[deprecated(
+            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+        )]
         pub fn volume_usage_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.volume_usage_updated_time = Some(input);
             self
         }
         /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+        #[deprecated(
+            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+        )]
         pub fn set_volume_usage_updated_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -604,6 +636,9 @@ pub mod member_detail {
         /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
         /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
         /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
+        #[deprecated(
+            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+        )]
         pub fn percent_of_graph_utilization(mut self, input: f64) -> Self {
             self.percent_of_graph_utilization = Some(input);
             self
@@ -611,11 +646,17 @@ pub mod member_detail {
         /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
         /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
         /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
+        #[deprecated(
+            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+        )]
         pub fn set_percent_of_graph_utilization(mut self, input: std::option::Option<f64>) -> Self {
             self.percent_of_graph_utilization = input;
             self
         }
         /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+        #[deprecated(
+            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+        )]
         pub fn percent_of_graph_utilization_updated_time(
             mut self,
             input: aws_smithy_types::DateTime,
@@ -624,6 +665,9 @@ pub mod member_detail {
             self
         }
         /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+        #[deprecated(
+            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
+        )]
         pub fn set_percent_of_graph_utilization_updated_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

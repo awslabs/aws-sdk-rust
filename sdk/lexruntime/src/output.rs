@@ -13,6 +13,9 @@ pub struct PutSessionOutput {
     pub session_attributes: std::option::Option<std::string::String>,
     /// <p>The next message that should be presented to the user.</p>
     /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
+    #[deprecated(
+        note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+    )]
     pub message: std::option::Option<std::string::String>,
     /// <p>The next message that should be presented to the user.</p>
     /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
@@ -64,6 +67,9 @@ impl PutSessionOutput {
     }
     /// <p>The next message that should be presented to the user.</p>
     /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
+    #[deprecated(
+        note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+    )]
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -196,12 +202,18 @@ pub mod put_session_output {
         }
         /// <p>The next message that should be presented to the user.</p>
         /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
+        #[deprecated(
+            note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+        )]
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
         /// <p>The next message that should be presented to the user.</p>
         /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
+        #[deprecated(
+            note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+        )]
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -844,6 +856,9 @@ pub struct PostContentOutput {
     /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
     /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
     /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+    #[deprecated(
+        note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+    )]
     pub message: std::option::Option<std::string::String>,
     /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
     /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
@@ -874,6 +889,9 @@ pub struct PostContentOutput {
     /// <p>The text used to process the request.</p>
     /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p>
     /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+    #[deprecated(
+        note = "The inputTranscript field is deprecated, use the encodedInputTranscript field instead. The inputTranscript field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+    )]
     pub input_transcript: std::option::Option<std::string::String>,
     /// <p>The text used to process the request.</p>
     /// <p>If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
@@ -927,6 +945,9 @@ impl PostContentOutput {
     /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
     /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
     /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+    #[deprecated(
+        note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+    )]
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -967,6 +988,9 @@ impl PostContentOutput {
     /// <p>The text used to process the request.</p>
     /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p>
     /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+    #[deprecated(
+        note = "The inputTranscript field is deprecated, use the encodedInputTranscript field instead. The inputTranscript field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+    )]
     pub fn input_transcript(&self) -> std::option::Option<&str> {
         self.input_transcript.as_deref()
     }
@@ -1142,6 +1166,9 @@ pub mod post_content_output {
         /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
         /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
         /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+        #[deprecated(
+            note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+        )]
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -1151,6 +1178,9 @@ pub mod post_content_output {
         /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
         /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
         /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+        #[deprecated(
+            note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+        )]
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1246,6 +1276,9 @@ pub mod post_content_output {
         /// <p>The text used to process the request.</p>
         /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p>
         /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+        #[deprecated(
+            note = "The inputTranscript field is deprecated, use the encodedInputTranscript field instead. The inputTranscript field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+        )]
         pub fn input_transcript(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_transcript = Some(input.into());
             self
@@ -1253,6 +1286,9 @@ pub mod post_content_output {
         /// <p>The text used to process the request.</p>
         /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p>
         /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+        #[deprecated(
+            note = "The inputTranscript field is deprecated, use the encodedInputTranscript field instead. The inputTranscript field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
+        )]
         pub fn set_input_transcript(
             mut self,
             input: std::option::Option<std::string::String>,

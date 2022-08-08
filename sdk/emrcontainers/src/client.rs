@@ -475,11 +475,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+        #[deprecated(
+            note = "Customer provided certificate-arn is deprecated and would be removed in future."
+        )]
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+        #[deprecated(
+            note = "Customer provided certificate-arn is deprecated and would be removed in future."
+        )]
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,

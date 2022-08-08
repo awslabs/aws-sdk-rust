@@ -421,6 +421,7 @@ pub struct KeyMetadata {
     pub key_manager: std::option::Option<crate::model::KeyManagerType>,
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+    #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
     /// <p>Describes the type of key material in the KMS key.</p>
     pub key_spec: std::option::Option<crate::model::KeySpec>,
@@ -514,6 +515,7 @@ impl KeyMetadata {
     }
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+    #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
     pub fn customer_master_key_spec(
         &self,
     ) -> std::option::Option<&crate::model::CustomerMasterKeySpec> {
@@ -817,6 +819,7 @@ pub mod key_metadata {
         }
         /// <p>Instead, use the <code>KeySpec</code> field.</p>
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+        #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
         pub fn customer_master_key_spec(
             mut self,
             input: crate::model::CustomerMasterKeySpec,
@@ -826,6 +829,7 @@ pub mod key_metadata {
         }
         /// <p>Instead, use the <code>KeySpec</code> field.</p>
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+        #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
         pub fn set_customer_master_key_spec(
             mut self,
             input: std::option::Option<crate::model::CustomerMasterKeySpec>,
@@ -1419,6 +1423,7 @@ impl AsRef<str> for KeySpec {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "This enum has been deprecated. Instead, use the KeySpec enum.")]
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,

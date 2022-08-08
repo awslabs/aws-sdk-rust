@@ -3770,6 +3770,9 @@ pub struct DescribeProvisioningParametersOutput {
     pub provisioning_artifact_preferences:
         std::option::Option<crate::model::ProvisioningArtifactPreferences>,
     /// <p>The output of the provisioning artifact.</p>
+    #[deprecated(
+        note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
+    )]
     pub provisioning_artifact_outputs:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
     /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
@@ -3802,6 +3805,9 @@ impl DescribeProvisioningParametersOutput {
         self.provisioning_artifact_preferences.as_ref()
     }
     /// <p>The output of the provisioning artifact.</p>
+    #[deprecated(
+        note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
+    )]
     pub fn provisioning_artifact_outputs(
         &self,
     ) -> std::option::Option<&[crate::model::ProvisioningArtifactOutput]> {
@@ -3960,6 +3966,9 @@ pub mod describe_provisioning_parameters_output {
         /// To override the contents of this collection use [`set_provisioning_artifact_outputs`](Self::set_provisioning_artifact_outputs).
         ///
         /// <p>The output of the provisioning artifact.</p>
+        #[deprecated(
+            note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
+        )]
         pub fn provisioning_artifact_outputs(
             mut self,
             input: crate::model::ProvisioningArtifactOutput,
@@ -3970,6 +3979,9 @@ pub mod describe_provisioning_parameters_output {
             self
         }
         /// <p>The output of the provisioning artifact.</p>
+        #[deprecated(
+            note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
+        )]
         pub fn set_provisioning_artifact_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,

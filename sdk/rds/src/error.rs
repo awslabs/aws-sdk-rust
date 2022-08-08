@@ -2406,6 +2406,7 @@ impl DbInstanceAlreadyExistsFault {
 }
 
 #[allow(missing_docs)] // documentation missing in model
+#[deprecated(note = "Please avoid using this fault")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupPolicyNotFoundFault {
@@ -10202,6 +10203,7 @@ pub enum CreateDBInstanceErrorKind {
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     #[allow(missing_docs)] // documentation missing in model
+    #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
@@ -19130,6 +19132,7 @@ pub enum ModifyDBInstanceErrorKind {
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     #[allow(missing_docs)] // documentation missing in model
+    #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
@@ -23137,6 +23140,7 @@ pub enum RestoreDBInstanceFromDBSnapshotErrorKind {
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     #[allow(missing_docs)] // documentation missing in model
+    #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
@@ -23526,6 +23530,7 @@ pub enum RestoreDBInstanceFromS3ErrorKind {
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     #[allow(missing_docs)] // documentation missing in model
+    #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
@@ -23821,6 +23826,7 @@ pub enum RestoreDBInstanceToPointInTimeErrorKind {
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     #[allow(missing_docs)] // documentation missing in model
+    #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),

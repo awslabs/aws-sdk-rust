@@ -2367,6 +2367,9 @@ pub struct LogStream {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The number of bytes stored.</p>
     /// <p> <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    #[deprecated(
+        note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
+    )]
     pub stored_bytes: std::option::Option<i64>,
 }
 impl LogStream {
@@ -2400,6 +2403,9 @@ impl LogStream {
     }
     /// <p>The number of bytes stored.</p>
     /// <p> <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+    #[deprecated(
+        note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
+    )]
     pub fn stored_bytes(&self) -> std::option::Option<i64> {
         self.stored_bytes
     }
@@ -2512,12 +2518,18 @@ pub mod log_stream {
         }
         /// <p>The number of bytes stored.</p>
         /// <p> <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+        #[deprecated(
+            note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
+        )]
         pub fn stored_bytes(mut self, input: i64) -> Self {
             self.stored_bytes = Some(input);
             self
         }
         /// <p>The number of bytes stored.</p>
         /// <p> <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
+        #[deprecated(
+            note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
+        )]
         pub fn set_stored_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.stored_bytes = input;
             self

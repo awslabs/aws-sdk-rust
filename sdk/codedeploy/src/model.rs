@@ -2758,6 +2758,9 @@ impl AppSpecContent {
 }
 
 /// <p>A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.</p>
+#[deprecated(
+    note = "RawString and String revision type are deprecated, use AppSpecContent type instead."
+)]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RawString {
@@ -3619,6 +3622,7 @@ impl AsRef<str> for InstanceType {
 }
 
 /// _Note: `InstanceStatus::Unknown` has been renamed to `::UnknownValue`._
+#[deprecated(note = "InstanceStatus is deprecated, use TargetStatus instead.")]
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5945,6 +5949,7 @@ impl AsRef<str> for DeploymentTargetType {
 }
 
 /// <p>Information about an instance in a deployment.</p>
+#[deprecated(note = "InstanceSummary is deprecated, use DeploymentTarget instead.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceSummary {

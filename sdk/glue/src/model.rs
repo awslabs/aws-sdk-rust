@@ -3949,6 +3949,7 @@ pub struct JobUpdate {
     pub max_retries: i32,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub allocated_capacity: i32,
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub timeout: std::option::Option<i32>,
@@ -4035,6 +4036,7 @@ impl JobUpdate {
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }
@@ -4292,12 +4294,14 @@ pub mod job_update {
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
@@ -27694,6 +27698,7 @@ pub struct JobRun {
     pub predecessor_runs: std::option::Option<std::vec::Vec<crate::model::Predecessor>>,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub allocated_capacity: i32,
     /// <p>The amount of time (in seconds) that the job run consumed resources.</p>
     pub execution_time: i32,
@@ -27792,6 +27797,7 @@ impl JobRun {
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }
@@ -28093,12 +28099,14 @@ pub mod job_run {
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
@@ -34402,6 +34410,7 @@ pub struct Job {
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p></p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub allocated_capacity: i32,
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub timeout: std::option::Option<i32>,
@@ -34502,6 +34511,7 @@ impl Job {
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p></p>
+    #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }
@@ -34803,6 +34813,7 @@ pub mod job {
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p></p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
@@ -34810,6 +34821,7 @@ pub mod job {
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
         /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p></p>
+        #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self

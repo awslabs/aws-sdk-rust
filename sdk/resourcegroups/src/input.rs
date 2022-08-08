@@ -233,11 +233,13 @@ pub mod delete_group_input {
     }
     impl Builder {
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -380,11 +382,13 @@ pub mod get_group_input {
     }
     impl Builder {
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -659,11 +663,13 @@ pub mod get_group_query_input {
     }
     impl Builder {
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -1098,6 +1104,7 @@ pub mod list_group_resources_input {
         /// <important>
         /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
         /// </important>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
@@ -1105,6 +1112,7 @@ pub mod list_group_resources_input {
         /// <important>
         /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
         /// </important>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -2328,11 +2336,13 @@ pub mod update_group_input {
     }
     impl Builder {
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -2487,11 +2497,13 @@ pub mod update_group_query_input {
     }
     impl Builder {
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+        #[deprecated(note = "This field is deprecated, use Group instead.")]
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -2646,6 +2658,7 @@ impl UpdateGroupQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to query.</p>
     pub group: std::option::Option<std::string::String>,
@@ -2656,6 +2669,7 @@ pub struct UpdateGroupQueryInput {
 }
 impl UpdateGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -2685,6 +2699,7 @@ impl std::fmt::Debug for UpdateGroupQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to modify.</p>
     pub group: std::option::Option<std::string::String>,
@@ -2693,6 +2708,7 @@ pub struct UpdateGroupInput {
 }
 impl UpdateGroupInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -2930,6 +2946,7 @@ pub struct ListGroupResourcesInput {
     /// <important>
     /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
     /// </important>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group</p>
     pub group: std::option::Option<std::string::String>,
@@ -2950,6 +2967,7 @@ impl ListGroupResourcesInput {
     /// <important>
     /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
     /// </important>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -3042,12 +3060,14 @@ impl std::fmt::Debug for GetTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to query.</p>
     pub group: std::option::Option<std::string::String>,
 }
 impl GetGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -3091,12 +3111,14 @@ impl std::fmt::Debug for GetGroupConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupInput {
     /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to retrieve.</p>
     pub group: std::option::Option<std::string::String>,
 }
 impl GetGroupInput {
     /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -3119,12 +3141,14 @@ impl std::fmt::Debug for GetGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupInput {
     /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to delete.</p>
     pub group: std::option::Option<std::string::String>,
 }
 impl DeleteGroupInput {
     /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }

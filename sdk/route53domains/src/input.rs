@@ -4596,11 +4596,13 @@ pub mod update_domain_nameservers_input {
             self
         }
         /// <p>The authorization key for .fi domains</p>
+        #[deprecated]
         pub fn fi_auth_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.fi_auth_key = Some(input.into());
             self
         }
         /// <p>The authorization key for .fi domains</p>
+        #[deprecated]
         pub fn set_fi_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fi_auth_key = input;
             self
@@ -5177,6 +5179,7 @@ pub struct UpdateDomainNameserversInput {
     /// <p>The name of the domain that you want to change name servers for.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The authorization key for .fi domains</p>
+    #[deprecated]
     pub fi_auth_key: std::option::Option<std::string::String>,
     /// <p>A list of new name servers for the domain.</p>
     pub nameservers: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
@@ -5187,6 +5190,7 @@ impl UpdateDomainNameserversInput {
         self.domain_name.as_deref()
     }
     /// <p>The authorization key for .fi domains</p>
+    #[deprecated]
     pub fn fi_auth_key(&self) -> std::option::Option<&str> {
         self.fi_auth_key.as_deref()
     }

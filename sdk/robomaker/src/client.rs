@@ -1149,6 +1149,9 @@ pub mod fluent_builders {
     /// <p>Cancels the specified deployment job.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelDeploymentJob {
         handle: std::sync::Arc<super::Handle>,
@@ -1419,6 +1422,9 @@ pub mod fluent_builders {
     /// <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot Application Version</a>. </p> <note>
     /// <p>After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible. </p>
     /// </note>
+    #[deprecated(
+        note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentJob {
         handle: std::sync::Arc<super::Handle>,
@@ -1543,6 +1549,9 @@ pub mod fluent_builders {
     /// <p>Creates a fleet, a logical group of robots running the same robot application.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet {
         handle: std::sync::Arc<super::Handle>,
@@ -1621,6 +1630,9 @@ pub mod fluent_builders {
     /// <p>Creates a robot.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRobot {
         handle: std::sync::Arc<super::Handle>,
@@ -2788,6 +2800,9 @@ pub mod fluent_builders {
     /// <p>Deletes a fleet.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleet {
         handle: std::sync::Arc<super::Handle>,
@@ -2843,6 +2858,9 @@ pub mod fluent_builders {
     /// <p>Deletes a robot.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRobot {
         handle: std::sync::Arc<super::Handle>,
@@ -3083,6 +3101,9 @@ pub mod fluent_builders {
     /// <p>Deregisters a robot.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterRobot {
         handle: std::sync::Arc<super::Handle>,
@@ -3148,6 +3169,9 @@ pub mod fluent_builders {
     /// <p>Describes a deployment job.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeploymentJob {
         handle: std::sync::Arc<super::Handle>,
@@ -3203,6 +3227,9 @@ pub mod fluent_builders {
     /// <p>Describes a fleet.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleet {
         handle: std::sync::Arc<super::Handle>,
@@ -3258,6 +3285,9 @@ pub mod fluent_builders {
     /// <p>Describes a robot.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRobot {
         handle: std::sync::Arc<super::Handle>,
@@ -3829,6 +3859,9 @@ pub mod fluent_builders {
     /// <p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentJobs {
         handle: std::sync::Arc<super::Handle>,
@@ -3919,6 +3952,9 @@ pub mod fluent_builders {
     /// <p>Returns a list of fleets. You can optionally provide filters to retrieve specific fleets.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFleets {
         handle: std::sync::Arc<super::Handle>,
@@ -4114,6 +4150,9 @@ pub mod fluent_builders {
     /// <p>Returns a list of robots. You can optionally provide filters to retrieve specific robots.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRobots {
         handle: std::sync::Arc<super::Handle>,
@@ -4859,6 +4898,9 @@ pub mod fluent_builders {
     /// <p>Registers a robot with a fleet.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
+    #[deprecated(
+        note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterRobot {
         handle: std::sync::Arc<super::Handle>,
@@ -5089,6 +5131,9 @@ pub mod fluent_builders {
     /// <p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.</p> <important>
     /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
     /// </important>
+    #[deprecated(
+        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SyncDeploymentJob {
         handle: std::sync::Arc<super::Handle>,

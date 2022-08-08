@@ -538,6 +538,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateDomain`.
     ///
     /// <p>Specifies a domain to be associated to Amazon WorkLink.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -624,6 +627,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWebsiteAuthorizationProvider`.
     ///
     /// <p>Associates a website authorization provider with a specified fleet. This is used to authorize users against associated websites in the company network.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWebsiteAuthorizationProvider {
         handle: std::sync::Arc<super::Handle>,
@@ -705,6 +711,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWebsiteCertificateAuthority`.
     ///
     /// <p>Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated websites within the company network.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWebsiteCertificateAuthority {
         handle: std::sync::Arc<super::Handle>,
@@ -780,6 +789,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
     /// <p>Creates a fleet. A fleet consists of resources and the configuration that delivers associated websites to authorized users who download and set up the Amazon WorkLink app.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet {
         handle: std::sync::Arc<super::Handle>,
@@ -879,6 +891,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFleet`.
     ///
     /// <p>Deletes a fleet. Prevents users from accessing previously associated websites. </p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleet {
         handle: std::sync::Arc<super::Handle>,
@@ -932,6 +947,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAuditStreamConfiguration`.
     ///
     /// <p>Describes the configuration for delivering audit streams to the customer account.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAuditStreamConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -985,6 +1003,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCompanyNetworkConfiguration`.
     ///
     /// <p>Describes the networking configuration to access the internal websites associated with the specified fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCompanyNetworkConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -1040,6 +1061,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDevice`.
     ///
     /// <p>Provides information about a user's device.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice {
         handle: std::sync::Arc<super::Handle>,
@@ -1103,6 +1127,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDevicePolicyConfiguration`.
     ///
     /// <p>Describes the device policy configuration for the specified fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevicePolicyConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -1156,6 +1183,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
     /// <p>Provides information about the domain.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -1219,6 +1249,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFleetMetadata`.
     ///
     /// <p>Provides basic information for the specified fleet, excluding identity provider, networking, and device configuration details.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetMetadata {
         handle: std::sync::Arc<super::Handle>,
@@ -1272,6 +1305,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIdentityProviderConfiguration`.
     ///
     /// <p>Describes the identity provider configuration of the specified fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentityProviderConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -1327,6 +1363,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWebsiteCertificateAuthority`.
     ///
     /// <p>Provides information about the certificate authority.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWebsiteCertificateAuthority {
         handle: std::sync::Arc<super::Handle>,
@@ -1395,6 +1434,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateDomain`.
     ///
     /// <p>Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon WorkLink. </p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -1458,6 +1500,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWebsiteAuthorizationProvider`.
     ///
     /// <p>Disassociates a website authorization provider from a specified fleet. After the disassociation, users can't load any associated websites that require this authorization provider.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebsiteAuthorizationProvider {
         handle: std::sync::Arc<super::Handle>,
@@ -1526,6 +1571,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWebsiteCertificateAuthority`.
     ///
     /// <p>Removes a certificate authority (CA).</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebsiteCertificateAuthority {
         handle: std::sync::Arc<super::Handle>,
@@ -1594,6 +1642,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevices`.
     ///
     /// <p>Retrieves a list of devices registered with the specified fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices {
         handle: std::sync::Arc<super::Handle>,
@@ -1673,6 +1724,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomains`.
     ///
     /// <p>Retrieves a list of domains associated to a specified fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains {
         handle: std::sync::Arc<super::Handle>,
@@ -1752,6 +1806,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFleets`.
     ///
     /// <p>Retrieves a list of fleets for the current account and Region.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFleets {
         handle: std::sync::Arc<super::Handle>,
@@ -1821,6 +1878,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves a list of tags for the specified resource.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -1874,6 +1934,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWebsiteAuthorizationProviders`.
     ///
     /// <p>Retrieves a list of website authorization providers associated with a specified fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebsiteAuthorizationProviders {
         handle: std::sync::Arc<super::Handle>,
@@ -1958,6 +2021,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWebsiteCertificateAuthorities`.
     ///
     /// <p>Retrieves a list of certificate authorities added for the current account and Region.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebsiteCertificateAuthorities {
         handle: std::sync::Arc<super::Handle>,
@@ -2042,6 +2108,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestoreDomainAccess`.
     ///
     /// <p>Moves a domain to ACTIVE status if it was in the INACTIVE status.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreDomainAccess {
         handle: std::sync::Arc<super::Handle>,
@@ -2105,6 +2174,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeDomainAccess`.
     ///
     /// <p>Moves a domain to INACTIVE status if it was in the ACTIVE status.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeDomainAccess {
         handle: std::sync::Arc<super::Handle>,
@@ -2168,6 +2240,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SignOutUser`.
     ///
     /// <p>Signs the user out from all of their devices. The user can sign in again if they have valid credentials.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SignOutUser {
         handle: std::sync::Arc<super::Handle>,
@@ -2231,6 +2306,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified resource, such as a fleet. Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2307,6 +2385,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -2377,6 +2458,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAuditStreamConfiguration`.
     ///
     /// <p>Updates the audit stream configuration for the fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAuditStreamConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -2443,6 +2527,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCompanyNetworkConfiguration`.
     ///
     /// <p>Updates the company network configuration for the fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCompanyNetworkConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -2540,6 +2627,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDevicePolicyConfiguration`.
     ///
     /// <p>Updates the device policy configuration for the fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevicePolicyConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -2606,6 +2696,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainMetadata`.
     ///
     /// <p>Updates domain metadata, such as DisplayName.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainMetadata {
         handle: std::sync::Arc<super::Handle>,
@@ -2679,6 +2772,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFleetMetadata`.
     ///
     /// <p>Updates fleet metadata, such as DisplayName.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFleetMetadata {
         handle: std::sync::Arc<super::Handle>,
@@ -2755,6 +2851,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIdentityProviderConfiguration`.
     ///
     /// <p>Updates the identity provider configuration for the fleet.</p>
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIdentityProviderConfiguration {
         handle: std::sync::Arc<super::Handle>,

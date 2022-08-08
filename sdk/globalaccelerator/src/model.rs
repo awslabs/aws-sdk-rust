@@ -1858,6 +1858,7 @@ impl AsRef<str> for CustomRoutingAcceleratorStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpSet {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
+    #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
     pub ip_family: std::option::Option<std::string::String>,
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
     pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1866,6 +1867,7 @@ pub struct IpSet {
 }
 impl IpSet {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
+    #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
     pub fn ip_family(&self) -> std::option::Option<&str> {
         self.ip_family.as_deref()
     }
@@ -1899,11 +1901,13 @@ pub mod ip_set {
     }
     impl Builder {
         /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
+        #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
         pub fn ip_family(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_family = Some(input.into());
             self
         }
         /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
+        #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
         pub fn set_ip_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_family = input;
             self

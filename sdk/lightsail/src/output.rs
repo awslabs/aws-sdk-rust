@@ -3202,6 +3202,7 @@ pub struct GetOperationsForResourceOutput {
     /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
+    #[deprecated]
     pub next_page_count: std::option::Option<std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -3216,6 +3217,7 @@ impl GetOperationsForResourceOutput {
     /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
+    #[deprecated]
     pub fn next_page_count(&self) -> std::option::Option<&str> {
         self.next_page_count.as_deref()
     }
@@ -3268,6 +3270,7 @@ pub mod get_operations_for_resource_output {
         /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
         /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
         /// </note>
+        #[deprecated]
         pub fn next_page_count(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_count = Some(input.into());
             self
@@ -3275,6 +3278,7 @@ pub mod get_operations_for_resource_output {
         /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
         /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
         /// </note>
+        #[deprecated]
         pub fn set_next_page_count(
             mut self,
             input: std::option::Option<std::string::String>,

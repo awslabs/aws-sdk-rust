@@ -715,21 +715,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
         /// <p>The metric name associated with the anomaly detection model to delete.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.metric_name(input.into());
             self
         }
         /// <p>The metric name associated with the anomaly detection model to delete.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_metric_name(input);
             self
@@ -739,11 +743,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -752,11 +758,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The statistic associated with the anomaly detection model to delete.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn stat(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stat(input.into());
             self
         }
         /// <p>The statistic associated with the anomaly detection model to delete.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stat(input);
             self
@@ -3013,21 +3021,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
         /// <p>The name of the metric to create the anomaly detection model for.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.metric_name(input.into());
             self
         }
         /// <p>The name of the metric to create the anomaly detection model for.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_metric_name(input);
             self
@@ -3037,11 +3049,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -3050,11 +3064,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The statistic to use for the metric and the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn stat(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stat(input.into());
             self
         }
         /// <p>The statistic to use for the metric and the anomaly detection model.</p>
+        #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stat(input);
             self

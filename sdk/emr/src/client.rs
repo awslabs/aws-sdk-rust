@@ -1793,6 +1793,7 @@ pub mod fluent_builders {
     /// <li> <p> Job flows created within the last two months that are in one of the following states: <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </p> </li>
     /// </ul>
     /// <p>Amazon EMR can return a maximum of 512 job flow descriptions.</p>
+    #[deprecated]
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobFlows {
         handle: std::sync::Arc<super::Handle>,
